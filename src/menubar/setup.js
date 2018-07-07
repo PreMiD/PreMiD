@@ -1,13 +1,13 @@
-const Path = require('path')
 var MenuBar = require('menubar')
 const {app, Menu, MenuItem} = require('electron')
-var main = require("../main.js")
-var constants = require("../constants.js")
+var main = require("../index")
+var constants = require("../util/constants")
+
+console.log(process.cwd())
 
 constants.menuBar = MenuBar({
-  preloadWindow: true,
-  icon: "./menuBar/YT-Presence-Icon.png",
   tooltip: "YouTube Presence",
+  icon: "./src/menubar/icon.png"
 })
 
 constants.menuBar.on('ready', function() {

@@ -1,28 +1,21 @@
 const DiscordRPC = require("discord-rpc");
-const YouTube = require("simple-youtube-api");
-const constants = require("./constants.js");
-const { ytm_client_id, api_key } = require("./config.json");
-const url = require("url");
+const constants = require("../util/constants.js");
+const { ytm_client_id } = require("../config.json");
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
-
-const youtube = new YouTube(api_key);
 
 const rpc = new DiscordRPC.Client({ transport: "ipc" });
 
 let presence,
-  videoAuthor = "fetching...",
-  videoTitle = "fetching...",
-  serviceType,
   startTime = new Date(),
   endTime = new Date(),
   lastTitle,
-  lastStartingTime,
-  setup = false;
+  lastStartingTime
 
 async function updatePresence(data) {
   if (data.currentSongStartTime == lastStartingTime) {
     if ((data.currentSongAuthor && data.currentSongTitle) != undefined) {
+      constants.menuBar.tray.setTitle("")
     rpc.setActivity({
       details: entities.decode(data.currentSongTitle),
       state: entities.decode(data.currentSongAuthor),
@@ -43,6 +36,7 @@ async function updatePresence(data) {
 
     if (data.url.includes("watch?v=")) {
       if ((data.currentSongAuthor && data.currentSongTitle) != undefined) {
+        constants.menuBar.tray.setTitle(" " + data.currentSongTitle)
         rpc.setActivity({
           details: entities.decode(data.currentSongTitle),
           state: entities.decode(data.currentSongAuthor),
