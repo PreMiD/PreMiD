@@ -1,0 +1,26 @@
+{
+  "name": "YT Presence",
+  "version": "0.1",
+  "description":
+    "Show your current YouTube Video / Song in your Discord profile.",
+  "manifest_version": 2,
+  "icons": {
+    "2024": "images/icon.png"
+  },
+  "background": {
+    "scripts": ["jquery-3.2.1.min.js", "background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": {
+      "2024": "images/icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "js": ["jquery-3.2.1.min.js", "handleYTM.js"],
+      "matches": ["https://music.youtube.com/*"]
+    }
+  ],
+  "permissions": ["http://localhost/*", "tabs"]
+}

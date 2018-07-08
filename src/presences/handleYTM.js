@@ -1,10 +1,7 @@
-const DiscordRPC = require("discord-rpc");
 const constants = require("../util/constants.js");
 const { ytm_client_id } = require("../config.json");
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
-
-const rpc = new DiscordRPC.Client({ transport: "ipc" });
 
 let presence,
   startTime = new Date(),
@@ -16,7 +13,7 @@ async function updatePresence(data) {
   if (data.currentSongStartTime == lastStartingTime) {
     if ((data.currentSongAuthor && data.currentSongTitle) != undefined) {
       constants.menuBar.tray.setTitle("")
-    rpc.setActivity({
+    constants.ytmrpc.setActivity({
       details: entities.decode(data.currentSongTitle),
       state: entities.decode(data.currentSongAuthor),
       smallImageKey: "pause",
@@ -35,9 +32,9 @@ async function updatePresence(data) {
     lastStartingTime = data.currentSongStartTime;
 
     if (data.url.includes("watch?v=")) {
-      if ((data.currentSongAuthor && data.currentSongTitle) != undefined) {
-        constants.menuBar.tray.setTitle(" " + data.currentSongTitle)
-        rpc.setActivity({
+      if ((data.currentSongAuthor && data.currentSongTitle) != undefined && data.currentSongAuthor != "" && data.currentSongTitle != "") {
+        constants.menuBar.tray.setTitle(entities.decode(data.currentSongTitle))
+        constants.ytmrpc.setActivity({
           details: entities.decode(data.currentSongTitle),
           state: entities.decode(data.currentSongAuthor),
           smallImageKey: "play",
@@ -52,10 +49,10 @@ async function updatePresence(data) {
   }
 }
 
-rpc.on("ready", () => {
+constants.ytmrpc.on("ready", () => {
   constants.presenceReady = true;
 });
 
 exports.updatePresence = updatePresence;
 
-rpc.login(ytm_client_id).catch(console.error);
+constants.ytmrpc.login(ytm_client_id).catch(console.error);

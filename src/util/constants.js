@@ -1,8 +1,22 @@
 const chalk = require("chalk")
+const DiscordRPC = require("discord-rpc")
 
-let consolePrefix, win, menuBar, menuBarMenu, chromeConnected, presenceReady, presence, setup;
+let app,
+consolePrefix,
+win,
+menuBar,
+menuBarMenu,
+chromeConnected,
+presenceReady,
+presence,
+setup,
+newVersion,
+introRan,
+lastResponse,
+ytmrpc;
 
 module.exports = {
+  app: "",
   consolePrefix: chalk.bold(chalk.gray("<[ ") + chalk.bgRed(chalk.black(" Y") + chalk.white("T ")) + chalk.cyan(" Presence") + chalk.gray(" ]> ")),
   win: "",
   menuBar: "",
@@ -15,5 +29,9 @@ module.exports = {
     state: "to start playing...",
     largeImageKey: "ytm_lg",
     instance: true
-  }
+  },
+  newVersion: false,
+  introRan: false,
+  lastResponse: false,
+  ytmrpc: new DiscordRPC.Client({ transport: "ipc" })
 };

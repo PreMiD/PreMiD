@@ -1,14 +1,14 @@
-var {webContents} = require('electron')
-
 //* Require needed packages
-const Entities = require('html-entities').AllHtmlEntities
-const entities = new Entities()
-
 const chalk = require("chalk")
-const { yt_client_id, ytm_client_id } = require("./config")
 const express = require("express")
 var constants = require('./util/constants.js')
 let YTM = require('./presences/handleYTM.js');
+
+const Config = require('electron-config');
+const userSettings = new Config({
+  name: "userSettings"
+});
+
 
 //* Create APP
 const app = express()
@@ -17,20 +17,53 @@ app.use(express.json());
 
 let data
 
+var keepAliveSwitch = 0
+var lastKeepAliveSwitch = 0
+
+setInterval(keepAliveCheck, 1000)
+
+function keepAliveCheck() {
+  if(lastKeepAliveSwitch > keepAliveSwitch + 10) {
+    constants.menuBar.tray.setTitle("")
+    constants.ytmrpc.clearActivity()
+  }
+  lastKeepAliveSwitch += 1
+}
+
 app.post("/", async (request, response) => {
+  
+  constants.lastResponse = new Date().getTime();
   data = request.body
   if(data.connected === true) {
     //* Check if presence is ready
       if(constants.chromeConnected == false) {
         constants.chromeConnected = true;
-        constants.menuBar.tray.setTitle(" Connected!")
+        constants.menuBar.tray.setTitle("Chrome client connected!")
         console.log(constants.consolePrefix + chalk.green("Chrome client connected."))
         setTimeout(function() {
-          constants.menuBar.tray.setTitle("")
+          if(data.currentSongAuthor == undefined) {
+            constants.menuBar.tray.setTitle("")
+          }
+          constants.introRan = true
         }, 5*1000)
       }
-      if(constants.chromeConnected == true && constants.presenceReady == true) {
-        if(serviceType(data.service) == "ytm") YTM.updatePresence(data)
+      if(data.service != "keepAlive" && data.service == "ytm") {
+        lastKeepAliveSwitch = 0
+        keepAliveSwitch = 0
+        if(userSettings.get('youTubeMusic') == true) {
+          if(constants.introRan && constants.chromeConnected && constants.presenceReady) {
+            if(serviceType(data.service) == "ytm") YTM.updatePresence(data)
+          }
+        } else {
+          constants.menuBar.tray.setTitle("")
+          constants.ytmrpc.clearActivity()
+        }
+      } else {
+        if(keepAliveSwitch >= 10) {
+          constants.menuBar.tray.setTitle("")
+          constants.ytmrpc.clearActivity()
+        }
+        keepAliveSwitch += 1
       }
   }
   return response.sendStatus(200);
@@ -46,4 +79,4 @@ function serviceType(service) {
 }
 
 //* Listen on port 3000
-app.listen(3000, () => console.log(constants.consolePrefix + chalk.green("is ready to use!")));
+app.listen(3000, () => console.log(constants.consolePrefix + chalk.green("Listening on Port 3000")));
