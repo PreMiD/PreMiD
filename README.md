@@ -1,8 +1,19 @@
 ## ![version](https://img.shields.io/badge/Version-0.1-brightgreen.svg?style=flat-square) [![Discord](https://img.shields.io/discord/465326876601221120.svg?style=flat-square&logo=discord&label=YT%20Presence&colorA=7289DA&colorB=2C2F33)](https://discord.gg/GzCUcf)
 
-# <img src="icon.png" width="20"><b> </b>YouTube Presence &middot; Watcha watching there? 👀
+# <img src="icon.png" width="20" draggable="false"><b> </b>YouTube Presence &middot; Watcha watching there? 👀
 
 _Show your current YouTube video/song in your Discord profile_
+
+## Table of contents
+
+---
+
+- [Table of contents](#table-of-contents)
+- [Installing the Extension](#installing-the-extension)
+- [Installing the Apllication](#installing-the-application)
+  - Mac OS
+  - Windows
+- FAQ
 
 ## Installing the Extension
 
@@ -25,7 +36,7 @@ _Show your current YouTube video/song in your Discord profile_
 
 <details>
   <summary><b><u>Mac OS</u></b> (Click to expand)</summary>
-  <h1>Installing on Mac OS</h1>
+  <h1>Mac OS</h1>
   <ul>
     <li>Extract downloaded <b>.zip</b> file</li>
     <li>Drag <b>YT Presence</b> Into your <b>Applications</b> Folder</li>
@@ -36,7 +47,7 @@ _Show your current YouTube video/song in your Discord profile_
 
 <details>
   <summary><b><u>Windows</u></b> (Click to expand)</summary>
-  <h1>Installing on Windows</h1>
+  <h1>Windows</h1>
   <ul>
     <li>Move downloaded <b>.exe</b> file to a place you decide</li>
     <li>Launch <b>YT Presence</b></li>
