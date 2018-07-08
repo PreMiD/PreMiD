@@ -1,5 +1,11 @@
 const { app, Notification } = require('electron');
 
+var os = require('os')
+
+let constants = require('./util/constants')
+
+constants.platform = os.platform
+
 const Config = require('electron-config');
 const userSettings = new Config({
   name: "userSettings"
@@ -12,14 +18,15 @@ if(userSettings.get('enabled') == undefined) {
 }
 
 //* Set dock Badge to Loading...
-app.dock.setBadge("Loading...")
+if(constants.platform == "darwin") {
+  app.dock.setBadge("Loading...")
+}
 
 //* Require Needed packages
 const AutoLaunch = require('auto-launch');
 const request = require("request")
 const chalk = require("chalk")
 
-let constants = require('./util/constants')
 let config = require('./config')
 
 //* Setup MenuBar

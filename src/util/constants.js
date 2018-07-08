@@ -13,7 +13,8 @@ setup,
 newVersion,
 introRan,
 lastResponse,
-ytmrpc;
+ytmrpc,
+platform;
 
 module.exports = {
   app: "",
@@ -33,5 +34,6 @@ module.exports = {
   newVersion: false,
   introRan: false,
   lastResponse: false,
-  ytmrpc: new DiscordRPC.Client({ transport: "ipc" })
+  ytmrpc: new DiscordRPC.Client({ transport: "ipc" }),
+  platform: ""
 };
