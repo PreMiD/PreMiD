@@ -1,9 +1,8 @@
-const {Menu, MenuItem, BrowserWindow} = require('electron')
 const path = require('path')
 var MenuBar = require('menubar')
-var main = require("../index")
 var constants = require("../util/constants")
 
+//* Create MenuBar
 constants.menuBar = MenuBar({
   icon: __dirname + "/icon.png",
   index: 'file://' + path.join(__dirname + "/popup.html"),
@@ -16,6 +15,7 @@ constants.menuBar = MenuBar({
   backgroundColor: 'white',
 })
 
+//* Show connecting message when ready
 constants.menuBar.on('ready', function() {
   constants.menuBar.tray.setTitle("Connecting...")
 })

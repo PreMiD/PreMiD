@@ -3,6 +3,7 @@ const chalk = require("chalk")
 const express = require("express")
 var constants = require('./util/constants.js')
 let YTM = require('./presences/handleYTM.js');
+let YT = require('./presences/handleYT.js');
 
 const Config = require('electron-config');
 const userSettings = new Config({
@@ -58,9 +59,21 @@ app.post("/", async (request, response) => {
           constants.menuBar.tray.setTitle("")
           constants.ytmrpc.clearActivity()
         }
+      } else if(data.service != "keepAlive" && data.service == "yt") {
+        lastKeepAliveSwitch = 0
+        keepAliveSwitch = 0
+        if(userSettings.get('youTube') == true) {
+          if(constants.introRan && constants.chromeConnected && constants.presenceReady) {
+            if(serviceType(data.service) == "yt") YT.updatePresence(data)
+          }
+        } else {
+          constants.menuBar.tray.setTitle("")
+          constants.ytrpc.clearActivity()
+        }
       } else {
         if(keepAliveSwitch >= 10) {
           constants.menuBar.tray.setTitle("")
+          constants.ytmrpc.clearActivity()
           constants.ytmrpc.clearActivity()
         }
         keepAliveSwitch += 1
@@ -73,6 +86,8 @@ function serviceType(service) {
   switch(service) {
     case "ytm":
       return "ytm"
+    case "yt":
+      return "yt"
     default:
       return false
   }

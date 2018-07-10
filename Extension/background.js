@@ -18,7 +18,7 @@ function updatePresence(tabId, changeInfo, tab) {
 
     if (!data) return;
   
-    const settings = {
+    $.ajax({
       async: true,
       crossDomain: true,
       url: "http://localhost:3000/",
@@ -28,12 +28,8 @@ function updatePresence(tabId, changeInfo, tab) {
       },
       processData: false,
       data: JSON.stringify(data),
-      error: function(jqXHR, textStatus, errorThrown) {
-        console.log(textStatus)
-      }
-    }
-  
-    $.ajax(settings)
+      error: function(jqXHR, textStatus, errorThrown) {}
+    })
   }
 }
 
@@ -53,9 +49,7 @@ function sendAlive() {
       connected: true,
       service: "keepAlive"
     }),
-    error: function(jqXHR, textStatus, errorThrown) {
-      console.log(textStatus)
-    }
+    error: function(jqXHR, textStatus, errorThrown) {}
   })
 }
 

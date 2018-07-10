@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "description": "Show your current YouTube Video / Song in your Discord profile.",
   "main": "src/index.js",
+  "repository": "Timeraa/YT-Presence",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
@@ -27,8 +28,7 @@
     "fs": "0.0.1-security",
     "html-entities": "^1.2.1",
     "menubar": "^5.2.3",
-    "request": "^2.87.0",
-    "update-electron-app": "^1.3.0"
+    "request": "^2.87.0"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.22",

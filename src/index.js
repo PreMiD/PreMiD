@@ -1,34 +1,43 @@
-const { app, Notification } = require('electron');
+//* Clear console
+process.stdout.write("\u001b[2J\u001b[0;0H");
 
+const { app } = require('electron');
+
+//* Require config
+const config = require('./config.json');
+
+//* Require electron-config
 const Config = require('electron-config');
 const userSettings = new Config({
   name: "userSettings"
 });
 
+//* Set default value for electon-config userSettings
 if(userSettings.get('enabled') == undefined) {
   userSettings.set('enabled', true)
   userSettings.set('youTube', true)
   userSettings.set('youTubeMusic', true)
 }
 
-//* Set dock Badge to Loading...
-app.dock.setBadge("Loading...")
+//* Set dock Badge Label to Loading...
+app.dock.setBadge(`V${config.version}`)
 
 //* Require Needed packages
 const AutoLaunch = require('auto-launch');
-const request = require("request")
 const chalk = require("chalk")
-
 let constants = require('./util/constants')
-let config = require('./config')
+
+console.log(constants.consolePrefix + chalk.yellow("Loading..."))
+
+//* Check for update
+require('./util/checkForUpdate')
 
 //* Setup MenuBar
 require('./menubar/setup')
 
 //* App ready
 const appReady = () => {
-  console.log(constants.consolePrefix + chalk.yellow("Loading..."))
-
+  //* Add App to AutoLaunch
   console.log(constants.consolePrefix + chalk.yellow("Adding App to autostart..."))
   let autoLaunch = new AutoLaunch({
     name: 'YT Presence',
@@ -36,41 +45,22 @@ const appReady = () => {
     isHidden: true
   });
 
+  //* Enable AutoLaunch if disabled
   autoLaunch.isEnabled().then((isEnabled) => {
     if (!isEnabled) autoLaunch.enable();
     console.log(constants.consolePrefix + chalk.green("Added App to autostart."))
   })
+  //* Catch error
   .catch(function(err) {
     console.log(constants.consolePrefix + chalk.red("Error while adding App to autostart."))
   })
 
+  //* Include PresenceHandler
   require('./presenceHandler.js')
-
-  request({
-    url: "https://api.github.com/repos/Timeraa/YT-Presence/releases/latest",
-    json: true,
-    headers: {'user-agent': 'node.js'}
-  }, function (error, response, body) {
-    var gitVersion = body.tag_name.replace('v', '')
-    if(gitVersion > config.version) {
-      constants.newVersion = gitVersion
-      
-      const newVersionNotification = new Notification({
-        title: 'YouTube Presence',
-        body: `New version avaiable! (V${gitVersion})\nClick here to download the newest version.`,
-      })
-  
-      newVersionNotification.show()
-      newVersionNotification.on('click', () => {
-        require("electron").shell.openExternal("https://github.com/Timeraa/YT-Presence/releases/latest")
-      })
-    }
-  })
 }
 
 //* Register Handler
 app.on('ready', appReady);
 
-app.on('window-all-closed', () => {
-  //app.quit();
-});
+//* Prevent default behaviour
+app.on('window-all-closed', () => {});

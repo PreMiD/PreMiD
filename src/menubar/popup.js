@@ -17,22 +17,21 @@ $(document).ready(function() {
   toggleYouTubeMusic = $(".toggleYouTubeMusic");
 
   togglePresence.change(switchPresence);
-  //toggleYouTube.change(switchYouTube);
+  toggleYouTube.change(switchYouTube);
   toggleYouTubeMusic.change(switchYouTubeMusic);
 
   if (userSettings.get('enabled') == true) togglePresence.prop("checked", true)
   else {
     togglePresence.prop("checked", false)
-    //toggleYouTube.prop("checked", false)
+    toggleYouTube.prop("checked", false)
     toggleYouTubeMusic.prop("checked", false)
-    //toggleYouTube.attr("disabled", "disabled")
+    toggleYouTube.attr("disabled", "disabled")
     toggleYouTubeMusic.attr("disabled", "disabled")
   }
 
   if (userSettings.get('youTube') == true) {
-    
-    //toggleYouTube.prop("checked", true)
-    //toggleYouTube.removeAttr("disabled")
+    toggleYouTube.prop("checked", true)
+    toggleYouTube.removeAttr("disabled")
   } else toggleYouTube.prop("checked", false)
   
   if (userSettings.get('youTubeMusic') == true) {
@@ -52,7 +51,7 @@ function switchPresence() {
     toggleYouTubeMusic.attr("disabled", "disabled")
   } else {
     userSettings.set('enabled', true);
-    //toggleYouTube.removeAttr("disabled")
+    toggleYouTube.removeAttr("disabled")
     toggleYouTubeMusic.removeAttr("disabled")
   }
 }
