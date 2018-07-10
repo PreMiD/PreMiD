@@ -7,6 +7,12 @@ const { app } = require('electron');
 const config = require('./config.json');
 
 //* Require electron-config
+var os = require('os')
+
+let constants = require('./util/constants')
+
+constants.platform = os.platform
+
 const Config = require('electron-config');
 const userSettings = new Config({
   name: "userSettings"
@@ -19,12 +25,16 @@ if(userSettings.get('enabled') == undefined) {
   userSettings.set('youTubeMusic', true)
 }
 
-//* Set dock Badge Label to Loading...
-app.dock.setBadge(`V${config.version}`)
+
+//* Set dock Badge to Loading...
+if(constants.platform == "darwin") {
+  app.dock.setBadge("Loading...")
+}
 
 //* Require Needed packages
 const AutoLaunch = require('auto-launch');
 const chalk = require("chalk")
+
 let constants = require('./util/constants')
 
 console.log(constants.consolePrefix + chalk.yellow("Loading..."))
