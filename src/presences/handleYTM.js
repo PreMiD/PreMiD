@@ -7,21 +7,21 @@ let presence,
   startTime = new Date(),
   endTime = new Date(),
   lastTitle,
-  lastStartingTime
+  lastStartingTime;
 
 async function updatePresence(data) {
   if (data.currentSongStartTime == lastStartingTime) {
     if ((data.currentSongAuthor && data.currentSongTitle) != undefined) {
-      constants.menuBar.tray.setTitle("")
-    constants.ytmrpc.setActivity({
-      details: entities.decode(data.currentSongTitle),
-      state: entities.decode(data.currentSongAuthor),
-      smallImageKey: "pause",
-      smallImageText: "Playback paused.",
-      largeImageKey: "ytm_lg",
-      instance: true
-    });
-  }
+      constants.menuBar.tray.setTitle("");
+      constants.ytmrpc.setActivity({
+        details: entities.decode(data.currentSongTitle),
+        state: entities.decode(data.currentSongAuthor),
+        smallImageKey: "pause",
+        smallImageText: "Playback paused.",
+        largeImageKey: "ytm_lg",
+        instance: true
+      });
+    }
   } else {
     startTime = new Date();
     endTime =
@@ -31,20 +31,22 @@ async function updatePresence(data) {
     lastTitle = data.currentSongTitle;
     lastStartingTime = data.currentSongStartTime;
 
-    if (data.url.includes("watch?v=")) {
-      if ((data.currentSongAuthor && data.currentSongTitle) != undefined && data.currentSongAuthor != "" && data.currentSongTitle != "") {
-        constants.menuBar.tray.setTitle(entities.decode(data.currentSongTitle))
-        constants.ytmrpc.setActivity({
-          details: entities.decode(data.currentSongTitle),
-          state: entities.decode(data.currentSongAuthor),
-          smallImageKey: "play",
-          smallImageText: "Playing back.",
-          largeImageKey: "ytm_lg",
-          startTimestamp: startTime,
-          endTimestamp: endTime,
-          instance: true
-        });
-      }
+    if (
+      (data.currentSongAuthor && data.currentSongTitle) != undefined &&
+      data.currentSongAuthor != "" &&
+      data.currentSongTitle != ""
+    ) {
+      constants.menuBar.tray.setTitle(entities.decode(data.currentSongTitle));
+      constants.ytmrpc.setActivity({
+        details: entities.decode(data.currentSongTitle),
+        state: entities.decode(data.currentSongAuthor),
+        smallImageKey: "play",
+        smallImageText: "Playing back.",
+        largeImageKey: "ytm_lg",
+        startTimestamp: startTime,
+        endTimestamp: endTime,
+        instance: true
+      });
     }
   }
 }

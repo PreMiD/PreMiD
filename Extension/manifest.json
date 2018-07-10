@@ -20,6 +20,10 @@
     {
       "js": ["jquery-3.2.1.min.js", "handleYTM.js"],
       "matches": ["https://music.youtube.com/*"]
+    },
+    {
+      "js": ["jquery-3.2.1.min.js", "handleYT.js"],
+      "matches": ["https://www.youtube.com/*"]
     }
   ],
   "permissions": ["http://localhost/*", "tabs"]

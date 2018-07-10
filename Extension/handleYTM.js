@@ -7,9 +7,10 @@ window.onload = function() {
 let urlForVideo, songTime, calcDifference;
 
 function updateData() {
-  if (document.location.href.includes("watch?v=")) urlForVideo = document.location.href;
-  songTime = $(".time-info.style-scope.ytmusic-player-bar").html();
-  calcDifference = songTime.split(" / ", 2);
+  if (document.location.href.includes("music.youtube")) urlForVideo = document.location.href;
+  if($(".time-info.style-scope.ytmusic-player-bar").html() != " ") {
+    songTime = $(".time-info.style-scope.ytmusic-player-bar").html();
+    calcDifference = songTime.split(" / ", 2);
 
   var currentSongAuthors = []
 
@@ -46,10 +47,11 @@ function updateData() {
     currentSongTitle: $(".title.style-scope.ytmusic-player-bar").html(),
     currentSongAuthor: currentSongAuthorString,
     currentSongStartTime: getSeconds(calcDifference[0]),
-    currentSongEndTime: getSeconds(calcDifference[1])
+    currentSongEndTime: getSeconds(calcDifference[1]),
+    currentSongCover: $(".image.style-scope.ytmusic-player-bar").attr("src")
   };
 
-  const settings = {
+  $.ajax({
     async: true,
     crossDomain: true,
     url: "http://localhost:3000/",
@@ -59,11 +61,9 @@ function updateData() {
     },
     processData: false,
     data: JSON.stringify(data),
-    error: function(jqXHR, textStatus, errorThrown) {
-      console.log(textStatus)
-    }
+    error: function(jqXHR, textStatus, errorThrown) {}
+  })
   }
-  $.ajax(settings)
 }
 
 function getSeconds(string) {

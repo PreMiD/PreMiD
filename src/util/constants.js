@@ -13,11 +13,12 @@ setup,
 newVersion,
 introRan,
 lastResponse,
-ytmrpc;
+ytmrpc,
+ytrpc;
 
 module.exports = {
   app: "",
-  consolePrefix: chalk.bold(chalk.gray("<[ ") + chalk.bgRed(chalk.black(" Y") + chalk.white("T ")) + chalk.cyan(" Presence") + chalk.gray(" ]> ")),
+  consolePrefix: chalk.bold(chalk.bgHex('#db0918')(chalk.hex('#000000')(" Y") + chalk.hex('#ffffff')("T "))) + chalk.cyan(" Presence") + chalk.hex('#ffffff')(": "),
   win: "",
   menuBar: "",
   menuBarMenu: "",
@@ -33,5 +34,6 @@ module.exports = {
   newVersion: false,
   introRan: false,
   lastResponse: false,
-  ytmrpc: new DiscordRPC.Client({ transport: "ipc" })
+  ytmrpc: new DiscordRPC.Client({ transport: "ipc" }),
+  ytrpc: new DiscordRPC.Client({ transport: "ipc" })
 };
