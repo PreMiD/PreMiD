@@ -1,25 +1,9 @@
-const createWindowsInstaller = require('electron-winstaller').createWindowsInstaller
-const path = require('path')
+var electronInstaller = require('electron-winstaller');
 
-getInstallerConfig()
-  .then(createWindowsInstaller)
-  .catch((error) => {
-    console.error(error.message || error)
-    process.exit(1)
-  })
+resultPromise = electronInstaller.createWindowsInstaller({
+  appDirectory: '/out/YT Presence-win32-64x',
+  outputDirectory: '/dist/installerWindows',
+  authors: 'Timeraa',
+});
 
-function getInstallerConfig () {
-  console.log('creating windows installer')
-  const rootPath = path.join('./')
-  const outPath = path.join(rootPath, 'release-builds')
-
-  return Promise.resolve({
-    appDirectory: path.join(outPath, 'Electron-tutorial-app-win32-ia32/'),
-    authors: 'Christian Engvall',
-    noMsi: true,
-    outputDirectory: path.join(outPath, 'windows-installer'),
-    exe: 'electron-tutorial-app.exe',
-    setupExe: 'ElectronTutorialAppInstaller.exe',
-    setupIcon: path.join(rootPath, 'assets', 'icons', 'win', 'icon.ico')
-  })
-}
+resultPromise.then(() => console.log("It worked!"), (e) => console.log(`No dice: ${e.message}`));
