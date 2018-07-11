@@ -10,7 +10,9 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "lint": "echo \"No linting configured\"",
+    "create-installer-mac": "electron-installer-dmg ./out/YT\\ Presence-darwin-x64/YT\\ Presence.app YT\\ Presence\\ Installer --overwrite --icon=./appIcon.icns --out=./dist",
+    "create-installer-windows": "electron-installer-windows --src ./out/YT\\ Presence-win32-x64/ --dest ./dist"
   },
   "keywords": [],
   "author": "Timeraa",
@@ -36,6 +38,8 @@
     "@electron-forge/maker-rpm": "^6.0.0-beta.22",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.22",
     "@electron-forge/maker-zip": "^6.0.0-beta.22",
-    "electron": "2.0.4"
+    "electron": "2.0.4",
+    "electron-installer-dmg": "^1.0.0",
+    "electron-installer-windows": "^1.1.0"
   }
 }
