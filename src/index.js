@@ -35,8 +35,6 @@ if(constants.platform == "darwin") {
 const AutoLaunch = require('auto-launch');
 const chalk = require("chalk")
 
-let constants = require('./util/constants')
-
 console.log(constants.consolePrefix + chalk.yellow("Loading..."))
 
 //* Check for update
