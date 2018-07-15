@@ -1,8 +1,10 @@
-## ![version](https://img.shields.io/badge/Version-0.1-brightgreen.svg?style=flat-square) [![Discord](https://img.shields.io/discord/465326876601221120.svg?style=flat-square&logo=discord&label=YT%20Presence&colorA=7289DA&colorB=2C2F33)](https://discord.gg/GzCUcf)
+## ![version](https://img.shields.io/badge/Version-0.2-brightgreen.svg?style=flat-square) [![Discord](https://img.shields.io/discord/465326876601221120.svg?style=flat-square&logo=discord&label=YT%20Presence&colorA=7289DA&colorB=2C2F33)](https://discord.gg/GzCUcf)
 
 # <img src="icon.png" width="20" draggable="false"><b> </b>YouTube Presence &middot; Watcha watching there? 👀
 
 _Show your current YouTube video/song in your Discord profile_
+
+# Note: Updates paused until the 21th of July
 
 ## Table of contents
 
