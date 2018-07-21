@@ -4,8 +4,6 @@
 
 _Show your current YouTube video/song in your Discord profile_
 
-# Note: Updates paused until the 21th of July
-
 ## Table of contents
 
 ---
@@ -15,7 +13,10 @@ _Show your current YouTube video/song in your Discord profile_
 - [Installing the Apllication](#installing-the-application)
   - Mac OS
   - Windows
-- FAQ
+- [FAQ](#faq-·-frequently-asked-questions)
+  - Why can't i install it on the Chrome Web Store?
+  - Is this project up to date?
+  - Will this project stay free?
 
 ## Installing the Extension
 
@@ -58,9 +59,9 @@ _Show your current YouTube video/song in your Discord profile_
 
 ## FAQ &middot; Frequently Asked Questions
 
-> ## Why can't i install the extension on the **Chrome Web Store**?<br>
+> ## Why can't i install it on the **Chrome Web Store**?<br>
 
-- Because i am not willing to pay **5$** for only one project. <br>Change that! **_(DonationButton)_**
+- Because i need to activate my google account as a Developer account but that requires **5$** and i am not paying it until i receive donations for this Project. (Donation link soon.)
 
 > ## Is this project still up to date?<br>
 
@@ -72,4 +73,4 @@ _Show your current YouTube video/song in your Discord profile_
 
 ---
 
-### Version 0.1 &middot; By Timeraa
+### Version 0.2 &middot; By Timeraa
