@@ -1,5 +1,9 @@
 const constants = require("../util/constants.js");
 const { ytm_client_id } = require("../config.json");
+const Config = require("electron-config");
+const userData = new Config({
+  name: 'userData'
+})
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
@@ -23,6 +27,7 @@ async function updatePresence(data) {
       });
     }
   } else {
+    userData.set('data', data)
     startTime = new Date();
     endTime =
       Math.floor(startTime / 1000) -

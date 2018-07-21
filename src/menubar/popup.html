@@ -14,6 +14,9 @@
   <script>if (window.module) module = window.module;</script>
   <script>
     const { remote, webContents } = require('electron');
+    const userData = new Config({
+      name: 'userData'
+    })
     function quitApp() {
       remote.app.exit(0);
     }
@@ -25,17 +28,26 @@
       shell.openExternal(this.href);
     });
 
+    $(function () {
+      setInterval(function () {
+        console.log(userData.get('data'))
+        $('#songCover').attr('src', userData.get('data').currentSongCover)
+        $('#songTitle').html(userData.get('data').currentSongTitle)
+        $('#songAuthor').html(userData.get('data').currentSongAuthor)
+      }, 1000)
+    })
+
   </script>
 
 </head>
 
 <body>
   <div id="header">
-    <img src="icon@2x.png">
-    <h1 class="noselect">YT Presence</h1>
-    <a title="Quit" onclick="quitApp()">
-      <i class="fas fa-sign-out-alt"></i>
-    </a>
+    <img id="songCover">
+    <div id="songTitleWrapper">
+      <h1 id="songTitle"></h1>
+    </div>
+    <h2 id="songAuthor"></h2>
   </div>
   <div id="content">
     <div id="heading">

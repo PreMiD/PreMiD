@@ -10,9 +10,9 @@ constants.menuBar = MenuBar({
   enableLargerThanScreen: false,
   movable: true,
   resizable: false,
-  height: 225,
-  width: 250,
-  backgroundColor: 'white',
+  height: 500,
+  width: 750,
+  backgroundColor: 'black',
 })
 
 //* Show connecting message when ready
