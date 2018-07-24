@@ -26,5 +26,8 @@
       "matches": ["https://www.youtube.com/*"]
     }
   ],
-  "permissions": ["http://localhost/*", "tabs"]
+  "permissions": [
+    "http://localhost/*",
+    "tabs"
+  ]
 }
