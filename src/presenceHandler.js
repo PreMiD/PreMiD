@@ -10,7 +10,6 @@ const userSettings = new Config({
   name: "userSettings"
 });
 
-
 //* Create APP
 const app = express()
 
@@ -39,7 +38,7 @@ app.post("/", async (request, response) => {
     //* Check if presence is ready
       if(constants.chromeConnected == false) {
         constants.chromeConnected = true;
-        constants.menuBar.tray.setTitle("Chrome client connected!")
+        constants.menuBar.tray.setTitle("Chrome found!")
         console.log(constants.consolePrefix + chalk.green("Chrome client connected."))
         setTimeout(function() {
           if(data.currentSongAuthor == undefined) {
@@ -73,7 +72,6 @@ app.post("/", async (request, response) => {
       } else {
         if(keepAliveSwitch >= 10) {
           constants.menuBar.tray.setTitle("")
-          constants.ytmrpc.clearActivity()
           constants.ytmrpc.clearActivity()
         }
         keepAliveSwitch += 1
