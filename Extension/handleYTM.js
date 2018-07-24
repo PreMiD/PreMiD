@@ -3,7 +3,7 @@ window.onload = function() {
   setInterval(updateData, 1000);
 };
 
-//* Create used variables
+//* Create needed variables
 let urlForVideo, songTime, calcDifference;
 
 function updateData() {
@@ -66,9 +66,11 @@ function updateData() {
   }
 }
 
+//* Used to extract seconds from Syntax 
+//* 1:39 => 99
 function getSeconds(string) {
-  const a = string.split(":");
+  const s = string.split(":");
 
-  const seconds = +a[0] * 60 + +a[1];
+  const seconds = +s[0] * 60 + +s[1];
   return seconds;
 }

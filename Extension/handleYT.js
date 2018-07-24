@@ -3,7 +3,7 @@ window.onload = function() {
   setInterval(updateData, 1000);
 };
 
-//* Create used variables
+//* Create needed variables
 let urlForVideo,
   songTime,
   calcDifference = [];

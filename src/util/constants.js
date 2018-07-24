@@ -15,7 +15,8 @@ introRan,
 lastResponse,
 ytmrpc,
 ytrpc,
-platform;
+platform,
+data;
 
 module.exports = {
   app: "",
@@ -37,5 +38,6 @@ module.exports = {
   lastResponse: false,
   ytmrpc: new DiscordRPC.Client({ transport: "ipc" }),
   ytrpc: new DiscordRPC.Client({ transport: "ipc" }),
-  platform: ""
+  platform: "",
+  data: ""
 };
