@@ -53,7 +53,7 @@ _Show your current YouTube video/song in your Discord profile_
   <h1>Windows</h1>
   <ul>
     <li>Extract the downloaded <b>.zip</b> file</li>
-    <li>Open extracted folder and run <b>YT Presence.exe</b> file</li>
+    <li>Open extracted folder and run <b>YT Presence.exe</b></li>
   </ul>
 </details>
 
