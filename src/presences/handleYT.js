@@ -3,11 +3,13 @@ const { yt_client_id } = require("../config.json");
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
-let presence,
-  startTime = new Date(),
-  endTime = new Date(),
-  lastTitle,
-  lastStartingTime;
+const Config = require("electron-config");
+const userSettings = new Config({
+  name: 'userSettings'
+})
+
+let startTime = new Date(),
+  lastTitle
 
 async function updatePresence(data) {
   if(lastTitle != data.currentSongTitle) {
@@ -20,7 +22,9 @@ async function updatePresence(data) {
       data.currentSongAuthor != "" &&
       data.currentSongTitle != ""
     ) {
-      constants.menuBar.tray.setTitle(entities.decode(data.currentSongTitle));
+      if(userSettings.get('titleMenubar')) {
+        constants.menuBar.tray.setTitle(entities.decode(data.currentSongTitle));
+      } else constants.menuBar.tray.setTitle("")
       constants.ytrpc.setActivity({
         details: entities.decode(data.currentSongTitle),
         state: entities.decode(data.currentSongAuthor),

@@ -9,28 +9,28 @@ const constants = require('./util/constants')
 //* Require electron-config
 var os = require('os')
 //* Update constant in file
-constants.platform = os.platform
+constants.platform = os.platform()
 
 //* Clear console
 process.stdout.write("\u001b[2J\u001b[0;0H");
 
 //* Setup electron-config
 const Config = require('electron-config');
+
 const userSettings = new Config({
   name: "userSettings"
 });
 
-//* Set default value for electon-config userSettings
-if(userSettings.get('enabled') == undefined) {
-  userSettings.set('enabled', true)
-  userSettings.set('youTube', true)
-  userSettings.set('youTubeMusic', true)
-}
+//* Set default values for electon-config userSettings
+if(userSettings.get('enabled') == undefined) userSettings.set('titleMenubar', true)
+if(userSettings.get('youTube') == undefined) userSettings.set('titleMenubar', true)
+if(userSettings.get('youTubeMusic') == undefined) userSettings.set('titleMenubar', true)
+if(userSettings.get('titleMenubar') == undefined) userSettings.set('titleMenubar', true)
 
 
-//* Set dock Badge to Loading...
+//* Set dock Badge to version
 if(constants.platform == "darwin") {
-  app.dock.setBadge("Loading...")
+  app.dock.setBadge("V" + config.version)
 }
 
 //* Require Needed packages

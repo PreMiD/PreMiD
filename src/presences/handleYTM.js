@@ -4,13 +4,16 @@ const Config = require("electron-config");
 const userData = new Config({
   name: 'userData'
 })
+
+const userSettings = new Config({
+  name: 'userSettings'
+})
+
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
-let presence,
-  startTime = new Date(),
+let startTime = new Date(),
   endTime = new Date(),
-  lastTitle,
   lastStartingTime;
 
 async function updatePresence(data) {
@@ -41,7 +44,9 @@ async function updatePresence(data) {
       data.currentSongAuthor != "" &&
       data.currentSongTitle != ""
     ) {
-      constants.menuBar.tray.setTitle(entities.decode(data.currentSongTitle));
+      if(userSettings.get('titleMenubar')) {
+        constants.menuBar.tray.setTitle(entities.decode(data.currentSongTitle));
+      } else constants.menuBar.tray.setTitle("")
       constants.ytmrpc.setActivity({
         details: entities.decode(data.currentSongTitle),
         state: entities.decode(data.currentSongAuthor),
