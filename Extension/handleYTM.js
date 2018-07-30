@@ -8,7 +8,9 @@ let urlForVideo, songTime, calcDifference;
 
 function updateData() {
   if (document.location.href.includes("music.youtube")) urlForVideo = document.location.href;
-  if($(".time-info.style-scope.ytmusic-player-bar").html() != " ") {
+  if($(".time-info.style-scope.ytmusic-player-bar").html() != "" && 
+  $(".time-info.style-scope.ytmusic-player-bar").html() != " ") {
+
     songTime = $(".time-info.style-scope.ytmusic-player-bar").html();
     calcDifference = songTime.split(" / ", 2);
 
@@ -29,7 +31,7 @@ function updateData() {
   } else {
     for(var i = 0; i < currentSongAuthors.length; i++) {
       if(i == currentSongAuthors.length -1) {
-        currentSongAuthorString = currentSongAuthorString + " - " + currentSongAuthors[i]
+        currentSongAuthorString = currentSongAuthors[i] + " - " + currentSongAuthorString
       } else {
         if(i == 0) {
           currentSongAuthorString = currentSongAuthorString + currentSongAuthors[i]
@@ -51,18 +53,18 @@ function updateData() {
     currentSongCover: $(".image.style-scope.ytmusic-player-bar").attr("src")
   };
 
-  $.ajax({
-    async: true,
-    crossDomain: true,
-    url: "http://localhost:3000/",
-    method: "POST",
-    headers: {
-      "content-type": "application/json"
-    },
-    processData: false,
-    data: JSON.stringify(data),
-    error: function(jqXHR, textStatus, errorThrown) {}
-  })
+    $.ajax({
+      async: true,
+      crossDomain: true,
+      url: "http://localhost:3000/",
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      processData: false,
+      data: JSON.stringify(data)
+    })
+
   }
 }
 

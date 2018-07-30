@@ -1,0 +1,72 @@
+#header {
+  height: 50px;
+  width: 100vw;
+  background-color: #ce1d2a;
+  box-shadow: 0px 0px 8px 2px #cccccc;
+}
+
+#logo {
+  position: relative;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+#title {
+  margin: 0;
+  position: absolute;
+  top: 3px;
+  width: 100vw;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+#options {
+  border-collapse: collapse;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#options th:nth-child(1) {
+  width: 90%;
+}
+
+#options th:nth-child(2) {
+  width: 10%;
+}
+
+#options tbody tr {
+  transition: 1s ease-out;
+  height: 35px;
+}
+
+#options tbody tr:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+
+#close-btn {
+  transition: 0.1s all ease-out;
+  margin-top: 10px;
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #ce1d2a;
+  color: white;
+  width: 75px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0px 0px 8px 2px #cccccc;
+}
+
+#close-btn:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+#close-btn:active {
+  transform: translateX(-50%) scale(0.9);
+}

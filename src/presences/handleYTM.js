@@ -18,7 +18,8 @@ let startTime = new Date(),
 
 async function updatePresence(data) {
   if (data.currentSongStartTime == lastStartingTime) {
-    if ((data.currentSongAuthor && data.currentSongTitle) != undefined) {
+    if ((data.currentSongAuthor && data.currentSongTitle) != undefined &&
+    (data.currentSongAuthor && data.currentSongTitle) != "") {
       constants.menuBar.tray.setTitle("");
       constants.ytmrpc.setActivity({
         details: entities.decode(data.currentSongTitle),

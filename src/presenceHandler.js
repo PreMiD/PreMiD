@@ -30,8 +30,7 @@ function keepAliveCheck() {
   lastKeepAliveSwitch += 1
 }
 
-app.post("/", async (request, response) => {
-  
+app.post("/", async (request, response) => {  
   constants.lastResponse = new Date().getTime();
   data = request.body
   if(data.connected === true) {
@@ -70,7 +69,7 @@ app.post("/", async (request, response) => {
           constants.ytrpc.clearActivity()
         }
       } else {
-        if(keepAliveSwitch >= 10) {
+        if(keepAliveSwitch >= 3) {
           constants.menuBar.tray.setTitle("")
           constants.ytmrpc.clearActivity()
         }

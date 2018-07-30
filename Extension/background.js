@@ -17,4 +17,4 @@ function sendAlive() {
   })
 }
 
-setInterval(sendAlive, 1*1000)
+setInterval(sendAlive, 1*5000)
