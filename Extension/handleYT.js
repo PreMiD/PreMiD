@@ -1,16 +1,16 @@
 //* Start interval
 window.onload = function() {
-  setInterval(updateData, 1000);
-};
+  setInterval(updateData, 1000)
+}
 
 //* Create needed variables
 let urlForVideo,
   songTime,
-  calcDifference = [];
+  calcDifference = []
 
 function updateData() {
   if (document.location.href.includes("youtube"))
-    urlForVideo = document.location.href;
+    urlForVideo = document.location.href
   if ($(".ytp-time-current").html() != " ") {
     const data = {
       connected: true,
@@ -31,7 +31,7 @@ function updateData() {
       currentSongStartTime: getSeconds($(".ytp-time-current").html()),
       currentSongEndTime: getSeconds($(".ytp-time-duration").html()),
       currentSongCover: "NAN"
-    };
+    }
 
     $.ajax({
       async: true,
@@ -44,13 +44,13 @@ function updateData() {
       processData: false,
       data: JSON.stringify(data),
       error: function(jqXHR, textStatus, errorThrown) {}
-    });
+    })
   }
 }
 
 function getSeconds(string) {
-  const a = string.split(":");
+  const a = string.split(":")
 
-  const seconds = +a[0] * 60 + +a[1];
-  return seconds;
+  const seconds = +a[0] * 60 + +a[1]
+  return seconds
 }

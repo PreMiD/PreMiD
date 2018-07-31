@@ -52,4 +52,4 @@ constants.ytrpc.on("ready", () => {
 
 exports.updatePresence = updatePresence;
 
-constants.ytrpc.login(yt_client_id).catch(console.error);
+constants.ytrpc.login({clientId: yt_client_id}).catch(console.error);

@@ -38,7 +38,7 @@ app.post("/", async (request, response) => {
       if(constants.chromeConnected == false) {
         constants.chromeConnected = true;
         constants.menuBar.tray.setTitle("Chrome found!")
-        console.log(constants.consolePrefix + chalk.green("Chrome client connected."))
+        console.log(CONSOLEPREFIX + chalk.green("Chrome client connected."))
         setTimeout(function() {
           if(data.currentSongAuthor == undefined) {
             constants.menuBar.tray.setTitle("")
@@ -91,4 +91,4 @@ function serviceType(service) {
 }
 
 //* Listen on port 3000
-app.listen(3000, () => console.log(constants.consolePrefix + chalk.green("Listening on Port 3000")));
+app.listen(3000, () => console.log(CONSOLEPREFIX + chalk.green("Listening on Port 3000")));

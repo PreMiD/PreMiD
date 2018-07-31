@@ -20,7 +20,6 @@ data;
 
 module.exports = {
   app: "",
-  consolePrefix: chalk.bold(chalk.bgHex('#db0918')(chalk.hex('#000000')(" Y") + chalk.hex('#ffffff')("T "))) + chalk.cyan(" Presence") + chalk.hex('#ffffff')(": "),
   win: "",
   menuBar: "",
   menuBarMenu: "",

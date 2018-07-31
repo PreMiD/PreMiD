@@ -20,6 +20,17 @@ const chalk = require("chalk")
 app.setAppUserModelId("eu.Timeraa.yt-presence")
 
 global.UPDATEAVAIABLE = ""
+global.VERSION = config.version
+global.VERSIONSTRING = VERSION + "-DEVBUILD"
+
+//* YTM global vars
+global.CURRENTSONGTITLE = ""
+global.CURRENTSONGAUTHORS = []
+global.CURRENTSONGAUTHORSSTRING = ""
+global.CURRENTSONGSTARTTIME = ""
+global.CURRENTSONGSTARTTIMESECONDS = ""
+global.CURRENTSONGENDTIME = ""
+global.CONSOLEPREFIX = chalk.bold(chalk.bgHex('#db0918')(chalk.hex('#000000')(" Y") + chalk.hex('#ffffff')("T "))) + chalk.cyan(" Presence") + chalk.hex('#ffffff')(": ")
 
 //* Clear console
 process.stdout.write("\u001b[2J\u001b[0;0H");
@@ -28,9 +39,11 @@ process.stdout.write("\u001b[2J\u001b[0;0H");
 var iShouldQuit = app.makeSingleInstance(function(commandLine, workingDirectory) {
   return true;
 });
+
 if(iShouldQuit){
-  console.log(constants.consolePrefix + chalk.red("App already running, closing current instance..."))
-  app.quit();return;
+  console.log(CONSOLEPREFIX + chalk.red("App already running, closing current instance..."))
+  app.quit();
+  return;
 }
 
 //* Setup electron-config
@@ -50,10 +63,10 @@ if(userSettings.get('autoUpdateCheck') == undefined) userSettings.set('autoUpdat
 
 //* Set dock Badge to version
 if(constants.platform == "darwin") {
-  app.dock.setBadge("V" + config.version)
+  app.dock.setBadge("V" + VERSION)
 }
 
-console.log(constants.consolePrefix + chalk.yellow("Loading..."))
+console.log(CONSOLEPREFIX + chalk.yellow("Loading..."))
 
 //* Setup MenuBar
 require('./menubar/setup')
@@ -64,7 +77,7 @@ const appReady = () => {
   if(userSettings.get('autoLaunch') == undefined) {
     userSettings.set('autoLaunch', true)
     //* Add App to AutoLaunch
-    console.log(constants.consolePrefix + chalk.yellow("Adding App to autostart..."))
+    console.log(CONSOLEPREFIX + chalk.yellow("Adding App to autostart..."))
     let autoLaunch = new AutoLaunch({
       name: 'YT Presence',
       path: app.getPath('exe'),
@@ -74,11 +87,11 @@ const appReady = () => {
     //* Enable AutoLaunch if disabled
     autoLaunch.isEnabled().then((isEnabled) => {
       if (!isEnabled) autoLaunch.enable();
-      console.log(constants.consolePrefix + chalk.green("Added App to autostart."))
+      console.log(CONSOLEPREFIX + chalk.green("Added App to autostart."))
     })
     //* Catch error
     .catch(function(err) {
-      console.log(constants.consolePrefix + chalk.red("Error while adding App to autostart."))
+      console.log(CONSOLEPREFIX + chalk.red("Error while adding App to autostart."))
     })
   }
   

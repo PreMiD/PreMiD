@@ -1,7 +1,6 @@
 const MenuBar = require('menubar')
 const path = require('path')
 const constants = require("../util/constants")
-const config = require("../config")
 const os = require('os');
 const updater = require('../util/updateChecker')
 
@@ -29,7 +28,7 @@ constants.menuBar.on('ready', () => {
 function setupMenu(menuBar) {
   constants.menuBarMenu = new Menu()
   constants.menuBarMenu.append(new MenuItem({
-    label: `YT Presence - V${config.version}`,
+    label: `YT Presence | V${VERSIONSTRING}`,
     enabled: false,
     icon: path.join(__dirname, "../assets/images/icon.png")
   }))
