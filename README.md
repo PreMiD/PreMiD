@@ -6,8 +6,6 @@ _Show your current YouTube video/song in your Discord profile_
 
 ## Table of contents
 
----
-
 - [Table of contents](#table-of-contents)
 - [Installing the Extension](#installing-the-extension)
 - [Installing the Apllication](#installing-the-application)
