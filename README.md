@@ -63,6 +63,7 @@ _Show your current YouTube video/song in your Discord profile_
     <li>Open extracted folder and run <b>YT Presence.exe</b></li>
   </ol>
 </details>
+<br>
 
 **Note: The windows version does not have an installer at the moment. I am working hard on packaging the application into an installer. Please be patient. Thanks**
 
