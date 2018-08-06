@@ -71,7 +71,7 @@ _Show your current YouTube video/song in your Discord profile_
 
 > ## Why can't i install the extension on the **Chrome Web Store**?<br>
 
-- Because i need to activate my google account as a Developer account but that requires **5$** and i am not paying it until i receive donations for this Project. (Donation link soon.)
+- Because i need to activate my google account as a Developer account but that requires **5$** and i am not paying it until i receive donations for this Project. <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS">Donate here</a>
 
 > ## Is this project still up to date?<br>
 
@@ -79,7 +79,7 @@ _Show your current YouTube video/song in your Discord profile_
 
 > ## Will this project stay free?<br>
 
-- Of course! Its open source! But i would highly appreciate a little bit of Money to activate the Google Developer Account so that i can put the Chrome extension on the Chrome Web store. And it would help me to get the money needed for future plans like a **Driving license** 😎
+- Of course! Its open source! But i would highly appreciate a little bit of Money to activate the Google Developer Account so that i can put the Chrome extension on the Chrome Web store. And it would help me to get the money needed for future plans like a **Driving license** 😎<br><br><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS">Donate here</a>
 
 ---
 
