@@ -37,7 +37,19 @@ _Show your current YouTube video/song in your Discord profile_
     <li>Install the <a href="#installing-the-application">application</a></li>
   </ol>
 </details>
-
+<summary><b><u>Installing the Opera extension</u></b> (Click to expand)</summary>
+  <h1>Opera extension installation</h1>
+  <ol>
+    <li>Download the latest version of the <a href="https://github.com/Timeraa/YT-Presence/releases/latest">extension</a>
+    </li>
+    <li>Extract the downloaded <b>.zip</b> file</li>
+    <li>Open Opera</li>
+    <li>Go to <a href="chrome://extensions/">chrome://extensions/</a></li>
+    <li>Drag and drop the extension's folder on the page<br>
+    <li>Load the extracted <b>Extension</b> folder</li>
+    <li>Install the <a href="#installing-the-application">application</a></li>
+  </ol>
+</details>
 ## Installing the Application
 
 <details>
