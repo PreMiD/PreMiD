@@ -37,6 +37,7 @@ _Show your current YouTube video/song in your Discord profile_
     <li>Install the <a href="#installing-the-application">application</a></li>
   </ol>
 </details>
+<details>
 <summary><b><u>Installing the Opera extension</u></b> (Click to expand)</summary>
   <h1>Opera extension installation</h1>
   <ol>
@@ -50,6 +51,7 @@ _Show your current YouTube video/song in your Discord profile_
     <li>Install the <a href="#installing-the-application">application</a></li>
   </ol>
 </details>
+
 ## Installing the Application
 
 <details>
