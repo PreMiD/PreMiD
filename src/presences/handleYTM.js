@@ -24,7 +24,7 @@ module.exports = (data, force) => {
   if (force) {
     if (data.ytm.playback == "paused") {
       constants.menuBar.tray.setTitle("");
-      constants.ytmrpc.setActivity({
+      if(YTMRPCREADY) constants.ytmrpc.setActivity({
         details: entities.decode(CURRENTSONGTITLE),
         state: entities.decode(CURRENTSONGAUTHORSSTRING),
         largeImageKey: "ytm_lg",
@@ -36,7 +36,7 @@ module.exports = (data, force) => {
     } else if (data.ytm.playback == "playing") {
       if(userSettings.get('titleMenubar'))
       constants.menuBar.tray.setTitle(CURRENTSONGTITLE);
-      constants.ytmrpc.setActivity({
+      if(YTMRPCREADY) constants.ytmrpc.setActivity({
         details: entities.decode(CURRENTSONGTITLE),
         state: entities.decode(CURRENTSONGAUTHORSSTRING),
         largeImageKey: "ytm_lg",

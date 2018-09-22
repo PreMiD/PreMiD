@@ -1,4 +1,8 @@
+const chalk = require('chalk')
 var { globalShortcut } = require('electron')
+
+console.log(CONSOLEPREFIX + chalk.yellow("Registering keyboard shortcuts..."))
+
 globalShortcut.register('medianexttrack', function () {
   if (EXTENSIONSOCKET != null) {
     EXTENSIONSOCKET.emit('mediaKeyHandler', { playback: "nextTrack" })
@@ -17,6 +21,4 @@ globalShortcut.register('mediaprevioustrack', function () {
   }
 })
 
-globalShortcut.register('mediastop', function () {
-  console.log('mediastop pressed');
-})
+console.log(CONSOLEPREFIX + chalk.green("Successfully registered keyboard shortcuts."))

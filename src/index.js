@@ -124,7 +124,7 @@ app.on('ready', appReady);
 //* Prevent default behaviour
 app.on('window-all-closed', () => {});
 
-
+//! Remove at deployment
 process.on('unhandledRejection', (reason, p) => {
   console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
   // application specific logging, throwing an error, or other logic here
