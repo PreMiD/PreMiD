@@ -1,4 +1,4 @@
-## ![version](https://img.shields.io/badge/Version-1.0-brightgreen.svg?style=flat-square)
+## ![version](https://img.shields.io/badge/Version-1.0-brightgreen.svg?style=flat-square) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=flat-square)](https://discord.gg/Kw7WaYn)
 
 # <img src="icon.png" width="20" draggable="false"><b> </b>YouTube Presence &middot; Watcha watching there? 👀
 
