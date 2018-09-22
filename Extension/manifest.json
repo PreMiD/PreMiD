@@ -1,14 +1,11 @@
 {
   "name": "YT Presence",
-  "version": "0.3",
-  "description": "Discord Rich Presence for YouTube and YouTube Music.",
-  "manifest_version": 3,
+  "author": "Timeraa",
+  "version": "1.0",
+  "description": "YT Presence adds cool Features to YouTube/YouTube Music. Like for example Discord Rich Presence integration, Media controls and much more.",
+  "manifest_version": 2,
   "icons": {
     "2024": "images/icon.png"
-  },
-  "background": {
-    "scripts": ["jquery-3.3.1.min.js", "background.js"],
-    "persistent": true
   },
   "browser_action": {
     "default_icon": {
@@ -17,13 +14,35 @@
   },
   "content_scripts": [
     {
-      "js": ["jquery-3.3.1.min.js", "handleYTM.js"],
-      "matches": ["https://music.youtube.com/*"]
+      "js": [
+        "jquery-3.3.1.min.js",
+        "socket.io-2.1.1.min.js"
+      ],
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://music.youtube.com/*"
+      ]
     },
     {
-      "js": ["jquery-3.3.1.min.js", "handleYT.js"],
-      "matches": ["https://www.youtube.com/*"]
+      "js": [
+        "handleYTM.js"
+      ],
+      "matches": [
+        "https://music.youtube.com/*"
+      ]
+    },
+    {
+      "js": [
+        "handleYT.js"
+      ],
+      "matches": [
+        "https://www.youtube.com/*"
+      ]
     }
   ],
-  "permissions": ["http://localhost/*", "tabs"]
+  "permissions": [
+    "http://localhost:3000/",
+    "tabs",
+    "storage"
+  ]
 }

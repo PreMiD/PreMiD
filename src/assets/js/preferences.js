@@ -7,13 +7,13 @@ const userSettings = new Config({
   name: "userSettings"
 })
 
-
 var togglePresence,
     toggleYouTube,
     toggleYouTubeMusic,
     toggleTitleMenubar;
 
 $(() => {
+
   var os = require('os')
   if (os.platform() == "darwin") {
     $('<tr><td class="noselect">Title menubar</td><td class="right"><label class="switch"><input class="toggleTitleMenubar" type="checkbox"><span class="slider round"></span></label></td></tr>').insertAfter('.ytmToggle')
@@ -56,7 +56,9 @@ $(() => {
   if (userSettings.get('titleMenubar') == true) {
     toggleTitleMenubar.prop("checked", true)
     toggleTitleMenubar.removeAttr("disabled")
-  } else toggleTitleMenubar.prop("checked", false)
+  } else {
+    toggleTitleMenubar.prop("checked", false)
+  }
 
   if (userSettings.get('autoLaunch') == true) {
     toggleAutoLaunch.prop("checked", true)
@@ -74,18 +76,14 @@ function switchPresence() {
     userSettings.set('enabled', false);
     userSettings.set('youTube', false);
     userSettings.set('youTubeMusic', false);
-    userSettings.set('titleMenubar', false);
     toggleYouTube.prop("checked", false)
     toggleYouTube.attr("disabled", "disabled")
     toggleYouTubeMusic.prop("checked", false)
     toggleYouTubeMusic.attr("disabled", "disabled")
-    toggleTitleMenubar.prop("checked", false)
-    toggleTitleMenubar.attr("disabled", "disabled")
   } else {
     userSettings.set('enabled', true);
     toggleYouTube.removeAttr("disabled")
     toggleYouTubeMusic.removeAttr("disabled")
-    toggleTitleMenubar.removeAttr("disabled")
   }
 }
 

@@ -1,20 +1,46 @@
-## ![version](https://img.shields.io/badge/Version-0.3-brightgreen.svg?style=flat-square)
+## ![version](https://img.shields.io/badge/Version-1.0-brightgreen.svg?style=flat-square)
 
 # <img src="icon.png" width="20" draggable="false"><b> </b>YouTube Presence &middot; Watcha watching there? 👀
 
-_Show your current YouTube video/song in your Discord profile_
+_YT Presence adds cool Features to YouTube/YouTube Music. Like for example **Discord Rich Presence** integration, **Media controls** and much more._
 
-## Table of contents
+# Table of contents
 
-- [Table of contents](#table-of-contents)
-- [Installing the Extension](#installing-the-extension)
-- [Installing the Application](#installing-the-application)
-  - Mac OS
-  - Windows
+- [About](#about)
+- [Features](#features)
+- [Support](#support)
+- [Installation](#installation)
+  - [Installing the Extension](#installing-the-extension)
+    - Chrome
+    - Firefox
+    - Opera
+  - [Installing the Application](#installing-the-application)
+    - Mac OS
+    - Windows
 - [FAQ](#faq-·-frequently-asked-questions)
   - Why can't i install it on the Chrome Web Store?
   - Is this project up to date?
   - Will this project stay free?
+
+# About
+YouTube Presence (YT Presence) adds Discord Rich Presence support to YouTube and YouTube Music. It also adds Media control functionality (Play/Pause... buttons on keyboard)
+
+# Features
+- Discord Rich Presence Integration
+- Media control keys
+- *More soon*
+
+# Support
+### **Operating Systems**
+- Windows
+- Mac OS
+
+### **Browsers**
+- Chrome
+- Firefox
+- Opera
+
+# Installation
 
 ## Installing the Extension
 
@@ -81,7 +107,7 @@ _Show your current YouTube video/song in your Discord profile_
 
 **Note: The windows version does not have an installer at the moment. I am working hard on packaging the application into an installer. Please be patient. Thanks**
 
-## FAQ &middot; Frequently Asked Questions
+# FAQ &middot; Frequently Asked Questions
 
 > ## Why can't i install the extension on the **Chrome Web Store**?<br>
 
@@ -93,8 +119,8 @@ _Show your current YouTube video/song in your Discord profile_
 
 > ## Will this project stay free?<br>
 
-- Of course! Its open source! But i would highly appreciate a little bit of Money to activate the Google Developer Account so that i can put the Chrome extension on the Chrome Web store. And it would help me to get the money needed for future plans like a **Driving license** 😎<br><br><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US">Donate here</a>
+- Of course! Its open source! But i would highly appreciate a little bit of Money to activate the Google Developer Account to put the Extension onto the Chrome Web store. The money you donate also helps me for my Future, like a **Driving license**. <br><br><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US">Donate here</a>
 
 ---
 
-### YT Presence version 0.3 &middot; By Timeraa
+### YT Presence version 1.0 &middot; By Timeraa

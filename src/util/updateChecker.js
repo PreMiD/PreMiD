@@ -14,6 +14,10 @@ function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false) {
     json: true,
     headers: {'user-agent': 'node.js'}
   }, function (error, response, body) {
+    if(error) {
+      console.log(CONSOLEPREFIX + chalk.red("Error while checking for update. " + error))
+      return
+    }
     //* Remove v from version
     var gitVersion = body.tag_name.replace('v', '')
     //* Compare version

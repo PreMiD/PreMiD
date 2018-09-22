@@ -33,11 +33,15 @@ function setupMenu(menuBar) {
     icon: path.join(__dirname, "../assets/images/icon.png")
   }))
   constants.menuBarMenu.append(new MenuItem({
-    click: checkForUpdate,
-    label: "Check for update"
+    type: "separator"
   }))
   constants.menuBarMenu.append(new MenuItem({
-    type: "separator"
+    click: showAbout,
+    label: "About"
+  }))
+  constants.menuBarMenu.append(new MenuItem({
+    click: checkForUpdate,
+    label: "Check for update"
   }))
   constants.menuBarMenu.append(new MenuItem({
     click: showSettingsPanel,
@@ -51,20 +55,39 @@ function setupMenu(menuBar) {
   }))
 
   constants.menuBar.tray.setContextMenu(constants.menuBarMenu)
+  process.env.MENUBAR = constants.menuBar
 }
 
 function checkForUpdate() {
   updater.checkForUpdate(true, true)
 }
 
+function showAbout() {
+  var aboutWindow = new BrowserWindow({
+    center: true,
+    maximizable: false,
+    minimizable: false,
+    resizable: false,
+    height: 500,
+    width: 400,
+    alwaysOnTop: true
+  })
+
+  aboutWindow.loadURL("file://" + path.join(__dirname, "../about.html"))
+
+  aboutWindow.on('close', () => {
+    aboutWindow = null;
+  })
+}
+
 function showSettingsPanel() {
 
   switch(os.platform()) {
     case "darwin":
-      menuBarHeight = 375;
+      menuBarHeight = 340;
       break;
     default:
-      menuBarHeight = 335;
+      menuBarHeight = 300;
       break;
   } 
 
@@ -72,16 +95,11 @@ function showSettingsPanel() {
     center: true,
     maximizable: false,
     resizable: false,
-    show: false,
     height: menuBarHeight,
     width: 400
   })
 
   settingsWindow.loadURL("file://" + path.join(__dirname, "../preferences.html"))
-
-  settingsWindow.on('ready-to-show', () => {
-    settingsWindow.show()
-  })
 
   settingsWindow.on('blur', () => {
     settingsWindow.close()

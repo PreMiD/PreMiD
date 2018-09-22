@@ -1,6 +1,7 @@
 //* Handle Winstall
 require('./util/handleWinstall') 
 
+//#region Define constants
 //* Declare needed constants
 const {app} = require('electron')
 
@@ -9,19 +10,30 @@ const AutoLaunch = require('auto-launch')
 const config = require('./config.json');
 const constants = require('./util/constants')
 //* Require electron-config
-var os = require('os')
+const os = require('os')
 //* Update constant in file
 constants.platform = os.platform()
 //* Require Update checker
 const updater = require('./util/updateChecker')
 //* Require Needed packages
 const chalk = require("chalk")
+//* Setup electron-config
+const Config = require('electron-config');
+//#endregion
 
+//* Required for Windows Push notifications
 app.setAppUserModelId("eu.Timeraa.yt-presence")
 
 global.UPDATEAVAIABLE = ""
 global.VERSION = config.version
-global.VERSIONSTRING = VERSION + "-DEVBUILD"
+if(config.devBuild) {
+  global.VERSIONSTRING = VERSION + "-DEVBUILD"
+} else {
+  global.VERSIONSTRING = VERSION
+}
+
+global.BROWSERCONNECTIONSTATE = "NOT_CONNECTED"
+global.EXTENSIONSOCKET = null
 
 //* YTM global vars
 global.CURRENTSONGTITLE = ""
@@ -31,6 +43,9 @@ global.CURRENTSONGSTARTTIME = ""
 global.CURRENTSONGSTARTTIMESECONDS = ""
 global.CURRENTSONGENDTIME = ""
 global.CONSOLEPREFIX = chalk.bold(chalk.bgHex('#db0918')(chalk.hex('#000000')(" Y") + chalk.hex('#ffffff')("T "))) + chalk.cyan(" Presence") + chalk.hex('#ffffff')(": ")
+global.YTRPCREADY = false
+global.YTMRPCREADY = false
+
 
 //* Clear console
 process.stdout.write("\u001b[2J\u001b[0;0H");
@@ -45,9 +60,6 @@ if(iShouldQuit){
   app.quit();
   return;
 }
-
-//* Setup electron-config
-const Config = require('electron-config');
 
 const userSettings = new Config({
   name: "userSettings"
@@ -73,7 +85,9 @@ require('./menubar/setup')
 
 //* App ready
 const appReady = () => {
-  
+  //* Require shortcuts
+  require('./util/shortcutHandler')
+
   if(userSettings.get('autoLaunch') == undefined) {
     userSettings.set('autoLaunch', true)
     //* Add App to AutoLaunch
@@ -109,3 +123,9 @@ app.on('ready', appReady);
 
 //* Prevent default behaviour
 app.on('window-all-closed', () => {});
+
+
+process.on('unhandledRejection', (reason, p) => {
+  console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
+  // application specific logging, throwing an error, or other logic here
+});

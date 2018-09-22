@@ -2,8 +2,6 @@
 const chalk = require("chalk")
 const express = require("express")
 var constants = require('./util/constants.js')
-let YTM = require('./presences/handleYTM.js');
-let YT = require('./presences/handleYT.js');
 
 const Config = require('electron-config');
 const userSettings = new Config({
@@ -15,80 +13,76 @@ const app = express()
 
 app.use(express.json());
 
-let data
-
 var keepAliveSwitch = 0
 var lastKeepAliveSwitch = 0
+let ytrpcused = false
+let ytmrpcused = false
 
 setInterval(keepAliveCheck, 1000)
 
 function keepAliveCheck() {
-  if(lastKeepAliveSwitch > keepAliveSwitch + 10) {
+  if (lastKeepAliveSwitch > keepAliveSwitch + 10) {
     constants.menuBar.tray.setTitle("")
-    constants.ytmrpc.clearActivity()
+    if(YTMRPCREADY) constants.ytmrpc.clearActivity()
+    if(YTRPCREADY) constants.ytrpc.clearActivity()
   }
   lastKeepAliveSwitch += 1
 }
 
-app.post("/", async (request, response) => {  
-  constants.lastResponse = new Date().getTime();
-  data = request.body
-  if(data.connected === true) {
-    //* Check if presence is ready
-      if(constants.chromeConnected == false) {
-        constants.chromeConnected = true;
-        constants.menuBar.tray.setTitle("Chrome found!")
-        console.log(CONSOLEPREFIX + chalk.green("Chrome client connected."))
-        setTimeout(function() {
-          if(data.currentSongAuthor == undefined) {
-            constants.menuBar.tray.setTitle("")
-          }
-          constants.introRan = true
-        }, 5*1000)
-      }
-      if(data.service != "keepAlive" && data.service == "ytm") {
-        lastKeepAliveSwitch = 0
-        keepAliveSwitch = 0
-        if(userSettings.get('youTubeMusic') == true) {
-          if(constants.introRan && constants.chromeConnected && constants.presenceReady) {
-            if(serviceType(data.service) == "ytm") YTM.updatePresence(data)
-          }
-        } else {
-          constants.menuBar.tray.setTitle("")
-          constants.ytmrpc.clearActivity()
-        }
-      } else if(data.service != "keepAlive" && data.service == "yt") {
-        lastKeepAliveSwitch = 0
-        keepAliveSwitch = 0
-        if(userSettings.get('youTube') == true) {
-          if(constants.introRan && constants.chromeConnected && constants.presenceReady) {
-            if(serviceType(data.service) == "yt") YT.updatePresence(data)
-          }
-        } else {
-          constants.menuBar.tray.setTitle("")
-          constants.ytrpc.clearActivity()
-        }
-      } else {
-        if(keepAliveSwitch >= 3) {
-          constants.menuBar.tray.setTitle("")
-          constants.ytmrpc.clearActivity()
-        }
-        keepAliveSwitch += 1
-      }
-  }
-  return response.sendStatus(200);
-})
+//* Listen on port 3000
+app.listen(3002, () => console.log(CONSOLEPREFIX + chalk.green("Listening on Port 3002")));
 
-function serviceType(service) {
-  switch(service) {
-    case "ytm":
-      return "ytm"
-    case "yt":
-      return "yt"
-    default:
-      return false
+var extension = express();
+var http = require('http')
+// Socket connection
+/* Creates new HTTP server for socket */
+var socketServer = require('http').createServer(extension);
+var io = require('socket.io')(socketServer);
+/* Listen for socket connection on port 3002 */
+socketServer.listen(3000, function () {
+  console.log(CONSOLEPREFIX + chalk.green("Listening on Port 3000"))
+});
+/* This event will emit when client connects to the socket server */
+io.on('connection', function (socket) {
+  global.EXTENSIONSOCKET = socket
+  BROWSERCONNECTIONSTATE = "CONNECTED"
+
+  socket.on('playBackChange', (data) => {
+    updatePresence(data, true)
+  })
+
+  socket.on('updateData', (data) => {
+    updatePresence(data)
+  })
+});
+
+/* Create HTTP server for node application */
+var server = http.createServer(extension);
+/* Node application will be running on 3000 port */
+server.listen(3001);
+
+function updatePresence(data, force = false) {
+  lastKeepAliveSwitch = 0
+  if(!userSettings.get('titleMenubar')) constants.menuBar.tray.setTitle("")
+
+  if (data.ytm != undefined) {
+    ytmrpcused = true
+    if(userSettings.get('youTubeMusic')) require('./presences/handleYTM.js')(data, force); else if(YTMRPCREADY) constants.ytmrpc.clearActivity()
+  } else if(data.yt != undefined) {
+    ytrpcused = true
+    if(userSettings.get('youTube')) require('./presences/handleYT.js')(data, force); else if(YTRPCREADY) constants.ytrpc.clearActivity()
+  }
+
+  if(data.ytm == undefined && YTMRPCREADY) {
+    if(ytmrpcused == true) {
+      ytmrpcused = false
+    constants.ytmrpc.clearActivity()
+    }
+  }
+  if(data.yt == undefined && YTRPCREADY) {
+    if(ytrpcused == true) {
+      ytrpcused = false
+    constants.ytrpc.clearActivity()
+    }
   }
 }
-
-//* Listen on port 3000
-app.listen(3000, () => console.log(CONSOLEPREFIX + chalk.green("Listening on Port 3000")));

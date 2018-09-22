@@ -1,22 +1,18 @@
-const chalk = require("chalk")
 const DiscordRPC = require("discord-rpc")
 
-let app,
-consolePrefix,
-win,
-menuBar,
-menuBarMenu,
-chromeConnected,
-presenceReady,
-presence,
-setup,
-newVersion,
-introRan,
-lastResponse,
-ytmrpc,
-ytrpc,
-platform,
-data;
+let ytmrpc,
+ytrpc
+
+try {
+  ytmrpc = new DiscordRPC.Client({ transport: "ipc" });
+} catch(err) {
+  console.log("Could not connect RPC")
+}
+try {
+  ytrpc = new DiscordRPC.Client({ transport: "ipc" });
+} catch(err) {
+  console.log("Could not connect RPC")
+}
 
 module.exports = {
   app: "",
@@ -35,8 +31,8 @@ module.exports = {
   newVersion: false,
   introRan: false,
   lastResponse: false,
-  ytmrpc: new DiscordRPC.Client({ transport: "ipc" }),
-  ytrpc: new DiscordRPC.Client({ transport: "ipc" }),
+  ytmrpc: ytmrpc,
+  ytrpc: ytrpc,
   platform: "",
   data: ""
 };

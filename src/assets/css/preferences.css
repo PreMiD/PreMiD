@@ -1,4 +1,29 @@
+html {
+  transition: 0.5s background-color ease-out;
+}
+
+html.dark {
+  background-color: black;
+}
+
+html.dark #options {
+  color: white;
+}
+
+html.dark #header {
+  box-shadow: 0px 0px 8px 2px #3b3b3b;
+}
+
+html.dark #close-btn {
+  box-shadow: 0px 0px 8px 2px #3b3b3b;
+}
+
+html.dark #options tbody tr:not(:last-child) {
+  border-bottom: 1px solid #3b3b3b;
+}
+
 #header {
+  transition: 0.5s box-shadow ease-out;
   height: 50px;
   width: 100vw;
   background-color: #ce1d2a;
@@ -19,6 +44,7 @@
   text-align: center;
   color: white;
   font-weight: bold;
+  font-style: italic;
 }
 
 #options {
@@ -26,6 +52,7 @@
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
+  font-weight: 500;
 }
 
 #options th:nth-child(1) {
@@ -37,7 +64,7 @@
 }
 
 #options tbody tr {
-  transition: 1s ease-out;
+  transition: 1s color ease-in-out, 0.75s border ease-out;
   height: 35px;
 }
 
@@ -46,7 +73,7 @@
 }
 
 #close-btn {
-  transition: 0.1s all ease-out;
+  transition: 0.1s transform ease-out, 0.5s box-shadow ease-out;
   margin-top: 10px;
   appearance: none;
   border: none;
@@ -58,6 +85,7 @@
   height: 30px;
   border-radius: 5px;
   font-size: 20px;
+  font-weight: 500;
   margin-left: 50%;
   transform: translateX(-50%);
   box-shadow: 0px 0px 8px 2px #cccccc;

@@ -1,19 +1,11 @@
 <html>
 
 <head>
-  <title>Preferences | YT Presence</title>
+  <title>Preferences &bull; YT Presence</title>
   <link rel="icon" type="image/png" href="assets/images/icon@2x.png">
   <link href="assets/css/reset.css" rel="stylesheet">
   <link href="assets/css/preferences.css" rel="stylesheet">
   <link href="assets/css/inputs.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
-
-  <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
-
-  <script src="assets/js/jquery-3.3.1.min.js"></script>
-  <script src="assets/js/preferences.js"></script>
-
-  <script>if (window.module) module = window.module;</script>
 </head>
 
 <body>
@@ -75,27 +67,25 @@
             </label>
           </td>
         </tr>
-        <tr>
-          <td>Dark mode</td>
-          <td>
-            <label class="switch">
-              <input class="toggleDarkMode" type="checkbox">
-              <span class="slider round"></span>
-            </label>
-          </td>
-        </tr>
       </tbody>
     </table>
   </div>
   <div id="footer">
     <input id="close-btn" type="button" value="Close">
   </div>
+
+  <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/preferences.js"></script>
+
+  <script>if (window.module) module = window.module;</script>
+  <script>
+    document.getElementById("close-btn").addEventListener("click", function (e) {
+      var window = remote.getCurrentWindow();
+      window.close();
+    });
+  </script>
 </body>
-<script>
-  document.getElementById("close-btn").addEventListener("click", function (e) {
-    var window = remote.getCurrentWindow();
-    window.close();
-  });
-</script>
 
 </html>

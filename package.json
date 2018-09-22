@@ -10,7 +10,6 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\"",
     "create-installer-mac": "electron-installer-dmg ./out/YT\\ Presence-darwin-x64/YT\\ Presence.app YT\\ Presence\\ Installer --overwrite --icon=./appIcon.icns --out=./dist",
     "create-installer-windows": "electron-installer-windows --src ./out/YT\\ Presence-win32-x64/ --dest ./dist"
   },
@@ -22,7 +21,6 @@
   },
   "dependencies": {
     "auto-launch": "^5.0.5",
-    "chalk": "^2.4.1",
     "discord-rpc": "^3.0.0",
     "electron-config": "^1.0.0",
     "electron-squirrel-startup": "^1.0.0",
@@ -30,7 +28,9 @@
     "fs": "0.0.1-security",
     "html-entities": "^1.2.1",
     "menubar": "^5.2.3",
-    "request": "^2.87.0"
+    "npm": "^6.4.1",
+    "request": "^2.88.0",
+    "socket.io": "^2.1.1"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.22",
@@ -38,6 +38,7 @@
     "@electron-forge/maker-rpm": "^6.0.0-beta.22",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.22",
     "@electron-forge/maker-zip": "^6.0.0-beta.22",
+    "chalk": "^2.4.1",
     "electron": "2.0.4",
     "electron-installer-dmg": "^1.0.0",
     "electron-installer-windows": "^1.1.0"
