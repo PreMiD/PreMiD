@@ -20,20 +20,23 @@
     <p>a</p>
     <p>a</p>
   </div>
-  <div>
+  <div id="aboutMe">
     <p>
       My name is <a href="https://github.com/Timeraa">Timeraa (Florian Metz)</a>. I am a Web developer, master a lot of
       known languages and i love the TV series
-      called
+      called<br>
       <a href="https://en.wikipedia.org/wiki/My_Little_Pony:_Friendship_Is_Magic">My little Pony: Friendship is Magic</a>.
     </p>
+  </div>
+  <div id="aboutYTP">
     <p>
       I started this project because i recently switched to <a href="https://music.youtube.com/">YouTube Music</a>, now
       i wanted to have <b>Rich Presence
-        Integration</b> for <a href="https://discordapp.com/">Discord</a>, so i just started to create this.
+        Integration</b> for <a href="https://discordapp.com/">Discord</a>, so i just started to create this. And now
+      you can use it. :P
     </p>
-    <button>Support me!</button>
   </div>
+  <button id="supportMe">Support me!</button>
   <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
 
   <script src="assets/js/jquery-3.3.1.min.js"></script>
@@ -88,6 +91,28 @@
           return 2500 + 75 * i
         },
         offset: 0
+      }).add({
+        targets: '#aboutMe',
+        translateY: [-25, 0],
+        opacity: [0, 1],
+        scale: [0.75, 1],
+        easing: 'easeInOutSine',
+        duration: 1500,
+        offset: 3250
+      }).add({
+        targets: '#aboutYTP',
+        translateY: [-25, 0],
+        opacity: [0, 1],
+        scale: [0.75, 1],
+        easing: 'easeInOutSine',
+        duration: 1500,
+        offset: 4500
+      }).add({
+        targets: '#supportMe',
+        opacity: [0, 1],
+        scale: [0, 1],
+        duration: 1500,
+        offset: 5000
       })
     })
 

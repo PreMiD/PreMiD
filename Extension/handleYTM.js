@@ -3,12 +3,9 @@ var playButton = '<svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" f
 var pauseButton = '<svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope iron-icon" style="pointer-events: none; display: block; width: 100%; height: 100%;"><g class="style-scope iron-icon"><path d="M8 5v14l11-7z" class="style-scope iron-icon"></path></g></svg>'
 
 //* Create needed variables
-let songTime,
-  splitTime,
+let splitTime,
   songCurrentTime,
   songEndTime,
-  songTitle,
-  songCover,
   songAuthors = [],
   playback = true,
   eventType
@@ -28,7 +25,9 @@ $(document).ready(() => {
 var socket = io.connect('http://localhost:3000/');
 
 //* Log when connected
-socket.on('connect', function () { console.log('YT-Presence: Connected to Application') })
+socket.on('connect', function () { console.log('YT Presence: %cConnected to Application', "color: green; font-weight: 700") })
+
+socket.on('error', (err) => console.log(`Error while connecting... ${err}`))
 
 //* When we receive messages from the application
 socket.on('mediaKeyHandler', function (data) {

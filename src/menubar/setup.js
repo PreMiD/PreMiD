@@ -68,8 +68,8 @@ function showAbout() {
     maximizable: false,
     minimizable: false,
     resizable: false,
-    height: 500,
     width: 400,
+    height: 600,
     alwaysOnTop: true
   })
 

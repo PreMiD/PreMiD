@@ -44,24 +44,25 @@ img {
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
 }
 
-div {
-  width: 350px;
-  margin-left: 25px;
+#aboutMe, #aboutYTP {
+  width: 380px;
+  margin: auto;
 }
 
 a {
-  position: relativ;
+  position: relative;
   color: rgb(0, 150, 255);
   text-decoration: none;
+  cursor: pointer;
 }
 
 a:after {
   content: '';
   position: absolute;
-  left: 0; bottom: -7px;
-  height: 4px;
+  left: 0; bottom: -1px;
+  height: 2px;
   width: 0;
-  transition: width .25s;
+  transition: width .25s ease-out;
   background-color: rgb(0, 125, 255);
 }
 
