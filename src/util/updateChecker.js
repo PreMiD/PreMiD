@@ -1,4 +1,4 @@
-const { Notification } = require('electron');
+const { Notification, BrowserWindow } = require('electron');
 
 const request = require("request")
 const chalk = require("chalk")
