@@ -52,6 +52,10 @@
       shell.openExternal(this.href);
     });
 
+    $('#supportMe').click(() => {
+      shell.openExternal("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US");
+    })
+
     $(window).on("load", () => {
       $('html').addClass("ready")
 

@@ -1,0 +1,50 @@
+<html>
+
+<head>
+  <title>YT Presence &bull; Update avaiable!</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/update.css">
+  <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/showdown.min.js"></script>
+
+  <script>if (window.module) module = window.module;</script>
+  <script>
+    var converter = new showdown.Converter()
+
+    const ipc = require('electron').ipcRenderer;
+    const remote = require('electron').remote
+
+    ipc.on('updateData', (event, message) => {
+      $('#updateLabel').html(`${message.tag_name}`)
+      $('#description').html(converter.makeHtml(message.body))
+    })
+  </script>
+</head>
+
+<body>
+  <div id="header">
+    <img src="assets/images/logo.png">
+    <h1>YT Presence</h1>
+  </div>
+  <div id="content">
+    <p id="description"></p>
+  </div>
+  <div id="footer">
+    <button id="update">Update</button>
+    <button id="later">Later</button>
+  </div>
+  <script>
+    $('#update').click(() => {
+      console.log("LOL")
+    })
+
+    $('#later').click(e => {
+      console.log("close")
+      remote.getCurrentWindow().close()
+    })
+  </script>
+</body>
+
+</html>

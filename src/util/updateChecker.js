@@ -1,5 +1,7 @@
 const { Notification, BrowserWindow } = require('electron');
 
+const path = require('path')
+
 const request = require("request")
 const chalk = require("chalk")
 let constants = require('./constants')
@@ -26,6 +28,26 @@ function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false) {
       constants.newVersion = gitVersion
   
       console.log(CONSOLEPREFIX + chalk.cyan("New version avaiable: ") + chalk.red(`V${VERSION}`) + chalk.blue(' > ') + chalk.yellow(`V${gitVersion}`))
+
+      var updateWindow = new BrowserWindow({
+        center: true,
+        maximizable: false,
+        minimizable: false,
+        resizable: true,
+        height: 500,
+        width: 400,
+        alwaysOnTop: true
+      })
+    
+      updateWindow.loadURL("file://" + path.join(__dirname, "../update.html"))
+      updateWindow.webContents.on('did-finish-load', () => {
+        updateWindow.webContents.send('updateData', body);
+      });
+    
+      updateWindow.on('close', () => {
+        updateWindow = null;
+      })
+
     } else {
       global.UPDATEAVAIABLE = false
       console.log(CONSOLEPREFIX + chalk.cyan("Up to date! ") + chalk.yellow(`V${VERSION}`))
@@ -43,6 +65,7 @@ function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false) {
 
   //* If sendNotification
   if(sendNotification && UPDATEAVAIABLE != false) {
+
     const updateNotification = new Notification({
       title: 'Updater | YT Presence',
       body: `Update avaiable! (V${UPDATEAVAIABLE})\nClick here to download the newest version.`,
