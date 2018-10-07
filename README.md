@@ -1,8 +1,8 @@
-## ![version](https://img.shields.io/badge/Version-0.3-brightgreen.svg?style=flat-square)
+## ![1.0 Pre-release](https://img.shields.io/github/package-json/v/badges/shields.svg)
 
 # <img src="icon.png" width="20" draggable="false"><b> </b>YouTube Presence &middot; Watcha watching there? 👀
 
-_Show your current YouTube video/song in your Discord profile_
+_Add rich presence support to YouTube Music and more!_
 
 ## Table of contents
 
@@ -85,7 +85,8 @@ _Show your current YouTube video/song in your Discord profile_
 
 > ## Why can't i install the extension on the **Chrome Web Store**?<br>
 
-- Because i need to activate my google account as a Developer account but that requires **5$** and i am not paying it until i receive donations for this Project. <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US">Donate here</a>
+- ~~Because i need to activate my google account as a Developer account but that requires **5$** and i am not paying it until i receive donations for this Project.<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US">Donate here</a>~~
+- You can now! <a href="#">Chrome Extension</a>
 
 > ## Is this project still up to date?<br>
 
@@ -97,4 +98,4 @@ _Show your current YouTube video/song in your Discord profile_
 
 ---
 
-### YT Presence version 0.3 &middot; By Timeraa
+### YT Presence &middot; By Timeraa

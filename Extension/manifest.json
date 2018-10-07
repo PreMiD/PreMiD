@@ -1,7 +1,7 @@
 {
   "name": "YT Presence",
   "version": "0.3",
-  "description": "Discord Rich Presence for YouTube and YouTube Music.",
+  "description": "Add rich presence support to YouTube Music and more!",
   "manifest_version": 3,
   "icons": {
     "2024": "images/icon.png"
@@ -23,7 +23,11 @@
     {
       "js": ["jquery-3.3.1.min.js", "handleYT.js"],
       "matches": ["https://www.youtube.com/*"]
-    }
+    },
+    {
+      "js": ["jquery-3.3.1.min.js", "handleYT.js"],
+      "matches": ["https://youtube.com/*"]
+    },
   ],
   "permissions": ["http://localhost/*", "tabs"]
 }
