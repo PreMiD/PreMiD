@@ -1,3 +1,5 @@
+const DiscordRPC = require("discord-rpc")
+
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 const { ytm_client_id } = require("../config.json");
@@ -9,19 +11,19 @@ let constants = require('../util/constants.js')
 let lastEndTime = 0
 let pauseRPCChange = 0
 
-constants.ytmrpc.login({clientId: ytm_client_id})
-.catch(err => {
-  var retryRPCLogin = setInterval(() => {
-    constants.ytmrpc.login({ clientId: ytm_client_id })
+var retryRPCLogin = setInterval(() => {
+  constants.ytmrpc = new DiscordRPC.Client({ transport: "ipc" });
+  constants.ytmrpc.login({ clientId: ytm_client_id })
+  .catch(err => console.log(`${CONSOLEPREFIX}YTMRPC: ${err.message}`))  
+  constants.ytmrpc.on("ready", () => {
     clearInterval(retryRPCLogin)
-  }, 10 * 1000)
-});
+    YTMRPCREADY = true
+  })
+}, 10 * 1000)
 
-constants.ytmrpc.on("ready", () => YTMRPCREADY = true)
-constants.ytmrpc.on("disconnected", () => console.log("OH NOES!"))
-constants.ytmrpc.on("errored", () => console.log("OH NOES!"))
 
 module.exports = (data, force) => {
+  //console.log(constants.ytmrpc)
   if (force) {
     if (data.ytm.playback == "paused") {
       constants.tray.setTitle("");

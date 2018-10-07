@@ -22,12 +22,6 @@ module.exports = {
   chromeConnected: false,
   presenceReady: false,
   setup: false,
-  presence: {
-    details: "Waiting for music",
-    state: "to start playing...",
-    largeImageKey: "ytm_lg",
-    instance: true
-  },
   newVersion: false,
   introRan: false,
   lastResponse: false,
