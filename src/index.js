@@ -3,8 +3,7 @@ require('./util/handleWinstall')
 
 //#region Define constants
 //* Declare needed constants
-const {app, Tray} = require('electron')
-const path = require('path')
+const {app} = require('electron')
 
 const AutoLaunch = require('auto-launch')
 //* Require config
@@ -23,7 +22,7 @@ const Config = require('electron-config');
 //#endregion
 
 //* Required for Windows Push notifications
-app.setAppUserModelId("eu.Timeraa.yt-presence")
+app.setAppUserModelId("eu.Timeraa.yt_presence")
 
 global.UPDATEAVAIABLE = ""
 global.VERSION = config.version

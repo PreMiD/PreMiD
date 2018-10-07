@@ -12,6 +12,8 @@ exports.run = () => {
     alwaysOnTop: true
   })
 
+  aboutWindow.setMenu(null)
+
   aboutWindow.loadURL("file://" + path.join(__dirname, "../about.html"))
 
   aboutWindow.on('close', () => {

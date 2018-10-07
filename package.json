@@ -7,19 +7,18 @@
   "repository": "Timeraa/YT-Presence",
   "scripts": {
     "start": "electron src/.",
-    "package": "electron-packager ./src/ --out=./out/ --asar --overwrite --icon=./appIcon.ico --osx-sign.identity='Florian Metz'",
+    "pkgmac": "electron-packager ./src/ --out=./out/ --asar --overwrite --icon=./appIcon.ico --osx-sign.identity='Florian Metz'",
+    "pkgwin": "electron-packager ./src/ --out=./out/ --overwrite --icon=./appIcon.ico",
     "installer-mac": "electron-installer-dmg ./out/YT\\ Presence-darwin-x64/YT\\ Presence.app YT\\ Presence\\ Installer --overwrite --icon=./appIcon.icns --out=./dist",
-    "create-installer-windows": "electron-installer-windows --src ./out/YT\\ Presence-win32-x64/ --dest ./dist"
+    "installer-win": "npm run pkgwin && node createInstaller"
   },
   "keywords": [],
   "author": "Timeraa",
   "license": "MIT",
-  "config": {
-    "forge": "./forge.config.js"
-  },
   "devDependencies": {
     "electron-installer-dmg": "^1.0.0",
     "electron-installer-windows": "^1.1.0",
-    "electron-packager": "^12.2.0"
+    "electron-packager": "^12.2.0",
+    "electron-winstaller": "^2.7.0"
   }
 }

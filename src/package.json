@@ -8,9 +8,6 @@
   "keywords": [],
   "author": "Timeraa",
   "license": "MIT",
-  "config": {
-    "forge": "./forge.config.js"
-  },
   "dependencies": {
     "auto-launch": "^5.0.5",
     "chalk": "^2.4.1",
@@ -23,6 +20,6 @@
     "socket.io": "^2.1.1"
   },
   "devDependencies": {
-    "electron": "2.0.4"
+    "electron-prebuilt-compile": "3.0.2"
   }
 }

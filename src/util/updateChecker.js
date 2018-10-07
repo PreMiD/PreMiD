@@ -36,6 +36,8 @@ function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false) {
         width: 400,
         alwaysOnTop: true
       })
+
+      updateWindow.setMenu(null)
     
       updateWindow.loadURL("file://" + path.join(__dirname, "../update.html"))
       updateWindow.webContents.on('did-finish-load', () => {

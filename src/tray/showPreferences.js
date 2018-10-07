@@ -9,7 +9,7 @@ exports.run = () => {
       menuBarHeight = 340;
       break;
     default:
-      menuBarHeight = 300;
+      menuBarHeight = 310;
       break;
   } 
 
@@ -20,6 +20,8 @@ exports.run = () => {
     height: menuBarHeight,
     width: 400
   })
+
+  settingsWindow.setMenu(null)
 
   settingsWindow.loadURL("file://" + path.join(__dirname, "../preferences.html"))
 
