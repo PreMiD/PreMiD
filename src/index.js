@@ -1,9 +1,10 @@
 //* Handle Winstall
-require('./util/handleWinstall') 
+require('./util/handleWinstall')
 
 //#region Define constants
 //* Declare needed constants
-const {app} = require('electron')
+const {app, Tray} = require('electron')
+const path = require('path')
 
 const AutoLaunch = require('auto-launch')
 //* Require config
@@ -80,15 +81,14 @@ if(constants.platform == "darwin") {
 
 console.log(CONSOLEPREFIX + chalk.yellow("Loading..."))
 
-//* Setup MenuBar
-require('./menubar/setup')
-
 //* App ready
 const appReady = () => {
+  //* Setup MenuBar
+  require('./tray/createTray').run()
   //* Require shortcuts
   require('./util/shortcutHandler')
 
-  if(userSettings.get('autoLaunch') == undefined) {
+  if(userSettings.get('autoLaunch') == undefined || userSettings.get('autoLaunch') == true) {
     userSettings.set('autoLaunch', true)
     //* Add App to AutoLaunch
     console.log(CONSOLEPREFIX + chalk.yellow("Adding App to autostart..."))
@@ -109,13 +109,18 @@ const appReady = () => {
     })
   }
   
+  
+  //* Include PresenceHandler
+  require('./presenceHandler.js')
+  
   if(userSettings.get('autoUpdateCheck') == true) {
     //* Check for update
     updater.checkForUpdate(true)
   }
 
-  //* Include PresenceHandler
-  require('./presenceHandler.js')
+  if(constants.platform == "darwin") {
+    app.dock.hide()
+  }
 }
 
 //* Register Handler
@@ -123,9 +128,3 @@ app.on('ready', appReady);
 
 //* Prevent default behaviour
 app.on('window-all-closed', () => {});
-
-//! Remove at deployment
-process.on('unhandledRejection', (reason, p) => {
-  console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
-  // application specific logging, throwing an error, or other logic here
-});

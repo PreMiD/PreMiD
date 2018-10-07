@@ -16,10 +16,6 @@
     const ipc = require('electron').ipcRenderer;
     const remote = require('electron').remote
 
-    ipc.on('updateData', (event, message) => {
-      $('#updateLabel').html(`${message.tag_name}`)
-      $('#description').html(converter.makeHtml(message.body))
-    })
   </script>
 </head>
 
@@ -36,12 +32,18 @@
     <button id="later">Later</button>
   </div>
   <script>
-    $('#update').click(() => {
-      console.log("LOL")
+    var shell = require('electron').shell;
+    ipc.on('updateData', (event, message) => {
+      $('#description').html(converter.makeHtml(message.body))
+      $('#update').click(() => {
+        console.log(message)
+        shell.openExternal(`https://github.com/Timeraa/YT-Presence/releases/tag/${message.tag_name}`);
+        remote.getCurrentWindow().close()
+      })
     })
 
+
     $('#later').click(e => {
-      console.log("close")
       remote.getCurrentWindow().close()
     })
   </script>

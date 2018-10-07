@@ -1,0 +1,28 @@
+{
+  "name": "yt_presence",
+  "productName": "YT Presence",
+  "version": "1.0.0",
+  "description": "YT Presence adds cool Features to YouTube/YouTube Music. Like for example Discord Rich Presence integration, Media controls and much more.",
+  "main": "index.js",
+  "repository": "Timeraa/YT-Presence",
+  "keywords": [],
+  "author": "Timeraa",
+  "license": "MIT",
+  "config": {
+    "forge": "./forge.config.js"
+  },
+  "dependencies": {
+    "auto-launch": "^5.0.5",
+    "chalk": "^2.4.1",
+    "discord-rpc": "^3.0.1",
+    "electron-config": "^1.0.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "express": "^4.16.3",
+    "html-entities": "^1.2.1",
+    "request": "^2.88.0",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {
+    "electron": "2.0.4"
+  }
+}

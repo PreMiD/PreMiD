@@ -7,7 +7,8 @@ const userSettings = new Config({
 })
 let constants = require('../util/constants.js')
 let lastEndTime = 0,
-lastSongTitle = ""
+lastSongTitle = "",
+pauseRPCChange = 0
 
 constants.ytrpc.login({clientId: yt_client_id})
 .catch(err => {
@@ -24,7 +25,7 @@ constants.ytrpc.on("errored", () => console.log("OH NOES!"))
 module.exports = (data, force) => {
   if (force) {
     if (data.yt.playback == "paused") {
-      constants.menuBar.tray.setTitle("");
+      constants.tray.setTitle("");
       constants.ytrpc.setActivity({
         details: entities.decode(CURRENTSONGTITLE),
         state: entities.decode(CURRENTSONGAUTHORSSTRING),
@@ -36,7 +37,7 @@ module.exports = (data, force) => {
       })
     } else if (data.yt.playback == "playing") {
       if(userSettings.get('titleMenubar'))
-      constants.menuBar.tray.setTitle(CURRENTSONGTITLE);
+      constants.tray.setTitle(CURRENTSONGTITLE);
       constants.ytrpc.setActivity({
         details: entities.decode(CURRENTSONGTITLE),
         state: entities.decode(CURRENTSONGAUTHORSSTRING),
@@ -59,7 +60,7 @@ module.exports = (data, force) => {
       lastSongTitle = CURRENTSONGTITLE
       lastEndTime = CURRENTSONGENDTIME
       if(userSettings.get('titleMenubar'))
-      constants.menuBar.tray.setTitle(CURRENTSONGTITLE);
+      constants.tray.setTitle(CURRENTSONGTITLE);
       constants.ytrpc.setActivity({
         details: entities.decode(CURRENTSONGTITLE),
         state: entities.decode(CURRENTSONGAUTHORSSTRING),
@@ -72,5 +73,9 @@ module.exports = (data, force) => {
         instance: true
       })
     }
+
+    //* Clear Presence after 1 minute if playback == pause
+    if(pauseRPCChange >= 60 && pauseRPCChange <= 60) constants.ytrpc.clearActivity()
+    if(data.yt.playback == "paused") pauseRPCChange++; else pauseRPCChange = 0;
   }
 }

@@ -2,49 +2,24 @@ html {
   transition: 0.5s background-color ease-out;
 }
 
-html.dark {
-  background-color: black;
-}
-
-html.dark #options {
-  color: white;
-}
-
-html.dark #header {
-  box-shadow: 0px 0px 8px 2px #3b3b3b;
-}
-
-html.dark #close-btn {
-  box-shadow: 0px 0px 8px 2px #3b3b3b;
-}
-
-html.dark #options tbody tr:not(:last-child) {
-  border-bottom: 1px solid #3b3b3b;
-}
-
 #header {
-  transition: 0.5s box-shadow ease-out;
-  height: 50px;
-  width: 100vw;
   background-color: #ce1d2a;
-  box-shadow: 0px 0px 8px 2px #cccccc;
-}
-
-#logo {
-  position: relative;
-  margin-top: 5px;
-  margin-left: 10px;
-}
-
-#title {
-  margin: 0;
-  position: absolute;
-  top: 3px;
-  width: 100vw;
-  text-align: center;
   color: white;
-  font-weight: bold;
-  font-style: italic;
+  width: 100%;
+  height: 60px;
+}
+
+#header img {
+  margin: 5px;
+  width: 50px;
+}
+
+#header h1 {
+  display: inline-block;
+  margin: 0;
+  top: 10px;
+  position: absolute;
+  font-weight: 900;
 }
 
 #options {
@@ -72,29 +47,36 @@ html.dark #options tbody tr:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
-#close-btn {
-  transition: 0.1s transform ease-out, 0.5s box-shadow ease-out;
-  margin-top: 10px;
+#footer {
+  position: fixed;
+  bottom: 0;
+  background-color: #ce1d2a;
+  color: white;
+  height: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+#footer #close-btn {
+  transition: background-color 0.2s ease-out;
+  margin: 5px;
   appearance: none;
   border: none;
   outline: none;
   cursor: pointer;
-  background-color: #ce1d2a;
+  background-color: rgba(255, 255, 255, 0.15);
   color: white;
-  width: 75px;
+  width: 100px;
   height: 30px;
   border-radius: 5px;
   font-size: 20px;
-  font-weight: 500;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0px 0px 8px 2px #cccccc;
+  font-weight: 600;
 }
 
-#close-btn:hover {
-  transform: translateX(-50%) scale(1.1);
+#footer #close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
-#close-btn:active {
-  transform: translateX(-50%) scale(0.9);
+#footer #close-btn:active {
+  background-color: rgba(255, 255, 255, 0.1);
 }

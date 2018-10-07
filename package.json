@@ -3,14 +3,12 @@
   "productName": "YT Presence",
   "version": "1.0.0",
   "description": "YT Presence adds cool Features to YouTube/YouTube Music. Like for example Discord Rich Presence integration, Media controls and much more.",
-  "main": "src/index.js",
+  "main": "index.js",
   "repository": "Timeraa/YT-Presence",
   "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "create-installer-mac": "electron-installer-dmg ./out/YT\\ Presence-darwin-x64/YT\\ Presence.app YT\\ Presence\\ Installer --overwrite --icon=./appIcon.icns --out=./dist",
+    "start": "electron src/.",
+    "package": "electron-packager ./src/ --out=./out/ --asar --overwrite --icon=./appIcon.ico --osx-sign.identity='Florian Metz'",
+    "installer-mac": "electron-installer-dmg ./out/YT\\ Presence-darwin-x64/YT\\ Presence.app YT\\ Presence\\ Installer --overwrite --icon=./appIcon.icns --out=./dist",
     "create-installer-windows": "electron-installer-windows --src ./out/YT\\ Presence-win32-x64/ --dest ./dist"
   },
   "keywords": [],
@@ -19,28 +17,9 @@
   "config": {
     "forge": "./forge.config.js"
   },
-  "dependencies": {
-    "auto-launch": "^5.0.5",
-    "chalk": "^2.4.1",
-    "discord-rpc": "^3.0.0",
-    "electron-config": "^1.0.0",
-    "electron-squirrel-startup": "^1.0.0",
-    "express": "^4.16.3",
-    "fs": "0.0.1-security",
-    "html-entities": "^1.2.1",
-    "menubar": "^5.2.3",
-    "npm": "^6.4.1",
-    "request": "^2.88.0",
-    "socket.io": "^2.1.1"
-  },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.22",
-    "@electron-forge/maker-deb": "^6.0.0-beta.22",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.22",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.22",
-    "@electron-forge/maker-zip": "^6.0.0-beta.22",
-    "electron": "2.0.4",
     "electron-installer-dmg": "^1.0.0",
-    "electron-installer-windows": "^1.1.0"
+    "electron-installer-windows": "^1.1.0",
+    "electron-packager": "^12.2.0"
   }
 }

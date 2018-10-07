@@ -24,7 +24,7 @@ setInterval(keepAliveCheck, 1000)
 
 function keepAliveCheck() {
   if (lastKeepAliveSwitch > keepAliveSwitch + 10) {
-    constants.menuBar.tray.setTitle("")
+    constants.tray.setTitle("")
     if (YTMRPCREADY) constants.ytmrpc.clearActivity()
     if (YTRPCREADY) constants.ytrpc.clearActivity()
   }
@@ -53,7 +53,7 @@ io.on('connection', function (socket) {
 //* Updates the presence with the incomming data
 function updatePresence(data, force = false) {
   lastKeepAliveSwitch = 0
-  if (!userSettings.get('titleMenubar')) constants.menuBar.tray.setTitle("")
+  if (!userSettings.get('titleMenubar')) constants.tray.setTitle("")
 
   if (data.ytm != undefined) {
     ytmrpcused = true

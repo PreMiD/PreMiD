@@ -7,6 +7,7 @@ const userSettings = new Config({
 })
 let constants = require('../util/constants.js')
 let lastEndTime = 0
+let pauseRPCChange = 0
 
 constants.ytmrpc.login({clientId: ytm_client_id})
 .catch(err => {
@@ -23,19 +24,19 @@ constants.ytmrpc.on("errored", () => console.log("OH NOES!"))
 module.exports = (data, force) => {
   if (force) {
     if (data.ytm.playback == "paused") {
-      constants.menuBar.tray.setTitle("");
+      constants.tray.setTitle("");
       if(YTMRPCREADY) constants.ytmrpc.setActivity({
         details: entities.decode(CURRENTSONGTITLE),
         state: entities.decode(CURRENTSONGAUTHORSSTRING),
         largeImageKey: "ytm_lg",
         largeImageText: "YT Presence " + VERSIONSTRING,
         smallImageKey: "pause",
-        smallImageText: "Playback paused",
+        smallImageText: "Playback paused.",
         instance: true
       })
     } else if (data.ytm.playback == "playing") {
       if(userSettings.get('titleMenubar'))
-      constants.menuBar.tray.setTitle(CURRENTSONGTITLE);
+      constants.tray.setTitle(CURRENTSONGTITLE);
       if(YTMRPCREADY) constants.ytmrpc.setActivity({
         details: entities.decode(CURRENTSONGTITLE),
         state: entities.decode(CURRENTSONGAUTHORSSTRING),
@@ -66,7 +67,7 @@ module.exports = (data, force) => {
     if (data.ytm.playback == "playing" && CURRENTSONGENDTIME != lastEndTime && YTMRPCREADY) {
       lastEndTime = CURRENTSONGENDTIME
       if(userSettings.get('titleMenubar'))
-      constants.menuBar.tray.setTitle(CURRENTSONGTITLE);
+      constants.tray.setTitle(CURRENTSONGTITLE);
       constants.ytmrpc.setActivity({
         details: entities.decode(CURRENTSONGTITLE),
         state: entities.decode(CURRENTSONGAUTHORSSTRING),
@@ -79,5 +80,9 @@ module.exports = (data, force) => {
         instance: true
       })
     }
+
+    //* Clear Presence after 1 minute if playback == pause
+    if(pauseRPCChange >= 60 && pauseRPCChange <= 60) constants.ytmrpc.clearActivity()
+    if(data.ytm.playback == "paused") pauseRPCChange++; else pauseRPCChange = 0;
   }
 }

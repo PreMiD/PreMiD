@@ -5,7 +5,6 @@ const path = require('path')
 const request = require("request")
 const chalk = require("chalk")
 let constants = require('./constants')
-let config = require('../config')
 
 function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false) {
 
@@ -33,7 +32,6 @@ function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false) {
         center: true,
         maximizable: false,
         minimizable: false,
-        resizable: true,
         height: 500,
         width: 400,
         alwaysOnTop: true
@@ -53,7 +51,7 @@ function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false) {
       console.log(CONSOLEPREFIX + chalk.cyan("Up to date! ") + chalk.yellow(`V${VERSION}`))
       if(sendNoUpdateInfo) {
         const noUpdateAvaiableNotification = new Notification({
-          title: 'Updater | YT Presence',
+          title: 'YT Presence',
           body: `You are up to date! (V${VERSION})`,
           silent: true
         })
@@ -63,24 +61,7 @@ function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false) {
     }
   })
 
-  //* If sendNotification
-  if(sendNotification && UPDATEAVAIABLE != false) {
-
-    const updateNotification = new Notification({
-      title: 'Updater | YT Presence',
-      body: `Update avaiable! (V${UPDATEAVAIABLE})\nClick here to download the newest version.`,
-      silent: true
-    })
-    
-    updateNotification.show()
-    updateNotification.on('click', () => {
-      require("electron").shell.openExternal("https://github.com/Timeraa/YT-Presence/releases/latest")
-    })
-
-    return UPDATEAVAIABLE
-  } else {
-    return UPDATEAVAIABLE
-  }
+  return UPDATEAVAIABLE
 }
 
 module.exports.checkForUpdate = checkForUpdate
