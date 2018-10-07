@@ -2,7 +2,7 @@
   "name": "yt-presence",
   "productName": "YT Presence",
   "version": "0.3.0",
-  "description": "Show your current YouTube Video / Song in your Discord profile.",
+  "description": "Add rich presence support to YouTube Music and more!",
   "main": "src/index.js",
   "repository": "Timeraa/YT-Presence",
   "scripts": {
