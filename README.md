@@ -12,32 +12,34 @@ _YT Presence adds cool Features to YouTube/YouTube Music. Like for example **Dis
 - [Installation](#installation)
   - [Installing the Extension](#installing-the-extension)
     - Chrome
-    - Firefox
     - Opera
   - [Installing the Application](#installing-the-application)
     - Mac OS
     - Windows
 - [FAQ](#faq-·-frequently-asked-questions)
-  - Why can't i install it on the Chrome Web Store?
   - Is this project up to date?
   - Will this project stay free?
 
 # About
+
 YouTube Presence (YT Presence) adds Discord Rich Presence support to YouTube and YouTube Music. It also adds Media control functionality (Play/Pause... buttons on keyboard)
 
 # Features
+
 - Discord Rich Presence Integration
 - Media control keys
-- *More soon*
+- _More soon_
 
 # Support
+
 ### **Operating Systems**
+
 - Windows
 - Mac OS
 
 ### **Browsers**
+
 - Chrome
-- Firefox
 - Opera
 
 # Installation
@@ -99,19 +101,15 @@ YouTube Presence (YT Presence) adds Discord Rich Presence support to YouTube and
   <summary><b><u>Windows</u></b> (Click to expand)</summary>
   <h1>Installation on Windows</h1>
   <ol>
-    <li>Extract the downloaded <b>.zip</b> file</li>
-    <li>Open extracted folder and run <b>YT Presence.exe</b></li>
+    <li>Download the latest installer from <a href="https://github.com/Timeraa/YT-Presence/releases/">here</a></li>
+    <li>Open the downloaded <b>.exe</b> installer</li>
+    <li>If SmartScreen comes up press more informations then press run anyways. (Its not a virus, i promise)</li>
+    <li>YouTube Presence should install itself and start automatically</li>
   </ol>
 </details>
 <br>
 
-**Note: The windows version does not have an installer at the moment. I am working hard on packaging the application into an installer. Please be patient. Thanks**
-
 # FAQ &middot; Frequently Asked Questions
-
-> ## Why can't i install the extension on the **Chrome Web Store**?<br>
-
-- Because i need to activate my google account as a Developer account but that requires **5$** and i am not paying it until i receive donations for this Project. <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US">Donate here</a>
 
 > ## Is this project still up to date?<br>
 
