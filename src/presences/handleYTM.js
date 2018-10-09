@@ -38,7 +38,7 @@ module.exports = (data, force) => {
       })
     } else if (data.ytm.playback == "playing") {
       if(userSettings.get('titleMenubar'))
-      constants.tray.setTitle(CURRENTSONGTITLE);
+      constants.tray.setTitle(entities.decode(CURRENTSONGTITLE));
       if(YTMRPCREADY) constants.ytmrpc.setActivity({
         details: entities.decode(CURRENTSONGTITLE),
         state: entities.decode(CURRENTSONGAUTHORSSTRING),
@@ -69,7 +69,7 @@ module.exports = (data, force) => {
     if (data.ytm.playback == "playing" && CURRENTSONGENDTIME != lastEndTime && YTMRPCREADY) {
       lastEndTime = CURRENTSONGENDTIME
       if(userSettings.get('titleMenubar'))
-      constants.tray.setTitle(CURRENTSONGTITLE);
+      constants.tray.setTitle(entities.decode(CURRENTSONGTITLE));
       constants.ytmrpc.setActivity({
         details: entities.decode(CURRENTSONGTITLE),
         state: entities.decode(CURRENTSONGAUTHORSSTRING),
