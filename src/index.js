@@ -51,9 +51,7 @@ global.YTMRPCREADY = false
 process.stdout.write("\u001b[2J\u001b[0;0H");
 
 //* Single Instance Check
-var iShouldQuit = app.makeSingleInstance(function(commandLine, workingDirectory) {
-  return true;
-});
+var iShouldQuit = app.makeSingleInstance(() => {return true});
 
 if(iShouldQuit){
   console.log(CONSOLEPREFIX + chalk.red("App already running, closing current instance..."))
