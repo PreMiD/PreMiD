@@ -14,7 +14,7 @@ exports.run = () => {
 
   aboutWindow.setMenu(null)
 
-  aboutWindow.loadURL("file://" + path.join(__dirname, "../about.html"))
+  aboutWindow.loadURL("file://" + path.join(__dirname, "../windows/about.html"))
 
   aboutWindow.on('close', () => {
     aboutWindow = null;

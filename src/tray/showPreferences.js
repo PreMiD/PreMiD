@@ -23,7 +23,7 @@ exports.run = () => {
 
   settingsWindow.setMenu(null)
 
-  settingsWindow.loadURL("file://" + path.join(__dirname, "../preferences.html"))
+  settingsWindow.loadURL("file://" + path.join(__dirname, "../windows/preferences.html"))
 
   settingsWindow.on('blur', () => {
     settingsWindow.close()
