@@ -5,24 +5,25 @@
   "description": "YT Presence adds cool Features to YouTube/YouTube Music. Like Discord Rich Presence integration, Media controls and much more.",
   "manifest_version": 2,
   "icons": {
-    "2024": "images/icon.png"
+    "2024": "icon.png"
   },
   "browser_action": {
     "default_icon": {
-      "2024": "images/icon.png"
+      "2024": "icon.png"
     }
   },
   "content_scripts": [
     {
-      "js": ["jquery-3.3.1.min.js", "socket.io-2.1.1.min.js"],
+      "js": ["util/jquery-3.3.1.min.js", "util/socket.io-2.1.1.min.js"],
+      "css": ["connect.css"],
       "matches": ["https://www.youtube.com/*", "https://music.youtube.com/*"]
     },
     {
-      "js": ["handleYTM.js"],
+      "js": ["presences/YTM.js"],
       "matches": ["https://music.youtube.com/*"]
     },
     {
-      "js": ["handleYT.js"],
+      "js": ["presences/YT.js"],
       "matches": ["https://www.youtube.com/*"]
     }
   ],

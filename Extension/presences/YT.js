@@ -13,7 +13,24 @@ $('.ytp-play-button').click(handlePlayPause)
 var socket = io.connect('http://localhost:3000/');
 
 //* Log when connected
-socket.on('connect', function () { console.log('YT Presence: %cConnected to Application', "color: green; font-weight: 700") })
+socket.on('connect', function () {
+  console.log('YT Presence: %cConnected to Application', "color: green; font-weight: 700")
+  if(sessionStorage['ytpconnected'] == null || sessionStorage['ytpconnected'] == 'false') {
+    $('<div id="ytp-connectinfo"><img draggable="false" src="//github.com/Timeraa/YT-Presence/blob/master/icon.png?raw=true"><h1>YT Presence</h1><h2>Connected</h2></div>').appendTo('body')
+    setTimeout(() => {
+      //$('#ytp-connectinfo').remove()
+    }, 5*1000)
+    sessionStorage['ytpconnected'] = 'true'
+  }
+})
+
+socket.on('disconnect', function() {
+  sessionStorage['ytpconnected'] = 'false'
+  $('<div id="ytp-connectinfo"><img draggable="false" src="//github.com/Timeraa/YT-Presence/blob/master/icon.png?raw=true"><h1>YT Presence</h1><h2>Disconnected</h2></div>').appendTo('body')
+  setTimeout(() => {
+    $('#ytp-connectinfo').remove()
+  }, 5*1000)
+})
 
 //* When we receive messages from the application
 socket.on('mediaKeyHandler', function (data) {
