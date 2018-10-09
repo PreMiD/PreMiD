@@ -11,7 +11,10 @@ let constants = require('../util/constants.js')
 let lastEndTime = 0
 let pauseRPCChange = 0
 
-var retryRPCLogin = setInterval(() => {
+tryLogin()
+var retryRPCLogin = setInterval(tryLogin, 10 * 1000)
+
+function tryLogin() {
   constants.ytmrpc = new DiscordRPC.Client({ transport: "ipc" });
   constants.ytmrpc.login({ clientId: ytm_client_id })
   .catch(err => console.log(`${CONSOLEPREFIX}YTMRPC: ${err.message}`))  
@@ -19,7 +22,7 @@ var retryRPCLogin = setInterval(() => {
     clearInterval(retryRPCLogin)
     YTMRPCREADY = true
   })
-}, 10 * 1000)
+}
 
 
 module.exports = (data, force) => {

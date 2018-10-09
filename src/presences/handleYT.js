@@ -12,7 +12,10 @@ let lastEndTime = 0,
 lastSongTitle = "",
 pauseRPCChange = 0
 
-var retryRPCLogin = setInterval(() => {
+tryLogin()
+var retryRPCLogin = setInterval(tryLogin, 10 * 1000)
+
+function tryLogin() {
   constants.ytrpc = new DiscordRPC.Client({ transport: "ipc" });
   constants.ytrpc.login({ clientId: yt_client_id })
   .catch(err => console.log(`${CONSOLEPREFIX}YTRPC: ${err.message}`))  
@@ -20,11 +23,7 @@ var retryRPCLogin = setInterval(() => {
     clearInterval(retryRPCLogin)
     YTRPCREADY = true
   })
-}, 10 * 1000)
-
-constants.ytrpc.on("ready", () => YTRPCREADY = true)
-constants.ytrpc.on("disconnected", () => console.log("OH NOES!"))
-constants.ytrpc.on("errored", () => console.log("OH NOES!"))
+}
 
 module.exports = (data, force) => {
   if (force) {
