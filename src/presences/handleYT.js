@@ -7,8 +7,8 @@ const Config = require('electron-config');
 const userSettings = new Config({
   name: 'userSettings'
 })
-let constants = require('../util/constants.js')
-let lastEndTime = 0,
+let constants = require('../util/constants.js'),
+lastEndTime = 0,
 lastSongTitle = "",
 pauseRPCChange = 0
 

@@ -7,9 +7,9 @@ const Config = require('electron-config');
 const userSettings = new Config({
   name: 'userSettings'
 })
-let constants = require('../util/constants.js')
-let lastEndTime = 0
-let pauseRPCChange = 0
+let constants = require('../util/constants.js'),
+lastEndTime = 0,
+pauseRPCChange = 0
 
 tryLogin()
 var retryRPCLogin = setInterval(tryLogin, 10 * 1000)
@@ -26,7 +26,6 @@ function tryLogin() {
 
 
 module.exports = (data, force) => {
-  //console.log(constants.ytmrpc)
   if (force) {
     if (data.ytm.playback == "paused") {
       constants.tray.setTitle("");
