@@ -5,9 +5,15 @@ let playback = true,
 eventType,
 playbackNew
 
+$(document).ready(() => {
+  console.log("READY")
+  $('video').on('progress', () => {
+      alert("The video has been paused");
+  });
+})
+
 //* Register listeners
-$('.video-stream').click(handlePlayPause)
-$('.ytp-play-button').click(handlePlayPause)
+$('.button-nfplayerPlay').click(handlePlayPause)
 
 //* Create socket connection to application
 var socket = io.connect('http://localhost:3020/');
@@ -18,7 +24,7 @@ socket.on('connect', function () {
   if(sessionStorage['ytpconnected'] == null || sessionStorage['ytpconnected'] == 'false') {
     $('<div id="ytp-connectinfo"><img draggable="false" src="//github.com/Timeraa/YT-Presence/blob/master/icon.png?raw=true"><h1>YT Presence</h1><h2>Connected</h2></div>').appendTo('body')
     setTimeout(() => {
-      //$('#ytp-connectinfo').remove()
+      $('#ytp-connectinfo').remove()
     }, 5*1000)
     sessionStorage['ytpconnected'] = 'true'
   }
@@ -40,20 +46,15 @@ socket.on('mediaKeyHandler', function (data) {
     //* Switch cases for playback / Clicks corresponding buttons
     switch (data.playback) {
       case "pause":
-        $('.video-stream').click()
+        $('.button-nfplayerPlay').click()
         updateData("playPauseVideo")
         break
       case "nextTrack":
-        $('.ytp-next-button')[0].click()
+        $('.button-nfplayerNextEpisode"')[0].click()
         //* Prevent playback from being paused again
         playback = true
         //* Send response back to application
         updateData("nextVideo")
-        break
-      case "previousTrack":
-        $('.ytp-prev-button')[0].click()
-        //* Send response back to application
-        updateData("previousVideo")
         break
     }
   }
@@ -61,6 +62,7 @@ socket.on('mediaKeyHandler', function (data) {
 
 
 function handlePlayPause() {
+  console.log("HELP ME")
   //* Toggle playback variable
   if (playback == true) playback = false; else playback = true;
   //* Send status to application
@@ -80,7 +82,7 @@ function checkPlayChange() {
   }
 
   //* Set musicRunning variable to true if url has /watch or music title not empty
-  if (document.location.pathname.includes("/watch") || $(".title.style-scope.ytmusic-player-bar").html() != "") musicRunning = true; else musicRunning = false;
+  if (document.location.pathname.includes("/watch")) musicRunning = true; else musicRunning = false;
 }
 
 //* Start interval
@@ -96,7 +98,7 @@ let urlForVideo,
 function updateData(playbackChange = false) {
   if (document.location.pathname.includes("/watch")) musicRunning = true; else musicRunning = false;
   urlForVideo = document.location.href
-  if ($(".ytp-time-current").html() != " " && $('.video-stream')[0] != null) {
+  if ($(".time-remaining__time").html() != "") {
     let data
 
     if (playbackChange != false) {
@@ -108,43 +110,32 @@ function updateData(playbackChange = false) {
     }
 
     var endTime
-    if(musicRunning) {
+    if(musicRunning && $('.VideoContainer div video')[0] != undefined) {
       var startTime = Date.now();
         endTime = Math.floor(startTime / 1000) -
-        Math.floor($('.video-stream')[0].currentTime) +
-        Math.floor($('.video-stream')[0].duration);
+        Math.floor($('.VideoContainer div video')[0].currentTime) +
+        Math.floor($('.VideoContainer div video')[0].duration);
         
       data = {
-        yt: {
+        nflix: {
           url: urlForVideo,
-          videoTitle: $(".title.style-scope.ytd-video-primary-info-renderer")
-            .children().html(),
-          videoAuthor: $("#upload-info .style-scope .ytd-video-owner-renderer")
-            .contents()
-            .first()
-            .html(),
-          videoCurrentTimeSeconds: Math.floor($('.video-stream')[0].currentTime),
-          videoEndTimeSeconds: Math.floor($('.video-stream')[0].duration),
-          videoCurrentTime: startTime,
-          videoEndTime: endTime,
-          playback: playbackNew
+          seriesTitle: $('.ellipsize-text').children().html(),
+          season: $($('.ellipsize-text').children().get(1)).html(),
+          episodeTitle: $($('.ellipsize-text').children().get(2)).html(),
+          episodeCurrentTimeSeconds: Math.floor($('.VideoContainer div video')[0].currentTime),
+          episodeEndTimeSeconds: Math.floor($('.VideoContainer div video')[0].duration),
+          episodeCurrentTime: startTime,
+          episodeEndTime: endTime,
+          playback: $('.VideoContainer div video')[0].paused ? "paused" : "playing"
         }
       }
     } else {
-      if(document.location.pathname.startsWith('www.youtube.com')) console.log("NICE")
       data = {
-        yt: {
+        nflix: {
           playback: false
         }
       }
     }
-    if (socket.connected && !isNaN($('.video-stream')[0].duration)) socket.emit(eventType, data)
+    if (socket.connected) socket.emit(eventType, data)
   }
-}
-
-function getSeconds(string) {
-  const a = string.split(":")
-
-  const seconds = +a[0] * 60 + +a[1]
-  return seconds
 }

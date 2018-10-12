@@ -16,7 +16,11 @@
     {
       "js": ["util/jquery-3.3.1.min.js", "util/socket.io-2.1.1.min.js"],
       "css": ["connect.css"],
-      "matches": ["https://www.youtube.com/*", "https://music.youtube.com/*"]
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://music.youtube.com/*",
+        "https://www.netflix.com/*"
+      ]
     },
     {
       "js": ["presences/YTM.js"],
@@ -25,6 +29,10 @@
     {
       "js": ["presences/YT.js"],
       "matches": ["https://www.youtube.com/*"]
+    },
+    {
+      "js": ["presences/Netflix.js"],
+      "matches": ["https://www.netflix.com/*"]
     }
   ],
   "permissions": ["http://localhost:3000/", "tabs", "storage"]

@@ -45,6 +45,10 @@ global.CURRENTSONGENDTIME = ""
 global.CONSOLEPREFIX = chalk.bold(chalk.bgHex('#db0918')(chalk.hex('#000000')(" Y") + chalk.hex('#ffffff')("T "))) + chalk.cyan(" Presence") + chalk.hex('#ffffff')(": ")
 global.YTRPCREADY = false
 global.YTMRPCREADY = false
+global.NFLIXRPCREADY = false
+
+global.YTMRPC = null
+global.TRAY = null
 
 
 //* Clear console
@@ -84,6 +88,17 @@ const appReady = () => {
   require('./tray/createTray').run()
   //* Require shortcuts
   require('./util/shortcutHandler')
+  //* Include PresenceHandler
+  require('./presenceHandler.js')
+  
+  if(userSettings.get('autoUpdateCheck') == true) {
+    //* Check for update
+    updater.checkForUpdate(true)
+  }
+
+  if(constants.platform == "darwin") {
+    app.dock.hide()
+  }
 
   if(userSettings.get('autoLaunch') == undefined || userSettings.get('autoLaunch') == true) {
     userSettings.set('autoLaunch', true)
@@ -104,19 +119,6 @@ const appReady = () => {
     .catch(function(err) {
       console.log(CONSOLEPREFIX + chalk.red("Error while adding App to autostart."))
     })
-  }
-  
-  
-  //* Include PresenceHandler
-  require('./presenceHandler.js')
-  
-  if(userSettings.get('autoUpdateCheck') == true) {
-    //* Check for update
-    updater.checkForUpdate(true)
-  }
-
-  if(constants.platform == "darwin") {
-    app.dock.hide()
   }
 }
 

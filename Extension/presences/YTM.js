@@ -22,7 +22,7 @@ $(document).ready(() => {
 })
 
 //* Create socket connection to application
-var socket = io.connect('http://localhost:3000/');
+var socket = io.connect('http://localhost:3020/');
 
 //* Log when connected
 socket.on('connect', function () {
@@ -141,7 +141,7 @@ function updateData(playbackChange = false) {
     var data = {
       ytm: {
         songTitle: $(".title.style-scope.ytmusic-player-bar").html(),
-        songAuthors: songAuthors,
+        songAuthors: songAuthors, 
         songCurrentTimeSeconds: songCurrentTime,
         songCurrentTime: startTime,
         songEndTimeSeconds: songEndTime,

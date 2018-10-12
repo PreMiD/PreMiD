@@ -31,9 +31,9 @@ function keepAliveCheck() {
   lastKeepAliveSwitch += 1
 }
 
-//* Listen on port 3000
-socketServer.listen(3000, () => {
-  console.log(CONSOLEPREFIX + chalk.green("Listening on Port 3000"))
+//* Listen on port 3020
+socketServer.listen(3020, () => {
+  console.log(CONSOLEPREFIX + chalk.green("Listening on Port 3020"))
 });
 
 //* Socket connection event
@@ -61,6 +61,9 @@ function updatePresence(data, force = false) {
   } else if (data.yt != undefined) {
     ytrpcused = true
     if (userSettings.get('youTube')) require('./presences/handleYT.js')(data, force); else if (YTRPCREADY) constants.ytrpc.clearActivity()
+  } else if(data.nflix != undefined) {
+    nflixrpcused = true
+    require('./presences/handleNflix.js')(data, force);
   }
 
   if (data.ytm == undefined && YTMRPCREADY) {
@@ -72,6 +75,12 @@ function updatePresence(data, force = false) {
   if (data.yt == undefined && YTRPCREADY) {
     if (ytrpcused == true) {
       ytrpcused = false
+      constants.ytrpc.clearActivity()
+    }
+  }
+  if (data.nflix == undefined && NFLIXRPCREADY) {
+    if (nflixrpcused == true) {
+      nflixrpcused = false
       constants.ytrpc.clearActivity()
     }
   }
