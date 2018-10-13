@@ -47,6 +47,7 @@ global.YTRPCREADY = false
 global.YTMRPCREADY = false
 global.NFLIXRPCREADY = false
 
+global.YTRPC = null
 global.YTMRPC = null
 global.TRAY = null
 

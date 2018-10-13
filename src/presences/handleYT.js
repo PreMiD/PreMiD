@@ -7,78 +7,85 @@ const Config = require('electron-config');
 const userSettings = new Config({
   name: 'userSettings'
 })
-let constants = require('../util/constants.js'),
-lastEndTime = 0,
-lastSongTitle = "",
-pauseRPCChange = 0
+
+let lastEndTime = 0,
+pauseRPCChange = 0,
+lastVideoTitle = "",
+videoTitle,
+videoAuthor,
+videoStartTime,
+videoEndTime
+
 
 tryLogin()
 var retryRPCLogin = setInterval(tryLogin, 10 * 1000)
 
-function tryLogin() {
-  constants.ytrpc = new DiscordRPC.Client({ transport: "ipc" });
-  constants.ytrpc.login({ clientId: yt_client_id })
+module.exports = (data, force) => {
+  if (force) {
+    if (data.yt.playback == "paused")
+    updatePresence(videoTitle, videoAuthor, "pause", "Playback paused.")
+    else if (data.yt.playback == "playing")
+    updatePresence(videoTitle, videoAuthor, "play", "Playing back.", videoStartTime, videoEndTime)
+  } else {
+    updateData(data)
+
+    if ((data.yt.playback == "playing" && YTRPCREADY) && (videoEndTime != lastEndTime || videoTitle != lastVideoTitle)) {
+      lastVideoTitle = videoTitle
+      lastEndTime = videoEndTime
+      updatePresence(videoTitle, videoAuthor, "play", "Playing back.", videoStartTime, videoEndTime)
+    }
+
+    //* Clear Presence after 1 minute if playback == pause
+    if(pauseRPCChange >= 60 && pauseRPCChange <= 60) YTRPC.clearActivity()
+    if(data.yt.playback == "paused") pauseRPCChange++; else pauseRPCChange = 0;
+  }
+}
+
+
+/**
+ * Try to login to RPC until connected
+ */
+async function tryLogin() {
+  YTRPC = new DiscordRPC.Client({ transport: "ipc" });
+  YTRPC.login({ clientId: yt_client_id })
   .catch(err => console.log(`${CONSOLEPREFIX}YTRPC: ${err.message}`))  
-  constants.ytrpc.on("ready", () => {
+  YTRPC.on("ready", () => {
     clearInterval(retryRPCLogin)
     YTRPCREADY = true
   })
 }
 
-module.exports = (data, force) => {
-  if (force) {
-    if (data.yt.playback == "paused") {
-      constants.tray.setTitle("");
-      constants.ytrpc.setActivity({
-        details: entities.decode(CURRENTSONGTITLE),
-        state: entities.decode(CURRENTSONGAUTHORSSTRING),
-        largeImageKey: "yt_lg",
-        largeImageText: "YT Presence " + VERSIONSTRING,
-        smallImageKey: "pause",
-        smallImageText: "Playback paused",
-        instance: true
-      })
-    } else if (data.yt.playback == "playing") {
-      if(userSettings.get('titleMenubar'))
-      constants.tray.setTitle(CURRENTSONGTITLE);
-      constants.ytrpc.setActivity({
-        details: entities.decode(CURRENTSONGTITLE),
-        state: entities.decode(CURRENTSONGAUTHORSSTRING),
-        largeImageKey: "yt_lg",
-        largeImageText: "YT Presence " + VERSIONSTRING,
-        smallImageKey: "play",
-        smallImageText: "Playing back.",
-        startTimestamp: CURRENTSONGSTARTTIME,
-        endTimestamp: CURRENTSONGENDTIME,
-        instance: true
-      })
-    }
-  } else {
-    CURRENTSONGTITLE = data.yt.videoTitle
-    CURRENTSONGAUTHORSSTRING = data.yt.videoAuthor
-    CURRENTSONGSTARTTIME = Math.floor(data.yt.videoCurrentTime / 1000);
-    CURRENTSONGENDTIME = data.yt.videoEndTime;
+/**
+ * Update the Presence on Discord
+ * @param {String} details Details to show
+ * @param {String} state State to show
+ * @param {String} smallImageKey Small image name
+ * @param {String} smallImageText Small image text
+ * @param {Number} startTimestamp Start timestamp
+ * @param {Number} endTimestamp End timerstamp
+ */
+function updatePresence(details, state, smallImageKey, smallImageText, startTimestamp = null, endTimestamp = null) {
+  if(startTimestamp != null && userSettings.get('titleMenubar')) TRAY.setTitle(entities.decode(details)); else TRAY.setTitle("");
+  YTRPC.setActivity({
+    details: entities.decode(details),
+    state: entities.decode(state),
+    largeImageKey: "yt_lg",
+    largeImageText: "YT Presence " + VERSIONSTRING,
+    smallImageKey: smallImageKey,
+    smallImageText: smallImageText,
+    startTimestamp: startTimestamp,
+    endTimestamp: endTimestamp,
+    instance: true
+  })
+}
 
-    if ((data.yt.playback == "playing" && YTRPCREADY) && (CURRENTSONGENDTIME != lastEndTime || CURRENTSONGTITLE != lastSongTitle)) {
-      lastSongTitle = CURRENTSONGTITLE
-      lastEndTime = CURRENTSONGENDTIME
-      if(userSettings.get('titleMenubar'))
-      constants.tray.setTitle(CURRENTSONGTITLE);
-      constants.ytrpc.setActivity({
-        details: entities.decode(CURRENTSONGTITLE),
-        state: entities.decode(CURRENTSONGAUTHORSSTRING),
-        largeImageKey: "yt_lg",
-        largeImageText: "YT Presence " + VERSIONSTRING,
-        smallImageKey: "play",
-        smallImageText: "Playing back.",
-        startTimestamp: CURRENTSONGSTARTTIME,
-        endTimestamp: CURRENTSONGENDTIME,
-        instance: true
-      })
-    }
-
-    //* Clear Presence after 1 minute if playback == pause
-    if(pauseRPCChange >= 60 && pauseRPCChange <= 60) constants.ytrpc.clearActivity()
-    if(data.yt.playback == "paused") pauseRPCChange++; else pauseRPCChange = 0;
-  }
+/**
+ * Update the data used for the Presence
+ * @param {Object} data Data received from Extension
+ */
+function updateData(data) {
+  videoTitle = data.yt.videoTitle
+  videoAuthor = data.yt.videoAuthor
+  videoStartTime = Math.floor(data.yt.videoCurrentTime / 1000);
+  videoEndTime = data.yt.videoEndTime;
 }

@@ -24,9 +24,9 @@ setInterval(keepAliveCheck, 1000)
 
 function keepAliveCheck() {
   if (lastKeepAliveSwitch > keepAliveSwitch + 10) {
-    constants.tray.setTitle("")
-    if (YTMRPCREADY) constants.ytmrpc.clearActivity()
-    if (YTRPCREADY) constants.ytrpc.clearActivity()
+    TRAY.setTitle("")
+    if (YTMRPCREADY) YTMRPC.clearActivity()
+    if (YTRPCREADY) YTRPC.clearActivity()
   }
   lastKeepAliveSwitch += 1
 }
