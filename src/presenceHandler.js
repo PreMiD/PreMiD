@@ -69,13 +69,13 @@ function updatePresence(data, force = false) {
   if (data.ytm == undefined && YTMRPCREADY) {
     if (ytmrpcused == true) {
       ytmrpcused = false
-      constants.ytmrpc.clearActivity()
+      YTMRPC.clearActivity()
     }
   }
   if (data.yt == undefined && YTRPCREADY) {
     if (ytrpcused == true) {
       ytrpcused = false
-      constants.ytrpc.clearActivity()
+      YTRPC.clearActivity()
     }
   }
   if (data.nflix == undefined && NFLIXRPCREADY) {
