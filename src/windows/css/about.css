@@ -2,7 +2,8 @@
   color: #fff;
 }
 
-html, body {
+html,
+body {
   text-align: center;
   overflow: hidden;
 }
@@ -44,7 +45,8 @@ img {
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
 }
 
-#aboutMe, #aboutYTP {
+#aboutMe,
+#aboutYTP {
   width: 380px;
   margin: auto;
 }
@@ -57,12 +59,13 @@ a {
 }
 
 a:after {
-  content: '';
+  content: "";
   position: absolute;
-  left: 0; bottom: -1px;
+  left: 0;
+  bottom: -1px;
   height: 2px;
   width: 0;
-  transition: width .25s ease-out;
+  transition: width 0.25s ease-out;
   background-color: rgb(0, 125, 255);
 }
 
@@ -93,9 +96,4 @@ button {
 button:hover {
   background-color: rgb(0, 175, 255);
   box-shadow: 0 0 5px 3px rgba(0, 174, 255, 0.5);
-}
-
-button:active {
-  background-color: rgb(0, 145, 255);
-  box-shadow: none;
 }

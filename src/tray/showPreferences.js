@@ -6,10 +6,10 @@ let menuBarHeight
 exports.run = () => {
   switch(os.platform()) {
     case "darwin":
-      menuBarHeight = 340;
+      menuBarHeight = 370;
       break;
     default:
-      menuBarHeight = 310;
+      menuBarHeight = 340;
       break;
   } 
 

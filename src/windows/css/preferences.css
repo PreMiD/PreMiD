@@ -58,6 +58,7 @@ html {
 }
 
 #footer #close-btn {
+  position: relative;
   transition: background-color 0.2s ease-out;
   margin: 5px;
   appearance: none;
@@ -75,8 +76,4 @@ html {
 
 #footer #close-btn:hover {
   background-color: rgba(255, 255, 255, 0.25);
-}
-
-#footer #close-btn:active {
-  background-color: rgba(255, 255, 255, 0.1);
 }

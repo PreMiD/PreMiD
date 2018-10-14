@@ -16,12 +16,13 @@ $(() => {
 
   var os = require('os')
   if (os.platform() == "darwin") {
-    $('<tr><td class="noselect">Title menubar</td><td class="right"><label class="switch"><input class="toggleTitleMenubar" type="checkbox"><span class="slider round"></span></label></td></tr>').insertAfter('.ytmToggle')
+    $('<tr><td class="noselect">Title menubar</td><td class="right"><label class="switch"><input class="toggleTitleMenubar" type="checkbox"><span class="slider round"></span></label></td></tr>').insertAfter('.nflixToggle')
   }
 
   togglePresence = $(".togglePresence"),
   toggleYouTube = $(".toggleYouTube"),
   toggleYouTubeMusic = $(".toggleYouTubeMusic");
+  toggleNetflix = $(".toggleNetflix");
   toggleTitleMenubar = $(".toggleTitleMenubar");
   toggleAutoLaunch = $(".toggleAutoLaunch");
   toggleAutoUpdate = $(".toggleAutoUpdate");
@@ -32,14 +33,17 @@ $(() => {
   toggleTitleMenubar.change(switchTitleMenubar);
   toggleAutoLaunch.change(switchAutomaticStartup);
   toggleAutoUpdate.change(switchAutoUpdate);
+  toggleNetflix.change(switchNetflix);
 
   if (userSettings.get('enabled') == true) togglePresence.prop("checked", true)
   else {
     togglePresence.prop("checked", false)
     toggleYouTube.prop("checked", false)
     toggleYouTubeMusic.prop("checked", false)
+    toggleNetflix.prop("checked", false)
     toggleYouTube.attr("disabled", "disabled")
     toggleYouTubeMusic.attr("disabled", "disabled")
+    toggleNetflix.attr("disabled", "disabled")
     toggleTitleMenubar.attr("disabled", "disabled")
   }
 
@@ -52,6 +56,11 @@ $(() => {
     toggleYouTubeMusic.prop("checked", true)
     toggleYouTubeMusic.removeAttr("disabled")
   } else toggleYouTubeMusic.prop("checked", false)
+  
+  if (userSettings.get('netflix') == true) {
+    toggleNetflix.prop("checked", true)
+    toggleNetflix.removeAttr("disabled")
+  } else toggleNetflix.prop("checked", false)
 
   if (userSettings.get('titleMenubar') == true) {
     toggleTitleMenubar.prop("checked", true)
@@ -76,14 +85,18 @@ function switchPresence() {
     userSettings.set('enabled', false);
     userSettings.set('youTube', false);
     userSettings.set('youTubeMusic', false);
+    userSettings.set('netflix', false);
     toggleYouTube.prop("checked", false)
     toggleYouTube.attr("disabled", "disabled")
     toggleYouTubeMusic.prop("checked", false)
     toggleYouTubeMusic.attr("disabled", "disabled")
+    toggleNetflix.prop("checked", false)
+    toggleNetflix.attr("disabled", "disabled")
   } else {
     userSettings.set('enabled', true);
     toggleYouTube.removeAttr("disabled")
     toggleYouTubeMusic.removeAttr("disabled")
+    toggleNetflix.removeAttr("disabled")
   }
 }
 
@@ -104,6 +117,16 @@ function switchYouTubeMusic() {
   } else {
     userSettings.set('youTubeMusic', true);
     toggleYouTubeMusic.prop("checked", true)
+  }
+}
+
+function switchNetflix() {
+  if (userSettings.get('netflix') == true) {
+    userSettings.set('netflix', false);
+    toggleNetflix.prop("checked", false)
+  } else {
+    userSettings.set('netflix', true);
+    toggleNetflix.prop("checked", true)
   }
 }
 

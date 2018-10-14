@@ -11,6 +11,7 @@
   animation-name: slideIn;
   animation-duration: 5s;
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  color: black;
 }
 
 #ytp-connectinfo * {
@@ -26,7 +27,12 @@
 }
 
 #ytp-connectinfo h1 {
+  font-size: 20px;
   margin-top: 4px;
+}
+
+#ytp-connectinfo h2 {
+  font-size: 17px;
 }
 
 @keyframes slideIn {

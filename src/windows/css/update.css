@@ -33,6 +33,7 @@
 }
 
 #footer #update {
+  position: relative;
   transition: background-color 0.2s ease-out;
   margin: 15px;
   appearance: none;
@@ -52,11 +53,8 @@
   background-color: rgb(0, 175, 255);
 }
 
-#footer #update:active {
-  background-color: rgb(0, 150, 255);
-}
-
 #footer #later {
+  position: relative;
   transition: background-color 0.2s ease-out;
   float: right;
   margin: 15px;
@@ -75,8 +73,4 @@
 
 #footer #later:hover {
   background-color: rgba(255, 255, 255, 0.25);
-}
-
-#footer #later:active {
-  background-color: rgba(255, 255, 255, 0.1);
 }

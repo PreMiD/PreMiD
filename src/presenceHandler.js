@@ -17,7 +17,8 @@ const userSettings = new Config({
 var keepAliveSwitch = 0,
   lastKeepAliveSwitch = 0,
   ytrpcused = false,
-  ytmrpcused = false
+  ytmrpcused = false,
+  nflixrpcused = false
 
 //* Keep alive check to automatically remove presence if browser not running/not using YT
 setInterval(keepAliveCheck, 1000)
@@ -57,31 +58,38 @@ function updatePresence(data, force = false) {
 
   if (data.ytm != undefined) {
     ytmrpcused = true
-    if (userSettings.get('youTubeMusic')) require('./presences/handleYTM.js')(data, force); else if (YTMRPCREADY) constants.ytmrpc.clearActivity()
+    if (userSettings.get('youTubeMusic')) require('./presences/handleYTM.js')(data, force); else if (YTMRPCREADY) YTMRPC.clearActivity()
   } else if (data.yt != undefined) {
     ytrpcused = true
-    if (userSettings.get('youTube')) require('./presences/handleYT.js')(data, force); else if (YTRPCREADY) constants.ytrpc.clearActivity()
+    if (userSettings.get('youTube')) require('./presences/handleYT.js')(data, force); else if (YTRPCREADY) YTRPC.clearActivity()
   } else if(data.nflix != undefined) {
     nflixrpcused = true
-    require('./presences/handleNflix.js')(data, force);
+    if (userSettings.get('netflix')) require('./presences/handleNflix.js')(data, force); else if (NFLIXRPCREADY) NFLIXRPC.clearActivity()
   }
 
   if (data.ytm == undefined && YTMRPCREADY) {
     if (ytmrpcused == true) {
       ytmrpcused = false
       YTMRPC.clearActivity()
+      TRAY.setTitle("")
     }
   }
+
   if (data.yt == undefined && YTRPCREADY) {
     if (ytrpcused == true) {
       ytrpcused = false
       YTRPC.clearActivity()
+      TRAY.setTitle("")
     }
   }
+
   if (data.nflix == undefined && NFLIXRPCREADY) {
     if (nflixrpcused == true) {
+      console.log(data)
+      console.log("ERROR!!!!")
       nflixrpcused = false
-      constants.ytrpc.clearActivity()
+      NFLIXRPC.clearActivity()
+      TRAY.setTitle("")
     }
   }
 }

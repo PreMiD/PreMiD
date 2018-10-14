@@ -5,15 +5,17 @@ let playback = true,
 eventType,
 playbackNew
 
-$(document).ready(() => {
-  console.log("READY")
-  $('video').on('progress', () => {
-      alert("The video has been paused");
-  });
-})
-
-//* Register listeners
-$('.button-nfplayerPlay').click(handlePlayPause)
+var lastPlaybackState = true
+setInterval(() => {
+  if($('.VideoContainer div video')[0] != null && $('.VideoContainer div video')[0].paused && lastPlaybackState == true) {
+    handlePlayPause()
+    lastPlaybackState = false;
+  }
+  if($('.VideoContainer div video')[0] != null && !$('.VideoContainer div video')[0].paused && lastPlaybackState == false) {
+    handlePlayPause()
+    lastPlaybackState = true;
+  }
+}, 500)
 
 //* Create socket connection to application
 var socket = io.connect('http://localhost:3020/');
@@ -46,11 +48,11 @@ socket.on('mediaKeyHandler', function (data) {
     //* Switch cases for playback / Clicks corresponding buttons
     switch (data.playback) {
       case "pause":
-        $('.button-nfplayerPlay').click()
+        $('.VideoContainer div video')[0].paused ? $('.VideoContainer div video')[0].play() : $('.VideoContainer div video')[0].pause()
         updateData("playPauseVideo")
         break
       case "nextTrack":
-        $('.button-nfplayerNextEpisode"')[0].click()
+        $('.button-nfplayerNextEpisode').click()
         //* Prevent playback from being paused again
         playback = true
         //* Send response back to application
@@ -62,7 +64,6 @@ socket.on('mediaKeyHandler', function (data) {
 
 
 function handlePlayPause() {
-  console.log("HELP ME")
   //* Toggle playback variable
   if (playback == true) playback = false; else playback = true;
   //* Send status to application
@@ -102,10 +103,8 @@ function updateData(playbackChange = false) {
     let data
 
     if (playbackChange != false) {
-      var playbackNew = playbackChange
       var eventType = 'playBackChange'
     } else {
-      var playbackNew = playback ? "playing" : "paused"
       var eventType = 'updateData'
     }
 

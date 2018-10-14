@@ -5,6 +5,7 @@
   <link href="css/reset.css" rel="stylesheet">
   <link href="css/preferences.css" rel="stylesheet">
   <link href="css/inputs.css" rel="stylesheet">
+  <link href="css/ripple.css" rel="stylesheet">
 </head>
 
 <body>
@@ -48,6 +49,15 @@
             </label>
           </td>
         </tr>
+        <tr class="nflixToggle">
+          <td>Netflix</td>
+          <td>
+            <label class="switch">
+              <input class="toggleNetflix" type="checkbox">
+              <span class="slider round"></span>
+            </label>
+          </td>
+        </tr>
         <tr>
           <td>Launch on system startup</td>
           <td>
@@ -70,13 +80,17 @@
     </table>
   </div>
   <div id="footer">
-    <input id="close-btn" type="button" value="Close">
+    <button id="close-btn">
+      Close
+      <div class="rippleJS"></div>
+    </button>
   </div>
 
   <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/preferences.js"></script>
+  <script src="js/ripple.min.js"></script>
 
   <script>if (window.module) module = window.module;</script>
   <script>

@@ -4,6 +4,7 @@
   <title>About YouTube Presence</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/about.css">
+  <link href="css/ripple.css" rel="stylesheet">
 </head>
 
 <body>
@@ -36,12 +37,16 @@
       you can use it. :P
     </p>
   </div>
-  <button id="supportMe">Support me!</button>
+  <button id="supportMe">
+    Support me!
+    <div class="rippleJS"></div>
+  </button>
   <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/anime.min.js"></script>
   <script src="js/preferences.js"></script>
+  <script src="js/ripple.min.js"></script>
 
   <script>if (window.module) module = window.module;</script>
   <script>

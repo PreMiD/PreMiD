@@ -49,6 +49,7 @@ global.NFLIXRPCREADY = false
 
 global.YTRPC = null
 global.YTMRPC = null
+global.NFLIXRPC = null
 global.TRAY = null
 
 
@@ -72,6 +73,7 @@ const userSettings = new Config({
 if(userSettings.get('enabled') == undefined) userSettings.set('enabled', true)
 if(userSettings.get('youTube') == undefined) userSettings.set('youTube', true)
 if(userSettings.get('youTubeMusic') == undefined) userSettings.set('youTubeMusic', true)
+if(userSettings.get('netflix') == undefined) userSettings.set('netflix', true)
 if(userSettings.get('titleMenubar') == undefined) userSettings.set('titleMenubar', true)
 if(userSettings.get('autoUpdateCheck') == undefined) userSettings.set('autoUpdateCheck', true)
 
@@ -92,11 +94,11 @@ const appReady = () => {
   //* Include PresenceHandler
   require('./presenceHandler.js')
   
-  if(userSettings.get('autoUpdateCheck') == true) {
-    //* Check for update
-    updater.checkForUpdate(true)
-  }
+  //* Automatically check for update
+  if(userSettings.get('autoUpdateCheck') == true)
+  updater.checkForUpdate(true)
 
+  //* hide Dock icon when everything running
   if(constants.platform == "darwin") {
     app.dock.hide()
   }
