@@ -4,6 +4,10 @@
 
 _YT Presence adds cool Features to YouTube/YouTube Music. Like for example **Discord Rich Presence** integration, **Media controls** and much more._
 
+<a href="https://discord.gg/Kw7WaYn" title="Join our Discord!">
+<img src="discord-logo.svg" width="200px" draggable="false">
+</a>
+
 # Table of contents
 
 - [About](#about)
@@ -121,4 +125,4 @@ YouTube Presence (YT Presence) adds Discord Rich Presence support to YouTube and
 
 ---
 
-### YT Presence version 1.0 &middot; By Timeraa
+### YT Presence V1.0 &middot; By Timeraa
