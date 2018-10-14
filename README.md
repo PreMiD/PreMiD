@@ -54,18 +54,10 @@ YouTube Presence (YT Presence) adds Discord Rich Presence support to YouTube and
   <summary><b><u>Installing the Chrome extension</u></b> (Click to expand)</summary>
   <h1>Chrome extension installation</h1>
   <ol>
-    <li>Download the latest version of the <a href="https://github.com/Timeraa/YT-Presence/releases/latest">extension</a>
+    <li>Click <a href="https://chrome.google.com/webstore/detail/yt-presence/agjnjboanicjcpenljmaaigopkgdnihi">this</a> link</li>
     </li>
-    <li>Extract the downloaded <b>.zip</b> file</li>
+    <li>Click "add to Chrome"</li>
     <li>Open Chrome</li>
-    <li>Go to <a href="chrome://extensions/">chrome://extensions/</a></li>
-    <li>Turn on <b>Developer mode</b><br>
-      <img src="developerMode.png">
-    </li>
-    <li>Click "<b>Load unpacked extension</b>"<br>
-      <img src="loadUnpackedExtension.png">
-    </li>
-    <li>Load the extracted <b>Extension</b> folder</li>
     <li>Install the <a href="#installing-the-application">application</a></li>
   </ol>
 </details>
