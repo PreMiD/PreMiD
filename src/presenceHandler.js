@@ -18,7 +18,8 @@ var keepAliveSwitch = 0,
   lastKeepAliveSwitch = 0,
   ytrpcused = false,
   ytmrpcused = false,
-  nflixrpcused = false
+  nflixrpcused = false,
+  twitchrpcused = false
 
 //* Keep alive check to automatically remove presence if browser not running/not using YT
 setInterval(keepAliveCheck, 1000)
@@ -28,6 +29,8 @@ function keepAliveCheck() {
     TRAY.setTitle("")
     if (YTMRPCREADY) YTMRPC.clearActivity()
     if (YTRPCREADY) YTRPC.clearActivity()
+    if (NFLIXRPCREADY) NFLIXRPC.clearActivity()
+    if (TWITCHRPCREADY) TWITCHRPC.clearActivity()
   }
   lastKeepAliveSwitch += 1
 }
@@ -65,6 +68,9 @@ function updatePresence(data, force = false) {
   } else if(data.nflix != undefined) {
     nflixrpcused = true
     if (userSettings.get('netflix')) require('./presences/handleNflix.js')(data, force); else if (NFLIXRPCREADY) NFLIXRPC.clearActivity()
+  } else if(data.twitch != undefined) {
+    twitchrpcused = true
+    if (userSettings.get('twitch')) require('./presences/handleTwitch.js')(data, force); else if (TWITCHRPCREADY) TWITCHRPC.clearActivity()
   }
 
   if (data.ytm == undefined && YTMRPCREADY) {
@@ -85,10 +91,16 @@ function updatePresence(data, force = false) {
 
   if (data.nflix == undefined && NFLIXRPCREADY) {
     if (nflixrpcused == true) {
-      console.log(data)
-      console.log("ERROR!!!!")
       nflixrpcused = false
       NFLIXRPC.clearActivity()
+      TRAY.setTitle("")
+    }
+  }
+
+  if (data.twitch == undefined && TWITCHRPCREADY) {
+    if (twitchrpcused == true) {
+      twitchrpcused = false
+      TWITCHRPC.clearActivity()
       TRAY.setTitle("")
     }
   }

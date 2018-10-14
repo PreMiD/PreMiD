@@ -46,10 +46,12 @@ global.CONSOLEPREFIX = chalk.bold(chalk.bgHex('#db0918')(chalk.hex('#000000')(" 
 global.YTRPCREADY = false
 global.YTMRPCREADY = false
 global.NFLIXRPCREADY = false
+global.TWITCHRPCREADY = false
 
 global.YTRPC = null
 global.YTMRPC = null
 global.NFLIXRPC = null
+global.TWITCHRPC = null
 global.TRAY = null
 
 
@@ -74,6 +76,7 @@ if(userSettings.get('enabled') == undefined) userSettings.set('enabled', true)
 if(userSettings.get('youTube') == undefined) userSettings.set('youTube', true)
 if(userSettings.get('youTubeMusic') == undefined) userSettings.set('youTubeMusic', true)
 if(userSettings.get('netflix') == undefined) userSettings.set('netflix', true)
+if(userSettings.get('twitch') == undefined) userSettings.set('twitch', true)
 if(userSettings.get('titleMenubar') == undefined) userSettings.set('titleMenubar', true)
 if(userSettings.get('autoUpdateCheck') == undefined) userSettings.set('autoUpdateCheck', true)
 

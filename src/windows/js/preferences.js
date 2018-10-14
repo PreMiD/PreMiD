@@ -16,13 +16,14 @@ $(() => {
 
   var os = require('os')
   if (os.platform() == "darwin") {
-    $('<tr><td class="noselect">Title menubar</td><td class="right"><label class="switch"><input class="toggleTitleMenubar" type="checkbox"><span class="slider round"></span></label></td></tr>').insertAfter('.nflixToggle')
+    $('<tr><td class="noselect">Title menubar</td><td class="right"><label class="switch"><input class="toggleTitleMenubar" type="checkbox"><span class="slider round"></span></label></td></tr>').insertAfter('.twitchToggle')
   }
 
   togglePresence = $(".togglePresence"),
   toggleYouTube = $(".toggleYouTube"),
   toggleYouTubeMusic = $(".toggleYouTubeMusic");
   toggleNetflix = $(".toggleNetflix");
+  toggleTwitch = $(".toggleTwitch");
   toggleTitleMenubar = $(".toggleTitleMenubar");
   toggleAutoLaunch = $(".toggleAutoLaunch");
   toggleAutoUpdate = $(".toggleAutoUpdate");
@@ -34,6 +35,7 @@ $(() => {
   toggleAutoLaunch.change(switchAutomaticStartup);
   toggleAutoUpdate.change(switchAutoUpdate);
   toggleNetflix.change(switchNetflix);
+  toggleTwitch.change(switchTwitch);
 
   if (userSettings.get('enabled') == true) togglePresence.prop("checked", true)
   else {
@@ -41,9 +43,11 @@ $(() => {
     toggleYouTube.prop("checked", false)
     toggleYouTubeMusic.prop("checked", false)
     toggleNetflix.prop("checked", false)
+    toggleTwitch.prop("checked", false)
     toggleYouTube.attr("disabled", "disabled")
     toggleYouTubeMusic.attr("disabled", "disabled")
     toggleNetflix.attr("disabled", "disabled")
+    toggleTwitch.attr("disabled", "disabled")
     toggleTitleMenubar.attr("disabled", "disabled")
   }
 
@@ -61,6 +65,11 @@ $(() => {
     toggleNetflix.prop("checked", true)
     toggleNetflix.removeAttr("disabled")
   } else toggleNetflix.prop("checked", false)
+  
+  if (userSettings.get('twitch') == true) {
+    toggleTwitch.prop("checked", true)
+    toggleTwitch.removeAttr("disabled")
+  } else toggleTwitch.prop("checked", false)
 
   if (userSettings.get('titleMenubar') == true) {
     toggleTitleMenubar.prop("checked", true)
@@ -127,6 +136,16 @@ function switchNetflix() {
   } else {
     userSettings.set('netflix', true);
     toggleNetflix.prop("checked", true)
+  }
+}
+
+function switchTwitch() {
+  if (userSettings.get('twitch') == true) {
+    userSettings.set('twitch', false);
+    toggleTwitch.prop("checked", false)
+  } else {
+    userSettings.set('twitch', true);
+    toggleTwitch.prop("checked", true)
   }
 }
 

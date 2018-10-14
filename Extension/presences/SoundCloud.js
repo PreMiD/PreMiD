@@ -113,7 +113,7 @@ function updateData(playbackChange = false) {
         Math.floor($('.VideoContainer div video')[0].duration);
         
       data = {
-        nflix: {
+        scloud: {
           url: urlForVideo,
           seriesTitle: $('.ellipsize-text').children().html(),
           season: $($('.ellipsize-text').children().get(1)).html(),
@@ -127,7 +127,7 @@ function updateData(playbackChange = false) {
       }
     } else {
       data = {
-        nflix: {
+        scloud: {
           playback: false
         }
       }

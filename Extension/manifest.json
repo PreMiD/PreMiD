@@ -19,7 +19,9 @@
       "matches": [
         "https://www.youtube.com/*",
         "https://music.youtube.com/*",
-        "https://www.netflix.com/*"
+        "https://www.netflix.com/*",
+        "https://www.soundcloud.com/*",
+        "https://www.twitch.tv/*"
       ]
     },
     {
@@ -33,6 +35,14 @@
     {
       "js": ["presences/Netflix.js"],
       "matches": ["https://www.netflix.com/*"]
+    },
+    {
+      "js": ["presences/SoundCloud.js"],
+      "matches": ["https://www.soundcloud.com/*"]
+    },
+    {
+      "js": ["presences/Twitch.js"],
+      "matches": ["https://www.twitch.tv/*"]
     }
   ],
   "permissions": ["http://localhost:3000/", "tabs", "storage"]
