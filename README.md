@@ -57,7 +57,6 @@ YouTube Presence (YT Presence) adds Discord Rich Presence support to YouTube and
     <li>Click <a href="https://chrome.google.com/webstore/detail/yt-presence/agjnjboanicjcpenljmaaigopkgdnihi">this</a> link</li>
     </li>
     <li>Click "add to Chrome"</li>
-    <li>Open Chrome</li>
     <li>Install the <a href="#installing-the-application">application</a></li>
   </ol>
 </details>
