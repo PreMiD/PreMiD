@@ -5,5 +5,5 @@
   "twitch_client_id": "501021996336021504",
   "scloud_client_id": "501021185887436810",
   "version": "1.1",
-  "devBuild": true
+  "devBuild": false
 }
