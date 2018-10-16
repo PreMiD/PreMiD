@@ -1,8 +1,8 @@
-## ![version](https://img.shields.io/badge/Version-1.0-brightgreen.svg?style=flat-square) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=flat-square)](https://discord.gg/Kw7WaYn)
+## ![version](https://img.shields.io/badge/Version-1.1-brightgreen.svg?style=flat-square) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=flat-square)](https://discord.gg/Kw7WaYn)
 
 # <img src="icon.png" width="20" draggable="false"><b> </b>YouTube Presence &middot; Watcha watching there? 👀
 
-_YT Presence adds cool Features to YouTube/YouTube Music. Like for example **Discord Rich Presence** integration, **Media controls** and much more._
+_YT Presence Features like **Discord Rich Presence** integration, **Media controls** to **YouTube**/**YouTube Music**, **Twitch**, **SoundCloud**, **Netflix**._
 
 <a href="https://discord.gg/Kw7WaYn" title="Join our Discord!">
 <img src="discord-logo.svg" width="200px" draggable="false">
@@ -10,7 +10,6 @@ _YT Presence adds cool Features to YouTube/YouTube Music. Like for example **Dis
 
 # Table of contents
 
-- [About](#about)
 - [Features](#features)
 - [Support](#support)
 - [Installation](#installation)
@@ -24,14 +23,11 @@ _YT Presence adds cool Features to YouTube/YouTube Music. Like for example **Dis
   - Is this project up to date?
   - Will this project stay free?
 
-# About
-
-YouTube Presence (YT Presence) adds Discord Rich Presence support to YouTube and YouTube Music. It also adds Media control functionality (Play/Pause... buttons on keyboard)
-
 # Features
 
 - Discord Rich Presence Integration
 - Media control keys
+- Automatically clears Presence after 1 minute of inactivity
 - _More soon_
 
 # Support
@@ -48,7 +44,7 @@ YouTube Presence (YT Presence) adds Discord Rich Presence support to YouTube and
 
 # Installation
 
-## Installing the Extension
+## Extension
 
 <details>
   <summary><b><u>Installing the Chrome extension</u></b> (Click to expand)</summary>
@@ -75,7 +71,7 @@ YouTube Presence (YT Presence) adds Discord Rich Presence support to YouTube and
   </ol>
 </details>
 
-## Installing the Application
+## Application
 
 <details>
   <summary><b><u>Mac OS</u></b> (Click to expand)</summary>
@@ -83,12 +79,11 @@ YouTube Presence (YT Presence) adds Discord Rich Presence support to YouTube and
   <ol>
     <li>Download the latest version of the <a href="https://github.com/Timeraa/YT-Presence/releases/latest">application</a>
     </li>
-    <li>Extract the downloaded <b>.zip</b> file</li>
-    <li>Open the extracted folder and run the <b>.dmg</b> file</li>
+    <li>Open the downloaded <b>.dmg</b> file</li>
     <li>Drag <b>YT Presence</b> Into your <b>Applications</b> Folder</li>
     <li>Open your Launchpad</li>
     <li>Open <b>YT Presence</b></li>
-    <li>Enjoy!</li>
+    <li>Install Extension if not already</li>
   </ol>
 </details>
 
@@ -99,7 +94,8 @@ YouTube Presence (YT Presence) adds Discord Rich Presence support to YouTube and
     <li>Download the latest installer from <a href="https://github.com/Timeraa/YT-Presence/releases/">here</a></li>
     <li>Open the downloaded <b>.exe</b> installer</li>
     <li>If SmartScreen comes up press more informations then press run anyways. (Its not a virus, i promise)</li>
-    <li>YouTube Presence should install itself and start automatically</li>
+    <li>YouTube Presence should install itself and start automatically (You can tell by looking at the taskbar)</li>
+    <li>Install Extension if not already</li>
   </ol>
 </details>
 <br>
@@ -112,8 +108,8 @@ YouTube Presence (YT Presence) adds Discord Rich Presence support to YouTube and
 
 > ## Will this project stay free?<br>
 
-- Of course! Its open source! But i would highly appreciate a little bit of Money to activate the Google Developer Account to put the Extension onto the Chrome Web store. The money you donate also helps me for my Future, like a **Driving license**. <br><br><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US">Donate here</a>
+- Of course! Its open source! But i would highly appreciate a little bit of Money it helps me for my Future, like a **Driving license**. <br><br><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US">Donate here</a>
 
 ---
 
-### YT Presence V1.0 &middot; By Timeraa
+### YT Presence V1.1 &middot; By Timeraa
