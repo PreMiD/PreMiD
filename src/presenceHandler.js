@@ -74,7 +74,7 @@ function updatePresence(data, force = false) {
     twitchrpcused = true
     if (userSettings.get('twitch')) require('./presences/Twitch.js')(data, force); else if (TWITCHRPCREADY) TWITCHRPC.clearActivity()
   } else if(data.scloud != undefined) {
-    twitchrpcused = true
+    scloudrpcused = true
     if (userSettings.get('soundcloud')) require('./presences/SoundCloud.js')(data, force); else if(SCLOUDRPCREADY) SCLOUDRPC.clearActivity()
   }
 
