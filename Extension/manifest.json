@@ -1,7 +1,7 @@
 {
   "name": "YT Presence",
   "author": "Timeraa",
-  "version": "1.1",
+  "version": "1.1.1",
   "description": "YT Presence adds Discord Rich Presence integration, Media controls and much more to YouTube/YouTube Music, Twitch etc...",
   "manifest_version": 2,
   "icons": {
@@ -45,5 +45,5 @@
       "matches": ["https://*.twitch.tv/*"]
     }
   ],
-  "permissions": ["http://localhost:3000/", "tabs", "storage"]
+  "permissions": ["http://localhost:3020/", "tabs", "storage"]
 }

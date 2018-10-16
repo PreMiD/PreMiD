@@ -1,7 +1,7 @@
 {
   "name": "yt_presence",
   "productName": "YT Presence",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "YT Presence adds cool Features to YouTube/YouTube Music. Like for example Discord Rich Presence integration, Media controls and much more.",
   "main": "index.js",
   "repository": "Timeraa/YT-Presence",
