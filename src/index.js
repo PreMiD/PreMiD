@@ -27,7 +27,7 @@ app.setAppUserModelId("eu.Timeraa.yt_presence")
 global.UPDATEAVAIABLE = ""
 global.VERSION = config.version
 if(config.devBuild) {
-  global.VERSIONSTRING = VERSION + "-DEVBUILD"
+  global.VERSIONSTRING = VERSION + "-DEV"
 } else {
   global.VERSIONSTRING = VERSION
 }
@@ -47,11 +47,13 @@ global.YTRPCREADY = false
 global.YTMRPCREADY = false
 global.NFLIXRPCREADY = false
 global.TWITCHRPCREADY = false
+global.SCLOUDRPCREADY = false
 
 global.YTRPC = null
 global.YTMRPC = null
 global.NFLIXRPC = null
 global.TWITCHRPC = null
+global.SCLOUDRPC = null
 global.TRAY = null
 
 
@@ -77,6 +79,7 @@ if(userSettings.get('youTube') == undefined) userSettings.set('youTube', true)
 if(userSettings.get('youTubeMusic') == undefined) userSettings.set('youTubeMusic', true)
 if(userSettings.get('netflix') == undefined) userSettings.set('netflix', true)
 if(userSettings.get('twitch') == undefined) userSettings.set('twitch', true)
+if(userSettings.get('soundcloud') == undefined) userSettings.set('soundcloud', true)
 if(userSettings.get('titleMenubar') == undefined) userSettings.set('titleMenubar', true)
 if(userSettings.get('autoUpdateCheck') == undefined) userSettings.set('autoUpdateCheck', true)
 
@@ -117,7 +120,7 @@ const appReady = () => {
     });
 
     //* Enable AutoLaunch if disabled
-    autoLaunch.isEnabled().then((isEnabled) => {
+    autoLaunch.isEnabled().then(async (isEnabled) => {
       if (!isEnabled) autoLaunch.enable();
       console.log(CONSOLEPREFIX + chalk.green("Added App to autostart."))
     })

@@ -19,7 +19,8 @@ var keepAliveSwitch = 0,
   ytrpcused = false,
   ytmrpcused = false,
   nflixrpcused = false,
-  twitchrpcused = false
+  twitchrpcused = false,
+  scloudrpcused = false
 
 //* Keep alive check to automatically remove presence if browser not running/not using YT
 setInterval(keepAliveCheck, 1000)
@@ -31,6 +32,7 @@ function keepAliveCheck() {
     if (YTRPCREADY) YTRPC.clearActivity()
     if (NFLIXRPCREADY) NFLIXRPC.clearActivity()
     if (TWITCHRPCREADY) TWITCHRPC.clearActivity()
+    if (SCLOUDRPCREADY) SCLOUDRPC.clearActivity()
   }
   lastKeepAliveSwitch += 1
 }
@@ -59,32 +61,35 @@ function updatePresence(data, force = false) {
   lastKeepAliveSwitch = 0
   if (!userSettings.get('titleMenubar')) constants.tray.setTitle("")
 
-  if (data.ytm != undefined) {
-    ytmrpcused = true
-    if (userSettings.get('youTubeMusic')) require('./presences/handleYTM.js')(data, force); else if (YTMRPCREADY) YTMRPC.clearActivity()
-  } else if (data.yt != undefined) {
+  if (data.yt != undefined) {
     ytrpcused = true
-    if (userSettings.get('youTube')) require('./presences/handleYT.js')(data, force); else if (YTRPCREADY) YTRPC.clearActivity()
+    if (userSettings.get('youTube')) require('./presences/YouTube.js')(data, force); else if (YTRPCREADY) YTRPC.clearActivity()
+  } else if (data.ytm != undefined) {
+    ytmrpcused = true
+    if (userSettings.get('youTubeMusic')) require('./presences/YouTube_Music.js')(data, force); else if (YTMRPCREADY) YTMRPC.clearActivity()
   } else if(data.nflix != undefined) {
     nflixrpcused = true
-    if (userSettings.get('netflix')) require('./presences/handleNflix.js')(data, force); else if (NFLIXRPCREADY) NFLIXRPC.clearActivity()
+    if (userSettings.get('netflix')) require('./presences/Netflix.js')(data, force); else if (NFLIXRPCREADY) NFLIXRPC.clearActivity()
   } else if(data.twitch != undefined) {
     twitchrpcused = true
-    if (userSettings.get('twitch')) require('./presences/handleTwitch.js')(data, force); else if (TWITCHRPCREADY) TWITCHRPC.clearActivity()
-  }
-
-  if (data.ytm == undefined && YTMRPCREADY) {
-    if (ytmrpcused == true) {
-      ytmrpcused = false
-      YTMRPC.clearActivity()
-      TRAY.setTitle("")
-    }
+    if (userSettings.get('twitch')) require('./presences/Twitch.js')(data, force); else if (TWITCHRPCREADY) TWITCHRPC.clearActivity()
+  } else if(data.scloud != undefined) {
+    twitchrpcused = true
+    if (userSettings.get('soundcloud')) require('./presences/SoundCloud.js')(data, force); else if(SCLOUDRPCREADY) SCLOUDRPC.clearActivity()
   }
 
   if (data.yt == undefined && YTRPCREADY) {
     if (ytrpcused == true) {
       ytrpcused = false
       YTRPC.clearActivity()
+      TRAY.setTitle("")
+    }
+  }
+
+  if (data.ytm == undefined && YTMRPCREADY) {
+    if (ytmrpcused == true) {
+      ytmrpcused = false
+      YTMRPC.clearActivity()
       TRAY.setTitle("")
     }
   }
@@ -101,6 +106,14 @@ function updatePresence(data, force = false) {
     if (twitchrpcused == true) {
       twitchrpcused = false
       TWITCHRPC.clearActivity()
+      TRAY.setTitle("")
+    }
+  }
+
+  if (data.scloud == undefined && SCLOUDRPCREADY) {
+    if (scloudrpcused == true) {
+      scloudrpcused = false
+      SCLOUDRPC.clearActivity()
       TRAY.setTitle("")
     }
   }

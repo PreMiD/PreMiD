@@ -95,7 +95,7 @@ function updateData(playbackChange = false) {
     var eventType = 'updateData'
   }
 
-  if($('.player-video video')[0] != undefined) {
+  if($('.player-video video')[0] != undefined && $('.tw-ellipsis.tw-mg-b-05').children().length > 0) {
     if(urlForVideo != lastURL) {
       lastURL = urlForVideo
       startTimeStamp = Date.now()

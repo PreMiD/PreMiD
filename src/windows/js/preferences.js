@@ -16,7 +16,7 @@ $(() => {
 
   var os = require('os')
   if (os.platform() == "darwin") {
-    $('<tr><td class="noselect">Title menubar</td><td class="right"><label class="switch"><input class="toggleTitleMenubar" type="checkbox"><span class="slider round"></span></label></td></tr>').insertAfter('.twitchToggle')
+    $('<tr><td class="noselect">Title menubar</td><td class="right"><label class="switch"><input class="toggleTitleMenubar" type="checkbox"><span class="slider round"></span></label></td></tr>').insertAfter('.soundcloudToggle')
   }
 
   togglePresence = $(".togglePresence"),
@@ -24,6 +24,7 @@ $(() => {
   toggleYouTubeMusic = $(".toggleYouTubeMusic");
   toggleNetflix = $(".toggleNetflix");
   toggleTwitch = $(".toggleTwitch");
+  toggleSoundCloud = $(".toggleSoundCloud");
   toggleTitleMenubar = $(".toggleTitleMenubar");
   toggleAutoLaunch = $(".toggleAutoLaunch");
   toggleAutoUpdate = $(".toggleAutoUpdate");
@@ -36,6 +37,7 @@ $(() => {
   toggleAutoUpdate.change(switchAutoUpdate);
   toggleNetflix.change(switchNetflix);
   toggleTwitch.change(switchTwitch);
+  toggleSoundCloud.change(switchSoundCloud);
 
   if (userSettings.get('enabled') == true) togglePresence.prop("checked", true)
   else {
@@ -44,10 +46,13 @@ $(() => {
     toggleYouTubeMusic.prop("checked", false)
     toggleNetflix.prop("checked", false)
     toggleTwitch.prop("checked", false)
+    toggleSoundCloud.prop("checked", false)
+
     toggleYouTube.attr("disabled", "disabled")
     toggleYouTubeMusic.attr("disabled", "disabled")
     toggleNetflix.attr("disabled", "disabled")
     toggleTwitch.attr("disabled", "disabled")
+    toggleSoundCloud.attr("disabled", "disabled")
     toggleTitleMenubar.attr("disabled", "disabled")
   }
 
@@ -70,6 +75,11 @@ $(() => {
     toggleTwitch.prop("checked", true)
     toggleTwitch.removeAttr("disabled")
   } else toggleTwitch.prop("checked", false)
+
+  if (userSettings.get('soundcloud') == true) {
+    toggleSoundCloud.prop("checked", true)
+    toggleSoundCloud.removeAttr("disabled")
+  } else toggleSoundCloud.prop("checked", false)
 
   if (userSettings.get('titleMenubar') == true) {
     toggleTitleMenubar.prop("checked", true)
@@ -95,17 +105,29 @@ function switchPresence() {
     userSettings.set('youTube', false);
     userSettings.set('youTubeMusic', false);
     userSettings.set('netflix', false);
+    userSettings.set('soundcloud', false);
+
     toggleYouTube.prop("checked", false)
     toggleYouTube.attr("disabled", "disabled")
+
     toggleYouTubeMusic.prop("checked", false)
     toggleYouTubeMusic.attr("disabled", "disabled")
+
     toggleNetflix.prop("checked", false)
     toggleNetflix.attr("disabled", "disabled")
+
+    toggleTwitch.prop("checked", false)
+    toggleTwitch.attr("disabled", "disabled")
+
+    toggleSoundCloud.prop("checked", false)
+    toggleSoundCloud.attr("disabled", "disabled")
   } else {
     userSettings.set('enabled', true);
     toggleYouTube.removeAttr("disabled")
     toggleYouTubeMusic.removeAttr("disabled")
     toggleNetflix.removeAttr("disabled")
+    toggleTwitch.removeAttr("disabled")
+    toggleSoundCloud.removeAttr("disabled")
   }
 }
 
@@ -146,6 +168,16 @@ function switchTwitch() {
   } else {
     userSettings.set('twitch', true);
     toggleTwitch.prop("checked", true)
+  }
+}
+
+function switchSoundCloud() {
+  if (userSettings.get('soundcloud') == true) {
+    userSettings.set('soundcloud', false);
+    toggleSoundCloud.prop("checked", false)
+  } else {
+    userSettings.set('soundcloud', true);
+    toggleSoundCloud.prop("checked", true)
   }
 }
 

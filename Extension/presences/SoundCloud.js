@@ -4,11 +4,11 @@ playbackNew
 
 var lastPlaybackState = true
 setInterval(() => {
-  if($('.VideoContainer div video')[0] != null && $('.VideoContainer div video')[0].paused && lastPlaybackState == true) {
+  if($('.playControl').hasClass('playing') && lastPlaybackState == true) {
     handlePlayPause()
     lastPlaybackState = false;
   }
-  if($('.VideoContainer div video')[0] != null && !$('.VideoContainer div video')[0].paused && lastPlaybackState == false) {
+  if(!$('.playControl').hasClass('playing') && lastPlaybackState == false) {
     handlePlayPause()
     lastPlaybackState = true;
   }
@@ -41,15 +41,22 @@ socket.on('disconnect', function() {
 socket.on('mediaKeyHandler', function (data) {
   //* Check if the data is for YTM & if music is running
   //* Media control buttons
-  if (musicRunning) {
+  if ($('.playControl') != undefined) {
     //* Switch cases for playback / Clicks corresponding buttons
     switch (data.playback) {
       case "pause":
-        $('.VideoContainer div video')[0].paused ? $('.VideoContainer div video')[0].play() : $('.VideoContainer div video')[0].pause()
+        $('.playControl').click()
         updateData("playPauseVideo")
         break
       case "nextTrack":
-        $('.button-nfplayerNextEpisode').click()
+        $('.skipControl__next').click()
+        //* Prevent playback from being paused again
+        playback = true
+        //* Send response back to application
+        updateData("nextVideo")
+        break
+      case "previousTrack":
+        $('.skipControl__previous').click()
         //* Prevent playback from being paused again
         playback = true
         //* Send response back to application
@@ -78,9 +85,6 @@ function checkPlayChange() {
       $('.ytp-play-button').click()
     }
   }
-
-  //* Set musicRunning variable to true if url has /watch or music title not empty
-  if (document.location.pathname.includes("/watch")) musicRunning = true; else musicRunning = false;
 }
 
 //* Start interval
@@ -94,7 +98,6 @@ let urlForVideo,
   calcDifference = []
 
 function updateData(playbackChange = false) {
-  if (document.location.pathname.includes("/watch")) musicRunning = true; else musicRunning = false;
   urlForVideo = document.location.href
   if ($(".time-remaining__time").html() != "") {
     let data
@@ -106,23 +109,20 @@ function updateData(playbackChange = false) {
     }
 
     var endTime
-    if(musicRunning && $('.VideoContainer div video')[0] != undefined) {
+    if($('.playbackSoundBadge__titleContextContainer') != undefined) {
       var startTime = Date.now();
-        endTime = Math.floor(startTime / 1000) -
-        Math.floor($('.VideoContainer div video')[0].currentTime) +
-        Math.floor($('.VideoContainer div video')[0].duration);
-        
+        endTime = Math.floor(startTime/1000) -
+        getSeconds($('.playbackTimeline__timePassed').children().get(1).innerHTML) + getSeconds($('.playbackTimeline__duration').children().get(1).innerHTML);
       data = {
         scloud: {
           url: urlForVideo,
-          seriesTitle: $('.ellipsize-text').children().html(),
-          season: $($('.ellipsize-text').children().get(1)).html(),
-          episodeTitle: $($('.ellipsize-text').children().get(2)).html(),
-          episodeCurrentTimeSeconds: Math.floor($('.VideoContainer div video')[0].currentTime),
-          episodeEndTimeSeconds: Math.floor($('.VideoContainer div video')[0].duration),
-          episodeCurrentTime: startTime,
-          episodeEndTime: endTime,
-          playback: $('.VideoContainer div video')[0].paused ? "paused" : "playing"
+          songTitle: $('.playbackSoundBadge__titleLink').children().get(1).innerHTML,
+          songAuthor: $('.playbackSoundBadge__titleContextContainer').children().get(0).innerHTML,
+          songCurrentTimeSeconds: getSeconds($('.playbackTimeline__timePassed').children().get(1).innerHTML),
+          songEndTimeSeconds: getSeconds($('.playbackTimeline__duration').children().get(1).innerHTML),
+          songCurrentTime: startTime,
+          songEndTime: endTime,
+          playback: $('.playControl').hasClass('playing') ? "playing" : "paused"
         }
       }
     } else {
@@ -134,4 +134,11 @@ function updateData(playbackChange = false) {
     }
     if (socket.connected) socket.emit(eventType, data)
   }
+}
+
+function getSeconds(string) {
+  const a = string.split(":")
+
+  const seconds = +a[0] * 60 + +a[1]
+  return seconds
 }

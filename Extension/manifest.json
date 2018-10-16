@@ -20,29 +20,29 @@
         "https://www.youtube.com/*",
         "https://music.youtube.com/*",
         "https://www.netflix.com/*",
-        "https://www.soundcloud.com/*",
+        "https://soundcloud.com/*",
         "https://www.twitch.tv/*"
       ]
     },
     {
-      "js": ["presences/YTM.js"],
+      "js": ["presences/YouTubeMusic.js"],
       "matches": ["https://music.youtube.com/*"]
     },
     {
-      "js": ["presences/YT.js"],
+      "js": ["presences/YouTube.js"],
       "matches": ["https://www.youtube.com/*"]
     },
     {
       "js": ["presences/Netflix.js"],
-      "matches": ["https://www.netflix.com/*"]
+      "matches": ["https://*.netflix.com/*"]
     },
     {
       "js": ["presences/SoundCloud.js"],
-      "matches": ["https://www.soundcloud.com/*"]
+      "matches": ["https://*.soundcloud.com/*"]
     },
     {
       "js": ["presences/Twitch.js"],
-      "matches": ["https://www.twitch.tv/*"]
+      "matches": ["https://*.twitch.tv/*"]
     }
   ],
   "permissions": ["http://localhost:3000/", "tabs", "storage"]
