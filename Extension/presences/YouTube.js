@@ -1,6 +1,3 @@
-var pauseButton = '<svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xlink:href="#ytp-id-91"></use><path class="ytp-svg-fill" d="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z" id="ytp-id-91"></path></svg>'
-var pauseButton = '<svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xlink:href="#ytp-id-93"></use><path class="ytp-svg-fill" d="M 12,26 16,26 16,10 12,10 z M 21,26 25,26 25,10 21,10 z" id="ytp-id-93"></path></svg>'
-
 let playback = true,
 eventType,
 playbackNew
@@ -9,27 +6,25 @@ playbackNew
 $('.video-stream').click(handlePlayPause)
 $('.ytp-play-button').click(handlePlayPause)
 
-//* Create socket connection to application
+//* Try to connect to socket
 var socket = io.connect('http://localhost:3020/');
 
-//* Log when connected
+//* Socket connected
 socket.on('connect', function () {
-  console.log('YT Presence: %cConnected to Application', "color: green; font-weight: 700")
+  console.log('YT Presence: %c' + chrome.i18n.getMessage('connectedConsole'), "color: green; font-weight: 700")
   if(sessionStorage['ytpconnected'] == null || sessionStorage['ytpconnected'] == 'false') {
-    $('<div id="ytp-connectinfo"><img draggable="false" src="//github.com/Timeraa/YT-Presence/blob/master/icon.png?raw=true"><h1>YT Presence</h1><h2>Connected</h2></div>').appendTo('body')
-    setTimeout(() => {
-      //$('#ytp-connectinfo').remove()
-    }, 5*1000)
+    $('<div id="ytp-connectinfo"><img draggable="false" src="//github.com/Timeraa/YT-Presence/blob/master/icon.png?raw=true"><h1>YT Presence</h1><h2>' + chrome.i18n.getMessage("connected") + '</h2></div>').appendTo('body')
+    setTimeout(() => $('#ytp-connectinfo').remove(), 5*1000)
     sessionStorage['ytpconnected'] = 'true'
   }
 })
 
+//* Socket connection lost
 socket.on('disconnect', function() {
+  console.log('YT Presence: %c' +  + chrome.i18n.getMessage('disconnectedConsole'), "color: red; font-weight: 700")
   sessionStorage['ytpconnected'] = 'false'
-  $('<div id="ytp-connectinfo"><img draggable="false" src="//github.com/Timeraa/YT-Presence/blob/master/icon.png?raw=true"><h1>YT Presence</h1><h2>Disconnected</h2></div>').appendTo('body')
-  setTimeout(() => {
-    $('#ytp-connectinfo').remove()
-  }, 5*1000)
+  $('<div id="ytp-connectinfo"><img draggable="false" src="//github.com/Timeraa/YT-Presence/blob/master/icon.png?raw=true"><h1>YT Presence</h1><h2>' + chrome.i18n.getMessage("disconnected") + '</h2></div>').appendTo('body')
+  setTimeout(() => $('#ytp-connectinfo').remove(), 5*1000)
 })
 
 //* When we receive messages from the application
@@ -131,7 +126,6 @@ function updateData(playbackChange = false) {
         }
       }
     } else {
-      if(document.location.pathname.startsWith('www.youtube.com')) console.log("NICE")
       data = {
         yt: {
           playback: false

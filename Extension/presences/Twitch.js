@@ -21,9 +21,9 @@ var socket = io.connect('http://localhost:3020/');
 
 //* Log when connected
 socket.on('connect', function () {
-  console.log('YT Presence: %cConnected to Application', "color: green; font-weight: 700")
+  console.log('YT Presence: %c' + chrome.i18n.getMessage('connectedConsole'), "color: green; font-weight: 700")
   if(sessionStorage['ytpconnected'] == null || sessionStorage['ytpconnected'] == 'false') {
-    $('<div id="ytp-connectinfo"><img draggable="false" src="//github.com/Timeraa/YT-Presence/blob/master/icon.png?raw=true"><h1>YT Presence</h1><h2>Connected</h2></div>').appendTo('body')
+    $('<div id="ytp-connectinfo"><img draggable="false" src="//github.com/Timeraa/YT-Presence/blob/master/icon.png?raw=true"><h1>YT Presence</h1><h2>' + chrome.i18n.getMessage("connected") + '</h2></div>').appendTo('body')
     setTimeout(() => {
       $('#ytp-connectinfo').remove()
     }, 5*1000)
@@ -32,8 +32,9 @@ socket.on('connect', function () {
 })
 
 socket.on('disconnect', function() {
+  console.log('YT Presence: %c' +  + chrome.i18n.getMessage('disconnectedConsole'), "color: red; font-weight: 700")
   sessionStorage['ytpconnected'] = 'false'
-  $('<div id="ytp-connectinfo"><img draggable="false" src="//github.com/Timeraa/YT-Presence/blob/master/icon.png?raw=true"><h1>YT Presence</h1><h2>Disconnected</h2></div>').appendTo('body')
+  $('<div id="ytp-connectinfo"><img draggable="false" src="//github.com/Timeraa/YT-Presence/blob/master/icon.png?raw=true"><h1>YT Presence</h1><h2>' + chrome.i18n.getMessage("disconnected") + '</h2></div>').appendTo('body')
   setTimeout(() => {
     $('#ytp-connectinfo').remove()
   }, 5*1000)

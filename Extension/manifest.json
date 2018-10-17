@@ -4,6 +4,7 @@
   "version": "1.1.1",
   "description": "YT Presence adds Discord Rich Presence integration, Media controls and much more to YouTube/YouTube Music, Twitch etc...",
   "manifest_version": 2,
+  "default_locale": "en",
   "icons": {
     "2024": "icon.png"
   },
@@ -23,9 +24,9 @@
       "matches": [
         "https://www.youtube.com/*",
         "https://music.youtube.com/*",
-        "https://www.netflix.com/*",
+        "https://*.netflix.com/*",
         "https://soundcloud.com/*",
-        "https://www.twitch.tv/*"
+        "https://*.twitch.tv/*"
       ]
     },
     {

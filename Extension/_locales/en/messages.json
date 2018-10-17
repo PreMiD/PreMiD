@@ -1,0 +1,18 @@
+{
+  "connectedConsole": {
+    "message": "Connected to Application",
+    "description": "Connection status of extension."
+  },
+  "disconnectedConsole": {
+    "message": "Disconnected from Application",
+    "description": "Connection status of extension."
+  },
+  "connected": {
+    "message": "Connected",
+    "description": "Connection status of extension."
+  },
+  "disconnected": {
+    "message": "Disconnected",
+    "description": "Connection status of extension."
+  }
+}

@@ -1,7 +1,3 @@
-//* Play Pause buttons
-var playButton = '<svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope iron-icon" style="pointer-events: none; display: block; width: 100%; height: 100%;"><g class="style-scope iron-icon"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" class="style-scope iron-icon"></path></g></svg>'
-var pauseButton = '<svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope iron-icon" style="pointer-events: none; display: block; width: 100%; height: 100%;"><g class="style-scope iron-icon"><path d="M8 5v14l11-7z" class="style-scope iron-icon"></path></g></svg>'
-
 //* Create needed variables
 let splitTime,
   songCurrentTime,
@@ -26,9 +22,9 @@ var socket = io.connect('http://localhost:3020/');
 
 //* Log when connected
 socket.on('connect', function () {
-  console.log('YT Presence: %cConnected to Application', "color: green; font-weight: 700")
+  console.log('YT Presence: %c' + chrome.i18n.getMessage('connectedConsole'), "color: green; font-weight: 700")
   if(sessionStorage['ytpconnected'] == null || sessionStorage['ytpconnected'] == 'false') {
-    $('<div id="ytp-connectinfo"><img draggable="false" src="//github.com/Timeraa/YT-Presence/blob/master/icon.png?raw=true"><h1>YT Presence</h1><h2>Connected</h2></div>').appendTo('body')
+    $('<div id="ytp-connectinfo"><img draggable="false" src="//github.com/Timeraa/YT-Presence/blob/master/icon.png?raw=true"><h1>YT Presence</h1><h2>' + chrome.i18n.getMessage('connected') + '</h2></div>').appendTo('body')
     setTimeout(() => {
       $('#ytp-connectinfo').remove()
     }, 5*1000)
@@ -37,8 +33,9 @@ socket.on('connect', function () {
 })
 
 socket.on('disconnect', function() {
+  console.log('YT Presence: %c' +  + chrome.i18n.getMessage('disconnectedConsole'), "color: red; font-weight: 700")
   sessionStorage['ytpconnected'] = 'false'
-  $('<div id="ytp-connectinfo"><img draggable="false" src="//github.com/Timeraa/YT-Presence/blob/master/icon.png?raw=true"><h1>YT Presence</h1><h2>Disconnected</h2></div>').appendTo('body')
+  $('<div id="ytp-connectinfo"><img draggable="false" src="//github.com/Timeraa/YT-Presence/blob/master/icon.png?raw=true"><h1>YT Presence</h1><h2>' + chrome.i18n.getMessage("disconnected") + '</h2></div>').appendTo('body')
   setTimeout(() => {
     $('#ytp-connectinfo').remove()
   }, 5*1000)

@@ -5,7 +5,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
       break;
     }
     case "update": {
-      chrome.tabs.create({url: "update.html"})
+      //chrome.tabs.create({url: "update.html"})
       break;
     }
   }

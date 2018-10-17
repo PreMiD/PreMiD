@@ -1,0 +1,18 @@
+{
+  "connectedConsole": {
+    "message": "Mit Applikation verbunden",
+    "description": "Verbindungsstatus der Erweiterung."
+  },
+  "disconnectedConsole": {
+    "message": "Von Applikation getrennt",
+    "description": "Verbindungsstatus der Erweiterung."
+  },
+  "connected": {
+    "message": "Verbunden",
+    "description": "Verbindungsstatus der Erweiterung."
+  },
+  "disconnected": {
+    "message": "Getrennt",
+    "description": "Verbindungsstatus der Erweiterung."
+  }
+}
