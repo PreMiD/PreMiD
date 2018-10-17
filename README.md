@@ -5,8 +5,9 @@
 _YT Presence Features like **Discord Rich Presence** integration, **Media controls** to **YouTube**/**YouTube Music**, **Twitch**, **SoundCloud**, **Netflix**._
 
 <a href="https://discord.gg/Kw7WaYn" title="Join our Discord!">
-<img src="discord-logo.svg" width="200px" draggable="false">
+<img src="discord-logo.svg" height="50px" draggable="false" alt="Join my Discord!">
 </a>
+<a href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button"><img src="patreonBTN.png" draggable="false" height="50px" alt="Support me on Patreon!"></a>
 
 # Table of contents
 
