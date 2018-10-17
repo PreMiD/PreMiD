@@ -1,4 +1,7 @@
 {
+  "appDesc": {
+    "message": "YT Presence adds Discord Rich Presence integration, Media controls and much more to YouTube/YouTube Music, Twitch etc..."
+  },
   "connectedConsole": {
     "message": "Connected to Application",
     "description": "Connection status of extension."
