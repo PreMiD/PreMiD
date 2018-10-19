@@ -2,7 +2,7 @@
 
 # <img src="icon.png" width="20" draggable="false"><b> </b>YouTube Presence &middot; Watcha watching there? 👀
 
-_YT Presence Features like **Discord Rich Presence** integration, **Media controls** to **YouTube**/**YouTube Music**, **Twitch**, **SoundCloud**, **Netflix**._
+_YT Presence features **Discord Rich Presence** integration, **Media controls** for **YouTube**/**YouTube Music**, **Twitch**, **SoundCloud**, **Netflix**._
 
 <a href="https://discord.gg/Kw7WaYn" title="Join our Discord!">
 <img src="discord-logo.svg" height="50px" draggable="false" alt="Join my Discord!">
@@ -14,13 +14,13 @@ _YT Presence Features like **Discord Rich Presence** integration, **Media contro
 - [Features](#features)
 - [Support](#support)
 - [Installation](#installation)
-  - [Installing the Extension](#installing-the-extension)
+  - [Installing the Extension](#extension)
     - Chrome
     - Opera
-  - [Installing the Application](#installing-the-application)
+  - [Installing the Application](#application)
     - Mac OS
     - Windows
-- [FAQ](#faq-·-frequently-asked-questions)
+- [FAQ](#faq--frequently-asked-questions)
   - Is this project up to date?
   - Will this project stay free?
 
@@ -82,8 +82,9 @@ _YT Presence Features like **Discord Rich Presence** integration, **Media contro
     </li>
     <li>Open the downloaded <b>.dmg</b> file</li>
     <li>Drag <b>YT Presence</b> Into your <b>Applications</b> Folder</li>
-    <li>Open your Launchpad</li>
+    <li>Open your Launchpad or press F4</li>
     <li>Open <b>YT Presence</b></li>
+    <li>Press "Allow" if a window pops up
     <li>Install Extension if not already</li>
   </ol>
 </details>
