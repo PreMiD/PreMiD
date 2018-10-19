@@ -14,13 +14,13 @@ _YT Presence Funkionen wie **Discord-Rich-Presence**-Integration, **Medienkontro
 - [Funktionen](#funktionen)
 - [Support](#support)
 - [Installation](#installation)
-  - [Installieren der Erweiterung](##erweiterung)
+  - [Installieren der Erweiterung](#erweiterung)
     - Chrome
     - Opera
-  - [Installieren des Programmes](##programm)
+  - [Installieren des Programmes](#programm)
     - Mac OS
     - Windows
-- [FAQ](#faq-·-frequently-asked-questions)
+- [FAQ](#faq--frequently-asked-questions)
   - Ist dieses Projekt noch aktuell?
   - Wird dieses Projekt kostenlos bleiben?
 
@@ -82,8 +82,9 @@ _YT Presence Funkionen wie **Discord-Rich-Presence**-Integration, **Medienkontro
     </li>
     <li>Öffne die heruntergeladene <b>.dmg</b>-Datei</li>
     <li>Ziehe <b>YT Presence</b> in deinen <b>Programme</b>-Ordner</li>
-    <li>Öffne dein Launchpad drücke F4</li>
+    <li>Öffne dein Launchpad oder drücke F4</li>
     <li>Öffne <b>YT Presence</b></li>
+    <li>Falls ein Fenster aufgrund eingehender Netzwerkverbindungen öffnet, klicke auf "Erlauben"</li>
     <li>Installiere die Erweiterung, falls du es noch nicht getan hast</li>
   </ol>
 </details>
@@ -96,7 +97,7 @@ _YT Presence Funkionen wie **Discord-Rich-Presence**-Integration, **Medienkontro
     <li>Öffne das heruntergeladene <b>.exe</b> Installationsprogramm</li>
     <li>Wenn sich SmartScreen öffnet, klicke mehr Informationen, dann klicke trotzdem ausführen. (Ich verspreche dir, es ist kein Virus.)</li>
     <li>YouTube-Presence sollte sich selbst installieren und automatisch starten (Du kannst das herausfinden, indem du auf die Taskbar schaust)</li>
-    <li>Installiere die Erweiterung, falls du es noch nicht getan hast</li>
+    <li>Installiere die Erweiterung (#erweiterung), falls du es noch nicht getan hast</li>
   </ol>
 </details>
 <br>
@@ -105,11 +106,11 @@ _YT Presence Funkionen wie **Discord-Rich-Presence**-Integration, **Medienkontro
 
 > ## Ist dieses Projekt noch aktuell?<br>
 
-- Ja! Ich benutze und arbeite fast jeden Tag an diesem Programm under der Erweiterung!<br>Es gibt derzeit keine Pläne, dieses Projekt einzustellen.
+- Ja! Ich benutze und arbeite fast jeden Tag an diesem Programm und der Erweiterung!<br>Es gibt derzeit keine Pläne, dieses Projekt einzustellen.
 
 > ## Wird dieses Projekt kostenlos bleiben?<br>
 
-- Na sicher! Es ist Open-Source! Aber ich würde mich über ein bisschen Geld sehr schätzen. Es hilft mir für meine Zukunft, wie ein **Führerschein**. <br><br><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US">Spende hier</a>
+- Na sicher! Es ist Open-Source! Aber ich würde mich über ein bisschen Geld sehr schätzen.<br>Es hilft mir für meine Zukunft, wie ein **Führerschein**. <br><br><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US">Spende hier</a>
 
 ---
 
