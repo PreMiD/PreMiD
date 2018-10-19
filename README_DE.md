@@ -2,7 +2,7 @@
 
 # <img src="icon.png" width="20" draggable="false"><b> </b>YouTube Presence &middot; Was guckst du da? 👀
 
-_YT Presence Funkionen wie **Discord-Rich-Presence**-Integration, **Medienkontrolle** zu **YouTube**/**YouTube Music**, **Twitch**, **SoundCloud**, **Netflix**._
+_YT Presence unterstützt **Discord-Rich-Presence**-Integration und **Medienkontrolle** für **YouTube**/**YouTube Music**, **Twitch**, **SoundCloud**, **Netflix**._
 
 <a href="https://discord.gg/Kw7WaYn" title="Join our Discord!">
 <img src="discord-logo.svg" height="50px" draggable="false" alt="Join my Discord!">
