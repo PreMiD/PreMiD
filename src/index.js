@@ -13,6 +13,7 @@ const constants = require('./util/constants')
 const os = require('os')
 //* Update constant in file
 constants.platform = os.platform()
+global.PLATFORM = os.platform()
 //* Require Update checker
 const updater = require('./util/updateChecker')
 //* Require Needed packages

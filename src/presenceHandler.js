@@ -27,7 +27,7 @@ setInterval(keepAliveCheck, 1000)
 
 function keepAliveCheck() {
   if (lastKeepAliveSwitch > keepAliveSwitch + 10) {
-    TRAY.setTitle("")
+    if(PLATFORM == "darwin") TRAY.setTitle("")
     if (YTMRPCREADY) YTMRPC.clearActivity()
     if (YTRPCREADY) YTRPC.clearActivity()
     if (NFLIXRPCREADY) NFLIXRPC.clearActivity()
@@ -59,7 +59,7 @@ io.on('connection', function (socket) {
 //* Updates the presence with the incomming data
 function updatePresence(data, force = false) {
   lastKeepAliveSwitch = 0
-  if (!userSettings.get('titleMenubar')) constants.tray.setTitle("")
+  if (!userSettings.get('titleMenubar') && PLATFORM == "darwin") TRAY.setTitle("")
 
   if (data.yt != undefined) {
     ytrpcused = true
@@ -82,7 +82,7 @@ function updatePresence(data, force = false) {
     if (ytrpcused == true) {
       ytrpcused = false
       YTRPC.clearActivity()
-      TRAY.setTitle("")
+      if(PLATFORM == "darwin") TRAY.setTitle("")
     }
   }
 
@@ -90,7 +90,7 @@ function updatePresence(data, force = false) {
     if (ytmrpcused == true) {
       ytmrpcused = false
       YTMRPC.clearActivity()
-      TRAY.setTitle("")
+      if(PLATFORM == "darwin") TRAY.setTitle("")
     }
   }
 
@@ -98,7 +98,7 @@ function updatePresence(data, force = false) {
     if (nflixrpcused == true) {
       nflixrpcused = false
       NFLIXRPC.clearActivity()
-      TRAY.setTitle("")
+      if(PLATFORM == "darwin") TRAY.setTitle("")
     }
   }
 
@@ -106,7 +106,7 @@ function updatePresence(data, force = false) {
     if (twitchrpcused == true) {
       twitchrpcused = false
       TWITCHRPC.clearActivity()
-      TRAY.setTitle("")
+      if(PLATFORM == "darwin") TRAY.setTitle("")
     }
   }
 
@@ -114,7 +114,7 @@ function updatePresence(data, force = false) {
     if (scloudrpcused == true) {
       scloudrpcused = false
       SCLOUDRPC.clearActivity()
-      TRAY.setTitle("")
+      if(PLATFORM == "darwin") TRAY.setTitle("")
     }
   }
 }

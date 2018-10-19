@@ -64,7 +64,7 @@ async function tryLogin() {
  * @param {Number} endTimestamp End timerstamp
  */
 function updatePresence(details, state, smallImageKey, smallImageText, startTimestamp = null) {
-  if(startTimestamp != null && userSettings.get('titleMenubar')) TRAY.setTitle(entities.decode(details)); else TRAY.setTitle("");
+  if(startTimestamp != null && userSettings.get('titleMenubar')) if(PLATFORM == "darwin") TRAY.setTitle(entities.decode(details)); else if(PLATFORM == "darwin") TRAY.setTitle("");
   TWITCHRPC.setActivity({
     details: entities.decode(details),
     state: entities.decode(state),
