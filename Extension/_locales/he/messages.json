@@ -1,9 +1,15 @@
 {
+    "appDesc": {
+        "message": "YT Presence מוסיף Rich Presence שילוב של מדיה, פיקודים ועוד המון דברים לYouTube/YouTube Music, Twitch ועוד.."
+    },
     "connected": {
         "message": "מחובר"
     },
     "disconnected": {
         "message": "מנותק"
+    },
+    "installedThanks": {
+        "message": "תודה שהורדת את YT Presence "
     },
     "installedApp": {
         "message": "האם התקנת את התוכנה?"
@@ -13,6 +19,9 @@
     },
     "installedStepApp": {
         "message": "הורד את הגרסה החדשה ביותר ב1$"
+    },
+    "installedStepAppMyRepository": {
+        "message": "מאגר הGitHub שלי"
     },
     "installedWaitInstalled": {
         "message": "פתח את ההתקנה וחכה על שההתקנה תסתיים"
@@ -26,8 +35,14 @@
     "installedYes": {
         "message": "כן? אתה מוכן לדרך!"
     },
+    "installedStart": {
+        "message": "התחל בכך שתצפה בסרטון ביוטיוב, צפה בסטרימרים האהובים עליך בTwitch, אולי אפילו בNetflix... מי יודע? או שאתה רק רוצה להאזין לשירים האהובים עליך בSoundCloud ובYouTube Music"
+    },
     "installedSupportMe": {
         "message": "עזור לי!"
+    },
+    "updatedYTPUpdated": {
+        "message": " YT Presence עודכן בהצלחה!"
     },
     "updatedWhatsNew": {
         "message": "מה חדש?"
