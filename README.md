@@ -2,7 +2,8 @@
 
 # <img src="gitassets/premid.webp" width="24px" draggable="false"><b> </b>PreMiD &middot; Universal Media Rich Presence for Discord
 
-#Links
+### Links
+
 <a href="https://discord.gg/Kw7WaYn" title="Join our Discord!">
 <img src="gitassets/discord.svg" height="50px" draggable="false" alt="Join my Discord!">
 </a>&nbsp;
