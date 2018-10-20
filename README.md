@@ -7,28 +7,34 @@
 </a>
 <a href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button"><img src="gitassets/patreonBTN.png" draggable="false" height="50px" alt="Support me on Patreon!"></a>
 
-# Table of contents
+# About
+## Summary
 
-- [Features](#features)
-- [Support](#support)
-- [Installation](#installation)
-  - [Installing the Extension](#installing-the-extension)
-    - Chrome
-    - Opera
-  - [Installing the Application](#installing-the-application)
-    - Mac OS
-    - Windows
-- [FAQ](#faq-·-frequently-asked-questions)
-  - Is this project up to date?
-  - Will this project stay free?
+PreMiD is a simple, configurable utility to allow you to show what you're watching in your discord now playing status, or "rich presence". It supports many different platforms, and will also support multiple users watching the same content simultaneously in an upcoming update.
 
-# Features
+## Features
 
 - Integrates with discord's official Rich Presence API library.
 - Supports your keyboard's Media Control function keys.
 - Automatically clears your current presence after 1 minute of inactivity.
 - Supports YouTube, YouTube Music, Netflix, SoundCloud and many more to come.
 - _Watch parties and more are coming soon!_
+
+# Table of contents
+- [About](#about)
+  - [Summary](#summary)
+  - [Features](#features)
+- [Support](#support)
+- [Installation](#installation)
+  - [Installing the Extension](#extension)
+    - Chrome
+    - Opera
+  - [Installing the Application](#application)
+    - Mac OS
+    - Windows
+- [FAQ](#faq-·-frequently-asked-questions)
+  - Is this project up to date?
+  - Will this project stay free?
 
 # Support
 
@@ -109,11 +115,9 @@
 > ## Will this project stay free?<br>
 
 - Of course! Its open source! But I would highly appreciate a little bit of money, as it helps me prepare for my future. For example, a **driving license**. 
-<br>
-<br>
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US">
-<img src="gitassets/paypal.png" height="30px" draggable="false" alt="Support Me with a Donation"></a>
+- <span><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US">
+<img src="gitassets/paypal.png" height="32px" draggable="false" alt="Support Me with a Donation"></a></span>
 
 ---
 
-### PreMiD - (Rich) Presence for Media in Discord | Developed by Timeraa & Supported by the Community.
+### PreMiD - (Rich) Presence for Media in Discord | by Timeraa
