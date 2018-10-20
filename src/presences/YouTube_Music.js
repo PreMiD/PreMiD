@@ -75,7 +75,7 @@ async function tryLogin() {
  * @param {Number} endTimestamp End timerstamp
  */
 function updatePresence(details, state, smallImageKey, smallImageText, startTimestamp = null, endTimestamp = null) {
-  if(startTimestamp != null && userSettings.get('titleMenubar')) if(PLATFORM == "darwin") TRAY.setTitle(entities.decode(songTitle)); else if(PLATFORM == "darwin") TRAY.setTitle("");
+  if(startTimestamp != null && userSettings.get('titleMenubar') && PLATFORM == "darwin") TRAY.setTitle(entities.decode(songTitle)); else if(PLATFORM == "darwin") TRAY.setTitle("");
   YTMRPC.setActivity({
     details: entities.decode(details),
     state: entities.decode(state),
