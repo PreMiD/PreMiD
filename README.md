@@ -2,10 +2,12 @@
 
 # <img src="gitassets/premid.webp" width="24px" draggable="false"><b> </b>PreMiD &middot; Universal Media Rich Presence for Discord
 
+#Links
 <a href="https://discord.gg/Kw7WaYn" title="Join our Discord!">
 <img src="gitassets/discord.svg" height="50px" draggable="false" alt="Join my Discord!">
-</a>
-<a href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button"><img src="gitassets/patreonBTN.png" draggable="false" height="50px" alt="Support me on Patreon!"></a>
+</a>&nbsp;
+<a href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button"><img src="gitassets/patreonBTN.png" draggable="false" height="50px" alt="Support me on Patreon!"></a>&nbsp;
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US"><img src="gitassets/PayPal.svg" height="50px" draggable="false" alt="PayPal"></a>
 
 # About
 ## Summary
@@ -115,7 +117,7 @@ PreMiD is a simple, configurable utility to allow you to show what you're watchi
 > ## Will this project stay free?<br>
 
 - Of course! Its open source! But I would highly appreciate a little bit of money, as it helps me prepare for my future. For example, a **driving license**. 
-- <span><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US">Donate with &nbsp;<img src="gitassets/PayPal.svg" height="17px" draggable="false" alt="PayPal"></a></span>
+- [Donate Here](#links)
 
 ---
 
