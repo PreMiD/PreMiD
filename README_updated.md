@@ -10,7 +10,7 @@
 # About
 ## Summary
 
-**PreMiD** is a simple, configurable utility to allow you to show what you're watching in your Discord now playing status, or "**Rich Presence**". It supports [many different platforms](#support), and will also support multiple users watching the same content simultaneously in an upcoming update.
+**PreMiD** is a simple, configurable utility to allow you to show what you're watching in your Discord **now playing status**. It supports [many different platforms](#support), and will also support multiple users watching the same content simultaneously in an upcoming update.
 
 ## Features
 
