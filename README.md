@@ -118,7 +118,6 @@ PreMiD is a simple, configurable utility to allow you to show what you're watchi
 > ## Will this project stay free?<br>
 
 - Of course! Its open source! But I would highly appreciate a little bit of money, as it helps me prepare for my future. For example, a **driving license**. 
-- [Donate Here](#links)
 
 ---
 
