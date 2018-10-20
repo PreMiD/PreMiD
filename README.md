@@ -107,4 +107,80 @@
 
 ---
 
+<h1 style="text-align: center;">Creator</h1>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/timeraa.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">Timeraa</h2>
+</div>
+
+<h1 style="text-align: center;">Admin & Translation Manager</h1>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/fruxh.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">Fruxh</h2>
+</div>
+
+<h1 style="text-align: center;">Patrons & Donators</h1>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/fruxh.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">Fruxh</h2>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">Patron</h3>
+</div>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/paz.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">Paz</h2>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">Paypal</h3>
+</div>
+
+<h1 style="text-align: center;">Translators</h1>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/fruxh.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">Fruxh</h2>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">German</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">Japanese</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+</div>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/restrike.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">Restrike</h2>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">German</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">Japanese</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">Korean</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">Latin</h3>
+</div>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/timeraa.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">Timeraa</h2>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">German</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+</div>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/xiRDX.gif" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">2dward.</h2>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">Arabic</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+</div>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/ufo.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">Ufo</h2>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">Hebrew</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+</div>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/VerifyBot.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">VerifyBot</h2>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">Swedish</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+</div>
+
+---
+
 ### PreMiD - (Rich) Presence for Media in Discord | by Timeraa
