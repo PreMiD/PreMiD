@@ -1,0 +1,59 @@
+{
+    "connected": {
+        "message": "Ansluten"
+    },
+    "disconnected": {
+        "message": "Avkopplad"
+    },
+    "installedApp": {
+        "message": "Har du installerat programmet ännu?"
+    },
+    "installedNo": {
+        "message": "Nej? Följ dessa steg:"
+    },
+    "installedStepApp": {
+        "message": "Ladda ner den senaste versionen från $1"
+    },
+    "installedWaitInstalled": {
+        "message": "Öppna installationsprogrammet och vänta tills det installeras"
+    },
+    "installedMayWarning": {
+        "message": "Du kanske får en varning om brandvägg och Smartscreen (det är inte ett virus jag lovar)"
+    },
+    "installedAppAutostart": {
+        "message": "Applikationen bör starta automatiskt, du kan kontrollera detta genom att titta på ditt aktivitetsfält (Windows) eller menyraden (Mac OS)"
+    },
+    "installedYes": {
+        "message": "Ja? Du är redo att gå!"
+    },
+    "installedSupportMe": {
+        "message": "Stöd mig!"
+    },
+    "updatedWhatsNew": {
+        "message": "Vad är nytt?"
+    },
+    "updatedWhatChanged": {
+        "message": "Vad har förändrats?"
+    },
+    "updatedAdded0": {
+        "message": "Installera fliksidan"
+    },
+    "updatedAdded1": {
+        "message": "Uppdatera fliksidan"
+    },
+    "updatedChanged0": {
+        "message": "Små buggfixar"
+    },
+    "updatedChanged1": {
+        "message": "Tillägg organisation"
+    },
+    "updatedAdded2": {
+        "message": "Språkstöd"
+    },
+    "updatedAdded3": {
+        "message": ""
+    },
+    "updatedChanged2": {
+        "message": ""
+    }
+}
