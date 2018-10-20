@@ -1,6 +1,12 @@
 ## ![version](https://img.shields.io/badge/Version-1.1-brightgreen.svg?style=flat-square) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=flat-square)](https://discord.gg/Kw7WaYn)
 
 # <img src="gitassets/premid.webp" width="24px" draggable="false"><b> </b>PreMiD &middot; Media Rich Presence for Discord
+<a target="_blank" href="https://discord.gg/Kw7WaYn" title="Join our Discord!">
+<img src="gitassets/discord.svg" height="50px" draggable="false" alt="Join my Discord!">
+</a>&nbsp;
+<a target="_blank" href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button"><img src="gitassets/patreonBTN.png" draggable="false" height="50px" alt="Support me on Patreon!"></a>&nbsp;
+<a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US"><img src="gitassets/PayPal.svg" height="50px" draggable="false" alt="PayPal"></a>
+
 # About
 ## Summary
 
@@ -26,9 +32,8 @@
   - [Installing the Application](#application)
     - Mac OS
     - Windows
-- [FAQ](#faq--frequently-asked-questions)
-  - Is this project up to date?
-  - Will this project stay free?
+- [Donator] (#donator)
+- [Team] (#team)
 
 # Support
 
@@ -98,25 +103,57 @@
     <li>Install the extension, if you haven't already.</li>
   </ol>
 </details>
-<br>
-
-# FAQ &middot; Frequently Asked Questions
-
-> ## Is this project still up to date?<br>
-
-- Yes! I use and work on this program and extension almost everyday!<br>There are currently no plans on discontinuing this Project.
-
-> ## Will this project stay free?<br>
-
-- Of course! Its open source! But I would highly appreciate a little bit of money, as it helps me prepare for my future. For example, a **driving license**. 
 
 ---
 
-<a target="_blank" href="https://discord.gg/Kw7WaYn" title="Join our Discord!">
-<img src="gitassets/discord.svg" height="50px" draggable="false" alt="Join my Discord!">
-</a>&nbsp;
-<a target="_blank" href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button"><img src="gitassets/patreonBTN.png" draggable="false" height="50px" alt="Support me on Patreon!"></a>&nbsp;
-<a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US"><img src="gitassets/PayPal.svg" height="50px" draggable="false" alt="PayPal"></a>
+# Donator
+## Patrons
+
+<b>TOP DONATOR</b>
+
+<i>My first Patron :3</i>
+
+<a target="_blank" href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button"><img src="gitassets/fruxh.png" height="100px" width="100px" draggable="false" alt="Fruxh"></a>
+
+## PayPal
+
+<i>My first Donation :3</i>
+
+<img src="gitassets/paz.png" height="100px" width="100px" draggable="false" alt="Paz">
+
+# Team
+
+## Founder and Developer
+
+<img src="gitassets/timeraa.png" height="100px" width="100px" draggable="false" alt="Timeraa">
+
+## Admin and Translation Manager
+<img src="gitassets/fruxh.png" height="100px" width="100px" draggable="false" alt="Fruxh">
+
+## Translator
+
+### Arabic
+<img src="gitassets/xiRDX.gif" height="100px" width="100px" draggable="false" alt="xiRDX">
+
+### German
+<img src="gitassets/fruxh.png" height="100px" width="100px" draggable="false" alt="Fruxh">
+<img src="gitassets/restrike.png" height="100px" width="100px" draggable="false" alt="Restrike">
+
+### Hebrew
+<img src="gitassets/ufo.png" height="100px" width="100px" draggable="false" alt="Fruxh">
+
+### Japanese
+<img src="gitassets/fruxh.png" height="100px" width="100px" draggable="false" alt="Fruxh">
+<img src="gitassets/restrike.png" height="100px" width="100px" draggable="false" alt="Restike">
+
+### Korean
+<img src="gitassets/restrike.png" height="100px" width="100px" draggable="false" alt="Restike">
+
+### Latin
+<img src="gitassets/restrike.png" height="100px" width="100px" draggable="false" alt="Restike">
+
+### Swedish
+<img src="gitassets/VerifyBot.png" height="100px" width="100px" draggable="false" alt="VerifyBot">
 
 ---
 
