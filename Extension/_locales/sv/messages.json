@@ -1,9 +1,15 @@
 {
+    "appDesc": {
+        "message": "YT Presence lägger till Discord Rich Presence Integration, Mediekontroller och mycket mer till YouTube/YouTube Musik, Twitch osv..."
+    },
     "connected": {
         "message": "Ansluten"
     },
     "disconnected": {
         "message": "Avkopplad"
+    },
+    "installedThanks": {
+        "message": "Tack för att du har installerat YT Presence"
     },
     "installedApp": {
         "message": "Har du installerat programmet ännu?"
@@ -13,6 +19,9 @@
     },
     "installedStepApp": {
         "message": "Ladda ner den senaste versionen från $1"
+    },
+    "installedStepAppMyRepository": {
+        "message": "mitt GitHub-förråd"
     },
     "installedWaitInstalled": {
         "message": "Öppna installationsprogrammet och vänta tills det installeras"
@@ -26,8 +35,14 @@
     "installedYes": {
         "message": "Ja? Du är redo att gå!"
     },
+    "installedStart": {
+        "message": "Börja med att titta på en video på YouTube, titta på dina älskade streamers på Twitch, kanske även Netflix... Vem vet? Eller så lyssnar du bara på dina favoritlåtar på SoundCloud och YouTube Music."
+    },
     "installedSupportMe": {
         "message": "Stöd mig!"
+    },
+    "updatedYTPUpdated": {
+        "message": "YT Presence har uppdaterats!"
     },
     "updatedWhatsNew": {
         "message": "Vad är nytt?"

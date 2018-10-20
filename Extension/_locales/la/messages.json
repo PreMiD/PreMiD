@@ -1,9 +1,15 @@
 {
+    "appDesc": {
+        "message": "YT Presence Discord Rich Presence instruens, gubernatio studii et amplius ad YouTube/YouTube Music, Twitch, et cetera addet"
+    },
     "connected": {
         "message": "Connexus"
     },
     "disconnected": {
         "message": "Discerptim"
+    },
+    "installedThanks": {
+        "message": "Gratias ago YT Presence instruere"
     },
     "installedApp": {
         "message": "Iamne usum instruxisti"
@@ -13,6 +19,9 @@
     },
     "installedStepApp": {
         "message": "Instruere suprema forma a $1"
+    },
+    "installedStepAppMyRepository": {
+        "message": "GitHub logium meum"
     },
     "installedWaitInstalled": {
         "message": "Aperi instruens et exspecta dum instruxit"
@@ -26,14 +35,23 @@
     "installedYes": {
         "message": "Enimne? Incohare potes!"
     },
+    "installedStart": {
+        "message": "Incipe per video spectante in YouTube, per streamer amari spectante in Twitch, fortasse etiam Netflix... quis scit? Aut carmina optima in SoundCloud et YouTube Music audis."
+    },
     "installedSupportMe": {
         "message": "Adiuva me!"
+    },
+    "updatedYTPUpdated": {
+        "message": "YT Presence corrigam est!"
     },
     "updatedWhatsNew": {
         "message": "Quid nove est?"
     },
     "updatedWhatChanged": {
         "message": "Quid mutatum est?"
+    },
+    "updatedAdded0": {
+        "message": "Instruere pars nova"
     },
     "updatedAdded1": {
         "message": "Corrigere pars"
