@@ -116,7 +116,7 @@ PreMiD is a simple, configurable utility to allow you to show what you're watchi
 
 - Of course! Its open source! But I would highly appreciate a little bit of money, as it helps me prepare for my future. For example, a **driving license**. 
 - <span><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US">
-<img src="gitassets/paypal.png" height="32px" draggable="false" alt="Support Me with a Donation"></a></span>
+<img src="gitassets/donateonpaypal.png" height="32px" draggable="false" alt="Support Me with a Donation"></a></span>
 
 ---
 
