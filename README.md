@@ -1,13 +1,11 @@
 ## ![version](https://img.shields.io/badge/Version-1.1-brightgreen.svg?style=flat-square) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=flat-square)](https://discord.gg/Kw7WaYn)
 
-# <img src="icon.png" width="20" draggable="false"><b> </b>YouTube Presence &middot; Watcha watching there? 👀
-
-_YT Presence Features like **Discord Rich Presence** integration, **Media controls** to **YouTube**/**YouTube Music**, **Twitch**, **SoundCloud**, **Netflix**._
+# <img src="gitassets/premid.webp" width="20" draggable="false"><b> </b>PreMiD &middot; Universal Media Rich Presence for Discord 👀
 
 <a href="https://discord.gg/Kw7WaYn" title="Join our Discord!">
-<img src="discord-logo.svg" height="50px" draggable="false" alt="Join my Discord!">
+<img src="gitassets/discord.svg" height="50px" draggable="false" alt="Join my Discord!">
 </a>
-<a href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button"><img src="patreonBTN.png" draggable="false" height="50px" alt="Support me on Patreon!"></a>
+<a href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button"><img src="gitassets/patreonBTN.png" draggable="false" height="50px" alt="Support me on Patreon!"></a>
 
 # Table of contents
 
@@ -26,10 +24,11 @@ _YT Presence Features like **Discord Rich Presence** integration, **Media contro
 
 # Features
 
-- Discord Rich Presence Integration
-- Media control keys
-- Automatically clears Presence after 1 minute of inactivity
-- _More soon_
+- Integrates with discord's official Rich Presence API library.
+- Supports your keyboard's Media Control function keys.
+- Automatically clears your current presence after 1 minute of inactivity.
+- Supports YouTube, YouTube Music, Netflix, SoundCloud and many more to come.
+- _Watch parties and more are coming soon!_
 
 # Support
 
@@ -109,8 +108,12 @@ _YT Presence Features like **Discord Rich Presence** integration, **Media contro
 
 > ## Will this project stay free?<br>
 
-- Of course! Its open source! But i would highly appreciate a little bit of Money it helps me for my Future, like a **Driving license**. <br><br><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US">Donate here</a>
+- Of course! Its open source! But I would highly appreciate a little bit of money, as it helps me prepare for my future. For example, a **driving license**. 
+<br>
+<br>
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US">
+<img src="gitassets/paypal.png" height="30px" draggable="false" alt="Support Me with a Donation"></a>
 
 ---
 
-### YT Presence V1.1 &middot; By Timeraa
+### PreMiD - (Rich) Presence for Media in Discord | Developed by Timeraa & Supported by the Community.
