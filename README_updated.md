@@ -1,5 +1,6 @@
 ## ![version](https://img.shields.io/badge/Version-1.1-brightgreen.svg?style=flat-square) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=flat-square)](https://discord.gg/Kw7WaYn)
 
+# <img src="gitassets/premid.webp" width="24px" draggable="false"><b> </b>PreMiD &middot; Media Rich Presence for Discord
 # About
 ## Summary
 
@@ -111,7 +112,6 @@
 
 ---
 
-# <img src="gitassets/premid.webp" width="24px" draggable="false"><b> </b>PreMiD &middot; Media Rich Presence for Discord
 <a target="_blank" href="https://discord.gg/Kw7WaYn" title="Join our Discord!">
 <img src="gitassets/discord.svg" height="50px" draggable="false" alt="Join my Discord!">
 </a>&nbsp;
