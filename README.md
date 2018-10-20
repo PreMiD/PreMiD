@@ -1,23 +1,23 @@
 ## ![version](https://img.shields.io/badge/Version-1.1-brightgreen.svg?style=flat-square) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=flat-square)](https://discord.gg/Kw7WaYn)
 
-# <img src="gitassets/premid.webp" width="24px" draggable="false"><b> </b>PreMiD &middot; Universal Media Rich Presence for Discord
-<a href="https://discord.gg/Kw7WaYn" title="Join our Discord!">
+# <img src="gitassets/premid.webp" width="24px" draggable="false"><b> </b>PreMiD &middot; Media Rich Presence for Discord
+<a target="_blank" href="https://discord.gg/Kw7WaYn" title="Join our Discord!">
 <img src="gitassets/discord.svg" height="50px" draggable="false" alt="Join my Discord!">
 </a>&nbsp;
-<a href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button"><img src="gitassets/patreonBTN.png" draggable="false" height="50px" alt="Support me on Patreon!"></a>&nbsp;
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US"><img src="gitassets/PayPal.svg" height="50px" draggable="false" alt="PayPal"></a>
+<a target="_blank" href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button"><img src="gitassets/patreonBTN.png" draggable="false" height="50px" alt="Support me on Patreon!"></a>&nbsp;
+<a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US"><img src="gitassets/PayPal.svg" height="50px" draggable="false" alt="PayPal"></a>
 
 # About
 ## Summary
 
-PreMiD is a simple, configurable utility to allow you to show what you're watching in your discord now playing status, or "rich presence". It supports many different platforms, and will also support multiple users watching the same content simultaneously in an upcoming update.
+**PreMiD** is a simple, configurable utility to allow you to show what you're watching in your Discord now playing status, or "**Rich Presence**". It supports [many different platforms](#support), and will also support multiple users watching the same content simultaneously in an upcoming update.
 
 ## Features
 
-- Integrates with discord's official Rich Presence API library.
-- Supports your keyboard's Media Control function keys.
+- Integrates with Discord's official Rich Presence API library.
+- Supports your keyboard's **Media Control** function keys.
 - Automatically clears your current presence after 1 minute of inactivity.
-- Supports YouTube, YouTube Music, Netflix, SoundCloud and many more to come.
+- Supports **YouTube, YouTube Music, Netflix, SoundCloud** and many more to come.
 - _Watch parties and more are coming soon!_
 
 # Table of contents
@@ -54,7 +54,7 @@ PreMiD is a simple, configurable utility to allow you to show what you're watchi
 
 <details>
   <summary><b><u>Installing the Chrome extension</u></b> (Click to expand)</summary>
-  <h1>Chrome extension installation</h1>
+  <h1>Chrome Extension Installation</h1>
   <ol>
     <li>Click <a href="https://chrome.google.com/webstore/detail/yt-presence/agjnjboanicjcpenljmaaigopkgdnihi">this</a> link</li>
     </li>
@@ -64,7 +64,7 @@ PreMiD is a simple, configurable utility to allow you to show what you're watchi
 </details>
 <details>
 <summary><b><u>Installing the Opera extension</u></b> (Click to expand)</summary>
-  <h1>Opera extension installation</h1>
+  <h1>Opera Extension Installation</h1>
   <ol>
     <li>Download the latest version of the <a href="https://github.com/Timeraa/YT-Presence/releases/latest">extension</a>
     </li>
@@ -99,9 +99,9 @@ PreMiD is a simple, configurable utility to allow you to show what you're watchi
   <ol>
     <li>Download the latest installer from <a href="https://github.com/Timeraa/YT-Presence/releases/">here</a></li>
     <li>Open the downloaded <b>.exe</b> installer</li>
-    <li>If SmartScreen comes up press more informations then press run anyways. (Its not a virus, i promise)</li>
-    <li>YouTube Presence should install itself and start automatically (You can tell by looking at the taskbar)</li>
-    <li>Install Extension if not already</li>
+    <li>If SmartScreen comes up press more informations then press run anyways. (It's not a virus, I promise.)</li>
+    <li>YouTube Presence should install itself and start automatically. (You can tell by looking at the taskbar.)</li>
+    <li>Install the extension, if you haven't already.</li>
   </ol>
 </details>
 <br>
