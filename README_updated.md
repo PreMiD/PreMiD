@@ -32,9 +32,21 @@
   - [Installing the Application](#application)
     - Mac OS
     - Windows
-- [Donator] (#donator)
-- [Team] (#team)
-
+- [Donator](#donator)
+  - [Patrons] (#patrons)
+  - [PayPal] (#paypal)
+- [Team](#team)
+  - [Founder and Developer] (#founder-and-developer)
+  - [Admin and Translation Manager] (#admin-and-translation-manager)
+  - [Translator](#translator)
+    - [Arabic](#arabic)
+    - [German](#german)
+    - [Hebrew](#hebrew)
+    - [Japanese](#japanese)
+    - [Korean](#korean)
+    - [Latin](#latin)
+    - [Swedish](#swedish)
+    
 # Support
 
 ### **Operating Systems**
@@ -88,7 +100,7 @@
     <li>Open your Launchpad or press F4</li>
     <li>Open <b>PreMiD</b></li>
     <li>Press <b>"Allow"</b> if a window pops up</li>
-    <li>Install extension if not already</li>
+    <li>Install <a href="#extension">extension</a> if not already</li>
   </ol>
 </details>
 
@@ -136,8 +148,8 @@
 <img src="gitassets/xiRDX.gif" height="100px" width="100px" draggable="false" alt="xiRDX">
 
 ### German
-<img src="gitassets/fruxh.png" height="100px" width="100px" draggable="false" alt="Fruxh">
-<img src="gitassets/restrike.png" height="100px" width="100px" draggable="false" alt="Restrike">
+<th><img src="gitassets/fruxh.png" height="100px" width="100px" draggable="false" alt="Fruxh">
+<th><img src="gitassets/restrike.png" height="100px" width="100px" draggable="false" alt="Restrike"></th>
 
 ### Hebrew
 <img src="gitassets/ufo.png" height="100px" width="100px" draggable="false" alt="Fruxh">
