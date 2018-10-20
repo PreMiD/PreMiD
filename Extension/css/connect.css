@@ -1,0 +1,54 @@
+#ytp-connectinfo {
+  position: fixed;
+  top: -50px;
+  right: 0;
+  z-index: 10000;
+  min-width: 175px;
+  border-bottom-left-radius: 5px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.5);
+  user-select: none;
+  animation-name: slideIn;
+  animation-duration: 5s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  color: black;
+}
+
+#ytp-connectinfo * {
+  margin: 0;
+  padding: 0;
+}
+
+#ytp-connectinfo img {
+  float: left;
+  margin: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+#ytp-connectinfo h1 {
+  font-size: 20px;
+  margin-top: 4px;
+}
+
+#ytp-connectinfo h2 {
+  font-size: 17px;
+}
+
+@keyframes slideIn {
+  0% {
+    top: -50px;
+  }
+
+  10% {
+    top: 0;
+  }
+
+  90% {
+    top: 0;
+  }
+
+  100% {
+    top: -50px;
+  }
+}
