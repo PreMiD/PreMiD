@@ -1,74 +1,74 @@
 {
-  "appDesc": {
-    "message": "PreMiD adds Discord Rich Presence integration, Media controls and much more to YouTube/YouTube Music, Twitch etc..."
-  },
-  "connected": {
-    "message": "Connected"
-  },
-  "disconnected": {
-    "message": "Disconnected"
-  },
-  "installedThanks": {
-    "message": "Thank you for installing PreMiD"
-  },
-  "installedApp": {
-    "message": "Did you install the application yet?"
-  },
-  "installedNo": {
-    "message": "No? Follow these steps:"
-  },
-  "installedStepApp": {
-    "message": "Download the latest version from $1"
-  },
-  "installedStepAppMyRepository": {
-    "message": "my repository"
-  },
-  "installedWaitInstalled": {
-    "message": "Open the installer and wait until it installed"
-  },
-  "installedMayWarning": {
-    "message": "You may receive a warning about FireWall and SmartScreen (Its not a virus i promise)"
-  },
-  "installedAppAutostart": {
-    "message": "The application should start automatically, you can check this by looking at your taskbar (Windows) or your menubar (MacOS)"
-  },
-  "installedYes": {
-    "message": "Yes? You are ready to go!"
-  },
-  "installedStart": {
-    "message": "Start by watching a video on YouTube, watching your loved streamers on Twitch, maybe even Netflix... Who knows?<br>Or you just listen to your favourite songs on SoundCloud and YouTube Music."
-  },
-  "installedSupportMe": {
-    "message": "Support me!"
-  },
-  "updatedYTPUpdated": {
-    "message": "PreMiD has been updated!"
-  },
-  "updatedWhatsNew": {
-    "message": "Whats new?"
-  },
-  "updatedWhatChanged": {
-    "message": "What changed?"
-  },
-  "updatedAdded0": {
-    "message": "Install tab page"
-  },
-  "updatedAdded1": {
-    "message": "Update tab page"
-  },
-  "updatedAdded2": {
-    "message": "Language support"
-  },
-  "updatedAdded3": {
-    "message": "Tab Priority"
-  },
-  "updatedChanged0": {
-    "message": "Small bug fixes"
-  },
-  "updatedChanged1": {
-    "message": "Extension organisation"
-  },
-  "updatedChanged2": {
-    "message": "YouTube + YouTube Music rewrite"
-  }
+    "appDesc": {
+        "message": "PreMiD adds Discord Rich Presence integration, Media controls and much more to YouTube/YouTube Music, Twitch etc..."
+    },
+    "connected": {
+        "message": "Connected"
+    },
+    "disconnected": {
+        "message": "Disconnected"
+    },
+    "installedThanks": {
+        "message": "Thank you for installing PreMiD"
+    },
+    "installedApp": {
+        "message": "Did you install the application yet?"
+    },
+    "installedNo": {
+        "message": "No? Follow these steps:"
+    },
+    "installedStepApp": {
+        "message": "Download the latest version from $1"
+    },
+    "installedStepAppMyRepository": {
+        "message": "my repository"
+    },
+    "installedWaitInstalled": {
+        "message": "Open the installer and wait until it installed"
+    },
+    "installedMayWarning": {
+        "message": "You may receive a warning about FireWall and SmartScreen (Its not a virus i promise)"
+    },
+    "installedAppAutostart": {
+        "message": "The application should start automatically, you can check this by looking at your taskbar (Windows) or your menubar (MacOS)"
+    },
+    "installedYes": {
+        "message": "Yes? You are ready to go!"
+    },
+    "installedStart": {
+        "message": "Start by watching a video on YouTube, watching your loved streamers on Twitch, maybe even Netflix... Who knows?<br>Or you just listen to your favourite songs on SoundCloud and YouTube Music."
+    },
+    "installedSupportMe": {
+        "message": "Support me!"
+    },
+    "updatedYTPUpdated": {
+        "message": "PreMiD has been updated!"
+    },
+    "updatedWhatsNew": {
+        "message": "Whats new?"
+    },
+    "updatedWhatChanged": {
+        "message": "What changed?"
+    },
+    "updatedAdded0": {
+        "message": "Install tab page"
+    },
+    "updatedAdded1": {
+        "message": "Update tab page"
+    },
+    "updatedChanged0": {
+        "message": "Small bug fixes"
+    },
+    "updatedChanged1": {
+        "message": "Extension organisation"
+    },
+    "updatedAdded2": {
+        "message": "Language support"
+    },
+    "updatedAdded3": {
+        "message": "Tab Priority"
+    },
+    "updatedChanged2": {
+        "message": "YouTube + YouTube Music rewrite"
+    }
 }
