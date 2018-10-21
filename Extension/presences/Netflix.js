@@ -1,6 +1,9 @@
 let playback = true,
 eventType,
-playbackNew
+playbackNew,
+tabActive = 0,
+dataUpdaterRunning = false,
+dataUpdater
 
 var lastPlaybackState = true
 setInterval(() => {
@@ -13,30 +16,6 @@ setInterval(() => {
     lastPlaybackState = true;
   }
 }, 500)
-
-//* Create socket connection to application
-var socket = io.connect('http://localhost:3020/');
-
-//* Log when connected
-socket.on('connect', function () {
-  console.log('YT Presence: %c' + chrome.i18n.getMessage('connectedConsole'), "color: green; font-weight: 700")
-  if(sessionStorage['ytpconnected'] == null || sessionStorage['ytpconnected'] == 'false') {
-    $('<div id="ytp-connectinfo"><img draggable="false" src="//github.com/Timeraa/YT-Presence/blob/master/icon.png?raw=true"><h1>YT Presence</h1><h2>' + chrome.i18n.getMessage("connected") + '</h2></div>').appendTo('body')
-    setTimeout(() => {
-      $('#ytp-connectinfo').remove()
-    }, 5*1000)
-    sessionStorage['ytpconnected'] = 'true'
-  }
-})
-
-socket.on('disconnect', function() {
-  console.log('YT Presence: %c' +  + chrome.i18n.getMessage('disconnectedConsole'), "color: red; font-weight: 700")
-  sessionStorage['ytpconnected'] = 'false'
-  $('<div id="ytp-connectinfo"><img draggable="false" src="//github.com/Timeraa/YT-Presence/blob/master/icon.png?raw=true"><h1>YT Presence</h1><h2>' + chrome.i18n.getMessage("disconnected") + '</h2></div>').appendTo('body')
-  setTimeout(() => {
-    $('#ytp-connectinfo').remove()
-  }, 5*1000)
-})
 
 //* When we receive messages from the application
 socket.on('mediaKeyHandler', function (data) {
@@ -86,8 +65,24 @@ function checkPlayChange() {
 
 //* Start interval
 window.onload = function () {
-  setInterval(updateData, 1000)
+  //* Tab Priority
+  setInterval(() => {
+    if(tabActive == 5) {
+      dataUpdaterRunning = false
+      clearInterval(dataUpdater)
+    }
+    if(tabActive >= 9 && dataUpdaterRunning == false) {
+      dataUpdaterRunning = true
+      dataUpdater = setInterval(updateData, 1000)
+    }
+    if(tabActive > 0) tabActive--
+  }, 500)
 }
+
+chrome.runtime.onMessage.addListener(((message, sender) => {
+  if(tabActive <= 9) tabActive += 2
+  if(tabActive == 0) tabActive = 5
+}))
 
 //* Create needed variables
 let urlForVideo,

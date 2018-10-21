@@ -1,50 +1,39 @@
-//* Create needed variables
-let splitTime,
-  songCurrentTime,
-  songEndTime,
-  songAuthors = [],
-  playback = true,
-  eventType
+let musicRunning = false,
+tabActive = 0,
+dataUpdaterRunning = false,
+dataUpdater
 
-//* Register listeners
-$('.play-pause-button').click(handlePlayPause)
-$('.ytmusic-player').click(handlePlayPause)
-//* Start interval
+//* Update data and send to application
 $(document).ready(() => {
-  //* Check Play change
-  setInterval(checkPlayChange, 250)
-  //* Update data and send to application
-  setInterval(updateData, 1000)
+  setInterval(playbackChange, 250)
+  //* Tab Priority
+  setInterval(() => {
+    if(tabActive == 5) {
+      dataUpdaterRunning = false
+      musicRunning = false
+      clearInterval(dataUpdater)
+    }
+    if(tabActive >= 9 && dataUpdaterRunning == false) {
+      dataUpdaterRunning = true
+      dataUpdater = setInterval(updateData, 1000)
+    }
+    if(tabActive > 0) tabActive--
+  }, 500)
 })
 
-//* Create socket connection to application
-var socket = io.connect('http://localhost:3020/');
+chrome.runtime.onMessage.addListener(((message, sender) => {
+  if(tabActive <= 9) tabActive += 2
+  if(tabActive == 0) tabActive = 5
+}))
 
-//* Log when connected
-socket.on('connect', function () {
-  console.log('YT Presence: %c' + chrome.i18n.getMessage('connectedConsole'), "color: green; font-weight: 700")
-  if(sessionStorage['ytpconnected'] == null || sessionStorage['ytpconnected'] == 'false') {
-    $('<div id="ytp-connectinfo"><img draggable="false" src="//github.com/Timeraa/YT-Presence/blob/master/icon.png?raw=true"><h1>YT Presence</h1><h2>' + chrome.i18n.getMessage('connected') + '</h2></div>').appendTo('body')
-    setTimeout(() => {
-      $('#ytp-connectinfo').remove()
-    }, 5*1000)
-    sessionStorage['ytpconnected'] = 'true'
-  }
-})
+//* Handle Media Keys from sent by application
+socket.on('mediaKeyHandler', handleMediaKeys)
 
-socket.on('disconnect', function() {
-  console.log('YT Presence: %c' +  + chrome.i18n.getMessage('disconnectedConsole'), "color: red; font-weight: 700")
-  sessionStorage['ytpconnected'] = 'false'
-  $('<div id="ytp-connectinfo"><img draggable="false" src="//github.com/Timeraa/YT-Presence/blob/master/icon.png?raw=true"><h1>YT Presence</h1><h2>' + chrome.i18n.getMessage("disconnected") + '</h2></div>').appendTo('body')
-  setTimeout(() => {
-    $('#ytp-connectinfo').remove()
-  }, 5*1000)
-})
-
-socket.on('error', (err) => console.log(`Error while connecting... ${err}`))
-
-//* When we receive messages from the application
-socket.on('mediaKeyHandler', function (data) {
+/**
+ * Handles Media Keys for easy media control
+ * @param {Object} data Data received from socket
+ */
+function handleMediaKeys(data) {
   //* Check if the data is for YTM & if music is running
   //* Media control buttons
   if (musicRunning) {
@@ -56,8 +45,6 @@ socket.on('mediaKeyHandler', function (data) {
         break
       case "nextTrack":
         $('.next-button').click()
-        //* Prevent playback from being paused again
-        playback = true
         //* Send response back to application
         updateData("nextTrack")
         break
@@ -68,100 +55,93 @@ socket.on('mediaKeyHandler', function (data) {
         break
     }
   }
-})
+}
 
-function handlePlayPause() {
+/**
+ * Update Data and send it to the App
+ * @param {String} playbackChange Playback if changed
+ */
+function updateData(playbackChange = false) {
+  var eventType
+  musicRunning = $(".title.style-scope.ytmusic-player-bar").html() != "" && $('.video-stream')[0] != undefined && !isNaN($('.video-stream')[0].duration) ? true : false
+  if(musicRunning) {
+    var songTitle = $(".title.style-scope.ytmusic-player-bar").html(),
+    songAuthors = getAuthors(),
+    songTimeSeconds = Math.floor($('.video-stream')[0].currentTime),
+    songDurationSeconds = Math.floor($('.video-stream')[0].duration),
+    songTimestamps = getTimestamps(songTimeSeconds, songDurationSeconds)
+    playback = $('.video-stream')[0].paused ? "paused" : "playing"
+
+    if (playbackChange) eventType = 'playBackChange'; else eventType = 'updateData';
+
+    var data = {
+      ytm: {
+        songTitle: songTitle,
+        songAuthors: songAuthors,
+        songCurrentTime: songTimestamps[0],
+        songEndTime: songTimestamps[1],
+        songCurrentTimeSeconds: songTimeSeconds,
+        songEndTimeSeconds: songDurationSeconds,
+        playback: playback
+      }
+    }
+  }
+  if(socket.connected) socket.emit(eventType, data)
+}
+
+/**
+ * Get authors of Song
+ */
+function getAuthors() {
+  var songAuthors = []
+  //* Extract authors as array
+  $(".byline.ytmusic-player-bar").contents().each(function (index, item) {
+    if (item.classList != undefined) {
+      if (item.classList.contains("yt-simple-endpoint") == true) {
+        songAuthors.push(item.innerHTML)
+      }
+    }
+  })
+
+  //* If no authors found in previous method use this
+  if (songAuthors.length == 0 || songAuthors.length == 1) {
+    //* Clear old list
+    songAuthors = []
+    songAuthors.push($(".byline.ytmusic-player-bar").contents().first().text())
+  }
+  return songAuthors
+}
+
+/**
+ * Get Timestamps
+ * @param {Number} songTime Song Time
+ * @param {Number} songDuration Song Duration
+ */
+function getTimestamps(songTime, songDuration) {
+  var startTime = Date.now();
+  var endTime =
+    Math.floor(startTime / 1000) -
+    songTime +
+    songDuration;
+    return [Math.floor(startTime/1000), endTime]
+}
+
+/**
+ * Toggles playback
+ */
+function togglePlayback() {
   //* Toggle playback variable
-  if (playback == true) playback = false; else playback = true;
+  playback = !playback
   //* Send status to application
   updateData(playback ? "playing" : "paused")
 }
 
-function checkPlayChange() {
-  //* Correct playback if out of sync
-  if (playback == false) {
-    //* Check if playbutton on page matches variable
-    if ($(".play-pause-button svg").prop("outerHTML") == playButton) {
-      //* Update playback variable
-      playback = true
-      //* Pause song
-      $('.play-pause-button').click()
+var lastPlayback = false
+function playbackChange() {
+  if(musicRunning) {
+    if($('.video-stream')[0].paused != lastPlayback) {
+      togglePlayback()
+      lastPlayback = $('.video-stream')[0].paused
     }
   }
-
-  //* Set musicRunning variable to true if url has /watch or music title not empty
-  if (document.location.pathname.includes("/watch") || $(".title.style-scope.ytmusic-player-bar").html() != "") musicRunning = true; else musicRunning = false;
-}
-
-function updateData(playbackChange = false) {
-  //* Clear author array
-  songAuthors = []
-
-  if ($(".title.style-scope.ytmusic-player-bar").html() != "") {
-    //* Get song Time String (2:10 / 3:21)
-    //* Split to array ["2:10", "3:21"]
-    splitTime = $(".time-info.style-scope.ytmusic-player-bar").html().split(" / ", 2)
-    //* Convert to seconds
-    songCurrentTime = getSeconds(splitTime[0])
-    songEndTime = getSeconds(splitTime[1])
-
-    //* Get all authors
-    $(".byline.ytmusic-player-bar").contents().each(function (index, item) {
-      if (item.classList != undefined) {
-        if (item.classList.contains("yt-simple-endpoint") == true) {
-          songAuthors.push(item.innerHTML)
-        }
-      }
-    })
-
-    //* If no authors found in previous method use this
-    if (songAuthors.length == 0 || songAuthors.length == 1) {
-      //* Clear old list
-      songAuthors = []
-      songAuthors.push($(".byline.ytmusic-player-bar").contents().first().text())
-    }
-
-    var startTime = Date.now();
-    var endTime =
-      Math.floor(startTime / 1000) -
-      songCurrentTime +
-      songEndTime;
-
-    if (playbackChange != false) {
-      playbackNew = playbackChange
-      eventType = 'playBackChange'
-    } else {
-      playbackNew = playback ? "playing" : "paused"
-      eventType = 'updateData'
-    }
-
-    var data = {
-      ytm: {
-        songTitle: $(".title.style-scope.ytmusic-player-bar").html(),
-        songAuthors: songAuthors, 
-        songCurrentTimeSeconds: songCurrentTime,
-        songCurrentTime: startTime,
-        songEndTimeSeconds: songEndTime,
-        songEndTime: endTime,
-        songCover: $(".image.style-scope.ytmusic-player-bar").attr("src"),
-        playback: playbackNew
-      }
-    }
-  } else {
-    var data = {
-      status: "keepAlive"
-    }
-    eventType = 'updateData'
-  }
-
-  if(socket.connected) socket.emit(eventType, data)
-}
-
-//* Used to extract seconds from Syntax 
-//* 1:39 => 99
-function getSeconds(string) {
-  const s = string.split(":")
-
-  const seconds = +s[0] * 60 + +s[1]
-  return seconds
 }

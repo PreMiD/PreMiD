@@ -1,0 +1,74 @@
+{
+    "appDesc": {
+        "message": "YT Presence מוסיף Rich Presence שילוב של מדיה, פיקודים ועוד המון דברים לYouTube/YouTube Music, Twitch ועוד.."
+    },
+    "connected": {
+        "message": "מחובר"
+    },
+    "disconnected": {
+        "message": "מנותק"
+    },
+    "installedThanks": {
+        "message": "תודה שהורדת את YT Presence "
+    },
+    "installedApp": {
+        "message": "האם התקנת את התוכנה?"
+    },
+    "installedNo": {
+        "message": "לא? תעקוב אחרי הצעדים הבאים:"
+    },
+    "installedStepApp": {
+        "message": "הורד את הגרסה החדשה ביותר ב1$"
+    },
+    "installedStepAppMyRepository": {
+        "message": "מאגר הGitHub שלי"
+    },
+    "installedWaitInstalled": {
+        "message": "פתח את ההתקנה וחכה על שההתקנה תסתיים"
+    },
+    "installedMayWarning": {
+        "message": "יש סיכוי שתקבל אזהרה על FireWall וSmartScreen (זה לא וירוס, אני מבטיח)"
+    },
+    "installedAppAutostart": {
+        "message": "התוכנה אמורה להתחיל אוטומטית, אתה יכול לבדוק את זה בכך שתסתכל על שורת המשימות שלך (Windows) או בתפריט הבר (MacOS)"
+    },
+    "installedYes": {
+        "message": "כן? אתה מוכן לדרך!"
+    },
+    "installedStart": {
+        "message": "התחל בכך שתצפה בסרטון ביוטיוב, צפה בסטרימרים האהובים עליך בTwitch, אולי אפילו בNetflix... מי יודע? או שאתה רק רוצה להאזין לשירים האהובים עליך בSoundCloud ובYouTube Music"
+    },
+    "installedSupportMe": {
+        "message": "עזור לי!"
+    },
+    "updatedYTPUpdated": {
+        "message": " YT Presence עודכן בהצלחה!"
+    },
+    "updatedWhatsNew": {
+        "message": "מה חדש?"
+    },
+    "updatedWhatChanged": {
+        "message": "מה השתנה?"
+    },
+    "updatedAdded0": {
+        "message": "הורד את לשונית הכרטיסייה"
+    },
+    "updatedAdded1": {
+        "message": "עדכן את דף הכרטיסייה"
+    },
+    "updatedChanged0": {
+        "message": "באגים קטנים תוקנו"
+    },
+    "updatedChanged1": {
+        "message": "ארגון תקינת התוסף"
+    },
+    "updatedAdded2": {
+        "message": "שפת תמיכה"
+    },
+    "updatedAdded3": {
+        "message": ""
+    },
+    "updatedChanged2": {
+        "message": ""
+    }
+}

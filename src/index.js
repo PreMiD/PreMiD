@@ -23,7 +23,7 @@ const Config = require('electron-config');
 //#endregion
 
 //* Required for Windows Push notifications
-app.setAppUserModelId("eu.Timeraa.yt_presence")
+app.setAppUserModelId("eu.Timeraa.premid")
 
 global.UPDATEAVAIABLE = ""
 global.VERSION = config.version
@@ -43,7 +43,7 @@ global.CURRENTSONGAUTHORSSTRING = ""
 global.CURRENTSONGSTARTTIME = ""
 global.CURRENTSONGSTARTTIMESECONDS = ""
 global.CURRENTSONGENDTIME = ""
-global.CONSOLEPREFIX = chalk.bold(chalk.bgHex('#db0918')(chalk.hex('#000000')(" Y") + chalk.hex('#ffffff')("T "))) + chalk.cyan(" Presence") + chalk.hex('#ffffff')(": ")
+global.CONSOLEPREFIX = chalk.bold(chalk.bgHex('#db0918')(chalk.hex('#1a1a1a')(" Pre") + chalk.hex('#FFFFFF')("Mi"))) + chalk.hex('#7289DA')("D") + chalk.hex('#ffffff')(": ")
 global.YTRPCREADY = false
 global.YTMRPCREADY = false
 global.NFLIXRPCREADY = false
@@ -115,7 +115,7 @@ const appReady = () => {
     //* Add App to AutoLaunch
     console.log(CONSOLEPREFIX + chalk.yellow("Adding App to autostart..."))
     let autoLaunch = new AutoLaunch({
-      name: 'YT Presence',
+      name: 'PreMiD',
       path: app.getPath('exe'),
       isHidden: true
     });

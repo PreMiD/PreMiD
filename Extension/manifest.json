@@ -1,7 +1,7 @@
 {
-  "name": "YT Presence",
+  "name": "PreMiD",
   "author": "Timeraa",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "__MSG_appDesc__",
   "manifest_version": 2,
   "default_locale": "en",
@@ -19,7 +19,11 @@
   },
   "content_scripts": [
     {
-      "js": ["util/jquery-3.3.1.min.js", "util/socket.io-2.1.1.min.js"],
+      "js": [
+        "util/jquery-3.3.1.min.js",
+        "util/socket.io-2.1.1.min.js",
+        "util/socketConnector.js"
+      ],
       "css": ["connect.css"],
       "matches": [
         "https://www.youtube.com/*",

@@ -1,0 +1,11 @@
+document.getElementById('version').innerHTML = 'V' + chrome.runtime.getManifest().version
+document.getElementById('installedThanks').innerHTML = chrome.i18n.getMessage("installedThanks")
+document.getElementById('installedApp').innerHTML = chrome.i18n.getMessage("installedApp")
+document.getElementById('installedNo').innerHTML = chrome.i18n.getMessage("installedNo")
+document.getElementById('installedStepApp').innerHTML = chrome.i18n.getMessage("installedStepApp", "<a class='hu' target='_blank' href='https://github.com/Timeraa/PreMiD/releases/latest'>" + chrome.i18n.getMessage("installedStepAppMyRepository") + "</a>")
+document.getElementById('installedWaitInstalled').innerHTML = chrome.i18n.getMessage("installedWaitInstalled")
+document.getElementById('installedMayWarning').innerHTML = chrome.i18n.getMessage("installedMayWarning")
+document.getElementById('installedAppAutostart').innerHTML = chrome.i18n.getMessage("installedAppAutostart")
+document.getElementById('installedYes').innerHTML = chrome.i18n.getMessage("installedYes")
+document.getElementById('installedStart').innerHTML = chrome.i18n.getMessage("installedStart")
+document.getElementById('installedSupportMe').innerHTML = chrome.i18n.getMessage("installedSupportMe")

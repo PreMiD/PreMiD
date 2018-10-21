@@ -1,21 +1,74 @@
 {
-  "appDesc": {
-    "message": "YT Presence adds Discord Rich Presence integration, Media controls and much more to YouTube/YouTube Music, Twitch etc..."
-  },
-  "connectedConsole": {
-    "message": "Mit Applikation verbunden",
-    "description": "Verbindungsstatus der Erweiterung."
-  },
-  "disconnectedConsole": {
-    "message": "Von Applikation getrennt",
-    "description": "Verbindungsstatus der Erweiterung."
-  },
-  "connected": {
-    "message": "Verbunden",
-    "description": "Verbindungsstatus der Erweiterung."
-  },
-  "disconnected": {
-    "message": "Getrennt",
-    "description": "Verbindungsstatus der Erweiterung."
-  }
+    "appDesc": {
+        "message": "PreMiD fügt eine Discord-Rich-Presence-Integration, Kontrolle über Multimediatasten und viele weitere Funktionen zu YouTube/YouTube Music, Twitch etc. hinzu."
+    },
+    "connected": {
+        "message": "Verbunden"
+    },
+    "disconnected": {
+        "message": "Getrennt"
+    },
+    "installedThanks": {
+        "message": "Vielen Dank, für das Installieren von PreMiD"
+    },
+    "installedApp": {
+        "message": "Hast du das Programm bereits installiert?"
+    },
+    "installedNo": {
+        "message": "Nein? Folge dieser Anleitung:"
+    },
+    "installedStepApp": {
+        "message": "Lade die neueste Version von $1 herunter"
+    },
+    "installedStepAppMyRepository": {
+        "message": "meinem GitHub Repository"
+    },
+    "installedWaitInstalled": {
+        "message": "Offne das Installationsprogramm und warte bis die Installation abgeschlossen ist"
+    },
+    "installedMayWarning": {
+        "message": "Möglicherweise bekommst du eine Warnung von deiner FireWall und SmartScreen (Es ist kein Virus. Das verspreche ich dir!)"
+    },
+    "installedAppAutostart": {
+        "message": "Das Programm sollte automatisch starten. Du kannst dies prüfen, indem du auf deine Taskbar (Windows) oder deine Menubar (MacOS) schaust"
+    },
+    "installedYes": {
+        "message": "Ja? Jetzt bist du bereit!"
+    },
+    "installedStart": {
+        "message": "Starte, indem du ein Video auf YouTube, deine Lieblingsstreamer auf Twitch oder vielleicht sogar Netflix schaust... Wer weiß? Oder du hörst dir deine Lieblingslieder auf SoundCloud und YouTube Music an."
+    },
+    "installedSupportMe": {
+        "message": "Unterstütze mich!"
+    },
+    "updatedYTPUpdated": {
+        "message": "PreMiD wurde aktualisiert!"
+    },
+    "updatedWhatsNew": {
+        "message": "Was ist neu?"
+    },
+    "updatedWhatChanged": {
+        "message": "Was hat sich geändert?"
+    },
+    "updatedAdded0": {
+        "message": "Installieren Tab"
+    },
+    "updatedAdded1": {
+        "message": "Update Tab"
+    },
+    "updatedChanged0": {
+        "message": "Kleinere Bugfixes"
+    },
+    "updatedChanged1": {
+        "message": "Erweiterungs Organisierung"
+    },
+    "updatedAdded2": {
+        "message": "Sprachunterstützung"
+    },
+    "updatedAdded3": {
+        "message": "Tab Priorität"
+    },
+    "updatedChanged2": {
+        "message": "YouTube + YouTube Music neugeschrieben"
+    }
 }

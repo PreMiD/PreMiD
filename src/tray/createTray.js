@@ -7,7 +7,7 @@ exports.run = () => {
   TRAY.setToolTip(`YT Presence V${VERSIONSTRING}`)
   constants.menuBarMenu = new Menu()
   constants.menuBarMenu.append(new MenuItem({
-    label: `YT Presence | V${VERSIONSTRING}`,
+    label: `PreMiD | V${VERSIONSTRING}`,
     enabled: false,
     icon: path.join(__dirname, "../assets/images/icon.png")
   }))

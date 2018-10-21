@@ -1,6 +1,7 @@
 ## ![version](https://img.shields.io/badge/Version-1.1-brightgreen.svg?style=flat-square) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=flat-square)](https://discord.gg/Kw7WaYn)
 
 # <img src="gitassets/premid.webp" width="24px" draggable="false"><b> </b>PreMiD &middot; Media Rich Presence for Discord
+
 <a target="_blank" href="https://discord.gg/Kw7WaYn" title="Join our Discord!">
 <img src="gitassets/discord.svg" height="50px" draggable="false" alt="Join my Discord!">
 </a>&nbsp;
@@ -8,9 +9,10 @@
 <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US"><img src="gitassets/PayPal.svg" height="50px" draggable="false" alt="PayPal"></a>
 
 # About
+
 ## Summary
 
-**PreMiD** is a simple, configurable utility to allow you to show what you're watching in your Discord now playing status, or "**Rich Presence**". It supports [many different platforms](#support), and will also support multiple users watching the same content simultaneously in an upcoming update.
+**PreMiD** is a simple, configurable utility to allow you to show what you're watching in your Discord **now playing status**. It supports [many different platforms](#support), and will also support multiple users watching the same content simultaneously in an upcoming update.
 
 ## Features
 
@@ -21,20 +23,18 @@
 - _Watch parties and more are coming soon!_
 
 # Table of contents
+
 - [About](#about)
   - [Summary](#summary)
   - [Features](#features)
 - [Support](#support)
 - [Installation](#installation)
-  - [Installing the Extension](#extension)
+  - [Extension](#extension)
     - Chrome
     - Opera
-  - [Installing the Application](#application)
+  - [Application](#application)
     - Mac OS
     - Windows
-- [FAQ](#faq-·-frequently-asked-questions)
-  - Is this project up to date?
-  - Will this project stay free?
 
 # Support
 
@@ -59,7 +59,7 @@
     <li>Click <a href="https://chrome.google.com/webstore/detail/yt-presence/agjnjboanicjcpenljmaaigopkgdnihi">this</a> link</li>
     </li>
     <li>Click "add to Chrome"</li>
-    <li>Install the <a href="#installing-the-application">application</a></li>
+    <li>Install the <a href="#application">application</a></li>
   </ol>
 </details>
 <details>
@@ -71,9 +71,8 @@
     <li>Extract the downloaded <b>.zip</b> file</li>
     <li>Open Opera</li>
     <li>Go to <a href="chrome://extensions/">chrome://extensions/</a></li>
-    <li>Drag and drop the extension's folder on the page<br>
-    <li>Load the extracted <b>Extension</b> folder</li>
-    <li>Install the <a href="#installing-the-application">application</a></li>
+    <li>Drag and drop the Folder <b>"Extension"</b> on the page<br>
+    <li>Install the <a href="#application">application</a></li>
   </ol>
 </details>
 
@@ -86,10 +85,11 @@
     <li>Download the latest version of the <a href="https://github.com/Timeraa/YT-Presence/releases/latest">application</a>
     </li>
     <li>Open the downloaded <b>.dmg</b> file</li>
-    <li>Drag <b>YT Presence</b> Into your <b>Applications</b> Folder</li>
-    <li>Open your Launchpad</li>
-    <li>Open <b>YT Presence</b></li>
-    <li>Install Extension if not already</li>
+    <li>Drag <b>PreMiD</b> Into your <b>Applications</b> Folder</li>
+    <li>Open your Launchpad or press F4</li>
+    <li>Open <b>PreMiD</b></li>
+    <li>Press <b>"Allow"</b> if a window pops up</li>
+    <li>Install <a href="#extension">extension</a> if not already</li>
   </ol>
 </details>
 
@@ -104,17 +104,82 @@
     <li>Install the extension, if you haven't already.</li>
   </ol>
 </details>
-<br>
 
-# FAQ &middot; Frequently Asked Questions
+---
 
-> ## Is this project still up to date?<br>
+<h1 style="text-align: center;">Creator</h1>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/timeraa.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">Timeraa</h2>
+</div>
 
-- Yes! I use and work on this program and extension almost everyday!<br>There are currently no plans on discontinuing this Project.
+<h1 style="text-align: center;">Admin & Translation Manager</h1>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/fruxh.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">Fruxh</h2>
+</div>
 
-> ## Will this project stay free?<br>
+<h1 style="text-align: center;">Patrons & Donators</h1>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/fruxh.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">Fruxh</h2>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">Patron</h3>
+</div>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/paz.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">Paz</h2>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">Paypal</h3>
+</div>
 
-- Of course! Its open source! But I would highly appreciate a little bit of money, as it helps me prepare for my future. For example, a **driving license**. 
+<h1 style="text-align: center;">Translators</h1>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/fruxh.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">Fruxh</h2>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">German</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">Japanese</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+</div>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/restrike.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">Restrike</h2>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">German</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">Japanese</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">Korean</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">Latin</h3>
+</div>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/timeraa.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">Timeraa</h2>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">German</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+</div>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/xiRDX.gif" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">2dward.</h2>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">Arabic</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+</div>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/ufo.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">Ufo</h2>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">Hebrew</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+</div>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/VerifyBot.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">VerifyBot</h2>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">Swedish</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
+</div>
 
 ---
 

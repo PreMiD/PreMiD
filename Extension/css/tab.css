@@ -1,0 +1,106 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: 282828;
+  color: white;
+}
+
+#header,
+#footer {
+  background-color: #7289da;
+  color: white;
+  height: 60px;
+}
+
+#icon {
+  margin: 5px;
+  width: 50px;
+  float: left;
+}
+
+#title {
+  float: left;
+  font-size: 25px;
+  font-weight: 900;
+  margin-top: 15px;
+}
+
+#version {
+  margin-right: 15px;
+  font-size: 25px;
+  font-weight: 700;
+  float: right;
+}
+
+#content {
+  margin: 10px;
+}
+
+h1:not(#title):not(#version),
+h2,
+h3 {
+  margin: 0;
+}
+
+h1 {
+  position: relative;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+h2 {
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+h2:last-of-type {
+  margin-bottom: 5px;
+}
+
+h3 {
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+p {
+  margin: 5px;
+}
+
+p,
+li {
+  font-size: 17px;
+}
+
+ul {
+  margin: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+a {
+  transition: all 0.25s cubic-bezier(0.6, 0.29, 0.35, 0.85);
+  position: relative;
+  color: rgb(0, 125, 255);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.hu:after {
+  transition: width 0.25s cubic-bezier(0.6, 0.29, 0.35, 0.85);
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 0;
+  background-color: rgb(0, 125, 255);
+}
+
+a:hover {
+  color: rgb(0, 150, 255);
+}
+
+a.hu:hover:after {
+  width: 100%;
+}

@@ -1,10 +1,10 @@
 {
-  "name": "yt_presence",
-  "productName": "YT Presence",
-  "version": "1.1.0",
-  "description": "YT Presence adds cool Features to YouTube/YouTube Music. Like for example Discord Rich Presence integration, Media controls and much more.",
+  "name": "premid",
+  "productName": "PreMiD",
+  "version": "1.1.1",
+  "description": "PreMiD is a simple, configurable utility to allow you to show what you're watching in your Discord now playing status. It supports many different platforms, and will also support multiple users watching the same content simultaneously in an upcoming update.",
   "main": "index.js",
-  "repository": "Timeraa/YT-Presence",
+  "repository": "Timeraa/PreMiD",
   "scripts": {
     "start": "electron src/.",
     "pkgmac": "electron-packager ./src/ --out=./out/ --asar --overwrite --icon=./appIcon.ico --osx-sign.identity='Florian Metz'",

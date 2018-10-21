@@ -1,67 +1,15 @@
-[
-  {
-    "term": "app.description",
-    "definition": "YT Presence adds Discord Rich Presence integration, Media controls and much more to YouTube/YouTube Music, Twitch etc...",
-    "comment": "Description of the application"
-  },
-  {
-    "term": "settings.title",
-    "definition": "Preferences",
-    "comment": "Preferences label & title in preferences menu"
-  },
-  {
-    "term": "settings.close",
-    "definition": "Close",
-    "comment": "Close button in preferences menu"
-  },
-  {
-    "term": "settings.enabled",
-    "definition": "Enabled",
-    "comment": "Enabled option in preferences menu"
-  },
-  {
-    "term": "settings.titleMenubar",
-    "definition": "Title Menubar",
-    "comment": "Song/video title in menu bar (Mac OS) only"
-  },
-  {
-    "term": "settings.launchOnBoot",
-    "definition": "Launch on system startup",
-    "comment": ""
-  },
-  {
-    "term": "settings.autoCheckUpdates",
-    "definition": "Automatically check for updates",
-    "comment": ""
-  },
-  {
-    "term": "tray.about",
-    "definition": "About",
-    "comment": "About label when opening context menu of application"
-  },
-  {
-    "term": "tray.checkForUpdates",
-    "definition": "Check for updates",
-    "comment": "Check for updates label when opening context menu of application"
-  },
-  {
-    "term": "tray.settings",
-    "definition": "Preferences",
-    "comment": "Preferences label when opening context menu of application"
-  },
-  {
-    "term": "update.later",
-    "definition": "Later",
-    "comment": "Later button in update window"
-  },
-  {
-    "term": "update.update",
-    "definition": "Update button in update window",
-    "comment": ""
-  },
-  {
-    "term": "update.title",
-    "definition": "Update avaiable!",
-    "comment": "Title of update window"
-  }
-]
+{
+    "app.description": "PreMiD is a simple, configurable utility to allow you to show what you're watching in your Discord now playing status. It supports many different platforms, and will also support multiple users watching the same content simultaneously in an upcoming update.",
+    "settings.title": "Preferences",
+    "settings.close": "Close",
+    "settings.enabled": "Enabled",
+    "settings.titleMenubar": "Title Menubar",
+    "settings.launchOnBoot": "Launch on system startup",
+    "settings.autoCheckUpdates": "Automatically check for updates",
+    "tray.about": "About",
+    "tray.checkForUpdates": "Check for updates",
+    "tray.settings": "Preferences",
+    "update.later": "Later",
+    "update.update": "Update",
+    "update.title": "Update available!"
+}
