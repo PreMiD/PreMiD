@@ -71,7 +71,7 @@ function updatePresence(details, state, smallImageKey, smallImageText, startTime
     details: entities.decode(details),
     state: entities.decode(state),
     largeImageKey: "nflix_lg",
-    largeImageText: "YT Presence " + VERSIONSTRING,
+    largeImageText: "PreMiD " + VERSIONSTRING,
     smallImageKey: smallImageKey,
     smallImageText: smallImageText,
     startTimestamp: startTimestamp,

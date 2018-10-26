@@ -1,9 +1,6 @@
 {
-  "yt_client_id": "463097721130188830",
-  "ytm_client_id": "463151177836658699",
   "nflix_client_id": "499981204045430784",
-  "twitch_client_id": "501021996336021504",
   "scloud_client_id": "501021185887436810",
-  "version": "1.1",
+  "version": "1.2",
   "devBuild": false
 }

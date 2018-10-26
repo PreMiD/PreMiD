@@ -21,6 +21,8 @@ $(document).ready(() => {
   }, 500)
 })
 
+
+//* Tab Priority
 chrome.runtime.onMessage.addListener(((message, sender) => {
   if(tabActive <= 9) tabActive += 2
   if(tabActive == 0) tabActive = 5
@@ -70,22 +72,65 @@ function updateData(playbackChange = false) {
     songTimeSeconds = Math.floor($('.video-stream')[0].currentTime),
     songDurationSeconds = Math.floor($('.video-stream')[0].duration),
     songTimestamps = getTimestamps(songTimeSeconds, songDurationSeconds)
-    playback = $('.video-stream')[0].paused ? "paused" : "playing"
+    playback = $('.video-stream')[0].paused ? "paused" : "playing",
+    songAuthorsString = null;
 
     if (playbackChange) eventType = 'playBackChange'; else eventType = 'updateData';
 
-    var data = {
-      ytm: {
-        songTitle: songTitle,
-        songAuthors: songAuthors,
-        songCurrentTime: songTimestamps[0],
-        songEndTime: songTimestamps[1],
-        songCurrentTimeSeconds: songTimeSeconds,
-        songEndTimeSeconds: songDurationSeconds,
-        playback: playback
+    songAuthors.forEach((author, index, authors) => {
+      if (index == 0)
+      songAuthorsString = author;
+      else if (index < authors.length - 2)
+      songAuthorsString = songAuthorsString + ", " + author;
+      else if (index < authors.length - 1) songAuthorsString = songAuthorsString + " and " + author;
+      else songAuthorsString = songAuthorsString + " &bull; " + author;
+    });
+
+    var playbackBoolean = !$('.video-stream')[0].paused
+
+    var smallImageKey = playbackBoolean ? 'play' : 'pause',
+    smallImageText = playbackBoolean ? chrome.i18n.getMessage('playbackPlaying') : chrome.i18n.getMessage('playbackPaused')
+
+    if(playbackBoolean) {
+      var data = {
+          clientID: '463151177836658699',
+          presenceData: {
+            details: $('<div/>').html(songTitle).text(),
+            state: $('<div/>').html(songAuthorsString).text(),
+            largeImageKey: 'ytm_lg',
+            largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+            smallImageKey: smallImageKey,
+            smallImageText: smallImageText,
+            startTimestamp: songTimestamps[0],
+            endTimestamp: songTimestamps[1]
+          },
+          currentSeconds: songTimeSeconds,
+          durationSeconds: songDurationSeconds,
+          trayTitle: $('<div/>').html(songTitle).text(),
+          playback: playbackBoolean,
+          service: 'ytm'
+        }
+      } else {
+        var data = {
+          clientID: '463151177836658699',
+          presenceData: {
+            details: $('<div/>').html(songTitle).text(),
+            state: $('<div/>').html(songAuthorsString).text(),
+            largeImageKey: 'ytm_lg',
+            largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+            smallImageKey: smallImageKey,
+            smallImageText: smallImageText
+          },
+          currentSeconds: songTimeSeconds,
+          durationSeconds: songDurationSeconds,
+          trayTitle: $('<div/>').html(songTitle).text(),
+          playback: playbackBoolean,
+          service: 'ytm'
+        }
       }
     }
-  }
+
+  //* If socket connection, send data
   if(socket.connected) socket.emit(eventType, data)
 }
 

@@ -1,0 +1,70 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 0;
+  width: 325px;
+  background-color: #282828;
+}
+
+#header {
+  height: 50px;
+  background-color: #596cae;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+}
+
+#header h1 {
+  margin: 0;
+  font-weight: 900;
+  display: inline;
+}
+
+#header h1:last-child {
+  position: absolute;
+  font-weight: 700;
+  float: right;
+  right: 10px;
+}
+
+#content {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#panel {
+  transition: 0.5s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: inline-block;
+  margin: 5px;
+  width: 150px;
+  height: 125px;
+  background-color: #596cae;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+#panel:hover {
+  transform: scale(1.05);
+}
+
+#panel #icon {
+  margin-top: 25px;
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+}
+
+.about {
+  background-color: #ff9d09 !important;
+}
+
+.options {
+  background-color: #7a7a7a !important;
+}
+
+.github {
+  background-color: #fa503c !important;
+}

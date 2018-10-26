@@ -13,6 +13,7 @@
     "presistent": false
   },
   "browser_action": {
+    "default_popup": "popup.html",
     "default_icon": {
       "2024": "icon.png"
     }
@@ -30,7 +31,8 @@
         "https://music.youtube.com/*",
         "https://*.netflix.com/*",
         "https://soundcloud.com/*",
-        "https://*.twitch.tv/*"
+        "https://*.twitch.tv/*",
+        "https://jkanime.net/*"
       ]
     },
     {
@@ -52,7 +54,16 @@
     {
       "js": ["presences/Twitch.js"],
       "matches": ["https://*.twitch.tv/*"]
+    },
+    {
+      "js": ["presences/JKanime.js"],
+      "matches": ["https://jkanime.net/*"]
     }
   ],
-  "permissions": ["http://localhost:3020/", "tabs", "storage"]
+  "permissions": [
+    "http://localhost:3020/",
+    "tabs",
+    "storage",
+    "declarativeContent"
+  ]
 }

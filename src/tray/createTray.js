@@ -4,27 +4,18 @@ const {Tray, Menu, MenuItem} = require('electron')
 
 exports.run = () => {
   TRAY = new Tray(path.join(__dirname, "../assets/images/icon.png"))
-  TRAY.setToolTip(`YT Presence V${VERSIONSTRING}`)
+  TRAY.setToolTip(`PreMiD V${VERSIONSTRING}`)
   constants.menuBarMenu = new Menu()
   constants.menuBarMenu.append(new MenuItem({
-    label: `YT Presence | V${VERSIONSTRING}`,
+    label: `PreMiD | V${VERSIONSTRING}`,
     enabled: false,
     icon: path.join(__dirname, "../assets/images/icon.png")
   }))
   constants.menuBarMenu.append(new MenuItem({type: "separator"}))
   constants.menuBarMenu.append(new MenuItem({
-    click: require('./showAbout').run,
-    label: "About"
-  }))
-  constants.menuBarMenu.append(new MenuItem({
     click: cfu,
-    label: "Check for update"
+    label: "Check for updates"
   }))
-  constants.menuBarMenu.append(new MenuItem({
-    click: require('./showPreferences').run,
-    label: "Preferences"
-  }))
-  constants.menuBarMenu.append(new MenuItem({type: "separator"}))
   constants.menuBarMenu.append(new MenuItem({role: "quit"}))
   TRAY.setContextMenu(constants.menuBarMenu)
 }

@@ -194,7 +194,7 @@ function switchTitleMenubar() {
 function switchAutomaticStartup() {
   //* Add App to AutoLaunch
   let autoLaunch = new AutoLaunch({
-    name: 'YT Presence',
+    name: 'PreMiD',
     path: app.getPath('exe'),
     isHidden: true
   });

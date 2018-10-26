@@ -1,11 +1,14 @@
+const DiscordRPC = require('discord-rpc')
+
 //* Require needed packages
-const chalk = require("chalk")
-const express = require("express")
-var constants = require('./util/constants.js')
-var extension = express();
-var http = require('http')
-var socketServer = http.createServer(extension);
-var io = require('socket.io')(socketServer);
+const chalk = require("chalk"),
+express = require("express")
+
+//* Create server to listen for extension
+var extension = express(),
+http = require('http'),
+socketServer = http.createServer(extension),
+io = require('socket.io')(socketServer);
 
 //* Load Config
 const Config = require('electron-config');
@@ -14,25 +17,19 @@ const userSettings = new Config({
 });
 
 //* Define needed variables
-var keepAliveSwitch = 0,
-  lastKeepAliveSwitch = 0,
-  ytrpcused = false,
-  ytmrpcused = false,
-  nflixrpcused = false,
-  twitchrpcused = false,
-  scloudrpcused = false
+var lastKeepAliveSwitch = 0
 
 //* Keep alive check to automatically remove presence if browser not running/not using YT
 setInterval(keepAliveCheck, 1000)
 
-function keepAliveCheck() {
-  if (lastKeepAliveSwitch > keepAliveSwitch + 10) {
-    if(PLATFORM == "darwin") TRAY.setTitle("")
-    if (YTMRPCREADY) YTMRPC.clearActivity()
-    if (YTRPCREADY) YTRPC.clearActivity()
-    if (NFLIXRPCREADY) NFLIXRPC.clearActivity()
-    if (TWITCHRPCREADY) TWITCHRPC.clearActivity()
-    if (SCLOUDRPCREADY) SCLOUDRPC.clearActivity()
+async function keepAliveCheck() {
+  if (lastKeepAliveSwitch > 0) {
+    setupServices.forEach(service => {
+      service.rpc.destroy()
+    })
+    setupServices = []
+    serviceLogins = []
+    if(PLATFORM == "darwin") TRAY.setTitle("");
   }
   lastKeepAliveSwitch += 1
 }
@@ -47,74 +44,46 @@ io.on('connection', function (socket) {
   global.EXTENSIONSOCKET = socket
   BROWSERCONNECTIONSTATE = "CONNECTED"
 
-  socket.on('playBackChange', (data) => {
-    updatePresence(data, true)
-  })
-
-  socket.on('updateData', (data) => {
-    updatePresence(data)
-  })
+  socket.on('playBackChange', updatePresence)
+  socket.on('updateData', updatePresence)
 })
 
+var setupServices = [],
+serviceLogins = [],
+presencePauseSwitch = 0
+
 //* Updates the presence with the incomming data
-function updatePresence(data, force = false) {
-  lastKeepAliveSwitch = 0
-  if (!userSettings.get('titleMenubar') && PLATFORM == "darwin") TRAY.setTitle("")
+async function updatePresence(data) {
+  lastKeepAliveSwitch = 0;
 
-  if (data.yt != undefined) {
-    ytrpcused = true
-    if (userSettings.get('youTube')) require('./presences/YouTube.js')(data, force); else if (YTRPCREADY) YTRPC.clearActivity()
-  } else if (data.ytm != undefined) {
-    ytmrpcused = true
-    if (userSettings.get('youTubeMusic')) require('./presences/YouTube_Music.js')(data, force); else if (YTMRPCREADY) YTMRPC.clearActivity()
-  } else if(data.nflix != undefined) {
-    nflixrpcused = true
-    if (userSettings.get('netflix')) require('./presences/Netflix.js')(data, force); else if (NFLIXRPCREADY) NFLIXRPC.clearActivity()
-  } else if(data.twitch != undefined) {
-    twitchrpcused = true
-    if (userSettings.get('twitch')) require('./presences/Twitch.js')(data, force); else if (TWITCHRPCREADY) TWITCHRPC.clearActivity()
-  } else if(data.scloud != undefined) {
-    scloudrpcused = true
-    if (userSettings.get('soundcloud')) require('./presences/SoundCloud.js')(data, force); else if(SCLOUDRPCREADY) SCLOUDRPC.clearActivity()
-  }
+  var setupService = setupServices.find(svice => svice.serviceName == data.service);
 
-  if (data.yt == undefined && YTRPCREADY) {
-    if (ytrpcused == true) {
-      ytrpcused = false
-      YTRPC.clearActivity()
-      if(PLATFORM == "darwin") TRAY.setTitle("")
+  if(!data.playback) presencePauseSwitch++; else presencePauseSwitch = 0;
+  if(presencePauseSwitch >= 60) {
+    setupService.rpc.clearActivity()
+    if(PLATFORM == "darwin") TRAY.setTitle("");
+  } else {
+    if(setupService) {
+      if(userSettings.get('titleMenubar')) if(PLATFORM == "darwin" && data.playback) TRAY.setTitle(data.trayTitle); else TRAY.setTitle(""); 
+      setupService.rpc.setActivity(data.presenceData)
+    } else {
+      tryLogin(data.service, data.clientID)
+      serviceLogins.push({serviceName: data.service, intervalID: setInterval(() => tryLogin(data.service, data.clientID), 10 * 1000)})
     }
   }
+}
 
-  if (data.ytm == undefined && YTMRPCREADY) {
-    if (ytmrpcused == true) {
-      ytmrpcused = false
-      YTMRPC.clearActivity()
-      if(PLATFORM == "darwin") TRAY.setTitle("")
-    }
-  }
 
-  if (data.nflix == undefined && NFLIXRPCREADY) {
-    if (nflixrpcused == true) {
-      nflixrpcused = false
-      NFLIXRPC.clearActivity()
-      if(PLATFORM == "darwin") TRAY.setTitle("")
-    }
-  }
-
-  if (data.twitch == undefined && TWITCHRPCREADY) {
-    if (twitchrpcused == true) {
-      twitchrpcused = false
-      TWITCHRPC.clearActivity()
-      if(PLATFORM == "darwin") TRAY.setTitle("")
-    }
-  }
-
-  if (data.scloud == undefined && SCLOUDRPCREADY) {
-    if (scloudrpcused == true) {
-      scloudrpcused = false
-      SCLOUDRPC.clearActivity()
-      if(PLATFORM == "darwin") TRAY.setTitle("")
-    }
-  }
+/**
+ * Try to login to RPC until connected
+ */
+async function tryLogin(service, clientID) {
+  setupServices.push({rpc: new DiscordRPC.Client({ transport: "ipc" }), serviceName: service, ready: false})
+  var serviceRPC = setupServices.find(svice => svice.serviceName == service)
+  serviceRPC.rpc.login({ clientId: clientID })
+  .catch(err => console.log(`${CONSOLEPREFIX}PreMiD - RPC: ${err.message}`))  
+  serviceRPC.rpc.on("ready", () => {
+    clearInterval(serviceLogins.find(svice => svice.serviceName == service).intervalID)
+    serviceRPC.ready = true
+  })
 }

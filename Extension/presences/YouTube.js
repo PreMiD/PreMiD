@@ -74,15 +74,46 @@ function updateData(playbackChange = false) {
 
     if (playbackChange) eventType = 'playBackChange'; else eventType = 'updateData';
 
-    var data = {
-      yt: {
-        videoTitle: videoTitle,
-        videoAuthor: videoAuthor,
-        videoCurrentTime: videoTimestamps[0],
-        videoEndTime: videoTimestamps[1],
-        videoCurrentTimeSeconds: videoTimeSeconds,
-        videoEndTimeSeconds: videoDurationSeconds,
-        playback: playback
+    var playbackBoolean = !$('.video-stream')[0].paused
+
+    var smallImageKey = playbackBoolean ? 'play' : 'pause',
+    smallImageText = playbackBoolean ? chrome.i18n.getMessage('playbackPlaying') : chrome.i18n.getMessage('playbackPaused')
+
+    if(playbackBoolean) {
+      var data = {
+        clientID: '463097721130188830',
+        presenceData: {
+          details: $('<div/>').html(videoTitle).text(),
+          state: $('<div/>').html(videoAuthor).text(),
+          largeImageKey: 'yt_lg',
+          largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+          smallImageKey: smallImageKey,
+          smallImageText: smallImageText,
+          startTimestamp: videoTimestamps[0],
+          endTimestamp: videoTimestamps[1]
+        },
+        currentSeconds: videoTimeSeconds,
+        durationSeconds: videoDurationSeconds,
+        trayTitle: $('<div/>').html(videoTitle).text(),
+        playback: playbackBoolean,
+        service: 'yt'
+      }
+    } else {
+      var data = {
+        clientID: '463097721130188830',
+        presenceData: {
+          details: $('<div/>').html(videoTitle).text(),
+          state: $('<div/>').html(videoAuthor).text(),
+          largeImageKey: 'yt_lg',
+          largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+          smallImageKey: smallImageKey,
+          smallImageText: smallImageText,
+        },
+        currentSeconds: videoTimeSeconds,
+        durationSeconds: videoDurationSeconds,
+        trayTitle: $('<div/>').html(videoTitle).text(),
+        playback: playbackBoolean,
+        service: 'yt'
       }
     }
   }

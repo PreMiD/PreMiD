@@ -36,6 +36,8 @@ if(config.devBuild) {
 global.BROWSERCONNECTIONSTATE = "NOT_CONNECTED"
 global.EXTENSIONSOCKET = null
 
+
+//! Needs rewrite/Deprecated
 //* YTM global vars
 global.CURRENTSONGTITLE = ""
 global.CURRENTSONGAUTHORS = []
@@ -115,7 +117,7 @@ const appReady = () => {
     //* Add App to AutoLaunch
     console.log(CONSOLEPREFIX + chalk.yellow("Adding App to autostart..."))
     let autoLaunch = new AutoLaunch({
-      name: 'YT Presence',
+      name: 'PreMiD',
       path: app.getPath('exe'),
       isHidden: true
     });

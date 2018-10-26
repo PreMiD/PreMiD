@@ -53,7 +53,7 @@ function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false) {
       console.log(CONSOLEPREFIX + chalk.cyan("Up to date! ") + chalk.yellow(`V${VERSION}`))
       if(sendNoUpdateInfo) {
         const noUpdateAvaiableNotification = new Notification({
-          title: 'YT Presence',
+          title: 'PreMiD',
           body: `You are up to date! (V${VERSION})`,
           silent: true
         })

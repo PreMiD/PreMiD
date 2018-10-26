@@ -1,3 +1,4 @@
+
 let playback = true,
 eventType,
 playbackNew,
@@ -106,10 +107,57 @@ function updateData(playbackChange = false) {
 
     var endTime
     if($('.playbackSoundBadge__titleContextContainer') != undefined) {
-      var startTime = Date.now();
-        endTime = Math.floor(startTime/1000) -
+      var startTime = Math.floor(Date.now()/1000);
+        endTime = startTime -
         getSeconds($('.playbackTimeline__timePassed').children().get(1).innerHTML) + getSeconds($('.playbackTimeline__duration').children().get(1).innerHTML);
-      data = {
+
+        var playbackBoolean = $('.playControl').hasClass('playing')
+
+        var smallImageKey = playbackBoolean ? 'play' : 'pause',
+        smallImageText = playbackBoolean ? chrome.i18n.getMessage('playbackPlaying') : chrome.i18n.getMessage('playbackPaused')
+    
+    
+        var songTitle = $('.playbackSoundBadge__titleLink').children().get(1).innerHTML,
+        songAuthorsString = $('.playbackSoundBadge__titleContextContainer').children().get(0).innerHTML;
+        if(playbackBoolean) {
+          data = {
+              clientID: '501021185887436810',
+              presenceData: {
+                details: $('<div/>').html(songTitle).text(),
+                state: $('<div/>').html(songAuthorsString).text(),
+                largeImageKey: 'scloud_lg',
+                largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+                smallImageKey: smallImageKey,
+                smallImageText: smallImageText,
+                startTimestamp: startTime,
+                endTimestamp: endTime
+              },
+              currentSeconds: getSeconds($('.playbackTimeline__timePassed').children().get(1).innerHTML),
+              durationSeconds: getSeconds($('.playbackTimeline__duration').children().get(1).innerHTML),
+              trayTitle: $('<div/>').html(songTitle).text(),
+              playback: playbackBoolean,
+              service: 'ytm'
+            }
+          } else {
+            data = {
+              clientID: '501021185887436810',
+              presenceData: {
+                details: $('<div/>').html(songTitle).text(),
+                state: $('<div/>').html(songAuthorsString).text(),
+                largeImageKey: 'scloud_lg',
+                largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+                smallImageKey: smallImageKey,
+                smallImageText: smallImageText
+              },
+              currentSeconds: getSeconds($('.playbackTimeline__timePassed').children().get(1).innerHTML),
+              durationSeconds: getSeconds($('.playbackTimeline__duration').children().get(1).innerHTML),
+              trayTitle: $('<div/>').html(songTitle).text(),
+              playback: playbackBoolean,
+              service: 'ytm'
+            }
+          }
+
+      /*data = {
         scloud: {
           url: urlForVideo,
           songTitle: $('.playbackSoundBadge__titleLink').children().get(1).innerHTML,
@@ -120,13 +168,7 @@ function updateData(playbackChange = false) {
           songEndTime: endTime,
           playback: $('.playControl').hasClass('playing') ? "playing" : "paused"
         }
-      }
-    } else {
-      data = {
-        scloud: {
-          playback: false
-        }
-      }
+      } */
     }
     if (socket.connected) socket.emit(eventType, data)
   }

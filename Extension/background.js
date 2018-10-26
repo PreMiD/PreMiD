@@ -5,12 +5,11 @@ chrome.runtime.onInstalled.addListener(function(details) {
       break;
     }
     case "update": {
-      chrome.tabs.create({url: "updated.html"})
+      //chrome.tabs.create({url: "updated.html"})
       break;
     }
   }
 })
-
 
 //* Tab Priority
 var lastAllowedTab = null
