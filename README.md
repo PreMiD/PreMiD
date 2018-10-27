@@ -19,7 +19,7 @@
 - Integrates with Discord's official Rich Presence API library.
 - Supports your keyboard's **Media Control** function keys.
 - Automatically clears your current presence after 1 minute of inactivity.
-- Supports **YouTube, YouTube Music, Netflix, SoundCloud** and many more to come.
+- Supports **YouTube, YouTube Music, Netflix, SoundCloud, JKAnime, KissAnime** and many more to come.
 - _Watch parties and more are coming soon!_
 
 # Table of contents
@@ -137,8 +137,6 @@
   <h2 style="text-align: center; font-weight: 700; margin: 0;">Fruxh</h2>
   <h3 style="text-align: center; font-weight: 700;margin: 0;">German</h3>
   <h3 style="text-align: center; font-weight: 700;margin: 0;">Japanese</h3>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
 </div>
 <div style="margin: 5px; width: 100px; display: inline-block;">
   <img draggable="false" src="gitassets/restrike.png" style="border-radius: 50%;" width="100px">
@@ -152,33 +150,21 @@
   <img draggable="false" src="gitassets/timeraa.png" style="border-radius: 50%;" width="100px">
   <h2 style="text-align: center; font-weight: 700; margin: 0;">Timeraa</h2>
   <h3 style="text-align: center; font-weight: 700;margin: 0;">German</h3>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
 </div>
 <div style="margin: 5px; width: 100px; display: inline-block;">
   <img draggable="false" src="gitassets/xiRDX.gif" style="border-radius: 50%;" width="100px">
   <h2 style="text-align: center; font-weight: 700; margin: 0;">2dward.</h2>
   <h3 style="text-align: center; font-weight: 700;margin: 0;">Arabic</h3>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
 </div>
 <div style="margin: 5px; width: 100px; display: inline-block;">
   <img draggable="false" src="gitassets/ufo.png" style="border-radius: 50%;" width="100px">
   <h2 style="text-align: center; font-weight: 700; margin: 0;">Ufo</h2>
   <h3 style="text-align: center; font-weight: 700;margin: 0;">Hebrew</h3>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
 </div>
 <div style="margin: 5px; width: 100px; display: inline-block;">
   <img draggable="false" src="gitassets/VerifyBot.png" style="border-radius: 50%;" width="100px">
   <h2 style="text-align: center; font-weight: 700; margin: 0;">VerifyBot</h2>
   <h3 style="text-align: center; font-weight: 700;margin: 0;">Swedish</h3>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">&ensp;</h3>
 </div>
 
 ---
