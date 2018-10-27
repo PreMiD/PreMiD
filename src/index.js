@@ -5,7 +5,6 @@ require('./util/handleWinstall')
 //* Declare needed constants
 const {app} = require('electron')
 
-const AutoLaunch = require('auto-launch')
 //* Require config
 const config = require('./config.json');
 const constants = require('./util/constants')
@@ -20,6 +19,9 @@ const updater = require('./util/updateChecker')
 const chalk = require("chalk")
 //* Setup electron-config
 const Config = require('electron-config');
+const userSettings = new Config({
+  name: "userSettings"
+});
 //#endregion
 
 //* Required for Windows Push notifications
@@ -72,10 +74,6 @@ if(iShouldQuit){
   return;
 }
 
-const userSettings = new Config({
-  name: "userSettings"
-});
-
 //* Set default values for electon-config userSettings
 if(userSettings.get('enabled') == undefined) userSettings.set('enabled', true)
 if(userSettings.get('youTube') == undefined) userSettings.set('youTube', true)
@@ -95,13 +93,15 @@ if(constants.platform == "darwin") {
 console.log(CONSOLEPREFIX + chalk.yellow("Loading..."))
 
 //* App ready
-const appReady = () => {
+const appReady = async () => {
   //* Setup MenuBar
   require('./tray/createTray').run()
   //* Require shortcuts
   require('./util/shortcutHandler')
   //* Include PresenceHandler
   require('./presenceHandler.js')
+  //* Auto launch
+  require('./util/autoLaunch')
   
   //* Automatically check for update
   if(userSettings.get('autoUpdateCheck') == true)
@@ -110,27 +110,6 @@ const appReady = () => {
   //* hide Dock icon when everything running
   if(constants.platform == "darwin") {
     app.dock.hide()
-  }
-
-  if(userSettings.get('autoLaunch') == undefined || userSettings.get('autoLaunch') == true) {
-    userSettings.set('autoLaunch', true)
-    //* Add App to AutoLaunch
-    console.log(CONSOLEPREFIX + chalk.yellow("Adding App to autostart..."))
-    let autoLaunch = new AutoLaunch({
-      name: 'PreMiD',
-      path: app.getPath('exe'),
-      isHidden: true
-    });
-
-    //* Enable AutoLaunch if disabled
-    autoLaunch.isEnabled().then(async (isEnabled) => {
-      if (!isEnabled) autoLaunch.enable();
-      console.log(CONSOLEPREFIX + chalk.green("Added App to autostart."))
-    })
-    //* Catch error
-    .catch(function(err) {
-      console.log(CONSOLEPREFIX + chalk.red("Error while adding App to autostart."))
-    })
   }
 }
 
