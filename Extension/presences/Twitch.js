@@ -143,7 +143,7 @@ function updateData(playbackChange = false) {
           .html(streamTitle)
           .text(),
         playback: playbackBoolean,
-        service: "twitch"
+        service: "Twitch"
       };
     } else {
       var data = {
@@ -167,7 +167,7 @@ function updateData(playbackChange = false) {
           .html(streamTitle)
           .text(),
         playback: playbackBoolean,
-        service: "twitch"
+        service: "Twitch"
       };
     }
   }

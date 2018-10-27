@@ -15,7 +15,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 var lastAllowedTab = null
 setInterval(() => {
   chrome.tabs.getAllInWindow(null, (tabs) => {
-    var allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "netflix.com"]
+    var allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "netflix.com", "kissanime.ac", "jkanime.net"]
 
     for (var i = 0; i < allowedURL.length; i++) {
       var currentTab = tabs.find(tab => tab.highlighted)

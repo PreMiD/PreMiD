@@ -40,18 +40,8 @@ function handleMediaKeys(data) {
     //* Switch cases for playback / Clicks corresponding buttons
     switch (data.playback) {
       case "pause":
-        $('.ytp-play-button').click()
+      $('#player_html5_html5_api')[0].paused ? $('#player_html5_html5_api')[0].play() : $('#player_html5_html5_api')[0].pause()
         updateData("playPauseTrack")
-        break
-      case "nextTrack":
-        $('.ytp-next-button')[0].click()
-        //* Send response back to application
-        updateData("nextTrack")
-        break
-      case "previousTrack":
-        $('.ytp-prev-button')[0].click()
-        //* Send response back to application
-        updateData("previousTrack")
         break
     }
   }
@@ -63,29 +53,29 @@ function handleMediaKeys(data) {
  */
 function updateData(playbackChange = false) {
   var eventType
-  videoRunning = $('.ytd-video-primary-info-renderer .title').text() != "" && $('.video-stream')[0] != undefined && !isNaN($('.video-stream')[0].duration) ? true : false
+  videoRunning = $('.movie_back_link strong').html() != "" && $('#player_html5_html5_api')[0] != undefined && !isNaN($('#player_html5_html5_api')[0].duration) ? true : false
   if(videoRunning) {
-    var videoTitle = $('.ytd-video-primary-info-renderer .title').text(),
-    videoAuthor = $("#upload-info .style-scope .ytd-video-owner-renderer").contents().first().html(),
-    videoTimeSeconds = Math.floor($('.video-stream')[0].currentTime),
-    videoDurationSeconds = Math.floor($('.video-stream')[0].duration),
+    var videoTitle = $('.movie_back_link strong').html(),
+    videoEpisode = $('#selectEpisode option:selected').text().trim(),
+    videoTimeSeconds = Math.floor($('#player_html5_html5_api')[0].currentTime),
+    videoDurationSeconds = Math.floor($('#player_html5_html5_api')[0].duration),
     videoTimestamps = getTimestamps(videoTimeSeconds, videoDurationSeconds)
-    playback = $('.video-stream')[0].paused ? "paused" : "playing"
+    playback = $('#player_html5_html5_api')[0].paused ? "paused" : "playing"
 
     if (playbackChange) eventType = 'playBackChange'; else eventType = 'updateData';
 
-    var playbackBoolean = !$('.video-stream')[0].paused
+    var playbackBoolean = !$('#player_html5_html5_api')[0].paused
 
     var smallImageKey = playbackBoolean ? 'play' : 'pause',
     smallImageText = playbackBoolean ? chrome.i18n.getMessage('playbackPlaying') : chrome.i18n.getMessage('playbackPaused')
 
     if(playbackBoolean) {
       var data = {
-        clientID: '463097721130188830',
+        clientID: '505704053238398986',
         presenceData: {
           details: $('<div/>').html(videoTitle).text(),
-          state: $('<div/>').html(videoAuthor).text(),
-          largeImageKey: 'yt_lg',
+          state: $('<div/>').html(videoEpisode).text(),
+          largeImageKey: 'ka_lg',
           largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
           smallImageKey: smallImageKey,
           smallImageText: smallImageText,
@@ -96,15 +86,15 @@ function updateData(playbackChange = false) {
         durationSeconds: videoDurationSeconds,
         trayTitle: $('<div/>').html(videoTitle).text(),
         playback: playbackBoolean,
-        service: 'YouTube'
+        service: 'KissAnime'
       }
     } else {
       var data = {
-        clientID: '463097721130188830',
+        clientID: '505704053238398986',
         presenceData: {
           details: $('<div/>').html(videoTitle).text(),
-          state: $('<div/>').html(videoAuthor).text(),
-          largeImageKey: 'yt_lg',
+          state: $('<div/>').html(videoEpisode).text(),
+          largeImageKey: 'ka_lg',
           largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
           smallImageKey: smallImageKey,
           smallImageText: smallImageText,
@@ -113,7 +103,7 @@ function updateData(playbackChange = false) {
         durationSeconds: videoDurationSeconds,
         trayTitle: $('<div/>').html(videoTitle).text(),
         playback: playbackBoolean,
-        service: 'YouTube'
+        service: 'KissAnime'
       }
     }
   }
@@ -147,9 +137,9 @@ function togglePlayback() {
 var lastPlayback = false
 function playbackChange() {
   if(videoRunning) {
-    if($('.video-stream')[0].paused != lastPlayback) {
+    if($('#player_html5_html5_api')[0].paused != lastPlayback) {
       togglePlayback()
-      lastPlayback = $('.video-stream')[0].paused
+      lastPlayback = $('#player_html5_html5_api')[0].paused
     }
   }
 }

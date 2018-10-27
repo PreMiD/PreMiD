@@ -136,7 +136,7 @@ function updateData(playbackChange = false) {
               durationSeconds: getSeconds($('.playbackTimeline__duration').children().get(1).innerHTML),
               trayTitle: $('<div/>').html(songTitle).text(),
               playback: playbackBoolean,
-              service: 'ytm'
+              service: 'SoundCloud'
             }
           } else {
             data = {
@@ -153,7 +153,7 @@ function updateData(playbackChange = false) {
               durationSeconds: getSeconds($('.playbackTimeline__duration').children().get(1).innerHTML),
               trayTitle: $('<div/>').html(songTitle).text(),
               playback: playbackBoolean,
-              service: 'ytm'
+              service: 'SoundCloud'
             }
           }
 

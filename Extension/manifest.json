@@ -32,6 +32,8 @@
         "https://*.netflix.com/*",
         "https://soundcloud.com/*",
         "https://*.twitch.tv/*",
+        "https://kissanime.ac/*",
+        "https://kissanime.ru/*",
         "https://jkanime.net/*"
       ]
     },
@@ -56,7 +58,11 @@
       "matches": ["https://*.twitch.tv/*"]
     },
     {
-      "js": ["presences/JKanime.js"],
+      "js": ["presences/KissAnime.js"],
+      "matches": ["https://kissanime.ac/*", "https://kissanime.ru/*"]
+    },
+    {
+      "js": ["presences/JKAnime.js"],
       "matches": ["https://jkanime.net/*"]
     }
   ],

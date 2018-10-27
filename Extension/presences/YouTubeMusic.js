@@ -108,7 +108,7 @@ function updateData(playbackChange = false) {
           durationSeconds: songDurationSeconds,
           trayTitle: $('<div/>').html(songTitle).text(),
           playback: playbackBoolean,
-          service: 'ytm'
+          service: 'YouTube Music'
         }
       } else {
         var data = {
@@ -125,7 +125,7 @@ function updateData(playbackChange = false) {
           durationSeconds: songDurationSeconds,
           trayTitle: $('<div/>').html(songTitle).text(),
           playback: playbackBoolean,
-          service: 'ytm'
+          service: 'YouTube Music'
         }
       }
     }
