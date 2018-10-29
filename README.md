@@ -48,6 +48,15 @@
 - Chrome
 - Opera
 
+### **Apps**
+
+- YouTube
+- YouTube Music
+- Soundcloud
+- Netflix
+- JKAnime
+- KissAnime
+
 # Installation
 
 ## Extension
