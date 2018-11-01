@@ -6,13 +6,9 @@ require('./util/handleWinstall')
 const {app} = require('electron')
 
 //* Require config
-const config = require('./config.json');
-const constants = require('./util/constants')
+var pjson = require('./package.json');
 //* Require electron-config
 const os = require('os')
-//* Update constant in file
-constants.platform = os.platform()
-global.PLATFORM = os.platform()
 //* Require Update checker
 const updater = require('./util/updateChecker')
 //* Require Needed packages
@@ -24,42 +20,23 @@ const userSettings = new Config({
 });
 //#endregion
 
-//* Required for Windows Push notifications
-app.setAppUserModelId("eu.Timeraa.yt_presence")
+//* Set app user model id
+app.setAppUserModelId("eu.Timeraa.premid")
 
+//* Define Global Variables
+global.PLATFORM = os.platform()
 global.UPDATEAVAIABLE = ""
-global.VERSION = config.version
-if(config.devBuild) {
-  global.VERSIONSTRING = VERSION + "-DEV"
-} else {
-  global.VERSIONSTRING = VERSION
-}
+global.VERSION = pjson.productVersion
+
+if(pjson.devBuild) 
+  global.VERSIONSTRING = VERSION + "-DEV"; 
+else 
+  global.VERSIONSTRING = VERSION;
 
 global.BROWSERCONNECTIONSTATE = "NOT_CONNECTED"
 global.EXTENSIONSOCKET = null
-
-
-//! Needs rewrite/Deprecated
-//* YTM global vars
-global.CURRENTSONGTITLE = ""
-global.CURRENTSONGAUTHORS = []
-global.CURRENTSONGAUTHORSSTRING = ""
-global.CURRENTSONGSTARTTIME = ""
-global.CURRENTSONGSTARTTIMESECONDS = ""
-global.CURRENTSONGENDTIME = ""
-global.CONSOLEPREFIX = chalk.bold(chalk.bgHex('#db0918')(chalk.hex('#000000')(" Y") + chalk.hex('#ffffff')("T "))) + chalk.cyan(" Presence") + chalk.hex('#ffffff')(": ")
-global.YTRPCREADY = false
-global.YTMRPCREADY = false
-global.NFLIXRPCREADY = false
-global.TWITCHRPCREADY = false
-global.SCLOUDRPCREADY = false
-
-global.YTRPC = null
-global.YTMRPC = null
-global.NFLIXRPC = null
-global.TWITCHRPC = null
-global.SCLOUDRPC = null
 global.TRAY = null
+global.CONSOLEPREFIX = chalk.bold(chalk.hex('#596cae')("PreMiD")) + chalk.hex('#ffffff')(": ")
 
 
 //* Clear console
@@ -75,18 +52,14 @@ if(iShouldQuit){
 }
 
 //* Set default values for electon-config userSettings
-if(userSettings.get('enabled') == undefined) userSettings.set('enabled', true)
-if(userSettings.get('youTube') == undefined) userSettings.set('youTube', true)
-if(userSettings.get('youTubeMusic') == undefined) userSettings.set('youTubeMusic', true)
-if(userSettings.get('netflix') == undefined) userSettings.set('netflix', true)
-if(userSettings.get('twitch') == undefined) userSettings.set('twitch', true)
-if(userSettings.get('soundcloud') == undefined) userSettings.set('soundcloud', true)
 if(userSettings.get('titleMenubar') == undefined) userSettings.set('titleMenubar', true)
+if(userSettings.get('autoStart') == undefined) userSettings.set('autoStart', true)
 if(userSettings.get('autoUpdateCheck') == undefined) userSettings.set('autoUpdateCheck', true)
+if(userSettings.get('mediaControls') == undefined) userSettings.set('mediaControls', true)
 
 
 //* Set dock Badge to version
-if(constants.platform == "darwin") {
+if(PLATFORM == "darwin") {
   app.dock.setBadge("V" + VERSION)
 }
 
@@ -97,7 +70,7 @@ const appReady = async () => {
   //* Setup MenuBar
   require('./tray/createTray').run()
   //* Require shortcuts
-  require('./util/shortcutHandler')
+  require('./util/shortcutHandler').register()
   //* Include PresenceHandler
   require('./presenceHandler.js')
   //* Auto launch
@@ -108,9 +81,7 @@ const appReady = async () => {
   updater.checkForUpdate(true)
 
   //* hide Dock icon when everything running
-  if(constants.platform == "darwin") {
-    app.dock.hide()
-  }
+  if(PLATFORM == "darwin") app.dock.hide()
 }
 
 //* Register Handler

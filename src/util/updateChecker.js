@@ -4,7 +4,6 @@ const path = require('path')
 
 const request = require("request")
 const chalk = require("chalk")
-let constants = require('./constants')
 
 function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false) {
 
@@ -24,7 +23,6 @@ function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false) {
     //* Compare version
     if(gitVersion > VERSION) {
       global.UPDATEAVAIABLE = gitVersion
-      constants.newVersion = gitVersion
   
       console.log(CONSOLEPREFIX + chalk.cyan("New version avaiable: ") + chalk.red(`V${VERSION}`) + chalk.blue(' > ') + chalk.yellow(`V${gitVersion}`))
 
@@ -33,7 +31,9 @@ function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false) {
         maximizable: false,
         minimizable: false,
         height: 500,
+        minHeight: 500,
         width: 400,
+        minWidth: 400,
         alwaysOnTop: true
       })
 

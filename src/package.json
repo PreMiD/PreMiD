@@ -1,7 +1,8 @@
 {
   "name": "premid",
   "productName": "PreMiD",
-  "version": "1.1.0",
+  "productVersion": "1.0",
+  "version": "1.2.0",
   "description": "PreMiD adds cool Features to YouTube/YouTube Music. Like for example Discord Rich Presence integration, Media controls and much more.",
   "main": "index.js",
   "repository": "Timeraa/PreMiD",
@@ -14,7 +15,7 @@
     "discord-rpc": "^3.0.1",
     "electron-config": "^1.0.0",
     "electron-squirrel-startup": "^1.0.0",
-    "express": "^4.16.3",
+    "express": "^4.16.4",
     "request": "^2.88.0",
     "socket.io": "^2.1.1"
   },

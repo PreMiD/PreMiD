@@ -46,6 +46,7 @@ io.on('connection', function (socket) {
 
   socket.on('playBackChange', updatePresence)
   socket.on('updateData', updatePresence)
+  socket.on('settingsChange', require('./util/settingsHandler'))
 })
 
 var setupServices = [],
@@ -60,8 +61,10 @@ async function updatePresence(data) {
 
   if(!data.playback) presencePauseSwitch++; else presencePauseSwitch = 0;
   if(presencePauseSwitch >= 60) {
-    setupService.rpc.clearActivity()
-    if(PLATFORM == "darwin") TRAY.setTitle("");
+    if(setupService != null) {
+      setupService.rpc.clearActivity()
+      if(PLATFORM == "darwin") TRAY.setTitle("");
+    }
   } else {
     if(setupService) {
       if(userSettings.get('titleMenubar')) if(PLATFORM == "darwin" && data.playback) TRAY.setTitle(data.trayTitle); else TRAY.setTitle(""); 

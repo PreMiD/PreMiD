@@ -1,7 +1,7 @@
 {
   "name": "premid",
   "productName": "PreMiD",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "PreMiD adds cool Features to YouTube/YouTube Music. Like for example Discord Rich Presence integration, Media controls and much more.",
   "main": "index.js",
   "repository": "Timeraa/PreMiD",
@@ -9,13 +9,14 @@
     "start": "electron src/.",
     "pkgmac": "electron-packager ./src/ --out=./out/ --asar --overwrite --icon=./appIcon.ico --osx-sign.identity='Florian Metz'",
     "pkgwin": "electron-packager ./src/ --out=./out/ --overwrite --icon=./appIcon.ico",
-    "installer-mac": "npm run pkgmac && electron-installer-dmg ./out/YT\\ Presence-darwin-x64/YT\\ Presence.app YT\\ Presence\\ Installer --overwrite --icon=./appIcon.icns --out=./dist",
-    "installer-win": "npm run pkgwin && node createInstaller"
+    "installer-mac": "npm run pkgmac && node installer",
+    "installer-win": "npm run pkgwin && node installer"
   },
   "keywords": [],
   "author": "Timeraa",
   "license": "MIT",
   "devDependencies": {
+    "chalk": "^2.4.1",
     "electron-installer-dmg": "^1.0.0",
     "electron-installer-windows": "^1.1.0",
     "electron-packager": "^12.2.0",
