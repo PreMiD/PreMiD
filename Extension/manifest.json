@@ -1,7 +1,7 @@
 {
   "name": "PreMiD",
   "author": "Timeraa",
-  "version": "1.1.2",
+  "version": "1.2",
   "description": "__MSG_appDesc__",
   "manifest_version": 2,
   "default_locale": "en",
@@ -9,11 +9,11 @@
     "2024": "icon.png"
   },
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["js/util/socket.io-2.1.1.min.js", "js/background.js"],
     "presistent": false
   },
   "browser_action": {
-    "default_popup": "popup.html",
+    "default_popup": "html/popup/popup.html",
     "default_icon": {
       "2024": "icon.png"
     }
@@ -21,11 +21,11 @@
   "content_scripts": [
     {
       "js": [
-        "util/jquery-3.3.1.min.js",
-        "util/socket.io-2.1.1.min.js",
-        "util/socketConnector.js"
+        "js/util/jquery-3.3.1.min.js",
+        "js/util/socket.io-2.1.1.min.js",
+        "js/util/socketConnector.js"
       ],
-      "css": ["connect.css"],
+      "css": ["css/connect.css"],
       "matches": [
         "https://www.youtube.com/*",
         "https://music.youtube.com/*",
@@ -38,31 +38,31 @@
       ]
     },
     {
-      "js": ["presences/YouTubeMusic.js"],
+      "js": ["js/presences/YouTubeMusic.js"],
       "matches": ["https://music.youtube.com/*"]
     },
     {
-      "js": ["presences/YouTube.js"],
+      "js": ["js/presences/YouTube.js"],
       "matches": ["https://www.youtube.com/*"]
     },
     {
-      "js": ["presences/Netflix.js"],
+      "js": ["js/presences/Netflix.js"],
       "matches": ["https://*.netflix.com/*"]
     },
     {
-      "js": ["presences/SoundCloud.js"],
+      "js": ["js/presences/SoundCloud.js"],
       "matches": ["https://*.soundcloud.com/*"]
     },
     {
-      "js": ["presences/Twitch.js"],
+      "js": ["js/presences/Twitch.js"],
       "matches": ["https://*.twitch.tv/*"]
     },
     {
-      "js": ["presences/KissAnime.js"],
+      "js": ["js/presences/KissAnime.js"],
       "matches": ["https://kissanime.ac/*", "https://kissanime.ru/*"]
     },
     {
-      "js": ["presences/JKAnime.js"],
+      "js": ["js/presences/JKAnime.js"],
       "matches": ["https://jkanime.net/*"]
     }
   ],

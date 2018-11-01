@@ -1,6 +1,6 @@
-## ![version](https://img.shields.io/badge/Version-1.1-brightgreen.svg?style=flat-square) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=flat-square)](https://discord.gg/Kw7WaYn)
+## ![version](https://img.shields.io/badge/Version-1.2-brightgreen.svg?style=flat-square) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=flat-square)](https://discord.gg/Kw7WaYn)
 
-# <img src="gitassets/premid.webp" width="24px" draggable="false"><b> </b>PreMiD &middot; Media Rich Presence for Discord
+# <img src="gitassets/premid.webp" width="24px" draggable="false"><b> </b>PreMiD &middot; Discord Rich Presence for your Media!
 
 <a target="_blank" href="https://discord.gg/Kw7WaYn" title="Join our Discord!">
 <img src="gitassets/discord.svg" height="50px" draggable="false" alt="Join my Discord!">
@@ -12,7 +12,7 @@
 
 ## Summary
 
-**PreMiD** is a simple, configurable utility to allow you to show what you're watching in your Discord **now playing status**. It supports [many different platforms](#support), and will also support multiple users watching the same content simultaneously in an upcoming update.
+**PreMiD** is a simple, configurable utility that allows you to show what you're watching/listening in your Discord **now playing status**. It supports [many different platforms](#support), and will support multiple users watching the same content simultaneously in an upcoming update.
 
 ## Features
 
@@ -28,6 +28,9 @@
   - [Summary](#summary)
   - [Features](#features)
 - [Support](#support)
+  - [Operating Systems](#operating-systems)
+  - [Browsers](#browsers)
+  - [Services](#services)
 - [Installation](#installation)
   - [Extension](#extension)
     - Chrome
@@ -47,6 +50,18 @@
 
 - Chrome
 - Opera
+
+### **Services**
+
+- YouTube
+- YouTube Music
+- Netflix
+- SoundCloud
+- Twitch
+- JKAnime
+- KissAnime
+
+One missing? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?template=feature_request.md)!
 
 # Installation
 
@@ -119,10 +134,15 @@
   <h2 style="text-align: center; font-weight: 700; margin: 0;">Fruxh</h2>
 </div>
 
-<h1 style="text-align: center;">Patrons & Donators</h1>
+<h1 style="text-align: center;">Patrons \ Donators</h1>
 <div style="margin: 5px; width: 100px; display: inline-block;">
   <img draggable="false" src="gitassets/fruxh.png" style="border-radius: 50%;" width="100px">
   <h2 style="text-align: center; font-weight: 700; margin: 0;">Fruxh</h2>
+  <h3 style="text-align: center; font-weight: 700;margin: 0;">Patron</h3>
+</div>
+<div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/UMU.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">UMU</h2>
   <h3 style="text-align: center; font-weight: 700;margin: 0;">Patron</h3>
 </div>
 <div style="margin: 5px; width: 100px; display: inline-block;">
@@ -133,40 +153,30 @@
 
 <h1 style="text-align: center;">Translators</h1>
 <div style="margin: 5px; width: 100px; display: inline-block;">
+  <img draggable="false" src="gitassets/timeraa.png" style="border-radius: 50%;" width="100px">
+  <h2 style="text-align: center; font-weight: 700; margin: 0;">Timeraa</h2>
+</div>
+<div style="margin: 5px; width: 100px; display: inline-block;">
   <img draggable="false" src="gitassets/fruxh.png" style="border-radius: 50%;" width="100px">
   <h2 style="text-align: center; font-weight: 700; margin: 0;">Fruxh</h2>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">German</h3>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">Japanese</h3>
 </div>
 <div style="margin: 5px; width: 100px; display: inline-block;">
   <img draggable="false" src="gitassets/restrike.png" style="border-radius: 50%;" width="100px">
   <h2 style="text-align: center; font-weight: 700; margin: 0;">Restrike</h2>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">German</h3>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">Japanese</h3>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">Korean</h3>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">Latin</h3>
-</div>
-<div style="margin: 5px; width: 100px; display: inline-block;">
-  <img draggable="false" src="gitassets/timeraa.png" style="border-radius: 50%;" width="100px">
-  <h2 style="text-align: center; font-weight: 700; margin: 0;">Timeraa</h2>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">German</h3>
 </div>
 <div style="margin: 5px; width: 100px; display: inline-block;">
   <img draggable="false" src="gitassets/xiRDX.gif" style="border-radius: 50%;" width="100px">
   <h2 style="text-align: center; font-weight: 700; margin: 0;">2dward.</h2>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">Arabic</h3>
 </div>
 <div style="margin: 5px; width: 100px; display: inline-block;">
   <img draggable="false" src="gitassets/ufo.png" style="border-radius: 50%;" width="100px">
   <h2 style="text-align: center; font-weight: 700; margin: 0;">Ufo</h2>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">Hebrew</h3>
 </div>
 <div style="margin: 5px; width: 100px; display: inline-block;">
   <img draggable="false" src="gitassets/VerifyBot.png" style="border-radius: 50%;" width="100px">
   <h2 style="text-align: center; font-weight: 700; margin: 0;">VerifyBot</h2>
-  <h3 style="text-align: center; font-weight: 700;margin: 0;">Swedish</h3>
 </div>
 
 ---
 
-### PreMiD - (Rich) Presence for Media in Discord | by Timeraa
+### PreMiD - Discord Rich Presence for your Media!

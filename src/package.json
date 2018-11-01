@@ -1,7 +1,7 @@
 {
   "name": "premid",
   "productName": "PreMiD",
-  "productVersion": "1.0",
+  "productVersion": "1.2",
   "version": "1.2.0",
   "description": "PreMiD adds cool Features to YouTube/YouTube Music. Like for example Discord Rich Presence integration, Media controls and much more.",
   "main": "index.js",

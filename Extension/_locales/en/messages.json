@@ -36,7 +36,7 @@
     "message": "Yes? You are ready to go!"
   },
   "installedStart": {
-    "message": "Start by watching a video on YouTube, watching your loved streamers on Twitch, maybe even Netflix... Who knows?<br>Or you just listen to your favourite songs on SoundCloud and YouTube Music."
+    "message": "Start by watching a video on YouTube, watching your loved streamers on Twitch, Watch your favourite animes on KissAnime or JKAnime, maybe even Netflix... Who knows?<br>Or you just listen to your favourite songs on SoundCloud and YouTube Music. Settings can be found by clicking the PreMiD icon in your browser."
   },
   "installedSupportMe": {
     "message": "Support me!"
@@ -50,31 +50,55 @@
   "updatedWhatChanged": {
     "message": "What changed?"
   },
-  "updatedAdded0": {
-    "message": "Install tab page"
-  },
-  "updatedAdded1": {
-    "message": "Update tab page"
-  },
-  "updatedChanged0": {
-    "message": "Small bug fixes"
-  },
-  "updatedChanged1": {
-    "message": "Extension organisation"
-  },
-  "updatedAdded2": {
-    "message": "Language support"
-  },
-  "updatedAdded3": {
-    "message": "Tab Priority"
-  },
-  "updatedChanged2": {
-    "message": "YouTube + YouTube Music rewrite"
-  },
   "playbackPlaying": {
     "message": "Playing back"
   },
   "playbackPaused": {
     "message": "Playback paused"
+  },
+  "about": {
+    "message": "About"
+  },
+  "feedback": {
+    "message": "Feedback"
+  },
+  "options": {
+    "message": "Options"
+  },
+  "general": {
+    "message": "General"
+  },
+  "enabled": {
+    "message": "Enabled"
+  },
+  "titleMenubar": {
+    "message": "Title Menubar"
+  },
+  "mediaControls": {
+    "message": "Media Controls"
+  },
+  "checkForUpdates": {
+    "message": "Check for updates"
+  },
+  "systemStartup": {
+    "message": "System startup"
+  },
+  "presences": {
+    "message": "Presences"
+  },
+  "updatedAdded0": {
+    "message": "Support for JKAnime & KissAnime"
+  },
+  "updatedAdded1": {
+    "message": "Extension popup"
+  },
+  "updatedAdded2": {
+    "message": "Settings Sync (Google Account)"
+  },
+  "updatedChanged0": {
+    "message": "A lot and I mean a lot of rewrites!"
+  },
+  "updatedChanged1": {
+    "message": "Huge speed improvements to App"
   }
 }

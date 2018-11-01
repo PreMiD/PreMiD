@@ -103,28 +103,51 @@ function updateData(playbackChange = false) {
 
     var endTime
     if(musicRunning && $('.VideoContainer div video')[0] != undefined) {
-      var startTime = Date.now();
-        endTime = Math.floor(startTime / 1000) -
+      var startTime = Math.floor(Date.now()/1000);
+        endTime = startTime -
         Math.floor($('.VideoContainer div video')[0].currentTime) +
         Math.floor($('.VideoContainer div video')[0].duration);
-        
-      data = {
-        nflix: {
-          url: urlForVideo,
-          seriesTitle: $('.ellipsize-text').children().html(),
-          season: $($('.ellipsize-text').children().get(1)).html(),
-          episodeTitle: $($('.ellipsize-text').children().get(2)).html(),
-          episodeCurrentTimeSeconds: Math.floor($('.VideoContainer div video')[0].currentTime),
-          episodeEndTimeSeconds: Math.floor($('.VideoContainer div video')[0].duration),
-          episodeCurrentTime: startTime,
-          episodeEndTime: endTime,
-          playback: $('.VideoContainer div video')[0].paused ? "paused" : "playing"
+
+      var playbackBoolean = !$('.VideoContainer div video')[0].paused
+
+      var smallImageKey = playbackBoolean ? "play" : "pause"
+      smallImageText = playbackBoolean ? chrome.i18n.getMessage('playbackPlaying') : chrome.i18n.getMessage('playbackPaused')
+
+      if(playbackBoolean) {
+        data = {
+          clientID: '499981204045430784',
+          presenceData: {
+            details: $('.ellipsize-text').children().html(),
+            state: $($('.ellipsize-text').children().get(1)).html(),
+            largeImageKey: 'nflix_lg',
+            largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+            smallImageKey: smallImageKey,
+            smallImageText: smallImageText,
+            startTimestamp: startTime,
+            endTimestamp: endTime
+          },
+          currentSeconds: Math.floor($('.VideoContainer div video')[0].currentTime),
+          durationSeconds: Math.floor($('.VideoContainer div video')[0].duration),
+          trayTitle: $('.ellipsize-text').children().html(),
+          playback: playbackBoolean,
+          service: 'Netflix'
         }
-      }
-    } else {
-      data = {
-        nflix: {
-          playback: false
+      } else {
+        data = {
+          clientID: '499981204045430784',
+          presenceData: {
+            details: $('.ellipsize-text').children().html(),
+            state: $($('.ellipsize-text').children().get(1)).html(),
+            largeImageKey: 'nflix_lg',
+            largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+            smallImageKey: smallImageKey,
+            smallImageText: smallImageText
+          },
+          currentSeconds: Math.floor($('.VideoContainer div video')[0].currentTime),
+          durationSeconds: Math.floor($('.VideoContainer div video')[0].duration),
+          trayTitle: $('.ellipsize-text').children().html(),
+          playback: playbackBoolean,
+          service: 'Netflix'
         }
       }
     }

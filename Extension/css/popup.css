@@ -43,10 +43,13 @@ body {
   border-radius: 5px;
   color: white;
   text-align: center;
+}
+
+#panel:not(.open) {
   cursor: pointer;
 }
 
-#panel:hover {
+#panel:not(.open):hover {
   transform: scale(1.05);
 }
 
@@ -67,4 +70,29 @@ body {
 
 .github {
   background-color: #fa503c !important;
+}
+
+.open {
+  position: fixed;
+  transition: 0.5s all ease-out;
+  transform: scale(5);
+  cursor: default;
+}
+
+.open * {
+  transition: 0.15s all ease-out;
+  opacity: 0;
+}
+
+.panelContent {
+  position: relative;
+  color: white;
+}
+
+.panelContent:not(.open) {
+  display: none;
+}
+
+.panelContent.open {
+  display: block;
 }

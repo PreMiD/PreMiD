@@ -1,5 +1,6 @@
 node_modules
 out
-.vscode
 dist
+website
 server
+.vscode

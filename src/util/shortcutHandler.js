@@ -34,6 +34,10 @@ module.exports.register = async () => {
 
 module.exports.unregister = async () => {
   console.log(CONSOLEPREFIX + chalk.red("Unregistering keyboard shortcuts..."))
+  if(require('os').platform() == "darwin") {
+    app.relaunch()
+    app.exit(0)
+  } else
   globalShortcut.unregisterAll()
   console.log(CONSOLEPREFIX + chalk.green("Unregistered keyboard shortcuts"))
 }
