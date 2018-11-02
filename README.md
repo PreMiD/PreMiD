@@ -8,6 +8,8 @@
 <a target="_blank" href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button"><img src="gitassets/patreonBTN.png" draggable="false" height="50px" alt="Support me on Patreon!"></a>&nbsp;
 <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US"><img src="gitassets/PayPal.svg" height="50px" draggable="false" alt="PayPal"></a>
 
+<img src="gitassets/PreMiDExample.png">
+
 # About
 
 ## Summary
