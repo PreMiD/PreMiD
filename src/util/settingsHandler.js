@@ -17,7 +17,7 @@ var mediaControls = require('./shortcutHandler');
 module.exports = async (data) => {
   if(userSettings.get('titleMenubar') != data.options.titleMenubar) {
     userSettings.set('titleMenubar', data.options.titleMenubar)
-    if(!data.options.titleMenubar) TRAY.setTitle("")
+    if(PLATFORM == "darwin" && !data.options.titleMenubar) TRAY.setTitle("")
   }
 
   if(userSettings.get('autoUpdateCheck') != data.options.checkForUpdates)
