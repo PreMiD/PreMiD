@@ -40,7 +40,7 @@ function handleMediaKeys(data) {
     //* Switch cases for playback / Clicks corresponding buttons
     switch (data.playback) {
       case "pause":
-      $('#player_html5_html5_api')[0].paused ? $('#player_html5_html5_api')[0].play() : $('#player_html5_html5_api')[0].pause()
+      (($('#player_html5_html5_api')[0] || $('#my_video_1_html5_api')[0])).paused ? (($('#player_html5_html5_api')[0] || $('#my_video_1_html5_api')[0])).play() : (($('#player_html5_html5_api')[0] || $('#my_video_1_html5_api')[0])).pause()
         updateData("playPauseTrack")
         break
     }
@@ -53,18 +53,18 @@ function handleMediaKeys(data) {
  */
 function updateData(playbackChange = false) {
   var eventType
-  videoRunning = $('.movie_back_link strong').html() != "" && $('#player_html5_html5_api')[0] != undefined && !isNaN($('#player_html5_html5_api')[0].duration) ? true : false
+  videoRunning = ($('#navsubbar p a').html() || $('.movie_back_link strong').html()) != "" && (($('#player_html5_html5_api')[0] || $('#my_video_1_html5_api')[0])) != undefined && !isNaN((($('#player_html5_html5_api')[0] || $('#my_video_1_html5_api')[0])).duration) ? true : false
   if(videoRunning) {
-    var videoTitle = $('.movie_back_link strong').html(),
+    var videoTitle = ($('#navsubbar p a').html() || $('.movie_back_link strong').html()).trim().replace(/\s\s+/g, ' '),
     videoEpisode = $('#selectEpisode option:selected').text().trim(),
-    videoTimeSeconds = Math.floor($('#player_html5_html5_api')[0].currentTime),
-    videoDurationSeconds = Math.floor($('#player_html5_html5_api')[0].duration),
+    videoTimeSeconds = Math.floor((($('#player_html5_html5_api')[0] || $('#my_video_1_html5_api')[0])).currentTime),
+    videoDurationSeconds = Math.floor((($('#player_html5_html5_api')[0] || $('#my_video_1_html5_api')[0])).duration),
     videoTimestamps = getTimestamps(videoTimeSeconds, videoDurationSeconds)
-    playback = $('#player_html5_html5_api')[0].paused ? "paused" : "playing"
+    playback = (($('#player_html5_html5_api')[0] || $('#my_video_1_html5_api')[0])).paused ? "paused" : "playing"
 
     if (playbackChange) eventType = 'playBackChange'; else eventType = 'updateData';
 
-    var playbackBoolean = !$('#player_html5_html5_api')[0].paused
+    var playbackBoolean = !(($('#player_html5_html5_api')[0] || $('#my_video_1_html5_api')[0])).paused
 
     var smallImageKey = playbackBoolean ? 'play' : 'pause',
     smallImageText = playbackBoolean ? chrome.i18n.getMessage('playbackPlaying') : chrome.i18n.getMessage('playbackPaused')
@@ -137,9 +137,9 @@ function togglePlayback() {
 var lastPlayback = false
 function playbackChange() {
   if(videoRunning) {
-    if($('#player_html5_html5_api')[0].paused != lastPlayback) {
+    if((($('#player_html5_html5_api')[0] || $('#my_video_1_html5_api')[0])).paused != lastPlayback) {
       togglePlayback()
-      lastPlayback = $('#player_html5_html5_api')[0].paused
+      lastPlayback = (($('#player_html5_html5_api')[0] || $('#my_video_1_html5_api')[0])).paused
     }
   }
 }

@@ -27,43 +27,43 @@
       ],
       "css": ["css/connect.css"],
       "matches": [
-        "https://www.youtube.com/*",
-        "https://music.youtube.com/*",
-        "https://*.netflix.com/*",
-        "https://soundcloud.com/*",
-        "https://*.twitch.tv/*",
-        "https://kissanime.ac/*",
-        "https://kissanime.ru/*",
-        "https://jkanime.net/*"
+        "*://www.youtube.com/*",
+        "*://music.youtube.com/*",
+        "*://*.netflix.com/*",
+        "*://soundcloud.com/*",
+        "*://*.twitch.tv/*",
+        "*://kissanime.ac/*",
+        "*://kissanime.ru/*",
+        "*://jkanime.net/*"
       ]
     },
     {
       "js": ["js/presences/YouTubeMusic.js"],
-      "matches": ["https://music.youtube.com/*"]
+      "matches": ["*://music.youtube.com/*"]
     },
     {
       "js": ["js/presences/YouTube.js"],
-      "matches": ["https://www.youtube.com/*"]
+      "matches": ["*://www.youtube.com/*"]
     },
     {
       "js": ["js/presences/Netflix.js"],
-      "matches": ["https://*.netflix.com/*"]
+      "matches": ["*://*.netflix.com/*"]
     },
     {
       "js": ["js/presences/SoundCloud.js"],
-      "matches": ["https://*.soundcloud.com/*"]
+      "matches": ["*://*.soundcloud.com/*"]
     },
     {
       "js": ["js/presences/Twitch.js"],
-      "matches": ["https://*.twitch.tv/*"]
+      "matches": ["*://*.twitch.tv/*"]
     },
     {
       "js": ["js/presences/KissAnime.js"],
-      "matches": ["https://kissanime.ac/*", "https://kissanime.ru/*"]
+      "matches": ["*://kissanime.ac/*", "*://kissanime.ru/*"]
     },
     {
       "js": ["js/presences/JKAnime.js"],
-      "matches": ["https://jkanime.net/*"]
+      "matches": ["*://jkanime.net/*"]
     }
   ],
   "permissions": [
