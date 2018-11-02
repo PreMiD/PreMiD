@@ -1,0 +1,104 @@
+{
+    "appDesc": {
+        "message": "PreMiD fügt eine Discord-Rich-Presence-Integration, Kontrolle über Multimediatasten und viele weitere Funktionen zu YouTube/YouTube Music, Twitch etc. hinzu."
+    },
+    "connected": {
+        "message": "Verbunden"
+    },
+    "disconnected": {
+        "message": "Getrennt"
+    },
+    "installedThanks": {
+        "message": "Vielen Dank, für das Installieren von PreMiD"
+    },
+    "installedApp": {
+        "message": "Hast du das Programm bereits installiert?"
+    },
+    "installedNo": {
+        "message": "Nein? Folge dieser Anleitung:"
+    },
+    "installedStepApp": {
+        "message": "Lade die neueste Version von $1 herunter"
+    },
+    "installedStepAppMyRepository": {
+        "message": "meinem GitHub Repository"
+    },
+    "installedWaitInstalled": {
+        "message": "Offne das Installationsprogramm und warte bis die Installation abgeschlossen ist"
+    },
+    "installedMayWarning": {
+        "message": "Möglicherweise bekommst du eine Warnung von deiner FireWall und SmartScreen (Es ist kein Virus. Das verspreche ich dir!)"
+    },
+    "installedAppAutostart": {
+        "message": "Das Programm sollte automatisch starten. Du kannst dies prüfen, indem du auf deine Taskbar (Windows) oder deine Menubar (MacOS) schaust"
+    },
+    "installedYes": {
+        "message": "Ja? Jetzt bist du bereit!"
+    },
+    "installedStart": {
+        "message": "Starte, indem du ein Video auf YouTube, deine Lieblingsstreamer auf Twitch, deine Lieblings Animes auf KissAnime oder JKAnime anschaust oder vielleicht sogar Netflix... Wer weiß?<br>Oder du hörst dir deine Lieblingslieder auf SoundCloud und YouTube Music an. Einstellungen findest du indem du auf das PreMiD icon in deinem Browser klickst."
+    },
+    "installedSupportMe": {
+        "message": "Unterstütze mich!"
+    },
+    "updatedYTPUpdated": {
+        "message": "PreMiD wurde aktualisiert!"
+    },
+    "updatedWhatsNew": {
+        "message": "Was ist neu?"
+    },
+    "updatedWhatChanged": {
+        "message": "Was hat sich geändert?"
+    },
+    "updatedAdded0": {
+        "message": "Support für JKAnime & KissAnime"
+    },
+    "updatedAdded1": {
+        "message": "Erweiterungs Popup"
+    },
+    "updatedChanged0": {
+        "message": "Eine Menge und Ich meine eine Menge Neuschreibungen!"
+    },
+    "updatedChanged1": {
+        "message": "Große Schnelligkeits Verbesserungen der App"
+    },
+    "updatedAdded2": {
+        "message": "Einstellungs Synchronisation (Google Account)"
+    },
+    "playbackPlaying": {
+        "message": "Wiedergabe"
+    },
+    "playbackPaused": {
+        "message": "Wiedergabe pausiert"
+    },
+    "about": {
+        "message": "Über"
+    },
+    "feedback": {
+        "message": "Feedback"
+    },
+    "options": {
+        "message": "Optionen"
+    },
+    "general": {
+        "message": "Allgemein"
+    },
+    "enabled": {
+        "message": "Eingeschaltet"
+    },
+    "titleMenubar": {
+        "message": "Titel Menubar"
+    },
+    "mediaControls": {
+        "message": "Medien Kontrolle"
+    },
+    "checkForUpdates": {
+        "message": "Nach Updates suchen"
+    },
+    "systemStartup": {
+        "message": "System start"
+    },
+    "presences": {
+        "message": "Presencen"
+    }
+}
