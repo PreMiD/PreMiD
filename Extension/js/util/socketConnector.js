@@ -7,21 +7,21 @@ socket.on('disconnect', socketDisconnect)
 
 function socketConnect() {
   console.log(chrome.runtime.getManifest().name + ': %c' + chrome.i18n.getMessage('connected'), "color: green; font-weight: 700")
-  if(sessionStorage['ytpconnected'] == null || sessionStorage['ytpconnected'] == 'false') {
-    sessionStorage['ytpconnected'] = 'true'
-    insertConnectionInfo(chrome.i18n.getMessage("connected"))
+  if(sessionStorage['premidConnected'] == null || sessionStorage['premidConnected'] == 'false') {
+    sessionStorage['premidConnected'] = 'true'
   }
+  insertConnectionInfo(chrome.i18n.getMessage("connected"))
 }
 
 function socketDisconnect() {
   console.log(chrome.runtime.getManifest().name + ': %c' + chrome.i18n.getMessage('disconnected'), "color: red; font-weight: 700")
-  sessionStorage['ytpconnected'] = 'false'
+  sessionStorage['premidConnected'] = 'false'
   insertConnectionInfo(chrome.i18n.getMessage("disconnected"))
 }
 
 function insertConnectionInfo(message) {
-  $('<div id="ytp-connectinfo"><img draggable="false" src="https://raw.githubusercontent.com/Timeraa/YT-Presence/master/icon.png"><h1>' + chrome.runtime.getManifest().name + '</h1><h2>' + message + '</h2></div>').appendTo('body')
+  $('<div id="premid-connectinfo"><img draggable="false" src="' + chrome.runtime.getURL('icon.png') + '"><h1>' + chrome.runtime.getManifest().name + '</h1><h2>' + message + '</h2></div>').appendTo('body')
   setTimeout(() => {
-    $('#ytp-connectinfo').remove()
+    $('#premid-connectinfo').remove()
   }, 5*1000)
 }

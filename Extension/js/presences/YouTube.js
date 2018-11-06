@@ -63,7 +63,7 @@ function handleMediaKeys(data) {
  */
 function updateData(playbackChange = false) {
   var eventType
-  videoRunning = $('.ytd-video-primary-info-renderer .title').text() != "" && $('.video-stream')[0] != undefined && !isNaN($('.video-stream')[0].duration) ? true : false
+  videoRunning = $('.ytd-video-primary-info-renderer .title').text() != "" && $('.video-stream')[0] != undefined && !isNaN($('.video-stream')[0].duration) ? true : false && document.location.pathname.includes("/watch")
   if(videoRunning) {
     var videoTitle = $('.ytd-video-primary-info-renderer .title').text(),
     videoAuthor = $("#upload-info .style-scope .ytd-video-owner-renderer").contents().first().html(),
@@ -71,14 +71,14 @@ function updateData(playbackChange = false) {
     videoDurationSeconds = Math.floor($('.video-stream')[0].duration),
     videoTimestamps = getTimestamps(videoTimeSeconds, videoDurationSeconds)
     playback = $('.video-stream')[0].paused ? "paused" : "playing"
-
+    
     if (playbackChange) eventType = 'playBackChange'; else eventType = 'updateData';
-
+    
     var playbackBoolean = !$('.video-stream')[0].paused
 
     var smallImageKey = playbackBoolean ? 'play' : 'pause',
     smallImageText = playbackBoolean ? chrome.i18n.getMessage('playbackPlaying') : chrome.i18n.getMessage('playbackPaused')
-
+    
     if(playbackBoolean) {
       var data = {
         clientID: '463097721130188830',

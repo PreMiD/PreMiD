@@ -16,6 +16,9 @@ var lastAllowedTab = null,
 allowedURL = []
 setInterval(() => {
   chrome.storage.sync.get(['options'], function(result) {
+    //* Create config if not already
+    if(!result.options) chrome.storage.sync.set({options: {enabled: true, youtube: true, youtubeMusic: true, twitch: true, soundcloud: true, netflix: true, kissanime: true, jkanime: true, titleMenubar: true, mediaControls: true, checkForUpdates: true, systemStartup: true}})
+    
     allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "netflix.com", "kissanime.ac", "kissanime.ru", "jkanime.net"]
     var options = result.options
     if(!options.enabled) allowedURL = []
@@ -30,7 +33,7 @@ setInterval(() => {
   chrome.tabs.getAllInWindow(null, (tabs) => {
 
     for (var i = 0; i < allowedURL.length; i++) {
-      var currentTab = tabs.find(tab => tab.highlighted)
+      var currentTab = tabs.find(tab => tab.highlighted || tab.selected)
       if(currentTab.url.indexOf(allowedURL[i]) > -1) {
         lastAllowedTab = currentTab.id
       }

@@ -1,10 +1,11 @@
 {
   "name": "PreMiD",
   "author": "Timeraa",
-  "version": "1.2.1",
+  "version": "1.2.3",
   "description": "__MSG_appDesc__",
   "manifest_version": 2,
   "default_locale": "en",
+  "web_accessible_resources": ["icon.png"],
   "icons": {
     "2024": "icon.png"
   },
