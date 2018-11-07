@@ -1,104 +1,68 @@
 {
-    "appDesc": {
-        "message": "YT Presence lägger till Discord Rich Presence Integration, Mediekontroller och mycket mer till YouTube/YouTube Musik, Twitch osv..."
-    },
-    "connected": {
-        "message": "Ansluten"
-    },
-    "disconnected": {
-        "message": "Avkopplad"
-    },
-    "installedThanks": {
-        "message": "Tack för att du har installerat YT Presence"
-    },
-    "installedApp": {
-        "message": "Har du installerat programmet ännu?"
-    },
-    "installedNo": {
-        "message": "Nej? Följ dessa steg:"
-    },
-    "installedStepApp": {
-        "message": "Ladda ner den senaste versionen från $1"
-    },
-    "installedStepAppMyRepository": {
-        "message": "mitt GitHub-förråd"
-    },
-    "installedWaitInstalled": {
-        "message": "Öppna installationsprogrammet och vänta tills det installeras"
-    },
-    "installedMayWarning": {
-        "message": "Du kanske får en varning om brandvägg och Smartscreen (det är inte ett virus jag lovar)"
-    },
-    "installedAppAutostart": {
-        "message": "Applikationen bör starta automatiskt, du kan kontrollera detta genom att titta på ditt aktivitetsfält (Windows) eller menyraden (Mac OS)"
-    },
-    "installedYes": {
-        "message": "Ja? Du är redo att gå!"
-    },
-    "installedStart": {
-        "message": "Börja med att titta på en video på YouTube, titta på dina älskade streamers på Twitch, kanske även Netflix... Vem vet? Eller så lyssnar du bara på dina favoritlåtar på SoundCloud och YouTube Music."
-    },
-    "installedSupportMe": {
-        "message": "Stöd mig!"
-    },
-    "updatedYTPUpdated": {
-        "message": "YT Presence har uppdaterats!"
-    },
-    "updatedWhatsNew": {
-        "message": "Vad är nytt?"
-    },
-    "updatedWhatChanged": {
-        "message": "Vad har förändrats?"
-    },
-    "updatedAdded0": {
-        "message": "Installera fliksidan"
-    },
-    "updatedAdded1": {
-        "message": "Uppdatera fliksidan"
-    },
-    "updatedChanged0": {
-        "message": "Små buggfixar"
-    },
-    "updatedChanged1": {
-        "message": "Tillägg organisation"
-    },
-    "updatedAdded2": {
-        "message": "Språkstöd"
-    },
-    "playbackPlaying": {
-        "message": ""
-    },
-    "playbackPaused": {
-        "message": ""
-    },
-    "about": {
-        "message": ""
-    },
-    "feedback": {
-        "message": ""
-    },
-    "options": {
-        "message": ""
-    },
-    "general": {
-        "message": ""
-    },
-    "enabled": {
-        "message": ""
-    },
-    "titleMenubar": {
-        "message": ""
-    },
-    "mediaControls": {
-        "message": ""
-    },
-    "checkForUpdates": {
-        "message": ""
-    },
-    "systemStartup": {
-        "message": ""
-    },
-    "presences": {
-        "message": ""
-    }
+  "appDesc": {
+    "message": "YT Presence lägger till Discord Rich Presence Integration, Mediekontroller och mycket mer till YouTube/YouTube Musik, Twitch osv..."
+  },
+  "connected": {
+    "message": "Ansluten"
+  },
+  "disconnected": {
+    "message": "Avkopplad"
+  },
+  "installedThanks": {
+    "message": "Tack för att du har installerat YT Presence"
+  },
+  "installedApp": {
+    "message": "Har du installerat programmet ännu?"
+  },
+  "installedNo": {
+    "message": "Nej? Följ dessa steg:"
+  },
+  "installedStepApp": {
+    "message": "Ladda ner den senaste versionen från $1"
+  },
+  "installedStepAppMyRepository": {
+    "message": "mitt GitHub-förråd"
+  },
+  "installedWaitInstalled": {
+    "message": "Öppna installationsprogrammet och vänta tills det installeras"
+  },
+  "installedMayWarning": {
+    "message": "Du kanske får en varning om brandvägg och Smartscreen (det är inte ett virus jag lovar)"
+  },
+  "installedAppAutostart": {
+    "message": "Applikationen bör starta automatiskt, du kan kontrollera detta genom att titta på ditt aktivitetsfält (Windows) eller menyraden (Mac OS)"
+  },
+  "installedYes": {
+    "message": "Ja? Du är redo att gå!"
+  },
+  "installedStart": {
+    "message": "Börja med att titta på en video på YouTube, titta på dina älskade streamers på Twitch, kanske även Netflix... Vem vet? Eller så lyssnar du bara på dina favoritlåtar på SoundCloud och YouTube Music."
+  },
+  "installedSupportMe": {
+    "message": "Stöd mig!"
+  },
+  "updatedYTPUpdated": {
+    "message": "YT Presence har uppdaterats!"
+  },
+  "updatedWhatsNew": {
+    "message": "Vad är nytt?"
+  },
+  "updatedWhatChanged": {
+    "message": "Vad har förändrats?"
+  },
+  "updatedAdded0": {
+    "message": "Installera fliksidan"
+  },
+  "updatedAdded1": {
+    "message": "Uppdatera fliksidan"
+  },
+  "updatedChanged0": {
+    "message": "Små buggfixar"
+  },
+  "updatedChanged1": {
+    "message": "Tillägg organisation"
+  },
+  "updatedAdded2": {
+    "message": "Språkstöd"
+  }
 }
