@@ -1,6 +1,6 @@
 {
     "appDesc": {
-        "message": "PreMiD fügt eine Discord-Rich-Presence-Integration, Kontrolle über Multimediatasten und viele weitere Funktionen zu YouTube/YouTube Music, Twitch etc. hinzu."
+        "message": "PreMiD fügt Discord-Rich-Presence-Integration, Kontrolle über Multimediatasten und viele weitere Funktionen zu YouTube/YouTube Music, Twitch etc. hinzu."
     },
     "connected": {
         "message": "Verbunden"
@@ -54,16 +54,16 @@
         "message": "Support für JKAnime & KissAnime"
     },
     "updatedAdded1": {
-        "message": "Erweiterungs Popup"
+        "message": "Erweiterungs-Popup"
     },
     "updatedChanged0": {
-        "message": "Eine Menge und Ich meine eine Menge Neuschreibungen!"
+        "message": "Eine Menge und ich meine eine Menge Neuschreibungen!"
     },
     "updatedChanged1": {
-        "message": "Große Schnelligkeits Verbesserungen der App"
+        "message": "Große Schnelligkeitsverbesserungen der App"
     },
     "updatedAdded2": {
-        "message": "Einstellungs Synchronisation (Google Account)"
+        "message": "Einstellungs-Synchronisation (Google Account)"
     },
     "playbackPlaying": {
         "message": "Wiedergabe"
@@ -90,13 +90,13 @@
         "message": "Titel Menubar"
     },
     "mediaControls": {
-        "message": "Medien Kontrolle"
+        "message": "Medien-Kontrolle"
     },
     "checkForUpdates": {
         "message": "Nach Updates suchen"
     },
     "systemStartup": {
-        "message": "System start"
+        "message": "Systemstart"
     },
     "presences": {
         "message": "Presencen"
