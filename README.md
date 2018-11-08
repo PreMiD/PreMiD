@@ -8,8 +8,8 @@
 <img src="gitassets/discord.svg" height="50px" draggable="false" alt="Join my Discord!">
 </a>&nbsp;
 <a target="_blank" href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button"><img src="gitassets/patreonBTN.png" draggable="false" height="50px" alt="Support me on Patreon!"></a>&nbsp;
+<a target="_blank" href="https://ko-fi.com/E1E1HLLE"><img height='50px' style='border:0px;height:50px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US"><img src="gitassets/PayPal.svg" height="50px" draggable="false" alt="PayPal"></a>
-<a target="_blank" href="https://ko-fi.com/E1E1HLLE"><img height='50' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 # About
 
@@ -72,7 +72,7 @@ One missing? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?templa
   <summary><b><u>Installing the Chrome extension</u></b> (Click to expand)</summary>
   <h1>Chrome Extension Installation</h1>
   <ol>
-    <li>Click <a href="https://chrome.google.com/webstore/detail/yt-presence/agjnjboanicjcpenljmaaigopkgdnihi">this</a> link</li>
+    <li>Click <a href="https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi">this</a> link</li>
     </li>
     <li>Click "add to Chrome"</li>
     <li>Install the <a href="#application">application</a></li>
@@ -82,12 +82,9 @@ One missing? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?templa
 <summary><b><u>Installing the Opera extension</u></b> (Click to expand)</summary>
   <h1>Opera Extension Installation</h1>
   <ol>
-    <li>Download the latest version of the <a href="https://github.com/Timeraa/YT-Presence/releases/latest">extension</a>
+    <li>Install the extension called "<a href="https://addons.opera.com/en/extensions/details/install-chrome-extensions/">Install Chrome Extensions</a>"
     </li>
-    <li>Extract the downloaded <b>.zip</b> file</li>
-    <li>Open Opera</li>
-    <li>Go to <a href="chrome://extensions/">chrome://extensions/</a></li>
-    <li>Drag and drop the Folder <b>"Extension"</b> on the page<br>
+    <li>Now install the <a href="https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi">PreMiD extension</a></li>
     <li>Install the <a href="#application">application</a></li>
   </ol>
 </details>
