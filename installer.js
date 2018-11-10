@@ -11,8 +11,8 @@ if(os == 'darwin') {
   createDMG({
     appPath: "./out/PreMiD-darwin-x64/PreMiD.app",
     name: "PreMiD",
-    background: "./dmg-background.png",
-    icon: "./appIcon.icns",
+    background: "./installer_assets/dmg-background.png",
+    icon: "./installer_assets/appIcon.icns",
     contents: [
       { x: 500, y: 250, type: 'link', path: '/Applications'},
       { x: 175, y: 250, type: 'file', path: path.join(__dirname, './out/PreMiD-darwin-x64/PreMiD.app')}
@@ -31,7 +31,7 @@ if(os == 'darwin') {
     appDirectory: './out/PreMiD-win32-x64',
     outputDirectory: './dist/installer/',
     exe: './PreMiD.exe',
-    iconUrl: 'https://raw.githubusercontent.com/Timeraa/PreMiD/master/appIcon.ico',
+    iconUrl: 'https://raw.githubusercontent.com/Timeraa/PreMiD/master/installer_assets/appIcon.ico',
     noMsi: true
   });
 
