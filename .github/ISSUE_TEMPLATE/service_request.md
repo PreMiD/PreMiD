@@ -1,6 +1,6 @@
 ---
 name: Service request
-about: Suggest suppoer for a website for PreMiD
+about: Suggest Rich Presence support for a website
 ---
 
 **What's the name of the service?**
