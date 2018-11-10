@@ -1,7 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea for YT Presence
-
+about: Suggest an idea for PreMiD
 ---
 
 **Is your feature request related to a problem? Please describe.**
