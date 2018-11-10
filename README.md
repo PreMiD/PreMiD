@@ -62,7 +62,7 @@
 - JKAnime
 - KissAnime
 
-One missing? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?template=feature_request.md)!
+One missing? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?template=service_request.md)!
 
 # Installation
 
