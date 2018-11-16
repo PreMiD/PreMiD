@@ -6,6 +6,9 @@
   "main": "index.js",
   "author": "Timeraa",
   "license": "MIT",
+  "scripts": {
+    "start": "electron ."
+  },
   "dependencies": {
     "auto-launch": "^5.0.5",
     "chalk": "^2.4.1",

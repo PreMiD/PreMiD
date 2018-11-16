@@ -1,6 +1,8 @@
 const path = require('path')
 const {Tray, Menu, MenuItem} = require('electron')
 
+var cfu = () => require('../util/updateChecker').checkForUpdate(true, true)
+
 exports.run = () => {
   TRAY = new Tray(path.join(__dirname, "../assets/images/icon.png"))
   TRAY.setToolTip(`PreMiD V${VERSIONSTRING}`)
@@ -18,5 +20,3 @@ exports.run = () => {
   menuBarMenu.append(new MenuItem({role: "quit"}))
   TRAY.setContextMenu(menuBarMenu)
 }
-
-cfu = () => require('../util/updateChecker').checkForUpdate(true, true)

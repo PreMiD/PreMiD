@@ -42,14 +42,8 @@ global.CONSOLEPREFIX = chalk.bold(chalk.hex('#596cae')("PreMiD")) + chalk.hex('#
 //* Clear console
 process.stdout.write("\u001b[2J\u001b[0;0H");
 
-//* Single Instance Check
-var iShouldQuit = app.makeSingleInstance(() => {return true});
-
-if(iShouldQuit){
-  console.log(CONSOLEPREFIX + chalk.red("App already running, closing current instance..."))
-  app.quit();
-  return;
-}
+//* Single instance lock
+app.requestSingleInstanceLock()
 
 //* Set default values for electon-config userSettings
 if(userSettings.get('titleMenubar') == undefined) userSettings.set('titleMenubar', true)

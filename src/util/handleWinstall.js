@@ -1,15 +1,12 @@
-if (require('electron-squirrel-startup')) return;
+if(require('electron-squirrel-startup')) app.quit();
 
 const {app} = require('electron');
 
 // this should be placed at top of main.js to handle setup events quickly
-if (handleSquirrelEvent()) {
-  // squirrel event handled and app will exit in 1000ms, so don't do anything else
-  return;
-}
+if (handleSquirrelEvent()) app.quit();
 
 function handleSquirrelEvent() {
-  if (process.argv.length === 1) {
+  if (process.argv.length === 1 || process.platform !== 'win32') {
     return false;
   }
 
