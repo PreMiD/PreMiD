@@ -9,6 +9,7 @@
     "start": "npm start --prefix src/.",
     "pkgmac": "electron-packager ./src/ --out=./out/ --asar --overwrite --icon=./installer_assets/appIcon.ico --osx-sign.identity='Florian Metz'",
     "pkgwin": "electron-packager ./src/ --out=./out/ --overwrite --icon=./installer_assets/appIcon.ico",
+    "pkglinux": "electron-packager --asar --platform=linux --arch=x32 ./src/ --out=./out/ --overwrite --icon=./appIcon.ico",
     "installer-mac": "npm run pkgmac && node installer_assets/installer",
     "installer-win": "npm run pkgwin && node installer_assets/installer"
   },
@@ -19,6 +20,7 @@
     "electron-installer-dmg": "^1.0.0",
     "electron-installer-windows": "^1.1.0",
     "electron-packager": "^12.2.0",
-    "electron-winstaller": "^2.7.0"
+    "electron-winstaller": "^2.7.0",
+    "electron-installer-debian": "^1.0.0"
   }
 }
