@@ -2,6 +2,7 @@
   "productName": "PreMiD",
   "productVersion": "1.2",
   "name": "premid",
+  "description": "Discord Rich Presence, Media Controls... for websites.",
   "version": "1.2.0",
   "main": "index.js",
   "author": "Timeraa",
