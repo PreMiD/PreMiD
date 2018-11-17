@@ -61,7 +61,6 @@ body {
 }
 
 .about {
-  background-color: #ff9d09 !important;
 }
 
 .options {
@@ -70,6 +69,10 @@ body {
 
 .github {
   background-color: #fa503c !important;
+}
+
+.donate {
+  background-color: #ff9d09 !important;
 }
 
 .open {
