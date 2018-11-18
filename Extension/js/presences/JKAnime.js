@@ -106,7 +106,6 @@ function updateData(playbackChange = false) {
         service: 'JKAnime'
       }
     }
-    console.log(data)
   }
   if(socket.connected) socket.emit(eventType, data)
 }

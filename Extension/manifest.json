@@ -35,7 +35,8 @@
         "*://*.twitch.tv/*",
         "*://kissanime.ac/*",
         "*://kissanime.ru/*",
-        "*://jkanime.net/*"
+        "*://jkanime.net/*",
+        "*://www.fimfiction.net/*"
       ]
     },
     {
@@ -65,6 +66,10 @@
     {
       "js": ["js/presences/JKAnime.js"],
       "matches": ["*://jkanime.net/*"]
+    },
+    {
+      "js": ["js/presences/FimFiction.js"],
+      "matches": ["*://www.fimfiction.net/*"]
     }
   ],
   "permissions": [
