@@ -85,7 +85,7 @@ function updateData() {
     data = {
       clientID: '513683923767656449',
       presenceData: {
-        details: $('.group_name').text() + " Group",
+        details: $('.group_name').text(),
         state: $('.buttons li a')[0].text.substr(0, $('.buttons li a')[0].text.length-7) + " Stories",
         largeImageKey: 'ff_lg',
         largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
@@ -99,7 +99,7 @@ function updateData() {
     data = {
       clientID: '513683923767656449',
       presenceData: {
-        details: $('.group_name').text() + " Group (" + $('.buttons li a')[0].text.substr(0, $('.buttons li a')[0].text.length-7) + " Stories)",
+        details: $('.group_name').text() + " (" + $('.buttons li a')[0].text.substr(0, $('.buttons li a')[0].text.length-7) + " Stories)",
         state: $('.breadcrumbs li a').get(1).text + " (" + $('.num-comments').first().text() + " Comments)",
         largeImageKey: 'ff_lg',
         largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
