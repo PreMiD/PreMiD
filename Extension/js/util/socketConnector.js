@@ -9,8 +9,8 @@ function socketConnect() {
   console.log(chrome.runtime.getManifest().name + ': %c' + chrome.i18n.getMessage('connected'), "color: green; font-weight: 700")
   if(sessionStorage['premidConnected'] == null || sessionStorage['premidConnected'] == 'false') {
     sessionStorage['premidConnected'] = 'true'
+    insertConnectionInfo(chrome.i18n.getMessage("connected"))
   }
-  insertConnectionInfo(chrome.i18n.getMessage("connected"))
 }
 
 function socketDisconnect() {
