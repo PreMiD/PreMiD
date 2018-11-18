@@ -1,0 +1,104 @@
+{
+  "appDesc": {
+    "message": "PreMiD добавляет интеграцию с Discord Rich Presence, управление медиа и многое другое для YouTube/YouTube Music, Twitch и т.д."
+  },
+  "connected": {
+    "message": "Подключено"
+  },
+  "disconnected": {
+    "message": "Отключено"
+  },
+  "installedThanks": {
+    "message": "Спасибо за установку PreMiD"
+  },
+  "installedApp": {
+    "message": "Вы уже установили приложение?"
+  },
+  "installedNo": {
+    "message": "Нет? Тогда следуйте этим инструкциям:"
+  },
+  "installedStepApp": {
+    "message": "Скачайте последнюю версию с $1"
+  },
+  "installedStepAppMyRepository": {
+    "message": "моего репозитория"
+  },
+  "installedWaitInstalled": {
+    "message": "Запустите установщик и дождитесь окончания установки"
+  },
+  "installedMayWarning": {
+    "message": "Вы можете увидеть предупреждение FireWall или SmartScreen (Это не вирус, я клянусь)"
+  },
+  "installedAppAutostart": {
+    "message": "Приложение должно запуститься автоматически, вы можете это проверить посмотрев в меню задач (Windows) или менюбар (MacOS)"
+  },
+  "installedYes": {
+    "message": "Да? Тогда вы можете начинать!"
+  },
+  "installedStart": {
+    "message": "Начните с просмотра видео на YouTube, просмотра ваших любимых стримеров на Twitch, смотрите свои любимые аниме на KissAnime или на JKAnime, или даже на Netflix... Кто знает?<br>Или вы просто хотите послушать ваши любимые треки на SoundCloud и YouTube Music. Настройки можно открыть, нажав на иконку PreMiD в вашем браузере."
+  },
+  "installedSupportMe": {
+    "message": "Поддержите меня!"
+  },
+  "updatedYTPUpdated": {
+    "message": "PreMiD был обновлен!"
+  },
+  "updatedWhatsNew": {
+    "message": "Что нового?"
+  },
+  "updatedWhatChanged": {
+    "message": "Что изменилось?"
+  },
+  "playbackPlaying": {
+    "message": "Воспроизводится"
+  },
+  "playbackPaused": {
+    "message": "Воиспроизведение приостановлено"
+  },
+  "about": {
+    "message": "О приложении"
+  },
+  "feedback": {
+    "message": "Поддержка"
+  },
+  "options": {
+    "message": "Опции"
+  },
+  "general": {
+    "message": "Основное"
+  },
+  "enabled": {
+    "message": "Включено"
+  },
+  "titleMenubar": {
+    "message": "Название менюбара"
+  },
+  "mediaControls": {
+    "message": "Управление медиа"
+  },
+  "checkForUpdates": {
+    "message": "Проверять наличие обновлений"
+  },
+  "systemStartup": {
+    "message": "Запуск при старте системы"
+  },
+  "presences": {
+    "message": "Сервисы"
+  },
+  "updatedAdded0": {
+    "message": "Поддержка для JKAnime & KissAnime"
+  },
+  "updatedAdded1": {
+    "message": "Всплывающее окошко расширения"
+  },
+  "updatedAdded2": {
+    "message": "Синхронизация настроек (Аккаунт Google)"
+  },
+  "updatedChanged0": {
+    "message": "Много, очень много кода переписано!"
+  },
+  "updatedChanged1": {
+    "message": "Улучшение скорости работы приложения"
+  }
+}
