@@ -1,104 +1,104 @@
 {
-  "appDesc": {
-    "message": "PreMiD adds Discord Rich Presence integration, Media controls and much more to YouTube/YouTube Music, Twitch etc..."
-  },
-  "connected": {
-    "message": "Connected"
-  },
-  "disconnected": {
-    "message": "Disconnected"
-  },
-  "installedThanks": {
-    "message": "Thank you for installing PreMiD"
-  },
-  "installedApp": {
-    "message": "Did you install the application yet?"
-  },
-  "installedNo": {
-    "message": "No? Follow these steps:"
-  },
-  "installedStepApp": {
-    "message": "Download the latest version from $1"
-  },
-  "installedStepAppMyRepository": {
-    "message": "my repository"
-  },
-  "installedWaitInstalled": {
-    "message": "Open the installer and wait until it installed"
-  },
-  "installedMayWarning": {
-    "message": "You may receive a warning about FireWall and SmartScreen (Its not a virus i promise)"
-  },
-  "installedAppAutostart": {
-    "message": "The application should start automatically, you can check this by looking at your taskbar (Windows) or your menubar (MacOS)"
-  },
-  "installedYes": {
-    "message": "Yes? You are ready to go!"
-  },
-  "installedStart": {
-    "message": "Start by watching a video on YouTube, watching your loved streamers on Twitch, Watch your favourite animes on KissAnime or JKAnime, maybe even Netflix... Who knows?<br>Or you just listen to your favourite songs on SoundCloud and YouTube Music. Settings can be found by clicking the PreMiD icon in your browser."
-  },
-  "installedSupportMe": {
-    "message": "Support me!"
-  },
-  "updatedYTPUpdated": {
-    "message": "PreMiD has been updated!"
-  },
-  "updatedWhatsNew": {
-    "message": "Whats new?"
-  },
-  "updatedWhatChanged": {
-    "message": "What changed?"
-  },
-  "playbackPlaying": {
-    "message": "Playing back"
-  },
-  "playbackPaused": {
-    "message": "Playback paused"
-  },
-  "about": {
-    "message": "About"
-  },
-  "feedback": {
-    "message": "Feedback"
-  },
-  "options": {
-    "message": "Options"
-  },
-  "general": {
-    "message": "General"
-  },
-  "enabled": {
-    "message": "Enabled"
-  },
-  "titleMenubar": {
-    "message": "Title Menubar"
-  },
-  "mediaControls": {
-    "message": "Media Controls"
-  },
-  "checkForUpdates": {
-    "message": "Check for updates"
-  },
-  "systemStartup": {
-    "message": "System startup"
-  },
-  "presences": {
-    "message": "Presences"
-  },
-  "updatedAdded0": {
-    "message": "Support for JKAnime & KissAnime"
-  },
-  "updatedAdded1": {
-    "message": "Extension popup"
-  },
-  "updatedAdded2": {
-    "message": "Settings Sync (Google Account)"
-  },
-  "updatedChanged0": {
-    "message": "A lot and I mean a lot of rewrites!"
-  },
-  "updatedChanged1": {
-    "message": "Huge speed improvements to App"
-  }
+    "appDesc": {
+        "message": "PreMiD adds Discord Rich Presence integration, Media controls and much more to YouTube/YouTube Music, Twitch etc..."
+    },
+    "connected": {
+        "message": "Connected"
+    },
+    "disconnected": {
+        "message": "Disconnected"
+    },
+    "installedThanks": {
+        "message": "Thank you for installing PreMiD"
+    },
+    "installedApp": {
+        "message": "Did you install the application yet?"
+    },
+    "installedNo": {
+        "message": "No? Follow these steps:"
+    },
+    "installedStepApp": {
+        "message": "Download the latest version from $1"
+    },
+    "installedStepAppMyRepository": {
+        "message": "my repository"
+    },
+    "installedWaitInstalled": {
+        "message": "Open the installer and wait until it installed"
+    },
+    "installedMayWarning": {
+        "message": "You may receive a warning about FireWall and SmartScreen (Its not a virus i promise)"
+    },
+    "installedAppAutostart": {
+        "message": "The application should start automatically, you can check this by looking at your taskbar (Windows) or your menubar (MacOS)"
+    },
+    "installedYes": {
+        "message": "Yes? You are ready to go!"
+    },
+    "installedStart": {
+        "message": "Start by watching a video on YouTube, watching your loved streamers on Twitch, Watch your favourite animes on KissAnime or JKAnime, maybe even Netflix... Who knows?<br>Or you just listen to your favourite songs on SoundCloud and YouTube Music. Settings can be found by clicking the PreMiD icon in your browser."
+    },
+    "installedSupportMe": {
+        "message": "Support me!"
+    },
+    "updatedYTPUpdated": {
+        "message": "PreMiD has been updated!"
+    },
+    "updatedWhatsNew": {
+        "message": "Whats new?"
+    },
+    "updatedWhatChanged": {
+        "message": "What changed?"
+    },
+    "updatedAdded0": {
+        "message": "Support for JKAnime & KissAnime"
+    },
+    "updatedAdded1": {
+        "message": "Extension popup"
+    },
+    "updatedChanged0": {
+        "message": "A lot and I mean a lot of rewrites!"
+    },
+    "updatedChanged1": {
+        "message": "Huge speed improvements to App"
+    },
+    "updatedAdded2": {
+        "message": "Settings Sync (Google Account)"
+    },
+    "playbackPlaying": {
+        "message": "Playing back"
+    },
+    "playbackPaused": {
+        "message": "Playback paused"
+    },
+    "about": {
+        "message": "About"
+    },
+    "feedback": {
+        "message": "Feedback"
+    },
+    "options": {
+        "message": "Options"
+    },
+    "general": {
+        "message": "General"
+    },
+    "enabled": {
+        "message": "Enabled"
+    },
+    "titleMenubar": {
+        "message": "Title Menubar"
+    },
+    "mediaControls": {
+        "message": "Media Controls"
+    },
+    "checkForUpdates": {
+        "message": "Check for updates"
+    },
+    "systemStartup": {
+        "message": "System startup"
+    },
+    "presences": {
+        "message": "Presences"
+    }
 }
