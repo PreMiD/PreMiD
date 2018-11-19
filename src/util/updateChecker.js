@@ -1,4 +1,7 @@
-const { Notification, BrowserWindow } = require('electron');
+const {
+  BrowserWindow,
+  dialog
+} = require('electron');
 
 const path = require('path')
 
@@ -12,18 +15,26 @@ function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false) {
   request({
     url: "https://api.github.com/repos/Timeraa/YT-Presence/releases/latest",
     json: true,
-    headers: {'user-agent': 'node.js'}
+    headers: {
+      'user-agent': 'node.js'
+    }
   }, function (error, response, body) {
-    if(error) {
-      console.log(CONSOLEPREFIX + chalk.red("Error while checking for update. " + error))
-      return
+    if (error) {
+      console.log(CONSOLEPREFIX + chalk.red("Error while checking for update. " + error));
+      dialog.showMessageBox({
+        type: 'error',
+        title: 'PreMiD',
+        message: `Error while checking for update!`,
+        detail: `${error}`
+      });
+      return;
     }
     //* Remove v from version
     var gitVersion = body.tag_name.replace('v', '')
     //* Compare version
-    if(gitVersion > VERSION) {
+    if (gitVersion > VERSION) {
       global.UPDATEAVAIABLE = gitVersion
-  
+
       console.log(CONSOLEPREFIX + chalk.cyan("New version avaiable: ") + chalk.red(`V${VERSION}`) + chalk.blue(' > ') + chalk.yellow(`V${gitVersion}`))
 
       var updateWindow = new BrowserWindow({
@@ -34,16 +45,22 @@ function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false) {
         minHeight: 500,
         width: 400,
         minWidth: 400,
+        show: false,
         alwaysOnTop: true
       })
 
       updateWindow.setMenu(null)
-    
+
       updateWindow.loadURL("file://" + path.join(__dirname, "../windows/update.html"))
       updateWindow.webContents.on('did-finish-load', () => {
         updateWindow.webContents.send('updateData', body);
       });
-    
+
+      // Do not show BrowserWindow unless it was loaded.
+      updateWindow.once('ready-to-show', () => {
+        updateWindow.show()
+      })
+
       updateWindow.on('close', () => {
         updateWindow = null;
       })
@@ -51,14 +68,12 @@ function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false) {
     } else {
       global.UPDATEAVAIABLE = false
       console.log(CONSOLEPREFIX + chalk.cyan("Up to date! ") + chalk.yellow(`V${VERSION}`))
-      if(sendNoUpdateInfo) {
-        const noUpdateAvaiableNotification = new Notification({
+      if (sendNoUpdateInfo) {
+        dialog.showMessageBox({
+          type: 'info',
           title: 'PreMiD',
-          body: `You are up to date! (V${VERSION})`,
-          silent: true
-        })
-        
-        noUpdateAvaiableNotification.show()
+          message: `You are up to date! (v${VERSION})`
+        });
       }
     }
   })
