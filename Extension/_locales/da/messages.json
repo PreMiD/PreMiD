@@ -21,7 +21,7 @@
         "message": "Download den seneste version for $1"
     },
     "installedStepAppMyRepository": {
-        "message": "Mit depot"
+        "message": "mit depot"
     },
     "installedWaitInstalled": {
         "message": "Åben installatøren og vent til den er installeret"
@@ -30,7 +30,7 @@
         "message": "Du modtager nok en advarsel om FireWall og SmartScreen (Jeg lover, det er ikke en virus)"
     },
     "installedAppAutostart": {
-        "message": "Applikationen vil starte automatisk, du kan tjekke dette ved at kigge i din processlinje (Windows) eller din menubar (MacOS)"
+        "message": "Applikationen vil starte automatisk, du kan tjekke dette ved at kigge i din proceslinje (Windows) eller din menubar (MacOS)"
     },
     "installedYes": {
         "message": "Allerede? Du er klar!"
