@@ -1,0 +1,104 @@
+{
+    "appDesc": {
+        "message": "PreMid adiciona a Discord Rich Presecence integração, Controlos de mídia e muitos mais para YouTube/YouTube Music, Twitch etc..."
+    },
+    "connected": {
+        "message": "Conectado"
+    },
+    "disconnected": {
+        "message": "Disconectado"
+    },
+    "installedThanks": {
+        "message": "Obrigado por instalar PreMiD"
+    },
+    "installedApp": {
+        "message": "Já instalas-te a aplicação?"
+    },
+    "installedNo": {
+        "message": "Não? Segue estes passos:"
+    },
+    "installedStepApp": {
+        "message": "Baixa a ultima versão a partir de $1"
+    },
+    "installedStepAppMyRepository": {
+        "message": "o meu repositorio"
+    },
+    "installedWaitInstalled": {
+        "message": "Abre o instalador e espera até que ele seja instalado"
+    },
+    "installedMayWarning": {
+        "message": "Tu podes receber algum aviso do FireWall ou SmartScreen (Não é um vírus eu prometo)"
+    },
+    "installedAppAutostart": {
+        "message": "A aplicação devia começar automaticamente podes verificar isso olhando para a tua taskbar (Windows) ou a tua barra de menu (MacOS)"
+    },
+    "installedYes": {
+        "message": "Sim? Estas pronto para ir!"
+    },
+    "installedStart": {
+        "message": "Começa a assistir um vídeo no YouTube, assistindo os teus streamers favoritos na Twitch, Assiste os teus animes favoritos no KissAnime ou no JKAnime, talvez até na Netflix ... Quem sabe?<br>Ou apenas queres ouvir as tuas músicas favoritas no SoundCloud e no YouTube Music. As configurações podem ser encontradas clicando no ícone PreMiD no teu navegador."
+    },
+    "installedSupportMe": {
+        "message": "Ajuda-me!"
+    },
+    "updatedYTPUpdated": {
+        "message": "PreMiD foi atualizado!"
+    },
+    "updatedWhatsNew": {
+        "message": "O que há de novo?"
+    },
+    "updatedWhatChanged": {
+        "message": "O que mudou?"
+    },
+    "updatedAdded0": {
+        "message": "É suportado JKAnime & KissAnime"
+    },
+    "updatedAdded1": {
+        "message": "Extensão popup"
+    },
+    "updatedChanged0": {
+        "message": "Muitas e eu quis dizer muitas reescritas!"
+    },
+    "updatedChanged1": {
+        "message": "Improvações muito rapidas para a app"
+    },
+    "updatedAdded2": {
+        "message": "Sicronização das definições (Conta Google)"
+    },
+    "playbackPlaying": {
+        "message": "Reprodução"
+    },
+    "playbackPaused": {
+        "message": "Reprodução em pausa"
+    },
+    "about": {
+        "message": "Sobre"
+    },
+    "feedback": {
+        "message": "Comentários"
+    },
+    "options": {
+        "message": "Opções"
+    },
+    "general": {
+        "message": "General"
+    },
+    "enabled": {
+        "message": "Ativado"
+    },
+    "titleMenubar": {
+        "message": "Menu Bar Título"
+    },
+    "mediaControls": {
+        "message": "Controles da Mídia"
+    },
+    "checkForUpdates": {
+        "message": "Verificar se há atualizações"
+    },
+    "systemStartup": {
+        "message": "Inicialização com o sistema"
+    },
+    "presences": {
+        "message": "Presenças"
+    }
+}
