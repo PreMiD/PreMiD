@@ -1,0 +1,104 @@
+{
+    "appDesc": {
+        "message": "PreMID Agrega integración de presencia rica, Controles Multimedia y mucho mas a Youtube/Youtube Music, Twitch etc.."
+    },
+    "connected": {
+        "message": "Conectado"
+    },
+    "disconnected": {
+        "message": "Desconectado"
+    },
+    "installedThanks": {
+        "message": "Gracias por instalar PreMID"
+    },
+    "installedApp": {
+        "message": "Ya has instalado esta aplicación?"
+    },
+    "installedNo": {
+        "message": "No? Sigue estos pasos."
+    },
+    "installedStepApp": {
+        "message": "Descarga la versión mas nueva desde $1"
+    },
+    "installedStepAppMyRepository": {
+        "message": "Mi repositorio"
+    },
+    "installedWaitInstalled": {
+        "message": "Abrir el instalador y esperar hasta que se instale."
+    },
+    "installedMayWarning": {
+        "message": "Tu puedes recibir una alerta sobre FireWall y SmartScreen (No es un virus lo prometo)"
+    },
+    "installedAppAutostart": {
+        "message": "La aplicación debería iniciarse automáticamente, Tu puedes checar esto en la Taskbar (Windows) o tu menubar (MacOS)"
+    },
+    "installedYes": {
+        "message": "Listo? Estas listo para andar!"
+    },
+    "installedStart": {
+        "message": "Empieza por ver un video en Youtube, Ver tus streamers favoritos en Twitch, Ve tus animes favoritos en KissAnime o JKAnime, Talvez incluso Netflix... Quien sabe? O solo escucha tus canciones favoritas en Soundcloud y Youtube Music. El menu de configuración puede encontrarse clickeando el icono PreMID en tu navegador."
+    },
+    "installedSupportMe": {
+        "message": "Soportarme!"
+    },
+    "updatedYTPUpdated": {
+        "message": "PreMID ha sido actualizado!"
+    },
+    "updatedWhatsNew": {
+        "message": "¿Que es nuevo?"
+    },
+    "updatedWhatChanged": {
+        "message": "¿Que cambió?"
+    },
+    "updatedAdded0": {
+        "message": "Soporte a JKAnime & KissAnime"
+    },
+    "updatedAdded1": {
+        "message": "Popup de Extensión"
+    },
+    "updatedChanged0": {
+        "message": "Muchas, Y me refiero muchas reescribidos."
+    },
+    "updatedChanged1": {
+        "message": "Grandes mejoras de velocidad a la Aplicación"
+    },
+    "updatedAdded2": {
+        "message": "Configuraciones Sync (Cuenta de Google)"
+    },
+    "playbackPlaying": {
+        "message": "Reproducir"
+    },
+    "playbackPaused": {
+        "message": "Reproducción pausada"
+    },
+    "about": {
+        "message": "Sobre nosotros"
+    },
+    "feedback": {
+        "message": "Opiniones"
+    },
+    "options": {
+        "message": "Opciones"
+    },
+    "general": {
+        "message": "General"
+    },
+    "enabled": {
+        "message": "Habilitado"
+    },
+    "titleMenubar": {
+        "message": "Titulo de Barra de menú"
+    },
+    "mediaControls": {
+        "message": "Controles Multimedia"
+    },
+    "checkForUpdates": {
+        "message": "Ver si hay actualizaciones"
+    },
+    "systemStartup": {
+        "message": "Inicio del Sistema"
+    },
+    "presences": {
+        "message": "Presencias"
+    }
+}
