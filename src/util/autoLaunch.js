@@ -3,8 +3,8 @@ const {app} = require('electron')
 const chalk = require("chalk")
 const AutoLaunch = require('auto-launch')
 
-//* Setup electron-config
-const Config = require('electron-config');
+//* Setup electron-store
+const Config = require('electron-store');
 const userSettings = new Config({
   name: "userSettings"
 });
