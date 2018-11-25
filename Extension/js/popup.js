@@ -1,15 +1,27 @@
 $(document).ready(function() {
-  $('.Pname').html(chrome.runtime.getManifest().name)
-  $('.Pversion').html('V' + chrome.runtime.getManifest().version)
-  $('.Pabout').html(chrome.i18n.getMessage('about'))
-  $('.Pfeedback').html(chrome.i18n.getMessage('feedback'))
   $('.Poptions').html(chrome.i18n.getMessage('options'))
+  $('.Pcredits').html(chrome.i18n.getMessage('credits'))
+
+  $('.Pgeneral').html(chrome.i18n.getMessage('general'))
+
+  $('.Penabled').html(chrome.i18n.getMessage('enabled'))
+  $('.PtitleMenubar').html(chrome.i18n.getMessage('titleMenubar'))
+  $('.PmediaControls').html(chrome.i18n.getMessage('mediaControls'))
+  $('.PcheckForUpdates').html(chrome.i18n.getMessage('checkForUpdates'))
+  $('.PsystemStartup').html(chrome.i18n.getMessage('systemStartup'))
+  $('.Pdarktheme').html(chrome.i18n.getMessage('darkTheme'))
+
+  $('.Ppresences').html(chrome.i18n.getMessage('presences'))
 
   $('#content #panel').each(function() {
     this.addEventListener('click', updateItem)
   })
-})
 
+  //* Tab physics
+  $('.tabs').tabs({
+    duration: 250
+  });
+})
 function updateItem() {
   $(this).addClass('open')
   setTimeout(() => {

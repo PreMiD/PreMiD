@@ -1,20 +1,15 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 0;
-  width: 325px;
-  background-color: #282828;
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: bold;
+  src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
 }
 
 * {
+  font-family: "Roboto" !important;
   color: #fff;
-}
-
-#header {
-  height: 50px;
-  background-color: #7289da;
-  color: white;
-  text-align: center;
-  line-height: 50px;
 }

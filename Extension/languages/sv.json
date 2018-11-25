@@ -1,0 +1,186 @@
+[
+    {
+        "term": "tab.installed.heading",
+        "definition": "Tack f\u00f6r att du har installerat PreMiD",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.didInstallQuestion",
+        "definition": "Har du installerat programmet \u00e4nnu?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.notInstalled",
+        "definition": "Nej? F\u00f6lj dessa steg:",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.download",
+        "definition": "Ladda ner den senaste versionen fr\u00e5n $1",
+        "context": "$1 gets replaced by a value",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instruction.github",
+        "definition": "mitt GitHub-f\u00f6rr\u00e5d",
+        "context": "Link to the GitHub project",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.wait",
+        "definition": "\u00d6ppna installationsprogrammet och v\u00e4nta tills det installeras",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.warnings",
+        "definition": "Du kanske f\u00e5r en varning om brandv\u00e4gg och Smartscreen (det \u00e4r inte ett virus jag lovar)",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.autostart",
+        "definition": "Applikationen b\u00f6r starta automatiskt, du kan kontrollera detta genom att titta p\u00e5 ditt aktivitetsf\u00e4lt (Windows) eller menyraden (Mac OS)",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.ready",
+        "definition": "Ja? Du \u00e4r redo att g\u00e5!",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.intro",
+        "definition": "B\u00f6rja med att titta p\u00e5 en video p\u00e5 YouTube, titta p\u00e5 dina \u00e4lskade streamers p\u00e5 Twitch, Se dina favoritanimier p\u00e5 KissAnime eller JKAnime, kanske \u00e4ven Netflix ... Vem vet? <br> Eller du lyssnar bara p\u00e5 dina favoritl\u00e5tar p\u00e5 SoundCloud och YouTube Music. Inst\u00e4llningar kan hittas genom att klicka p\u00e5 PreMiD-ikonen i din webbl\u00e4sare.",
+        "context": "Pls leave <br> as is.",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.heading",
+        "definition": "PreMid har uppdaterats!",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.subHeading.whatsNew",
+        "definition": "Vad \u00e4r nytt?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.subHeading.whatChanged",
+        "definition": "Vad har f\u00f6r\u00e4ndrats?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "presence.playback.playing",
+        "definition": "Spelar tillbaka",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "presence.playback.paused",
+        "definition": "Uppspelning pausad",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.tabs.options",
+        "definition": "Alternativ",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.headings.general",
+        "definition": "Allm\u00e4nt",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.headings.presences",
+        "definition": "Presenceser",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.enabled",
+        "definition": "Aktiverad",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.titleMenubar",
+        "definition": "Titel Menubar",
+        "context": "Menubar is a name (Mac OS only)",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.mediaControls",
+        "definition": "Mediekontroller",
+        "context": "Media Control keys (Keyboard\/headphones)",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.checkForUpdates",
+        "definition": "S\u00f6k efter uppdateringar",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.systemStartup",
+        "definition": "Systemstart",
+        "context": "Startup option in preferences",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    }
+]

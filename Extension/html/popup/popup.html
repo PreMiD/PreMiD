@@ -1,30 +1,189 @@
+<!DOCTYPE html>
 <html>
   <head>
+    <!-- Import materialize.css -->
     <link
+      type="text/css"
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-      crossorigin="anonymous"
+      href="../../css/materialize.min.css"
+      media="screen,projection"
     />
-    <link rel="stylesheet" href="../../css/popup.css" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../../css/popup.css"
+      media="screen,projection"
+    />
+
+    <script src="../../js/util/jquery-3.3.1.min.js"></script>
+    <script src="../../js/options.js"></script>
+    <script src="../../js/popup.js"></script>
   </head>
 
   <body>
-    <div id="header">
-      <h1 class="Pname"></h1>
-      <h1 class="Pversion"></h1>
-    </div>
-    <div id="content">
-      <div id="panel" class="options">
-        <i id="icon" class="fas fa-cog"></i>
-        <h1 id="name" class="Poptions"></h1>
+    <div id="header"><img draggable="false" src="../../icon.png" /></div>
+      <ul class="tabs headerTabs">
+        <li class="tab col s3">
+          <a draggable="false" class="active waves-effect Poptions" href="#options"></a>
+        </li>
+        <li class="tab col s3">
+          <a draggable="false" class="waves-effect Pcredits" href="#credits"></a>
+        </li>
+      </ul>
+        <div id="tabContent">
+          <div id="options" class="col s12 tabContent">
+            <div class="row">
+              <div class="col s12 m5">
+                <div class="card-panel">
+                  <h3 id="pMiDHeading" class="Pgeneral"></h3>
+                    <table id="options">
+                      <tr class="enabledToggle">
+                        <td><h5 id="pMiDOption" class="Penabled"></h5></td>
+                        <td>
+                          <div class="switch">
+                            <label>
+                              <input type="checkbox" class="togglePresence" /> <span class="lever"></span>
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><h5 id="pMiDOption" class="PmediaControls"></h5></td>
+                        <td>
+                          <div class="switch">
+                            <label>
+                              <input type="checkbox" class="toggleMediaControls" /> <span class="lever"></span>
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><h5 id="pMiDOption" class="PcheckForUpdates"></h5></td>
+                        <td>
+                          <div class="switch">
+                            <label>
+                              <input type="checkbox" class="toggleCheckUpdates" /> <span class="lever"></span>
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><h5 id="pMiDOption" class="PsystemStartup"></h5></td>
+                        <td>
+                          <div class="switch">
+                            <label>
+                              <input type="checkbox" class="toggleSystemStartup" /> <span class="lever"></span>
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><h5 id="pMiDOption" class="Pdarktheme"></h5></td>
+                        <td>
+                          <div class="switch">
+                            <label>
+                              <input type="checkbox" class="toggleDarkTheme" /> <span class="lever"></span>
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                <div class="card-panel">
+                  <h3 id="pMiDHeading" class="Ppresences"></h3>
+                    <table id="options">
+                      <tr>
+                        <td><h5 id="pMiDOption">YouTube</h5></td>
+                        <td>
+                          <div class="switch">
+                            <label>
+                              <input class="yt toggleYouTube" type="checkbox" /> <span class="lever"></span>
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><h5 id="pMiDOption">YouTube Music</h5></td>
+                        <td>
+                          <div class="switch">
+                            <label>
+                              <input class="yt toggleYouTubeMusic" type="checkbox" /> <span class="lever"></span>
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><h5 id="pMiDOption">Twitch</h5></td>
+                        <td>
+                          <div class="switch">
+                            <label>
+                              <input class="twitch toggleTwitch" type="checkbox" /> <span class="lever"></span>
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><h5 id="pMiDOption">SoundCloud</h5></td>
+                        <td>
+                          <div class="switch">
+                            <label>
+                              <input class="soundcloud toggleSoundCloud" type="checkbox" /> <span class="lever"></span>
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><h5 id="pMiDOption">Netflix</h5></td>
+                        <td>
+                          <div class="switch">
+                            <label>
+                              <input class="netflix toggleNetflix" type="checkbox" /> <span class="lever"></span>
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><h5 id="pMiDOption">KissAnime</h5></td>
+                        <td>
+                          <div class="switch">
+                            <label>
+                              <input type="checkbox" class="toggleKissAnime" /> <span class="lever"></span>
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><h5 id="pMiDOption">JKAnime</h5></td>
+                        <td>
+                          <div class="switch">
+                            <label>
+                              <input type="checkbox" class="toggleJKAnime" /> <span class="lever"></span>
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><h5 id="pMiDOption">FimFiction</h5></td>
+                        <td>
+                          <div class="switch">
+                            <label>
+                              <input type="checkbox" class="toggleFimFiction" /> <span class="lever"></span>
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="credits" class="col s12 tabContent">Test 2</div>
+          </div>
+        </div>
       </div>
-      <div id="panel" class="github">
-        <i id="icon" class="fab fa-github"></i>
-        <h1 id="name">GitHub</h1>
-      </div>
-    </div>
-    <script src="../../js/util/jquery-3.3.1.min.js"></script>
-    <script src="../../js/popup.js"></script>
+    <script
+      type="text/javascript"
+      src="../../js/util/materialize.min.js"
+    ></script>
   </body>
 </html>

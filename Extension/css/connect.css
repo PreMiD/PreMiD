@@ -1,20 +1,35 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: "bold";
+  src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+}
+
 #premid-connectinfo {
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15) !important;
   position: fixed !important;
-  top: -50px !important;
-  right: 0 !important;
+  top: 5px !important;
+  right: -110% !important;
   z-index: 10000 !important;
-  min-width: 175px !important;
-  border-bottom-left-radius: 5px !important;
+  width: auto !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  border-radius: 5px !important;
   height: 50px !important;
-  background-color: rgba(255, 255, 255, 0.5) !important;
+  background-color: white !important;
   user-select: none !important;
   animation-name: slideIn !important;
   animation-duration: 5s !important;
-  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1) !important;
-  color: black !important;
+  animation-timing-function: cubic-bezier(0.55, 0.55, 0, 1.2) !important;
+  color: #575757 !important;
 }
 
 #premid-connectinfo * {
+  font-family: "Roboto", sans-serif !important;
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -27,29 +42,31 @@
 }
 
 #premid-connectinfo h1 {
-  font-size: 20px !important;
+  font-size: 17px !important;
+  font-weight: 600 !important;
   margin: 0 !important;
-  margin-top: 4px !important;
+  margin-top: 6px !important;
 }
 
 #premid-connectinfo h2 {
-  font-size: 17px !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
 }
 
 @keyframes slideIn {
   0% {
-    top: -50px;
+    right: -110%;
   }
 
   10% {
-    top: 0;
+    right: 5px;
   }
 
   90% {
-    top: 0;
+    right: 5px;
   }
 
   100% {
-    top: -50px;
+    right: -150%;
   }
 }

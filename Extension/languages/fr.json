@@ -1,0 +1,210 @@
+[
+    {
+        "term": "tab.installed.heading",
+        "definition": "Merci d'avoir install\u00e9 PreMiD",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.didInstallQuestion",
+        "definition": "Avez-vous d\u00e9j\u00e0 install\u00e9 l'application ?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.notInstalled",
+        "definition": "Non ? Suivez ces \u00e9tapes :",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.download",
+        "definition": "T\u00e9l\u00e9chargez la derni\u00e8re version depuis $1",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instruction.github",
+        "definition": "mon d\u00e9p\u00f4t GitHub",
+        "context": "Link to the GitHub project",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.wait",
+        "definition": "Ouvrez l'installateur et attendez la fin de l'installation",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.warnings",
+        "definition": "Vous pourriez recevoir un avertissement du pare-feu ou de SmartScreen (je promets que ce n'est pas un virus)",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.autostart",
+        "definition": "L'application devrait d\u00e9marrer automatiquement, vous pouvez le v\u00e9rifier en regardant votre barre des t\u00e2ches (Windows) ou votre barre de menu (MacOS)",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.ready",
+        "definition": "Oui ? Vous \u00eates pr\u00eats \u00e0 d\u00e9coller !",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.intro",
+        "definition": "Commencez par regarder une vid\u00e9o sur YouTube, regarder vos streamers favoris sur Twitch, regarder vos animes pr\u00e9f\u00e9r\u00e9s sur KissAnime ou JKAnime, peut-\u00eatre m\u00eame Netflix... Qui sait ?<br>Ou vous pouvez simplement \u00e9couter vos musiques pr\u00e9f\u00e9r\u00e9es sur SoundCloud et YouTube Music. Les param\u00e8tres peuvent \u00eatres acc\u00e9d\u00e9s en cliquant sur l'ic\u00f4ne PreMiD dans votre navigateur.",
+        "context": "Pls leave <br> as is.",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.heading",
+        "definition": "PreMiD a \u00e9t\u00e9 mis \u00e0 jour !",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.subHeading.whatsNew",
+        "definition": "Quoi de neuf ?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.subHeading.whatChanged",
+        "definition": "Qu'est-ce qui a chang\u00e9 ?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "presence.playback.playing",
+        "definition": "Lecture",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "presence.playback.paused",
+        "definition": "Lecture en pause",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.tabs.options",
+        "definition": "Options",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.tabs.credits",
+        "definition": "Cr\u00e9dits",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.headings.general",
+        "definition": "G\u00e9n\u00e9ral",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.headings.presences",
+        "definition": "Pr\u00e9sences",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.enabled",
+        "definition": "Activ\u00e9",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.mediaControls",
+        "definition": "Commandes multim\u00e9dias",
+        "context": "Media Control keys (Keyboard\/headphones)",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.checkForUpdates",
+        "definition": "Rechercher des mises \u00e0 jour",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.darkTheme",
+        "definition": "Th\u00e8me Sombre",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "connectionInfo.connected",
+        "definition": "Connect\u00e9 \u00e0 %SERVICE%",
+        "context": "%SERVICE% will be replaced.",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "connectionInfo.disconnected",
+        "definition": "D\u00e9connect\u00e9 de %SERVICE%",
+        "context": "%SERVICE% will be replaced.",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.systemStartup",
+        "definition": "D\u00e9marrage du syst\u00e8me",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    }
+]

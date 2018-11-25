@@ -1,16 +1,8 @@
 let options = undefined
 
-$('.Ppreferences').html(chrome.i18n.getMessage('options'))
-$('.Pgeneral').html(chrome.i18n.getMessage('general'))
-$('.Penabled').html(chrome.i18n.getMessage('enabled'))
-$('.PmediaControls').html(chrome.i18n.getMessage('mediaControls'))
-$('.PcheckForUpdates').html(chrome.i18n.getMessage('checkForUpdates'))
-$('.PsystemStartup').html(chrome.i18n.getMessage('systemStartup'))
-$('.Ppresences').html(chrome.i18n.getMessage('presences'))
-
 chrome.runtime.getPlatformInfo(function(info) {
   if(info.os == "mac")
-  $('<tr><td>Title Menubar</td><td><label class="switch"><input class="toggleTitleMenubar" type="checkbox"><span class="slider round"></span></label></td></tr>').insertAfter('#tPresence')
+  $('<tr><td><h5 id="pMiDOption" class="PtitleMenubar"></h5></td><td><div class="switch"><label><input type="checkbox" class="toggleTitleMenubar" /> <span class="lever"></span></label></div></td>').insertAfter('.enabledToggle')
   titleMenubarToggle = $('.toggleTitleMenubar')
   titleMenubarToggle.change(tMB);
 })
@@ -24,9 +16,11 @@ $(document).ready(function() {
   netflixToggle = $('.toggleNetflix'),
   kissanimeToggle = $('.toggleKissAnime'),
   jkanimeToggle = $('.toggleJKAnime')
+  fimfictionToggle = $('.toggleFimFiction')
   mediaControlsToggle = $('.toggleMediaControls')
   checkForUpdatesToggle = $('.toggleCheckUpdates')
   systemStartupToggle = $('.toggleSystemStartup')
+  darkThemeToggle = $('.toggleDarkTheme')
 
   enabledToggle.change(tEnabled);
   youtubeToggle.change(tYT);
@@ -36,12 +30,18 @@ $(document).ready(function() {
   netflixToggle.change(tN);
   kissanimeToggle.change(tKA);
   jkanimeToggle.change(tJKA);
+  fimfictionToggle.change(tFF);
   mediaControlsToggle.change(tMC);
   checkForUpdatesToggle.change(tCFU);
   systemStartupToggle.change(tSS);
+  darkThemeToggle.change(tdT);
 
   chrome.storage.sync.get(['options'], function(result) {
     options = result.options
+    if(options.fimfiction == undefined) chrome.storage.sync.set($.extend(options, {fimfiction: true}))
+    if(options.darkTheme == undefined) chrome.storage.sync.set($.extend(options, {darkTheme: true})); else {
+      if(options.darkTheme) $('html').addClass("dark")
+    }
     if(result.options == undefined) {
       chrome.storage.sync.set({options: {enabled: true, youtube: true, youtubeMusic: true, twitch: true, soundcloud: true, netflix: true, kissanime: true, jkanime: true, titleMenubar: true, mediaControls: true, checkForUpdates: true, systemStartup: true}})
       enabledToggle.prop('checked', true)
@@ -52,11 +52,13 @@ $(document).ready(function() {
       netflixToggle.prop('checked', true)
       kissanimeToggle.prop('checked', true)
       jkanimeToggle.prop('checked', true)
+      fimfictionToggle.prop('checked', true)
       if(titleMenubarToggle != undefined)
       titleMenubarToggle.prop('checked', true)
       mediaControlsToggle.prop('checked', true)
       checkForUpdatesToggle.prop('checked', true)
       systemStartupToggle.prop('checked', true)
+      darkThemeToggle.prop('checked', true)
     } else {
       enabledToggle.prop('checked', result.options.enabled)
       youtubeToggle.prop('checked', result.options.youtube)
@@ -66,11 +68,13 @@ $(document).ready(function() {
       netflixToggle.prop('checked', result.options.netflix)
       kissanimeToggle.prop('checked', result.options.kissanime)
       jkanimeToggle.prop('checked', result.options.jkanime)
+      fimfictionToggle.prop('checked', result.options.fimfiction)
       if(titleMenubarToggle != undefined)
       titleMenubarToggle.prop('checked', result.options.titleMenubar)
       mediaControlsToggle.prop('checked', result.options.mediaControls)
       checkForUpdatesToggle.prop('checked', result.options.checkForUpdates)
       systemStartupToggle.prop('checked', result.options.systemStartup)
+      darkThemeToggle.prop('checked', result.options.darkTheme)
     }
   })
 })
@@ -115,6 +119,11 @@ function tJKA() {
   sync()
 }
 
+function tFF() {
+  options.fimfiction = !options.fimfiction
+  sync()
+}
+
 function tMB() {
   options.titleMenubar = !options.titleMenubar
   sync()
@@ -132,6 +141,12 @@ function tCFU() {
 
 function tSS() {
   options.systemStartup = !options.systemStartup
+  sync()
+}
+
+function tdT() {
+  options.darkTheme = !options.darkTheme
+  if(options.darkTheme) $('html').addClass("dark"); else $('html').removeClass("dark");
   sync()
 }
 
