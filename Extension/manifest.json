@@ -10,7 +10,11 @@
     "2024": "icon.png"
   },
   "background": {
-    "scripts": ["js/util/socket.io-2.1.1.min.js", "js/background.js"],
+    "scripts": [
+      "js/util/socket.io-2.1.1.min.js",
+      "js/util/presence.js",
+      "js/background.js"
+    ],
     "presistent": false
   },
   "browser_action": {
@@ -27,17 +31,7 @@
         "js/util/socketConnector.js"
       ],
       "css": ["css/connect.css"],
-      "matches": [
-        "*://www.youtube.com/*",
-        "*://music.youtube.com/*",
-        "*://*.netflix.com/*",
-        "*://soundcloud.com/*",
-        "*://*.twitch.tv/*",
-        "*://kissanime.ac/*",
-        "*://kissanime.ru/*",
-        "*://jkanime.net/*",
-        "*://www.fimfiction.net/*"
-      ]
+      "matches": ["<all_urls>"]
     },
     {
       "js": ["js/presences/YouTubeMusic.js"],
@@ -70,6 +64,10 @@
     {
       "js": ["js/presences/FimFiction.js"],
       "matches": ["*://www.fimfiction.net/*"]
+    },
+    {
+      "js": ["js/presences/crunchyroll.js"],
+      "matches": ["*://www.crunchyroll.com/*"]
     }
   ],
   "permissions": [

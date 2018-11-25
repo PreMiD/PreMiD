@@ -1,101 +1,193 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: bold;
+  src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
 html,
 body {
-  margin: 0;
-  padding: 0;
-  height: 0;
-  width: 325px;
+  overflow: hidden;
+  width: 350px;
+  height: 600px;
+  max-height: 600px;
+}
+
+.dark,
+.dark .tabs,
+.dark .card-panel {
   background-color: #282828;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.dark .switch input:not(:checked) > .lever {
+  background-color: rgba(80, 80, 80, 0.5) !important;
+}
+
+.dark .switch input:not(:checked) > .lever:after {
+  background-color: rgba(80, 80, 80, 1) !important;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+#tabContent {
+  position: relative;
+  top: 125px;
+  height: calc(600px - 125px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 #header {
-  height: 50px;
-  background-color: #596cae;
-  color: white;
-  text-align: center;
-  line-height: 50px;
+  z-index: 10000;
+  position: fixed;
+  height: 75px;
+  width: 100%;
+  background-color: rgba(89, 107, 174, 1);
 }
 
-#header h1 {
-  margin: 0;
-  font-weight: 900;
-  display: inline;
+.headerTabs {
+  z-index: 10000;
+  position: fixed;
+  top: 75px;
 }
 
-#header h1:last-child {
-  position: absolute;
-  font-weight: 700;
-  float: right;
-  right: 10px;
+.row {
+  margin-bottom: 0;
 }
 
-#content {
-  margin-top: 10px;
-  margin-bottom: 10px;
+#header img {
+  height: 75px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-#panel {
-  transition: 0.5s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  display: inline-block;
+#pMiDHeading {
+  color: #596cae;
   margin: 5px;
-  width: 150px;
-  height: 125px;
-  background-color: #596cae;
-  border-radius: 5px;
-  color: white;
-  text-align: center;
+  margin-bottom: 10px;
+  padding: 0;
+  font-size: 23px;
+  font-weight: 600;
 }
 
-#panel:not(.open) {
+#pMiDOption {
+  color: #848484;
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+}
+
+#options {
+  margin: 5px;
+  width: calc(100% - 10px);
+}
+
+#options tr td:first-child {
+  width: 80%;
+}
+
+#options tr td:last-child {
+  width: 20%;
+}
+
+#options .lever {
+  float: right;
+  margin: 0 !important;
+}
+
+#options tr {
+  border: none;
+}
+
+#options td {
+  padding: 5px 0;
+}
+
+.switch {
   cursor: pointer;
 }
 
-#panel:not(.open):hover {
-  transform: scale(1.05);
+.switch label input[type="checkbox"]:checked + .lever {
+  background-color: rgb(109, 128, 194);
 }
 
-#panel #icon {
-  margin-top: 25px;
-  width: 50px;
-  height: 50px;
-  font-size: 50px;
+.switch label input[type="checkbox"]:checked + .lever:after {
+  background-color: #596cae;
 }
 
-.about {
+.yt:checked + .lever:after {
+  background-color: #c43a39 !important;
 }
 
-.options {
-  background-color: #7a7a7a !important;
+.yt:checked + .lever {
+  background-color: rgb(216, 78, 77) !important;
 }
 
-.github {
-  background-color: #fa503c !important;
+.twitch:checked + .lever:after {
+  background-color: #4b367c !important;
 }
 
-.donate {
-  background-color: #ff9d09 !important;
+.twitch:checked + .lever {
+  background-color: rgb(95, 74, 144) !important;
 }
 
-.open {
-  position: fixed;
-  transition: 0.5s all ease-out;
-  transform: scale(5);
-  cursor: default;
+.soundcloud:checked + .lever:after {
+  background-color: #fe8031 !important;
 }
 
-.open * {
-  transition: 0.15s all ease-out;
-  opacity: 0;
+.soundcloud:checked + .lever {
+  background-color: rgb(255, 148, 79) !important;
 }
 
-.panelContent {
-  position: relative;
-  color: white;
+.netflix:checked + .lever:after {
+  background-color: #cc1617 !important;
 }
 
-.panelContent:not(.open) {
-  display: none;
+.netflix:checked + .lever {
+  background-color: rgb(224, 42, 43) !important;
 }
 
-.panelContent.open {
-  display: block;
+.card-panel {
+  padding: 5px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.tabs .tab a {
+  color: rgba(90, 109, 174, 0.75);
+  font-weight: 500;
+}
+
+.tabs .tab a:hover,
+.tabs .tab a.active {
+  color: #596cae;
+}
+
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+  color: #596cae;
+  background-color: none;
+}
+
+.tabs .indicator {
+  background-color: rgb(89, 107, 174);
+  box-shadow: 5px 5px black;
 }
