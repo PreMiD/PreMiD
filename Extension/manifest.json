@@ -1,7 +1,7 @@
 {
   "name": "PreMiD",
-  "author": "Timeraa",
-  "version": "1.2.44",
+  "author": "Timeraa & Fruxh",
+  "version": "1.2.45",
   "description": "__MSG_appDesc__",
   "manifest_version": 2,
   "default_locale": "en",
@@ -36,7 +36,8 @@
         "*://kissanime.ac/*",
         "*://kissanime.ru/*",
         "*://jkanime.net/*",
-        "*://www.fimfiction.net/*"
+        "*://www.fimfiction.net/*",
+        "*://hentaihaven.org/*"
       ]
     },
     {
@@ -70,6 +71,10 @@
     {
       "js": ["js/presences/FimFiction.js"],
       "matches": ["*://www.fimfiction.net/*"]
+    },
+    {
+      "js": ["js/presences/HentaiHaven.js"],
+      "matches": ["*://hentaihaven.org/*"]
     }
   ],
   "permissions": [
