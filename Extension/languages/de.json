@@ -1,0 +1,218 @@
+[
+    {
+        "term": "tab.installed.heading",
+        "definition": "Vielen Dank f\u00fcr das Installieren von PreMiD",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.didInstallQuestion",
+        "definition": "Hast du die Application schon installiert?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.notInstalled",
+        "definition": "Nein? Folge diesen Schritten:",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.download",
+        "definition": "Lade dir die neueste Version von $1 herunter",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instruction.github",
+        "definition": "GitHub",
+        "context": "Link to the GitHub project",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.wait",
+        "definition": "\u00d6ffne das Installationsprogramm und warte bis es installiert ist",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.warnings",
+        "definition": "M\u00f6glicherweise bekommst du eine Warnung von deiner FireWall und SmartScreen (Es ist kein Virus. Das verspreche ich!)",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.autostart",
+        "definition": "Die Application sollte automatisch starten. Du kannst dies mit einem Blick auf deine Taskbar (Windows) oder deine Menubar (Mac OS) \u00fcberpr\u00fcfen",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.ready",
+        "definition": "Ja? Jetzt bis du bereit!",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.intro",
+        "definition": "Starte indem du ein Video auf YouTube, deinen Lieblingsstreamer auf Twitch, deine geliebten Animes auf KissAnime oder JKAnime, vielleicht sogar Netflix schaust... Wer wei\u00df?<br>Oder du h\u00f6rst einfach deine geliebten Lieder auf SoundCloud oder YouTube Music.\nEinstellungen kannst du finden, indem du auf das PreMiD icon in deinem Browser dr\u00fcckst.",
+        "context": "Pls leave <br> as is.",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.heading",
+        "definition": "PreMiD wurde aktualisiert!",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.subHeading.whatsNew",
+        "definition": "Was ist neu?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.subHeading.whatChanged",
+        "definition": "Was hat sich ge\u00e4ndert?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "presence.playback.playing",
+        "definition": "Wiedergabe",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "presence.playback.paused",
+        "definition": "Wiedergabe pausiert",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.tabs.options",
+        "definition": "Einstellungen",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.tabs.credits",
+        "definition": "Credits",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.headings.general",
+        "definition": "Generell",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.headings.presences",
+        "definition": "Presenzen",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.enabled",
+        "definition": "Aktiviert",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.titleMenubar",
+        "definition": "Titel Menubar",
+        "context": "Menubar is a name (Mac OS only)",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.mediaControls",
+        "definition": "Medienkontrolle",
+        "context": "Media Control keys (Keyboard\/headphones)",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.checkForUpdates",
+        "definition": "Auf Updates \u00fcberpr\u00fcfen",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.darkTheme",
+        "definition": "Dunkles Farbschema",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "connectionInfo.connected",
+        "definition": "Mit %SERVICE% verbunden",
+        "context": "%SERVICE% will be replaced.",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "connectionInfo.disconnected",
+        "definition": "Von %SERVICE% getrennt",
+        "context": "%SERVICE% will be replaced.",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.systemStartup",
+        "definition": "Systemstart",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    }
+]

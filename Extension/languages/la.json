@@ -1,0 +1,186 @@
+[
+    {
+        "term": "tab.installed.heading",
+        "definition": "Gratias ago YT Presence instruere",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.didInstallQuestion",
+        "definition": "Iamne usum instruxisti",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.notInstalled",
+        "definition": "Nonne est? Obtempera ii gradi",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.download",
+        "definition": "Instruere suprema forma a $1",
+        "context": "$1 gets replaced by a value",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instruction.github",
+        "definition": "GitHub logium meum",
+        "context": "Link to the GitHub project",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.wait",
+        "definition": "Aperi instruens et exspecta dum instruxit",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.warnings",
+        "definition": "Admonitum super FireWall et SmartScreen accipere potes (Virus non est, promitto)",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.autostart",
+        "definition": "Usus statim incipere debet, id per optutu ad regula initii (Windows et MacOS) tua examinare potes",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.ready",
+        "definition": "Enimne? Incohare potes!",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.intro",
+        "definition": "Incipe per video spectante in YouTube, per streamer amari spectante in Twitch, fortasse etiam Netflix... quis scit? Aut carmina optima in SoundCloud et YouTube Music audis.",
+        "context": "Pls leave <br> as is.",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.heading",
+        "definition": "PreMiD corrigam est!",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.subHeading.whatsNew",
+        "definition": "Quid nove est?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.subHeading.whatChanged",
+        "definition": "Quid mutatum est?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "presence.playback.playing",
+        "definition": "Canens rursus",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "presence.playback.paused",
+        "definition": "Canens rursus intermissum",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.tabs.options",
+        "definition": "Investitura",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.headings.general",
+        "definition": "Communis",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.headings.presences",
+        "definition": "Salus",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.enabled",
+        "definition": "Activus",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.titleMenubar",
+        "definition": "Indicium",
+        "context": "Menubar is a name (Mac OS only)",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.mediaControls",
+        "definition": "Media gubernatio",
+        "context": "Media Control keys (Keyboard\/headphones)",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.checkForUpdates",
+        "definition": "Quaerens correctiones",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.systemStartup",
+        "definition": "Incipens ad disciplina initium",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    }
+]

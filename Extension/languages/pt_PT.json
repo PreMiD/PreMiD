@@ -1,0 +1,186 @@
+[
+    {
+        "term": "tab.installed.heading",
+        "definition": "Obrigado por instalar PreMiD",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.didInstallQuestion",
+        "definition": "J\u00e1 instalas-te a aplica\u00e7\u00e3o?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.notInstalled",
+        "definition": "N\u00e3o? Segue estes passos:",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.download",
+        "definition": "Baixa a ultima vers\u00e3o apatir de $1",
+        "context": "$1 gets replaced by a value",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instruction.github",
+        "definition": "o meu repositorio do GitHub",
+        "context": "Link to the GitHub project",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.wait",
+        "definition": "Abre o instalador e espera ",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.warnings",
+        "definition": "Tu podes receber um aviso do FireWall ou SmartScreen ( N\u00e3o \u00e9 um v\u00edrus eu prometo! )",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.autostart",
+        "definition": "O aplicativo deve iniciar automaticamente, tu podes verificar isso olhando para a tua barra de tarefas (Windows) ou da tua barra de menu (MacOS)",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.ready",
+        "definition": "Sim? Ent\u00e3o estas pronto para ir!",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.intro",
+        "definition": "Come\u00e7a a assistir um v\u00eddeo no Youtube, assistir o teus streamers favoritos na Twitch, Assiste os teus Animes favoritos no KissAnime ou JKAnime, ou talvez at\u00e9 na Netflix ... Quem sabe?<br> Ou apenas ouves as tuas m\u00fasicas no SoundCloud e no Youtube Music. As configura\u00e7\u00f5es podem ser encontradas clicando no \u00edcone PreMiD no teu navegador",
+        "context": "Pls leave <br> as is.",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.heading",
+        "definition": "PreMiD foi atualizado!",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.subHeading.whatsNew",
+        "definition": "O que h\u00e1 de novo?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.subHeading.whatChanged",
+        "definition": "O que mudou?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "presence.playback.playing",
+        "definition": "A tocar",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "presence.playback.paused",
+        "definition": "Em pausa",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.tabs.options",
+        "definition": "Op\u00e7\u00f5es",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.tabs.credits",
+        "definition": "Creditos",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.headings.general",
+        "definition": "General",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.headings.presences",
+        "definition": "Presen\u00e7as",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.enabled",
+        "definition": "Ativado",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.mediaControls",
+        "definition": "Controles de M\u00eddia",
+        "context": "Media Control keys (Keyboard\/headphones)",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.checkForUpdates",
+        "definition": "Verificar por atualiza\u00e7\u00f5es",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.darkTheme",
+        "definition": "Tema escuro",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    }
+]

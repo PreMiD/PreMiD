@@ -5,7 +5,7 @@
   "description": "__MSG_appDesc__",
   "manifest_version": 2,
   "default_locale": "en",
-  "web_accessible_resources": ["icon.png"],
+  "web_accessible_resources": ["icon.png", "languages/*.json"],
   "icons": {
     "2024": "icon.png"
   },
@@ -13,7 +13,8 @@
     "scripts": [
       "js/util/socket.io-2.1.1.min.js",
       "js/util/presence.js",
-      "js/background.js"
+      "js/background.js",
+      "js/util/custom-i18n.js"
     ],
     "presistent": false
   },

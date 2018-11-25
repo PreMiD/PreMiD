@@ -1,0 +1,186 @@
+[
+    {
+        "term": "tab.installed.heading",
+        "definition": "Gracias por instalar PreMID",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.didInstallQuestion",
+        "definition": "Ya has instalado esta aplicaci\u00f3n?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.notInstalled",
+        "definition": "No? Sigue estos pasos.",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.download",
+        "definition": "Descarga la versi\u00f3n mas nueva desde $1",
+        "context": "$1 gets replaced by a value",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instruction.github",
+        "definition": "Mi GitHub repositorio",
+        "context": "Link to the GitHub project",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.wait",
+        "definition": "Abrir el instalador y esperar hasta que se instale",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.warnings",
+        "definition": "Tu puedes recibir una alerta sobre FireWall y SmartScreen (No es un virus lo prometo)",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.autostart",
+        "definition": "La aplicaci\u00f3n deber\u00eda iniciarse autom\u00e1ticamente, Tu puedes checar esto en la Taskbar (Windows) o tu menubar (MacOS)",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.ready",
+        "definition": "Listo? Estas listo para andar!",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.intro",
+        "definition": "Empieza por ver un video en Youtube, Ver tus streamers favoritos en Twitch, Ve tus animes favoritos en KissAnime o JKAnime, Talvez incluso Netflix... Quien sabe? O solo escucha tus canciones favoritas en Soundcloud y Youtube Music. El menu de configuraci\u00f3n puede encontrarse clickeando el icono PreMID en tu navegador.",
+        "context": "Pls leave <br> as is.",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.heading",
+        "definition": "PreMID ha sido actualizado!",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.subHeading.whatsNew",
+        "definition": "\u00bfQue es nuevo?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.subHeading.whatChanged",
+        "definition": "\u00bfQue cambi\u00f3?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "presence.playback.playing",
+        "definition": "Reproducir",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "presence.playback.paused",
+        "definition": "Reproducci\u00f3n pausada",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.tabs.options",
+        "definition": "Opciones",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.headings.general",
+        "definition": "General",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.headings.presences",
+        "definition": "Presencias",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.enabled",
+        "definition": "Habilitado",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.titleMenubar",
+        "definition": "Titulo de Barra de men\u00fa",
+        "context": "Menubar is a name (Mac OS only)",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.mediaControls",
+        "definition": "Controles Multimedia",
+        "context": "Media Control keys (Keyboard\/headphones)",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.checkForUpdates",
+        "definition": "Ver si hay actualizaciones",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.systemStartup",
+        "definition": "Inicio del Sistema",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    }
+]
