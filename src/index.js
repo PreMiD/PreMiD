@@ -13,8 +13,8 @@ const os = require('os')
 const updater = require('./util/updateChecker')
 //* Require Needed packages
 const chalk = require("chalk")
-//* Setup electron-config
-const Config = require('electron-config');
+//* Setup electron-store
+const Config = require('electron-store');
 const userSettings = new Config({
   name: "userSettings"
 });

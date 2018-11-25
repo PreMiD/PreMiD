@@ -11,7 +11,7 @@ socketServer = http.createServer(extension),
 io = require('socket.io')(socketServer);
 
 //* Load Config
-const Config = require('electron-config');
+const Config = require('electron-store');
 const userSettings = new Config({
   name: "userSettings"
 });
