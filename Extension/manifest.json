@@ -37,7 +37,8 @@
         "*://kissanime.ru/*",
         "*://jkanime.net/*",
         "*://www.fimfiction.net/*",
-        "*://hentaihaven.org/*"
+        "*://hentaihaven.org/*",
+        "*://rabb.it/*"
       ]
     },
     {
@@ -75,6 +76,10 @@
     {
       "js": ["js/presences/HentaiHaven.js"],
       "matches": ["*://hentaihaven.org/*"]
+    },
+    {
+      "js": ["js/presences/Rabbit.js"],
+      "matches": ["*://rabb.it/*"]
     }
   ],
   "permissions": [
