@@ -1,7 +1,7 @@
 {
   "name": "PreMiD",
   "author": "Timeraa & Fruxh",
-  "version": "1.2.45",
+  "version": "1.2.50",
   "manifest_version": 2,
   "web_accessible_resources": ["icon.png", "languages/*.json"],
   "icons": {
@@ -74,7 +74,11 @@
     },
     {
       "js": ["js/presences/Rabbit.js"],
-      "matches": ["*://rabb.it/*"]
+      "matches": ["*://www.rabb.it/*"]
+    },
+    {
+      "js": ["js/presences/MasterAnime.js"],
+      "matches": ["*://www.masterani.me/*"]
     }
   ],
   "permissions": [

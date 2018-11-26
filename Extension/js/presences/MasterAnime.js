@@ -5,6 +5,7 @@ dataUpdater
 
 //* Update data and send to application
 $(document).ready(() => {
+  setInterval(playbackChange, 250)
   //* Tab Priority
   setInterval(() => {
     if(tabActive == 5) {
@@ -39,57 +40,49 @@ function handleMediaKeys(data) {
     //* Switch cases for playback / Clicks corresponding buttons
     switch (data.playback) {
       case "pause":
-        $('.ytp-play-button').click()
+        $('.jw-icon .jw-icon-inline .jw-button-color .jw-reset .jw-icon-playback').click()
         updateData("playPauseTrack")
         break
-      case "nextTrack":
-        $('.ytp-next-button')[0].click()
-        //* Send response back to application
-        updateData("nextTrack")
-        break
       case "previousTrack":
-        $('.ytp-prev-button')[0].click()
+        $('.jw-icon .jw-icon-inline .jw-button-color .jw-reset .jw-icon-rewind')[0].click()
         //* Send response back to application
         updateData("previousTrack")
         break
     }
   }
 }
+/*
+$(".embed iframe").load(function() {
+  console.log($('.embed iframe:first').contents())
+})
+*/
 
-
-var playbackBoolean
 /**
  * Update Data and send it to the App
  * @param {String} playbackChange Playback if changed
  */
 function updateData(playbackChange = false) {
+  //console.log($('.ui .embed iframe'))
+  //console.log($('.ui .embed iframe')[0])
+  //console.log($('.ui .embed iframe').get(0))
+  //console.log($('.embed iframe:first'))
+  //console.log($('.ui .embed iframe:first').contents().find('video:first'))
   var eventType
-  if(document.location.pathname.includes("/watch"))
-    videoRunning = $('.ytd-video-primary-info-renderer .title').text() != "" && $('.video-stream')[0] != undefined && !isNaN($('.video-stream')[0].duration) ? true : false;
-  else if(document.location.hash.includes(("#/watch" || "#/watch")))
-    videoRunning = $('.player-video-title').text() != "" && $('.video-stream')[0] != undefined && !isNaN($('.video-stream')[0].duration) ? true : false;
-
-
+  videoRunning = $('.details a .title').text() != "" && $('.jw-video')[0] != undefined && !isNaN($('.jw-video')[0].duration) ? true : false && document.location.pathname.includes("/anime/watch")
   if(videoRunning) {
-    if(document.location.pathname.includes("/watch")) {
-      var videoTitle = $('.ytd-video-primary-info-renderer .title').text(),
-      videoAuthor = $("#upload-info .style-scope .ytd-video-owner-renderer").contents().first().html()
-    } else if(document.location.hash.includes(("#/watch" || "#/watch"))) {
-      var videoTitle = $('.player-video-title').text(),
-      videoAuthor = $(".player-video-details").text().split(" • ")[0]
-    }
-    
-    var videoTimeSeconds = Math.floor($('.video-stream')[0].currentTime),
-    videoDurationSeconds = Math.floor($('.video-stream')[0].duration)
+    var videoTitle = $('.details a .title').text(),
+    videoAuthor = $(".details h2").text(),
+    videoTimeSeconds = Math.floor($('.jw-video')[0].currentTime),
+    videoDurationSeconds = Math.floor($('.jw-video')[0].duration),
     videoTimestamps = getTimestamps(videoTimeSeconds, videoDurationSeconds)
+    playback = $('.jw-video')[0].paused ? "paused" : "playing"
     
     if (playbackChange) eventType = 'playBackChange'; else eventType = 'updateData';
     
-    playbackBoolean = !$('.video-stream')[0].paused
+    var playbackBoolean = !$('.jw-video')[0].paused
 
     var smallImageKey = playbackBoolean ? 'play' : 'pause',
-    //! REPLACE!!!!
-    smallImageText = playbackBoolean ? "Playing" : "Paused"
+    smallImageText = playbackBoolean ? chrome.i18n.getMessage('playbackPlaying') : chrome.i18n.getMessage('playbackPaused')
     
     if(playbackBoolean) {
       var data = {
@@ -108,7 +101,7 @@ function updateData(playbackChange = false) {
         durationSeconds: videoDurationSeconds,
         trayTitle: $('<div/>').html(videoTitle).text(),
         playback: playbackBoolean,
-        service: 'YouTube'
+        service: 'MasterAnime'
       }
     } else {
       var data = {
@@ -125,7 +118,7 @@ function updateData(playbackChange = false) {
         durationSeconds: videoDurationSeconds,
         trayTitle: $('<div/>').html(videoTitle).text(),
         playback: playbackBoolean,
-        service: 'YouTube'
+        service: 'MasterAnime'
       }
     }
   }
@@ -144,4 +137,24 @@ function getTimestamps(videoTime, videoDuration) {
     videoTime +
     videoDuration;
     return [Math.floor(startTime/1000), endTime]
+}
+
+/**
+ * Toggles playback
+ */
+function togglePlayback() {
+  //* Toggle playback variable
+  playback = !playback
+  //* Send status to application
+  updateData(playback ? "playing" : "paused")
+}
+
+var lastPlayback = false
+function playbackChange() {
+  if(videoRunning) {
+    if($('.jw-video')[0].paused != lastPlayback) {
+      togglePlayback()
+      lastPlayback = $('.jw-video')[0].paused
+    }
+  }
 }
