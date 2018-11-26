@@ -2,7 +2,7 @@
   {
     "term": "tab.installed.heading",
     "definition": "Thank you for installing PreMiD",
-    "context": "Installed extension html",
+    "context": "",
     "term_plural": "",
     "reference": "",
     "comment": ""
@@ -10,7 +10,7 @@
   {
     "term": "tab.installed.subHeading.didInstallQuestion",
     "definition": "Did you install the application yet?",
-    "context": "Installed extension html",
+    "context": "",
     "term_plural": "",
     "reference": "",
     "comment": ""
@@ -18,7 +18,7 @@
   {
     "term": "tab.installed.subHeading.notInstalled",
     "definition": "No? Follow these steps:",
-    "context": "Installed extension html",
+    "context": "",
     "term_plural": "",
     "reference": "",
     "comment": ""
@@ -42,7 +42,7 @@
   {
     "term": "tab.installed.instructions.wait",
     "definition": "Open the installer and wait until it installed",
-    "context": "Installed extension html",
+    "context": "",
     "term_plural": "",
     "reference": "",
     "comment": ""
@@ -50,7 +50,7 @@
   {
     "term": "tab.installed.instructions.warnings",
     "definition": "You may receive a warning about FireWall and SmartScreen (Its not a virus i promise!)",
-    "context": "Installed extension html",
+    "context": "",
     "term_plural": "",
     "reference": "",
     "comment": ""
@@ -58,7 +58,7 @@
   {
     "term": "tab.installed.instructions.autostart",
     "definition": "The application should start automatically, you can check this by looking at your Taskbar (Windows) or your Menubar (MacOS)",
-    "context": "Installed extension html",
+    "context": "",
     "term_plural": "",
     "reference": "",
     "comment": ""
@@ -66,7 +66,7 @@
   {
     "term": "tab.installed.subHeading.ready",
     "definition": "Yes? You are ready to go!",
-    "context": "Installed extension html",
+    "context": "",
     "term_plural": "",
     "reference": "",
     "comment": ""
@@ -82,7 +82,7 @@
   {
     "term": "tab.updated.heading",
     "definition": "PreMiD has been updated!",
-    "context": "Updated extension html",
+    "context": "",
     "term_plural": "",
     "reference": "",
     "comment": ""
@@ -90,7 +90,7 @@
   {
     "term": "tab.updated.subHeading.whatsNew",
     "definition": "Whats new?",
-    "context": "Updated extension html",
+    "context": "",
     "term_plural": "",
     "reference": "",
     "comment": ""
@@ -98,7 +98,7 @@
   {
     "term": "tab.updated.subHeading.whatChanged",
     "definition": "What changed?",
-    "context": "Updated extension html",
+    "context": "",
     "term_plural": "",
     "reference": "",
     "comment": ""
@@ -106,7 +106,7 @@
   {
     "term": "presence.playback.playing",
     "definition": "Playing back",
-    "context": "Text when you hover over the play icon in RPC",
+    "context": "",
     "term_plural": "",
     "reference": "",
     "comment": ""
@@ -114,7 +114,7 @@
   {
     "term": "presence.playback.paused",
     "definition": "Playback paused",
-    "context": "Text when you hover over the pause icon in RPC",
+    "context": "",
     "term_plural": "",
     "reference": "",
     "comment": ""
@@ -122,7 +122,7 @@
   {
     "term": "popup.tabs.options",
     "definition": "Options",
-    "context": "Preferences in extension",
+    "context": "",
     "term_plural": "",
     "reference": "",
     "comment": ""
@@ -130,7 +130,7 @@
   {
     "term": "popup.tabs.credits",
     "definition": "Credits",
-    "context": "Credits in extension",
+    "context": "",
     "term_plural": "",
     "reference": "",
     "comment": ""
@@ -146,7 +146,7 @@
   {
     "term": "popup.options.headings.presences",
     "definition": "Presences",
-    "context": "Headline in preferences",
+    "context": "",
     "term_plural": "",
     "reference": "",
     "comment": ""
@@ -154,7 +154,7 @@
   {
     "term": "popup.options.enabled",
     "definition": "Enabled",
-    "context": "When an option is enabled",
+    "context": "",
     "term_plural": "",
     "reference": "",
     "comment": ""
@@ -178,7 +178,7 @@
   {
     "term": "popup.options.checkForUpdates",
     "definition": "Check for updates",
-    "context": "CheckForUpdates button in app",
+    "context": "",
     "term_plural": "",
     "reference": "",
     "comment": ""
@@ -218,7 +218,7 @@
   {
     "term": "presence.episode",
     "definition": "Episode",
-    "context": "Episode of a series (e.g. Episode 6)",
+    "context": "",
     "term_plural": "",
     "reference": "",
     "comment": ""
