@@ -1,7 +1,6 @@
 var currentLanguageFile = null,
 defaultLanguageFile = null;
 var detectLanguage = chrome.i18n.getUILanguage()
-console.log(detectLanguage)
 
 document.onload = init()
 
@@ -12,8 +11,6 @@ async function init() {
   } else {
     currentLanguageFile = await loadLanguageFile("en")
   }
-
-  console.log(getString("app.description"))
 }
 
 async function loadLanguageFile(languageCode) {
@@ -28,8 +25,6 @@ async function loadLanguageFile(languageCode) {
     return responseData
   })
 }
-
-//getString("app.name")
 
 function getString(term) {
   if(currentLanguageFile.find(str => str.term == term) == null) {

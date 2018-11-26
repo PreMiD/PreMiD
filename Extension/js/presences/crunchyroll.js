@@ -130,7 +130,7 @@ function updateData(playbackChange = false) {
       var playbackBoolean = !$('.VideoContainer div video')[0].paused
 
       var smallImageKey = playbackBoolean ? "play" : "pause"
-      smallImageText = playbackBoolean ? chrome.i18n.getMessage('playbackPlaying') : chrome.i18n.getMessage('playbackPaused')
+      smallImageText = playbackBoolean ? getString("presence.playback.playing") : getString("presence.playback.paused")
 
       if(playbackBoolean) {
         data = {

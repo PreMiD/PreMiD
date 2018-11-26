@@ -52,6 +52,7 @@ function handleMediaKeys(data) {
  * @param {String} playbackChange Playback if changed
  */
 function updateData(playbackChange = false) {
+  console.log($('.server-box iframe:first').contents())
   var eventType
   videoRunning = $('.video-header h1').html() != "" && $('.server-box iframe:first').contents().find('video:first')[0] != undefined && !isNaN($('.server-box iframe:first').contents().find('video:first')[0].duration) ? true : false
   if(videoRunning) {
@@ -67,7 +68,7 @@ function updateData(playbackChange = false) {
     var playbackBoolean = !$('.server-box iframe:first').contents().find('video:first')[0].paused
 
     var smallImageKey = playbackBoolean ? 'play' : 'pause',
-    smallImageText = playbackBoolean ? chrome.i18n.getMessage('playbackPlaying') : chrome.i18n.getMessage('playbackPaused')
+    smallImageText = playbackBoolean ? getString("presence.playback.playing") : getString("presence.playback.paused")
 
     if(playbackBoolean) {
       var data = {

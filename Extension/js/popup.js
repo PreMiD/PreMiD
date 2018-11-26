@@ -1,17 +1,17 @@
-$(document).ready(function() {
-  $('.Poptions').html(chrome.i18n.getMessage('options'))
-  $('.Pcredits').html(chrome.i18n.getMessage('credits'))
+$(document).ready(async function() {
+  $('.Poptions').html(await getString("popup.tabs.options"))
+  $('.Pcredits').html(await getString("popup.tabs.credits"))
 
-  $('.Pgeneral').html(chrome.i18n.getMessage('general'))
+  $('.Pgeneral').html(await getString("popup.options.headings.general"))
 
-  $('.Penabled').html(chrome.i18n.getMessage('enabled'))
-  $('.PtitleMenubar').html(chrome.i18n.getMessage('titleMenubar'))
-  $('.PmediaControls').html(chrome.i18n.getMessage('mediaControls'))
-  $('.PcheckForUpdates').html(chrome.i18n.getMessage('checkForUpdates'))
-  $('.PsystemStartup').html(chrome.i18n.getMessage('systemStartup'))
-  $('.Pdarktheme').html(chrome.i18n.getMessage('darkTheme'))
+  $('.Penabled').html(await getString("popup.options.enabled"))
+  $('.PtitleMenubar').html(await getString("popup.options.titleMenubar"))
+  $('.PmediaControls').html(await getString("popup.options.mediaControls"))
+  $('.PcheckForUpdates').html(await getString("popup.options.checkForUpdates"))
+  $('.PsystemStartup').html(await getString("popup.options.systemStartup"))
+  $('.Pdarktheme').html(await getString("popup.options.darkTheme"))
 
-  $('.Ppresences').html(chrome.i18n.getMessage('presences'))
+  $('.Ppresences').html(await getString("popup.options.headings.presences"))
 
   $('#content #panel').each(function() {
     this.addEventListener('click', updateItem)

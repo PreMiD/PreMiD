@@ -1,26 +1,26 @@
-var allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "netflix.com", "kissanime.ac", "kissanime.ru", "jkanime.net", "fimfiction.net", "www.crunchyroll.com"]
+var allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "www.netflix.com", "kissanime.ac", "kissanime.ru", "jkanime.net", "fimfiction.net", "www.crunchyroll.com"]
 
-//* Create socket connection to application
-if(allowedURL.includes(document.location.host)) {
+if(allowedURL.includes(document.location.host)) {  
+  //* Create socket connection to application
   var socket = io.connect('http://localhost:3020/');
-  
   //* Log when connected
   socket.on('connect', socketConnect)
   socket.on('disconnect', socketDisconnect)
 }
 
-function socketConnect() {
-  console.log(chrome.runtime.getManifest().name + ': %c' + chrome.i18n.getMessage('connected'), "color: green; font-weight: 700")
+async function socketConnect() {
   if(sessionStorage['premidConnected'] == null || sessionStorage['premidConnected'] == 'false') {
     sessionStorage['premidConnected'] = 'true'
-    insertConnectionInfo(chrome.i18n.getMessage("connected"))
+    $(document).ready(async function() {
+      insertConnectionInfo(await getString("connectionInfo.connected"))
+    })
   }
+
 }
 
-function socketDisconnect() {
-  console.log(chrome.runtime.getManifest().name + ': %c' + chrome.i18n.getMessage('disconnected'), "color: red; font-weight: 700")
+async function socketDisconnect() {
   sessionStorage['premidConnected'] = 'false'
-  insertConnectionInfo(chrome.i18n.getMessage("disconnected"))
+  insertConnectionInfo(await getString("connectionInfo.disconnected"))
 }
 
 function insertConnectionInfo(message) {
@@ -48,7 +48,7 @@ function getService() {
     case "soundcloud.com":
       return "SoundCloud"
       break
-    case "netflix.com":
+    case "www.netflix.com":
       return "Netflix"
       break
     case "kissanime.ac" || "kissanime.ru":

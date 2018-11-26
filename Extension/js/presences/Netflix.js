@@ -64,7 +64,7 @@ function checkPlayChange() {
 }
 
 //* Start interval
-window.onload = function () {
+$(document).ready(function () {
   //* Tab Priority
   setInterval(() => {
     if(tabActive == 5) {
@@ -77,7 +77,7 @@ window.onload = function () {
     }
     if(tabActive > 0) tabActive--
   }, 500)
-}
+})
 
 chrome.runtime.onMessage.addListener(((message, sender) => {
   if(tabActive <= 9) tabActive += 2
@@ -85,11 +85,12 @@ chrome.runtime.onMessage.addListener(((message, sender) => {
 }))
 
 //* Create needed variables
-let urlForVideo,
+var urlForVideo,
   songTime,
   calcDifference = []
 
 function updateData(playbackChange = false) {
+  console.log($('.video-title span'))
   if (document.location.pathname.includes("/watch")) musicRunning = true; else musicRunning = false;
   urlForVideo = document.location.href
   if ($(".time-remaining__time").html() != "") {
@@ -111,43 +112,77 @@ function updateData(playbackChange = false) {
       var playbackBoolean = !$('.VideoContainer div video')[0].paused
 
       var smallImageKey = playbackBoolean ? "play" : "pause"
-      smallImageText = playbackBoolean ? chrome.i18n.getMessage('playbackPlaying') : chrome.i18n.getMessage('playbackPaused')
+      smallImageText = playbackBoolean ? getString("presence.playback.playing") : getString("presence.playback.paused")
 
       if(playbackBoolean) {
-        data = {
-          clientID: '499981204045430784',
-          presenceData: {
-            details: $('.ellipsize-text').children().html(),
-            state: $($('.ellipsize-text').children().get(1)).html(),
-            largeImageKey: 'nflix_lg',
-            largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
-            smallImageKey: smallImageKey,
-            smallImageText: smallImageText,
-            startTimestamp: startTime,
-            endTimestamp: endTime
-          },
-          currentSeconds: Math.floor($('.VideoContainer div video')[0].currentTime),
-          durationSeconds: Math.floor($('.VideoContainer div video')[0].duration),
-          trayTitle: $('.ellipsize-text').children().html(),
-          playback: playbackBoolean,
-          service: 'Netflix'
+        if($('.video-title span').length == 0) {
+          data = {
+            clientID: '499981204045430784',
+            presenceData: {
+              details: $('.video-title h4').text(),
+              largeImageKey: 'nflix_lg',
+              largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+              smallImageKey: smallImageKey,
+              smallImageText: smallImageText,
+              startTimestamp: startTime,
+              endTimestamp: endTime
+            },
+            currentSeconds: Math.floor($('.VideoContainer div video')[0].currentTime),
+            durationSeconds: Math.floor($('.VideoContainer div video')[0].duration),
+            trayTitle: $('.video-title h4').text(),
+            playback: playbackBoolean,
+            service: 'Netflix'
+          }
+        } else {
+          data = {
+            clientID: '499981204045430784',
+            presenceData: {
+              details: $('.video-title h4').text(),
+              state: $('.video-title span').get(0).innerText + " " + $('.video-title span').get(1).innerText,
+              largeImageKey: 'nflix_lg',
+              largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+              smallImageKey: smallImageKey,
+              smallImageText: smallImageText,
+              startTimestamp: startTime,
+              endTimestamp: endTime
+            },
+            currentSeconds: Math.floor($('.VideoContainer div video')[0].currentTime),
+            durationSeconds: Math.floor($('.VideoContainer div video')[0].duration),
+            trayTitle: $('.video-title h4').text(),
+            playback: playbackBoolean,
+            service: 'Netflix'
+          }
         }
       } else {
-        data = {
-          clientID: '499981204045430784',
-          presenceData: {
-            details: $('.ellipsize-text').children().html(),
-            state: $($('.ellipsize-text').children().get(1)).html(),
-            largeImageKey: 'nflix_lg',
-            largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
-            smallImageKey: smallImageKey,
-            smallImageText: smallImageText
-          },
-          currentSeconds: Math.floor($('.VideoContainer div video')[0].currentTime),
-          durationSeconds: Math.floor($('.VideoContainer div video')[0].duration),
-          trayTitle: $('.ellipsize-text').children().html(),
-          playback: playbackBoolean,
-          service: 'Netflix'
+        if($('.video-title span').length == 0) {
+          data = {
+            clientID: '499981204045430784',
+            presenceData: {
+              details: $('.video-title h4').text(),
+              largeImageKey: 'nflix_lg',
+              largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+              smallImageKey: smallImageKey,
+              smallImageText: smallImageText,
+            },
+            trayTitle: $('.video-title h4').text(),
+            playback: playbackBoolean,
+            service: 'Netflix'
+          }
+        } else {
+          data = {
+            clientID: '499981204045430784',
+            presenceData: {
+              details: $('.video-title h4').text(),
+              state: $('.video-title span').get(0).innerText + " " + $('.video-title span').get(1).innerText,
+              largeImageKey: 'nflix_lg',
+              largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+              smallImageKey: smallImageKey,
+              smallImageText: smallImageText,
+            },
+            trayTitle: $('.video-title h4').text(),
+            playback: playbackBoolean,
+            service: 'Netflix'
+          }
         }
       }
     }

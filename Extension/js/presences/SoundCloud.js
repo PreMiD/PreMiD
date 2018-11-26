@@ -114,7 +114,7 @@ function updateData(playbackChange = false) {
         var playbackBoolean = $('.playControl').hasClass('playing')
 
         var smallImageKey = playbackBoolean ? 'play' : 'pause',
-        smallImageText = playbackBoolean ? chrome.i18n.getMessage('playbackPlaying') : chrome.i18n.getMessage('playbackPaused')
+        smallImageText = playbackBoolean ? getString("presence.playback.playing") : getString("presence.playback.paused")
     
     
         var songTitle = $('.playbackSoundBadge__titleLink').children().get(1).innerHTML,

@@ -67,7 +67,7 @@ function updateData(playbackChange = false) {
     var playbackBoolean = !(($('#player_html5_html5_api')[0] || $('#my_video_1_html5_api')[0])).paused
 
     var smallImageKey = playbackBoolean ? 'play' : 'pause',
-    smallImageText = playbackBoolean ? chrome.i18n.getMessage('playbackPlaying') : chrome.i18n.getMessage('playbackPaused')
+    smallImageText = playbackBoolean ? getString("presence.playback.playing") : getString("presence.playback.paused")
 
     if(playbackBoolean) {
       var data = {
