@@ -38,10 +38,10 @@ function updateData() {
 
 if(document.location.pathname == "/") {
     data = {
-      clientID: '513683923767656449',
+      clientID: '516742299355578380',
       presenceData: {
-        details: "Browsing...",
-        largeImageKey: 'ff_lg',
+        details: getString("presence.browsing"),
+        largeImageKey: 'rt_lg',
         largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
         startTimestamp: readingStamp,
       },
@@ -49,6 +49,22 @@ if(document.location.pathname == "/") {
       service: 'Rabbit',
       playback: true
     }
+  } else if($('.roomName.on').get(0) != undefined) {
+    data = {
+      clientID: '516742299355578380',
+      presenceData: {
+        details: $('.roomName.on')[0].innerHTML,
+        state: $('.sessionsCount')[0].innerHTML.match("[0-9]*")[0] + " " + getString("presence.watching"),
+        largeImageKey: 'rt_lg',
+        largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+        startTimestamp: readingStamp,
+      },
+      trayTitle: $('.roomName.on')[0].innerHTML,
+      service: 'Rabbit',
+      playback: true
+    }
   }
+
+  console.log()
   if(socket.connected && data != null) socket.emit("updateData", data)
 }
