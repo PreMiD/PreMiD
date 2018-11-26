@@ -79,6 +79,10 @@
     {
       "js": ["js/presences/MasterAnime.js"],
       "matches": ["*://www.masterani.me/*"]
+    },
+    {
+      "js": ["js/presences/SuperAnimes.js"],
+      "matches": ["*://www.superanimes.site/*"]
     }
   ],
   "permissions": [
