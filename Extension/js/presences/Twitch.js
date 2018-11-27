@@ -112,9 +112,7 @@ function updateData(playbackChange = false) {
     var playbackBoolean = !$(".player-video video")[0].paused;
 
     var smallImageKey = playbackBoolean ? "play" : "pause",
-      smallImageText = playbackBoolean
-        ? chrome.i18n.getMessage("playbackPlaying")
-        : chrome.i18n.getMessage("playbackPaused");
+      smallImageText = playbackBoolean ? getString("presence.playback.playing") : getString("presence.playback.paused")
 
     var streamTitle = $(".tw-ellipsis.tw-mg-b-05")
         .children()

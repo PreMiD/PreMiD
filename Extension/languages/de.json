@@ -2,19 +2,13 @@
     "tab.installed.heading": "Vielen Dank für das Installieren von PreMiD",
     "tab.installed.subHeading.didInstallQuestion": "Hast du die Application schon installiert?",
     "tab.installed.subHeading.notInstalled": "Nein? Folge diesen Schritten:",
-    "$1 gets replaced by a value": {
-        "tab.installed.instructions.download": "Lade dir die neueste Version von $1 herunter"
-    },
-    "Link to the GitHub project": {
-        "tab.installed.instruction.github": "GitHub"
-    },
+    "tab.installed.instructions.download": "Lade dir die neueste Version von $1 herunter",
+    "tab.installed.instruction.github": "GitHub",
     "tab.installed.instructions.wait": "Öffne das Installationsprogramm und warte bis es installiert ist",
     "tab.installed.instructions.warnings": "Möglicherweise bekommst du eine Warnung von deiner FireWall und SmartScreen (Es ist kein Virus. Das verspreche ich!)",
     "tab.installed.instructions.autostart": "Die Application sollte automatisch starten. Du kannst dies mit einem Blick auf deine Taskbar (Windows) oder deine Menubar (Mac OS) überprüfen",
     "tab.installed.subHeading.ready": "Ja? Jetzt bis du bereit!",
-    "Pls leave <br> as is.": {
-        "tab.installed.intro": "Starte indem du ein Video auf YouTube, deinen Lieblingsstreamer auf Twitch, deine geliebten Animes auf KissAnime oder JKAnime, vielleicht sogar Netflix schaust... Wer weiß?<br>Oder du hörst einfach deine geliebten Lieder auf SoundCloud oder YouTube Music.\nEinstellungen kannst du finden, indem du auf das PreMiD icon in deinem Browser drückst."
-    },
+    "tab.installed.intro": "Starte indem du ein Video auf YouTube, deinen Lieblingsstreamer auf Twitch, deine geliebten Animes auf KissAnime oder JKAnime, vielleicht sogar Netflix schaust... Wer weiß?<br>Oder du hörst einfach deine geliebten Lieder auf SoundCloud oder YouTube Music.\nEinstellungen kannst du finden, indem du auf das PreMiD icon in deinem Browser drückst.",
     "tab.updated.heading": "PreMiD wurde aktualisiert!",
     "tab.updated.subHeading.whatsNew": "Was ist neu?",
     "tab.updated.subHeading.whatChanged": "Was hat sich geändert?",
@@ -25,21 +19,14 @@
     "popup.options.headings.general": "Generell",
     "popup.options.headings.presences": "Presenzen",
     "popup.options.enabled": "Aktiviert",
-    "Menubar is a name (Mac OS only)": {
-        "popup.options.titleMenubar": "Titel Menubar"
-    },
-    "Media Control keys (Keyboard/headphones)": {
-        "popup.options.mediaControls": "Medienkontrolle"
-    },
+    "popup.options.titleMenubar": "Titel Menubar",
+    "popup.options.mediaControls": "Medienkontrolle",
     "popup.options.checkForUpdates": "Auf Updates überprüfen",
-    "Dark Theme option in preferences": {
-        "popup.options.darkTheme": "Dunkles Farbschema"
-    },
-    "%SERVICE% will be replaced.": {
-        "connectionInfo.connected": "Mit %SERVICE% verbunden",
-        "connectionInfo.disconnected": "Von %SERVICE% getrennt"
-    },
-    "Startup option in preferences": {
-        "popup.options.systemStartup": "Systemstart"
-    }
+    "popup.options.darkTheme": "Dunkles Farbschema",
+    "connectionInfo.connected": "Mit %SERVICE% verbunden",
+    "connectionInfo.disconnected": "Von %SERVICE% getrennt",
+    "popup.options.systemStartup": "Systemstart",
+    "presence.episode": "Episode",
+    "presence.browsing": "Stöbert...",
+    "presence.watching": "schauen zu"
 }

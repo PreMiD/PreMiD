@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 
 var allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "netflix.com", "kissanime.ac", "kissanime.ru", "jkanime.net", "fimfiction.net", "www.crunchyroll.com", "www.rabb.it", "www.masterani.me", "www.youtube.com/tv", "www.superanimes.site", "www1.9anime.to"]
+=======
+var allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "www.netflix.com", "kissanime.ac", "kissanime.ru", "jkanime.net", "fimfiction.net", "www.crunchyroll.com", "www.masterani.me", "www.superanimes.site"]
+>>>>>>> b1ba8e4d6e00b87e5b59a08ba60e59b731ee0923
 
 if(allowedURL.includes(document.location.host)) {  
   //* Create socket connection to application

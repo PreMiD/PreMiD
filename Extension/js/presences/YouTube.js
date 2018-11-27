@@ -88,8 +88,7 @@ function updateData(playbackChange = false) {
     playbackBoolean = !$('.video-stream')[0].paused
 
     var smallImageKey = playbackBoolean ? 'play' : 'pause',
-    //! REPLACE!!!!
-    smallImageText = playbackBoolean ? "Playing" : "Paused"
+    smallImageText = playbackBoolean ? getString("presence.playback.playing") : getString("presence.playback.paused")
     
     if(playbackBoolean) {
       var data = {

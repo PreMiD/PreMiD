@@ -1,186 +1,29 @@
-[
-    {
-        "term": "tab.installed.heading",
-        "definition": "Tak fordi du installerede PreMiD",
-        "context": "",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "tab.installed.subHeading.didInstallQuestion",
-        "definition": "Har du installeret applikationen endnu?",
-        "context": "",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "tab.installed.subHeading.notInstalled",
-        "definition": "Ikke? F\u00f8lg disse trin:",
-        "context": "",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "tab.installed.instructions.download",
-        "definition": "Download den seneste version for $1",
-        "context": "",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "tab.installed.instruction.github",
-        "definition": "mit depot",
-        "context": "Link to the GitHub project",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "tab.installed.instructions.wait",
-        "definition": "\u00c5ben installat\u00f8ren og vent til den er installeret",
-        "context": "",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "tab.installed.instructions.warnings",
-        "definition": "Du modtager nok en advarsel om FireWall og SmartScreen (Jeg lover, det er ikke en virus)",
-        "context": "",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "tab.installed.instructions.autostart",
-        "definition": "Applikationen vil starte automatisk, du kan tjekke dette ved at kigge i din proceslinje (Windows) eller din menubar (MacOS)",
-        "context": "",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "tab.installed.subHeading.ready",
-        "definition": "Allerede? Du er klar!",
-        "context": "",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "tab.installed.intro",
-        "definition": "Start ved at se en video p\u00e5 YouTube, ved at se dine elskede streamers p\u00e5 Twitch, se dine favorit animes p\u00e5 KissAnime eller JKAnime, m\u00e5ske endda Netflix... Hvem ved?<br>Eller du kan bare lytte til dine favorit sange p\u00e5 SoundCloud og YouTube Musik. Indstillinger kan blive fundet ved at klikke PreMiD ikonet i din browser.",
-        "context": "Pls leave <br> as is.",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "tab.updated.heading",
-        "definition": "PreMiD er blevet opdateret!",
-        "context": "",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "tab.updated.subHeading.whatsNew",
-        "definition": "Hvad er nyt?",
-        "context": "",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "tab.updated.subHeading.whatChanged",
-        "definition": "Hvad er \u00e6ndret?",
-        "context": "",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "presence.playback.playing",
-        "definition": "Afspiller",
-        "context": "",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "presence.playback.paused",
-        "definition": "Afspilning p\u00e5 pause",
-        "context": "",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "popup.tabs.options",
-        "definition": "Indstillinger",
-        "context": "",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "popup.options.headings.general",
-        "definition": "Generelt",
-        "context": "",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "popup.options.headings.presences",
-        "definition": "Presences",
-        "context": "",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "popup.options.enabled",
-        "definition": "T\u00e6ndt",
-        "context": "",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "popup.options.titleMenubar",
-        "definition": "Titel Menubar",
-        "context": "Menubar is a name (Mac OS only)",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "popup.options.mediaControls",
-        "definition": "Mediekontrol",
-        "context": "Media Control keys (Keyboard\/headphones)",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "popup.options.checkForUpdates",
-        "definition": "Tjek for opdateringer",
-        "context": "",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    },
-    {
-        "term": "popup.options.systemStartup",
-        "definition": "System startup",
-        "context": "",
-        "term_plural": "",
-        "reference": "",
-        "comment": ""
-    }
-]
+{
+    "tab.installed.heading": "Tak fordi du installerede PreMiD",
+    "tab.installed.subHeading.didInstallQuestion": "Har du installeret applikationen endnu?",
+    "tab.installed.subHeading.notInstalled": "Ikke? Følg disse trin:",
+    "tab.installed.instructions.download": "Download den seneste version for $1",
+    "tab.installed.instruction.github": "mit GitHub depot",
+    "tab.installed.instructions.wait": "Åben installatøren og vent til den er installeret",
+    "tab.installed.instructions.warnings": "Du modtager nok en advarsel om FireWall og SmartScreen (Jeg lover, det er ikke en virus)",
+    "tab.installed.instructions.autostart": "Applikationen vil starte automatisk, du kan tjekke dette ved at kigge i din proceslinje (Windows) eller din menubar (MacOS)",
+    "tab.installed.subHeading.ready": "Allerede? Du er klar!",
+    "tab.installed.intro": "Start ved at se en video på YouTube, ved at se dine elskede streamers på Twitch, se dine favorit animes på KissAnime eller JKAnime, måske endda Netflix... Hvem ved?<br>Eller du kan bare lytte til dine favorit sange på SoundCloud og YouTube Musik. Indstillinger kan blive fundet ved at klikke PreMiD ikonet i din browser.",
+    "tab.updated.heading": "PreMiD er blevet opdateret!",
+    "tab.updated.subHeading.whatsNew": "Hvad er nyt?",
+    "tab.updated.subHeading.whatChanged": "Hvad er ændret?",
+    "presence.playback.playing": "Afspiller",
+    "presence.playback.paused": "Afspilning på pause",
+    "popup.tabs.options": "Indstillinger",
+    "popup.tabs.credits": "Kredit",
+    "popup.options.headings.general": "Generelt",
+    "popup.options.headings.presences": "Presences",
+    "popup.options.enabled": "Tændt",
+    "popup.options.titleMenubar": "Titel Menubar",
+    "popup.options.mediaControls": "Mediekontrol",
+    "popup.options.checkForUpdates": "Tjek for opdateringer",
+    "popup.options.darkTheme": "Mørkt Tema",
+    "connectionInfo.connected": "Forbundet til %SERVICE%",
+    "connectionInfo.disconnected": "Afbrudt fra %SERVICE%",
+    "popup.options.systemStartup": "System startup"
+}
