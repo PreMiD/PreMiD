@@ -52,7 +52,7 @@ function handleMediaKeys(data) {
  * @param {String} playbackChange Playback if changed
  */
 function updateData(playbackChange = false) {
-  console.log($('.server-box iframe:first').contents())
+  //console.log($('.server-box iframe:first').contents())
   var eventType
   videoRunning = $('.video-header h1').html() != "" && $('.server-box iframe:first').contents().find('video:first')[0] != undefined && !isNaN($('.server-box iframe:first').contents().find('video:first')[0].duration) ? true : false
   if(videoRunning) {
@@ -108,6 +108,7 @@ function updateData(playbackChange = false) {
       }
     }
   }
+  console.log(data)
   if(socket.connected) socket.emit(eventType, data)
 }
 
