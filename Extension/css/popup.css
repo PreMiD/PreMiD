@@ -191,3 +191,34 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
   background-color: rgb(89, 107, 174);
   box-shadow: 5px 5px black;
 }
+
+#credits table tr {
+  border: none;
+}
+
+#credits table tr td {
+  width: 50%;
+}
+
+.credit-panel {
+  margin: 5px;
+  padding: 0;
+  height: 50px;
+}
+
+.credit-panel img {
+  width: 40px;
+  margin: 5px;
+  border-radius: 50%;
+  float: left;
+}
+
+.credit-panel h1 {
+  font-size: 17px;
+  margin: 0;
+}
+
+.credit-panel h2 {
+  font-size: 15px;
+  margin: 0;
+}
