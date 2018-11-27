@@ -39,6 +39,7 @@
   - [Application](#application)
     - Mac OS
     - Windows
+    - Linux (Buggy?)
 
 # Support
 
@@ -115,6 +116,15 @@ One missing? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?templa
     <li>If SmartScreen comes up press more informations then press run anyways. (It's not a virus, I promise.)</li>
     <li>YouTube Presence should install itself and start automatically. (You can tell by looking at the taskbar.)</li>
     <li>Install the <a href="#extension">extension</a>, if you haven't already.</li>
+  </ol>
+</details>
+
+<details>
+  <summary><b><u>Linux</u></b> (Click to expand)</summary>
+  <h1>Installation on Linux</h1>
+  <ol>
+    <li>Sooorray! We don't have proper instructions for Linux yet, feel free open a pull request!</li>
+    <li>Follow the steps shown in [this Issue](https://github.com/Timeraa/PreMiD/issues/21)</li>
   </ol>
 </details>
 
