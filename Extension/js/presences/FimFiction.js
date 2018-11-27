@@ -25,11 +25,13 @@ chrome.runtime.onMessage.addListener(((message, sender) => {
 
 var urlChange = null,
 data = null
+
+//! UPDATE CHAPTER... TO USE LANGUAGE SYSTEM
 /**
  * Update Data and send it to the App
  * @param {String} playbackChange Playback if changed
  */
-function updateData() {
+async function updateData() {
   data = null;
   if(urlChange != document.location.pathname) {
     urlChange = document.location.pathname

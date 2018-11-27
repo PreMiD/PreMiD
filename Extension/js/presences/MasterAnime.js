@@ -57,6 +57,7 @@ $(".embed iframe").load(function() {
 })
 */
 
+//! NEEDS TO BE ASYNC & NEEDS TO USE NEW GETSTRING()
 /**
  * Update Data and send it to the App
  * @param {String} playbackChange Playback if changed

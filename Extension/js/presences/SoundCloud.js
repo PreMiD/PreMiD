@@ -94,7 +94,7 @@ let urlForVideo,
   songTime,
   calcDifference = []
 
-function updateData(playbackChange = false) {
+async function updateData(playbackChange = false) {
   urlForVideo = document.location.href
   if ($(".time-remaining__time").html() != "") {
     let data
@@ -114,7 +114,7 @@ function updateData(playbackChange = false) {
         var playbackBoolean = $('.playControl').hasClass('playing')
 
         var smallImageKey = playbackBoolean ? 'play' : 'pause',
-        smallImageText = playbackBoolean ? getString("presence.playback.playing") : getString("presence.playback.paused")
+        smallImageText = playbackBoolean ? await getString("presence.playback.playing") : await getString("presence.playback.paused")
     
     
         var songTitle = $('.playbackSoundBadge__titleLink').children().get(1).innerHTML,

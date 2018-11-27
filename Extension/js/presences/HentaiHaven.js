@@ -61,7 +61,7 @@ function handleMediaKeys(data) {
  * Update Data and send it to the App
  * @param {String} playbackChange Playback if changed
  */
-function updateData(playbackChange = false) {
+async function updateData(playbackChange = false) {
   var videoTitle = $('.entry-title').text().split(" – ")[0]
   var videoAuthor = $('.entry-title').text().split(" – ")[1]
   var eventType,
@@ -77,7 +77,7 @@ function updateData(playbackChange = false) {
     var playbackBoolean = !$('.vjs-tech').get(0).paused
 
     var smallImageKey = playbackBoolean ? 'play' : 'pause',
-    smallImageText = playbackBoolean ? getString("presence.playback.playing") : getString("presence.playback.paused")
+    smallImageText = playbackBoolean ? await getString("presence.playback.playing") : await getString("presence.playback.paused")
     
     if(playbackBoolean) {
       var data = {

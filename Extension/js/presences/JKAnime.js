@@ -51,7 +51,7 @@ function handleMediaKeys(data) {
  * Update Data and send it to the App
  * @param {String} playbackChange Playback if changed
  */
-function updateData(playbackChange = false) {
+async function updateData(playbackChange = false) {
   console.log($('.server-box iframe:first').contents())
   var eventType
   videoRunning = $('.video-header h1').html() != "" && $('.server-box iframe:first').contents().find('video:first')[0] != undefined && !isNaN($('.server-box iframe:first').contents().find('video:first')[0].duration) ? true : false
@@ -68,7 +68,7 @@ function updateData(playbackChange = false) {
     var playbackBoolean = !$('.server-box iframe:first').contents().find('video:first')[0].paused
 
     var smallImageKey = playbackBoolean ? 'play' : 'pause',
-    smallImageText = playbackBoolean ? getString("presence.playback.playing") : getString("presence.playback.paused")
+    smallImageText = playbackBoolean ? await getString("presence.playback.playing") : await getString("presence.playback.paused")
 
     if(playbackBoolean) {
       var data = {

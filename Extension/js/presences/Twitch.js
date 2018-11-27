@@ -91,7 +91,7 @@ let urlForVideo,
   songTime,
   calcDifference = [];
 
-function updateData(playbackChange = false) {
+async function updateData(playbackChange = false) {
   urlForVideo = document.location.href;
 
   if (playbackChange != false) {
@@ -112,7 +112,7 @@ function updateData(playbackChange = false) {
     var playbackBoolean = !$(".player-video video")[0].paused;
 
     var smallImageKey = playbackBoolean ? "play" : "pause",
-      smallImageText = playbackBoolean ? getString("presence.playback.playing") : getString("presence.playback.paused")
+      smallImageText = playbackBoolean ? await getString("presence.playback.playing") : await getString("presence.playback.paused")
 
     var streamTitle = $(".tw-ellipsis.tw-mg-b-05")
         .children()

@@ -89,7 +89,7 @@ var urlForVideo,
   songTime,
   calcDifference = []
 
-function updateData(playbackChange = false) {
+async function updateData(playbackChange = false) {
   console.log($('.video-title span'))
   if (document.location.pathname.includes("/watch")) musicRunning = true; else musicRunning = false;
   urlForVideo = document.location.href
@@ -112,7 +112,7 @@ function updateData(playbackChange = false) {
       var playbackBoolean = !$('.VideoContainer div video')[0].paused
 
       var smallImageKey = playbackBoolean ? "play" : "pause"
-      smallImageText = playbackBoolean ? getString("presence.playback.playing") : getString("presence.playback.paused")
+      smallImageText = playbackBoolean ? await getString("presence.playback.playing") : await getString("presence.playback.paused")
 
       if(playbackBoolean) {
         if($('.video-title span').length == 0) {

@@ -29,7 +29,7 @@ data = null
  * Update Data and send it to the App
  * @param {String} playbackChange Playback if changed
  */
-function updateData() {
+async function updateData() {
   data = null;
   if(urlChange != document.location.pathname) {
     urlChange = document.location.pathname
@@ -40,7 +40,7 @@ if(document.location.pathname == "/") {
     data = {
       clientID: '516742299355578380',
       presenceData: {
-        details: getString("presence.browsing"),
+        details: await getString("presence.browsing"),
         largeImageKey: 'rt_lg',
         largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
         startTimestamp: readingStamp,
@@ -54,7 +54,7 @@ if(document.location.pathname == "/") {
       clientID: '516742299355578380',
       presenceData: {
         details: $('.roomName.on')[0].innerHTML,
-        state: $('.sessionsCount')[0].innerHTML.match("[0-9]*")[0] + " " + getString("presence.watching"),
+        state: $('.sessionsCount')[0].innerHTML.match("[0-9]*")[0] + " " + await getString("presence.watching"),
         largeImageKey: 'rt_lg',
         largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
         startTimestamp: readingStamp,
@@ -65,6 +65,5 @@ if(document.location.pathname == "/") {
     }
   }
 
-  console.log()
   if(socket.connected && data != null) socket.emit("updateData", data)
 }
