@@ -40,8 +40,18 @@ function handleMediaKeys(data) {
     //* Switch cases for playback / Clicks corresponding buttons
     switch (data.playback) {
       case "pause":
-      $('.server-box iframe:first').contents().find('video:first')[0].paused ? $('.server-box iframe:first').contents().find('video:first')[0].play() : $('.server-box iframe:first').contents().find('video:first')[0].pause()
+        $('.vjs-play-control').click()
         updateData("playPauseTrack")
+        break
+      case "nextTrack":
+        $('.prevnext[data-value="next"]')[0].click()
+        //* Send response back to application
+        updateData("nextTrack")
+        break
+      case "previousTrack":
+        $('.prevnext[data-value="prev"]')[0].click()
+        //* Send response back to application
+        updateData("previousTrack")
         break
     }
   }
@@ -51,32 +61,33 @@ function handleMediaKeys(data) {
  * Update Data and send it to the App
  * @param {String} playbackChange Playback if changed
  */
-async function updateData(playbackChange = false) {
-  //console.log($('.server-box iframe:first').contents())
-  var eventType
-  videoRunning = $('.video-header h1').html() != "" && $('.server-box iframe:first').contents().find('video:first')[0] != undefined && !isNaN($('.server-box iframe:first').contents().find('video:first')[0].duration) ? true : false
+function updateData(playbackChange = false) {
+  //console.log($('.widget.player .widget-title .title').text())
+  //console.log($('.vjs-tech').text())
+  var videoTitle = $('.widget.player .widget-title .title').text()[0]
+  var videoAuthor = $('.widget.player .widget-title .title').text()[1]
+  var eventType,
+  videoRunning = $('.widget.player .widget-title .title').text() != "" && $('.vjs-tech').get(0) != undefined && !isNaN($('.vjs-tech').get(0).duration) ? true : false
   if(videoRunning) {
-    var videoTitle = $('.video-header h1').html(),
-    videoEpisode = 'Episode ' + $('.video-header h1').html().split(' - ').pop(),
-    videoTimeSeconds = Math.floor($('.server-box iframe:first').contents().find('video:first')[0].currentTime),
-    videoDurationSeconds = Math.floor($('.server-box iframe:first').contents().find('video:first')[0].duration),
+    var videoTimeSeconds = Math.floor($('.vjs-tech').get(0).currentTime),
+    videoDurationSeconds = Math.floor($('.vjs-tech').get(0).duration),
     videoTimestamps = getTimestamps(videoTimeSeconds, videoDurationSeconds)
-    playback = $('.server-box iframe:first').contents().find('video:first')[0].paused ? "paused" : "playing"
-
+    playback = $('.vjs-tech').get(0).paused ? "paused" : "playing"
+    
     if (playbackChange) eventType = 'playBackChange'; else eventType = 'updateData';
-
-    var playbackBoolean = !$('.server-box iframe:first').contents().find('video:first')[0].paused
+    
+    var playbackBoolean = !$('.vjs-tech').get(0).paused
 
     var smallImageKey = playbackBoolean ? 'play' : 'pause',
-    smallImageText = playbackBoolean ? await getString("presence.playback.playing") : await getString("presence.playback.paused")
-
+    smallImageText = playbackBoolean ? getString("presence.playback.playing") : getString("presence.playback.paused")
+    
     if(playbackBoolean) {
       var data = {
-        clientID: '505709790811389962',
+        clientID: '517002121103671297',
         presenceData: {
           details: $('<div/>').html(videoTitle).text(),
-          state: $('<div/>').html(videoEpisode).text(),
-          largeImageKey: 'jka_lg',
+          state: $('<div/>').html(videoAuthor).text(),
+          largeImageKey: '9e_lg',
           largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
           smallImageKey: smallImageKey,
           smallImageText: smallImageText,
@@ -87,15 +98,15 @@ async function updateData(playbackChange = false) {
         durationSeconds: videoDurationSeconds,
         trayTitle: $('<div/>').html(videoTitle).text(),
         playback: playbackBoolean,
-        service: 'JKAnime'
+        service: '9Anime'
       }
     } else {
       var data = {
-        clientID: '505709790811389962',
+        clientID: '517002121103671297',
         presenceData: {
           details: $('<div/>').html(videoTitle).text(),
-          state: $('<div/>').html(videoEpisode).text(),
-          largeImageKey: 'jka_lg',
+          state: $('<div/>').html(videoAuthor).text(),
+          largeImageKey: '9e_lg',
           largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
           smallImageKey: smallImageKey,
           smallImageText: smallImageText,
@@ -104,7 +115,7 @@ async function updateData(playbackChange = false) {
         durationSeconds: videoDurationSeconds,
         trayTitle: $('<div/>').html(videoTitle).text(),
         playback: playbackBoolean,
-        service: 'JKAnime'
+        service: '9Anime'
       }
     }
   }
@@ -139,9 +150,9 @@ function togglePlayback() {
 var lastPlayback = false
 function playbackChange() {
   if(videoRunning) {
-    if($('.server-box iframe:first').contents().find('video:first')[0].paused != lastPlayback) {
+    if($('.vjs-tech').get(0).paused != lastPlayback) {
       togglePlayback()
-      lastPlayback = $('.server-box iframe:first').contents().find('video:first')[0].paused
+      lastPlayback = $('.vjs-tech').get(0).paused
     }
   }
 }

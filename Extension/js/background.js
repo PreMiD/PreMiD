@@ -19,7 +19,7 @@ setInterval(() => {
     //* Create config if not already
     if(!result.options) chrome.storage.sync.set({options: {enabled: true, youtube: true, youtubeMusic: true, twitch: true, soundcloud: true, netflix: true, kissanime: true, jkanime: true, titleMenubar: true, mediaControls: true, checkForUpdates: true, systemStartup: true}})
     
-    allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "www.netflix.com", "kissanime.ac", "kissanime.ru", "jkanime.net", "fimfiction.net", "crunchyroll.com", "hentaihaven.org", "www.rabb.it", "www.masterani.me", "www.superanimes.site"]
+    allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "www.netflix.com", "kissanime.ac", "kissanime.ru", "jkanime.net", "fimfiction.net", "crunchyroll.com", "hentaihaven.org", "www.rabb.it", "www.masterani.me", "www.superanimes.site", "www1.9anime.to", "www.google.de"]
     var options = result.options
     if(!options.enabled) allowedURL = []
     if(!options.youtube) allowedURL.remove("www.youtube.com")
