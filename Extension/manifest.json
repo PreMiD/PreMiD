@@ -87,6 +87,10 @@
     {
       "js": ["js/presences/9Anime.js"],
       "matches": ["*://www1.9anime.to/*"]
+    },
+    {
+      "js": ["js/presences/Google.js"],
+      "matches": ["*://www.google.de/*"]
     }
   ],
   "permissions": [
