@@ -2,19 +2,13 @@
     "tab.installed.heading": "Thank you for installing PreMiD",
     "tab.installed.subHeading.didInstallQuestion": "Did you install the application yet?",
     "tab.installed.subHeading.notInstalled": "No? Follow these steps:",
-    "$1 gets replaced by a value": {
-        "tab.installed.instructions.download": "Download the latest version from $1"
-    },
-    "Link to the GitHub project": {
-        "tab.installed.instruction.github": "my GitHub repository"
-    },
+    "tab.installed.instructions.download": "Download the latest version from $1",
+    "tab.installed.instruction.github": "my GitHub repository",
     "tab.installed.instructions.wait": "Open the installer and wait until it installed",
     "tab.installed.instructions.warnings": "You may receive a warning about FireWall and SmartScreen (Its not a virus i promise!)",
     "tab.installed.instructions.autostart": "The application should start automatically, you can check this by looking at your Taskbar (Windows) or your Menubar (MacOS)",
     "tab.installed.subHeading.ready": "Yes? You are ready to go!",
-    "Pls leave <br> as is.": {
-        "tab.installed.intro": "Start by watching a video on YouTube, watching your loved streamers on Twitch, Watch your favourite animes on KissAnime or JKAnime, maybe even Netflix... Who knows?<br>Or you just listen to your favourite songs on SoundCloud and YouTube Music. Settings can be found by clicking the PreMiD icon in your browser."
-    },
+    "tab.installed.intro": "Start by watching a video on YouTube, watching your loved streamers on Twitch, Watch your favourite animes on KissAnime or JKAnime, maybe even Netflix... Who knows?<br>Or you just listen to your favourite songs on SoundCloud and YouTube Music. Settings can be found by clicking the PreMiD icon in your browser.",
     "tab.updated.heading": "PreMiD has been updated!",
     "tab.updated.subHeading.whatsNew": "Whats new?",
     "tab.updated.subHeading.whatChanged": "What changed?",
@@ -25,21 +19,14 @@
     "popup.options.headings.general": "General",
     "popup.options.headings.presences": "Presences",
     "popup.options.enabled": "Enabled",
-    "Menubar is a name (Mac OS only)": {
-        "popup.options.titleMenubar": "Title Menubar"
-    },
-    "Media Control keys (Keyboard/headphones)": {
-        "popup.options.mediaControls": "Media Controls"
-    },
+    "popup.options.titleMenubar": "Title Menubar",
+    "popup.options.mediaControls": "Media Controls",
     "popup.options.checkForUpdates": "Check for updates",
-    "Dark Theme option in preferences": {
-        "popup.options.darkTheme": "Dark Theme"
-    },
-    "%SERVICE% will be replaced.": {
-        "connectionInfo.connected": "Connected to %SERVICE%",
-        "connectionInfo.disconnected": "Disconnected from %SERVICE%"
-    },
-    "Startup option in preferences": {
-        "popup.options.systemStartup": "System Startup"
-    }
+    "popup.options.darkTheme": "Dark Theme",
+    "connectionInfo.connected": "Connected to %SERVICE%",
+    "connectionInfo.disconnected": "Disconnected from %SERVICE%",
+    "popup.options.systemStartup": "System Startup",
+    "presence.episode": "Episode",
+    "presence.browsing": "Browsing...",
+    "presence.watching": "watching"
 }

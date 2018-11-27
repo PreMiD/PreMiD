@@ -27,14 +27,14 @@ async function loadLanguageFile(languageCode) {
 }
 
 function getString(term) {
-  if(currentLanguageFile.find(str => str.term == term) == null) {
-    if(defaultLanguageFile.find(str => str.term == term) == null) {
+  if(currentLanguageFile.hasOwnProperty(term)) {
+    if(defaultLanguageFile.hasOwnProperty(term)) {
       console.error(`Could not find translation for "${term}"!`)
       return null;
     } else {
-      return defaultLanguageFile.find(str => str.term == term).definition
+      return defaultLanguageFile[term]
     }
   } else {
-    return currentLanguageFile.find(str => str.term == term).definition
+    return currentLanguageFile[term]
   }
 }
