@@ -124,7 +124,7 @@ One missing? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?templa
   <h1>Installation on Linux</h1>
   <ol>
     <li>Sooorray! We don't have proper instructions for Linux yet, feel free open a pull request!</li>
-    <li>Follow the steps shown in [this Issue](https://github.com/Timeraa/PreMiD/issues/21)</li>
+    <li>Follow the steps shown in <a href="https://github.com/Timeraa/PreMiD/issues/21">this Issue</a></li>
   </ol>
 </details>
 
