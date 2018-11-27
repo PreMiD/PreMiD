@@ -1,4 +1,4 @@
-var allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "www.netflix.com", "kissanime.ac", "kissanime.ru", "jkanime.net", "fimfiction.net", "www.crunchyroll.com", "www.masterani.me"]
+var allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "www.netflix.com", "kissanime.ac", "kissanime.ru", "jkanime.net", "fimfiction.net", "www.crunchyroll.com", "www.masterani.me", "www.superanimes.site"]
 
 if(allowedURL.includes(document.location.host)) {  
   //* Create socket connection to application
@@ -68,6 +68,9 @@ function getService() {
       break
     case "www.masterani.me":
       return "MasterAnime"
+      break
+    case "www.superanimes.site":
+      return "SuperAnimes"
       break
     default:
       return null
