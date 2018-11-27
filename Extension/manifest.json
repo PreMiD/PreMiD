@@ -83,6 +83,10 @@
     {
       "js": ["js/presences/SuperAnimes.js"],
       "matches": ["*://www.superanimes.site/*"]
+    },
+    {
+      "js": ["js/presences/9Anime.js"],
+      "matches": ["*://www1.9anime.to/*"]
     }
   ],
   "permissions": [
