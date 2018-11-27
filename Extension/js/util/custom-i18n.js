@@ -27,8 +27,8 @@ async function loadLanguageFile(languageCode) {
 }
 
 function getString(term) {
-  if(currentLanguageFile.hasOwnProperty(term)) {
-    if(defaultLanguageFile.hasOwnProperty(term)) {
+  if(!currentLanguageFile.hasOwnProperty(term)) {
+    if(!defaultLanguageFile.hasOwnProperty(term)) {
       console.error(`Could not find translation for "${term}"!`)
       return null;
     } else {
