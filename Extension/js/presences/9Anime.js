@@ -63,7 +63,7 @@ function handleMediaKeys(data) {
  */
 function updateData(playbackChange = false) {
   //console.log($('.widget.player .widget-title .title').text())
-  console.log($('.vjs-tech').text())
+  //console.log($('.vjs-tech').text())
   var videoTitle = $('.widget.player .widget-title .title').text()[0]
   var videoAuthor = $('.widget.player .widget-title .title').text()[1]
   var eventType,
