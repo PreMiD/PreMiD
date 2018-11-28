@@ -46,11 +46,13 @@
   font-weight: 600 !important;
   margin: 0 !important;
   margin-top: 6px !important;
+  color: #575757 !important;
 }
 
 #premid-connectinfo h2 {
   font-size: 15px !important;
   font-weight: 500 !important;
+  color: #575757 !important;
 }
 
 @keyframes slideIn {

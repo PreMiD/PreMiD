@@ -15,10 +15,10 @@ if(allowedURL.includes(document.location.host)) {
 async function socketConnect() {
   if(sessionStorage['premidConnected'] == null || sessionStorage['premidConnected'] == 'false') {
     sessionStorage['premidConnected'] = 'true'
+    $(document).ready(async function() {
+      insertConnectionInfo(await getString("connectionInfo.connected"))
+    })
   }
-  $(document).ready(async function() {
-    insertConnectionInfo(await getString("connectionInfo.connected"))
-  })
   
   console.log(chrome.runtime.getManifest().name + ": %c" + await (await getString("connectionInfo.connected")).replace("%SERVICE%", getService()), "color: #009900;font-weight: bold;")
 }
