@@ -21,6 +21,7 @@
       "2024": "icon.png"
     }
   },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "content_scripts": [
     {
       "js": [
@@ -91,6 +92,18 @@
     {
       "js": ["js/presences/Google.js"],
       "matches": ["*://www.google.de/*"]
+    },
+    {
+      "js": ["js/presences/Anime4You.js"],
+      "matches": ["*://www.anime4you.one/*"]
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "js/util/jquery-3.3.1.min.js",
+        "js/iframeWitch/Anime4You_Witch.js"
+      ],
+      "all_frames": true
     }
   ],
   "permissions": [
