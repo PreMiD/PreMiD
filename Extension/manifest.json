@@ -95,6 +95,10 @@
     {
       "js": ["js/presences/Pandora.js"],
       "matches": ["*://www.pandora.com/*"]
+    },
+    {
+      "js": ["js/presences/HentaiGasm.js"],
+      "matches": ["*://hentaigasm.com/*"]
     }
   ],
   "permissions": [

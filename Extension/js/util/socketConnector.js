@@ -1,5 +1,5 @@
 //* Allowed Service URLS
-var allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "netflix.com", "kissanime.ac", "kissanime.ru", "jkanime.net", "fimfiction.net", "www.crunchyroll.com", "www.rabb.it", "www.masterani.me", "www.superanimes.site", "www1.9anime.to", "www.google.de", "www.pandora.com"]
+var allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "netflix.com", "kissanime.ac", "kissanime.ru", "jkanime.net", "fimfiction.net", "www.crunchyroll.com", "www.rabb.it", "www.masterani.me", "www.superanimes.site", "www1.9anime.to", "www.google.de", "www.pandora.com", "hentaihaven.org", "hentaigasm.com"]
 
 //* If one is included...
 if(allowedURL.includes(document.location.host)) {  
@@ -84,6 +84,10 @@ function getService() {
       return "Google"
     case "www.pandora.com":
       return "Pandora"
+    case "hentaihaven.org":
+      return "HentaiHaven"
+    case "hentaigasm.com":
+      return "HentaiGasm"
     default:
       throw `No service name defined for "${document.location.host}"`
   }
