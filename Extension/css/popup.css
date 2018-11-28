@@ -126,12 +126,12 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
   cursor: pointer;
 }
 
-.switch label input[type="checkbox"]:checked + .lever {
-  background-color: rgb(109, 128, 194);
-}
-
 .switch label input[type="checkbox"]:checked + .lever:after {
   background-color: #596cae;
+}
+
+.switch label input[type="checkbox"]:checked + .lever {
+  background-color: rgba(109, 128, 194, 0.4);
 }
 
 .yt:checked + .lever:after {
@@ -139,7 +139,7 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
 }
 
 .yt:checked + .lever {
-  background-color: rgb(216, 78, 77) !important;
+  background-color: rgba(216, 78, 77, 0.4) !important;
 }
 
 .twitch:checked + .lever:after {
@@ -147,7 +147,7 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
 }
 
 .twitch:checked + .lever {
-  background-color: rgb(95, 74, 144) !important;
+  background-color: rgba(95, 74, 144, 0.4) !important;
 }
 
 .soundcloud:checked + .lever:after {
@@ -155,7 +155,7 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
 }
 
 .soundcloud:checked + .lever {
-  background-color: rgb(255, 148, 79) !important;
+  background-color: rgba(255, 148, 79, 0.4) !important;
 }
 
 .netflix:checked + .lever:after {
@@ -163,7 +163,7 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
 }
 
 .netflix:checked + .lever {
-  background-color: rgb(224, 42, 43) !important;
+  background-color: rgba(204, 22, 23, 0.4) !important;
 }
 
 .card-panel {
