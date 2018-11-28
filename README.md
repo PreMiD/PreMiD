@@ -11,6 +11,9 @@
 <a target="_blank" href="https://ko-fi.com/E1E1HLLE"><img draggable="false" height='50px' style='border:0px;height:50px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US"><img src="gitassets/PayPal.svg" height="50px" draggable="false" alt="PayPal"></a>
 
+### Or stay secret and donate via BitCoin
+``18WHUcQbThwExKhUyLGPRFUGSwFqftpsEn``
+
 # About
 
 **PreMiD** is a simple, configurable utility that allows you to show what you're watching/listening in your Discord **now playing status**. It supports [many different platforms](#support), and will support multiple users watching the same content simultaneously in an upcoming update.
