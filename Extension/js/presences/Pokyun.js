@@ -63,35 +63,30 @@ $(".embed iframe").load(function() {
  * @param {String} playbackChange Playback if changed
  */
 async function updateData(playbackChange = false) {
-  //console.log($('.ui .embed iframe'))
-  //console.log($('.ui .embed iframe')[0])
-  //console.log($('.ui .embed iframe').get(0))
-  //console.log($('.embed iframe:first'))
-  //console.log($('.ui .embed iframe:first').contents().find('video:first'))
   var eventType
-  videoRunning = $('.details a .title').text() != "" && $('.jw-video')[0] != undefined && !isNaN($('.jw-video')[0].duration) ? true : false && document.location.pathname.includes("/anime/watch")
+  videoRunning = $('.row .vibe-interactions h1').text().split(" - ")[0] != "" && $('.jw-media .jw-reset')[0] != undefined && !isNaN($('.jw-media .jw-reset')[0].duration) ? true : false
   if(videoRunning) {
-    var videoTitle = $('.details a .title').text(),
-    videoAuthor = $(".details h2").text(),
-    videoTimeSeconds = Math.floor($('.jw-video')[0].currentTime),
-    videoDurationSeconds = Math.floor($('.jw-video')[0].duration),
+    var videoTitle = $('.row .vibe-interactions h1').text().split(" - ")[0],
+    videoAuthor = getString("presence.episode") + " " + $(".row .vibe-interactions h1").text().split(" Episódio ")[1],
+    videoTimeSeconds = Math.floor($('.jw-media .jw-reset')[0].currentTime),
+    videoDurationSeconds = Math.floor($('.jw-media .jw-reset')[0].duration),
     videoTimestamps = getTimestamps(videoTimeSeconds, videoDurationSeconds)
-    playback = $('.jw-video')[0].paused ? "paused" : "playing"
+    playback = $('.jw-media .jw-reset')[0].paused ? "paused" : "playing"
     
     if (playbackChange) eventType = 'playBackChange'; else eventType = 'updateData';
     
-    var playbackBoolean = !$('.jw-video')[0].paused
+    var playbackBoolean = !$('.jw-media .jw-reset')[0].paused
 
     var smallImageKey = playbackBoolean ? 'play' : 'pause',
     smallImageText = playbackBoolean ? await getString("presence.playback.playing") : await getString("presence.playback.paused")
     
     if(playbackBoolean) {
       var data = {
-        clientID: '463097721130188830',
+        clientID: '517438340492951634',
         presenceData: {
           details: $('<div/>').html(videoTitle).text(),
           state: $('<div/>').html(videoAuthor).text(),
-          largeImageKey: 'yt_lg',
+          largeImageKey: 'pok_lg',
           largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
           smallImageKey: smallImageKey,
           smallImageText: smallImageText,
@@ -106,11 +101,11 @@ async function updateData(playbackChange = false) {
       }
     } else {
       var data = {
-        clientID: '463097721130188830',
+        clientID: '517438340492951634',
         presenceData: {
           details: $('<div/>').html(videoTitle).text(),
           state: $('<div/>').html(videoAuthor).text(),
-          largeImageKey: 'yt_lg',
+          largeImageKey: 'pok_lg',
           largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
           smallImageKey: smallImageKey,
           smallImageText: smallImageText,
@@ -153,9 +148,9 @@ function togglePlayback() {
 var lastPlayback = false
 function playbackChange() {
   if(videoRunning) {
-    if($('.jw-video')[0].paused != lastPlayback) {
+    if($('.jw-media .jw-reset')[0].paused != lastPlayback) {
       togglePlayback()
-      lastPlayback = $('.jw-video')[0].paused
+      lastPlayback = $('.jw-media .jw-reset')[0].paused
     }
   }
 }
