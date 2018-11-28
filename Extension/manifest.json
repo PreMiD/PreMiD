@@ -91,6 +91,10 @@
     {
       "js": ["js/presences/Google.js"],
       "matches": ["*://www.google.de/*"]
+    },
+    {
+      "js": ["js/presences/Pandora.js"],
+      "matches": ["*://www.pandora.com/*"]
     }
   ],
   "permissions": [
