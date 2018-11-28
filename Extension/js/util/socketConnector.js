@@ -88,6 +88,8 @@ function getService() {
       return "HentaiHaven"
     case "hentaigasm.com":
       return "HentaiGasm"
+    case "www.pokyun.tv":
+      return "Pokyun"
     default:
       throw `No service name defined for "${document.location.host}"`
   }

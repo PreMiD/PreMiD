@@ -99,6 +99,10 @@
     {
       "js": ["js/presences/HentaiGasm.js"],
       "matches": ["*://hentaigasm.com/*"]
+    },
+    {
+      "js": ["js/presences/Pokyun.js"],
+      "matches": ["*://www.pokyun.tv/*"]
     }
   ],
   "permissions": [
