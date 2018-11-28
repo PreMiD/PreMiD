@@ -57,7 +57,7 @@ $(".embed iframe").load(function() {
  * Update Data and send it to the App
  * @param {String} playbackChange Playback if changed
  */
-function updateData(playbackChange = false) {
+async function updateData(playbackChange = false) {
   var eventType
   videoRunning = $('.cf .inner h1').text() != "" && $('.jw-video.jw-reset')[0] != undefined && !isNaN($('.jw-video.jw-reset')[0].duration) ? true : false
   if(videoRunning) {
@@ -73,7 +73,7 @@ function updateData(playbackChange = false) {
     var playbackBoolean = !$('.jw-video.jw-reset')[0].paused
 
     var smallImageKey = playbackBoolean ? 'play' : 'pause',
-    smallImageText = playbackBoolean ? chrome.i18n.getMessage('playbackPlaying') : chrome.i18n.getMessage('playbackPaused')
+    smallImageText = playbackBoolean ? await getString("presence.playback.playing") : await getString("presence.playback.paused")
     
     if(playbackBoolean) {
       var data = {
