@@ -31,5 +31,13 @@
   "presence.watching": "watching",
   "tab.installed.letsStart": "Let's Start!",
   "tab.installed.getSupport": "Get Support",
-  "tab.installed.likeThisProject": "Like this project? Star it on $1!"
+  "tab.installed.likeThisProject": "Like this project? Star it on $1!",
+  "tab.updated.gotIt": "Got it!",
+  "tab.updated.added0": "New Design!",
+  "tab.updated.added1": "Rabb.it support",
+  "tab.updated.added2": "Amazon Prime support",
+  "tab.updated.added3": "Anime4You support",
+  "tab.updated.added4": "CrunchyRoll support",
+  "tab.updated.changed0": "Lots of bugs killed",
+  "tab.updated.changed1": "Lots of rewrites"
 }
