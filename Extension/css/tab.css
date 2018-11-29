@@ -56,12 +56,17 @@ p {
   margin-bottom: 50px !important;
 }
 
-ol {
-  padding-left: 25px;
+ol,
+ul {
+  padding-left: 25px !important;
   font-size: 17px;
   margin: 0;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+li {
+  list-style-type: disc !important;
 }
 
 #buttonWrapper {
@@ -92,6 +97,14 @@ a.getSupport {
 
 a.getSupport:hover {
   background-color: rgba(87, 87, 87, 0.75) !important;
+}
+
+a.gotIt {
+  background-color: #3cac38 !important;
+}
+
+a.gotIt:hover {
+  background-color: rgba(60, 172, 56, 0.75) !important;
 }
 
 .smallCenter {

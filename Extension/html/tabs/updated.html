@@ -1,32 +1,37 @@
 <html>
+  <head>
+    <title>PreMiD - Updated</title>
+    <link rel="stylesheet" href="../../css/tab.css" />
+    <!-- Import materialize.css -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../../css/materialize.min.css"
+      media="screen,projection"
+    />
+    <script src="../../js/util/jquery-3.3.1.min.js"></script>
+    <script src="../../js/util/custom-i18n.js"></script>
+  </head>
 
-<head>
-  <title>PreMiD</title>
-  <link rel="stylesheet" href="../../css/tab.css">
-</head>
-
-<body>
-  <div id="header">
-    <img id="icon" src="../../icon.png" draggable="false">
-    <h1 id="title">PreMiD</h1>
-    <h1 id="version"></h1>
-  </div>
-  <div id="content">
-    <h1 id="updatedYTPUpdated"></h1>
-    <h2 id="updatedWhatsNew"></h2>
-    <ul id="updatedWhatsNewList">
-    </ul>
-    <h2 id="updatedWhatChanged"></h2>
-    <ul id="updatedWhatChangedList">
-    </ul>
-    <h2 id="installedSupportMe"></h2>
-    <a href="https://www.patreon.com/bePatron?u=4610890" target="_blank" data-patreon-widget-type="become-patron-button"><img
-        src="../../images/patreonBTN.png" draggable="false" height="50px" alt="Support me on Patreon!"></a>
-    <a href="https://discord.gg/Kw7WaYn" target="_blank" title="Join our Discord!">
-      <img src="../../images/discord-logo.svg" height="50px" draggable="false" alt="Join my Discord!">
-    </a>
-  </div>
-  <script src="../../js/updated.js"></script>
-</body>
-
+  <body>
+    <div id="pMiDHeader"><img src="../../icon.png" draggable="false" /></div>
+    <div id="content">
+      <div class="card-panel">
+        <h1 id="pMiDHeading" class="Pheading"></h1>
+        <h3 class="PwhatsNew"></h3>
+        <ul id="WhatsNewList"></ul>
+        <h3 class="PwhatChanged"></h3>
+        <ul id="WhatChangedList"></ul>
+        <div id="buttonWrapper">
+          <a class="gotIt waves-effect btn PgotIt"></a>
+        </div>
+        <p class="smallCenter PlikeThisProject"></p>
+      </div>
+    </div>
+    <script src="../../js/updated.js"></script>
+    <script
+      type="text/javascript"
+      src="../../js/util/materialize.min.js"
+    ></script>
+  </body>
 </html>
