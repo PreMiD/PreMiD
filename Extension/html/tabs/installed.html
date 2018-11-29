@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>PreMiD</title>
+    <title>PreMiD - Thank you!</title>
     <link rel="stylesheet" href="../../css/tab.css" />
     <!-- Import materialize.css -->
     <link
@@ -17,41 +17,30 @@
     <div id="pMiDHeader"><img src="../../icon.png" draggable="false" /></div>
     <div id="content">
       <div class="card-panel">
-        <h1 id="pMiDHeading">Thanks for installing PreMiD</h1>
-        <h2>Did you install the application yet?</h2>
-        <h3>No? Follow these simple instructions:</h3>
+        <h1 id="pMiDHeading" class="Pheading"></h1>
+        <h2 class="PdidInstallQuestion"></h2>
+        <h3 class="PnotInstalled"></h3>
         <ol>
-          <li>
-            <p>
-              Download the latest version of PreMiD from my
-              <a href="https://github.com/Timeraa/PreMiD/releases/latest"
-                >Github repository</a
-              >
-            </p>
-          </li>
-          <li>
-            <p>
-              Run the installer and wait until the installation is completed
-            </p>
-          </li>
-          <li>
-            <p>
-              The application should start automatically after installation,
-              confirm this by looking at your Menubar (Mac OS) or Taskbar
-              (Windows)
-            </p>
-          </li>
+          <li><p class="Pdownload"></p></li>
+          <li><p class="Pwait"></p></li>
+          <li><p class="Pwarnings"></p></li>
+          <li><p class="Pautostart"></p></li>
         </ol>
-        <h3>Yes? You are ready to go!</h3>
-        <p>Let's go then! Start by using one of our supported services</p>
+        <h3 class="Pready"></h3>
+        <p class="Pintro"></p>
         <div id="buttonWrapper">
-          <a class="close waves-effect btn">Let's Start</a>
-          <a class="getSupport waves-effect btn">Get Support</a>
+          <a
+            draggable="false"
+            href="https://www.youtube.com/watch?v=DLzxrzFCyOs"
+            class="close waves-effect btn PletsStart"
+          ></a>
+          <a
+            draggable="false"
+            href="https://premid.app/help"
+            class="getSupport waves-effect btn PgetSupport"
+          ></a>
         </div>
-        <p class="smallCenter">
-          Like this project? Star it on
-          <a href="https://github.com/Timeraa/PreMiD">GitHub</a>!
-        </p>
+        <p class="smallCenter PlikeThisProject"></p>
       </div>
     </div>
     <script src="../../js/installed.js"></script>

@@ -79,19 +79,19 @@ a.btn {
 }
 
 a.close {
-  background-color: rgba(89, 107, 174, 1);
+  background-color: rgba(89, 107, 174, 1) !important;
 }
 
 a.close:hover {
-  background-color: rgba(89, 107, 174, 0.75);
+  background-color: rgba(89, 107, 174, 0.75) !important;
 }
 
 a.getSupport {
-  background-color: #575757;
+  background-color: #575757 !important;
 }
 
 a.getSupport:hover {
-  background-color: rgba(87, 87, 87, 0.75);
+  background-color: rgba(87, 87, 87, 0.75) !important;
 }
 
 .smallCenter {
