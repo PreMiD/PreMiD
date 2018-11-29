@@ -125,9 +125,12 @@ One missing? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?templa
 <details>
   <summary><b><u>Linux</u></b> (Click to expand)</summary>
   <h1>Installation on Linux</h1>
+  <p>If you want to talk about the GNU/Linux support: https://github.com/Timeraa/PreMiD/issues/21</p>
   <ol>
-    <li>Sooorray! We don't have proper instructions for Linux yet, feel free open a pull request!</li>
-    <li>Follow the steps shown in <a href="https://github.com/Timeraa/PreMiD/issues/21">this Issue</a></li>
+    <li>Clone the repository: <code>git clone https://github.com/Timeraa/PreMiD.git</code></li>
+    <li>Change the working directory: <code>cd PreMiD/src</code></li>
+    <li>Install dependencies and the application itself: <code>npm install</code></li>
+    <li>Now you can start the application: <code>npm start</code></li>
   </ol>
 </details>
 
