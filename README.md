@@ -1,4 +1,4 @@
-## ![version](https://img.shields.io/badge/Version-1.2-brightgreen.svg?style=flat-square) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=flat-square)](https://discord.gg/Kw7WaYn)
+## ![version](https://img.shields.io/badge/Version-1.2-brightgreen.svg?style=flat-square) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=flat-square&logo=discord&colorA=7289DA&colorB=23272A&label=Discord)](https://discord.gg/Kw7WaYn) [![Chrome Web Store](https://img.shields.io/chrome-web-store/d/agjnjboanicjcpenljmaaigopkgdnihi.svg?label=Chrome&logo=google%20chrome&logoColor=white&colorA=4285F4&style=flat-square)](https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi?hl=de)
 
 # <img src="gitassets/icon.png" width="24px" draggable="false"><b> </b>PreMiD &middot; Discord Rich Presence for your Media!
 
@@ -12,7 +12,8 @@
 <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US"><img src="gitassets/PayPal.svg" height="50px" draggable="false" alt="PayPal"></a>
 
 ### Or stay secret and donate via BitCoin
-``18WHUcQbThwExKhUyLGPRFUGSwFqftpsEn``
+
+`18WHUcQbThwExKhUyLGPRFUGSwFqftpsEn`
 
 # About
 
@@ -42,7 +43,7 @@
   - [Application](#application)
     - Mac OS
     - Windows
-    - Linux (Buggy?)
+    - Linux
 
 # Support
 
@@ -58,13 +59,12 @@
 
 ### **Services**
 
-- YouTube
-- YouTube Music
-- Netflix
-- SoundCloud
-- Twitch
-- JKAnime
-- KissAnime
+| Video   | Music         | Anime     |
+| ------- | ------------- | --------- |
+| YouTube | YouTube Music | JKAnime   |
+| Netflix | SoundCloud    | KissAnime |
+| Twitch  |               |           |
+|         |               |           |
 
 One missing? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?template=service_request.md)!
 
