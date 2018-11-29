@@ -35,11 +35,17 @@ async function socketDisconnect() {
 function insertConnectionInfo(message) {
   var service = getService()
 
-  $('<div id="premid-connectinfo"><img draggable="false" src="' + chrome.runtime.getURL('icon.png') + '"><h1>' + chrome.runtime.getManifest().name + '</h1><h2>' + message.replace("%SERVICE%", service) + '</h2></div>').appendTo('body')
-  $('#premid-connectinfo h2').width($('#premid-connectinfo h2').textWidth()+60)
-  setTimeout(() => {
-    $('#premid-connectinfo').remove()
-  }, 5*1000)
+  chrome.storage.sync.get(['options'], function(result) {
+    if(result.options.darkTheme) {
+      $(('<div id="premid-connectinfo" class="dark"><img draggable="false" src="' + chrome.runtime.getURL('icon.png') + '"><h1>' + chrome.runtime.getManifest().name + '</h1><h2>' + message.replace("%SERVICE%", service) + '</h2></div>')).appendTo('body')
+    } else {
+      $(('<div id="premid-connectinfo"><img draggable="false" src="' + chrome.runtime.getURL('icon.png') + '"><h1>' + chrome.runtime.getManifest().name + '</h1><h2>' + message.replace("%SERVICE%", service) + '</h2></div>')).appendTo('body')
+    }
+    $('#premid-connectinfo h2').width($('#premid-connectinfo h2').textWidth()+60)
+    setTimeout(() => {
+      $('#premid-connectinfo').remove()
+    }, 5*1000)
+  })
 }
 
 //* Calculate text width in pixels

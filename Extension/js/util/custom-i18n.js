@@ -28,7 +28,7 @@ async function loadLanguageFile(languageCode) {
  * 
  * @param {String} term Term definition to get the string value of
  */
-async function getString(term) {
+async function getString(term, returnError = true) {
   //* Load Language files if they are not set
   if((currentLanguageFile && defaultLanguageFile) == null) {
     //* Check if we have language xx in our available languages
@@ -44,7 +44,7 @@ async function getString(term) {
   if(!currentLanguageFile.hasOwnProperty(term)) {
     //* Return error if it couldn't be found in the default file as well
     if(!defaultLanguageFile.hasOwnProperty(term)) {
-      console.error(`Could not find translation for "${term}"!`)
+      if(returnError) console.error(`Could not find translation for "${term}"!`)
       return null;
     } else {
       //* Return needed term value

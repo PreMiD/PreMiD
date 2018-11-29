@@ -1,3 +1,10 @@
+.dark,
+.dark .tabs,
+.dark .card-panel {
+  background-color: #282828;
+  color: #99aab5;
+}
+
 #pMiDHeader {
   z-index: 10000;
   position: fixed;

@@ -9,8 +9,19 @@
   src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
 }
 
-#premid-connectinfo {
+#premid-connectinfo.dark {
+  background-color: #282828 !important;
+  color: #99aab5 !important;
+  box-shadow: 0px 3px 8px rgba(25, 25, 25, 0.15) !important;
+}
+
+#premid-connectinfo:not(.dark) {
+  color: #575757 !important;
+  background-color: white !important;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+#premid-connectinfo {
   position: fixed !important;
   top: 5px !important;
   right: -110% !important;
@@ -20,12 +31,10 @@
   white-space: nowrap !important;
   border-radius: 5px !important;
   height: 50px !important;
-  background-color: white !important;
   user-select: none !important;
   animation-name: slideIn !important;
   animation-duration: 5s !important;
   animation-timing-function: cubic-bezier(0.55, 0.55, 0, 1.2) !important;
-  color: #575757 !important;
 }
 
 #premid-connectinfo * {

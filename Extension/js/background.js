@@ -5,7 +5,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
       break;
     }
     case "update": {
-      //chrome.tabs.create({url: "html/tabs/updated.html"})
+      chrome.tabs.create({url: "html/tabs/updated.html"})
       break;
     }
   }
@@ -16,19 +16,19 @@ var lastAllowedTab = null,
 allowedURL = []
 setInterval(() => {
   chrome.storage.sync.get(['options'], function(result) {
-    //* Create config if not already
-    if(!result.options) chrome.storage.sync.set({options: {enabled: true, youtube: true, youtubeMusic: true, twitch: true, soundcloud: true, netflix: true, kissanime: true, jkanime: true, titleMenubar: true, mediaControls: true, checkForUpdates: true, systemStartup: true}})
-    
+    //* Create config if not already    
     allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "www.netflix.com", "kissanime.ac", "kissanime.ru", "jkanime.net", "fimfiction.net", "crunchyroll.com", "hentaihaven.org", "www.rabb.it", "www.masterani.me", "www.superanimes.site", "www1.9anime.to", "www.google.de", "www.pandora.com", "hentaigasm.com", "www.pokyun.tv", "www.anime4you.one"]
-    var options = result.options
-    if(!options.enabled) allowedURL = []
-    if(!options.youtube) allowedURL.remove("www.youtube.com")
-    if(!options.youtubeMusic) allowedURL.remove("music.youtube.com")
-    if(!options.twitch) allowedURL.remove("twitch.tv")
-    if(!options.soundcloud) allowedURL.remove("soundcloud.com")
-    if(!options.netflix) allowedURL.remove("netflix.com")
-    if(!options.kissanime) allowedURL.remove("kissanime.ac") && allowedURL.remove('kissanime.ru')
-    if(!options.jkanime) allowedURL.remove("jkanime.net")
+    if(result.options != undefined) {
+      var options = result.options
+      if(!options.enabled) allowedURL = []
+      if(!options.youtube) allowedURL.remove("www.youtube.com")
+      if(!options.youtubeMusic) allowedURL.remove("music.youtube.com")
+      if(!options.twitch) allowedURL.remove("twitch.tv")
+      if(!options.soundcloud) allowedURL.remove("soundcloud.com")
+      if(!options.netflix) allowedURL.remove("netflix.com")
+      if(!options.kissanime) allowedURL.remove("kissanime.ac") && allowedURL.remove('kissanime.ru')
+      if(!options.jkanime) allowedURL.remove("jkanime.net")
+    }
   })
   chrome.tabs.getAllInWindow(null, (tabs) => {
 

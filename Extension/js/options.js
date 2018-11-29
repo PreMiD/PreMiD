@@ -38,28 +38,8 @@ $(document).ready(function() {
 
   chrome.storage.sync.get(['options'], function(result) {
     options = result.options
-    if(options.fimfiction == undefined) chrome.storage.sync.set($.extend(options, {fimfiction: true}))
-    if(options.darkTheme == undefined) chrome.storage.sync.set($.extend(options, {darkTheme: true})); else {
+    if(result.options != undefined) {
       if(options.darkTheme) $('html').addClass("dark")
-    }
-    if(result.options == undefined) {
-      chrome.storage.sync.set({options: {enabled: true, youtube: true, youtubeMusic: true, twitch: true, soundcloud: true, netflix: true, kissanime: true, jkanime: true, titleMenubar: true, mediaControls: true, checkForUpdates: true, systemStartup: true}})
-      enabledToggle.prop('checked', true)
-      youtubeToggle.prop('checked', true)
-      youtubeMusicToggle.prop('checked', true)
-      twitchToggle.prop('checked', true)
-      soundcloudToggle.prop('checked', true)
-      netflixToggle.prop('checked', true)
-      kissanimeToggle.prop('checked', true)
-      jkanimeToggle.prop('checked', true)
-      fimfictionToggle.prop('checked', true)
-      if(titleMenubarToggle != undefined)
-      titleMenubarToggle.prop('checked', true)
-      mediaControlsToggle.prop('checked', true)
-      checkForUpdatesToggle.prop('checked', true)
-      systemStartupToggle.prop('checked', true)
-      darkThemeToggle.prop('checked', true)
-    } else {
       enabledToggle.prop('checked', result.options.enabled)
       youtubeToggle.prop('checked', result.options.youtube)
       youtubeMusicToggle.prop('checked', result.options.youtubeMusic)
