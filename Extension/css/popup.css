@@ -22,14 +22,24 @@ body {
 }
 
 .dark,
-.dark .tabs,
+.dark .tabs {
+  background-color: hsl(220, 7%, 11%);
+}
+
 .dark .card-panel {
-  background-color: #282828;
+  background-color: hsl(220, 7%, 15%);
+  box-shadow: none;
 }
 
 ::-webkit-scrollbar {
   width: 10px;
 }
+
+.waves-effect.waves-discord .waves-ripple {
+  /* The alpha value allows the text and background color
+  of the button to still show through. */
+   background-color: rgba(114, 137, 218, 0.4);
+ }
 
 .dark ::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.25);
@@ -38,7 +48,7 @@ body {
 .dark .switch input:not(:checked) > .lever {
   background-color: rgba(80, 80, 80, 0.5) !important;
 }
-
+ 
 .dark .switch input:not(:checked) > .lever:after {
   background-color: rgba(80, 80, 80, 1) !important;
 }
@@ -81,7 +91,7 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
 }
 
 #pMiDHeading {
-  color: #596cae;
+  color: #7289da;
   margin: 5px;
   margin-bottom: 10px;
   padding: 0;
@@ -89,11 +99,19 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
   font-weight: 600;
 }
 
-#pMiDOption {
-  color: #848484;
+#pMiDOption, .credit-panel {
+  color: rgb(146, 146, 146);
   margin: 0;
   padding: 0;
   font-size: 17px;
+}
+
+.dark #pMiDOption, dark .credit-panel {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.card-panel .row .col {
+  padding: 0;
 }
 
 #options {
@@ -127,7 +145,7 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
 }
 
 .switch label input[type="checkbox"]:checked + .lever:after {
-  background-color: #596cae;
+  background-color: #7289da;
 }
 
 .switch label input[type="checkbox"]:checked + .lever {
@@ -167,8 +185,9 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
 }
 
 .card-panel {
-  padding: 5px;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+  margin: 10px 5px;
+  padding: 14px;
+  box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.15);
 }
 
 .tabs .tab a {
@@ -178,17 +197,17 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
 
 .tabs .tab a:hover,
 .tabs .tab a.active {
-  color: #596cae;
+  color: #7289da;
 }
 
 .tabs .tab a:focus,
 .tabs .tab a:focus.active {
-  color: #596cae;
-  background-color: none;
+  color: #7289da;
+  background-color: transparent;
 }
 
 .tabs .indicator {
-  background-color: rgb(89, 107, 174);
+  background-color: #7289da;
   box-shadow: 5px 5px black;
 }
 
