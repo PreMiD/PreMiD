@@ -1,8 +1,16 @@
-.dark,
+body {
+  color: rgb(146, 146, 146);
+}
+
+.dark {
+  background-color: hsl(220, 7%, 11%);
+}
+
 .dark .tabs,
 .dark .card-panel {
-  background-color: #282828;
-  color: #99aab5;
+  background-color: hsl(220, 7%, 15%);
+  color: rgba(255, 255, 255, 0.6);
+  box-shadow: none;
 }
 
 #pMiDHeader {
