@@ -101,6 +101,9 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
 
 #pMiDOption, .credit-panel {
   color: rgb(146, 146, 146);
+}
+
+#pMiDOption {
   margin: 0;
   padding: 0;
   font-size: 17px;
