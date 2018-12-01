@@ -1,5 +1,5 @@
 //* Allowed Service URLS
-var allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "netflix.com", "kissanime.ac", "kissanime.ru", "jkanime.net", "fimfiction.net", "www.crunchyroll.com", "www.rabb.it", "www.masterani.me", "www.superanimes.site", "www1.9anime.to", "www.google.de", "www.pandora.com", "hentaihaven.org", "hentaigasm.com", "www.anime4you.one"]
+var allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "netflix.com", "kissanime.ru", "jkanime.net", "fimfiction.net", "www.rabb.it", "hentaihaven.org", "hentaigasm.com", "www.anime4you.one"]
 
 //* If one is included...
 if(allowedURL.includes(document.location.host)) {  

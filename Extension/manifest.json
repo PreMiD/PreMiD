@@ -36,75 +36,7 @@
       "matches": ["<all_urls>"]
     },
     {
-      "js": ["js/presences/YouTubeMusic.js"],
-      "matches": ["*://music.youtube.com/*"]
-    },
-    {
-      "js": ["js/presences/YouTube.js"],
-      "matches": ["*://www.youtube.com/*"]
-    },
-    {
-      "js": ["js/presences/Netflix.js"],
-      "matches": ["*://*.netflix.com/*"]
-    },
-    {
-      "js": ["js/presences/SoundCloud.js"],
-      "matches": ["*://*.soundcloud.com/*"]
-    },
-    {
-      "js": ["js/presences/Twitch.js"],
-      "matches": ["*://*.twitch.tv/*"]
-    },
-    {
-      "js": ["js/presences/KissAnime.js"],
-      "matches": ["*://kissanime.ac/*", "*://kissanime.ru/*"]
-    },
-    {
-      "js": ["js/presences/JKAnime.js"],
-      "matches": ["*://jkanime.net/*"]
-    },
-    {
-      "js": ["js/presences/FimFiction.js"],
-      "matches": ["*://www.fimfiction.net/*"]
-    },
-    {
-      "js": ["js/presences/crunchyroll.js"],
-      "matches": ["*://www.crunchyroll.com/*"]
-    },
-    {
-      "js": ["js/presences/HentaiHaven.js"],
-      "matches": ["*://hentaihaven.org/*"]
-    },
-    {
-      "js": ["js/presences/Rabbit.js"],
-      "matches": ["*://www.rabb.it/*"]
-    },
-    {
-      "js": ["js/presences/MasterAnime.js"],
-      "matches": ["*://www.masterani.me/*"]
-    },
-    {
-      "js": ["js/presences/SuperAnimes.js"],
-      "matches": ["*://www.superanimes.site/*"]
-    },
-    {
-      "js": ["js/presences/9Anime.js"],
-      "matches": ["*://www1.9anime.to/*"]
-    },
-    {
-      "js": ["js/presences/Pandora.js"],
-      "matches": ["*://www.pandora.com/*"]
-    },
-    {
-      "js": ["js/presences/HentaiGasm.js"],
-      "matches": ["*://hentaigasm.com/*"]
-    },
-    {
-      "js": ["js/presences/Pokyun.js"],
-      "matches": ["*://www.pokyun.tv/*"]
-    },
-    {
-      "js": ["js/presences/Anime4You.js"],
+      "js": ["js/presences/Anime/Anime4You.js"],
       "matches": ["*://www.anime4you.one/*"]
     },
     {
@@ -114,6 +46,67 @@
         "js/iframeWitch/Anime4You_Witch.js"
       ],
       "all_frames": true
+    },
+    {
+      "js": ["js/presences/Music/YouTubeMusic.js"],
+      "matches": ["*://music.youtube.com/*"]
+    },
+    {
+      "js": ["js/presences/Video/YouTube.js"],
+      "matches": ["*://www.youtube.com/*"]
+    },
+    {
+      "js": ["js/presences/Video/Netflix.js"],
+      "matches": ["*://*.netflix.com/*"]
+    },
+    {
+      "js": ["js/presences/Music/SoundCloud.js"],
+      "matches": ["*://*.soundcloud.com/*"]
+    },
+    {
+      "js": ["js/presences/Video/Twitch.js"],
+      "matches": ["*://*.twitch.tv/*"]
+    },
+    {
+      "js": ["js/presences/Anime/KissAnime.js"],
+      "matches": ["*://kissanime.ru/*"]
+    },
+    {
+      "js": ["js/presences/Anime/JKAnime.js"],
+      "matches": ["*://jkanime.net/*"]
+    },
+    {
+      "js": ["js/presences/Reading/FimFiction.js"],
+      "matches": ["*://www.fimfiction.net/*"]
+    },
+    {
+      "js": ["js/presences/Anime/HentaiHaven.js"],
+      "matches": ["*://hentaihaven.org/*"]
+    },
+    {
+      "js": ["js/presences/Video/Rabbit.js"],
+      "matches": ["*://www.rabb.it/*"]
+    },
+
+    {
+      "js": ["js/presences/Anime/MasterAnime.js"],
+      "matches": ["*://www.masterani.me/*"]
+    },
+    {
+      "js": ["js/presences/Anime/SuperAnimes.js"],
+      "matches": ["*://www.superanimes.site/*"]
+    },
+    {
+      "js": ["js/presences/Music/Pandora.js"],
+      "matches": ["*://www.pandora.com/*"]
+    },
+    {
+      "js": ["js/presences/Anime/HentaiGasm.js"],
+      "matches": ["*://hentaigasm.com/*"]
+    },
+    {
+      "js": ["js/presences/Anime/Pokyun.js"],
+      "matches": ["*://www.pokyun.tv/*"]
     }
   ],
   "permissions": [

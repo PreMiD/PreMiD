@@ -4,8 +4,13 @@ $(document).ready(async function() {
     if(result.options.darkTheme == undefined) {
       $('html').addClass('dark')
     } else if(result.options.darkTheme) $('html').addClass('dark')
-    if(options.fimfiction == undefined) chrome.storage.sync.set($.extend(options, {fimfiction: true}))
-    if(options.darkTheme == undefined) chrome.storage.sync.set($.extend(options, {darkTheme: true}))
+    if(options.fimfiction == undefined) $.extend(options, {fimfiction: true})
+    if(options.anime4you == undefined) $.extend(options, {anime4you: true})
+    if(options.rabbIt == undefined) $.extend(options, {rabbIt: true})
+    if(options.hentaigasm == undefined) $.extend(options, {hentaigasm: true})
+    if(options.hentaihaven == undefined) $.extend(options, {hentaihaven: true})
+    if(options.darkTheme == undefined) $.extend(options, {darkTheme: true})
+    chrome.storage.sync.set({options: options})
   })
 
   $('.Pheading').html(await getString("tab.updated.heading"))

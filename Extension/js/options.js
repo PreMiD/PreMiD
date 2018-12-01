@@ -16,6 +16,10 @@ $(document).ready(function() {
   netflixToggle = $('.toggleNetflix'),
   kissanimeToggle = $('.toggleKissAnime'),
   jkanimeToggle = $('.toggleJKAnime')
+  rabbitToggle = $('.toggleRabbit')
+  anime4YouToggle = $('.toggleAnime4You')
+  hentaiGasmToggle = $('.toggleHentaiGasm')
+  hentaiHavenToggle = $('.toggleHentaiHaven')
   fimfictionToggle = $('.toggleFimFiction')
   mediaControlsToggle = $('.toggleMediaControls')
   checkForUpdatesToggle = $('.toggleCheckUpdates')
@@ -35,6 +39,10 @@ $(document).ready(function() {
   checkForUpdatesToggle.change(tCFU);
   systemStartupToggle.change(tSS);
   darkThemeToggle.change(tdT);
+  rabbitToggle.change(tRI);
+  anime4YouToggle.change(tA4Y);
+  hentaiGasmToggle.change(tHG);
+  hentaiHavenToggle.change(tHH);
 
   chrome.storage.sync.get(['options'], function(result) {
     options = result.options
@@ -48,13 +56,17 @@ $(document).ready(function() {
       netflixToggle.prop('checked', result.options.netflix)
       kissanimeToggle.prop('checked', result.options.kissanime)
       jkanimeToggle.prop('checked', result.options.jkanime)
+      rabbitToggle.prop('checked', result.options.rabbIt)
       fimfictionToggle.prop('checked', result.options.fimfiction)
+      anime4YouToggle.prop('checked', result.options.anime4you)
       if(titleMenubarToggle != undefined)
       titleMenubarToggle.prop('checked', result.options.titleMenubar)
       mediaControlsToggle.prop('checked', result.options.mediaControls)
       checkForUpdatesToggle.prop('checked', result.options.checkForUpdates)
       systemStartupToggle.prop('checked', result.options.systemStartup)
       darkThemeToggle.prop('checked', result.options.darkTheme)
+      hentaiGasmToggle.prop('checked', result.options.hentaigasm)
+      hentaiHavenToggle.prop('checked', result.options.hentaihaven)
     }
   })
 })
@@ -121,6 +133,26 @@ function tCFU() {
 
 function tSS() {
   options.systemStartup = !options.systemStartup
+  sync()
+}
+
+function tRI() {
+  options.rabbIt = !options.rabbIt
+  sync()
+}
+
+function tA4Y() {
+  options.anime4you = !options.anime4you
+  sync()
+}
+
+function tHG() {
+  options.hentaigasm = !options.hentaigasm
+  sync()
+}
+
+function tHH() {
+  options.hentaihaven = !options.hentaihaven
   sync()
 }
 

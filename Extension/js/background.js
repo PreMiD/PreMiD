@@ -17,7 +17,7 @@ allowedURL = []
 setInterval(() => {
   chrome.storage.sync.get(['options'], function(result) {
     //* Create config if not already    
-    allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "www.netflix.com", "kissanime.ac", "kissanime.ru", "jkanime.net", "fimfiction.net", "crunchyroll.com", "hentaihaven.org", "www.rabb.it", "www.masterani.me", "www.superanimes.site", "www1.9anime.to", "www.google.de", "www.pandora.com", "hentaigasm.com", "www.pokyun.tv", "www.anime4you.one"]
+    allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "www.netflix.com", "kissanime.ac", "kissanime.ru", "jkanime.net", "fimfiction.net", "hentaihaven.org", "www.rabb.it", "hentaigasm.com", "www.anime4you.one"]
     if(result.options != undefined) {
       var options = result.options
       if(!options.enabled) allowedURL = []
@@ -28,6 +28,9 @@ setInterval(() => {
       if(!options.netflix) allowedURL.remove("netflix.com")
       if(!options.kissanime) allowedURL.remove("kissanime.ac") && allowedURL.remove('kissanime.ru')
       if(!options.jkanime) allowedURL.remove("jkanime.net")
+      if(!options.rabbIt) allowedURL.remove("www.rabb.it")
+      if(!options.hentaigasm) allowedURL.remove("hentaigasm.com")
+      if(!options.anime4you) allowedURL.remove("www.anime4you.one")
     }
   })
   chrome.tabs.getAllInWindow(null, (tabs) => {
