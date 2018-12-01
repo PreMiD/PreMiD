@@ -4,4 +4,4 @@ dist
 website
 server
 .vscode
-DiscordBot
+.env

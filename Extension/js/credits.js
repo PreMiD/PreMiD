@@ -1,5 +1,5 @@
 $(document).ready(async function() {
-  fetch('https://api.premid.app/credits').then(async response => {
+  fetch('//localhost:8080/credits').then(async response => {
     var result = await response.json()
     var firstItemInRow;
     var currItemInRow = 0

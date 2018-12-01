@@ -2,11 +2,12 @@ const express = require('express')
 const app = express()
 var mysql = require('mysql')
 var utf8 = require('utf8')
+require('dotenv').load();
 
 var con = mysql.createConnection({
   host: "localhost",
-  user: "Timeraa",
-  password: "Kw!BXS9Y8$",
+  user: process.env.dbUser,
+  password: process.env.dbPassword,
   database: 'premid'
 });
 
@@ -28,7 +29,7 @@ app.get('/credits', async function (req, res) {
   var result = await query("SELECT * FROM credits")
   var resultArray = []
   result.rows.map(row => {
-    resultArray.push({name: utf8.decode(row.name), tag: row.tag, avatarURL: row.avatarURL, type: row.type})
+    resultArray.push({name: utf8.decode(row.name), avatar: row.avatarURL, role: row.type, roleColor: row.color, patronColor: row.patronColor})
   })
   res.setHeader('Content-Type', 'application/json');
   res.send(JSON.stringify(resultArray));
