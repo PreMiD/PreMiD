@@ -87,11 +87,16 @@ chrome.runtime.onMessage.addListener(((message, sender) => {
 //* Create needed variables
 var urlForVideo,
   songTime,
-  calcDifference = []
+  calcDifference = [],
+  lastPathName = null,
+  browsingStamp
 
 async function updateData(playbackChange = false) {
-  console.log($('.video-title span'))
   if (document.location.pathname.includes("/watch")) musicRunning = true; else musicRunning = false;
+  if(document.location.pathname != lastPathName) {
+    browsingStamp = Math.floor(Date.now()/1000)
+    lastPathName = document.location.pathname
+  }
   urlForVideo = document.location.href
   if ($(".time-remaining__time").html() != "") {
     let data
@@ -184,6 +189,19 @@ async function updateData(playbackChange = false) {
             service: 'Netflix'
           }
         }
+      }
+    } else {
+      data = {
+        clientID: '499981204045430784',
+        presenceData: {
+          details: await getString("presence.browsing"),
+          largeImageKey: 'nflix_lg',
+          largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+          startTimestamp: browsingStamp
+        },
+        trayTitle: $('.video-title h4').text(),
+        playback: true,
+        service: 'Netflix'
       }
     }
     if (socket.connected) socket.emit(eventType, data)

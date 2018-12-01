@@ -1,5 +1,5 @@
 //* Allowed Service URLS
-var allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "netflix.com", "kissanime.ru", "jkanime.net", "fimfiction.net", "www.rabb.it", "hentaihaven.org", "hentaigasm.com", "www.anime4you.one"]
+var allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "www.netflix.com", "kissanime.ru", "jkanime.net", "fimfiction.net", "www.rabb.it", "hentaihaven.org", "hentaigasm.com", "www.anime4you.one"]
 
 //* If one is included...
 if(allowedURL.includes(document.location.host)) {  
