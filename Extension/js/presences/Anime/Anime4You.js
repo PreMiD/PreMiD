@@ -123,6 +123,20 @@ async function updateData(playbackChange = false) {
         service: 'Anime4You'
       }
     }
+  } else if(!document.location.pathname.includes('/show/')) {
+    var data = {
+      clientID: '517148876273090577',
+      presenceData: {
+        details: await getString('presence.browsing'),
+        largeImageKey: 'a4y_lg',
+        largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+        startTimestamp: browsingStamp
+      },
+      trayTitle: $('<div/>').html(videoTitle).text(),
+      playback: true,
+      service: 'Anime4You'
+    }
+    eventType = "updateData"
   } else if(document.location.pathname.includes('/show/')) {
     var videoTitle = $('.titleshow h1').text().trim(),
     videoEpisode = await getString("presence.episode") + " " + $('.episoden a.active').text()
