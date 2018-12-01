@@ -49,9 +49,9 @@ async function updateCredits() {
       if(result[0].roles.has(pat1Role)) patronLevel = result[0].roles.get(pat1Role).hexColor
       if(result[1]) {
         if(dbRows.find(row => row.userID == result[0].id)) {
-          query(`UPDATE credits SET name = '${utf8.encode(result[0].displayName)}', avatarURL = '${result[0].user.avatarURL}', type = '${result[1].name}', color = '${result[1].hexColor}', patronColor = '${patronLevel}' WHERE userID = '${result[0].id}'`)
+          query(`UPDATE credits SET name = '${utf8.encode(result[0].displayName)}', avatarURL = '${result[0].user.avatarURL}', type = '${result[1].name}', color = '${result[1].hexColor}', patronColor = '${patronLevel}', position = '${result[1].position}' WHERE userID = '${result[0].id}'`)
         } else {
-          query(`INSERT INTO credits (userID, name, avatarURL, type, color, patronColor) VALUES ('${result[0].id}', '${utf8.encode(result[0].displayName)}', '${result[0].user.avatarURL}', '${result[1].name}', '${result[1].hexColor}', '${patronLevel}')`)
+          query(`INSERT INTO credits (userID, name, avatarURL, type, color, patronColor, position) VALUES ('${result[0].id}', '${utf8.encode(result[0].displayName)}', '${result[0].user.avatarURL}', '${result[1].name}', '${result[1].hexColor}', '${patronLevel}', '${result[1].calculatedPosition}')`)
         }
       } else {
         if(dbRows.find(row => row.userID == result[0].id)) {

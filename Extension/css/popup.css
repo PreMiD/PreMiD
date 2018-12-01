@@ -23,17 +23,23 @@ body {
   max-height: 600px;
 }
 
-/* Adds smooth transition when user changes theme */
-html, body, .tabs, .card-panel {
+/* Adds smooth transition when user changes theme 
+! Needs fix
+html,
+body,
+.tabs,
+.card-panel {
   transition: all 0.3s ease-in-out;
 }
+*/
 
 .dark,
 .dark .tabs {
   background-color: hsl(220, 7%, 11%);
 }
 
-.dark .card-panel, .dark .usercard {
+.dark .card-panel,
+.dark .usercard {
   background-color: hsl(220, 7%, 15%);
   color: rgba(255, 255, 255, 0.6);
   box-shadow: none;
@@ -46,8 +52,8 @@ html, body, .tabs, .card-panel {
 .waves-effect.waves-discord .waves-ripple {
   /* The alpha value allows the text and background color
   of the button to still show through. */
-   background-color: rgba(114, 137, 218, 0.4);
- }
+  background-color: rgba(114, 137, 218, 0.4);
+}
 
 .dark ::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.25);
@@ -56,7 +62,7 @@ html, body, .tabs, .card-panel {
 .dark .switch input:not(:checked) > .lever {
   background-color: rgba(80, 80, 80, 0.5) !important;
 }
- 
+
 .dark .switch input:not(:checked) > .lever:after {
   background-color: rgba(80, 80, 80, 1) !important;
 }
@@ -107,7 +113,8 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
   font-weight: 600;
 }
 
-#pMiDOption, .credit-panel {
+#pMiDOption,
+.credit-panel {
   color: rgb(146, 146, 146);
 }
 
@@ -117,7 +124,8 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
   font-size: 17px;
 }
 
-.dark #pMiDOption, dark .credit-panel {
+.dark #pMiDOption,
+.dark .credit-panel {
   color: rgba(255, 255, 255, 0.6);
 }
 
@@ -161,11 +169,13 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
   background: #72767d;
 }
 
-input[type=checkbox]:checked:not(:disabled) ~ .lever:active::before, input[type=checkbox]:checked:not(:disabled).tabbed:focus ~ .lever::before {
-  background-color: transparent; 
+input[type="checkbox"]:checked:not(:disabled) ~ .lever:active::before,
+input[type="checkbox"]:checked:not(:disabled).tabbed:focus ~ .lever::before {
+  background-color: transparent;
 }
 
-.switch label .lever:before, .switch label .lever:after {
+.switch label .lever:before,
+.switch label .lever:after {
   width: 18px;
   height: 18px;
   left: 3px;
@@ -177,7 +187,8 @@ input[type=checkbox]:checked:not(:disabled) ~ .lever:active::before, input[type=
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
 }
 
-.switch label input[type=checkbox]:checked+.lever:before, .switch label input[type=checkbox]:checked+.lever:after {
+.switch label input[type="checkbox"]:checked + .lever:before,
+.switch label input[type="checkbox"]:checked + .lever:after {
   left: 21px;
 }
 
@@ -246,20 +257,16 @@ input[type=checkbox]:checked:not(:disabled) ~ .lever:active::before, input[type=
   height: 50px;
 }
 
-.credit-panel img {
-  width: 40px;
-  margin: 5px;
-  border-radius: 50%;
-  float: left;
-}
-
-.credit-panel h1 {
+.credits_text h6 {
   font-size: 17px;
   margin: 0;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-.credit-panel h2 {
+.credits_text p {
   font-size: 15px;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -267,6 +274,7 @@ input[type=checkbox]:checked:not(:disabled) ~ .lever:active::before, input[type=
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  margin-bottom: 5px;
 }
 
 .usercard {
@@ -278,11 +286,13 @@ input[type=checkbox]:checked:not(:disabled) ~ .lever:active::before, input[type=
   float: left;
   justify-content: center;
   margin: 10px;
-  padding: 24px;
+  padding-top: 15px;
   text-align: center;
   border-radius: 4px;
   width: 50%;
-  transition: all 150ms ease;
+  transition: all 150ms ease-out;
+  min-width: 100px;
+  min-height: 150px;
 }
 
 .usercard .credits_text * {
@@ -290,16 +300,12 @@ input[type=checkbox]:checked:not(:disabled) ~ .lever:active::before, input[type=
 }
 
 .usercard .credits_avatar img {
-  width: 40px;
-  border-radius: 60px;
-}
-
-.usercard:hover .credits_avatar img {
-  opacity: 0.7;
+  width: 50px;
+  border-radius: 50%;
 }
 
 .usercard:hover {
-  background: #7084d6;
+  background-color: var(--hoverColor);
   color: rgba(255, 255, 255, 0.6);
   transform: scale(1.05);
 }
