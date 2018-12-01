@@ -127,7 +127,7 @@ async function updateData(playbackChange = false) {
     var data = {
       clientID: '517148876273090577',
       presenceData: {
-        details: await getString('presence.browsing'),
+        details: await getString('presence.lookingForAnime'),
         largeImageKey: 'a4y_lg',
         largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
         startTimestamp: browsingStamp
