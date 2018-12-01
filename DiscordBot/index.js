@@ -71,4 +71,4 @@ function query(...data) {
   }).catch(err => console.log("Error while querying + " + err))
 }
 
-client.login('NTAzNTU3MDg3MDQxNjgzNDU4.DtuCFg.ysltcHzVGKx51h4qENdKocB88rc');
+client.login(process.env.clientID);
