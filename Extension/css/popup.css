@@ -216,6 +216,14 @@ input[type="checkbox"]:checked:not(:disabled).tabbed:focus ~ .lever::before {
   background-color: rgba(204, 22, 23, 1) !important;
 }
 
+.rabbit:checked + .lever {
+  background-color: #fe6600 !important;
+}
+
+.anime4you:checked + .lever {
+  background-color: #6e46b6 !important;
+}
+
 .card-panel {
   margin: 10px 5px;
   padding: 14px;
