@@ -59,12 +59,13 @@
 
 ### **Services**
 
-| Video   | Music         | Anime     |
-| ------- | ------------- | --------- |
-| YouTube | YouTube Music | JKAnime   |
-| Netflix | SoundCloud    | KissAnime |
-| Twitch  |               |           |
-|         |               |           |
+| Video   | Music         | Anime       |
+| ------- | ------------- | ----------- |
+| YouTube | YouTube Music | Anime4You   |
+| Netflix | SoundCloud    | KissAnime   |
+| Twitch  |               | JKAnime     |
+|         |               | HentaiHaven |
+|         |               | HentaiGasm  |
 
 One missing? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?template=service_request.md)!
 
