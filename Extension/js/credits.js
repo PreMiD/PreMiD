@@ -12,5 +12,7 @@ $(document).ready(async function() {
       } else 
       currItemInRow++;
     });
+  }).catch(err => {
+    $(`<div class="usercard noHover"><div class="credits_text"><h6>Error</h6><p>Could not load credits.</p></div></div>`).appendTo('#credits .credits_container')
   })
 })

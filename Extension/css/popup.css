@@ -304,7 +304,7 @@ input[type="checkbox"]:checked:not(:disabled).tabbed:focus ~ .lever::before {
   border-radius: 50%;
 }
 
-.usercard:hover {
+.usercard:hover:not(.noHover) {
   background-color: var(--hoverColor);
   color: rgba(255, 255, 255, 0.6);
   transform: scale(1.05);
