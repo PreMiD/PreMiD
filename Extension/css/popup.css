@@ -267,9 +267,11 @@ input[type="checkbox"]:checked:not(:disabled).tabbed:focus ~ .lever::before {
 
 .credits_text h6 {
   font-size: 17px;
-  margin: 0;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-bottom: 4px;
+}
+
+.usercard:hover .credits_text h6 {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .credits_text p {
@@ -301,6 +303,9 @@ input[type="checkbox"]:checked:not(:disabled).tabbed:focus ~ .lever::before {
   transition: all 150ms ease-out;
   min-width: 100px;
   min-height: 150px;
+  color: rgb(102, 102, 102);
+  display: flex;
+  align-items: center;
 }
 
 .usercard .credits_text * {
@@ -312,8 +317,13 @@ input[type="checkbox"]:checked:not(:disabled).tabbed:focus ~ .lever::before {
   border-radius: 50%;
 }
 
+.usercard div {
+  top: -4px;
+  position: relative;
+}
+
 .usercard:hover:not(.noHover) {
   background-color: var(--hoverColor);
   color: rgba(255, 255, 255, 0.6);
-  transform: scale(1.05);
+  transform: scale(1.025);
 }
