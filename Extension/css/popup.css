@@ -23,6 +23,11 @@ body {
   max-height: 600px;
 }
 
+/* Adds smooth transition when user changes theme */
+html, body, .tabs, .card-panel {
+  transition: all 0.3s ease-in-out;
+}
+
 .dark,
 .dark .tabs {
   background-color: hsl(220, 7%, 11%);
@@ -296,4 +301,5 @@ input[type=checkbox]:checked:not(:disabled) ~ .lever:active::before, input[type=
 .usercard:hover {
   background: #7084d6;
   color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.05);
 }
