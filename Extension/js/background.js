@@ -5,7 +5,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
       break;
     }
     case "update": {
-      chrome.tabs.create({url: "html/tabs/updated.html"})
+      //chrome.tabs.create({url: "html/tabs/updated.html"})
       break;
     }
   }
@@ -34,7 +34,6 @@ setInterval(() => {
       if(!options.hentaihaven) allowedURL.remove("hentaihaven.org")
       if(!options.anime4you) allowedURL.remove("www.anime4you.one")
     }
-    console.log(allowedURL)
   })
   chrome.tabs.getAllInWindow(null, (tabs) => {
 

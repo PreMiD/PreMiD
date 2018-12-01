@@ -56,12 +56,19 @@ function handleMediaKeys(data) {
   }
 }
 
+var browsingStamp = null,
+lastPathName = null
+
 /**
  * Update Data and send it to the App
  * @param {String} playbackChange Playback if changed
  */
 async function updateData(playbackChange = false) {
-  //console.log($('.embed-responsive iframe')[0].contentWindow.jQuery('title'))
+  if(document.location.pathname != lastPathName) {
+    browsingStamp = Math.floor(Date.now()/1000)
+    lastPathName = document.location.pathname
+  }
+
   var eventType,
   videoRunning = $('.titleshow h1').text().trim() != "" && videoDuration != null ? true : false
   if(videoRunning) {
@@ -78,7 +85,7 @@ async function updateData(playbackChange = false) {
 
     var smallImageKey = playbackBoolean ? 'play' : 'pause',
     smallImageText = playbackBoolean ? await getString("presence.playback.playing") : await getString("presence.playback.paused")
-
+    
     if(playbackBoolean) {
       var data = {
         clientID: '517148876273090577',
@@ -96,7 +103,7 @@ async function updateData(playbackChange = false) {
         durationSeconds: videoDurationSeconds,
         trayTitle: $('<div/>').html(videoTitle).text(),
         playback: playbackBoolean,
-        service: 'JKAnime'
+        service: 'Anime4You'
       }
     } else {
       var data = {
@@ -113,9 +120,27 @@ async function updateData(playbackChange = false) {
         durationSeconds: videoDurationSeconds,
         trayTitle: $('<div/>').html(videoTitle).text(),
         playback: playbackBoolean,
-        service: 'JKAnime'
+        service: 'Anime4You'
       }
     }
+  } else if(document.location.pathname.includes('/show/')) {
+    var videoTitle = $('.titleshow h1').text().trim(),
+    videoEpisode = await getString("presence.episode") + " " + $('.episoden a.active').text()
+
+    var data = {
+      clientID: '517148876273090577',
+      presenceData: {
+        details: $('<div/>').html(videoTitle).text(),
+        state: $('<div/>').html(videoEpisode).text(),
+        largeImageKey: 'a4y_lg',
+        largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+        startTimestamp: browsingStamp
+      },
+      trayTitle: $('<div/>').html(videoTitle).text(),
+      playback: true,
+      service: 'Anime4You'
+    }
+    eventType = "updateData"
   }
   if(socket.connected) socket.emit(eventType, data)
 }
