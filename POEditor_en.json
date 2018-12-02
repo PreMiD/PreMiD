@@ -1,0 +1,370 @@
+[
+    {
+        "term": "tab.installed.heading",
+        "definition": "Thank you for installing PreMiD",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.didInstallQuestion",
+        "definition": "Did you install the application yet?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.notInstalled",
+        "definition": "No? Follow these steps:",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.download",
+        "definition": "Download the latest version from $1",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": "$1 gets replaced by a value"
+    },
+    {
+        "term": "tab.installed.instructions.github",
+        "definition": "my GitHub repository",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": "Link to the GitHub project"
+    },
+    {
+        "term": "tab.installed.instructions.wait",
+        "definition": "Open the installer and wait until it installed",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.warnings",
+        "definition": "You may receive a warning about FireWall and SmartScreen (Its not a virus i promise!)",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.instructions.autostart",
+        "definition": "The application should start automatically, you can check this by looking at your Taskbar (Windows) or your Menubar (MacOS)",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.subHeading.ready",
+        "definition": "Yes? You are ready to go!",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.intro",
+        "definition": "Start by using one of our supported services and enjoy the sweet taste of coolness!",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": "Pls leave <br> as is."
+    },
+    {
+        "term": "tab.updated.heading",
+        "definition": "PreMiD has been updated!",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.subHeading.whatsNew",
+        "definition": "Whats new?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.subHeading.whatChanged",
+        "definition": "What changed?",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "presence.playback.playing",
+        "definition": "Playing back",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "presence.playback.paused",
+        "definition": "Playback paused",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.tabs.options",
+        "definition": "Options",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.tabs.credits",
+        "definition": "Credits",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.headings.general",
+        "definition": "General",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.headings.presences",
+        "definition": "Presences",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.enabled",
+        "definition": "Enabled",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.titleMenubar",
+        "definition": "Title Menubar",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": "Menubar is a name (Mac OS only)"
+    },
+    {
+        "term": "popup.options.mediaControls",
+        "definition": "Media Controls",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": "Media Control keys (Keyboard\/headphones)"
+    },
+    {
+        "term": "popup.options.checkForUpdates",
+        "definition": "Check for updates",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.options.darkTheme",
+        "definition": "Dark Theme",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": "Dark Theme option in preferences"
+    },
+    {
+        "term": "connectionInfo.connected",
+        "definition": "Connected to %SERVICE%",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": "%SERVICE% will be replaced."
+    },
+    {
+        "term": "connectionInfo.disconnected",
+        "definition": "Disconnected from %SERVICE%",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": "%SERVICE% will be replaced."
+    },
+    {
+        "term": "popup.options.systemStartup",
+        "definition": "System Startup",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": "Startup option in preferences"
+    },
+    {
+        "term": "presence.episode",
+        "definition": "Episode",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "presence.browsing",
+        "definition": "Browsing...",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": "Status when just browsing around"
+    },
+    {
+        "term": "presence.watching",
+        "definition": "watching",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": "Status when watching (e.g.: 44 watching)"
+    },
+    {
+        "term": "tab.installed.letsStart",
+        "definition": "Let's Start!",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.getSupport",
+        "definition": "Get Support",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.installed.likeThisProject",
+        "definition": "Like this project? Star it on $1!",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": "$1 will be replaced with the GitHub repository."
+    },
+    {
+        "term": "tab.updated.gotIt",
+        "definition": "Got it!",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.added0",
+        "definition": "New Design!",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.added1",
+        "definition": "Rabb.it support",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.nextVersion.added2",
+        "definition": "Amazon Prime support",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.added3",
+        "definition": "Anime4You support",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.nextVersion.added4",
+        "definition": "CrunchyRoll support",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.changed0",
+        "definition": "Lots of bugs killed, they won't bug you anymore",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "tab.updated.changed1",
+        "definition": "Lots of rewrites",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "extension.description",
+        "definition": "PreMiD adds Discord Rich Presence integration, Media controls and much more to YouTube\/YouTube Music, Twitch etc...",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": "This is the description of the extension."
+    },
+    {
+        "term": "popup.options.connectInfo",
+        "definition": "Connection Info",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.error",
+        "definition": "Error",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "popup.error.message",
+        "definition": "Could not load credits",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    },
+    {
+        "term": "presence.lookingForAnime",
+        "definition": "Searching for Anime...",
+        "context": "",
+        "term_plural": "",
+        "reference": "",
+        "comment": ""
+    }
+]
