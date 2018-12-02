@@ -1,15 +1,1 @@
-.right {
-  float: right;
-}
-
-#content h1 {
-  margin: 5px;
-}
-
-table {
-  margin: 5px;
-}
-
-tr td:first-child {
-  width: 90%;
-}
+.right{float:right}#content h1{margin:5px}table{margin:5px}tr td:first-child{width:90%}
