@@ -17,13 +17,13 @@ allowedURL = []
 setInterval(() => {
   chrome.storage.sync.get(['options'], function(result) {
     //* Create config if not already    
-    allowedURL = ["www.youtube.com", "music.youtube.com", "twitch.tv", "soundcloud.com", "www.netflix.com", "kissanime.ru", "jkanime.net", "fimfiction.net", "hentaihaven.org", "www.rabb.it", "hentaigasm.com", "www.anime4you.one"]
+    allowedURL = ["www.youtube.com", "music.youtube.com", "www.twitch.tv", "soundcloud.com", "www.netflix.com", "kissanime.ru", "jkanime.net", "fimfiction.net", "hentaihaven.org", "www.rabb.it", "hentaigasm.com", "www.anime4you.one"]
     if(result.options != undefined) {
       var options = result.options
       if(!options.enabled) allowedURL = []
       if(!options.youtube) allowedURL.remove("www.youtube.com")
       if(!options.youtubeMusic) allowedURL.remove("music.youtube.com")
-      if(!options.twitch) allowedURL.remove("twitch.tv")
+      if(!options.twitch) allowedURL.remove("www.twitch.tv")
       if(!options.soundcloud) allowedURL.remove("soundcloud.com")
       if(!options.netflix) allowedURL.remove("www.netflix.com")
       if(!options.kissanime) allowedURL.remove('kissanime.ru')
