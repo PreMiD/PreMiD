@@ -59,74 +59,60 @@ function handleMediaKeys(data) {
   }
 }
 
+//* default YTM data
+var data = {
+  clientID: '463151177836658699',
+  presenceData: {
+    largeImageKey: 'ytm_lg',
+    largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+  },
+  playback: false,
+  service: 'YouTube Music'
+}
+
 /**
  * Update Data and send it to the App
  * @param {String} playbackChange Playback if changed
  */
 async function updateData(playbackChange = false) {
   var eventType
-  musicRunning = $(".title.style-scope.ytmusic-player-bar").html() != "" && $('.video-stream')[0] != undefined && !isNaN($('.video-stream')[0].duration) ? true : false
+  musicRunning = $(".title.style-scope.ytmusic-player-bar").html() != ""
+    && $('.video-stream')[0] != undefined
+    && !isNaN($('.video-stream')[0].duration)
+      ? true : false
+
   if(musicRunning) {
+    //* Update data
     var songTitle = $(".title.style-scope.ytmusic-player-bar").html(),
-    songAuthors = getAuthors(),
-    songTimeSeconds = Math.floor($('.video-stream')[0].currentTime),
-    songDurationSeconds = Math.floor($('.video-stream')[0].duration),
+    videoStream = $('.video-stream')[0],
+    songTimeSeconds = Math.floor(videoStream.currentTime),
+    songDurationSeconds = Math.floor(videoStream.duration),
     songTimestamps = getTimestamps(songTimeSeconds, songDurationSeconds)
-    playback = $('.video-stream')[0].paused ? "paused" : "playing",
-    songAuthorsString = null;
+    playback = videoStream.paused ? "paused" : "playing",
+    songAuthorsString = getAuthors();
 
     if (playbackChange) eventType = 'playBackChange'; else eventType = 'updateData';
 
-    songAuthors.forEach((author, index, authors) => {
-      if (index == 0)
-      songAuthorsString = author;
-      else if (index < authors.length - 2)
-      songAuthorsString = songAuthorsString + ", " + author;
-      else if (index < authors.length - 1) songAuthorsString = songAuthorsString + " and " + author;
-      else songAuthorsString = songAuthorsString + " &bull; " + author;
-    });
-
-    var playbackBoolean = !$('.video-stream')[0].paused
+    var playbackBoolean = !videoStream.paused
 
     var smallImageKey = playbackBoolean ? 'play' : 'pause',
     smallImageText = playbackBoolean ? await getString("presence.playback.playing") : await getString("presence.playback.paused")
 
+    //* Update dynamic data
+    data.presenceData.details = $('<div/>').html(songTitle).text()
+    data.presenceData.state = $('<div/>').html(songAuthorsString).text()
+    data.presenceData.smallImageKey = smallImageKey
+    data.presenceData.smallImageText = smallImageText
+    data.trayTitle = $('<div/>').html(songTitle).text()
+    data.playback = playbackBoolean
+    
+    //* If playing back show timestamps
     if(playbackBoolean) {
-      var data = {
-          clientID: '463151177836658699',
-          presenceData: {
-            details: $('<div/>').html(songTitle).text(),
-            state: $('<div/>').html(songAuthorsString).text(),
-            largeImageKey: 'ytm_lg',
-            largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
-            smallImageKey: smallImageKey,
-            smallImageText: smallImageText,
-            startTimestamp: songTimestamps[0],
-            endTimestamp: songTimestamps[1]
-          },
-          currentSeconds: songTimeSeconds,
-          durationSeconds: songDurationSeconds,
-          trayTitle: $('<div/>').html(songTitle).text(),
-          playback: playbackBoolean,
-          service: 'YouTube Music'
-        }
+        data.presenceData.startTimestamp = songTimestamps[0]
+        data.presenceData.endTimestamp = songTimestamps[1]
       } else {
-        var data = {
-          clientID: '463151177836658699',
-          presenceData: {
-            details: $('<div/>').html(songTitle).text(),
-            state: $('<div/>').html(songAuthorsString).text(),
-            largeImageKey: 'ytm_lg',
-            largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
-            smallImageKey: smallImageKey,
-            smallImageText: smallImageText
-          },
-          currentSeconds: songTimeSeconds,
-          durationSeconds: songDurationSeconds,
-          trayTitle: $('<div/>').html(songTitle).text(),
-          playback: playbackBoolean,
-          service: 'YouTube Music'
-        }
+        delete data.presenceData.startTimestamp
+        delete data.presenceData.endTimestamp
       }
     }
 
@@ -138,7 +124,9 @@ async function updateData(playbackChange = false) {
  * Get authors of Song
  */
 function getAuthors() {
-  var songAuthors = []
+  var songAuthors = [],
+  songAuthorsString = ""
+
   //* Extract authors as array
   $(".byline.ytmusic-player-bar").contents().each(function (index, item) {
     if (item.classList != undefined) {
@@ -154,7 +142,18 @@ function getAuthors() {
     songAuthors = []
     songAuthors.push($(".byline.ytmusic-player-bar").contents().first().text())
   }
-  return songAuthors
+
+  //* Build Song autor string
+  songAuthors.forEach((author, index, authors) => {
+    if (index == 0)
+    songAuthorsString = author;
+    else if (index < authors.length - 2)
+    songAuthorsString = songAuthorsString + ", " + author;
+    else if (index < authors.length - 1) songAuthorsString = songAuthorsString + " and " + author;
+    else songAuthorsString = songAuthorsString + " &bull; " + author;
+  });
+
+  return songAuthorsString
 }
 
 /**
