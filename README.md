@@ -4,7 +4,7 @@
 
 <img src="gitassets/PreMiDExample.png">
 
-<a target="_blank" href="https://discord.gg/Kw7WaYn" title="Join our Discord!">
+<a target="_blank" href="https://discord.gg/WvfVZ8T" title="Join our Discord!">
 <img src="gitassets/discord.svg" height="50px" draggable="false" alt="Join my Discord!">
 </a>&nbsp;
 <a target="_blank" href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button"><img src="gitassets/patreonBTN.png" draggable="false" height="50px" alt="Support me on Patreon!"></a>&nbsp;
