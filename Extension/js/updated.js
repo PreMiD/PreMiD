@@ -13,10 +13,6 @@ $(document).ready(async function() {
     chrome.storage.sync.set({options: options})
   })
 
-  $('.Pheading').html(await getString("tab.updated.heading"))
-  $('.PwhatsNew').html(await getString("tab.updated.subHeading.whatsNew"))
-  $('.PwhatChanged').html(await getString("tab.updated.subHeading.whatChanged"))
-  $('.PgotIt').html(await getString("tab.updated.gotIt"))
   $('.PlikeThisProject').html((await getString("tab.installed.likeThisProject")).replace("$1", '<a target="_blank" href="https://github.com/Timeraa/PreMiD">GitHub</a>'))
   
   var hasNextChanged = true,

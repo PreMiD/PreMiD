@@ -1,8 +1,22 @@
 let options = undefined
 
-chrome.runtime.getPlatformInfo(function(info) {
+chrome.runtime.getPlatformInfo(async function(info) {
   if(info.os == "mac")
-  $('<tr><td><h5 id="pMiDOption" class="PtitleMenubar"></h5></td><td><div class="switch"><label><input type="checkbox" class="toggleTitleMenubar" /> <span class="lever"></span></label></div></td>').insertAfter('.enabledToggle')
+    $(`
+    <tr>
+      <td>
+        <h5 term="popup.options.titleMenubar" id="pMiDOption"></h5>
+      </td>
+      <td>
+        <div class="switch">
+          <label>
+            <input type="checkbox" class="toggleTitleMenubar" />
+            <span class="lever"></span>
+          </label>
+        </div>
+      </td>
+    </tr>`)
+    .insertAfter('.enabledToggle')
   titleMenubarToggle = $('.toggleTitleMenubar')
   titleMenubarToggle.change(tMB);
 })

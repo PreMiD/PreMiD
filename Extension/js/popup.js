@@ -1,18 +1,4 @@
 $(document).ready(async function() {
-  $('.Poptions').html(await getString("popup.tabs.options"))
-  $('.Pcredits').html(await getString("popup.tabs.credits"))
-
-  $('.Pgeneral').html(await getString("popup.options.headings.general"))
-
-  $('.Penabled').html(await getString("popup.options.enabled"))
-  $('.PtitleMenubar').html(await getString("popup.options.titleMenubar"))
-  $('.PmediaControls').html(await getString("popup.options.mediaControls"))
-  $('.PcheckForUpdates').html(await getString("popup.options.checkForUpdates"))
-  $('.PsystemStartup').html(await getString("popup.options.systemStartup"))
-  $('.Pdarktheme').html(await getString("popup.options.darkTheme"))
-
-  $('.Ppresences').html(await getString("popup.options.headings.presences"))
-
   $('#content #panel').each(function() {
     this.addEventListener('click', updateItem)
   })

@@ -55,3 +55,12 @@ async function getString(term, returnError = true) {
     return currentLanguageFile[term]
   }
 }
+
+$(document).ready(translate)
+
+async function translate() {
+  $('[term]:empty').each(async (index, element) => {
+    element = $(element)
+    element.html(await getString(element.attr("term")))
+  });
+}
