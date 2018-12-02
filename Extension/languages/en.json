@@ -43,5 +43,6 @@
     "extension.description": "PreMiD adds Discord Rich Presence integration, Media controls and much more to YouTube/YouTube Music, Twitch etc...",
     "popup.options.connectInfo": "Connection Info",
     "popup.error": "Error",
-    "popup.error.message": "Could not load credits"
+    "popup.error.message": "Could not load credits",
+    "presence.lookingForAnime": "Searching for Anime..."
 }
