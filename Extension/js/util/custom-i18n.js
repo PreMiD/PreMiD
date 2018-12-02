@@ -1,5 +1,5 @@
 //* Define variables
-var availableLanguages = ["en", "da", "de", "es", "fr", "he", "la", "nl", "pt_PT", "ru", "sv"],
+var availableLanguages = ["en", "da", "de", "es", "fr", "he", "la", "nl", "pt_PT", "pt_BR", "ru", "sv", "no"],
 currentLanguageFile = null,
 defaultLanguageFile = null,
 detectLanguage = chrome.i18n.getUILanguage()

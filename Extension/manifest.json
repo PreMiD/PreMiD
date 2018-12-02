@@ -3,18 +3,14 @@
   "author": "Timeraa & Fruxh",
   "description": "__MSG_description__",
   "default_locale": "en",
-  "version": "1.2.51",
+  "version": "1.2.52",
   "manifest_version": 2,
   "web_accessible_resources": ["icon.png", "languages/*.json"],
   "icons": {
     "2024": "icon.png"
   },
   "background": {
-    "scripts": [
-      "js/util/socket.io-2.1.1.min.js",
-      "js/util/presence.js",
-      "js/background.js"
-    ],
+    "scripts": ["js/util/socket.io-2.1.1.min.js", "js/background.js"],
     "presistent": false
   },
   "browser_action": {
