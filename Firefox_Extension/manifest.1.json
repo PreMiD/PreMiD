@@ -1,0 +1,114 @@
+{
+  "name": "PreMiD",
+  "author": "Timeraa & Fruxh",
+  "description": "__MSG_description__",
+  "default_locale": "en",
+  "version": "1.2.52",
+  "manifest_version": 2,
+  "web_accessible_resources": ["icon.png", "languages/*.json"],
+  "icons": {
+    "2024": "icon.png"
+  },
+  "background": {
+    "scripts": ["js/util/socket.io-2.1.1.min.js", "js/background.js"],
+    "presistent": false
+  },
+  "browser_action": {
+    "default_popup": "html/popup.html",
+    "default_icon": {
+      "2024": "icon.png"
+    }
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "content_scripts": [
+    {
+      "js": [
+        "js/util/jquery-3.3.1.min.js",
+        "js/util/socket.io-2.1.1.min.js",
+        "js/util/socketConnector.js",
+        "js/util/custom-i18n.js"
+      ],
+      "css": ["css/connect.css"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "js": ["js/presences/Anime/Anime4You.js"],
+      "matches": ["*://www.anime4you.one/*"]
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "js/util/jquery-3.3.1.min.js",
+        "js/iframeWitch/Anime4You_Witch.js"
+      ],
+      "all_frames": true
+    },
+    {
+      "js": ["js/presences/Music/YouTubeMusic.js"],
+      "matches": ["*://music.youtube.com/*"]
+    },
+    {
+      "js": ["js/presences/Video/YouTube.js"],
+      "matches": ["*://www.youtube.com/*"]
+    },
+    {
+      "js": ["js/presences/Video/Netflix.js"],
+      "matches": ["*://*.netflix.com/*"]
+    },
+    {
+      "js": ["js/presences/Music/SoundCloud.js"],
+      "matches": ["*://*.soundcloud.com/*"]
+    },
+    {
+      "js": ["js/presences/Video/Twitch.js"],
+      "matches": ["*://*.twitch.tv/*"]
+    },
+    {
+      "js": ["js/presences/Anime/KissAnime.js"],
+      "matches": ["*://kissanime.ru/*"]
+    },
+    {
+      "js": ["js/presences/Anime/JKAnime.js"],
+      "matches": ["*://jkanime.net/*"]
+    },
+    {
+      "js": ["js/presences/Reading/FimFiction.js"],
+      "matches": ["*://www.fimfiction.net/*"]
+    },
+    {
+      "js": ["js/presences/Anime/HentaiHaven.js"],
+      "matches": ["*://hentaihaven.org/*"]
+    },
+    {
+      "js": ["js/presences/Video/Rabbit.js"],
+      "matches": ["*://www.rabb.it/*"]
+    },
+
+    {
+      "js": ["js/presences/Anime/MasterAnime.js"],
+      "matches": ["*://www.masterani.me/*"]
+    },
+    {
+      "js": ["js/presences/Anime/SuperAnimes.js"],
+      "matches": ["*://www.superanimes.site/*"]
+    },
+    {
+      "js": ["js/presences/Music/Pandora.js"],
+      "matches": ["*://www.pandora.com/*"]
+    },
+    {
+      "js": ["js/presences/Anime/HentaiGasm.js"],
+      "matches": ["*://hentaigasm.com/*"]
+    },
+    {
+      "js": ["js/presences/Anime/Pokyun.js"],
+      "matches": ["*://www.pokyun.tv/*"]
+    }
+  ],
+  "permissions": [
+    "http://localhost:3020/",
+    "tabs",
+    "storage",
+    "declarativeContent"
+  ]
+}

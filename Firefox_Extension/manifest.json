@@ -1,0 +1,43 @@
+{
+  "name": "PreMiD",
+  "author": "Timeraa & Fruxh",
+  "description": "__MSG_description__",
+  "default_locale": "en",
+  "version": "1.2.52",
+  "manifest_version": 2,
+  "web_accessible_resources": ["icon.png", "languages/*.json"],
+  "browser_action": {
+    "default_popup": "html/popup.html",
+    "default_icon": {
+      "2024": "icon.png"
+    }
+  },
+  "icons": {
+    "2024": "icon.png"
+  },
+  "background": {
+    "scripts": ["js/util/socket.io-2.1.1.min.js", "js/background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "js/util/jquery-3.3.1.min.js",
+        "js/util/socketConnector.js",
+        "js/util/custom-i18n.js"
+      ],
+      "css": ["css/connect.css"]
+    },
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["YouTube.js"]
+    }
+  ],
+  "permissions": ["http://localhost:3020/", "tabs", "storage"],
+  "content_security_policy": "script-src 'self' https://*.premid.app/*; object-src 'self'",
+  "applications": {
+    "gecko": {
+      "id": "PreMiD@premid.app"
+    }
+  }
+}

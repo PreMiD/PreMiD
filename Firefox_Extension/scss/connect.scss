@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: "bold";
+  src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+}
+
+#premid-connectinfo.dark {
+  background-color: #596cae !important;
+  color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 14px rgba(25, 25, 25, 0.5) !important;
+}
+
+#premid-connectinfo:not(.dark) {
+  color: #575757;
+  background-color: white !important;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+#premid-connectinfo {
+  position: fixed !important;
+  top: 5px !important;
+  right: -110% !important;
+  z-index: 10000 !important;
+  width: auto !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  border-radius: 5px !important;
+  height: 50px !important;
+  user-select: none !important;
+  animation-name: slideIn !important;
+  animation-duration: 5s !important;
+  animation-timing-function: cubic-bezier(0.55, 0.55, 0, 1.2) !important;
+
+  * {
+    font-family: "Roboto", sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  img {
+    float: left !important;
+    margin: 5px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  h1 {
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+    margin-top: 6px !important;
+  }
+
+  h2 {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    right: -110%;
+  }
+
+  10% {
+    right: 5px;
+  }
+
+  90% {
+    right: 5px;
+  }
+
+  100% {
+    right: -150%;
+  }
+}
