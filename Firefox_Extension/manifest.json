@@ -30,7 +30,7 @@
     },
     {
       "matches": ["*://www.youtube.com/*"],
-      "js": ["YouTube.js"]
+      "js": ["js/presences/YouTube.js"]
     }
   ],
   "permissions": ["http://localhost:3020/", "tabs", "storage"],

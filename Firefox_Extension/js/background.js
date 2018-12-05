@@ -36,6 +36,7 @@ socket.on("mediaKeyHandler", function(data) {
   if(priorityTab) browser.tabs.sendMessage(priorityTab, {mediaKeys: data.playback})
 })
 
+//* Forward the presence data received from Presence script to application
 browser.runtime.onMessage.addListener(function(data, sender) {
   if(data.presence != undefined) {
     socket.emit("updateData", data.presence)
@@ -45,7 +46,6 @@ browser.runtime.onMessage.addListener(function(data, sender) {
 /**
  * Tab Priority™
  * Handles tab changes.
- * 
  */
 async function tabPriority() {
   browser.tabs.query({active: true})
@@ -58,7 +58,8 @@ async function tabPriority() {
           else 
             lastTabPriorityLock++
         } else {
-          if(priorityTab) browser.tabs.sendMessage(priorityTab, {tabPriority: false})
+          if(priorityTab)
+            browser.tabs.sendMessage(priorityTab, {tabPriority: false})
           lastTabId = tabs[0].id
           lastTabPriorityLock = 0
         }

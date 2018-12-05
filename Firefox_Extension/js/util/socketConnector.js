@@ -91,7 +91,10 @@ function getService() {
   }
 }
 
-//* Calculate text width in pixels
+/**
+ * Calculate textWidth in PX
+ * @returns Number
+ */
 $.fn.textWidth = function(){
   var html_org = $(this).html();
   var html_calc = '<span>' + html_org + '</span>';
@@ -100,6 +103,20 @@ $.fn.textWidth = function(){
   $(this).html(html_org);
   return width;
 };
+
+/**
+ * Get Timestamps
+ * @param {Number} videoTime Song Time seconds
+ * @param {Number} videoDuration Song Duration seconds
+ */
+function getTimestamps(videoTime, videoDuration) {
+  var startTime = Date.now();
+  var endTime =
+    Math.floor(startTime / 1000) -
+    videoTime +
+    videoDuration;
+    return [Math.floor(startTime/1000), endTime]
+}
 
 /*
 //* Allowed Service URLS

@@ -6,6 +6,10 @@ playbackBoolean,
 smallImageKey,
 smallImageText
 
+/**
+ * Handles Media Key controls
+ * @param {data} data Data passed by socketConnector.js
+ */
 async function handleMediaKeys(data) {
   if(playback) {
     switch (data.mediaKeys) {
@@ -22,6 +26,10 @@ async function handleMediaKeys(data) {
   }
 }
 
+/**
+ * Updates the Presence data and sends it back
+ * to the background.js for further interaction
+ */
 async function updateData() {
   playback = 
     document.location.pathname.includes("/watch")
@@ -30,7 +38,7 @@ async function updateData() {
     && !isNaN($('.video-stream')[0].duration)
     ? true : false
 
-  
+  //* If page has all required propertys
   if(playback) {
     videoTitle = $('.ytd-video-primary-info-renderer .title').text()
     videoAuthor = $("#upload-info .style-scope .ytd-video-owner-renderer").contents().first().html()
@@ -64,19 +72,4 @@ async function updateData() {
 
     browser.runtime.sendMessage({presence: data})
   }
-}
-
-
-/**
- * Get Timestamps
- * @param {Number} videoTime Song Time
- * @param {Number} videoDuration Song Duration
- */
-function getTimestamps(videoTime, videoDuration) {
-  var startTime = Date.now();
-  var endTime =
-    Math.floor(startTime / 1000) -
-    videoTime +
-    videoDuration;
-    return [Math.floor(startTime/1000), endTime]
 }
