@@ -18,15 +18,12 @@ priorityTab = null,
 allowedTabs = ["www.youtube.com"],
 tabPriorityInterval = null
 
-
 var socket = io.connect("http://localhost:3020/")
 socket.on("connect", function() {
-  if(priorityTab) browser.tabs.sendMessage(priorityTab, {socketConnection: true})
   tabPriorityInterval = setInterval(tabPriority, 1000)
 })
 
 socket.on("disconnect", function() {
-  if(priorityTab) browser.tabs.sendMessage(priorityTab, {socketConnection: false})
   clearInterval(tabPriorityInterval)
 })
 
@@ -53,13 +50,16 @@ async function tabPriority() {
     allowedTabs.forEach(function(url) {
       if(tabs[0].url.indexOf(url) > -1) {
         if(tabs[0].id == lastTabId) {
-          if(lastTabPriorityLock >= 5)
-            priorityTab = tabs[0].id
-          else 
-            lastTabPriorityLock++
+          if(lastTabPriorityLock == 5) {
+            if(priorityTab != tabs[0].id) {
+              if(priorityTab != null) 
+                browser.tabs.sendMessage(priorityTab, {tabPriority: false})
+              priorityTab = tabs[0].id
+            }
+          } 
+
+          lastTabPriorityLock++
         } else {
-          if(priorityTab)
-            browser.tabs.sendMessage(priorityTab, {tabPriority: false})
           lastTabId = tabs[0].id
           lastTabPriorityLock = 0
         }
