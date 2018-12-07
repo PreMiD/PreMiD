@@ -1,7 +1,7 @@
 <div align="center">
 
 # <img src="gitassets/icon.png" width="24px" draggable="false"><b> </b>PreMiD &middot; Discord Rich Presence for your Media!
-### ![version](https://img.shields.io/badge/Version-1.2-brightgreen.svg?style=flat-square) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=flat-square&logo=discord&colorA=7289DA&colorB=23272A&label=Discord)](https://discord.gg/Kw7WaYn) [![Chrome Web Store](https://img.shields.io/chrome-web-store/d/agjnjboanicjcpenljmaaigopkgdnihi.svg?label=Chrome&logo=google%20chrome&logoColor=white&colorA=4285F4&style=flat-square)](https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi?hl=de)
+### ![version](https://img.shields.io/badge/Version-1.2-brightgreen.svg?style=for-the-badge) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=for-the-badge)](https://discord.gg/Kw7WaYn) [![Chrome Web Store](https://img.shields.io/chrome-web-store/d/agjnjboanicjcpenljmaaigopkgdnihi.svg?label=Chrome&logo=google%20chrome&logoColor=white&colorA=4285F4&style=for-the-badge)](https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi?hl=de)
 
 <img src="gitassets/PreMiDExample.png">
 
@@ -56,10 +56,11 @@
 
 ### **Operating Systems**
 
-| Operating system | Chrome | Opera |
-| :--- | :---: | :---: |
-| Windows | ✓ | ✓ |
-| Mac OS | ✓ | ✓ |
+| Operating system | Chrome | Opera | Firefox|
+| :--- | :---: | :---: | :---: |
+| Windows | ✓ | ✓ | ✓ |
+| Linux | ✓ | ✓ | ✓ |
+| Mac OS | ✓ | ✓ | ✓ |
 
 ### **Services**
 
