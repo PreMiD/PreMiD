@@ -11,6 +11,10 @@ browser.runtime.onMessage.addListener(function(data) {
     tabPriority = true
     priorityMessage();
   }
+
+  if(!data.tabPriority) {
+    tabPriority = false;
+  }
 })
 
 function priorityMessage() {

@@ -1,3 +1,5 @@
+var allowedTabsStatic = ["www.youtube.com", "www.netflix.com"]
+
 browser.runtime.onInstalled.addListener(function(details) {
   switch(details.reason) {
     case "install": {
@@ -80,7 +82,7 @@ var lastTabId = null,
 lastTabPriorityLock = 0,
 priorityTabId = null,
 priorityTab = null,
-allowedTabs = ["www.youtube.com"],
+allowedTabs = allowedTabsStatic,
 tabPriorityInterval = null
 
 var oldOptions
@@ -113,7 +115,7 @@ browser.runtime.onMessage.addListener(function(data, sender) {
  */
 async function tabPriority() {
   browser.storage.sync.get(['options'], function(result) {
-    allowedTabs = ["www.youtube.com"]
+    allowedTabs = allowedTabsStatic
 
     var options = result.options
     if(!options.enabled) {
@@ -124,28 +126,30 @@ async function tabPriority() {
     }
 
     updateTabPriorityService("youtube", "www.youtube.com", options)
+    updateTabPriorityService("netflix", "www.netflix.com", options)
 
     browser.tabs.query({active: true})
     .then(function(tabs) {
-      allowedTabs.forEach(function(url) {
-        if(tabs[0].url.indexOf(url) > -1) {
-          if(tabs[0].id == lastTabId) {
+      if(tabs[0].id == lastTabId) {
+      for (var i = 0; i < allowedTabs.length; i++) {
+        if(tabs[0].url.indexOf(allowedTabs[i]) > -1) {
             if(lastTabPriorityLock == 5) {
               if(priorityTabId != tabs[0].id) {
-                if(priorityTabId != null) 
-                  browser.tabs.sendMessage(priorityTabId.id, {tabPriority: false})
-                  priorityTabId = tabs[0].id
-                  priorityTab = tabs[0]
+                if(priorityTabId != null) {
+                  browser.tabs.sendMessage(priorityTabId, {tabPriority: false})
+                }
+                priorityTabId = tabs[0].id
+                priorityTab = tabs[0]
               }
             } 
   
             lastTabPriorityLock++
-          } else {
-            lastTabId = tabs[0].id
-            lastTabPriorityLock = 0
           }
-        } else lastTabPriorityLock = 0
-      })
+        }
+      } else {
+        lastTabId = tabs[0].id
+        lastTabPriorityLock = 0
+      }
   
       if(priorityTabId)
         browser.tabs.sendMessage(priorityTabId, {tabPriority: true})
