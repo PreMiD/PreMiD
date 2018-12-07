@@ -2,14 +2,78 @@ browser.runtime.onInstalled.addListener(function(details) {
   switch(details.reason) {
     case "install": {
       browser.tabs.create({url: "installed.html"})
+      updateOptions()
       break;
     }
     case "update": {
       //browser.tabs.create({url: "updated.html"})
+      updateOptions()
       break;
     }
   }
 })
+
+async function updateOptions() {
+  /*browser.storage.sync.set({options: {
+    enabled: true, 
+    youtube: true, 
+    youtubeMusic: true, 
+    twitch: true, 
+    soundcloud: true, 
+    netflix: true, 
+    kissanime: true, 
+    jkanime: true,
+    fimfiction: true,
+    titleMenubar: true, 
+    mediaControls: true, 
+    checkForUpdates: true, 
+    systemStartup: true,
+    darkTheme: true
+  }})*/
+
+  browser.storage.sync.get(['options'], async function(result) {
+    var options
+    if(result.options == undefined) {
+      options = {
+        enabled: true,
+        titleMenubar: true,
+        mediaControls: true,
+        checkforUpdates: true,
+        systemStartup: true,
+        darkTheme: true,
+
+        youtube: true, 
+        youtubeMusic: true, 
+        twitch: true, 
+        soundcloud: true, 
+        netflix: true, 
+        kissanime: true, 
+        jkanime: true,
+        fimfiction: true
+      }
+
+      browser.storage.sync.set({options})
+    } else {
+      options = result.options
+      delete options.enabled
+      if(options.enabled == undefined) options.enabled = true
+      if(options.titleMenubar == undefined) options.titleMenubar = true
+      if(options.mediaControls == undefined) options.mediaControls = true
+      if(options.checkforUpdates == undefined) options.checkforUpdates = true
+      if(options.systemStartup == undefined) options.systemStartup = true
+      if(options.darkTheme == undefined) options.darkTheme = true
+
+      if(options.youtube == undefined) options.youtube = true
+      if(options.youtubeMusic == undefined) options.youtubeMusic = true
+      if(options.twitch == undefined) options.twitch = true
+      if(options.soundcloud == undefined) options.soundcloud = true
+      if(options.netflix == undefined) options.netflix = true
+      if(options.kissanime == undefined) options.kissanime = true
+      if(options.jkanime == undefined) options.jkanime = true
+      if(options.fimfiction == undefined) options.fimfiction = true
+    }
+  })
+}
 
 //* Tab Priority™ variables
 var lastTabId = null,
