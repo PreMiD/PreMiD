@@ -31,6 +31,10 @@
     {
       "matches": ["*://www.youtube.com/*"],
       "js": ["js/presences/YouTube.js"]
+    },
+    {
+      "matches": ["*://www.netflix.com/*"],
+      "js": ["js/presences/Netflix.js"]
     }
   ],
   "permissions": ["http://localhost:3020/", "tabs", "storage"],
