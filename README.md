@@ -5,9 +5,10 @@
 <img src="gitassets/PreMiDExample.png">
 
 <a target="_blank" href="https://discord.gg/WvfVZ8T" title="Join our Discord!">
-<img src="gitassets/discord.svg" height="50px" draggable="false" alt="Join my Discord!">
-</a>&nbsp;
-<a target="_blank" href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button"><img src="gitassets/patreonBTN.png" draggable="false" height="50px" alt="Support me on Patreon!"></a>&nbsp;
+<img src="https://discordapp.com/api/guilds/493130730549805057/widget.png?style=banner2" draggable="false" alt="Join my Discord!">
+</a>
+
+<a target="_blank" href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button"><img src="gitassets/patreonBTN.png" draggable="false" height="50px" alt="Support me on Patreon!"></a>
 <a target="_blank" href="https://ko-fi.com/E1E1HLLE"><img draggable="false" height='50px' style='border:0px;height:50px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US"><img src="gitassets/PayPal.svg" height="50px" draggable="false" alt="PayPal"></a>
 
