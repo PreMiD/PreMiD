@@ -24,7 +24,7 @@
       "js": [
         "js/util/jquery-3.3.1.min.js",
         "js/util/socketConnector.js",
-        "js/util/custom-i18n.js"
+        "js/util/internalizationManager.js"
       ],
       "css": ["css/connect.css"]
     },
@@ -37,7 +37,7 @@
   "content_security_policy": "script-src 'self' https://*.premid.app/*; object-src 'self'",
   "applications": {
     "gecko": {
-      "id": "PreMiD@premid.app"
+      "id": "support@premid.app"
     }
   }
 }
