@@ -1,26 +1,32 @@
-## ![version](https://img.shields.io/badge/Version-1.2-brightgreen.svg?style=flat-square) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=flat-square&logo=discord&colorA=7289DA&colorB=23272A&label=Discord)](https://discord.gg/Kw7WaYn) [![Chrome Web Store](https://img.shields.io/chrome-web-store/d/agjnjboanicjcpenljmaaigopkgdnihi.svg?label=Chrome&logo=google%20chrome&logoColor=white&colorA=4285F4&style=flat-square)](https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi?hl=de)
+<div align="center">
 
 # <img src="gitassets/icon.png" width="24px" draggable="false"><b> </b>PreMiD &middot; Discord Rich Presence for your Media!
+### ![version](https://img.shields.io/badge/Version-1.2-brightgreen.svg?style=flat-square) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=flat-square&logo=discord&colorA=7289DA&colorB=23272A&label=Discord)](https://discord.gg/Kw7WaYn) [![Chrome Web Store](https://img.shields.io/chrome-web-store/d/agjnjboanicjcpenljmaaigopkgdnihi.svg?label=Chrome&logo=google%20chrome&logoColor=white&colorA=4285F4&style=flat-square)](https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi?hl=de)
 
 <img src="gitassets/PreMiDExample.png">
 
+
 <a target="_blank" href="https://discord.gg/WvfVZ8T" title="Join our Discord!">
-<img src="https://discordapp.com/api/guilds/493130730549805057/widget.png?style=banner2" draggable="false" alt="Join my Discord!">
+<img draggable="false" src="https://discordapp.com/api/guilds/493130730549805057/widget.png?style=banner2" height="76px" draggable="false" alt="Join my Discord!">
 </a>
+<a target="_blank" href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button"><img src="gitassets/patreonBTN.png" draggable="false" height="76px" alt="Support me on Patreon!"></a>
+<details>
+  <summary><b><u>Other options</u></b> (Click to expand)</summary>
 
-<a target="_blank" href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button"><img src="gitassets/patreonBTN.png" draggable="false" height="50px" alt="Support me on Patreon!"></a>
-<a target="_blank" href="https://ko-fi.com/E1E1HLLE"><img draggable="false" height='50px' style='border:0px;height:50px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
-<a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US"><img src="gitassets/PayPal.svg" height="50px" draggable="false" alt="PayPal"></a>
+  <ol>
 
-### Or stay secret and donate via BitCoin
-
-`18WHUcQbThwExKhUyLGPRFUGSwFqftpsEn`
+<a target="_blank" href="https://ko-fi.com/E1E1HLLE"><img draggable="false" height="56px" src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+<a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US"><img src="gitassets/PayPal.svg" height="56px" draggable="false" alt="PayPal"></a>
+#### BitCoin: `18WHUcQbThwExKhUyLGPRFUGSwFqftpsEn`
+  </ol>
+</details>
+</div>
 
 # About
 
 **PreMiD** is a simple, configurable utility that allows you to show what you're watching/listening in your Discord **now playing status**. It supports [many different platforms](#support), and will support multiple users watching the same content simultaneously in an upcoming update.
 
-## Features
+# Features
 
 - Integrates with Discord's official Rich Presence API library.
 - Supports your keyboard's **Media Control** function keys.
@@ -50,25 +56,22 @@
 
 ### **Operating Systems**
 
-- Windows
-- Mac OS
-
-### **Browsers**
-
-- Chrome
-- Opera
+| Operating system | Chrome | Opera |
+| :--- | :---: | :---: |
+| Windows | ✓ | ✓ |
+| Mac OS | ✓ | ✓ |
 
 ### **Services**
 
 | Video   | Music         | Anime       |
-| ------- | ------------- | ----------- |
+| :---: | :---: | :---: |
 | YouTube | YouTube Music | Anime4You   |
 | Netflix | SoundCloud    | KissAnime   |
 | Twitch  |               | JKAnime     |
 |         |               | HentaiHaven |
 |         |               | HentaiGasm  |
 
-One missing? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?template=service_request.md)!
+Want to request support for other services? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?template=service_request.md)!
 
 # Installation
 
@@ -135,7 +138,3 @@ One missing? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?templa
     <li>Now you can start the application: <code>npm start</code></li>
   </ol>
 </details>
-
----
-
-### PreMiD - Discord Rich Presence for your Media!
