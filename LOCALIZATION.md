@@ -6,8 +6,8 @@ We are partners with POEditor, so all translations will be made in it.
 ## Supported languages
 These languages already added in the application, but may need some improvements.
 
-| Language   | Percentage         |
-| :---: | :---: | :---: |
+| Language | Percentage |
+| :---: | :---: |
 | Danish | 100% |
 | Dutch | 95% |
 | English  | 100% |
