@@ -82,8 +82,9 @@ var lastTabId = null,
 lastTabPriorityLock = 0,
 priorityTabId = null,
 priorityTab = null,
-allowedTabs = allowedTabsStatic,
-tabPriorityInterval = null
+allowedTabs = allowedTabsStatic.slice(),
+tabPriorityInterval = null,
+options
 
 var oldOptions
 
@@ -115,9 +116,9 @@ browser.runtime.onMessage.addListener(function(data, sender) {
  */
 async function tabPriority() {
   browser.storage.sync.get(['options'], function(result) {
-    allowedTabs = allowedTabsStatic
+    allowedTabs = allowedTabsStatic.slice()
 
-    var options = result.options
+    options = result.options
     if(!options.enabled) {
       allowedTabs = []
       priorityTab = null
