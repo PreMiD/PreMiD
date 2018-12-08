@@ -57,7 +57,7 @@
 Our application has a lot of languages included and we are happy to see a new translators in our little project.
 
 ## Contributing
-If you're interested in helping us visit the LOCALIZATION.md
+If you're interested in helping us visit the [LOCALIZATION.md](/LOCALIZATION.md)
 
 # Support
 
@@ -65,8 +65,8 @@ If you're interested in helping us visit the LOCALIZATION.md
 
 | Operating System | Application | Chrome | Opera | Firefox |
 | :--- | :---: | :---: | :---: | :---: |
-| Windows | ✓ | ✓ | ✓ | ✕ |
-| Linux | Self-build | ✓ | ✓ | ✕ |
+| Windows | ✓ | ✓ | ✓ | WIP |
+| Linux | Self-build | ✓ | ✓ | WIP |
 | Mac OS | ✓ | ✓ | ✓ | WIP |
 
 ### **Services**
