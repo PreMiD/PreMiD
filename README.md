@@ -39,9 +39,10 @@
 - [About](#about)
   - [Summary](#summary)
   - [Features](#features)
+- [Localization](#localization)
+  - [Contributing](#contributing)
 - [Support](#support)
   - [Operating Systems](#operating-systems)
-  - [Browsers](#browsers)
   - [Services](#services)
 - [Installation](#installation)
   - [Extension](#extension)
@@ -52,15 +53,21 @@
     - Windows
     - Linux
 
+# Localization
+Our application has a lot of languages included and we are happy to see a new translators in our little project.
+
+## Contributing
+If you're interested in helping us visit the [LOCALIZATION.md](/LOCALIZATION.md)
+
 # Support
 
 ### **Operating Systems**
 
-| Operating system | Chrome | Opera | Firefox|
-| :--- | :---: | :---: | :---: |
-| Windows | ✓ | ✓ | ✓ |
-| Linux | ✓ | ✓ | ✓ |
-| Mac OS | ✓ | ✓ | ✓ |
+| Operating System | Application | Chrome | Opera | Firefox |
+| :--- | :---: | :---: | :---: | :---: |
+| Windows | ✓ | ✓ | ✓ | WIP |
+| Linux | Self-build | ✓ | ✓ | WIP |
+| Mac OS | ✓ | ✓ | ✓ | WIP |
 
 ### **Services**
 
@@ -72,7 +79,7 @@
 |         |               | HentaiHaven |
 |         |               | HentaiGasm  |
 
-Want to request support for other services? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?template=service_request.md)!
+Want to request a support for other services? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?template=service_request.md)!
 
 # Installation
 
