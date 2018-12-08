@@ -1,19 +1,19 @@
-var tabPriority = false
-
 browser.runtime.onMessage.addListener(function(data) {
   if(data.tabPriority)
-    updateData();
+    if(typeof updateData === "function")
+      updateData();
 
   if(data.mediaKeys)
-    handleMediaKeys(data)
+    if(typeof handleMediaKeys === "function")
+      handleMediaKeys(data)
 
-  if(!tabPriority) {
-    tabPriority = true
+  if(!sessionStorage.getItem("tabPriority")) {
+    sessionStorage.setItem("tabPriority", true)
     priorityMessage();
   }
 
   if(!data.tabPriority) {
-    tabPriority = false;
+    sessionStorage.setItem("tabPriority", false)
   }
 })
 
