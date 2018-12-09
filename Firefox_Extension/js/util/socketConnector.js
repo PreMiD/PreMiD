@@ -1,3 +1,4 @@
+var iframe_video = null
 browser.runtime.onMessage.addListener(function(data) {
   if(data.tabPriority)
     if(typeof updateData === "function")
@@ -15,6 +16,9 @@ browser.runtime.onMessage.addListener(function(data) {
   if(!data.tabPriority) {
     sessionStorage.setItem("tabPriority", false)
   }
+
+  if(data.iframe_video != undefined)
+    iframe_video = data.iframe_video
 })
 
 function priorityMessage() {

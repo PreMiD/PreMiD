@@ -3,7 +3,7 @@
   "author": "Timeraa & Fruxh",
   "description": "__MSG_description__",
   "default_locale": "en",
-  "version": "1.2.52",
+  "version": "1.2.60",
   "manifest_version": 2,
   "web_accessible_resources": ["icon.png", "languages/*.json"],
   "browser_action": {
@@ -30,11 +30,31 @@
     },
     {
       "matches": ["*://www.youtube.com/*"],
-      "js": ["js/presences/YouTube.js"]
+      "js": ["js/presences/Video/YouTube.js"]
+    },
+    {
+      "matches": ["*://music.youtube.com/*"],
+      "js": ["js/presences/Music/YouTube_Music.js"]
+    },
+    {
+      "matches": ["*://soundcloud.com/*"],
+      "js": ["js/presences/Music/SoundCloud.js"]
     },
     {
       "matches": ["*://www.netflix.com/*"],
-      "js": ["js/presences/Netflix.js"]
+      "js": ["js/presences/Video/Netflix.js"]
+    },
+    {
+      "matches": ["*://www.aniflix.tv/*"],
+      "js": ["js/presences/Anime/Aniflix.js"]
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "js/util/jquery-3.3.1.min.js",
+        "js/presences/Anime/iframeWitch/Aniflix.js"
+      ],
+      "all_frames": true
     }
   ],
   "permissions": ["http://localhost:3020/", "tabs", "storage"],

@@ -1,4 +1,4 @@
-var allowedTabsStatic = ["www.youtube.com", "www.netflix.com"]
+var allowedTabsStatic = ["www.youtube.com", "music.youtube.com", "soundcloud.com", "www.netflix.com", "www.aniflix.tv"]
 
 browser.runtime.onInstalled.addListener(function(details) {
   switch(details.reason) {
@@ -14,68 +14,6 @@ browser.runtime.onInstalled.addListener(function(details) {
     }
   }
 })
-
-async function updateOptions() {
-  /*browser.storage.sync.set({options: {
-    enabled: true, 
-    youtube: true, 
-    youtubeMusic: true, 
-    twitch: true, 
-    soundcloud: true, 
-    netflix: true, 
-    kissanime: true, 
-    jkanime: true,
-    fimfiction: true,
-    titleMenubar: true, 
-    mediaControls: true, 
-    checkForUpdates: true, 
-    systemStartup: true,
-    darkTheme: true
-  }})*/
-
-  browser.storage.sync.get(['options'], async function(result) {
-    var options
-    if(result.options == undefined) {
-      options = {
-        enabled: true,
-        titleMenubar: true,
-        mediaControls: true,
-        checkforUpdates: true,
-        systemStartup: true,
-        darkTheme: true,
-
-        youtube: true, 
-        youtubeMusic: true, 
-        twitch: true, 
-        soundcloud: true, 
-        netflix: true, 
-        kissanime: true, 
-        jkanime: true,
-        fimfiction: true
-      }
-
-      browser.storage.sync.set({options})
-    } else {
-      options = result.options
-      delete options.enabled
-      if(options.enabled == undefined) options.enabled = true
-      if(options.titleMenubar == undefined) options.titleMenubar = true
-      if(options.mediaControls == undefined) options.mediaControls = true
-      if(options.checkforUpdates == undefined) options.checkforUpdates = true
-      if(options.systemStartup == undefined) options.systemStartup = true
-      if(options.darkTheme == undefined) options.darkTheme = true
-
-      if(options.youtube == undefined) options.youtube = true
-      if(options.youtubeMusic == undefined) options.youtubeMusic = true
-      if(options.twitch == undefined) options.twitch = true
-      if(options.soundcloud == undefined) options.soundcloud = true
-      if(options.netflix == undefined) options.netflix = true
-      if(options.kissanime == undefined) options.kissanime = true
-      if(options.jkanime == undefined) options.jkanime = true
-      if(options.fimfiction == undefined) options.fimfiction = true
-    }
-  })
-}
 
 //* Tab Priority™ variables
 var lastTabId = null,
@@ -108,6 +46,9 @@ browser.runtime.onMessage.addListener(function(data, sender) {
   if(data.presence != undefined) {
     socket.emit("updateData", data.presence)
   }
+  if(data.iframe_video != undefined) {
+    browser.tabs.sendMessage(priorityTabId, data)
+  }
 })
 
 /**
@@ -127,10 +68,13 @@ async function tabPriority() {
     }
 
     updateTabPriorityService("youtube", "www.youtube.com", options)
+    updateTabPriorityService("youtubeMusic", "music.youtube.com", options)
+    updateTabPriorityService("soundcloud", "soundcloud.com", options)
     updateTabPriorityService("netflix", "www.netflix.com", options)
+    updateTabPriorityService("twitch", "www.twitch.tv", options)
+    updateTabPriorityService("aniflix", "www.aniflix.tv", options)
 
-    browser.tabs.query({active: true})
-    .then(function(tabs) {
+    browser.tabs.query({active: true}, function(tabs) {
       if(tabs[0].id == lastTabId) {
       for (var i = 0; i < allowedTabs.length; i++) {
         if(tabs[0].url.indexOf(allowedTabs[i]) > -1) {
@@ -211,4 +155,43 @@ function isEquivalent(a, b) {
   // If we made it this far, objects
   // are considered equivalent
   return true;
+}
+
+async function updateOptions() {
+  browser.storage.sync.get(['options'], async function(result) {
+    var options
+    options = {}
+    delete options.enabled
+    options[checkStorage("enabled", options)]
+    options[checkStorage("titleMenubar", options)]
+    options[checkStorage("mediaControls", options)]
+    options[checkStorage("checkForUpdates", options)]
+    options[checkStorage("systemStartup", options)]
+    options[checkStorage("darkTheme", options)]
+    
+    options[checkStorage("youtubeMusic", options)]
+    options[checkStorage("soundcloud", options)]
+
+    options[checkStorage("youtube", options)]
+    options[checkStorage("twitch", options)]
+    options[checkStorage("netflix", options)]
+
+    options[checkStorage("aniflix", options)]
+
+    //options = checkStorage("youtube", options)
+    //options = checkStorage("youtubeMusic", options)
+    //options = checkStorage("twitch", options)
+    //options = checkStorage("soundcloud", options)
+    //options = checkStorage("netflix", options)
+    //options = checkStorage("kissanime", options)
+    //options = checkStorage("jkanime", options)
+    //options = checkStorage("fimfiction", options)
+    //options = checkStorage("aniflix", options)
+
+    browser.storage.sync.set({options})
+  })
+}
+
+function checkStorage(option, options) {
+  if(options[option] == undefined) return options[option] = true
 }
