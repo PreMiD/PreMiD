@@ -52,7 +52,7 @@ async function updateData() {
         details: $('<div/>').html(songTitle).text(),
         state: $('<div/>').html(songAuthors).text(),
         largeImageKey: 'ytm_lg',
-        largeImageText: browser.runtime.getManifest().name + ' V' + browser.runtime.getManifest().version,
+        largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
         smallImageKey: smallImageKey,
         smallImageText: smallImageText,
       },
@@ -69,7 +69,7 @@ async function updateData() {
       delete data.presenceData.endTimestamp
     }
 
-    browser.runtime.sendMessage({presence: data})
+    chrome.runtime.sendMessage({presence: data})
   }
 }
 

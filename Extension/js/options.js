@@ -28,17 +28,15 @@ $(document).ready(function() {
   twitchToggle = $('.toggleTwitch'),
   soundcloudToggle = $('.toggleSoundCloud'),
   netflixToggle = $('.toggleNetflix'),
-  kissanimeToggle = $('.toggleKissAnime'),
-  jkanimeToggle = $('.toggleJKAnime')
-  rabbitToggle = $('.toggleRabbit')
-  anime4YouToggle = $('.toggleAnime4You')
-  hentaiGasmToggle = $('.toggleHentaiGasm')
-  hentaiHavenToggle = $('.toggleHentaiHaven')
-  fimfictionToggle = $('.toggleFimFiction')
-  mediaControlsToggle = $('.toggleMediaControls')
-  checkForUpdatesToggle = $('.toggleCheckUpdates')
-  systemStartupToggle = $('.toggleSystemStartup')
-  darkThemeToggle = $('.toggleDarkTheme')
+  rabbitToggle = $('.toggleRabbit'),
+  anime4YouToggle = $('.toggleAnime4You'),
+  mediaControlsToggle = $('.toggleMediaControls'),
+  checkForUpdatesToggle = $('.toggleCheckUpdates'),
+  systemStartupToggle = $('.toggleSystemStartup'),
+  darkThemeToggle = $('.toggleDarkTheme'),
+  crunchyrollToggle = $('.toggleCrunchyroll'),
+  aniflixToggle = $('.toggleAniflix'),
+  tabPriorityToggle = $('.toggleTabPriority')
 
   enabledToggle.change(tEnabled);
   youtubeToggle.change(tYT);
@@ -46,17 +44,15 @@ $(document).ready(function() {
   twitchToggle.change(tT);
   soundcloudToggle.change(tSC);
   netflixToggle.change(tN);
-  kissanimeToggle.change(tKA);
-  jkanimeToggle.change(tJKA);
-  fimfictionToggle.change(tFF);
   mediaControlsToggle.change(tMC);
   checkForUpdatesToggle.change(tCFU);
   systemStartupToggle.change(tSS);
   darkThemeToggle.change(tdT);
   rabbitToggle.change(tRI);
   anime4YouToggle.change(tA4Y);
-  hentaiGasmToggle.change(tHG);
-  hentaiHavenToggle.change(tHH);
+  crunchyrollToggle.change(tCR);
+  aniflixToggle.change(tAF);
+  tabPriorityToggle.change(tTP);
 
   chrome.storage.sync.get(['options'], function(result) {
     options = result.options
@@ -68,10 +64,7 @@ $(document).ready(function() {
       twitchToggle.prop('checked', result.options.twitch)
       soundcloudToggle.prop('checked', result.options.soundcloud)
       netflixToggle.prop('checked', result.options.netflix)
-      kissanimeToggle.prop('checked', result.options.kissanime)
-      jkanimeToggle.prop('checked', result.options.jkanime)
       rabbitToggle.prop('checked', result.options.rabbIt)
-      fimfictionToggle.prop('checked', result.options.fimfiction)
       anime4YouToggle.prop('checked', result.options.anime4you)
       if(titleMenubarToggle != undefined)
       titleMenubarToggle.prop('checked', result.options.titleMenubar)
@@ -79,8 +72,9 @@ $(document).ready(function() {
       checkForUpdatesToggle.prop('checked', result.options.checkForUpdates)
       systemStartupToggle.prop('checked', result.options.systemStartup)
       darkThemeToggle.prop('checked', result.options.darkTheme)
-      hentaiGasmToggle.prop('checked', result.options.hentaigasm)
-      hentaiHavenToggle.prop('checked', result.options.hentaihaven)
+      aniflixToggle.prop('checked', result.options.aniflix)
+      crunchyrollToggle.prop('checked', result.options.crunchyroll)
+      tabPriorityToggle.prop('checked', result.options.tabPriority)
     }
   })
 })
@@ -115,21 +109,6 @@ function tN() {
   sync()
 }
 
-function tKA() {
-  options.kissanime = !options.kissanime
-  sync()
-}
-
-function tJKA() {
-  options.jkanime = !options.jkanime
-  sync()
-}
-
-function tFF() {
-  options.fimfiction = !options.fimfiction
-  sync()
-}
-
 function tMB() {
   options.titleMenubar = !options.titleMenubar
   sync()
@@ -160,13 +139,18 @@ function tA4Y() {
   sync()
 }
 
-function tHG() {
-  options.hentaigasm = !options.hentaigasm
+function tCR() {
+  options.crunchyroll = !options.crunchyroll
   sync()
 }
 
-function tHH() {
-  options.hentaihaven = !options.hentaihaven
+function tAF() {
+  options.aniflix = !options.aniflix
+  sync()
+}
+
+function tTP() {
+  options.tabPriority = !options.tabPriority
   sync()
 }
 

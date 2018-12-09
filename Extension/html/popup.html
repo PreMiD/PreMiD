@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
     <!-- Import materialize.css -->
     <link
       type="text/css"
@@ -16,7 +17,7 @@
     />
 
     <script src="../../js/util/jquery-3.3.1.min.js"></script>
-    <script src="../../js/util/custom-i18n.js"></script>
+    <script src="../../js/util/langManager.js"></script>
     <script src="../../js/options.js"></script>
     <script src="../../js/credits.js"></script>
     <script src="../../js/popup.js"></script>
@@ -125,6 +126,20 @@
                     </div>
                   </td>
                 </tr>
+                <tr>
+                  <td>
+                    <h5 term="popup.options.tabPriority" id="pMiDOption"></h5>
+                  </td>
+                  <td>
+                    <div class="switch">
+                      <label>
+                        <input type="checkbox" class="toggleTabPriority" /><span
+                          class="lever"
+                        ></span>
+                      </label>
+                    </div>
+                  </td>
+                </tr>
               </table>
             </div>
             <div class="card-panel">
@@ -208,6 +223,32 @@
                   </td>
                 </tr>
                 <tr>
+                  <td><h5 id="pMiDOption">Crunchyroll</h5></td>
+                  <td>
+                    <div class="switch">
+                      <label>
+                        <input
+                          type="checkbox"
+                          class="toggleCrunchyroll crunchyroll"
+                        /><span class="lever"></span>
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><h5 id="pMiDOption">Aniflix</h5></td>
+                  <td>
+                    <div class="switch">
+                      <label>
+                        <input
+                          type="checkbox"
+                          class="toggleAniflix aniflix"
+                        /><span class="lever"></span>
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
                   <td><h5 id="pMiDOption">Anime4You</h5></td>
                   <td>
                     <div class="switch">
@@ -216,66 +257,6 @@
                           type="checkbox"
                           class="toggleAnime4You anime4you"
                         /><span class="lever"></span>
-                      </label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td><h5 id="pMiDOption">KissAnime</h5></td>
-                  <td>
-                    <div class="switch">
-                      <label>
-                        <input type="checkbox" class="toggleKissAnime" /><span
-                          class="lever"
-                        ></span>
-                      </label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td><h5 id="pMiDOption">JKAnime</h5></td>
-                  <td>
-                    <div class="switch">
-                      <label>
-                        <input type="checkbox" class="toggleJKAnime" /><span
-                          class="lever"
-                        ></span>
-                      </label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td><h5 id="pMiDOption">FimFiction</h5></td>
-                  <td>
-                    <div class="switch">
-                      <label>
-                        <input type="checkbox" class="toggleFimFiction" /><span
-                          class="lever"
-                        ></span>
-                      </label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td><h5 id="pMiDOption">HentaiGasm</h5></td>
-                  <td>
-                    <div class="switch">
-                      <label>
-                        <input type="checkbox" class="toggleHentaiGasm" /><span
-                          class="lever"
-                        ></span>
-                      </label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td><h5 id="pMiDOption">HentaiHaven</h5></td>
-                  <td>
-                    <div class="switch">
-                      <label>
-                        <input type="checkbox" class="toggleHentaiHaven" /><span
-                          class="lever"
-                        ></span>
                       </label>
                     </div>
                   </td>

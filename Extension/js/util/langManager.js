@@ -56,8 +56,12 @@ async function getString(term, returnError = true) {
   }
 }
 
+//* Automatically translate everything with [term] attribute
 $(document).ready(translate)
 
+/**
+ * Translates all html tags with [term] attribute
+ */
 async function translate() {
   $('[term]:empty').each(async (index, element) => {
     element = $(element)

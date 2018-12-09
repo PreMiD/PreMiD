@@ -229,6 +229,14 @@ input[type="checkbox"]:checked:not(:disabled).tabbed:focus ~ .lever::before {
   background-color: #6e46b6 !important;
 }
 
+.crunchyroll:checked + .lever {
+  background-color: #ea5d13 !important;
+}
+
+.aniflix:checked + .lever {
+  background-color: #e23333 !important;
+}
+
 .card-panel {
   margin: 10px 5px;
   padding: 14px;

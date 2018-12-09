@@ -1,173 +1,70 @@
-let playback = true,
-  eventType,
-  playbackNew,
-  lastURL = null,
-  startTimeStamp,
-  tabActive = 0,
-  dataUpdaterRunning = false,
-  dataUpdater;
+var playback = false,
+videoTitle,
+videoAuthor,
+videoTimestamps,
+playbackBoolean,
+smallImageKey,
+smallImageText,
+urlForVideo,
+lastURL = null
 
-var lastPlaybackState = true;
-setInterval(() => {
-  if (
-    $(".player-video video")[0] != null &&
-    $(".player-video video")[0].paused &&
-    lastPlaybackState == true
-  ) {
-    handlePlayPause();
-    lastPlaybackState = false;
-  }
-  if (
-    $(".player-video video")[0] != null &&
-    !$(".player-video video")[0].paused &&
-    lastPlaybackState == false
-  ) {
-    handlePlayPause();
-    lastPlaybackState = true;
-  }
-}, 500);
-
-//* When we receive messages from the application
-socket.on("mediaKeyHandler", function(data) {
-  //* Check if the data is for twitch & if music is running
-  //* Media control buttons
-  if ($(".player-video video")[0] != null) {
-    //* Switch cases for playback / Clicks corresponding buttons
-    switch (data.playback) {
+/**
+ * Handles Media Key controls
+ * @param {data} data Data passed by socketConnector.js
+ */
+async function handleMediaKeys(data) {
+  if(playback) {
+    switch (data.mediaKeys) {
       case "pause":
-        $(".player-video video")[0].paused
-          ? $(".qa-pause-play-button").click()
-          : $(".qa-pause-play-button").click();
-        updateData("playPauseVideo");
-        break;
-    }
-  }
-});
-
-function handlePlayPause() {
-  //* Toggle playback variable
-  if (playback == true) playback = false;
-  else playback = true;
-  //* Send status to application
-  updateData(playback ? "playing" : "paused");
-}
-
-function checkPlayChange() {
-  //* Correct playback if out of sync
-  if (playback == false) {
-    //* Check if playbutton on page matches variable
-    if ($(".ytp-play-button svg").prop("outerHTML") == playButton) {
-      //* Update playback variable
-      playback = true;
-      //* Pause song
-      $(".ytp-play-button").click();
+        playbackBoolean ? $(".player-video video")[0].pause() : $(".player-video video")[0].play()
+        break
     }
   }
 }
 
-//* Start interval
-window.onload = function() {
-  //* Tab Priority
-  setInterval(() => {
-    if (tabActive == 5) {
-      dataUpdaterRunning = false;
-      clearInterval(dataUpdater);
-    }
-    if (tabActive >= 9 && dataUpdaterRunning == false) {
-      dataUpdaterRunning = true;
-      dataUpdater = setInterval(updateData, 1000);
-    }
-    if (tabActive > 0) tabActive--;
-  }, 500);
-};
-
-chrome.runtime.onMessage.addListener((message, sender) => {
-  if (tabActive <= 9) tabActive += 2;
-  if (tabActive == 0) tabActive = 5;
-});
-
-//* Create needed variables
-let urlForVideo,
-  songTime,
-  calcDifference = [];
-
-async function updateData(playbackChange = false) {
+/**
+ * Updates the Presence data and sends it back
+ * to the background.js for further interaction
+ */
+async function updateData() {
   urlForVideo = document.location.href;
+  
+  playback = $(".player-video video")[0] != undefined && $(".tw-ellipsis.tw-mg-b-05").children().length > 0
 
-  if (playbackChange != false) {
-    var eventType = "playBackChange";
-  } else {
-    var eventType = "updateData";
-  }
-
-  if (
-    $(".player-video video")[0] != undefined &&
-    $(".tw-ellipsis.tw-mg-b-05").children().length > 0
-  ) {
+  //* If page has all required propertys
+  if(playback) {
     if (urlForVideo != lastURL) {
       lastURL = urlForVideo;
       startTimeStamp = Math.floor(Date.now() / 1000);
     }
 
-    var playbackBoolean = !$(".player-video video")[0].paused;
+    videoTitle = $(".tw-ellipsis.tw-mg-b-05").children().get(0).innerHTML
+    videoAuthor = $(".channel-header__user h5").html();
+    playbackBoolean = !$(".player-video video")[0].paused;
+    smallImageKey = playbackBoolean ? 'play' : 'pause'
+    smallImageText = playbackBoolean ? await getString("presence.playback.playing") : await getString("presence.playback.paused")
 
-    var smallImageKey = playbackBoolean ? "play" : "pause",
-      smallImageText = playbackBoolean ? await getString("presence.playback.playing") : await getString("presence.playback.paused")
-
-    var streamTitle = $(".tw-ellipsis.tw-mg-b-05")
-        .children()
-        .get(0).innerHTML,
-      streamHost = $(".channel-header__user h5").html();
-    if (playbackBoolean) {
-      var data = {
-        clientID: "501021996336021504",
-        presenceData: {
-          details: $("<div/>")
-            .html(streamTitle)
-            .text(),
-          state: $("<div/>")
-            .html(streamHost)
-            .text(),
-          largeImageKey: "twitch_lg",
-          largeImageText:
-            chrome.runtime.getManifest().name +
-            " V" +
-            chrome.runtime.getManifest().version,
-          smallImageKey: smallImageKey,
-          smallImageText: smallImageText,
-          startTimestamp: startTimeStamp
-        },
-        trayTitle: $("<div/>")
-          .html(streamTitle)
-          .text(),
-        playback: playbackBoolean,
-        service: "Twitch"
-      };
-    } else {
-      var data = {
-        clientID: "501021996336021504",
-        presenceData: {
-          details: $("<div/>")
-            .html(streamTitle)
-            .text(),
-          state: $("<div/>")
-            .html(streamHost)
-            .text(),
-          largeImageKey: "twitch_lg",
-          largeImageText:
-            chrome.runtime.getManifest().name +
-            " V" +
-            chrome.runtime.getManifest().version,
-          smallImageKey: smallImageKey,
-          smallImageText: smallImageText
-        },
-        trayTitle: $("<div/>")
-          .html(streamTitle)
-          .text(),
-        playback: playbackBoolean,
-        service: "Twitch"
-      };
+    var data = {
+      clientID: '501021996336021504',
+      presenceData: {
+        details: $('<div/>').html(videoTitle).text(),
+        state: $('<div/>').html(videoAuthor).text(),
+        largeImageKey: 'twitch_lg',
+        largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+        smallImageKey: smallImageKey,
+        smallImageText: smallImageText,
+      },
+      trayTitle: $('<div/>').html(videoTitle).text(),
+      playback: playbackBoolean,
+      service: 'Twitch'
     }
+
+    if(playbackBoolean) {
+      data.presenceData.startTimestamp = startTimeStamp
+    } else {
+      delete data.presenceData.startTimestamp
+    }
+
+    chrome.runtime.sendMessage({presence: data})
   }
-  if (socket.connected) socket.emit(eventType, data);
 }

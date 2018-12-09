@@ -1,54 +1,47 @@
-//* Allowed Service URLS
-var allowedURL = ["www.youtube.com", "music.youtube.com", "www.twitch.tv", "soundcloud.com", "www.netflix.com", "kissanime.ru", "jkanime.net", "fimfiction.net", "www.rabb.it", "hentaihaven.org", "hentaigasm.com", "www.anime4you.one"]
+var iframe_video = {dur: null, curr: null, paused: true}
+chrome.runtime.onMessage.addListener(function(data) {
+  if(data.tabPriority)
+    if(typeof updateData === "function")
+      updateData();
 
-//* If one is included...
-if(allowedURL.includes(document.location.host)) {  
-  //* Create socket connection to application
-  var socket = io.connect('http://localhost:3020/');
-  //* Notify when connected
-  socket.on('connect', socketConnect)
-  //* Notify when disconnected
-  socket.on('disconnect', socketDisconnect)
-}
+  if(data.mediaKeys)
+    if(typeof handleMediaKeys === "function")
+      handleMediaKeys(data)
 
-//* When socket connected
-async function socketConnect() {
-  if(sessionStorage['premidConnected'] == null || sessionStorage['premidConnected'] == 'false') {
-    sessionStorage['premidConnected'] = 'true'
-    $(document).ready(async function() {
-      insertConnectionInfo(await getString("connectionInfo.connected"))
-    })
+  if(!sessionStorage.getItem("tabPriority")) {
+    sessionStorage.setItem("tabPriority", true)
   }
+  priorityMessage();
+
+  if(!data.tabPriority) {
+    sessionStorage.setItem("tabPriority", false)
+  }
+
+  if(data.iframe_video != undefined)
+    iframe_video = data.iframe_video
+})
+
+function priorityMessage() {
+  chrome.storage.sync.get(['options'], async function(result) {
+    if(result.options.tabPriority) {
+      if(result.options.darkTheme) {
+        $(('<div id="premid-connectinfo" class="dark"><img draggable="false" src="' + chrome.runtime.getURL('icon.png') + '"><h1>' + chrome.runtime.getManifest().name + '</h1><h2>' + await getString("tabPriority.prioritized") + '</h2></div>')).appendTo('body')
+      } else {
+        $(('<div id="premid-connectinfo"><img draggable="false" src="' + chrome.runtime.getURL('icon.png') + '"><h1>' + chrome.runtime.getManifest().name + '</h1><h2>' + await getString("tabPriority.prioritized") + '</h2></div>')).appendTo('body')
+      }
   
-  console.log(chrome.runtime.getManifest().name + ": %c" + await (await getString("connectionInfo.connected")).replace("%SERVICE%", getService()), "color: #009900;font-weight: bold;")
-}
-
-//* When socket disconnected
-async function socketDisconnect() {
-  sessionStorage['premidConnected'] = 'false'
-  insertConnectionInfo(await getString("connectionInfo.disconnected"))
-
-  console.log(chrome.runtime.getManifest().name + ": %c" + await (await getString("connectionInfo.disconnected")).replace("%SERVICE%", getService()), "color: #990000;font-weight: bold;")
-}
-
-//* Inject Connection Info HTML
-function insertConnectionInfo(message) {
-  var service = getService()
-
-  chrome.storage.sync.get(['options'], function(result) {
-    if(result.options.darkTheme) {
-      $(('<div id="premid-connectinfo" class="dark"><img draggable="false" src="' + chrome.runtime.getURL('icon.png') + '"><h1>' + chrome.runtime.getManifest().name + '</h1><h2>' + message.replace("%SERVICE%", service) + '</h2></div>')).appendTo('body')
-    } else {
-      $(('<div id="premid-connectinfo"><img draggable="false" src="' + chrome.runtime.getURL('icon.png') + '"><h1>' + chrome.runtime.getManifest().name + '</h1><h2>' + message.replace("%SERVICE%", service) + '</h2></div>')).appendTo('body')
+      $('#premid-connectinfo h2').width(($('#premid-connectinfo h2').textWidth()+60))
+      setTimeout(() => {
+        $('#premid-connectinfo').remove()
+      }, 5*1000)
     }
-    $('#premid-connectinfo h2').width($('#premid-connectinfo h2').textWidth()+60)
-    setTimeout(() => {
-      $('#premid-connectinfo').remove()
-    }, 5*1000)
   })
 }
 
-//* Calculate text width in pixels
+/**
+ * Calculate textWidth in PX
+ * @returns Number
+ */
 $.fn.textWidth = function(){
   var html_org = $(this).html();
   var html_calc = '<span>' + html_org + '</span>';
@@ -58,47 +51,16 @@ $.fn.textWidth = function(){
   return width;
 };
 
-function getService() {
-  switch(document.location.host) {
-    case "www.youtube.com":
-      return "YouTube"
-    case "music.youtube.com":
-      return "YouTube Music"
-    case "www.twitch.tv":
-      return "Twitch"
-    case "soundcloud.com":
-      return "SoundCloud"
-    case "www.netflix.com":
-      return "Netflix"
-    case "kissanime.ac" || "kissanime.ru":
-      return "KissAnime"
-    case "jkanime.net":
-      return "JKAnime"
-    case "fimfiction.net":
-      return "FimFiction"
-    case "crunchyroll.com":
-      return "Crunchyroll"
-    case "www.rabb.it":
-      return "Rabbit"
-    case "www.masterani.me":
-      return "MasterAnime"
-    case "www.superanimes.site":
-      return "SuperAnimes"
-    case "www1.9anime.to":
-      return "9Anime"
-    case "www.google.de":
-      return "Google"
-    case "www.anime4you.one":
-      return "Anime4You"
-    case "www.pandora.com":
-      return "Pandora"
-    case "hentaihaven.org":
-      return "HentaiHaven"
-    case "hentaigasm.com":
-      return "HentaiGasm"
-    case "www.pokyun.tv":
-      return "Pokyun"
-    default:
-      throw `No service name defined for "${document.location.host}"`
-  }
+/**
+ * Get Timestamps
+ * @param {Number} videoTime Song Time seconds
+ * @param {Number} videoDuration Song Duration seconds
+ */
+function getTimestamps(videoTime, videoDuration) {
+  var startTime = Date.now();
+  var endTime =
+    Math.floor(startTime / 1000) -
+    videoTime +
+    videoDuration;
+    return [Math.floor(startTime/1000), endTime]
 }

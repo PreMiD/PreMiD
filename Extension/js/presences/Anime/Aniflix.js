@@ -49,7 +49,7 @@ async function updateData() {
         details: $('<div/>').html(videoTitle).text(),
         state: $('<div/>').html(videoAuthor).text(),
         largeImageKey: 'aniflix_lg',
-        largeImageText: browser.runtime.getManifest().name + ' V' + browser.runtime.getManifest().version,
+        largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
         smallImageKey: smallImageKey,
         smallImageText: smallImageText,
       },
@@ -66,6 +66,6 @@ async function updateData() {
       delete data.presenceData.endTimestamp
     }
 
-    browser.runtime.sendMessage({presence: data})
+    chrome.runtime.sendMessage({presence: data})
   }
 }

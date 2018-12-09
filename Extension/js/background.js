@@ -1,76 +1,193 @@
+var allowedTabsStatic = ["www.youtube.com", "music.youtube.com", "soundcloud.com", "www.netflix.com", "www.aniflix.tv", "www.anime4you.one", "www.twitch.tv", "www.rabb.it", "www.crunchyroll.com"]
+
 chrome.runtime.onInstalled.addListener(function(details) {
   switch(details.reason) {
     case "install": {
-      chrome.tabs.create({url: "html/tabs/installed.html"})
+      chrome.tabs.create({url: "installed.html"})
+      updateOptions()
       break;
     }
     case "update": {
-      //chrome.tabs.create({url: "html/tabs/updated.html"})
+      //chrome.tabs.create({url: "updated.html"})
+      updateOptions()
       break;
     }
   }
 })
 
-//* Tab Priority
-var lastAllowedTab = null,
-allowedURL = []
-setInterval(() => {
+//* Tab Priority™ variables
+var lastTabId = null,
+lastTabPriorityLock = 0,
+priorityTabId = null,
+priorityTab = null,
+allowedTabs = allowedTabsStatic.slice(),
+tabPriorityInterval = null,
+options
+
+var oldOptions
+
+var socket = io.connect("http://localhost:3020/")
+socket.on("connect", function() {
+  tabPriorityInterval = setInterval(tabPriority, 1000)
+})
+
+socket.on("disconnect", function() {
+  clearInterval(tabPriorityInterval)
+})
+
+
+socket.on("mediaKeyHandler", function(data) {
+  //* Media control buttons
+  if(priorityTabId != null) chrome.tabs.sendMessage(priorityTabId, {mediaKeys: data.playback})
+})
+
+//* Forward the presence data received from Presence script to application
+chrome.runtime.onMessage.addListener(function(data, sender) {
+  if(data.presence != undefined) {
+    socket.emit("updateData", data.presence)
+  }
+  if(data.iframe_video != undefined && priorityTabId != null) {
+    chrome.tabs.sendMessage(priorityTabId, data)
+  }
+})
+
+/**
+ * Tab Priority™
+ * Handles tab changes.
+ */
+async function tabPriority() {
   chrome.storage.sync.get(['options'], function(result) {
-    //* Create config if not already    
-    allowedURL = ["www.youtube.com", "music.youtube.com", "www.twitch.tv", "soundcloud.com", "www.netflix.com", "kissanime.ru", "jkanime.net", "fimfiction.net", "hentaihaven.org", "www.rabb.it", "hentaigasm.com", "www.anime4you.one"]
-    if(result.options != undefined) {
-      var options = result.options
-      if(!options.enabled) allowedURL = []
-      if(!options.youtube) allowedURL.remove("www.youtube.com")
-      if(!options.youtubeMusic) allowedURL.remove("music.youtube.com")
-      if(!options.twitch) allowedURL.remove("www.twitch.tv")
-      if(!options.soundcloud) allowedURL.remove("soundcloud.com")
-      if(!options.netflix) allowedURL.remove("www.netflix.com")
-      if(!options.kissanime) allowedURL.remove('kissanime.ru')
-      if(!options.jkanime) allowedURL.remove("jkanime.net")
-      if(!options.rabbIt) allowedURL.remove("www.rabb.it")
-      if(!options.fimfiction) allowedURL.remove("fimfiction.net")
-      if(!options.hentaigasm) allowedURL.remove("hentaigasm.com")
-      if(!options.hentaihaven) allowedURL.remove("hentaihaven.org")
-      if(!options.anime4you) allowedURL.remove("www.anime4you.one")
-    }
-  })
-  chrome.tabs.getAllInWindow(null, (tabs) => {
+    allowedTabs = allowedTabsStatic.slice()
 
-    for (var i = 0; i < allowedURL.length; i++) {
-      var currentTab = tabs.find(tab => tab.highlighted || tab.selected)
-      if(currentTab.url.indexOf(allowedURL[i]) > -1) {
-        lastAllowedTab = currentTab.id
+    options = result.options
+    if(!options.enabled) {
+      allowedTabs = []
+      priorityTab = null
+      priorityTabId = null
+      lastTabId = null
+    }
+
+    updateTabPriorityService("youtube", "www.youtube.com", options)
+    updateTabPriorityService("youtubeMusic", "music.youtube.com", options)
+    updateTabPriorityService("soundcloud", "soundcloud.com", options)
+    updateTabPriorityService("netflix", "www.netflix.com", options)
+    updateTabPriorityService("twitch", "www.twitch.tv", options)
+    updateTabPriorityService("aniflix", "www.aniflix.tv", options)
+    updateTabPriorityService("anime4you", "www.anime4you.one", options)
+    updateTabPriorityService("rabbIt", "www.rabb.it", options)
+    updateTabPriorityService("crunchyroll", "www.crunchyroll.com", options)
+
+    chrome.tabs.query({active: true}, function(tabs) {
+      if(tabs[0].id == lastTabId) {
+      for (var i = 0; i < allowedTabs.length; i++) {
+        if(tabs[0].url.indexOf(allowedTabs[i]) > -1) {
+            if(lastTabPriorityLock == 5) {
+              if(priorityTabId != tabs[0].id) {
+                if(priorityTabId != null)
+                  chrome.tabs.sendMessage(priorityTabId, {tabPriority: false})
+                priorityTabId = tabs[0].id
+                priorityTab = tabs[0]
+              }
+            } 
+  
+            lastTabPriorityLock++
+          }
+        }
+      } else {
+        lastTabId = tabs[0].id
+        lastTabPriorityLock = 0
       }
-    }
-    if(lastAllowedTab != null) {
-      chrome.tabs.sendMessage(lastAllowedTab, {"high": true})
+  
+      if(priorityTabId != null)
+        chrome.tabs.sendMessage(priorityTabId, {tabPriority: true})
+    })
+
+    //* Update settings in application if changed
+    if(oldOptions == null || !isEquivalent(result.options, oldOptions)) {
+      oldOptions = result.options
+      socket.emit('settingsChange', result)
     }
   })
-}, 500)
+}
 
-Array.prototype.remove = function() {
-  var what, a = arguments, L = a.length, ax;
-  while (L && this.length) {
-      what = a[--L];
-      while ((ax = this.indexOf(what)) !== -1) {
-          this.splice(ax, 1);
+/**
+ * Remove service if disabled
+ * @param {String} service Service name in options.json
+ * @param {Strng} serviceURL Service URL to handle
+ * @param {Object} options Options objects
+ */
+function updateTabPriorityService(service, serviceURL, options) {
+  if(!options[service]) {
+    var index = allowedTabs.indexOf(serviceURL)
+    if(index != -1) allowedTabs.splice(index, 1)
+    if(priorityTab != null && priorityTab.url.includes(serviceURL)) {
+      priorityTabId = null
+      priorityTab = null
+      lastTabId = null
+    } 
+  }
+}
+
+/**
+ * Test if object is equal to object
+ * @param {Object} a 
+ * @param {Object} b 
+ */
+function isEquivalent(a, b) {
+  // Create arrays of property names
+  var aProps = Object.getOwnPropertyNames(a);
+  var bProps = Object.getOwnPropertyNames(b);
+
+  // If number of properties is different,
+  // objects are not equivalent
+  if (aProps.length != bProps.length) {
+      return false;
+  }
+
+  for (var i = 0; i < aProps.length; i++) {
+      var propName = aProps[i];
+
+      // If values of same property are not equal,
+      // objects are not equivalent
+      if (a[propName] !== b[propName]) {
+          return false;
       }
   }
-  return this;
-};
 
-//* Create socket connection to application
-var socket = io.connect('http://localhost:3020/');
+  // If we made it this far, objects
+  // are considered equivalent
+  return true;
+}
 
-setInterval(() => {
-  chrome.storage.sync.get(['options'], function(result) {
-    socket.emit('settingsChange', result)
+async function updateOptions() {
+  chrome.storage.sync.get(['options'], async function(result) {
+    var options
+    options = {}
+    delete options.enabled
+    options[checkStorage("enabled", options)]
+    options[checkStorage("titleMenubar", options)]
+    options[checkStorage("mediaControls", options)]
+    options[checkStorage("checkForUpdates", options)]
+    options[checkStorage("systemStartup", options)]
+    options[checkStorage("darkTheme", options)]
+    options[checkStorage("tabPriority", options)]
+    
+    options[checkStorage("youtubeMusic", options)]
+    options[checkStorage("soundcloud", options)]
+
+    options[checkStorage("youtube", options)]
+    options[checkStorage("twitch", options)]
+    options[checkStorage("netflix", options)]
+    options[checkStorage("rabbIt", options)]
+
+    options[checkStorage("aniflix", options)]
+    options[checkStorage("crunchyroll", options)]
+    options[checkStorage("anime4you", options)]
+
+    chrome.storage.sync.set({options})
   })
-}, 1000)
+}
 
-
-chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
-    chrome.tabs.sendMessage(lastAllowedTab, request)
-  });
+function checkStorage(option, options) {
+  if(options[option] == undefined) return options[option] = true
+}
