@@ -1,4 +1,4 @@
-var allowedTabsStatic = ["www.youtube.com", "music.youtube.com", "soundcloud.com", "www.netflix.com", "www.aniflix.tv"]
+var allowedTabsStatic = ["www.youtube.com", "music.youtube.com", "soundcloud.com", "www.netflix.com", "www.aniflix.tv", "www.anime4you.one"]
 
 browser.runtime.onInstalled.addListener(function(details) {
   switch(details.reason) {

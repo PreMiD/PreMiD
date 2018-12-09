@@ -12,7 +12,7 @@ function updateItem() {
   $(this).addClass('open')
   setTimeout(() => {
     if($(this).attr("class").split(' ')[0] == "github") {
-      chrome.tabs.create({url: 'https://github.com/Timeraa/PreMiD'})
+      browser.tabs.create({url: 'https://github.com/Timeraa/PreMiD'})
     } else window.location.href= $(this).attr("class").split(' ')[0] + ".html";
   }, 350)
 }

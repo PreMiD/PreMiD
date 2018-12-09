@@ -29,6 +29,11 @@
       "css": ["css/connect.css"]
     },
     {
+      "matches": ["<all_urls>"],
+      "js": ["js/util/jquery-3.3.1.min.js", "js/presences/iframeWitch.js"],
+      "all_frames": true
+    },
+    {
       "matches": ["*://www.youtube.com/*"],
       "js": ["js/presences/Video/YouTube.js"]
     },
@@ -49,12 +54,8 @@
       "js": ["js/presences/Anime/Aniflix.js"]
     },
     {
-      "matches": ["<all_urls>"],
-      "js": [
-        "js/util/jquery-3.3.1.min.js",
-        "js/presences/Anime/iframeWitch/Aniflix.js"
-      ],
-      "all_frames": true
+      "matches": ["*://www.anime4you.one/*"],
+      "js": ["js/presences/Anime/Anime4You.js"]
     }
   ],
   "permissions": ["http://localhost:3020/", "tabs", "storage"],
