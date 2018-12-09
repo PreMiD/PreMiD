@@ -161,9 +161,7 @@ function isEquivalent(a, b) {
 
 async function updateOptions() {
   chrome.storage.sync.get(['options'], async function(result) {
-    var options
-    options = {}
-    delete options.enabled
+    var options = result.options
     options[checkStorage("enabled", options)]
     options[checkStorage("titleMenubar", options)]
     options[checkStorage("mediaControls", options)]
