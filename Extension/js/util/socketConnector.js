@@ -10,8 +10,8 @@ chrome.runtime.onMessage.addListener(function(data) {
 
   if(!sessionStorage.getItem("tabPriority")) {
     sessionStorage.setItem("tabPriority", true)
+    priorityMessage();
   }
-  priorityMessage();
 
   if(!data.tabPriority) {
     sessionStorage.setItem("tabPriority", false)
@@ -30,7 +30,7 @@ function priorityMessage() {
         $(('<div id="premid-connectinfo"><img draggable="false" src="' + chrome.runtime.getURL('icon.png') + '"><h1>' + chrome.runtime.getManifest().name + '</h1><h2>' + await getString("tabPriority.prioritized") + '</h2></div>')).appendTo('body')
       }
   
-      $('#premid-connectinfo h2').width(($('#premid-connectinfo h2').textWidth()+60))
+      $('#premid-connectinfo h2').width(textWidth($('#premid-connectinfo h2'))+60)
       setTimeout(() => {
         $('#premid-connectinfo').remove()
       }, 5*1000)
@@ -42,12 +42,12 @@ function priorityMessage() {
  * Calculate textWidth in PX
  * @returns Number
  */
-$.fn.textWidth = function(){
-  var html_org = $(this).html();
+function textWidth(element){
+  var html_org = $(element).html();
   var html_calc = '<span>' + html_org + '</span>';
-  $(this).html(html_calc);
-  var width = $(this).find('span:first').width();
-  $(this).html(html_org);
+  $(element).html(html_calc);
+  var width = $(element).find('span:first').width();
+  $(element).html(html_org);
   return width;
 };
 
