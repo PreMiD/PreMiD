@@ -32,9 +32,12 @@
   border-radius: 5px !important;
   height: 50px !important;
   user-select: none !important;
-  animation-name: slideIn !important;
-  animation-duration: 5s !important;
-  animation-timing-function: cubic-bezier(0.55, 0.55, 0, 1.2) !important;
+
+  .animate {
+    animation-name: slideIn !important;
+    animation-duration: 5s !important;
+    animation-timing-function: cubic-bezier(0.55, 0.55, 0, 1.2) !important;
+  }
 
   * {
     font-family: "Roboto", sans-serif !important;

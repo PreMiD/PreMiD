@@ -15,14 +15,13 @@ lastURL = null
 async function updateData() {
   urlForVideo = document.location.href;
   
-  playback = $('.roomName.on').get(0) != undefined
-
+  if (urlForVideo != lastURL) {
+    lastURL = urlForVideo;
+    startTimeStamp = Math.floor(Date.now() / 1000);
+  }
+  
   //* If page has all required propertys
-  if(playback) {
-    if (urlForVideo != lastURL) {
-      lastURL = urlForVideo;
-      startTimeStamp = Math.floor(Date.now() / 1000);
-    }
+  if($('.roomName.on').get(0) != undefined) {
 
     videoTitle = $('.roomName.on')[0].innerHTML
     videoAuthor = $('.sessionsCount')[0].innerHTML.match("[0-9]*")[0] + " " + await getString("presence.watching")
@@ -34,19 +33,27 @@ async function updateData() {
         details: $('<div/>').html(videoTitle).text(),
         state: $('<div/>').html(videoAuthor).text(),
         largeImageKey: 'rt_lg',
-        largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version
+        largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+        startTimestamp: startTimeStamp
       },
       trayTitle: $('<div/>').html(videoTitle).text(),
       playback: playbackBoolean,
       service: 'Rabb.it'
     }
 
-    if(playbackBoolean) {
-      data.presenceData.startTimestamp = startTimeStamp
-    } else {
-      delete data.presenceData.startTimestamp
+  } else if(document.location.pathname == "/") {
+    data = {
+      clientID: '516742299355578380',
+      presenceData: {
+        details: await getString("presence.browsing"),
+        largeImageKey: 'rt_lg',
+        largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+        startTimestamp: startTimeStamp
+      },
+      trayTitle: "",
+      service: 'Rabbit',
+      playback: true
     }
-
-    chrome.runtime.sendMessage({presence: data})
   }
+  chrome.runtime.sendMessage({presence: data})
 }
