@@ -23,8 +23,6 @@
     "popup.options.mediaControls": "Media gubernatio",
     "popup.options.checkForUpdates": "Quaerens correctiones",
     "popup.options.darkTheme": "Niger",
-    "connectionInfo.connected": "Adnexus ad %SERVICE%",
-    "connectionInfo.disconnected": "Discretus de %SERVICE%",
     "popup.options.systemStartup": "Incipens ad disciplina initium",
     "presence.episode": "Series",
     "presence.browsing": "Inquirens...",
