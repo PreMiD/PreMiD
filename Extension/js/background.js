@@ -8,7 +8,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
       break;
     }
     case "update": {
-      chrome.tabs.create({url: "updated.html"})
+      //chrome.tabs.create({url: "updated.html"})
       updateOptions()
       break;
     }
@@ -161,7 +161,9 @@ function isEquivalent(a, b) {
 
 async function updateOptions() {
   chrome.storage.sync.get(['options'], async function(result) {
-    var options = result.options
+    var options
+    options = result.options
+    if(options == null) options = {}
     options[checkStorage("enabled", options)]
     options[checkStorage("titleMenubar", options)]
     options[checkStorage("mediaControls", options)]
