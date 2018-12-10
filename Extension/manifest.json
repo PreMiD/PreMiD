@@ -3,17 +3,17 @@
   "author": "Timeraa & Fruxh",
   "description": "__MSG_description__",
   "default_locale": "en",
-  "version": "1.3",
+  "version": "1.3.1.2",
   "manifest_version": 2,
   "web_accessible_resources": ["icon.png", "languages/*.json"],
   "browser_action": {
     "default_popup": "html/popup.html",
     "default_icon": {
-      "2024": "icon.png"
+      "1024": "icon.png"
     }
   },
   "icons": {
-    "2024": "icon.png"
+    "1024": "icon.png"
   },
   "background": {
     "scripts": ["js/util/socket.io-2.1.1.min.js", "js/background.js"]
@@ -71,5 +71,11 @@
     }
   ],
   "permissions": ["http://localhost:3020/", "tabs", "storage"],
-  "content_security_policy": "script-src 'self' https://*.premid.app/*; object-src 'self'"
+  "content_security_policy": "script-src 'self' https://*.premid.app/*; object-src 'self'",
+  "applications": {
+    "gecko": {
+      "id": "support@premid.app",
+      "strict_min_version": "52.0"
+    }
+  }
 }
