@@ -54,7 +54,7 @@
     - Linux
 
 # Localization
-Our application has a lot of languages included and we are happy to see a new translators in our little project.
+Our application has a lot of languages included and we are happy to see new translators in our little project.
 
 ## Contributing
 If you're interested in helping us visit the [LOCALIZATION.md](/LOCALIZATION.md)
