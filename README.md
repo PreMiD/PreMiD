@@ -31,7 +31,7 @@
 - Integrates with Discord's official Rich Presence API library.
 - Supports your keyboard's **Media Control** function keys.
 - Automatically clears your current presence after 1 minute of inactivity.
-- Supports **YouTube, YouTube Music, Netflix, SoundCloud, JKAnime, KissAnime** and many more to come.
+- Supports **YouTube, YouTube Music, Netflix, SoundCloud, BandCamp, JKAnime, KissAnime** and many more to come.
 - _Watch parties and more are coming soon!_
 
 # Table of contents
