@@ -68,7 +68,7 @@
 | :---: | :---: | :---: |
 | YouTube | YouTube Music | Anime4You   |
 | Netflix | SoundCloud    | KissAnime   |
-| Twitch  |               | JKAnime     |
+| Twitch  | BandCamp      | JKAnime     |
 |         |               | HentaiHaven |
 |         |               | HentaiGasm  |
 
