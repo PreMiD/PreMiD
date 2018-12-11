@@ -103,7 +103,11 @@
     {
       "js": ["js/presences/Anime/Pokyun.js"],
       "matches": ["*://www.pokyun.tv/*"]
-    }
+    },
+    {
+      "js": ["js/presences/Music/BandCamp.js"],
+      "matches": ["*://*.bandcamp.com/*"]
+    },
   ],
   "permissions": [
     "http://localhost:3020/",
