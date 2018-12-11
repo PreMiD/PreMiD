@@ -36,6 +36,7 @@ $(document).ready(function() {
   darkThemeToggle = $('.toggleDarkTheme'),
   crunchyrollToggle = $('.toggleCrunchyroll'),
   aniflixToggle = $('.toggleAniflix'),
+  otakustreamToggle = $('.toggleOtakuStream'),
   tabPriorityToggle = $('.toggleTabPriority')
 
   enabledToggle.change(tEnabled);
@@ -52,6 +53,7 @@ $(document).ready(function() {
   anime4YouToggle.change(tA4Y);
   crunchyrollToggle.change(tCR);
   aniflixToggle.change(tAF);
+  otakustreamToggle.change(tOS);
   tabPriorityToggle.change(tTP);
 
   chrome.storage.sync.get(['options'], function(result) {
@@ -74,6 +76,7 @@ $(document).ready(function() {
       darkThemeToggle.prop('checked', result.options.darkTheme)
       aniflixToggle.prop('checked', result.options.aniflix)
       crunchyrollToggle.prop('checked', result.options.crunchyroll)
+      otakustreamToggle.prop('checked', result.options.otakustream)
       tabPriorityToggle.prop('checked', result.options.tabPriority)
     }
   })
@@ -146,6 +149,11 @@ function tCR() {
 
 function tAF() {
   options.aniflix = !options.aniflix
+  sync()
+}
+
+function tOS() {
+  options.otakustream = !options.otakustream
   sync()
 }
 

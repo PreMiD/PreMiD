@@ -68,6 +68,10 @@
     {
       "matches": ["*://www.crunchyroll.com/*"],
       "js": ["js/presences/Anime/Crunchyroll.js"]
+    },
+    {
+      "matches": ["*://otakustream.tv/*"],
+      "js": ["js/presences/Anime/OtakuStream.js"]
     }
   ],
   "permissions": ["http://localhost:3020/", "tabs", "storage"],

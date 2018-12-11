@@ -31,7 +31,7 @@
 - Integrates with Discord's official Rich Presence API library.
 - Supports your keyboard's **Media Control** function keys.
 - Automatically clears your current presence after 1 minute of inactivity.
-- Supports **YouTube, YouTube Music, Netflix, SoundCloud, JKAnime, KissAnime** and many more to come.
+- Supports **YouTube, YouTube Music, Netflix, SoundCloud, JKAnime, KissAnime, OtakuStream** and many more to come.
 - _Watch parties and more are coming soon!_
 
 # Table of contents
@@ -71,13 +71,14 @@ If you're interested in helping us visit the [LOCALIZATION.md](/LOCALIZATION.md)
 
 ### **Services**
 
-| Video   | Music         | Anime       |
+| Video   | Music         | Anime        |
 | :---: | :---: | :---: |
-| YouTube | YouTube Music | Anime4You   |
-| Netflix | SoundCloud    | KissAnime   |
-| Twitch  |               | JKAnime     |
-|         |               | HentaiHaven |
-|         |               | HentaiGasm  |
+| YouTube | YouTube Music | Anime4You    |
+| Netflix | SoundCloud    | KissAnime    |
+| Twitch  |               | JKAnime      |
+|         |               | HentaiHaven  |
+|         |               | HentaiGasm   |
+|         |               | OtakuStream  |
 
 Want to request a support for other services? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?template=service_request.md)!
 

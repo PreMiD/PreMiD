@@ -236,6 +236,9 @@ input[type="checkbox"]:checked:not(:disabled).tabbed:focus ~ .lever::before {
 .aniflix:checked + .lever {
   background-color: #e23333 !important;
 }
+.otakuStream:checked + .lever {
+  background-color: #f24242 !important;
+}
 
 .card-panel {
   margin: 10px 5px;
