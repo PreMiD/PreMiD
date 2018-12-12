@@ -1,7 +1,6 @@
 node_modules
 out
 dist
-website
 server
 .vscode
 .env
