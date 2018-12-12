@@ -21,8 +21,14 @@ async function updateData() {
     ? true : false
 
   if (playback){
-    videoTitle = $('.sd-inner').find('header').find('h1').text().split('-')[0]
-    videoAuthor = $('.sd-inner').find('header').find('h1').text().split('-')[1]
+    if (document.location.pathname.includes("/anime/")) {
+    	videoINFO = $('.sd-inner').find('header').find('h1').text().split('-');
+    	videoTitle = $('.sd-inner').find('header').find('h1').text();
+    	videoAuthor = videoINFO[videoINFO.length-1];
+  	}else if(document.location.pathname.includes("/movie/")){
+  		videoTitle = $('.sd-inner').find('header').find('h1').text().split('-')[0];
+  		videoAuthor = "Movie";
+  	}
 
     videoTimestamps = getTimestamps(Math.floor(iframe_video.curr), Math.floor(iframe_video.dur))
 
@@ -30,20 +36,19 @@ async function updateData() {
     smallImageKey = playbackBoolean ? 'play' : 'pause'
     smallImageText = playbackBoolean ? await getString("presence.playback.playing") : await getString("presence.playback.paused")
 
-    /*MODIFY THIS WITH THE REAL CLIENT_ID AND INFO*/
     var data = {
-      clientID: '521104874738417664',
+      clientID: '522133694325194763',
       presenceData: {
         details: videoTitle,
         state: videoAuthor,
-        largeImageKey: 'aniflix_lg',
+        largeImageKey: 'icon',
         largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
         smallImageKey: smallImageKey,
         smallImageText: smallImageText,
       },
       trayTitle: videoTitle,
       playback: playbackBoolean,
-      service: 'Aniflix'
+      service: 'OtakuStream'
     }
 
     if(playbackBoolean) {
