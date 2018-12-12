@@ -237,6 +237,10 @@ input[type="checkbox"]:checked:not(:disabled).tabbed:focus ~ .lever::before {
   background-color: #e23333 !important;
 }
 
+.otakustream:checked + .lever {
+  background-color: #e23333 !important;
+}
+
 .card-panel {
   margin: 10px 5px;
   padding: 14px;

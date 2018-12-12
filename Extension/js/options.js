@@ -36,6 +36,7 @@ $(document).ready(function() {
   darkThemeToggle = $('.toggleDarkTheme'),
   crunchyrollToggle = $('.toggleCrunchyroll'),
   aniflixToggle = $('.toggleAniflix'),
+  otakustreamToggle = $('.toggleOtakuStream'),
   tabPriorityToggle = $('.toggleTabPriority')
 
   enabledToggle.change(tEnabled);
@@ -52,6 +53,7 @@ $(document).ready(function() {
   anime4YouToggle.change(tA4Y);
   crunchyrollToggle.change(tCR);
   aniflixToggle.change(tAF);
+  otakustreamToggle.change(tOS);
   tabPriorityToggle.change(tTP);
 
   chrome.storage.sync.get(['options'], function(result) {
@@ -66,6 +68,7 @@ $(document).ready(function() {
       netflixToggle.prop('checked', result.options.netflix)
       rabbitToggle.prop('checked', result.options.rabbIt)
       anime4YouToggle.prop('checked', result.options.anime4you)
+      otakustreamToggle.prop('checked', result.options.otakustream)
       if(titleMenubarToggle != undefined)
       titleMenubarToggle.prop('checked', result.options.titleMenubar)
       mediaControlsToggle.prop('checked', result.options.mediaControls)
@@ -146,6 +149,11 @@ function tCR() {
 
 function tAF() {
   options.aniflix = !options.aniflix
+  sync()
+}
+
+function tOS() {
+  options.otakustream = !options.otakustream
   sync()
 }
 
