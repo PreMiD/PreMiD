@@ -29,7 +29,7 @@ async function handleMediaKeys(data) {
 async function updateData() {
   urlForVideo = document.location.href;
   
-  playback = $(".player-video video")[0] != undefined && $(".tw-ellipsis.tw-mg-b-05").children().length > 0
+  playback = $(".player-video video")[0] != undefined && $(".video-info__container .tw-mg-b-05 p").innerHTML.split(" · ")[0].length > 0
 
   //* If page has all required propertys
   if(playback) {
@@ -38,9 +38,9 @@ async function updateData() {
       startTimeStamp = Math.floor(Date.now() / 1000);
     }
 
-    videoTitle = $(".tw-ellipsis.tw-mg-b-05").children().get(0).innerHTML
-    videoAuthor = $(".channel-header__user h5").html();
-    playbackBoolean = !$(".player-video video")[0].paused;
+    videoTitle = $(".video-info__container .tw-mg-b-05 p").innerHTML.split(" · ")[0]
+    videoAuthor = $(".channel-header__user-avatar h5").innerHTML;
+    playbackBoolean = !$(".player-video video").paused;
     smallImageKey = playbackBoolean ? 'play' : 'pause'
     smallImageText = playbackBoolean ? await getString("presence.playback.playing") : await getString("presence.playback.paused")
 
