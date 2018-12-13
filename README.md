@@ -74,9 +74,10 @@ If you're interested in helping us visit the [LOCALIZATION.md](/LOCALIZATION.md)
 
 | Video   | Music         | Anime       |
 | :---: | :---: | :---: |
-| YouTube | YouTube Music | Anime4You   |
-| Netflix | SoundCloud    | KissAnime   |
+| YouTube | YouTube Music | Crunchyroll |
+| Netflix | SoundCloud    | Anime4You   |
 | Twitch  |               | Aniflix     |
+| Rabb.it |               |             |
 
 <i>More are availabe on our presence store soon for free!</i>
 
