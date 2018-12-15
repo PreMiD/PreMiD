@@ -8,7 +8,7 @@ const path = require('path')
 const request = require("request")
 const chalk = require("chalk")
 
-function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false) {
+async function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false) {
 
   console.log(CONSOLEPREFIX + chalk.cyan("Checking for update..."))
 

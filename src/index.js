@@ -72,7 +72,7 @@ const appReady = async () => {
   
   //* Automatically check for update
   if(userSettings.get('autoUpdateCheck') == true)
-  updater.checkForUpdate(true)
+    updater.checkForUpdate(true)
 
   //* hide Dock icon when everything running
   if(PLATFORM == "darwin") app.dock.hide()
