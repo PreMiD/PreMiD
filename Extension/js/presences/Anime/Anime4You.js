@@ -75,7 +75,7 @@ async function updateData() {
     }
   } else if(document.location.pathname.includes('/show/')) {
     var videoTitle = $('.titleshow h1').text().trim(),
-    videoEpisode = await getString("presence.episode") + " " + $('.episoden a.active').text()
+    videoEpisode = (await getString("presence.episode").replace("{{episode}}", $('.episoden a.active').text()))
 
     var data = {
       clientID: '517148876273090577',
