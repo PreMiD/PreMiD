@@ -1,7 +1,7 @@
 <div align="center">
 
 # <img src="gitassets/icon.png" width="24px" draggable="false"><b> </b>PreMiD &middot; Discord Rich Presence for your Media!
-### ![version](https://img.shields.io/badge/Version-1.2-brightgreen.svg?style=for-the-badge) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=for-the-badge)](https://discord.gg/Kw7WaYn) [![Chrome Web Store](https://img.shields.io/chrome-web-store/d/agjnjboanicjcpenljmaaigopkgdnihi.svg?label=Chrome&logo=google%20chrome&logoColor=white&colorA=4285F4&style=for-the-badge)](https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi?hl=de)
+### ![version](https://img.shields.io/badge/Version-1.2-brightgreen.svg?style=for-the-badge) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=for-the-badge)](https://discord.gg/Kw7WaYn) [![Chrome Web Store](https://img.shields.io/chrome-web-store/d/agjnjboanicjcpenljmaaigopkgdnihi.svg?label=Chrome&logo=google%20chrome&logoColor=white&colorA=4285F4&style=for-the-badge)](https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi)
 
 <img src="gitassets/PreMiDExample.png">
 
@@ -31,7 +31,7 @@
 - Integrates with Discord's official Rich Presence API library.
 - Supports your keyboard's **Media Control** function keys.
 - Automatically clears your current presence after 1 minute of inactivity.
-- Supports **YouTube, YouTube Music, Netflix, SoundCloud, JKAnime, KissAnime** and many more to come.
+- Supports **YouTube, YouTube Music, Netflix, SoundCloud** and many more to come.
 - _Watch parties and more are coming soon!_
 
 # Table of contents
@@ -47,6 +47,7 @@
 - [Installation](#installation)
   - [Extension](#extension)
     - Chrome
+    - Firefox
     - Opera
   - [Application](#application)
     - Mac OS
@@ -65,19 +66,20 @@ If you're interested in helping us visit the [LOCALIZATION.md](/LOCALIZATION.md)
 
 | Operating System | Application | Chrome | Opera | Firefox |
 | :--- | :---: | :---: | :---: | :---: |
-| Windows | ✓ | ✓ | ✓ | WIP |
-| Linux | Self-build | ✓ | ✓ | WIP |
-| Mac OS | ✓ | ✓ | ✓ | WIP |
+| Windows | ✓ | ✓ | ✓ | Beta |
+| Linux | Self-build | ✓ | ✓ | Beta |
+| Mac OS | ✓ | ✓ | ✓ | Beta |
 
 ### **Services**
 
 | Video   | Music         | Anime       |
 | :---: | :---: | :---: |
-| YouTube | YouTube Music | Anime4You   |
-| Netflix | SoundCloud    | KissAnime   |
-| Twitch  |               | JKAnime     |
-|         |               | HentaiHaven |
-|         |               | HentaiGasm  |
+| YouTube | YouTube Music | Crunchyroll |
+| Netflix | SoundCloud    | Anime4You   |
+| Twitch  |               | Aniflix     |
+| Rabb.it |               |             |
+
+<i>More are availabe on our presence store soon for free!</i>
 
 Want to request a support for other services? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?template=service_request.md)!
 
@@ -91,7 +93,17 @@ Want to request a support for other services? Open an [Issue](https://github.com
   <ol>
     <li>Click <a href="https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi">this</a> link</li>
     </li>
-    <li>Click "add to Chrome"</li>
+    <li>Click "Add to Chrome"</li>
+    <li>Install the <a href="#application">application</a></li>
+  </ol>
+</details>
+<details>
+  <summary><b><u>Installing the Firefox extension</u></b> (Click to expand)</summary>
+  <h1>Firefox Extension Installation</h1>
+  <ol>
+    <li>Click <a href="https://addons.mozilla.org/de/firefox/addon/premid/">this</a> link</li>
+    </li>
+    <li>Click "Add to Firefox"</li>
     <li>Install the <a href="#application">application</a></li>
   </ol>
 </details>
