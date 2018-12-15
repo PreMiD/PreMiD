@@ -1,5 +1,5 @@
 $(document).ready(async function() {
-  $('.PlikeThisProject').html((await getString("tab.installed.likeThisProject")).replace("$1", '<a target="_blank" href="https://github.com/Timeraa/PreMiD">GitHub</a>'))
+  $('.PlikeThisProject').html((await getString("tab.installed.likeThisProject")).replace("{{github_link}}", '<a target="_blank" href="https://github.com/Timeraa/PreMiD">GitHub</a>'))
   
   var hasNextChanged = true,
   index = 0
