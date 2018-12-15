@@ -1,10 +1,10 @@
 <div align="center">
 
 # <img src="gitassets/icon.png" width="24px" draggable="false"><b> </b>PreMiD &middot; Discord Rich Presence for your Media!
+
 ### ![version](https://img.shields.io/badge/Version-1.2-brightgreen.svg?style=for-the-badge) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=for-the-badge)](https://discord.gg/Kw7WaYn) [![Chrome Web Store](https://img.shields.io/chrome-web-store/d/agjnjboanicjcpenljmaaigopkgdnihi.svg?label=Chrome&logo=google%20chrome&logoColor=white&colorA=4285F4&style=for-the-badge)](https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi)
 
 <img src="gitassets/PreMiDExample.png">
-
 
 <a target="_blank" href="https://discord.gg/WvfVZ8T" title="Join our Discord!">
 <img draggable="false" src="https://discordapp.com/api/guilds/493130730549805057/widget.png?style=banner2" height="76px" draggable="false" alt="Join my Discord!">
@@ -17,7 +17,9 @@
 
 <a target="_blank" href="https://ko-fi.com/E1E1HLLE"><img draggable="false" height="56px" src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US"><img src="gitassets/PayPal.svg" height="56px" draggable="false" alt="PayPal"></a>
+
 #### BitCoin: `18WHUcQbThwExKhUyLGPRFUGSwFqftpsEn`
+
   </ol>
 </details>
 </div>
@@ -55,9 +57,11 @@
     - Linux
 
 # Localization
+
 Our application has a lot of languages included and we are happy to see a new translators in our little project.
 
 ## Contributing
+
 If you're interested in helping us visit the [LOCALIZATION.md](/LOCALIZATION.md)
 
 # Support
@@ -65,21 +69,21 @@ If you're interested in helping us visit the [LOCALIZATION.md](/LOCALIZATION.md)
 ### **Operating Systems**
 
 | Operating System | Application | Chrome | Opera | Firefox |
-| :--- | :---: | :---: | :---: | :---: |
-| Windows | ✓ | ✓ | ✓ | Beta |
-| Linux | Self-build | ✓ | ✓ | Beta |
-| Mac OS | ✓ | ✓ | ✓ | Beta |
+| :--------------- | :---------: | :----: | :---: | :-----: |
+| Windows          |      ✓      |   ✓    |   ✓   |  Beta   |
+| Linux            | Self-build  |   ✓    |   ✓   |  Beta   |
+| Mac OS           |      ✓      |   ✓    |   ✓   |  Beta   |
 
 ### **Services**
 
-| Video   | Music         | Anime       |
-| :---: | :---: | :---: |
+|  Video  |     Music     |    Anime    |
+| :-----: | :-----------: | :---------: |
 | YouTube | YouTube Music | Crunchyroll |
-| Netflix | SoundCloud    | Anime4You   |
-| Twitch  |               | Aniflix     |
+| Netflix |  SoundCloud   |  Anime4You  |
+| Twitch  |               |   Aniflix   |
 | Rabb.it |               |             |
 
-<i>More are availabe on our presence store soon for free!</i>
+<i>More availabe on our soon releasing presence store for free!</i>
 
 Want to request a support for other services? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?template=service_request.md)!
 
