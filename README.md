@@ -162,3 +162,5 @@ Want to request a support for other services? Open an [Issue](https://github.com
     <li>Now you can start the application: <code>npm start</code></li>
   </ol>
 </details>
+
+[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/0)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/0)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/1)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/1)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/2)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/2)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/3)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/3)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/4)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/4)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/5)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/5)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/6)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/6)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/7)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/7)
