@@ -26,6 +26,7 @@ async function updateCredits() {
   var dbData = await query(`SELECT * FROM credits`)
 
   var devRole = client.guilds.first().roles.find(r => r.name == "Developer").id
+  var desRole = client.guilds.first().roles.find(r => r.name == "Designer").id
   var conRole = client.guilds.first().roles.find(r => r.name == "Contributor").id
   var patRole = client.guilds.first().roles.find(r => r.name == "Patron").id
   var donRole = client.guilds.first().roles.find(r => r.name == "Donator").id
@@ -36,7 +37,7 @@ async function updateCredits() {
   var pat1Role = client.guilds.first().roles.find(r => r.name == "1$").id
 
   var results = client.guilds.first().members.map(async m => {
-    return [m, (m.roles.get(devRole) || m.roles.get(conRole) || m.roles.get(patRole) || m.roles.get(donRole) || m.roles.get(traRole))]
+    return [m, (m.roles.get(devRole) || m.roles.get(desRole) || m.roles.get(conRole) || m.roles.get(patRole) || m.roles.get(donRole) || m.roles.get(traRole))]
   })
   var patronLevel
   Promise.all(results).then(completed => {
