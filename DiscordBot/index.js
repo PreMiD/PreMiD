@@ -40,7 +40,7 @@ async function updateCredits() {
   var pat1Role = client.guilds.first().roles.find(r => r.name == "1$").id
 
   var results = client.guilds.first().members.map(async m => {
-    return [m, (m.roles.get(devRole) || m.roles.get(admRole) || m.roles.get(modRole) || m.roles.get(desRole) || m.roles.get(conRole) || m.roles.get(patRole) || m.roles.get(donRole) || m.roles.get.apply(proRole) || m.roles.get(traRole))]
+    return [m, (m.roles.get(devRole) || m.roles.get(admRole) || m.roles.get(modRole) || m.roles.get(desRole) || m.roles.get(conRole) || m.roles.get(patRole) || m.roles.get(donRole) || m.roles.get(proRole) || m.roles.get(traRole))]
   })
   var patronLevel
   Promise.all(results).then(completed => {
