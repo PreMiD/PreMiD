@@ -5,7 +5,7 @@ var utf8 = require('utf8')
 require('dotenv').load()
 
 var con = mysql.createConnection({
-  host: "premid.app",
+  host: "localhost",
   user: process.env.dbUser,
   password: process.env.dbPassword,
   database: 'premid'
@@ -26,6 +26,7 @@ async function updateCredits() {
   var dbData = await query(`SELECT * FROM credits`)
 
   var devRole = client.guilds.first().roles.find(r => r.name == "Developer").id
+  var admRole = client.guilds.first().roles.find(r => r.name == "Admin").id
   var modRole = client.guilds.first().roles.find(r => r.name == "Moderator").id
   var desRole = client.guilds.first().roles.find(r => r.name == "Designer").id
   var conRole = client.guilds.first().roles.find(r => r.name == "Contributor").id
@@ -38,7 +39,7 @@ async function updateCredits() {
   var pat1Role = client.guilds.first().roles.find(r => r.name == "1$").id
 
   var results = client.guilds.first().members.map(async m => {
-    return [m, (m.roles.get(devRole) || m.roles.get(modRole) || m.roles.get(desRole) || m.roles.get(conRole) || m.roles.get(patRole) || m.roles.get(donRole) || m.roles.get(traRole))]
+    return [m, (m.roles.get(devRole) || m.roles.get(admRole) || m.roles.get(modRole) || m.roles.get(desRole) || m.roles.get(conRole) || m.roles.get(patRole) || m.roles.get(donRole) || m.roles.get(traRole))]
   })
   var patronLevel
   Promise.all(results).then(completed => {
