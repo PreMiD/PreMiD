@@ -106,6 +106,11 @@ export default {
     -ms-flex-align:center;
     align-items:center;
 }
+.dark .usercard{
+  background:#2f2f2f;
+  color:#fff;
+}
+
 .usercard .credits_text *{
     overflow:hidden;
 }

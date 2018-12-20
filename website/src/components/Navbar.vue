@@ -12,6 +12,11 @@
       <router-link class="headerLink" to="/contributors">Contributors</router-link>
       <router-link class="headerLink" to="/downloads">Downloads</router-link>
       <router-link class="headerLink" to="/store">Store</router-link>
+      <div class="switch">
+        <label>
+          Dark Mode<input type="checkbox" id="darkmode" class="togglePresence"><span class="lever" onclick="darkToggle();"></span>
+        </label>
+      </div>
     </div>
     <div class="col s1"></div>
   </div>
@@ -19,11 +24,68 @@
 
 <script>
 export default {
-  name: "Navbar"
+  name: "Navbar",
+  mounted(){
+    let sty = document.createElement('style');
+    sty.innerHTML = ".dark{background-color:#1a1a1a;color:#fff;}";
+    document.head.appendChild(sty);
+    let scr = document.createElement('script');
+    scr.innerHTML = 'darkToggle = function(){darkCheck();if(!window.localStorage.darkmode || window.localStorage.darkmode == "false"){window.localStorage.darkmode = true;}else{window.localStorage.darkmode = false;}}; darkCheck = function(){if(!window.localStorage.darkmode || window.localStorage.darkmode == "false"){$("*").addClass("dark");if($("#darkmode").prop("checked") == true){$("#darkmode").click();}}else{$("*").removeClass("dark");if($("#darkmode").prop("checked") == false){$("#darkmode").click();}}};window.onload = darkCheck;';
+    document.head.appendChild(scr);
+  }
 };
 </script>
 
 <style scoped>
+
+.switch {
+    cursor: pointer
+}
+
+.switch label .lever {
+    width: 42px;
+    height: 24px;
+    background: #72767d
+}
+
+.switch label .lever:before,
+.switch label .lever:after {
+    width: 18px;
+    height: 18px;
+    left: 3px;
+    top: 3px
+}
+
+.switch label .lever:after {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15)
+}
+
+input[type="checkbox"]:checked:not(:disabled)~.lever:active::before,
+input[type="checkbox"]:checked:not(:disabled).tabbed:focus~.lever::before {
+    background-color: transparent
+}
+
+.switch label input[type="checkbox"]:checked+.lever:before,
+.switch label input[type="checkbox"]:checked+.lever:after {
+    left: 21px
+}
+
+.switch label input[type="checkbox"]:checked+.lever:after {
+    background-color: #fff
+}
+
+.switch label input[type="checkbox"]:checked+.lever {
+    background-color: #7289da
+}
+
+.dark #header, .dark #header > *, .dark #header > * > *, .dark #header > * > * > *{
+  background-color:#2a2a2a;
+  color:#fdfdfd;
+}
+
 #header {
   height: 60px;
   width: 100%;

@@ -119,6 +119,14 @@ export default {
 </script>
 
 <style scoped>
+.dark .card-content, .dark .card-action {
+  background-color:#2a2a2a;
+}
+
+.dark .card {
+  filter: drop-shadow(0 0 8px #3a3a3a94)!important;
+}
+
 .card {
 	filter: drop-shadow(0 0 6px #00000094)!important;
 	border-radius:1rem!important;

@@ -51,6 +51,10 @@ export default {
   color: rgb(10, 10, 10);
 }
 
+.dark #headingMain p {
+  color: #dadada;
+}
+
 #expImgWrapper {
   display: inline-block;
   width: 150px;
@@ -81,6 +85,10 @@ export default {
 .download {
   margin-left: 5px;
   background-color: rgb(20, 20, 20);
+}
+.dark .download { 
+  background-color: #fff;
+  color:#000;
 }
 </style>
 
