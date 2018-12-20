@@ -132,4 +132,28 @@ body {
 .button-slide > span {
   position: relative;
 }
+
+.button-slide::before {
+  background-color: #000;
+}
+.button-slide{
+  border: 3px solid #000;
+  color: #000;
+}
+
+.dark .button-slide::before {
+  background-color: #fff;
+}
+.dark .button-slide{
+  border: 3px solid #fff;
+  color: #fff;
+}
+
+.btn:hover{
+  filter: brightness(0.65);
+}
+
+a:hover:not(.btn) {
+  color:#00acff;
+}
 </style>
