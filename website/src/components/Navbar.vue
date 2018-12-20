@@ -27,7 +27,7 @@ export default {
   name: "Navbar",
   mounted(){
     let sty = document.createElement('style');
-    sty.innerHTML = "html,body{overflow-x: hidden;max-width:100vw;}.dark{background-color:#1a1a1a;color:#fff;}";
+    sty.innerHTML = "*{transition:all 0.2s ease;}html,body{overflow-x: hidden;max-width:100vw;}.dark{background-color:#1a1a1a;color:#fff;}";
     document.head.appendChild(sty);
     let scr = document.createElement('script');
     scr.innerHTML = 'darkToggle = function(){if(!window.localStorage.darkmode || window.localStorage.darkmode == "false"){window.localStorage.darkmode = true;$("#header > *, #content, usercard, html, body").addClass("dark");}else{window.localStorage.darkmode = false;$("#header > *, #content, usercard, html, body").removeClass("dark");}}; darkCheck = function(){if(!window.localStorage.darkmode || window.localStorage.darkmode == "false"){if($("#darkmode").prop("checked") == true){$("#darkmode").click();}}else{if($("#darkmode").prop("checked") == false){$("#darkmode").click();}}};window.onload = function(){if(window.localStorage.darkmode == "true"){darkToggle();$("#darkmode").click();darkToggle();}};';
@@ -37,6 +37,27 @@ export default {
 </script>
 
 <style scoped>
+.dark #header {
+  box-shadow: 0 0 20px black;
+}
+#header {
+ box-shadow: 0 0 20px #00000070;
+}
+
+#header > #links > a {
+  transition: all 0.25s ease;
+}
+#header > #links > a:hover {
+  color:#7289da!important;
+}
+
+#header > #links > a:not(.router-link-active) {
+  color:#00000070;
+}
+
+.dark #header > #links > a:not(.router-link-active) {
+  color:#ffffff70;
+}
 
 .switch {
     cursor: pointer
@@ -81,6 +102,10 @@ input[type="checkbox"]:checked:not(:disabled).tabbed:focus~.lever::before {
     background-color: #7289da
 }
 
+#header, #header > *, #header > * > *, #header > * > * > *{
+  background-color:#fafafa;
+}
+
 .dark #header, .dark #header > *, .dark #header > * > *, .dark #header > * > * > *{
   background-color:#2a2a2a;
   color:#fdfdfd;
@@ -89,7 +114,6 @@ input[type="checkbox"]:checked:not(:disabled).tabbed:focus~.lever::before {
 #header {
   height: 60px;
   width: 100%;
-  background-color: #fff;
   color: #7289da;
   line-height: 60px;
 }

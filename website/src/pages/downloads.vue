@@ -2,7 +2,7 @@
   <div id="content">
     <div class="col s12 m4">
       <div class="row center">
-        <h5>Downloading already? Okay, here is some steps for you...</h5>
+        <h5>Desktop Application</h5>
       </div>
       <div class="row center">
         <a id="dl" href="" style="margin:1rem;" class="waves-effect waves-light btn btn-large">Download</a><br>
@@ -13,7 +13,9 @@
           <option value="mac">Mac OS</option>
           <option value="linux">Linux</option>
         </select></div>
-
+        <div class="row center">
+          <h5>Browser Extension</h5>
+        </div>
         <a id="ext" href="" style="margin:1rem;" class="waves-effect waves-light btn btn-large">Extension</a><br>
         <a href="#" onclick="document.querySelector('#br').style.display = 'block';">Not your browser?</a><br>
         <div class="input-field" style="width:25%;margin-left:37.5%;text-align-last:center;"><select id="br">
