@@ -119,6 +119,23 @@ export default {
 </script>
 
 <style scoped>
+.card {
+	filter: drop-shadow(0 0 6px #00000094)!important;
+	border-radius:1rem!important;
+	-webkit-box-shadow: unset!important;
+    box-shadow: unset!important;
+}
+
+.card-image > img {
+	border-top-left-radius: 1rem!important;
+    border-top-right-radius: 1rem!important;
+}
+
+.card-action {
+	border-bottom-left-radius: 1rem!important;
+	border-bottom-right-radius: 1rem!important;
+}
+
 .xheader {
   margin:4rem;
 }
