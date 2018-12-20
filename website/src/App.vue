@@ -25,16 +25,7 @@ var AppTitle = "PreMiD";
 var AppDesc = "Discord Rich Presence for your Media!";
 var AppIcon = "/static/favicon.png";
 
-export default {
-  name: "App",
-  components: { Navbar },
-  head: {
-    link: [
-    { r: "shortcut icon", t: "image/png", h: AppIcon },
-    { r: "apple-touch-icon", h: AppIcon },
-    { r: "icon", h: AppIcon }
-    ],
-    meta: [
+/*
       { ch: "utf-8" },
       { n: "viewport", c: "width=device-width, initial-scale=1" },
       { n: "description", c: AppDesc },
@@ -50,8 +41,16 @@ export default {
       { n: "apple-mobile-web-capable", c: "yes" },
       { n: "apple-mobile-web-app-status-bar-style", c: "black" },
       { n: "mobile-web-app-capable", c: "yes" }
-    ]
-  },
+
+          link: [
+    { r: "shortcut icon", t: "image/png", h: AppIcon },
+    { r: "apple-touch-icon", h: AppIcon },
+    { r: "icon", h: AppIcon }
+    ],
+*/
+export default {
+  name: "App",
+  components: { Navbar },
   data() {
     return {
       prevHeight: 0
@@ -121,7 +120,9 @@ body {
 .button-slide {
   position: relative;
   height: 60px;
-  width: 300px;
+  width: fit-content;
+  padding-left:16px;
+  padding-right:16px;
   background-color: transparent;
   border: 3px solid #fff;
   color: #fff;
