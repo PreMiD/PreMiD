@@ -58,8 +58,9 @@ export default {
 <style>
 html,
 body {
+  --blurple: #7289da;
   margin: 0;
-  color: #7289da;
+  color: var(--blurple);
 }
 #app {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -67,9 +68,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+.fade-enter-active {
+  transition: all .3s ease;
+}
+.fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.fade-enter, .fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+/* old fade transition
 .fade-enter-active,
 .fade-leave-active {
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   transition-property: opacity;
   transition-timing-function: ease-out;
   overflow: hidden;
@@ -77,6 +92,68 @@ body {
 
 .fade-enter,
 .fade-leave-active {
-  opacity: 0;
+  opacity:0;
+}
+*/
+
+.button-slide {
+  position: relative;
+  height: 60px;
+  width: 300px;
+  background-color: transparent;
+  border: 3px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  transition: color 150ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+}
+.button-slide::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: #fff;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  transition: -webkit-transform 150ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+  transition: transform 150ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+  transition: transform 150ms cubic-bezier(0.1, 0.7, 0.6, 0.9), -webkit-transform 150ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+}
+.button-slide:hover.button-start {
+  color: var(--blurple);
+}
+.button-slide:hover::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+.button-slide > span {
+  position: relative;
+}
+
+.button-slide::before {
+  background-color: #000;
+}
+.button-slide{
+  border: 3px solid #000;
+  color: #000;
+}
+
+.dark .button-slide::before {
+  background-color: #fff;
+}
+.dark .button-slide{
+  border: 3px solid #fff;
+  color: #fff;
+}
+
+.btn:hover{
+  filter: brightness(0.65);
+}
+
+a:hover:not(.btn) {
+  color:#00acff;
 }
 </style>
