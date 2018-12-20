@@ -111,7 +111,7 @@
 
 <script>
 export default {
-  name: "Store",
+  name: "StoreInstall",
   head: {
     title: { inner: "Store" }
   }

@@ -30,7 +30,7 @@ export default {
     sty.innerHTML = ".dark{background-color:#1a1a1a;color:#fff;}";
     document.head.appendChild(sty);
     let scr = document.createElement('script');
-    scr.innerHTML = 'darkToggle = function(){darkCheck();if(!window.localStorage.darkmode || window.localStorage.darkmode == "false"){window.localStorage.darkmode = true;}else{window.localStorage.darkmode = false;}}; darkCheck = function(){if(!window.localStorage.darkmode || window.localStorage.darkmode == "false"){$("*").addClass("dark");if($("#darkmode").prop("checked") == true){$("#darkmode").click();}}else{$("*").removeClass("dark");if($("#darkmode").prop("checked") == false){$("#darkmode").click();}}};window.onload = darkCheck;';
+    scr.innerHTML = 'darkToggle = function(){if(!window.localStorage.darkmode || window.localStorage.darkmode == "false"){window.localStorage.darkmode = true;$("#header > *, #content, usercard, html, body").addClass("dark");}else{window.localStorage.darkmode = false;$("#header > *, #content, usercard, html, body").removeClass("dark");}}; darkCheck = function(){if(!window.localStorage.darkmode || window.localStorage.darkmode == "false"){if($("#darkmode").prop("checked") == true){$("#darkmode").click();}}else{if($("#darkmode").prop("checked") == false){$("#darkmode").click();}}};window.onload = function(){if(window.localStorage.darkmode == "true"){darkToggle();$("#darkmode").click();darkToggle();}};';
     document.head.appendChild(scr);
   }
 };
