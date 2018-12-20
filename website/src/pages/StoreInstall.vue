@@ -119,16 +119,22 @@ export default {
 </script>
 
 <style scoped>
+p {
+  color:#000;
+}
+.dark p {
+  color:#fafafa;
+}
 .dark .card-content, .dark .card-action {
   background-color:#2a2a2a;
 }
 
-.dark .card {
-  filter: drop-shadow(0 0 8px #3a3a3a94)!important;
+.card-content {
+  border-radius:0!important;
 }
 
 .card {
-	filter: drop-shadow(0 0 6px #00000094)!important;
+	filter: drop-shadow(0 0 8px #00000080)!important;
 	border-radius:1rem!important;
 	-webkit-box-shadow: unset!important;
     box-shadow: unset!important;

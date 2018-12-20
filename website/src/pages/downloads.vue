@@ -23,6 +23,21 @@
           <option value="chrome">Chromium-based (Opera, Vivalidi, Chrome..)</option>
           <option value="firefox">Firefox</option>
         </select></div>
+        <div id="chrome" style="display:none;">
+          <font-awesome-icon :icon="['fab', 'chrome']" />
+        </div>
+        <div id="firefox" style="display:none;">
+          <font-awesome-icon :icon="['fab', 'firefox']" />
+        </div>
+        <div id="windows" style="display:none;">
+          <font-awesome-icon :icon="['fab', 'windows']" />
+        </div>
+        <div id="apple" style="display:none;">
+          <font-awesome-icon :icon="['fab', 'apple']" />
+        </div>
+        <div id="linux" style="display:none;">
+          <font-awesome-icon :icon="['fab', 'linux']" />
+        </div>
       </div>
     </div>
   </div>
