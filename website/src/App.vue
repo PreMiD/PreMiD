@@ -58,8 +58,9 @@ export default {
 <style>
 html,
 body {
+  --blurple: #7289da;
   margin: 0;
-  color: #7289da;
+  color: var(--blurple);
 }
 #app {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -122,10 +123,7 @@ body {
   transition: transform 150ms cubic-bezier(0.1, 0.7, 0.6, 0.9), -webkit-transform 150ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
 }
 .button-slide:hover.button-start {
-  color: #f1b00f;
-}
-.button-slide:hover.button-next {
-  color: #c598af;
+  color: var(--blurple);
 }
 .button-slide:hover::before {
   -webkit-transform: scaleX(1);
