@@ -6,8 +6,8 @@
         <div id="expWrapper">
           <h1>Store</h1>
           <p>Get support for over [int] services.</p>
-          <a href="/store/dashboard" class="waves-effect waves-light btn learn-more">CONTRIBUTE</a>
-          <a href="/store/install" class="waves-effect waves-light btn download">INSTALL</a>
+          <router-link to="/store/dashboard" class="waves-effect waves-light btn learn-more">CONTRIBUTE</router-link>
+          <router-link to="/store/install" class="waves-effect waves-light btn download">INSTALL</router-link>
         </div>
       </div>
       <div class="col s2"></div>
