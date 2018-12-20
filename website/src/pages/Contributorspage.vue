@@ -110,6 +110,11 @@ export default {
     align-items:center;
 }
 
+.usercard{
+    color:#000;
+    background:#f8f8f8;
+}
+
 .dark .usercard{
   background:#2f2f2f;
   color:#fff;
@@ -131,6 +136,4 @@ export default {
     -webkit-transform:scale(1.025);
     transform:scale(1.025);
 }
-
-p, h6{color:#fff;}
 </style>
