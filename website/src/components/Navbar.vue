@@ -37,9 +37,6 @@ export default {
 </script>
 
 <style scoped>
-.dark #header {
-  box-shadow: 0 0 20px black;
-}
 #header {
  box-shadow: 0 0 20px #00000070;
 }
