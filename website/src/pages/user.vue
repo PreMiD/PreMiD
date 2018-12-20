@@ -28,7 +28,7 @@ p {
   filter:brightness(0.8);
 }
 
-.dark #content > div > #apps > div > div > .card > .card-content, .card-action {
+.dark #content > div > #apps > div > div > .card > .card-content, .dark #content > div > #apps > div > div > .card > .card-action {
   background-color:#2a2a2a!important;
 }
 
