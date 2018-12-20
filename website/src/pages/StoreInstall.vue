@@ -18,7 +18,7 @@
             </div>
             <div class="card-action">
               <a href="https://youtube.com">VIEW SITE</a>
-              <a style="float:right;" href="https://de.paz.yt/loc/?/"><font-awesome-icon icon="user" />&nbsp;&nbsp;AUTHOR</a>
+              <router-link style="float:right;" to="/user/?131990779890630656"><font-awesome-icon icon="user" />&nbsp;&nbsp;AUTHOR</router-link>
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@
             </div>
             <div class="card-action">
               <a href="https://youtube.com">VIEW SITE</a>
-              <a style="float:right;" href="https://de.paz.yt/loc/?/"><font-awesome-icon icon="user" />&nbsp;&nbsp;AUTHOR</a>
+              <router-link style="float:right;" to="/user/?131990779890630656"><font-awesome-icon icon="user" />&nbsp;&nbsp;AUTHOR</router-link>
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@
             </div>
             <div class="card-action">
               <a href="https://youtube.com">VIEW SITE</a>
-              <a style="float:right;" href="https://de.paz.yt/loc/?/"><font-awesome-icon icon="user" />&nbsp;&nbsp;AUTHOR</a>
+              <router-link style="float:right;" to="/user/?131990779890630656"><font-awesome-icon icon="user" />&nbsp;&nbsp;AUTHOR</router-link>
             </div>
           </div>
         </div>
@@ -66,7 +66,7 @@
             </div>
             <div class="card-action">
               <a href="https://youtube.com">VIEW SITE</a>
-              <a style="float:right;" href="https://de.paz.yt/loc/?/"><font-awesome-icon icon="user" />&nbsp;&nbsp;AUTHOR</a>
+              <router-link style="float:right;" to="/user/?131990779890630656"><font-awesome-icon icon="user" />&nbsp;&nbsp;AUTHOR</router-link>
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@
             </div>
             <div class="card-action">
               <a href="https://youtube.com">VIEW SITE</a>
-              <a style="float:right;" href="https://de.paz.yt/loc/?/"><font-awesome-icon icon="user" />&nbsp;&nbsp;AUTHOR</a>
+              <router-link style="float:right;" to="/user/?131990779890630656"><font-awesome-icon icon="user" />&nbsp;&nbsp;AUTHOR</router-link>
             </div>
           </div>
         </div>
@@ -98,7 +98,7 @@
             </div>
             <div class="card-action">
               <a href="https://youtube.com">VIEW SITE</a>
-              <a style="float:right;" href="https://de.paz.yt/loc/?/"><font-awesome-icon icon="user" />&nbsp;&nbsp;AUTHOR</a>
+              <router-link style="float:right;" to="/user/?131990779890630656"><font-awesome-icon icon="user" />&nbsp;&nbsp;AUTHOR</router-link>
             </div>
           </div>
         </div>
