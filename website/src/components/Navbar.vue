@@ -11,6 +11,7 @@
       <router-link class="headerLink" to="/support">Support</router-link>
       <router-link class="headerLink" to="/contributors">Contributors</router-link>
       <router-link class="headerLink" to="/downloads">Downloads</router-link>
+      <router-link class="headerLink" to="/store">Store</router-link>
     </div>
     <div class="col s1"></div>
   </div>

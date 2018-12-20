@@ -46,7 +46,7 @@ $(document).ready(() => {
 });
 
 export default {
-  name: "Home Page",
+  name: "Home",
   head: {
     title: { inner: "Home" }
   }
