@@ -16,7 +16,7 @@ export default {
   },
   mounted(){
     let scr = document.createElement('script');
-    scr.innerHTML = '$.getJSON("https://api.premid.app/credits", function(d){d.sort(function(a, b){return a.rolePosition - b.rolePosition});d.reverse();for(i = 0;i < d.length; i++){$("#content").append("<h2 style=\'color:"+d[i].roleColor+";\'>"+d[i].name+"</h2><p>"+d[i].role+"</p><img src=\'"+d[i].avatar+"\' style=\'width:150px;border-radius:1rem;\'>")}});';
+    scr.innerHTML = '$.getJSON("https://api.premid.app/credits", function(d){d.sort(function(a, b){return b.rolePosition - a.rolePosition});for(i = 0;i < d.length; i++){$("#content").append("<h2 style=\'color:"+d[i].roleColor+";\'>"+d[i].name+"</h2><p>"+d[i].role+"</p><img src=\'"+d[i].avatar+"\' style=\'width:150px;border-radius:1rem;\'>")}});';
     document.head.appendChild(scr);
   }
 }
