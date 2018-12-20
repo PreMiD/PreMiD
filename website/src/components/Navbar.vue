@@ -1,24 +1,17 @@
 <template>
   <div id="header" class="row">
-    <div class="col s1"></div>
-    <div class="col s4">
+    <div class="col">
       <router-link to="/">
         <img draggable="false" src="../assets/images/logo.png">
         <h1>PreMiD</h1>
       </router-link>
     </div>
-    <div id="links" class="col s6">
-      <router-link class="headerLink" to="/support">Support</router-link>
-      <router-link class="headerLink" to="/contributors">Contributors</router-link>
-      <router-link class="headerLink" to="/downloads">Downloads</router-link>
-      <router-link class="headerLink" to="/store">Store</router-link>
-      <div class="switch">
-        <label>
-          Dark Mode<input type="checkbox" id="darkmode" class="togglePresence"><span class="lever" onclick="darkToggle();"></span>
-        </label>
-      </div>
+    <div id="links" class="col">
+      <router-link class="headerLink" to="/support"><font-awesome-icon icon="life-ring" /> Support</router-link>
+      <router-link class="headerLink" to="/contributors"><font-awesome-icon icon="users" /> Contributors</router-link>
+      <router-link class="headerLink" to="/downloads"><font-awesome-icon icon="download" /> Downloads</router-link>
+      <router-link class="headerLink" to="/store"><font-awesome-icon icon="store" /> Store</router-link>
     </div>
-    <div class="col s1"></div>
   </div>
 </template>
 
@@ -41,9 +34,15 @@ export default {
  box-shadow: 0 0 20px #00000070;
 }
 
-#header > #links > a {
+.dark #header > #links > a {
   transition: all 0.25s ease;
+  color:#fff;
 }
+
+#header > #links > a {
+  color:#000;
+}
+
 #header > #links > a:hover {
   color:#7289da!important;
 }
@@ -56,54 +55,15 @@ export default {
   color:#ffffff70;
 }
 
-.switch {
-    cursor: pointer
+#header > *, #header > * > *, #header > * > * > *{
+  background-color:transparent;
 }
 
-.switch label .lever {
-    width: 42px;
-    height: 24px;
-    background: #72767d
-}
-
-.switch label .lever:before,
-.switch label .lever:after {
-    width: 18px;
-    height: 18px;
-    left: 3px;
-    top: 3px
-}
-
-.switch label .lever:after {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15)
-}
-
-input[type="checkbox"]:checked:not(:disabled)~.lever:active::before,
-input[type="checkbox"]:checked:not(:disabled).tabbed:focus~.lever::before {
-    background-color: transparent
-}
-
-.switch label input[type="checkbox"]:checked+.lever:before,
-.switch label input[type="checkbox"]:checked+.lever:after {
-    left: 21px
-}
-
-.switch label input[type="checkbox"]:checked+.lever:after {
-    background-color: #fff
-}
-
-.switch label input[type="checkbox"]:checked+.lever {
-    background-color: #7289da
-}
-
-#header, #header > *, #header > * > *, #header > * > * > *{
+#header{
   background-color:#fafafa;
 }
 
-.dark #header, .dark #header > *, .dark #header > * > *, .dark #header > * > * > *{
+.dark #header{
   background-color:#2a2a2a;
   color:#fdfdfd;
 }
@@ -116,19 +76,29 @@ input[type="checkbox"]:checked:not(:disabled).tabbed:focus~.lever::before {
 }
 
 #header img {
-  margin-top: 5px;
+  margin-top: 10px;
   margin-right: 10px;
-  width: 50px;
+  width: auto;
   float: left;
+  height:40px;
 }
 
 #header h1 {
   margin: 0;
   line-height: 60px;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 600;
+  width:fit-content;
+  height:fit-content;
+  display:inline;
 }
 
+#header > .s4 {
+  width:fit-content;
+}
+#links {
+  float:right;
+}
 #header .headerLink:not(:first-child) {
   margin-right: 25px;
 }
@@ -138,4 +108,34 @@ input[type="checkbox"]:checked:not(:disabled).tabbed:focus~.lever::before {
   font-weight: 500;
   float: right;
 }
+
+@media (max-width: 741px) {
+  #header > div.col > a > h1 {
+    display:none;
+  }
+}
+
+@media (max-width: 607px) {
+  #links > a {
+    font-size:0!important;
+  }
+  #links > a > svg {
+    font-size:25px!important;
+  }
+  #links > a {
+    margin-top:10px;
+    margin-left:32px;
+    margin-right:32px;
+  }
+}
+
+
+@media (max-width: 441px) {
+  #links > a {
+    margin-top:10px;
+    margin-left:16px;
+    margin-right:16px;
+  }
+}
+
 </style>

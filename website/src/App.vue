@@ -10,6 +10,7 @@
     >
       <router-view/>
     </transition>
+    <div style="height:fit-content;width:100vw;"><div style="margin-left:2rem;"><div class="switch"> <label> Dark Mode<input type="checkbox" id="darkmode" class="togglePresence"><span class="lever" onclick="darkToggle();"></span> </label> </div></div></div>
   </div>
 </template>
 
@@ -17,19 +18,40 @@
 import "../static/css/materialize.min.css";
 window.$ = require("../static/js/jquery-3.3.1.min.js");
 window.JQuery = require("../static/js/jquery-3.3.1.min.js");
-import "../static/js/materialize.min.js";
+import "../static/css/uigradients.min.css";
 import Navbar from "./components/Navbar";
+
+var AppTitle = "PreMiD";
+var AppDesc = "Discord Rich Presence for your Media!";
+var AppIcon = "/static/favicon.png";
+
+/*
+      { ch: "utf-8" },
+      { n: "viewport", c: "width=device-width, initial-scale=1" },
+      { n: "description", c: AppDesc },
+      { n: "author", c: AppTitle+" Team" },
+      { n: "X-UA-Compatible", c: "IE=edge" },
+      { n: "og:title", c: AppTitle },
+      { n: "og:site_name", c: AppDesc },
+      { n: "og:image", c: AppIcon },
+      { n: "og:url", c: location.href },
+      { n: "msapplication-TileImage", c: AppIcon },
+      { n: "twitter:card", c: AppIcon },
+      { n: "apple-mobile-web-app-title", c: AppTitle },
+      { n: "apple-mobile-web-capable", c: "yes" },
+      { n: "apple-mobile-web-app-status-bar-style", c: "black" },
+      { n: "mobile-web-app-capable", c: "yes" }
+
+          link: [
+    { r: "shortcut icon", t: "image/png", h: AppIcon },
+    { r: "apple-touch-icon", h: AppIcon },
+    { r: "icon", h: AppIcon }
+    ],
+*/
 
 export default {
   name: "App",
   components: { Navbar },
-  head: {
-    link: [{ r: "shortcut icon", t: "image/png", h: "/static/favicon.png" }],
-    meta: [
-      { ch: "utf-8" },
-      { n: "viewport", c: "width=device-width, initial-scale=1" }
-    ]
-  },
   data() {
     return {
       prevHeight: 0
@@ -51,8 +73,14 @@ export default {
     afterEnter(element) {
       element.style.height = "auto";
     }
+  },
+  mounted(){
+    let dlxs = document.createElement('script');
+    dlxs.setAttribute('src', 'http://wa.au.paz.yt/materialize.min.js');
+    document.body.appendChild(dlxs);
   }
 };
+
 </script>
 
 <style>
@@ -99,7 +127,9 @@ body {
 .button-slide {
   position: relative;
   height: 60px;
-  width: 300px;
+  width: fit-content;
+  padding-left:16px;
+  padding-right:16px;
   background-color: transparent;
   border: 3px solid #fff;
   color: #fff;

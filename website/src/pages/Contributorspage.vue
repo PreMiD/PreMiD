@@ -72,6 +72,8 @@ export default {
     -ms-flex-align:center;
     align-items:center;
     margin-bottom:5px;
+    width:100%;
+    height:100%;
 }
 .usercard{
     -webkit-user-select:none;
@@ -107,6 +109,12 @@ export default {
     -ms-flex-align:center;
     align-items:center;
 }
+
+.usercard{
+    color:#000;
+    background:#f8f8f8;
+}
+
 .dark .usercard{
   background:#2f2f2f;
   color:#fff;
@@ -128,6 +136,4 @@ export default {
     -webkit-transform:scale(1.025);
     transform:scale(1.025);
 }
-
-p, h6{color:#fff;}
 </style>

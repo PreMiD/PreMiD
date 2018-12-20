@@ -5,7 +5,7 @@
         <h5>Desktop Application</h5>
       </div>
       <div class="center">
-        <div class="flexcenter"><a id="dl" href="" style="margin:1rem;" class="waves-effect waves-light button-slide button-start"><span>Download</span></a></div>
+        <div class="flexcenter"><a id="dl" href="#" style="margin:1rem;" class="waves-effect waves-light button-slide button-start"><span>Download</span></a></div>
         <a href="#" onclick="document.querySelector('#os').style.display = 'block';">Not your OS?</a>
         <div class="input-field" style="width:25%;margin-left:37.5%;text-align-last:center;"><select id="os">
           <option value="none" disabled selected>Pick your OS</option>
@@ -17,7 +17,7 @@
         <div class="center">
           <h5>Browser Extension</h5>
         </div>
-        <div class="flexcenter"><a id="ext" href="" style="margin:1rem;" class="waves-effect waves-light button-slide button-start"><span>Extension</span></a></div>
+        <div class="flexcenter"><a id="ext" href="#" style="margin:1rem;" class="waves-effect waves-light button-slide button-start"><span>Extension</span></a></div>
         <a href="#" onclick="document.querySelector('#br').style.display = 'block';">Not your browser?</a>
         <div class="input-field" style="width:25%;margin-left:37.5%;text-align-last:center;"><select id="br">
           <option value="none" disabled selected>Pick your Browser</option>

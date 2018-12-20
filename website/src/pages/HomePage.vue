@@ -4,7 +4,7 @@
       <div class="col s2"></div>
       <div class="col s8">
         <div id="expImgWrapper">
-          <img draggable="false" src="../assets/images/logo.png">
+          <img class="responsive-img" draggable="false" src="../assets/images/logo.png">
         </div>
         <div id="expWrapper">
           <h1>New Look to your Discord status!</h1>
@@ -16,35 +16,10 @@
       </div>
       <div class="col s2"></div>
     </div>
-
-    <div class="carousel carousel-slider center">
-      <div class="carousel-item red white-text" href="#one!">
-        <h2>First Panel</h2>
-        <p class="white-text">This is your first panel</p>
-      </div>
-      <div class="carousel-item amber white-text" href="#two!">
-        <h2>Second Panel</h2>
-        <p class="white-text">This is your second panel</p>
-      </div>
-      <div class="carousel-item green white-text" href="#three!">
-        <h2>Third Panel</h2>
-        <p class="white-text">This is your third panel</p>
-      </div>
-      <div class="carousel-item blue white-text" href="#four!">
-        <h2>Fourth Panel</h2>
-        <p class="white-text">This is your fourth panel</p>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
-$(document).ready(() => {
-  var instance = M.Carousel.init({
-    fullWidth: true,
-    indicators: true
-  });
-});
 
 export default {
   name: "Home",
@@ -82,7 +57,7 @@ export default {
 
 #expImgWrapper {
   display: inline-block;
-  width: 150px;
+  max-width: 150px;
 }
 
 #expWrapper {
