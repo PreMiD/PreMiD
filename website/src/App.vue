@@ -18,16 +18,38 @@ import "../static/css/materialize.min.css";
 window.$ = require("../static/js/jquery-3.3.1.min.js");
 window.JQuery = require("../static/js/jquery-3.3.1.min.js");
 import "../static/js/materialize.min.js";
+import "../static/css/uigradients.min.css";
 import Navbar from "./components/Navbar";
+
+var AppTitle = "PreMiD";
+var AppDesc = "Discord Rich Presence for your Media!";
+var AppIcon = "/static/favicon.png";
 
 export default {
   name: "App",
   components: { Navbar },
   head: {
-    link: [{ r: "shortcut icon", t: "image/png", h: "/static/favicon.png" }],
+    link: [
+    { r: "shortcut icon", t: "image/png", h: AppIcon },
+    { r: "apple-touch-icon", h: AppIcon },
+    { r: "icon", h: AppIcon }
+    ],
     meta: [
       { ch: "utf-8" },
-      { n: "viewport", c: "width=device-width, initial-scale=1" }
+      { n: "viewport", c: "width=device-width, initial-scale=1" },
+      { n: "description", c: AppDesc },
+      { n: "author", c: AppTitle+" Team" },
+      { n: "X-UA-Compatible", c: "IE=edge" },
+      { n: "og:title", c: AppTitle },
+      { n: "og:site_name", c: AppDesc },
+      { n: "og:image", c: AppIcon },
+      { n: "og:url", c: location.href },
+      { n: "msapplication-TileImage", c: AppIcon },
+      { n: "twitter:card", c: AppIcon },
+      { n: "apple-mobile-web-app-title", c: AppTitle },
+      { n: "apple-mobile-web-capable", c: "yes" },
+      { n: "apple-mobile-web-app-status-bar-style", c: "black" },
+      { n: "mobile-web-app-capable", c: "yes" }
     ]
   },
   data() {
