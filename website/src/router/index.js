@@ -8,7 +8,7 @@ import Storepage from '../pages/Store'
 import StoreDashboard from '../pages/StoreDashboard'
 import StoreInstall from '../pages/StoreInstall'
 import Downloads from '../pages/downloads'
-
+import User from '../pages/user'
 
 Vue.use(Router)
 Vue.use(Head, { separator: '-', complement: 'PreMiD' })
@@ -50,6 +50,11 @@ export default new Router({
       path: '/downloads',
       name: 'Downloads',
       component: Downloads,
+    },
+    {
+      path: '/user',
+      name: 'User',
+      component: User,
     }
   ]
 })
