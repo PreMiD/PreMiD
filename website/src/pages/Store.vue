@@ -3,28 +3,28 @@
     <div id="headingMain" class="row">
       <div class="col s2"></div>
       <div class="col s8">
-        <div id="expImgWrapper">
-          <img class="responsive-img" draggable="false" src="../assets/images/logo.png">
-        </div>
         <div id="expWrapper">
-          <h1>New Look to your Discord status!</h1>
-          <p>Watching videos or listening to music and wanna show this to your friends? PreMiD got you covered!</p>
-          <a href="https://github.com/Timeraa/PreMiD" class="waves-effect waves-light btn learn-more"><font-awesome-icon :icon="['fab', 'github']" />&nbsp Learn More</a>
-          <router-link to="/downloads" class="waves-effect waves-light btn download"><font-awesome-icon icon="download" />&nbsp Downloads</router-link>
-          <a href="https://discord.gg/febqYmx" class="waves-effect waves-light btn" style="background-color:var(--blurple)"><font-awesome-icon :icon="['fab', 'discord']" />&nbsp; DISCORD</a>
+          <h1>Store</h1>
+          <p>Get support for over [int] services.</p>
+          <router-link to="/store/dashboard" class="waves-effect waves-light btn learn-more">CONTRIBUTE</router-link>
+          <router-link to="/store/install" class="waves-effect waves-light btn download">INSTALL</router-link>
         </div>
       </div>
       <div class="col s2"></div>
+
+      <div style="width:100%;">
+      	<img draggable="false" src="../assets/images/store1.png" style="border-radius:2rem;height:auto;width:100%;position:absolute;left:-33%;top:25rem;">
+      	<span style="position:absolute;left:80%;top:25rem;">this is a description</span>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: "Home",
+  name: "Store",
   head: {
-    title: { inner: "Home" }
+    title: { inner: "Store" }
   }
 };
 </script>
@@ -57,7 +57,7 @@ export default {
 
 #expImgWrapper {
   display: inline-block;
-  max-width: 150px;
+  width: 150px;
 }
 
 #expWrapper {
@@ -69,18 +69,17 @@ export default {
 #expWrapper p {
   margin: 0;
 }
-#expWrapper > a{
-  margin-top:16px;
-}
+
 .btn {
   border-radius: 100px;
-  margin:6px;
+  margin-top: 5px;
   padding-left: 25px;
   padding-right: 25px;
 }
 
 .learn-more {
-  background-color: #b64c23;
+  background-color: #7289da;
+  margin-right: 5px;
 }
 
 .download {
