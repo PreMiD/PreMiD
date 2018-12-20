@@ -1,5 +1,5 @@
 <template>
-  <div id="content">
+  <div class="credits_container" id="content">
     <!--<profile username="Timeraa" />
     <img src="../assets/images/Timeraa.png">-->
   </div>
@@ -16,7 +16,19 @@ export default {
   },
   mounted(){
     let scr = document.createElement('script');
-    scr.innerHTML = '$.getJSON("https://api.premid.app/credits", function(d){d.sort(function(a, b){return b.rolePosition - a.rolePosition});for(i = 0;i < d.length; i++){$("#content").append("<h2 style=\'color:"+d[i].roleColor+";\'>"+d[i].name+"</h2><p>"+d[i].role+"</p><img src=\'"+d[i].avatar+"\' style=\'width:150px;border-radius:1rem;\'>")}});';
+    /* classic = "<h2 style=\'color:"+d[i].roleColor+";\'>"+d[i].name+"</h2><p>"+d[i].role+"</p><img src=\'"+d[i].avatar+"\' style=\'width:150px;border-radius:1rem;\'>" */
+    /* new = "<div class=\'usercard\' style=\'--hoverColor: "+d[i].roleColor+"\'>
+        <div>
+          <div class=\'credits_avatar\'>
+            <img draggable=\'false\' src=\'"+d[i].avatar+"\'>
+          </div>
+          <div class=\'credits_text\'>
+            <h6>"+d[i].name+"</h6>
+            <p>"+d[i].role+"</p>
+          </div>
+        </div>
+      </div>" */
+    scr.innerHTML = '$.getJSON("https://api.premid.app/credits", function(d){d.sort(function(a, b){return b.rolePosition - a.rolePosition});for(i = 0;i < d.length; i++){$("#content").append("<div data-v-9be4daaa class=\'usercard\' style=\'--hoverColor: "+d[i].roleColor+"\'><div data-v-9be4daaa><div data-v-9be4daaa class=\'credits_avatar\'><img data-v-9be4daaa src=\'"+d[i].avatar+"\'></div><div data-v-9be4daaa class=\'credits_text\'><h6 data-v-9be4daaa>"+d[i].name+"</h6><p data-v-9be4daaa>"+d[i].role+"</p></div></div>")}});';
     document.head.appendChild(scr);
   }
 }
@@ -27,22 +39,89 @@ export default {
   text-align: center;
 }
 
-img {
-  margin-top: 50px;
-  width: 150px;
+// taken from extension
+
+#credits table tr{
+    border:none;
+}
+#credits table tr td{
+    width:50%;
+}
+.credits_text h6{
+    font-size:22px;
+    margin-bottom:4px;
+}
+.usercard:hover .credits_text h6{
+    color:rgba(255,255,255,0.8) !important
+}
+.credits_text p{
+    font-size:20px;
+    font-weight:600;
+    margin:0;
+}
+.credits_container{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-orient:horizontal;
+    -webkit-box-direction:normal;
+    -ms-flex-flow:row wrap;
+    flex-flow:row wrap;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    margin-bottom:5px;
+}
+.usercard{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    background:#fff;
+    -webkit-box-shadow:0px 3px 14px rgba(0,0,0,0.15);
+    box-shadow:0px 3px 14px rgba(0,0,0,0.15);
+    -webkit-box-flex:1;
+    -ms-flex-positive:1;
+    flex-grow:1;
+    -ms-flex:1 0;
+    flex:1 0;
+    float:left;
+    -webkit-box-pack:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+    margin:10px;
+    padding-top:15px;
+    text-align:center;
+    border-radius:4px;
+    width:50%;
+    -webkit-transition:all 150ms ease-out;
+    transition:all 150ms ease-out;
+    min-width:150px;
+    min-height:200px;
+    color:#666;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+}
+.usercard .credits_text *{
+    overflow:hidden;
+}
+.usercard .credits_avatar img{
+    width:100px;
+    border-radius:50%;
+}
+.usercard div{
+    top:-4px;
+    position:relative;
+}
+.usercard:hover{
+    background-color:var(--hoverColor);
+    color:rgba(255,255,255,0.6);
+    -webkit-transform:scale(1.025);
+    transform:scale(1.025);
 }
 
-h1,
-h2 {
-  margin: 0;
-}
-
-h1 {
-  font-weight: 900;
-}
-
-h2 {
-  font-weight: 500;
-  font-style: italic;
-}
 </style>
