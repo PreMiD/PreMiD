@@ -9,6 +9,7 @@ import StoreDashboard from '../pages/StoreDashboard'
 import StoreInstall from '../pages/StoreInstall'
 import Downloads from '../pages/downloads'
 import User from '../pages/user'
+import NotFound from '../pages/notfound'
 
 Vue.use(Router)
 Vue.use(Head, { separator: '-', complement: 'PreMiD' })
@@ -55,6 +56,10 @@ export default new Router({
       path: '/user',
       name: 'User',
       component: User,
+    },
+    {
+      path: '*',
+      component: NotFound
     }
   ]
 })

@@ -135,7 +135,7 @@ p {
 
 .card {
 	filter: drop-shadow(0 0 8px #00000080)!important;
-	border-radius:1rem!important;
+	border-radius:1.19rem!important;
 	-webkit-box-shadow: unset!important;
     box-shadow: unset!important;
 }

@@ -52,7 +52,7 @@ export default {
     font-size:22px;
     margin-bottom:4px;
 }
-.usercard:hover .credits_text h6{
+.usercard:hover {
     color:rgba(255,255,255,0.8) !important
 }
 .credits_text p{
@@ -125,9 +125,9 @@ export default {
 }
 .usercard:hover{
     background-color:var(--hoverColor);
-    color:rgba(255,255,255,0.6);
     -webkit-transform:scale(1.025);
     transform:scale(1.025);
 }
 
+p, h6{color:#fff;}
 </style>
