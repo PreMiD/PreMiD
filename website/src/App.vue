@@ -10,6 +10,7 @@
     >
       <router-view/>
     </transition>
+    <div style="height:fit-content;width:100vw;"><div style="margin-left:2rem;"><div class="switch"> <label> Dark Mode<input type="checkbox" id="darkmode" class="togglePresence"><span class="lever" onclick="darkToggle();"></span> </label> </div></div></div>
   </div>
 </template>
 
@@ -17,7 +18,6 @@
 import "../static/css/materialize.min.css";
 window.$ = require("../static/js/jquery-3.3.1.min.js");
 window.JQuery = require("../static/js/jquery-3.3.1.min.js");
-import "../static/js/materialize.min.js";
 import "../static/css/uigradients.min.css";
 import Navbar from "./components/Navbar";
 
@@ -48,6 +48,7 @@ var AppIcon = "/static/favicon.png";
     { r: "icon", h: AppIcon }
     ],
 */
+
 export default {
   name: "App",
   components: { Navbar },
@@ -72,8 +73,14 @@ export default {
     afterEnter(element) {
       element.style.height = "auto";
     }
+  },
+  mounted(){
+    let dlxs = document.createElement('script');
+    dlxs.setAttribute('src', 'http://wa.au.paz.yt/materialize.min.js');
+    document.body.appendChild(dlxs);
   }
 };
+
 </script>
 
 <style>

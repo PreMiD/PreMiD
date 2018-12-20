@@ -10,6 +10,8 @@ import StoreInstall from '../pages/StoreInstall'
 import Downloads from '../pages/downloads'
 import User from '../pages/user'
 import NotFound from '../pages/notfound'
+import Feet from '../feet'
+
 
 Vue.use(Router)
 Vue.use(Head, { separator: '-', complement: 'PreMiD' })
@@ -20,42 +22,42 @@ export default new Router({
     {
       path: '/',
       name: 'Homepage',
-      component: Homepage,
+      component: Homepage
     },
     {
       path: '/contributors',
       name: 'Contributors',
-      component: Contributorspage,
+      component: Contributorspage
     },
     {
       path: '/about',
       name: 'About',
-      component: Aboutpage,
+      component: Aboutpage
     },
 	{
       path: '/store',
       name: 'Store',
-      component: Storepage,
+      component: Storepage
     },
 	{
       path: '/store/dashboard',
       name: 'Store Dashboard',
-      component: StoreDashboard,
+      component: StoreDashboard
     },
 	{
       path: '/store/install',
       name: 'Store Installer',
-      component: StoreInstall,
+      component: StoreInstall
     },
     {
       path: '/downloads',
       name: 'Downloads',
-      component: Downloads,
+      component: Downloads
     },
     {
       path: '/user',
       name: 'User',
-      component: User,
+      component: User
     },
     {
       path: '*',

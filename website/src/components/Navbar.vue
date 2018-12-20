@@ -1,19 +1,17 @@
 <template>
   <div id="header" class="row">
-    <div class="col s1"></div>
-    <div class="col s4">
+    <div class="col">
       <router-link to="/">
         <img draggable="false" src="../assets/images/logo.png">
         <h1>PreMiD</h1>
       </router-link>
     </div>
-    <div id="links" class="col s6">
-      <router-link class="headerLink" to="/support">Support</router-link>
-      <router-link class="headerLink" to="/contributors">Contributors</router-link>
-      <router-link class="headerLink" to="/downloads">Downloads</router-link>
-      <router-link class="headerLink" to="/store">Store</router-link>
+    <div id="links" class="col">
+      <router-link class="headerLink" to="/support"><font-awesome-icon icon="life-ring" /> Support</router-link>
+      <router-link class="headerLink" to="/contributors"><font-awesome-icon icon="users" /> Contributors</router-link>
+      <router-link class="headerLink" to="/downloads"><font-awesome-icon icon="download" /> Downloads</router-link>
+      <router-link class="headerLink" to="/store"><font-awesome-icon icon="store" /> Store</router-link>
     </div>
-    <div class="col s1"></div>
   </div>
 </template>
 
@@ -90,8 +88,17 @@ export default {
   line-height: 60px;
   font-size: 40px;
   font-weight: 600;
+  width:fit-content;
+  height:fit-content;
+  display:inline;
 }
 
+#header > .s4 {
+  width:fit-content;
+}
+#links {
+  float:right;
+}
 #header .headerLink:not(:first-child) {
   margin-right: 25px;
 }
@@ -101,4 +108,34 @@ export default {
   font-weight: 500;
   float: right;
 }
+
+@media (max-width: 741px) {
+  #header > div.col > a > h1 {
+    display:none;
+  }
+}
+
+@media (max-width: 607px) {
+  #links > a {
+    font-size:0!important;
+  }
+  #links > a > svg {
+    font-size:25px!important;
+  }
+  #links > a {
+    margin-top:10px;
+    margin-left:32px;
+    margin-right:32px;
+  }
+}
+
+
+@media (max-width: 441px) {
+  #links > a {
+    margin-top:10px;
+    margin-left:16px;
+    margin-right:16px;
+  }
+}
+
 </style>
