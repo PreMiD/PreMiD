@@ -9,8 +9,8 @@
         <div id="expWrapper">
           <h1>New Look to your Discord status!</h1>
           <p>Watching videos or listening to music and wanna show this to your friends? PreMiD got you covered!</p>
-          <a class="waves-effect waves-light btn learn-more">Learn More</a>
-          <a class="waves-effect waves-light btn download">Downloads</a>
+          <a href="https://github.com/Timeraa/PreMiD" class="waves-effect waves-light btn learn-more"><font-awesome-icon :icon="['fab', 'github']" />&nbsp Learn More</a>
+          <router-link to="/downloads" class="waves-effect waves-light btn download"><font-awesome-icon icon="download" />&nbsp Downloads</router-link>
         </div>
       </div>
       <div class="col s2"></div>

@@ -7,6 +7,8 @@ import Aboutpage from '../pages/Aboutpage'
 import Storepage from '../pages/Store'
 import StoreDashboard from '../pages/StoreDashboard'
 import StoreInstall from '../pages/StoreInstall'
+import Downloads from '../pages/downloads'
+
 
 Vue.use(Router)
 Vue.use(Head, { separator: '-', complement: 'PreMiD' })
@@ -41,8 +43,13 @@ export default new Router({
     },
 	{
       path: '/store/install',
-      name: 'Store',
+      name: 'Store Installer',
       component: StoreInstall,
+    },
+    {
+      path: '/downloads',
+      name: 'Downloads',
+      component: Downloads,
     }
   ]
 })
