@@ -111,7 +111,6 @@ export default {
 
 #expWrapper {
   float: right;
-  margin-left: 25px;
   width: calc(100% - 175px);
 }
 
@@ -363,12 +362,37 @@ export default {
 }
 .carousel-container {
   display: inline-block;
+  width:100%;
+  height:calc(32rem - 150px);
 }
+
+@media (min-height:1000px){
+	.carousel-container {
+	  height:calc(34rem - 150px);
+	}
+}
+
+@media (min-height:1100px){
+	.carousel-container {
+	  height:calc(42rem - 150px);
+	}
+}
+
+@media (min-height:1200px){
+	.carousel-container {
+	  height:calc(46rem - 150px);
+	}
+}
+
+@media (min-height:1300px){
+	.carousel-container {
+	  height:calc(54rem - 150px);
+	}
+}
+
 .my-carousel {
-  border-radius: 5px;
-  margin: 30px;
-  width:80vw;
-  height:24rem;
+  width:100%;
+  height:100%;;
 }
 .carousel__slide {
   overflow: hidden;
