@@ -1,5 +1,5 @@
 <template>
-  <div class="credits_container">
+  <div class="container credits_container col s12 m6 l3">
     <div id="loader" style="text-align:center;width:100vw;"><div class="preloader-wrapper big active"> <div class="spinner-layer spinner-blue-only"> <div class="circle-clipper left"> <div class="circle"></div></div><div class="gap-patch"> <div class="circle"></div></div><div class="circle-clipper right"> <div class="circle"></div></div></div></div></div>
     <!--<profile username="Timeraa" />
     <img src="../assets/images/Timeraa.png">-->
