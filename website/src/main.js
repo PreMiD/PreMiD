@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import Feet from './feet'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faLifeRing, faStore, faUsers, faUser, faDownload, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faWindows, faApple, faLinux, faChrome, faFirefox, faDiscord } from '@fortawesome/free-brands-svg-icons'
