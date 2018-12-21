@@ -11,7 +11,16 @@
       </div>
     </div>
 
-    <div class="row center">
+    <div class="row center uig-skyline">
+      <div style="width:fit-content;height:fit-content;float:left;margin:1rem;">
+      	<h5 style="color:#fff;"><b>Show what you're listening to!</b></h5>
+      	<p style="color:#fff;">With our application your status can now show tracks<br> that you are listening to from YouTube Music, SoundCloud <br>and more than [int] other services.</p>
+      </div>
+      <div class="banner-right" id="apps-preview">
+      </div>
+
+
+    	<!--
 		<div class="carousel-container">
 		  <div class="carousel my-carousel carousel--translate">
 		    <input class="carousel__activator" type="radio" name="carousel" id="F" checked="checked"/>
@@ -40,19 +49,19 @@
 		      <label class="carousel__control carousel__control--forward" for="F"></label>
 		    </div>
 		    <div class="carousel__track">
-		      <li class="carousel__slide">
-		        <h1>F</h1>
+		      <li class="carousel__slide uig-frost">
+		        <h1>Open Source</h1>
 		      </li>
-		      <li class="carousel__slide">
+		      <li style="--uig-direction: 270deg" class="carousel__slide uig-cosmic-fusion">
 		        <h1>G</h1>
 		      </li>
-		      <li class="carousel__slide">
+		      <li class="carousel__slide uig-radar">
 		        <h1>H</h1>
 		      </li>
-		      <li class="carousel__slide">
+		      <li class="carousel__slide uig-ibiza-sunset">
 		        <h1>I</h1>
 		      </li>
-		      <li class="carousel__slide">
+		      <li style="--uig-direction: 270deg" class="carousel__slide uig-superman">
 		        <h1>J</h1>
 		      </li>
 		    </div>
@@ -65,6 +74,7 @@
 		    </div>
 		  </div>
 		</div>
+		-->
     </div>
   </div>
 </template>
@@ -77,7 +87,7 @@ export default {
     title: { inner: "Home" }
   },
   mounted(){
-    let scrr=document.createElement('script');scrr.innerHTML = "window.onload = function(){}";document.head.appendChild(scrr);
+    let scrr=document.createElement('script');scrr.innerHTML = "$.getJSON('https://wa.au.paz.yt/premid.php?name,author,max=12', function(d){ii=1;for(i in d){ii++;var ch = document.createElement('img');ch.src='https://raw.githubusercontent.com/xPazz/PreMiD-Services/master/'+i.split(',')[0]+'/'+i.split(',')[1]+'.png';var chh = document.createElement('a');chh.href='/user/?'+i.split(',')[0];chh.innerHTML = new XMLSerializer().serializeToString(ch);document.querySelector('#apps-preview').appendChild(chh);document.querySelector('#apps-preview').parentElement.childNodes[0].childNodes[2].innerText = document.querySelector('#apps-preview').parentElement.childNodes[0].childNodes[2].innerText.replace('[int]', ii);}var datakey=[];for(data in document.querySelector(\"#view\").dataset){datakey.push(data)};$(\"*\").attr(\"data-\"+datakey[0], \"\");});";document.head.appendChild(scrr);
   }
 };
 </script>
@@ -138,6 +148,28 @@ export default {
 .dark .download { 
   background-color: #fff;
   color:#000;
+}
+
+.banner-right {
+	float:right;
+}
+
+.banner-right > a > img {
+	max-height:75px;
+	margin:1rem;
+	opacity:0.5;
+	filter: grayscale(1);
+	transition: all 0.2s ease;
+}
+
+.banner-right > a > img:hover {
+	filter: grayscale(0);
+	opacity:0.75;
+}
+
+.banner-right > a > img:active {
+	filter: grayscale(0);
+	opacity:1;
 }
 
 /* CAROUSEL */
@@ -404,6 +436,13 @@ export default {
 .carousel__indicator {
   background-color: #fafafa;
 }
+
+
+.carousel__slide > h1 {
+	color:#fff;
+}
+
+/*
 .carousel__slide:nth-of-type(1),
 .carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(1) {
   background-image: url("/static/carousel1.png");
@@ -434,6 +473,6 @@ export default {
   background-size: cover;
   background-position: center;
 }
-
+*/
 </style>
 
