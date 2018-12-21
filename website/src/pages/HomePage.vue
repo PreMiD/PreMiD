@@ -406,31 +406,31 @@ export default {
 }
 .carousel__slide:nth-of-type(1),
 .carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(1) {
-  background-image: url("https://unsplash.it/300?random");
+  background-image: url("/static/carousel1.png");
   background-size: cover;
   background-position: center;
 }
 .carousel__slide:nth-of-type(2),
 .carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(2) {
-  background-image: url("https://unsplash.it/600?random");
+  background-image: url("/static/carousel2.png");
   background-size: cover;
   background-position: center;
 }
 .carousel__slide:nth-of-type(3),
 .carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(3) {
-  background-image: url("https://unsplash.it/900?random");
+  background-image: url("/static/carousel3.png");
   background-size: cover;
   background-position: center;
 }
 .carousel__slide:nth-of-type(4),
 .carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(4) {
-  background-image: url("https://unsplash.it/1200?random");
+  background-image: url("/static/carousel4.png");
   background-size: cover;
   background-position: center;
 }
 .carousel__slide:nth-of-type(5),
 .carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(5) {
-  background-image: url("https://unsplash.it/1500?random");
+  background-image: url("/static/carousel5.png");
   background-size: cover;
   background-position: center;
 }
