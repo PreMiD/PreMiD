@@ -109,13 +109,13 @@ export default {
   float: right;
 }
 
-@media (max-width: 741px) {
+@media (max-width: 750px) {
   #header > div.col > a > h1 {
     display:none;
   }
 }
 
-@media (max-width: 607px) {
+@media (max-width: 640px) {
   #links > a {
     font-size:0!important;
   }
@@ -130,12 +130,13 @@ export default {
 }
 
 
-@media (max-width: 441px) {
+@media (max-width: 460px) {
   #links > a {
     margin-top:10px;
     margin-left:16px;
     margin-right:16px;
   }
 }
+
 
 </style>
