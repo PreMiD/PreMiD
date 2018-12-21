@@ -29,7 +29,7 @@ export default {
           </div>
         </div>
       </div>" */
-    scr.innerHTML = '$.getJSON("https://api.premid.app/credits", function(d){d.sort(function(a, b){return b.rolePosition - a.rolePosition});for(i = 0;i < d.length; i++){$("#view").append("<div class=\'usercard\' style=\'--hoverColor: "+d[i].roleColor+"\'><div><div class=\'credits_avatar\'><img src=\'"+d[i].avatar+"\'></div><div class=\'credits_text\'><h6>"+d[i].name+"</h6><p>"+d[i].role+"</p></div></div>")}$("#loader").remove();var datakey=[];for(data in document.querySelector("#view").dataset){datakey.push(data)};$("*").attr("data-"+datakey[0], "");});';
+    scr.innerHTML = '$.getJSON("https://api.premid.app/credits", function(d){d.sort(function(a, b){return b.rolePosition - a.rolePosition});for(i = 0;i < d.length; i++){$("#view").append("<div class=\'usercard\' style=\'--hoverColor: "+d[i].roleColor+"\'><div><div class=\'credits_avatar\'><img src=\'"+d[i].avatar+"\'></div><div class=\'credits_text\'><h6>"+d[i].name+"</h6><p>"+d[i].role+"</p></div></div>")}$("#loader").remove();var datakey=[];for(data in document.querySelector("#view").dataset){datakey.push(data)};$("*").attr("data-"+datakey[0].replace("v", "v-").replace("v--", "v-"), "");});';
     document.head.appendChild(scr);
   }
 }

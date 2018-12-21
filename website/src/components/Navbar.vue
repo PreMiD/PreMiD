@@ -30,6 +30,12 @@ export default {
 </script>
 
 <style scoped>
+#header > div > a > h1 {
+  font-family: "Uni Sans Heavy", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 #header {
  box-shadow: 0 0 20px #00000070;
 }
