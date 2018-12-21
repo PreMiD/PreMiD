@@ -7,7 +7,10 @@
           <p>Watching videos or listening to music and wanna show this to your friends? PreMiD got you covered!</p>
           <a href="https://github.com/Timeraa/PreMiD" class="waves-effect waves-light btn learn-more"><font-awesome-icon :icon="['fab', 'github']" />&nbsp Learn More</a>
           <router-link to="/downloads" class="waves-effect waves-light btn download"><font-awesome-icon icon="download" />&nbsp Downloads</router-link>
-          <a href="https://discord.gg/febqYmx" class="waves-effect waves-light btn" style="background-color:var(--blurple)"><font-awesome-icon :icon="['fab', 'discord']" />&nbsp; DISCORD</a>
+          <a href="https://discord.gg/febqYmx" class="waves-effect waves-light btn" style="background-color:var(--blurple)">
+          <!--<font-awesome-icon :icon="['fab', 'discord']" />&nbsp; DISCORD-->
+          <div class="center"><div style="background:url('https://discordapp.com/api/guilds/493130730549805057/widget.png?style=shield');background-size:contain;background-repeat:no-repeat;width:160px;height:36px;margin-top:4px;margin-left:10px;"></div></div>
+          </a>
       </div>
     </div>
 
