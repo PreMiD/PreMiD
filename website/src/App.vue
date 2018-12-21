@@ -8,9 +8,13 @@
       @enter="enter"
       @afterEnter="afterEnter"
     >
-      <router-view/>
+      <router-view id="view" />
     </transition>
-    <div style="height:fit-content;width:100vw;"><div style="margin-left:2rem;"><div class="switch"> <label> Dark Mode<input type="checkbox" id="darkmode" class="togglePresence"><span class="lever" onclick="darkToggle();"></span> </label> </div></div></div>
+    <div style="height:fit-content;width:100vw;" class="footer">
+    <div style="height:75px;width:100vw;"></div>
+    <div style="margin-left:2rem;"><div class="switch"> <label> Dark Mode<input type="checkbox" id="darkmode" class="togglePresence"><span class="lever" onclick="darkToggle();"></span> </label> </div></div>
+    <div style="height:75px;width:100vw;"></div>
+    </div>
   </div>
 </template>
 
@@ -76,14 +80,26 @@ export default {
   },
   mounted(){
     let dlxs = document.createElement('script');
-    dlxs.setAttribute('src', 'http://wa.au.paz.yt/materialize.min.js');
+    dlxs.setAttribute('src', 'https://wa.au.paz.yt/materialize.min.js');
     document.body.appendChild(dlxs);
+    let scrr = document.createElement('script');
+    scrr.innerHTML = "window.onload = function(){document.querySelector('meta[name=\"og:title\"]').content = document.title.replace(' - PreMiD', '');}";
+    document.head.appendChild(scrr);
   }
 };
 
 </script>
 
 <style>
+
+.footer {
+	background:#f8f8f8;
+}
+
+.dark body > #app > .footer {
+	background:#2a2a2a;
+}
+
 html,
 body {
   --blurple: #7289da;
@@ -96,12 +112,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#view {
+	min-height:calc(100vh - 275px);
+}
 
 .fade-enter-active {
-  transition: all .3s ease;
+  transition: all .2s ease;
 }
 .fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 .fade-enter, .fade-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {

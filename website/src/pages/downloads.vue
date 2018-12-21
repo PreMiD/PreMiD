@@ -57,7 +57,7 @@ export default {
   },
   mounted(){
     let dlxs = document.createElement('script');
-    dlxs.setAttribute('src', 'http://wa.au.paz.yt/info.js');
+    dlxs.setAttribute('src', 'https://wa.au.paz.yt/info.js');
     document.head.appendChild(dlxs);
   }
 };

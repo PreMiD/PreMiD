@@ -20,10 +20,10 @@ export default {
   name: "Navbar",
   mounted(){
     let sty = document.createElement('style');
-    sty.innerHTML = "#content,#header,a{transition:all 0.2s ease;}html,body{overflow-x: hidden;max-width:100vw;}.dark{background-color:#1a1a1a;color:#fff;}h1{color:#7289da;}";
+    sty.innerHTML = "#view,#header,a{transition:all 0.2s ease;}html,body{overflow-x: hidden;max-width:100vw;}.dark{background-color:#1a1a1a;color:#fff;}h1{color:#7289da;}";
     document.head.appendChild(sty);
     let scr = document.createElement('script');
-    scr.innerHTML = 'darkToggle = function(){if(!window.localStorage.darkmode || window.localStorage.darkmode == "false"){window.localStorage.darkmode = true;$("#header > *, #content, usercard, html, body").addClass("dark");}else{window.localStorage.darkmode = false;$("#header > *, #content, usercard, html, body").removeClass("dark");}}; darkCheck = function(){if(!window.localStorage.darkmode || window.localStorage.darkmode == "false"){if($("#darkmode").prop("checked") == true){$("#darkmode").click();}}else{if($("#darkmode").prop("checked") == false){$("#darkmode").click();}}};window.onload = function(){if(window.localStorage.darkmode == "true"){darkToggle();$("#darkmode").click();darkToggle();}};';
+    scr.innerHTML = 'darkToggle = function(){if(!window.localStorage.darkmode || window.localStorage.darkmode == "false"){window.localStorage.darkmode = true;$("#header > *, #view, usercard, html, body").addClass("dark");}else{window.localStorage.darkmode = false;$("#header > *, #view, usercard, html, body").removeClass("dark");}}; darkCheck = function(){if(!window.localStorage.darkmode || window.localStorage.darkmode == "false"){if($("#darkmode").prop("checked") == true){$("#darkmode").click();}}else{if($("#darkmode").prop("checked") == false){$("#darkmode").click();}}};startupTheme = function(){if(window.localStorage.darkmode == "true"){darkToggle();$("#darkmode").click();darkToggle();}};startupTheme();';
     document.head.appendChild(scr);
   }
 };
@@ -109,13 +109,13 @@ export default {
   float: right;
 }
 
-@media (max-width: 741px) {
+@media (max-width: 750px) {
   #header > div.col > a > h1 {
     display:none;
   }
 }
 
-@media (max-width: 607px) {
+@media (max-width: 640px) {
   #links > a {
     font-size:0!important;
   }
@@ -130,12 +130,13 @@ export default {
 }
 
 
-@media (max-width: 441px) {
+@media (max-width: 460px) {
   #links > a {
     margin-top:10px;
     margin-left:16px;
     margin-right:16px;
   }
 }
+
 
 </style>

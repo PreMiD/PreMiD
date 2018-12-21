@@ -10,8 +10,6 @@ import StoreInstall from '../pages/StoreInstall'
 import Downloads from '../pages/downloads'
 import User from '../pages/user'
 import NotFound from '../pages/notfound'
-import Feet from '../feet'
-
 
 Vue.use(Router)
 Vue.use(Head, { separator: '-', complement: 'PreMiD' })
