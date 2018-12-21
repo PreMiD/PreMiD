@@ -28,8 +28,12 @@ p {
   filter:brightness(0.8);
 }
 
-.dark #content > div > #apps > div > div > .card > .card-content, .dark #content > div > #apps > div > div > .card > .card-action {
+.dark #view > div > div > div > div > .card-action, .dark #view > #apps > div > div > div > div.card-content {
   background-color:#2a2a2a!important;
+}
+
+.dark #view > div > #apps > div > div > div > div.card-content, .dark #view > div > #apps > div > div > div > div.card-action{
+	background-color:#2a2a2a!important;
 }
 
 .card-content {
