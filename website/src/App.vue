@@ -12,7 +12,17 @@
     </transition>
     <div style="height:fit-content;width:100vw;" class="footer">
     <div style="height:75px;width:100vw;"></div>
-    <div style="margin-left:2rem;"><div class="switch"> <label> Dark Mode<input type="checkbox" id="darkmode" class="togglePresence"><span class="lever" onclick="darkToggle();"></span> </label> </div></div>
+    <div style="display:inline;margin-left:2rem;">
+      <div style="display:inline;" class="switch"> 
+        <label> Dark Mode<input type="checkbox" id="darkmode" class="togglePresence">
+          <span class="lever" onclick="darkToggle();"></span> 
+        </label>
+      </div>
+
+      <div style="display:inline;float:right;margin-right:2rem;">
+        <span>running <a id="commit"></a></span>
+      </div>
+    </div>
     <div style="height:75px;width:100vw;"></div>
     </div>
   </div>
@@ -83,7 +93,7 @@ export default {
     dlxs.setAttribute('src', 'https://wa.au.paz.yt/materialize.min.js');
     document.body.appendChild(dlxs);
     let scrr = document.createElement('script');
-    scrr.innerHTML = "window.onload = function(){document.querySelector('meta[name=\"og:title\"]').content = document.title.replace(' - PreMiD', '');}";
+    scrr.innerHTML = "window.onload = function(){document.querySelector('#commit').innerHTML = document.querySelector('meta[name=\"commit\"]').content;document.querySelector('#commit').href = 'https://github.com/Timeraa/PreMiD/commit/'+document.querySelector('meta[name=\"commit\"]').content;document.querySelector('meta[name=\"og:title\"]').content = document.title.replace(' - PreMiD', '');}";
     document.head.appendChild(scrr);
   }
 };

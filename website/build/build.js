@@ -12,6 +12,21 @@ const config = require('../config')
 const webpackConfig = require('./webpack.prod.conf')
 
 const spinner = ora('building for production...')
+
+var fs = require('fs')
+var currentCommit = require('child_process').execSync("git log --pretty=format:%h -n 1").toString().trim()
+fs.readFile('./index.html', 'utf8', function (err,data) {
+  if (err) {
+    return console.log(err);
+  }
+  var re = /<meta name="commit" content="(.*)">/;
+  var result = data.replace(re, '<meta name="commit" content="'+currentCommit+'">');
+
+  fs.writeFile('./index.html', result, 'utf8', function (err) {
+     if (err) return console.log(err);
+  });
+});
+
 spinner.start()
 
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {

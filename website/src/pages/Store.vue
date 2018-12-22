@@ -1,26 +1,45 @@
 <template>
-  <div id="content">
-    <div id="headingMain" class="row">
-      <div class="col s2"></div>
-      <div class="col s8">
-        <div id="expWrapper">
+  <div>
+    <div id="headingMain" class="center">
+      <div class="row">
           <h1>Store</h1>
-          <p>Get support for over [int] services.</p>
-          <router-link to="/store/dashboard" class="waves-effect waves-light btn learn-more">CONTRIBUTE</router-link>
+          <p>Publish your own add-ons for PreMiD or download work by others.</p>
+          <router-link to="/store/dashboard" class="waves-effect waves-light btn learn-more">PUBLISH</router-link>
           <router-link to="/store/install" class="waves-effect waves-light btn download">INSTALL</router-link>
-        </div>
       </div>
-      <div class="col s2"></div>
+    </div>
 
-      <div style="width:100%;">
-      	<img draggable="false" src="../assets/images/store1.png" style="border-radius:2rem;height:auto;width:100%;position:absolute;left:-33%;top:25rem;">
-      	<span style="position:absolute;left:80%;top:25rem;">this is a description</span>
+    <div class="row center uig-lawrencium">
+      <div style="width:fit-content;height:fit-content;float:left;margin:1rem;">
+        <h5 style="color:#fff;"><b>Header</b></h5>
+        <p style="color:#fff;">other text</p>
+      </div>
+      <div class="banner-right">
+      </div>
+    </div>
+
+    <div style="--uig-direction:270deg;" class="row center uig-lawrencium">
+      <div style="width:fit-content;height:fit-content;float:right;margin:1rem;">
+        <h5 style="color:#fff;"><b>Header</b></h5>
+        <p style="color:#fff;">other text</p>
+      </div>
+      <div class="banner-left">
+      </div>
+    </div>
+
+    <div class="row center uig-lawrencium">
+      <div style="width:fit-content;height:fit-content;float:left;margin:1rem;">
+        <h5 style="color:#fff;"><b>Header</b></h5>
+        <p style="color:#fff;">other text</p>
+      </div>
+      <div class="banner-right">
       </div>
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
   name: "Store",
   head: {
@@ -30,10 +49,6 @@ export default {
 </script>
 
 <style scoped>
-#headingMain {
-  width: 100%;
-  height: 200px;
-}
 
 #headingMain img {
   height: 150px;
@@ -57,29 +72,30 @@ export default {
 
 #expImgWrapper {
   display: inline-block;
-  width: 150px;
+  max-width: 150px;
 }
 
 #expWrapper {
   float: right;
-  margin-left: 25px;
   width: calc(100% - 175px);
 }
 
 #expWrapper p {
   margin: 0;
 }
+#expWrapper > a{
+  margin-top:16px;
+}
 
 .btn {
   border-radius: 100px;
-  margin-top: 5px;
+  margin:6px;
   padding-left: 25px;
   padding-right: 25px;
 }
 
 .learn-more {
-  background-color: #7289da;
-  margin-right: 5px;
+  background-color: #b64c23;
 }
 
 .download {
@@ -90,5 +106,26 @@ export default {
   background-color: #fff;
   color:#000;
 }
-</style>
 
+.banner-right {
+  float:right;
+}
+
+.link-item {
+  max-height:75px;
+  margin:1rem;
+  opacity:0.5;
+  filter: grayscale(1);
+  transition: all 0.2s ease;
+}
+
+.link-item:hover {
+  filter: grayscale(0);
+  opacity:0.75;
+}
+
+.link-item:active {
+  filter: grayscale(0);
+  opacity:1;
+}
+</style>
