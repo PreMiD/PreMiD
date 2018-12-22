@@ -35,7 +35,7 @@ app.get('/credits', async function (req, res) {
   var result = await query("SELECT * FROM credits")
   var resultArray = []
   result.rows.map(row => {
-    resultArray.push({name: utf8.decode(row.name), avatar: row.avatarURL, role: row.type, rolePosition: row.position, roleColor: row.color, patronColor: row.patronColor == "#000000" ? "#fff" : row.patronColor})
+    resultArray.push({userID: row.userID, name: utf8.decode(row.name), avatar: row.avatarURL, role: row.type, rolePosition: row.position, roleColor: row.color, patronColor: row.patronColor == "#000000" ? "#fff" : row.patronColor})
   })
   res.setHeader('Content-Type', 'application/json');
   res.send(JSON.stringify(resultArray));
