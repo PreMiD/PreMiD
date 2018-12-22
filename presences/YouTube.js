@@ -48,7 +48,6 @@ async function handleMediaKeys(data) {
  * to the background.js for further interaction
  */
 async function updateData() {
-  console.log(extensionData)
   playback = 
     document.location.pathname.includes("/watch")
     && $('.ytd-video-primary-info-renderer .title').text() != ""
