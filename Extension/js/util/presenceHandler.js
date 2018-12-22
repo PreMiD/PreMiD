@@ -32,7 +32,7 @@ $(document).ready(async function() {
         {
           service: "YouTube",
           url: "www.youtube.com",
-          presence: ``
+          presence: 'https://de.paz.yt/proxy/r/?https://raw.githubusercontent.com/Timeraa/PreMiD/V1.4/presences/YouTube.js'
         }
       ]
     }
@@ -43,32 +43,13 @@ $(document).ready(async function() {
     if(document.location.hostname == presence.url) {
       if(!dataGrabberID) {
         dataGrabberID = true
-        $(`<script src="https://cdn.jsdelivr.net/gh/Timeraa/PreMiD@V1.4/Extension/js/util/jquery-3.3.1.min.js"></script>`).appendTo('body')
-        $(`<script></script>`).appendTo('body')
-        /*chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-          console.log(tabs)
-        })
-        $.getScript("https://cdn.jsdelivr.net/gh/Timeraa/PreMiD@V1.4/presences/YouTube.js", function() {
-         console.log(typeof handleMediaKeys === "function")
-        })*/
-        //browser.tabs.executeScript(0, "https://cdn.jsdelivr.net/gh/Timeraa/PreMiD@V1.4/presences/YouTube.js")
+        $(`
+        <!-- PreMiD PRESENCE HANDLING -->
+        <script src="https://cdn.jsdelivr.net/gh/Timeraa/PreMiD@V1.4/Extension/js/util/jquery-3.3.1.min.js"></script>
+        <script src="${presence.presence}"></script>
+        <!-- PreMiD PRESENCE HANDLING -->
+        `).appendTo('body')
       }
     }
   });
 })
-
-
-async function dataGrabber() {
-  var presence = currPresence,
-  playback,
-  currentTime,
-  duration
-
-  if(!presence.video.iframe || presence.video.iframe == undefined) {
-    playback = new Function("return !" + presence.video.tag + ".paused")()
-    currentTime = new Function("return " + presence.video.tag + ".currentTime")()
-    duration = new Function("return " + presence.video.tag + ".duration")()
-  }
-
-  console.log(playback, currentTime, duration)
-}

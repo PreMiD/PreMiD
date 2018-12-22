@@ -29,7 +29,7 @@ async function handleMediaKeys(data) {
   data = data.detail
   console.log(data)
   if(playback) {
-    switch (data.mediaKeys) {
+    switch (data) {
       case "pause":
         playbackBoolean ? $('.video-stream')[0].pause() : $('.video-stream')[0].play()
         break
