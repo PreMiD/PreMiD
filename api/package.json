@@ -1,18 +1,21 @@
 {
   "name": "premid-api",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.0.0",
+  "description": "API endpoints for PreMiD API",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index"
+    "start": "node index",
+    "dev": "nodemon index"
   },
   "author": "Timeraa",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "dotenv": "^6.1.0",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "mysql": "^2.16.0",
-    "nodemon": "^1.18.7",
     "utf8": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
   }
 }
