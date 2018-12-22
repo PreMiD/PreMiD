@@ -35,10 +35,6 @@
       "all_frames": true
     },
     {
-      "matches": ["*://www.youtube.com/*"],
-      "js": ["js/presences/Video/YouTube.js"]
-    },
-    {
       "matches": ["*://music.youtube.com/*"],
       "js": ["js/presences/Music/YouTube_Music.js"]
     },
