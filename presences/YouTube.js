@@ -4,13 +4,30 @@ videoAuthor,
 videoTimestamps,
 playbackBoolean,
 smallImageKey,
-smallImageText
+smallImageText,
+extensionData = null
+
+window.addEventListener("PreMiD_UpdateData", updateData);
+window.addEventListener("PreMiD_MediaKeys", handleMediaKeys);
+
+//* Request needed data
+setTimeout(function() {
+var event = new CustomEvent('PreMiD_RequestExtensionData', {detail: {strings: {playing: 'presence.playback.playing', paused: 'presence.playback.paused'}, version: "chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version"}})
+  window.dispatchEvent(event);
+}, 0)
+
+//* Bind event to receive Data
+window.addEventListener("PreMiD_ReceiveExtensionData", function(data) {
+  extensionData = data.detail
+})
 
 /**
  * Handles Media Key controls
  * @param {data} data Data passed by socketConnector.js
  */
 async function handleMediaKeys(data) {
+  data = data.detail
+  console.log(data)
   if(playback) {
     switch (data.mediaKeys) {
       case "pause":
@@ -31,6 +48,7 @@ async function handleMediaKeys(data) {
  * to the background.js for further interaction
  */
 async function updateData() {
+  console.log(extensionData)
   playback = 
     document.location.pathname.includes("/watch")
     && $('.ytd-video-primary-info-renderer .title').text() != ""
@@ -45,7 +63,7 @@ async function updateData() {
     videoTimestamps = getTimestamps(Math.floor($('.video-stream')[0].currentTime), Math.floor($('.video-stream')[0].duration))
     playbackBoolean = !$('.video-stream')[0].paused
     smallImageKey = playbackBoolean ? 'play' : 'pause'
-    smallImageText = playbackBoolean ? await getString("presence.playback.playing") : await getString("presence.playback.paused")
+    smallImageText = playbackBoolean ? extensionData.strings.playing : extensionData.strings.paused
 
     var data = {
       clientID: '463097721130188830',
@@ -53,7 +71,7 @@ async function updateData() {
         details: $('<div/>').html(videoTitle).text(),
         state: $('<div/>').html(videoAuthor).text(),
         largeImageKey: 'yt_lg',
-        largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
+        largeImageText: extensionData.version,
         smallImageKey: smallImageKey,
         smallImageText: smallImageText,
       },
@@ -70,6 +88,22 @@ async function updateData() {
       delete data.presenceData.endTimestamp
     }
 
-    chrome.runtime.sendMessage({presence: data})
+    var event = new CustomEvent('PreMiD_UpdatePresence', {detail: data})
+    window.dispatchEvent(event);
+
   }
+}
+
+/**
+ * Get Timestamps
+ * @param {Number} videoTime Song Time seconds
+ * @param {Number} videoDuration Song Duration seconds
+ */
+function getTimestamps(videoTime, videoDuration) {
+  var startTime = Date.now();
+  var endTime =
+    Math.floor(startTime / 1000) -
+    videoTime +
+    videoDuration;
+    return [Math.floor(startTime/1000), endTime]
 }

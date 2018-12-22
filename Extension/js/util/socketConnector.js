@@ -1,12 +1,14 @@
 var iframe_video = {dur: null, curr: null, paused: true}
 chrome.runtime.onMessage.addListener(function(data) {
-  if(data.tabPriority)
-    if(typeof updateData === "function")
-      updateData();
+  if(data.tabPriority) {
+    var event = new CustomEvent('PreMiD_UpdateData')
+    window.dispatchEvent(event);
+  }
 
-  if(data.mediaKeys)
-    if(typeof handleMediaKeys === "function")
-      handleMediaKeys(data)
+  if(data.mediaKeys) {
+    var event1 = new CustomEvent('PreMiD_MediaKeys', {detail: data.mediaKeys})
+    window.dispatchEvent(event1);
+  }
 
   if(!sessionStorage.getItem("tabPriority")) {
     sessionStorage.setItem("tabPriority", true)
@@ -64,3 +66,7 @@ function getTimestamps(videoTime, videoDuration) {
     videoDuration;
     return [Math.floor(startTime/1000), endTime]
 }
+
+window.addEventListener("PreMiD_UpdatePresence", function(data) {
+  chrome.runtime.sendMessage({presence: data.detail})
+});

@@ -1,5 +1,30 @@
 var dataGrabberID,
 currPresence
+
+window.addEventListener("PreMiD_RequestExtensionData", async function(data) {
+  if(data.detail.strings != undefined) {
+    var translations = []
+    for(var i = 0; i < Object.keys(data.detail.strings).length; i++) {
+      translations.push(getString(Object.values(data.detail.strings)[i]))
+    }
+    Promise.all(translations)
+    .then(completed => {
+      for(var i = 0; i < Object.keys(data.detail.strings).length; i++) {
+        data.detail.strings[Object.keys(data.detail.strings)[i]] = completed[i]
+      }
+    })
+  }
+
+  data.detail.version = eval(data.detail.version)
+
+  var event = new CustomEvent('PreMiD_ReceiveExtensionData', {detail: data.detail})
+  window.dispatchEvent(event);
+})
+
+async function test(d) {
+  return "dd"
+}
+
 $(document).ready(async function() {
   await chrome.storage.local.set(
     {
@@ -7,25 +32,7 @@ $(document).ready(async function() {
         {
           service: "YouTube",
           url: "www.youtube.com",
-          presence: `var playback=!1,videoTitle,videoAuthor,videoTimestamps,playbackBoolean,smallImageKey,smallImageText
-          async function handleMediaKeys(data){if(playback){switch(data.mediaKeys){case "pause":playbackBoolean?$('.video-stream')[0].pause():$('.video-stream')[0].play()
-          break
-          case "nextTrack":$('.ytp-next-button')[0].click()
-          break
-          case "previousTrack":$('.ytp-prev-button')[0].click()
-          break}}}
-          async function updateData(){playback=document.location.pathname.includes("/watch")&&$('.ytd-video-primary-info-renderer .title').text()!=""&&$('.video-stream')[0]!=undefined&&!isNaN($('.video-stream')[0].duration)?!0:!1
-          if(playback){videoTitle=$('.ytd-video-primary-info-renderer .title').text()
-          videoAuthor=$("#upload-info .style-scope .ytd-video-owner-renderer").contents().first().html()
-          videoTimestamps=getTimestamps(Math.floor($('.video-stream')[0].currentTime),Math.floor($('.video-stream')[0].duration))
-          playbackBoolean=!$('.video-stream')[0].paused
-          smallImageKey=playbackBoolean?'play':'pause'
-          smallImageText=playbackBoolean?await getString("presence.playback.playing"):await getString("presence.playback.paused")
-          var data={clientID:'463097721130188830',presenceData:{details:$('<div/>').html(videoTitle).text(),state:$('<div/>').html(videoAuthor).text(),largeImageKey:'yt_lg',largeImageText:chrome.runtime.getManifest().name+' V'+chrome.runtime.getManifest().version,smallImageKey:smallImageKey,smallImageText:smallImageText,},trayTitle:$('<div/>').html(videoTitle).text(),playback:playbackBoolean,service:'YouTube'}
-          if(playbackBoolean){data.presenceData.startTimestamp=videoTimestamps[0]
-          data.presenceData.endTimestamp=videoTimestamps[1]}else{delete data.presenceData.startTimestamp
-          delete data.presenceData.endTimestamp}
-          chrome.runtime.sendMessage({presence:data})}}`
+          presence: ``
         }
       ]
     }
@@ -36,11 +43,15 @@ $(document).ready(async function() {
     if(document.location.hostname == presence.url) {
       if(!dataGrabberID) {
         dataGrabberID = true
-        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        $(`<script src="https://cdn.jsdelivr.net/gh/Timeraa/PreMiD@V1.4/Extension/js/util/jquery-3.3.1.min.js"></script>`).appendTo('body')
+        $(`<script></script>`).appendTo('body')
+        /*chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
           console.log(tabs)
         })
+        $.getScript("https://cdn.jsdelivr.net/gh/Timeraa/PreMiD@V1.4/presences/YouTube.js", function() {
+         console.log(typeof handleMediaKeys === "function")
+        })*/
         //browser.tabs.executeScript(0, "https://cdn.jsdelivr.net/gh/Timeraa/PreMiD@V1.4/presences/YouTube.js")
-        setInterval(() =>   console.log(typeof handleMediaKeys === "function"), 1*1000)
       }
     }
   });
