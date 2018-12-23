@@ -16,7 +16,7 @@ async function addService(data) {
           description: "WOW",
           color: "#da2727",
           url: "www.youtube.com",
-          presence: 'https://de.paz.yt/proxy/r/?https://raw.githubusercontent.com/Timeraa/PreMiD/V1.4/presences/YouTube.js',
+          presence: 'https://de.paz.yt/proxy/r/?https://raw.githubusercontent.com/Timeraa/PreMiD/V1.4/presences/YouTube/presence.js',
           enabled: true
         }
       ]
