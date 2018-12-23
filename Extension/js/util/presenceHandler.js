@@ -21,26 +21,11 @@ window.addEventListener("PreMiD_RequestExtensionData", async function(data) {
   window.dispatchEvent(event);
 })
 
-async function test(d) {
-  return "dd"
-}
-
+//* Load presence and inject it
 $(document).ready(async function() {
-  await chrome.storage.local.set(
-    {
-      presences: [
-        {
-          service: "YouTube",
-          url: "www.youtube.com",
-          presence: 'https://de.paz.yt/proxy/r/?https://raw.githubusercontent.com/Timeraa/PreMiD/V1.4/presences/YouTube.js'
-        }
-      ]
-    }
-  )
-
   var presences = (await chrome.storage.local.get(['presences'])).presences
   presences.forEach(presence => {
-    if(document.location.hostname == presence.url) {
+    if(document.location.hostname == presence.url && presence.enabled) {
       if(!dataGrabberID) {
         dataGrabberID = true
         $(`

@@ -27,7 +27,6 @@ window.addEventListener("PreMiD_ReceiveExtensionData", function(data) {
  */
 async function handleMediaKeys(data) {
   data = data.detail
-  console.log(data)
   if(playback) {
     switch (data) {
       case "pause":

@@ -35,6 +35,10 @@
       "all_frames": true
     },
     {
+      "matches": ["https://premid.app/*"],
+      "js": ["js/util/presenceManager.js"]
+    },
+    {
       "matches": ["*://music.youtube.com/*"],
       "js": ["js/presences/Music/YouTube_Music.js"]
     },
