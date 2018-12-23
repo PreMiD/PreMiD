@@ -7,7 +7,6 @@
       </router-link>
     </div>
     <div id="links" class="col">
-      <router-link class="headerLink" to="/support"><font-awesome-icon icon="life-ring" /> Support</router-link>
       <router-link class="headerLink" to="/contributors"><font-awesome-icon icon="users" /> Contributors</router-link>
       <router-link class="headerLink" to="/downloads"><font-awesome-icon icon="download" /> Downloads</router-link>
       <router-link class="headerLink" to="/store"><font-awesome-icon icon="store" /> Store</router-link>
