@@ -4,6 +4,9 @@ $(document).ready(function() {
 
 async function addService(data) {
   if(data.detail.userID && data.detail.service != undefined) {
+    fetch(`https://raw.githubusercontent.com/Timeraa/PreMiD/V1.4/presences/YouTube/presence.json`)
+    .then(res => res.json())
+    .then(json => console.log(json))
     console.log(data.detail.userID, data.detail.service)
   }
 
