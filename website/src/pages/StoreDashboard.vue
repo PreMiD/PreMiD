@@ -1,15 +1,15 @@
 <template>
   <div id="content">
     <div class="row xheader">
-      <h1>Store Dashboard</h1>
-      <p>Upload content here.</p>
+      <h1>Add your addons to PreMiD</h1>
+      <p>[page WIP]</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Store",
+  name: "StoreUpload",
   head: {
     title: { inner: "Store" }
   }
