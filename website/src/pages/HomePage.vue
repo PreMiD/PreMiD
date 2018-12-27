@@ -90,7 +90,7 @@ export default {
     title: { inner: "Home" }
   },
   mounted(){
-    let scrr=document.createElement('script');scrr.innerHTML = "$.getJSON('https://wa.au.paz.yt/premid.php?name,author,max=12', function(d){ii=1;for(i in d){ii++;var ch = document.createElement('img');ch.src='https://raw.githubusercontent.com/xPazz/PreMiD-Services/master/'+i.split(',')[0]+'/'+i.split(',')[1]+'.png';var chh = document.createElement('a');chh.href='/user/?'+i.split(',')[0];chh.innerHTML = new XMLSerializer().serializeToString(ch);document.querySelector('#apps-preview').appendChild(chh);document.querySelector('#apps-preview').parentElement.childNodes[0].childNodes[2].innerText = document.querySelector('#apps-preview').parentElement.childNodes[0].childNodes[2].innerText.replace('[int]', ii);}var datakey=[];for(data in document.querySelector(\"#view\").dataset){datakey.push(data)};$(\"*\").attr(\"data-\"+datakey[0], \"\");});";document.head.appendChild(scrr);
+    let scrr=document.createElement('script');scrr.innerHTML = "$.getJSON('https://api.premid.app/getServices', function(d){ii=0;for(i in d){ii++;var ch = document.createElement('img');ch.src='https://raw.githubusercontent.com/Timeraa/PreMiD/V1.4/presences/'+d[i].name+'/presence.png';var chh = document.createElement('a');chh.href='/user/?'+d[i].userID;chh.innerHTML = new XMLSerializer().serializeToString(ch);document.querySelector('#apps-preview').appendChild(chh);document.querySelector('#apps-preview').parentElement.childNodes[0].childNodes[2].innerText = document.querySelector('#apps-preview').parentElement.childNodes[0].childNodes[2].innerText.replace('[int]', ii);}var datakey=[];for(data in document.querySelector(\"#view\").dataset){datakey.push(data)};$(\"*\").attr(\"data-\"+datakey[0], \"\");});";document.head.appendChild(scrr);
   }
 };
 </script>
@@ -155,6 +155,7 @@ export default {
 
 .banner-right {
 	float:right;
+	margin-right:1rem;
 }
 
 .banner-right > a > img {

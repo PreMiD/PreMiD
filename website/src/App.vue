@@ -12,14 +12,17 @@
     </transition>
     <div style="height:fit-content;width:100vw;" class="footer">
     <div style="height:75px;width:100vw;"></div>
-    <div style="display:inline;margin-left:2rem;">
-      <div style="display:inline;" class="switch"> 
-        <label> Dark Mode<input type="checkbox" id="darkmode" class="togglePresence">
-          <span class="lever" onclick="darkToggle();"></span> 
-        </label>
+    <div class="footer-thing">
+      <div class="footer-item">
+        <div class="switch"> 
+          <label>
+          <span>Dark Mode</span>
+          <input type="checkbox" id="darkmode" class="togglePresence">
+            <span class="lever" onclick="darkToggle();"></span> 
+          </label>
+        </div>
       </div>
-
-      <div style="display:inline;float:right;margin-right:2rem;">
+      <div class="footer-item last">
         <span>running <a id="commit"></a></span>
       </div>
     </div>
@@ -214,5 +217,42 @@ body {
 
 a:hover:not(.btn) {
   color:#00acff;
+}
+
+
+.switch label input[type=checkbox]:checked+.lever {
+    background-color: #84c7c1;
+}
+
+.switch > label > span {
+  margin-right:0.5rem;
+}
+.lever {
+  margin:0 0 0 0!important;
+  margin-bottom:2px!important;
+}
+
+.footer-item > .switch, .footer-item {
+  width:fit-content;
+  display:inline;
+}
+
+.footer-item {
+  padding:1rem;
+  border-radius:2rem;
+  box-shadow: inset 0 0 20px #00000035;
+}
+
+.dark .footer-item {
+  background-color:#1f1f1f;
+  box-shadow: inset 0 0 12px #00000010;
+}
+
+.last {
+  margin-left:62.5%;
+}
+
+.footer-thing {
+  display:inline;margin-left:2rem;margin-right:2rem;width:100%;
 }
 </style>
