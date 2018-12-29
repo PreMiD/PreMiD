@@ -53,7 +53,7 @@ export default new Router({
       component: Downloads
     },
     {
-      path: '/user',
+      path: '/user/:id',
       name: 'User',
       component: User
     },
