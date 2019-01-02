@@ -8,7 +8,7 @@ These languages already added in the application, but may need some improvements
 
 | Language | Percentage |
 | :---: | :---: |
-| Arabic | 13% |
+| Arabic | <img src="https://wa.au.paz.yt/langapi.php?Arabic">% |
 | Danish | 96% |
 | Dutch | 70% |
 | English  | 100% |
