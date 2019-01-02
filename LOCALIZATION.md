@@ -28,7 +28,7 @@ These languages already added in the application, but may need some improvements
 ## How to start?
 
 1. Join our [Discord server](https://discord.gg/WvfVZ8T).
-2. Locate the `#support` text channel.
-3. Mention `@Admin` role and tell them that you want to help with application translation.
+2. Locate the `#how-to-contribute` text channel.
+3. Click on the link given and register a new account.
 4. Wait until you will be accepted or rejected.
 5. All translation instructions will be sent to you in near future.
