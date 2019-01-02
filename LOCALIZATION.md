@@ -8,7 +8,7 @@ These languages already added in the application, but may need some improvements
 
 | Language | Percentage |
 | :---: | :---: |
-| Arabic | <img src="https://premid.app/lang.png/?Arabic">% |
+| Arabic | <img src="https://premid.app/lang.png?Arabic">% |
 | Danish | 96% |
 | Dutch | 70% |
 | English  | 100% |
