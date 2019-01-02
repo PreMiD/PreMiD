@@ -3,6 +3,8 @@ videoTitle,
 videoAuthor,
 videoTimestamps,
 playbackBoolean,
+liveBoolean,
+startTimestamp,
 smallImageKey,
 smallImageText
 
@@ -40,10 +42,12 @@ async function updateData() {
 
   //* If page has all required propertys
   if(playback) {
+    if(!startTimestamp) startTimestamp = Math.floor(Date.now() / 1000)
     videoTitle = $('.ytd-video-primary-info-renderer .title').text()
     videoAuthor = $("#upload-info .style-scope .ytd-video-owner-renderer").contents().first().html()
     videoTimestamps = getTimestamps(Math.floor($('.video-stream')[0].currentTime), Math.floor($('.video-stream')[0].duration))
     playbackBoolean = !$('.video-stream')[0].paused
+    liveBoolean = Boolean($('.ytp-live')[0])
     smallImageKey = playbackBoolean ? 'play' : 'pause'
     smallImageText = playbackBoolean ? await getString("presence.playback.playing") : await getString("presence.playback.paused")
 
@@ -63,8 +67,8 @@ async function updateData() {
     }
 
     if(playbackBoolean) {
-      data.presenceData.startTimestamp = videoTimestamps[0]
-      data.presenceData.endTimestamp = videoTimestamps[1]
+      data.presenceData.startTimestamp = liveBoolean ? startTimestamp : videoTimestamps[0]
+      if(!liveBoolean) data.presenceData.endTimestamp = videoTimestamps[1]
     } else {
       delete data.presenceData.startTimestamp
       delete data.presenceData.endTimestamp
