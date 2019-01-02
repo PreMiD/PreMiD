@@ -1,0 +1,9 @@
+{
+  "name": "SoundCloud",
+  "description": "SoundCloud is a music and podcast streaming platform that lets you listen to millions of songs from around the world, or upload your own. Start listening now!",
+  "version": 2.0,
+  "color": "#f50f50",
+  "url": "soundcloud.com",
+  "creator": "223238938716798978",
+  "category": "music"
+}
