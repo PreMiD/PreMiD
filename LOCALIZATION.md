@@ -8,22 +8,22 @@ These languages already added in the application, but may need some improvements
 
 | Language | Percentage |
 | :---: | :---: |
-| Arabic | <img src="https://premid.app/lang.png?Arabic">% |
-| Danish | <img src="https://premid.app/lang.png?Danish">% |
-| Dutch | <img src="https://premid.app/lang.png?Dutch">% |
-| English | <img src="https://premid.app/lang.png?English">% |
-| French | <img src="https://premid.app/lang.png?French">% |
-| German | <img src="https://premid.app/lang.png?German">% |
-| Hebrew | <img src="https://premid.app/lang.png?Hebrew">% |
-| Italian | <img src="https://premid.app/lang.png?Italian">% |
-| Latin | <img src="https://premid.app/lang.png?Latin">% |
-| Norwegian | <img src="https://premid.app/lang.png?Norwegian">% |
-| Portuguese | <img src="https://premid.app/lang.png?Portuguese">% |
-| Portuguese (BR) | <img src="https://premid.app/lang.png?Portuguese (BR)">% |
-| Russian | <img src="https://premid.app/lang.png?Russian">% |
-| Spanish | <img src="https://premid.app/lang.png?Spanish">% |
-| Swedish | <img src="https://premid.app/lang.png?Swedish">% |
-| Vietnamese | <img src="https://premid.app/lang.png?Vietnamese">% |
+| Arabic | <img src="https://de.paz.yt/lang.png/?Arabic">% |
+| Danish | <img src="https://de.paz.yt/lang.png/?Danish">% |
+| Dutch | <img src="https://de.paz.yt/lang.png/?Dutch">% |
+| English | <img src="https://de.paz.yt/lang.png/?English">% |
+| French | <img src="https://de.paz.yt/lang.png/?French">% |
+| German | <img src="https://de.paz.yt/lang.png/?German">% |
+| Hebrew | <img src="https://de.paz.yt/lang.png/?Hebrew">% |
+| Italian | <img src="https://de.paz.yt/lang.png/?Italian">% |
+| Latin | <img src="https://de.paz.yt/lang.png/?Latin">% |
+| Norwegian | <img src="https://de.paz.yt/lang.png/?Norwegian">% |
+| Portuguese | <img src="https://de.paz.yt/lang.png/?Portuguese">% |
+| Portuguese (BR) | <img src="https://de.paz.yt/lang.png/?Portuguese (BR)">% |
+| Russian | <img src="https://de.paz.yt/lang.png/?Russian">% |
+| Spanish | <img src="https://de.paz.yt/lang.png/?Spanish">% |
+| Swedish | <img src="https://de.paz.yt/lang.png/?Swedish">% |
+| Vietnamese | <img src="https://de.paz.yt/lang.png/?Vietnamese">% |
 
 ## How to start?
 
