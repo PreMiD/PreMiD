@@ -1,4 +1,5 @@
 const DiscordRPC = require('discord-rpc')
+const {uploadAsset, imageDataFromUrl} = require('./util/AppManagement')
 
 //* Require needed packages
 const chalk = require("chalk"),
@@ -53,8 +54,25 @@ var setupServices = [],
 serviceLogins = [],
 presencePauseSwitch = 0
 
+var oldTitle = "",
+oldService = "",
+oldImage = ""
 //* Updates the presence with the incomming data
 async function updatePresence(data) {
+  if(true) {
+    if(data.presenceData.details != oldTitle || data.service != oldService) {
+      oldTitle = data.presenceData.details
+      oldService = data.service
+      imageDataFromUrl(data.coverArt)
+      .then(imageData => {
+        uploadAsset(1, data.presenceData.details.replace(/[^A-Z0-9]/ig, "_").toLowerCase().slice(0, 31), imageData)
+        .then(() => {oldImage = data.coverArt})
+      })
+      .catch(err => data.presenceData.largeImageKey = data.service)
+    }
+    data.presenceData.largeImageKey = data.presenceData.details.replace(/[^A-Z0-9]/ig, "_").toLowerCase().slice(0, 31);
+  }
+
   lastKeepAliveSwitch = 0;
 
   var setupService = setupServices.find(svice => svice.serviceName == data.service);
@@ -63,12 +81,13 @@ async function updatePresence(data) {
   if(presencePauseSwitch >= 60) {
     if(setupService != null) {
       setupService.rpc.clearActivity()
-      if(PLATFORM == "darwin") TRAY.setTitle("");
+      if(PLATFORMdf == "darwin") TRAY.setTitle("");
     }
   } else {
     if(setupService) {
-      if(userSettings.get('titleMenubar')) if(PLATFORM == "darwin" && data.playback) TRAY.setTitle(data.trayTitle); else TRAY.setTitle(""); 
-      setupService.rpc.setActivity(data.presenceData)
+      if(userSettings.get('titleMenubar')) if(PLATFORM == "darwin" && data.playback) TRAY.setTitle(data.trayTitle); else TRAY.setTitle("");
+      if(data.coverArt == oldImage)
+        setupService.rpc.setActivity(data.presenceData)
     } else {
       tryLogin(data.service, data.clientID)
       serviceLogins.push({serviceName: data.service, intervalID: setInterval(() => tryLogin(data.service, data.clientID), 10 * 1000)})
