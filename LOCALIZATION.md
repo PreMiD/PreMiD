@@ -9,21 +9,21 @@ These languages already added in the application, but may need some improvements
 | Language | Percentage |
 | :---: | :---: |
 | Arabic | <img src="https://premid.app/lang.png?Arabic">% |
-| Danish | 96% |
-| Dutch | 70% |
-| English  | 100% |
-| French | 100% |
-| German | 100% |
-| Hebrew | 100% |
-| Italian | 100% |
-| Latin | 60% |
-| Norwegian | 96% |
-| Portuguese | 100% |
-| Portuguese (BR) | 100% |
-| Russian | 74% |
-| Spanish | 100% |
-| Swedish | 70% |
-| Vietnamese | 0% |
+| Danish | <img src="https://premid.app/lang.png?Danish">% |
+| Dutch | <img src="https://premid.app/lang.png?Dutch">% |
+| English | <img src="https://premid.app/lang.png?English">% |
+| French | <img src="https://premid.app/lang.png?French">% |
+| German | <img src="https://premid.app/lang.png?German">% |
+| Hebrew | <img src="https://premid.app/lang.png?Hebrew">% |
+| Italian | <img src="https://premid.app/lang.png?Italian">% |
+| Latin | <img src="https://premid.app/lang.png?Latin">% |
+| Norwegian | <img src="https://premid.app/lang.png?Norwegian">% |
+| Portuguese | <img src="https://premid.app/lang.png?Portuguese">% |
+| Portuguese (BR) | <img src="https://premid.app/lang.png?Portuguese (BR)">% |
+| Russian | <img src="https://premid.app/lang.png?Russian">% |
+| Spanish | <img src="https://premid.app/lang.png?Spanish">% |
+| Swedish | <img src="https://premid.app/lang.png?Swedish">% |
+| Vietnamese | <img src="https://premid.app/lang.png?Vietnamese">% |
 
 ## How to start?
 
