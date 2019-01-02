@@ -24,7 +24,8 @@
       "js": [
         "js/util/jquery-3.3.1.min.js",
         "js/util/socketConnector.js",
-        "js/util/langManager.js"
+        "js/util/langManager.js",
+        "js/util/presenceHandler.js"
       ],
       "css": ["css/connect.css"]
     },
@@ -34,8 +35,8 @@
       "all_frames": true
     },
     {
-      "matches": ["*://www.youtube.com/*"],
-      "js": ["js/presences/Video/YouTube.js"]
+      "matches": ["https://premid.app/*"],
+      "js": ["js/util/presenceManager.js"]
     },
     {
       "matches": ["*://music.youtube.com/*"],

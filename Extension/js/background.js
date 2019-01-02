@@ -1,4 +1,4 @@
-var allowedTabsStatic = ["www.youtube.com", "music.youtube.com", "soundcloud.com", "www.netflix.com", "www.aniflix.tv", "www.anime4you.one", "www.twitch.tv", "www.rabb.it", "www.crunchyroll.com"]
+var allowedTabsStatic = []
 
 chrome.runtime.onInstalled.addListener(function(details) {
   switch(details.reason) {
@@ -56,57 +56,55 @@ chrome.runtime.onMessage.addListener(function(data, sender) {
  * Handles tab changes.
  */
 async function tabPriority() {
-  chrome.storage.sync.get(['options'], function(result) {
+  chrome.storage.local.get(['presences'], function(result) {
+    allowedTabsStatic = []
+    result.presences.forEach(presence => {
+      if(presence.enabled)
+      allowedTabsStatic.push(presence.url)
+    });
     allowedTabs = allowedTabsStatic.slice()
 
-    options = result.options
-    if(!options.enabled) {
-      allowedTabs = []
-      priorityTab = null
-      priorityTabId = null
-      lastTabId = null
-    }
-
-    updateTabPriorityService("youtube", "www.youtube.com", options)
-    updateTabPriorityService("youtubeMusic", "music.youtube.com", options)
-    updateTabPriorityService("soundcloud", "soundcloud.com", options)
-    updateTabPriorityService("netflix", "www.netflix.com", options)
-    updateTabPriorityService("twitch", "www.twitch.tv", options)
-    updateTabPriorityService("aniflix", "www.aniflix.tv", options)
-    updateTabPriorityService("anime4you", "www.anime4you.one", options)
-    updateTabPriorityService("rabbIt", "www.rabb.it", options)
-    updateTabPriorityService("crunchyroll", "www.crunchyroll.com", options)
-
-    chrome.tabs.query({active: true}, function(tabs) {
-      if(tabs[0].id == lastTabId) {
-      for (var i = 0; i < allowedTabs.length; i++) {
-        if(tabs[0].url.indexOf(allowedTabs[i]) > -1) {
-            if(lastTabPriorityLock == 5) {
-              if(priorityTabId != tabs[0].id) {
-                if(priorityTabId != null)
-                  chrome.tabs.sendMessage(priorityTabId, {tabPriority: false})
-                priorityTabId = tabs[0].id
-                priorityTab = tabs[0]
-              }
-            } 
-  
-            lastTabPriorityLock++
-          }
-        }
-      } else {
-        lastTabId = tabs[0].id
-        lastTabPriorityLock = 0
+    
+    chrome.storage.sync.get(['options'], function(result) {
+      options = result.options
+      if(!options.enabled) {
+        allowedTabs = []
+        priorityTab = null
+        priorityTabId = null
+        lastTabId = null
       }
-  
-      if(priorityTabId != null)
-        chrome.tabs.sendMessage(priorityTabId, {tabPriority: true})
-    })
 
-    //* Update settings in application if changed
-    if(oldOptions == null || !isEquivalent(result.options, oldOptions)) {
-      oldOptions = result.options
-      socket.emit('settingsChange', result)
-    }
+      chrome.tabs.query({active: true}, function(tabs) {
+        if(tabs[0].id == lastTabId) {
+        for (var i = 0; i < allowedTabs.length; i++) {
+          if(tabs[0].url.indexOf(allowedTabs[i]) > -1) {
+              if(lastTabPriorityLock == 5) {
+                if(priorityTabId != tabs[0].id) {
+                  if(priorityTabId != null)
+                    chrome.tabs.sendMessage(priorityTabId, {tabPriority: false})
+                  priorityTabId = tabs[0].id
+                  priorityTab = tabs[0]
+                }
+              } 
+    
+              lastTabPriorityLock++
+            }
+          }
+        } else {
+          lastTabId = tabs[0].id
+          lastTabPriorityLock = 0
+        }
+    
+        if(priorityTabId != null)
+          chrome.tabs.sendMessage(priorityTabId, {tabPriority: true})
+      })
+
+      //* Update settings in application if changed
+      if(oldOptions == null || !isEquivalent(result.options, oldOptions)) {
+        oldOptions = result.options
+        socket.emit('settingsChange', result)
+      }
+    })
   })
 }
 
@@ -171,18 +169,6 @@ async function updateOptions() {
     options[checkStorage("systemStartup", options)]
     options[checkStorage("darkTheme", options)]
     options[checkStorage("tabPriority", options)]
-    
-    options[checkStorage("youtubeMusic", options)]
-    options[checkStorage("soundcloud", options)]
-
-    options[checkStorage("youtube", options)]
-    options[checkStorage("twitch", options)]
-    options[checkStorage("netflix", options)]
-    options[checkStorage("rabbIt", options)]
-
-    options[checkStorage("aniflix", options)]
-    options[checkStorage("crunchyroll", options)]
-    options[checkStorage("anime4you", options)]
 
     chrome.storage.sync.set({options})
   })

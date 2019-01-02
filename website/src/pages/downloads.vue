@@ -7,11 +7,11 @@
       <div class="center">
         <div class="flexcenter"><a id="dl" href="#" style="margin:1rem;" class="waves-effect waves-light button-slide button-start"><span>Download</span></a></div>
         <a href="#" onclick="document.querySelector('#os').style.display = 'block';">Not your OS?</a>
-        <div class="input-field" style="width:25%;margin-left:37.5%;text-align-last:center;"><select id="os">
-          <option value="none" disabled selected>Pick your OS</option>
-          <option value="windows">Windows</option>
-          <option value="mac">Mac OS</option>
-          <option value="linux">Linux</option>
+        <div class="input-field" style="width:25%;margin-left:37.5%;text-align-last:center;"><select id="os" onchange="setupDownloads(this.value, document.querySelector('#br').value);">
+          <option value="" disabled selected>Pick your OS</option>
+          <option value="Windows">Windows</option>
+          <option value="Mac OS X">Mac OS</option>
+          <option value="Linux">Linux</option>
         </select></div>
         <br>
         <div class="center">
@@ -19,10 +19,10 @@
         </div>
         <div class="flexcenter"><a id="ext" href="#" style="margin:1rem;" class="waves-effect waves-light button-slide button-start"><span>Extension</span></a></div>
         <a href="#" onclick="document.querySelector('#br').style.display = 'block';">Not your browser?</a>
-        <div class="input-field" style="width:25%;margin-left:37.5%;text-align-last:center;"><select id="br">
-          <option value="none" disabled selected>Pick your Browser</option>
-          <option value="chrome">Chromium-based (Opera, Vivalidi, Chrome..)</option>
-          <option value="firefox">Firefox</option>
+        <div class="input-field" style="width:25%;margin-left:37.5%;text-align-last:center;"><select id="br" onchange="setupDownloads(document.querySelector('#os').value, this.value);">
+          <option value="" disabled selected>Pick your Browser</option>
+          <option value="Chrome">Chromium-based (Opera, Vivalidi, Chrome..)</option>
+          <option value="Firefox">Firefox</option>
         </select></div>
         <div id="chrome" style="display:none;">
           <span> Chrome Web Store
@@ -57,7 +57,7 @@ export default {
   },
   mounted(){
     let dlxs = document.createElement('script');
-    dlxs.setAttribute('src', 'http://wa.au.paz.yt/info.js');
+    dlxs.setAttribute('src', '/static/js/info.js');
     document.head.appendChild(dlxs);
   }
 };

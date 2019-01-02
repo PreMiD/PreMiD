@@ -1,10 +1,11 @@
 {
   "name": "premid",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index",
+    "start": "node index"
   },
   "author": "Timeraa",
   "license": "ISC",
@@ -16,5 +17,8 @@
     "node-fetch": "^2.3.0",
     "request": "^2.88.0",
     "utf8": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
   }
 }

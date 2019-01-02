@@ -8,25 +8,27 @@ These languages already added in the application, but may need some improvements
 
 | Language | Percentage |
 | :---: | :---: |
-| Danish | 100% |
-| Dutch | 95% |
-| English  | 100% |
-| French | 91% |
-| German | 97% |
-| Hebrew | 95% |
-| Italian | 97% |
-| Latin | 68% |
-| Norwegian | 100% |
-| Portuguese | 100% |
-| Portuguese (BR) | 100% |
-| Russian | 100% |
-| Spanish | 97% |
-| Swedish | 95% |
+| Arabic | <img src="https://de.paz.yt/lang.png/?Arabic">% |
+| Danish | <img src="https://de.paz.yt/lang.png/?Danish">% |
+| Dutch | <img src="https://de.paz.yt/lang.png/?Dutch">% |
+| English | <img src="https://de.paz.yt/lang.png/?English">% |
+| French | <img src="https://de.paz.yt/lang.png/?French">% |
+| German | <img src="https://de.paz.yt/lang.png/?German">% |
+| Hebrew | <img src="https://de.paz.yt/lang.png/?Hebrew">% |
+| Italian | <img src="https://de.paz.yt/lang.png/?Italian">% |
+| Latin | <img src="https://de.paz.yt/lang.png/?Latin">% |
+| Norwegian | <img src="https://de.paz.yt/lang.png/?Norwegian">% |
+| Portuguese | <img src="https://de.paz.yt/lang.png/?Portuguese">% |
+| Portuguese (BR) | <img src="https://de.paz.yt/lang.png/?Portuguese (BR)">% |
+| Russian | <img src="https://de.paz.yt/lang.png/?Russian">% |
+| Spanish | <img src="https://de.paz.yt/lang.png/?Spanish">% |
+| Swedish | <img src="https://de.paz.yt/lang.png/?Swedish">% |
+| Vietnamese | <img src="https://de.paz.yt/lang.png/?Vietnamese">% |
 
 ## How to start?
 
 1. Join our [Discord server](https://discord.gg/WvfVZ8T).
-2. Locate the `#support` text channel.
-3. Mention `@Admin` role and tell them that you want to help with application translation.
+2. Locate the `#how-to-contribute` text channel.
+3. Click on the link given and register a new account.
 4. Wait until you will be accepted or rejected.
 5. All translation instructions will be sent to you in near future.

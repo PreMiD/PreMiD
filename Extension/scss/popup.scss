@@ -340,3 +340,19 @@ input[type="checkbox"]:checked:not(:disabled).tabbed:focus ~ .lever::before {
   color: rgba(255, 255, 255, 0.6);
   transform: scale(1.025);
 }
+
+.noPresences {
+  margin: 0;
+  margin-top: -5px;
+  margin-left: 5px;
+  padding: 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+.presenceStore {
+  margin-top: 10px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+}

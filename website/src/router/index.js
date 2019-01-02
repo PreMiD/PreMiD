@@ -20,42 +20,42 @@ export default new Router({
     {
       path: '/',
       name: 'Homepage',
-      component: Homepage,
+      component: Homepage
     },
     {
       path: '/contributors',
       name: 'Contributors',
-      component: Contributorspage,
+      component: Contributorspage
     },
     {
       path: '/about',
       name: 'About',
-      component: Aboutpage,
+      component: Aboutpage
     },
 	{
       path: '/store',
       name: 'Store',
-      component: Storepage,
+      component: Storepage
     },
 	{
       path: '/store/dashboard',
       name: 'Store Dashboard',
-      component: StoreDashboard,
+      component: StoreDashboard
     },
 	{
       path: '/store/install',
       name: 'Store Installer',
-      component: StoreInstall,
+      component: StoreInstall
     },
     {
       path: '/downloads',
       name: 'Downloads',
-      component: Downloads,
+      component: Downloads
     },
     {
-      path: '/user',
+      path: '/user/:id',
       name: 'User',
-      component: User,
+      component: User
     },
     {
       path: '*',

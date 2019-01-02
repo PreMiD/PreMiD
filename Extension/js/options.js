@@ -22,36 +22,56 @@ chrome.runtime.getPlatformInfo(async function(info) {
 })
 
 $(document).ready(function() {
+  chrome.storage.local.get(["presences"], function(data) {
+    if(data.presences.length > 0) {
+      data.presences.forEach(presence => {
+        $(`
+        <tr>
+          <td>
+            <h5 id="pMiDOption">${presence.name}</h5>
+          </td>
+          <td>
+            <div class="switch ${presence.name}">
+              <label class="presenceToggle">
+                <input type="checkbox" class="${presence.name}" ${presence.enabled ? "checked" : ""} />
+                <span class="lever" color="${presence.color}"></span>
+              </label>
+            </div>
+          </td>
+        </tr>`).appendTo('.presences')
+        if($(`.${presence.name} input`).is(':checked')) {
+          $(`.${presence.name} .lever`).attr('style', `background-color: ${presence.color} !important`)
+        }
+      })
+      $('.presenceToggle').click(async function(event) {
+        var element = this
+        chrome.storage.local.get(["presences"], function(data) {
+          data.presences.find(presence => presence.name == $(element).children().get(0).getAttribute("class")).enabled = $(element).children().get(0).checked
+          chrome.storage.local.set(data)
+        })
+        if($(this).children().get(0).checked) {
+          $(this).children().get(1).setAttribute("style", `background-color: ${$(this).children().get(1).getAttribute("color")} !important;`)
+        } else {
+          $(this).children().get(1).setAttribute("style", ``)
+        }
+      })
+    } else {
+      $(`<h5 class="noPresences">Keine Presenzen</h5>`).insertBefore('.presenceStore')
+    }
+  })
+
   var enabledToggle = $('.togglePresence'),
-  youtubeToggle = $('.toggleYouTube'),
-  youtubeMusicToggle = $('.toggleYouTubeMusic'),
-  twitchToggle = $('.toggleTwitch'),
-  soundcloudToggle = $('.toggleSoundCloud'),
-  netflixToggle = $('.toggleNetflix'),
-  rabbitToggle = $('.toggleRabbit'),
-  anime4YouToggle = $('.toggleAnime4You'),
   mediaControlsToggle = $('.toggleMediaControls'),
   checkForUpdatesToggle = $('.toggleCheckUpdates'),
   systemStartupToggle = $('.toggleSystemStartup'),
   darkThemeToggle = $('.toggleDarkTheme'),
-  crunchyrollToggle = $('.toggleCrunchyroll'),
-  aniflixToggle = $('.toggleAniflix'),
   tabPriorityToggle = $('.toggleTabPriority')
 
   enabledToggle.change(tEnabled);
-  youtubeToggle.change(tYT);
-  youtubeMusicToggle.change(tYTM);
-  twitchToggle.change(tT);
-  soundcloudToggle.change(tSC);
-  netflixToggle.change(tN);
   mediaControlsToggle.change(tMC);
   checkForUpdatesToggle.change(tCFU);
   systemStartupToggle.change(tSS);
   darkThemeToggle.change(tdT);
-  rabbitToggle.change(tRI);
-  anime4YouToggle.change(tA4Y);
-  crunchyrollToggle.change(tCR);
-  aniflixToggle.change(tAF);
   tabPriorityToggle.change(tTP);
 
   chrome.storage.sync.get(['options'], function(result) {
@@ -59,21 +79,12 @@ $(document).ready(function() {
     if(result.options != undefined) {
       if(options.darkTheme) $('html').addClass("dark")
       enabledToggle.prop('checked', result.options.enabled)
-      youtubeToggle.prop('checked', result.options.youtube)
-      youtubeMusicToggle.prop('checked', result.options.youtubeMusic)
-      twitchToggle.prop('checked', result.options.twitch)
-      soundcloudToggle.prop('checked', result.options.soundcloud)
-      netflixToggle.prop('checked', result.options.netflix)
-      rabbitToggle.prop('checked', result.options.rabbIt)
-      anime4YouToggle.prop('checked', result.options.anime4you)
       if(titleMenubarToggle != undefined)
       titleMenubarToggle.prop('checked', result.options.titleMenubar)
       mediaControlsToggle.prop('checked', result.options.mediaControls)
       checkForUpdatesToggle.prop('checked', result.options.checkForUpdates)
       systemStartupToggle.prop('checked', result.options.systemStartup)
       darkThemeToggle.prop('checked', result.options.darkTheme)
-      aniflixToggle.prop('checked', result.options.aniflix)
-      crunchyrollToggle.prop('checked', result.options.crunchyroll)
       tabPriorityToggle.prop('checked', result.options.tabPriority)
     }
   })
@@ -81,31 +92,6 @@ $(document).ready(function() {
 
 function tEnabled() {
   options.enabled = !options.enabled
-  sync()
-}
-
-function tYT() {
-  options.youtube = !options.youtube
-  sync()
-}
-
-function tYTM() {
-  options.youtubeMusic = !options.youtubeMusic
-  sync()
-}
-
-function tT() {
-  options.twitch = !options.twitch
-  sync()
-}
-
-function tSC() {
-  options.soundcloud = !options.soundcloud
-  sync()
-}
-
-function tN() {
-  options.netflix = !options.netflix
   sync()
 }
 
@@ -126,26 +112,6 @@ function tCFU() {
 
 function tSS() {
   options.systemStartup = !options.systemStartup
-  sync()
-}
-
-function tRI() {
-  options.rabbIt = !options.rabbIt
-  sync()
-}
-
-function tA4Y() {
-  options.anime4you = !options.anime4you
-  sync()
-}
-
-function tCR() {
-  options.crunchyroll = !options.crunchyroll
-  sync()
-}
-
-function tAF() {
-  options.aniflix = !options.aniflix
   sync()
 }
 

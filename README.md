@@ -58,7 +58,8 @@
 
 # Localization
 
-Our application has a lot of languages included and we are happy to see a new translators in our little project.
+Our application has a lot of languages included and we are happy to see a new translators in our little project.<br>
+Join our [Discord server](https://discord.gg/WvfVZ8T) and take a look in #how-to-contribute to get started!
 
 ## Contributing
 
@@ -83,7 +84,7 @@ If you're interested in helping us visit the [LOCALIZATION.md](/LOCALIZATION.md)
 | Twitch  |               |   Aniflix   |
 | Rabb.it |               |             |
 
-<i>More availabe on our soon releasing presence store for free!</i>
+<i>More are availabe on our [presence store](https://premid.app/store) for free!</i>
 
 Want to request a support for other services? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?template=service_request.md)!
 

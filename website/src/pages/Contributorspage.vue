@@ -1,5 +1,5 @@
 <template>
-  <div class="credits_container" id="content">
+  <div class="container credits_container col s12 m6 l3">
     <div id="loader" style="text-align:center;width:100vw;"><div class="preloader-wrapper big active"> <div class="spinner-layer spinner-blue-only"> <div class="circle-clipper left"> <div class="circle"></div></div><div class="gap-patch"> <div class="circle"></div></div><div class="circle-clipper right"> <div class="circle"></div></div></div></div></div>
     <!--<profile username="Timeraa" />
     <img src="../assets/images/Timeraa.png">-->
@@ -29,14 +29,14 @@ export default {
           </div>
         </div>
       </div>" */
-    scr.innerHTML = '$.getJSON("https://api.premid.app/credits", function(d){d.sort(function(a, b){return b.rolePosition - a.rolePosition});for(i = 0;i < d.length; i++){$("#content").append("<div data-v-9be4daaa class=\'usercard\' style=\'--hoverColor: "+d[i].roleColor+"\'><div data-v-9be4daaa><div data-v-9be4daaa class=\'credits_avatar\'><img data-v-9be4daaa src=\'"+d[i].avatar+"\'></div><div data-v-9be4daaa class=\'credits_text\'><h6 data-v-9be4daaa>"+d[i].name+"</h6><p data-v-9be4daaa>"+d[i].role+"</p></div></div>")}$("#loader").remove();});';
+    scr.innerHTML = '$.getJSON("https://api.premid.app/credits", function(d){d.sort(function(a, b){return b.rolePosition - a.rolePosition});for(i = 0;i < d.length; i++){$("#view").append("<div class=\'usercard\' style=\'--hoverColor: "+d[i].roleColor+"\'><div><div class=\'credits_avatar\'><img src=\'"+d[i].avatar+"\'></div><div class=\'credits_text\'><h6>"+d[i].name+"</h6><p>"+d[i].role+"</p></div></div>")}$("#loader").remove();var datakey=[];for(data in document.querySelector("#view").dataset){datakey.push(data)};$("*").attr("data-"+datakey[0].replace("v", "v-").replace("v--", "v-"), "");});';
     document.head.appendChild(scr);
   }
 }
 </script>
 
 <style scoped>
-#content {
+#view {
   text-align: center;
 }
 
@@ -72,6 +72,8 @@ export default {
     -ms-flex-align:center;
     align-items:center;
     margin-bottom:5px;
+    width:100%;
+    height:100%;
 }
 .usercard{
     -webkit-user-select:none;
@@ -107,6 +109,12 @@ export default {
     -ms-flex-align:center;
     align-items:center;
 }
+
+.usercard{
+    color:#000;
+    background:#f8f8f8;
+}
+
 .dark .usercard{
   background:#2f2f2f;
   color:#fff;
@@ -128,6 +136,4 @@ export default {
     -webkit-transform:scale(1.025);
     transform:scale(1.025);
 }
-
-p, h6{color:#fff;}
 </style>

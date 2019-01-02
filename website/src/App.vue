@@ -8,8 +8,26 @@
       @enter="enter"
       @afterEnter="afterEnter"
     >
-      <router-view/>
+      <router-view id="view" />
     </transition>
+    <div style="height:fit-content;width:100vw;" class="footer">
+    <div style="height:75px;width:100vw;"></div>
+    <div class="footer-thing">
+      <div class="footer-item">
+        <div class="switch"> 
+          <label>
+          <span>Dark Mode</span>
+          <input type="checkbox" id="darkmode" class="togglePresence">
+            <span class="lever" onclick="darkToggle();"></span> 
+          </label>
+        </div>
+      </div>
+      <div class="footer-item last">
+        <span>running <a id="commit"></a></span>
+      </div>
+    </div>
+    <div style="height:75px;width:100vw;"></div>
+    </div>
   </div>
 </template>
 
@@ -17,37 +35,9 @@
 import "../static/css/materialize.min.css";
 window.$ = require("../static/js/jquery-3.3.1.min.js");
 window.JQuery = require("../static/js/jquery-3.3.1.min.js");
-import "../static/js/materialize.min.js";
 import "../static/css/uigradients.min.css";
 import Navbar from "./components/Navbar";
 
-var AppTitle = "PreMiD";
-var AppDesc = "Discord Rich Presence for your Media!";
-var AppIcon = "/static/favicon.png";
-
-/*
-      { ch: "utf-8" },
-      { n: "viewport", c: "width=device-width, initial-scale=1" },
-      { n: "description", c: AppDesc },
-      { n: "author", c: AppTitle+" Team" },
-      { n: "X-UA-Compatible", c: "IE=edge" },
-      { n: "og:title", c: AppTitle },
-      { n: "og:site_name", c: AppDesc },
-      { n: "og:image", c: AppIcon },
-      { n: "og:url", c: location.href },
-      { n: "msapplication-TileImage", c: AppIcon },
-      { n: "twitter:card", c: AppIcon },
-      { n: "apple-mobile-web-app-title", c: AppTitle },
-      { n: "apple-mobile-web-capable", c: "yes" },
-      { n: "apple-mobile-web-app-status-bar-style", c: "black" },
-      { n: "mobile-web-app-capable", c: "yes" }
-
-          link: [
-    { r: "shortcut icon", t: "image/png", h: AppIcon },
-    { r: "apple-touch-icon", h: AppIcon },
-    { r: "icon", h: AppIcon }
-    ],
-*/
 export default {
   name: "App",
   components: { Navbar },
@@ -72,11 +62,26 @@ export default {
     afterEnter(element) {
       element.style.height = "auto";
     }
+  },
+  mounted(){
+    let scrr = document.createElement('script');
+    scrr.innerHTML = "var sendAddon = function(iid, nname){var eventt = new CustomEvent('PreMiD_ReceiveExtensionData', {id: iid, name: nname});window.dispatchEvent(eventt);};window.onload = function(){document.querySelector('#commit').innerHTML = document.querySelector('meta[name=\"commit\"]').content;document.querySelector('#commit').href = 'https://github.com/Timeraa/PreMiD/commit/'+document.querySelector('meta[name=\"commit\"]').content;document.querySelector('meta[name=\"og:title\"]').content = document.title.replace(' - PreMiD', '');}";
+    document.head.appendChild(scrr);
   }
 };
+
 </script>
 
 <style>
+
+.footer {
+	background:#f8f8f8;
+}
+
+.dark body > #app > .footer {
+	background:#2a2a2a;
+}
+
 html,
 body {
   --blurple: #7289da;
@@ -89,12 +94,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#view {
+	min-height:calc(100vh - 275px);
+}
 
 .fade-enter-active {
-  transition: all .3s ease;
+  transition: all .2s ease;
 }
 .fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 .fade-enter, .fade-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {
@@ -178,5 +186,42 @@ body {
 
 a:hover:not(.btn) {
   color:#00acff;
+}
+
+
+.switch label input[type=checkbox]:checked+.lever {
+    background-color: #84c7c1;
+}
+
+.switch > label > span {
+  margin-right:0.5rem;
+}
+.lever {
+  margin:0 0 0 0!important;
+  margin-bottom:2px!important;
+}
+
+.footer-item > .switch, .footer-item {
+  width:fit-content;
+  display:inline;
+}
+
+.footer-item {
+  padding:1rem;
+  border-radius:2rem;
+  box-shadow: inset 0 0 20px #00000035;
+}
+
+.dark .footer-item {
+  background-color:#1f1f1f;
+  box-shadow: inset 0 0 12px #00000010;
+}
+
+.last {
+  margin-left:62.5%;
+}
+
+.footer-thing {
+  display:inline;margin-left:2rem;margin-right:2rem;width:100%;
 }
 </style>
