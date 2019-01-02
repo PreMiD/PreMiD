@@ -129,7 +129,7 @@ Want to request a support for other services? Open an [Issue](https://github.com
   <summary><b><u>Mac OS</u></b> (Click to expand)</summary>
   <h1>Installation on Mac OS</h1>
   <ol>
-    <li>Download the latest version of the <a href="https://github.com/Timeraa/YT-Presence/releases/latest">application</a>
+    <li>Download the latest version of the <a href="https://github.com/PreMiD/PreMiD/releases/latest">application</a>
     </li>
     <li>Open the downloaded <b>.dmg</b> file</li>
     <li>Drag <b>PreMiD</b> Into your <b>Applications</b> Folder</li>
@@ -144,7 +144,7 @@ Want to request a support for other services? Open an [Issue](https://github.com
   <summary><b><u>Windows</u></b> (Click to expand)</summary>
   <h1>Installation on Windows</h1>
   <ol>
-    <li>Download the latest installer from <a href="https://github.com/Timeraa/YT-Presence/releases/">here</a></li>
+    <li>Download the latest installer from <a href="https://github.com/PreMiD/PreMiD/releases/">here</a></li>
     <li>Open the downloaded <b>.exe</b> installer</li>
     <li>If SmartScreen comes up press more informations then press run anyways. (It's not a virus, I promise.)</li>
     <li>YouTube Presence should install itself and start automatically. (You can tell by looking at the taskbar.)</li>

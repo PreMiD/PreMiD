@@ -8,7 +8,8 @@
   "author": "Timeraa",
   "license": "MIT",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dev": "nodemon electron ."
   },
   "dependencies": {
     "auto-launch": "^5.0.5",
@@ -21,6 +22,7 @@
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
-    "electron-prebuilt-compile": "3.0.2"
+    "electron-prebuilt-compile": "3.0.2",
+    "nodemon": "^1.18.9"
   }
 }

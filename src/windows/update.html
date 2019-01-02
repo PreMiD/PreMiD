@@ -45,7 +45,7 @@
       $('#description').html(converter.makeHtml(message.body))
       $('#update').click(() => {
         console.log(message)
-        shell.openExternal(`https://github.com/Timeraa/YT-Presence/releases/tag/${message.tag_name}`);
+        shell.openExternal(`https://github.com/PreMiD/PreMiD/releases/tag/${message.tag_name}`);
         remote.getCurrentWindow().close()
       })
     })

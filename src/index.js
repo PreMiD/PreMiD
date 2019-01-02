@@ -1,85 +1,87 @@
 //* Handle Winstall
-require('./util/handleWinstall')
+require("./util/handleWinstall");
+
+var { debug } = require("./util/debug");
 
 //#region Define constants
 //* Declare needed constants
-const {app} = require('electron')
+const { app } = require("electron");
 
 //* Require config
-var pjson = require('./package.json');
+var pjson = require("./package.json");
 //* Require electron-config
-const os = require('os')
+const os = require("os");
 //* Require Update checker
-const updater = require('./util/updateChecker')
+const updater = require("./util/updateChecker");
 //* Require Needed packages
-const chalk = require("chalk")
+const chalk = require("chalk");
 //* Setup electron-store
-const Config = require('electron-store');
+const Config = require("electron-store");
 const userSettings = new Config({
   name: "userSettings"
 });
 //#endregion
 
 //* Set app user model id
-app.setAppUserModelId("eu.Timeraa.premid")
+app.setAppUserModelId("eu.Timeraa.premid");
 
 //* Define Global Variables
-global.PLATFORM = os.platform()
-global.UPDATEAVAIABLE = ""
-global.VERSION = pjson.productVersion
+global.PLATFORM = os.platform();
+global.UPDATEAVAIABLE = "";
+global.VERSION = pjson.productVersion;
 
-if(pjson.devBuild) 
-  global.VERSIONSTRING = VERSION + "-DEV"; 
-else 
-  global.VERSIONSTRING = VERSION;
+if (pjson.devBuild) global.VERSIONSTRING = VERSION + "-DEV";
+else global.VERSIONSTRING = VERSION;
 
-global.BROWSERCONNECTIONSTATE = "NOT_CONNECTED"
-global.EXTENSIONSOCKET = null
-global.TRAY = null
-global.CONSOLEPREFIX = chalk.bold(chalk.hex('#596cae')("PreMiD")) + chalk.hex('#ffffff')(": ")
-
+global.BROWSERCONNECTIONSTATE = "NOT_CONNECTED";
+global.EXTENSIONSOCKET = null;
+global.TRAY = null;
+global.CONSOLEPREFIX =
+  chalk.bold(chalk.hex("#596cae")("PreMiD")) + chalk.hex("#ffffff")(": ");
 
 //* Clear console
 process.stdout.write("\u001b[2J\u001b[0;0H");
 
 //* Single instance lock
-app.requestSingleInstanceLock()
+app.requestSingleInstanceLock();
 
 //* Set default values for electon-config userSettings
-if(userSettings.get('titleMenubar') == undefined) userSettings.set('titleMenubar', true)
-if(userSettings.get('autoStart') == undefined) userSettings.set('autoStart', true)
-if(userSettings.get('autoUpdateCheck') == undefined) userSettings.set('autoUpdateCheck', true)
-if(userSettings.get('mediaControls') == undefined) userSettings.set('mediaControls', true)
-
+if (userSettings.get("titleMenubar") == undefined)
+  userSettings.set("titleMenubar", true);
+if (userSettings.get("autoStart") == undefined)
+  userSettings.set("autoStart", true);
+if (userSettings.get("autoUpdateCheck") == undefined)
+  userSettings.set("autoUpdateCheck", true);
+if (userSettings.get("mediaControls") == undefined)
+  userSettings.set("mediaControls", true);
 
 //* Set dock Badge to version
-if(PLATFORM == "darwin") {
-  app.dock.setBadge("V" + VERSION)
+if (PLATFORM == "darwin") {
+  app.dock.setBadge("V" + VERSION);
 }
 
-console.log(CONSOLEPREFIX + chalk.yellow("Loading..."))
+debug("info", "Loading...");
 
 //* App ready
 const appReady = async () => {
   //* Setup MenuBar
-  require('./tray/createTray').run()
+  require("./tray/createTray").run();
   //* Require shortcuts
-  require('./util/shortcutHandler').register()
+  require("./util/shortcutHandler").register();
   //* Include PresenceHandler
-  require('./presenceHandler.js')
+  require("./presenceHandler.js");
   //* Auto launch
-  require('./util/autoLaunch')
-  
+  require("./util/autoLaunch");
+
   //* Automatically check for update
-  if(userSettings.get('autoUpdateCheck') == true)
-    updater.checkForUpdate(true)
+  if (userSettings.get("autoUpdateCheck") == true) updater.checkForUpdate(true);
 
   //* hide Dock icon when everything running
-  if(PLATFORM == "darwin") app.dock.hide()
-}
+  if (PLATFORM == "darwin") app.dock.hide();
+};
 
 //* Register Handler
-app.on('ready', appReady);
+app.on("ready", appReady);
 
 //* Prevent default behaviour
-app.on('window-all-closed', () => {});
+app.on("window-all-closed", () => {});

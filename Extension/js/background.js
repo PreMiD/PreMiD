@@ -15,6 +15,19 @@ chrome.runtime.onInstalled.addListener(function(details) {
   }
 })
 
+chrome.webRequest.onSendHeaders.addListener(
+  function(details) {
+    if(details.method == "POST") {
+      var authorization = details.requestHeaders.find(header => header.name == "Authorization")
+      if(authorization != null) {
+        console.log(authorization.value)
+      }
+    }
+  },
+  {urls: ["*://*.discordapp.com/*"]},
+  ["requestHeaders"]
+);
+
 //* Tab Priority™ variables
 var lastTabId = null,
 lastTabPriorityLock = 0,
@@ -177,3 +190,157 @@ async function updateOptions() {
 function checkStorage(option, options) {
   if(options[option] == undefined) return options[option] = true
 }
+
+var currentTabURL = null
+//* Load presence and inject it
+chrome.tabs.onUpdated.addListener(function(tabs) {
+  chrome.storage.local.get(['presences'], function(data) {
+    var presences = data.presences
+    presences.forEach(presence => {
+      chrome.tabs.query({"active": true}, function(tabs) {
+        if(tabs[0].url.includes(presence.url) && presence.enabled && currentTabURL != tabs[0].url) {
+          currentTabURL = tabs[0].url
+          chrome.tabs.executeScript(tabs[0].id, {
+            file: "/js/util/jquery-3.3.1.min.js",
+          }, function(result) {
+              chrome.tabs.executeScript(tabs[0].id, {
+                code: `
+var playback = false,
+songTitle,
+songAuthors,
+videoTimestamps,
+playbackBoolean,
+smallImageKey,
+smallImageText,
+extensionData = null
+
+window.addEventListener("PreMiD_UpdateData", updateData);
+window.addEventListener("PreMiD_MediaKeys", handleMediaKeys);
+
+//* Request needed data
+setTimeout(function() {
+var event = new CustomEvent('PreMiD_RequestExtensionData', {detail: {strings: {playing: 'presence.playback.playing', paused: 'presence.playback.paused'}, version: "chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version"}})
+  window.dispatchEvent(event);
+}, 0)
+
+//* Bind event to receive Data
+window.addEventListener("PreMiD_ReceiveExtensionData", function(data) {
+  extensionData = data.detail
+})
+
+/**
+ * Handles Media Key controls
+ * @param {data} data Data passed by socketConnector.js
+ */
+async function handleMediaKeys(data) {
+  data = data.detail
+  if(playback) {
+    switch (data.mediaKeys) {
+      case "pause":
+        playbackBoolean ? $('.video-stream')[0].pause() : $('.video-stream')[0].play()
+        break
+      case "nextTrack":
+        $('.next-button').click()
+        break
+      case "previousTrack":
+        $('.previous-button').click()
+        break
+    }
+  }
+}
+
+/**
+ * Updates the Presence data and sends it back
+ * to the background.js for further interaction
+ */
+
+async function updateData() {
+  playback = 
+  $('.ytmusic-player-bar.title').text() != ""
+  && $('.video-stream')[0] != undefined
+  && !isNaN($('.video-stream')[0].duration)
+  ? true : false
+
+  //* If page has all required propertys
+  if(playback) {
+    songTitle = $('.ytmusic-player-bar.title').text()
+    songAuthors = getAuthors()
+    videoTimestamps = getTimestamps(Math.floor($('.video-stream')[0].currentTime), Math.floor($('.video-stream')[0].duration))
+    playbackBoolean = !$('.video-stream')[0].paused
+    smallImageKey = playbackBoolean ? 'play' : 'pause'
+    smallImageText = playbackBoolean ? extensionData.strings.playing : extensionData.strings.paused
+
+    var data = {
+      clientID: '528700837417975808',
+      presenceData: {
+        details: $('<div/>').html(songTitle).text(),
+        state: $('<div/>').html(songAuthors).text(),
+        largeImageKey: 'ytm_lg',
+        largeImageText: extensionData.version,
+        smallImageKey: smallImageKey,
+        smallImageText: smallImageText,
+      },
+      coverArt: $('#thumbnail img').attr('src'),
+      trayTitle: $('<div/>').html(songTitle).text(),
+      playback: playbackBoolean,
+      service: 'YouTube Music'
+    }
+
+    if(playbackBoolean) {
+      data.presenceData.startTimestamp = videoTimestamps[0]
+      data.presenceData.endTimestamp = videoTimestamps[1]
+    } else {
+      delete data.presenceData.startTimestamp
+      delete data.presenceData.endTimestamp
+    }
+
+    var event = new CustomEvent('PreMiD_UpdatePresence', {detail: data})
+    window.dispatchEvent(event);
+  }
+}
+
+
+/**
+ * Get authors of Song
+ */
+function getAuthors() {
+  var songAuthors = [],
+  songAuthorsString = ""
+
+  //* Extract authors as array
+  $(".byline.ytmusic-player-bar").contents().each(function (index, item) {
+    if (item.classList != undefined) {
+      if (item.classList.contains("yt-simple-endpoint") == true) {
+        songAuthors.push(item.innerHTML)
+      }
+    }
+  })
+
+  //* If no authors found in previous method use this
+  if (songAuthors.length == 0 || songAuthors.length == 1) {
+    //* Clear old list
+    songAuthors = []
+    songAuthors.push($(".byline.ytmusic-player-bar").contents().first().text())
+  }
+
+  //* Build Song autor string
+  songAuthors.forEach((author, index, authors) => {
+    if (index == 0)
+    songAuthorsString = author;
+    else if (index < authors.length - 2)
+    songAuthorsString = songAuthorsString + ", " + author;
+    else if (index < authors.length - 1) songAuthorsString = songAuthorsString + " and " + author;
+    else songAuthorsString = songAuthorsString + " &bull; " + author;
+  });
+
+  return songAuthorsString
+}`
+              }, function(res) {
+                console.log(res)
+              })
+          })
+        }
+      })
+    });
+  })
+})
