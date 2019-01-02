@@ -64,9 +64,6 @@ export default {
     }
   },
   mounted(){
-    let dlxs = document.createElement('script');
-    dlxs.setAttribute('src', 'https://wa.au.paz.yt/materialize.min.js');
-    document.body.appendChild(dlxs);
     let scrr = document.createElement('script');
     scrr.innerHTML = "var sendAddon = function(iid, nname){var eventt = new CustomEvent('PreMiD_ReceiveExtensionData', {id: iid, name: nname});window.dispatchEvent(eventt);};window.onload = function(){document.querySelector('#commit').innerHTML = document.querySelector('meta[name=\"commit\"]').content;document.querySelector('#commit').href = 'https://github.com/Timeraa/PreMiD/commit/'+document.querySelector('meta[name=\"commit\"]').content;document.querySelector('meta[name=\"og:title\"]').content = document.title.replace(' - PreMiD', '');}";
     document.head.appendChild(scrr);
