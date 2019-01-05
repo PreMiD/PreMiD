@@ -1,29 +1,31 @@
 <div align="center"><img src="gitassets/localization.png"></div>
 
 # Localization
-We are partners with POEditor, so all translations will be made in it.
+
+We are partnered with POEditor, so all translations will be made in it.
 
 ## Supported languages
+
 These languages already added in the application, but may need some improvements.
 
-| Language | Percentage |
-| :---: | :---: |
-| Arabic | <img src="https://de.paz.yt/lang.png/?Arabic">% |
-| Danish | <img src="https://de.paz.yt/lang.png/?Danish">% |
-| Dutch | <img src="https://de.paz.yt/lang.png/?Dutch">% |
-| English | <img src="https://de.paz.yt/lang.png/?English">% |
-| French | <img src="https://de.paz.yt/lang.png/?French">% |
-| German | <img src="https://de.paz.yt/lang.png/?German">% |
-| Hebrew | <img src="https://de.paz.yt/lang.png/?Hebrew">% |
-| Italian | <img src="https://de.paz.yt/lang.png/?Italian">% |
-| Latin | <img src="https://de.paz.yt/lang.png/?Latin">% |
-| Norwegian | <img src="https://de.paz.yt/lang.png/?Norwegian">% |
-| Portuguese | <img src="https://de.paz.yt/lang.png/?Portuguese">% |
-| Portuguese (BR) | <img src="https://de.paz.yt/lang.png/?Portuguese (BR)">% |
-| Russian | <img src="https://de.paz.yt/lang.png/?Russian">% |
-| Spanish | <img src="https://de.paz.yt/lang.png/?Spanish">% |
-| Swedish | <img src="https://de.paz.yt/lang.png/?Swedish">% |
-| Vietnamese | <img src="https://de.paz.yt/lang.png/?Vietnamese">% |
+|    Language     |                              Percentage                              |
+| :-------------: | :------------------------------------------------------------------: |
+|     Arabic      |  <img alt="error" src="https://api.premid.app/langStatus?lang=ar">   |
+|     Danish      |  <img alt="error" src="https://api.premid.app/langStatus?lang=da">   |
+|      Dutch      |  <img alt="error" src="https://api.premid.app/langStatus?lang=nl">   |
+|     English     |  <img alt="error" src="https://api.premid.app/langStatus?lang=en">   |
+|     French      |  <img alt="error" src="https://api.premid.app/langStatus?lang=fr">   |
+|     German      |  <img alt="error" src="https://api.premid.app/langStatus?lang=de">   |
+|     Hebrew      |  <img alt="error" src="https://api.premid.app/langStatus?lang=he">   |
+|     Italian     |  <img alt="error" src="https://api.premid.app/langStatus?lang=it">   |
+|      Latin      |  <img alt="error" src="https://api.premid.app/langStatus?lang=la">   |
+|    Norwegian    |  <img alt="error" src="https://api.premid.app/langStatus?lang=no">   |
+|   Portuguese    |  <img alt="error" src="https://api.premid.app/langStatus?lang=pt">   |
+| Portuguese (BR) | <img alt="error" src="https://api.premid.app/langStatus?lang=pt-br"> |
+|     Russian     |  <img alt="error" src="https://api.premid.app/langStatus?lang=ru">   |
+|     Spanish     |  <img alt="error" src="https://api.premid.app/langStatus?lang=es">   |
+|     Swedish     |  <img alt="error" src="https://api.premid.app/langStatus?lang=sv">   |
+|   Vietnamese    |  <img alt="error" src="https://api.premid.app/langStatus?lang=vi">   |
 
 ## How to start?
 

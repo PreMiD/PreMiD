@@ -7,6 +7,7 @@
   "repository": "https://github.com/Timeraa/PreMiD",
   "scripts": {
     "start": "npm start --prefix src/.",
+    "dev": "npm run dev --prefix src/.",
     "pkgmac": "electron-packager ./src/ --out=./out/ --asar --overwrite --icon=./installer_assets/appIcon.ico --osx-sign.identity='Florian Metz'",
     "pkgwin": "electron-packager ./src/ --out=./out/ --overwrite --icon=./installer_assets/appIcon.ico",
     "pkgwin32": "electron-packager ./src/ --out=./out/ --overwrite --icon=./installer_assets/appIcon.ico --platform=win32 --arch=ia32",
