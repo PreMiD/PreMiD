@@ -10,22 +10,22 @@ These languages already added in the application, but may need some improvements
 
 |    Language     |                                       Percentage                                       |
 | :-------------: | :------------------------------------------------------------------------------------: |
-|     Arabic      |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus?lang=ar">   |
-|     Danish      |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus?lang=da">   |
-|      Dutch      |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus?lang=nl">   |
-|     English     |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus?lang=en">   |
-|     French      |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus?lang=fr">   |
-|     German      |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus?lang=de">   |
-|     Hebrew      |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus?lang=he">   |
-|     Italian     |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus?lang=it">   |
-|      Latin      |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus?lang=la">   |
-|    Norwegian    |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus?lang=no">   |
-|   Portuguese    |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus?lang=pt">   |
-| Portuguese (BR) | <img draggable="false" alt="error" src="https://api.premid.app/langStatus?lang=pt-br"> |
-|     Russian     |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus?lang=ru">   |
-|     Spanish     |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus?lang=es">   |
-|     Swedish     |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus?lang=sv">   |
-|   Vietnamese    |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus?lang=vi">   |
+|     Arabic      |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus/ar">   |
+|     Danish      |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus/da">   |
+|      Dutch      |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus/nl">   |
+|     English     |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus/en">   |
+|     French      |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus/fr">   |
+|     German      |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus/de">   |
+|     Hebrew      |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus/he">   |
+|     Italian     |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus/it">   |
+|      Latin      |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus/la">   |
+|    Norwegian    |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus/no">   |
+|   Portuguese    |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus/pt">   |
+| Portuguese (BR) | <img draggable="false" alt="error" src="https://api.premid.app/langStatus/pt-br"> |
+|     Russian     |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus/ru">   |
+|     Spanish     |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus/es">   |
+|     Swedish     |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus/sv">   |
+|   Vietnamese    |  <img draggable="false" alt="error" src="https://api.premid.app/langStatus/vi">   |
 
 ## How to start?
 
