@@ -69,11 +69,19 @@ If you're interested in helping us visit the [LOCALIZATION.md](/LOCALIZATION.md)
 
 ### **Operating Systems**
 
-| Operating System | Application | Chrome | Opera | Firefox |
-| :--------------- | :---------: | :----: | :---: | :-----: |
-| Windows          |      ✓      |   ✓    |   ✓   |  Beta   |
-| Linux            | Self-build  |   ✓    |   ✓   |  Beta   |
-| Mac OS           |      ✓      |   ✓    |   ✓   |  Beta   |
+| Operating System | Application | Chrome | Firefox |
+| :--------------- | :---------: | :----: | :-----: |
+| Windows          |      ✓      |   ✓    |  Beta   |
+| Linux            | Self-build  |   ✓    |  Beta   |
+| Mac OS           |      ✓      |   ✓    |  Beta   |
+
+#### **Browsers which also works with PreMiD**
+
+| Opera | Vivaldi |
+| :---: | :---: |
+|   ✓   |   ✓   |
+|   ✓   |   ✓   |
+|   ✓   |   ✓   |
 
 ### **Services**
 
