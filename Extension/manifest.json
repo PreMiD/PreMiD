@@ -68,14 +68,12 @@
     {
       "matches": ["*://www.crunchyroll.com/*"],
       "js": ["js/presences/Anime/Crunchyroll.js"]
+    },
+    {
+      "matches": ["*://www.branitube.org/*"],
+      "js": ["js/presences/Anime/Branitube.js"]
     }
   ],
   "permissions": ["http://localhost:3020/", "tabs", "storage"],
-  "content_security_policy": "script-src 'self' https://*.premid.app/*; object-src 'self'",
-  "applications": {
-    "gecko": {
-      "id": "support@premid.app",
-      "strict_min_version": "52.0"
-    }
-  }
+  "content_security_policy": "script-src 'self' https://*.premid.app/*; object-src 'self'"
 }

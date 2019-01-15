@@ -36,6 +36,7 @@ $(document).ready(function() {
   darkThemeToggle = $('.toggleDarkTheme'),
   crunchyrollToggle = $('.toggleCrunchyroll'),
   aniflixToggle = $('.toggleAniflix'),
+  branitubeToggle = $('.toggleBranitube'),
   tabPriorityToggle = $('.toggleTabPriority')
 
   enabledToggle.change(tEnabled);
@@ -52,6 +53,7 @@ $(document).ready(function() {
   anime4YouToggle.change(tA4Y);
   crunchyrollToggle.change(tCR);
   aniflixToggle.change(tAF);
+  branitubeToggle.change(tBT);
   tabPriorityToggle.change(tTP);
 
   chrome.storage.sync.get(['options'], function(result) {
@@ -73,6 +75,7 @@ $(document).ready(function() {
       systemStartupToggle.prop('checked', result.options.systemStartup)
       darkThemeToggle.prop('checked', result.options.darkTheme)
       aniflixToggle.prop('checked', result.options.aniflix)
+	  branitubeToggle.prop('checked', result.options.branitube)
       crunchyrollToggle.prop('checked', result.options.crunchyroll)
       tabPriorityToggle.prop('checked', result.options.tabPriority)
     }
@@ -148,7 +151,10 @@ function tAF() {
   options.aniflix = !options.aniflix
   sync()
 }
-
+function tBT() {
+  options.branitube = !options.branitube
+  sync()
+}
 function tTP() {
   options.tabPriority = !options.tabPriority
   sync()
