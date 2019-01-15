@@ -61,10 +61,10 @@
       "matches": ["*://www.twitch.tv/*"],
       "js": ["js/presences/Video/Twitch.js"]
     },
-	{
-	  "matches": ["*://mixer.com/*"],
-	  "js": ["js/presences/Video/Mixer.js"]
-	},
+    {
+      "matches": ["*://mixer.com/*"],
+       "js": ["js/presences/Video/Mixer.js"]
+     },
     {
       "matches": ["*://www.rabb.it/*"],
       "js": ["js/presences/Video/Rabb.it.js"]
