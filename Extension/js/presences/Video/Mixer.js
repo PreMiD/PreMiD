@@ -22,6 +22,7 @@ async function handleMediaKeys(data) {
   }
 }
 
+
 /**
  * Updates the Presence data and sends it back
  * to the background.js for further interaction
