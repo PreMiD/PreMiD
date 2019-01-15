@@ -26,6 +26,7 @@ $(document).ready(function() {
   youtubeToggle = $('.toggleYouTube'),
   youtubeMusicToggle = $('.toggleYouTubeMusic'),
   twitchToggle = $('.toggleTwitch'),
+  mixerToggle = $('.toggleMixer'),
   soundcloudToggle = $('.toggleSoundCloud'),
   netflixToggle = $('.toggleNetflix'),
   rabbitToggle = $('.toggleRabbit'),
@@ -36,13 +37,13 @@ $(document).ready(function() {
   darkThemeToggle = $('.toggleDarkTheme'),
   crunchyrollToggle = $('.toggleCrunchyroll'),
   aniflixToggle = $('.toggleAniflix'),
-  branitubeToggle = $('.toggleBranitube'),
   tabPriorityToggle = $('.toggleTabPriority')
 
   enabledToggle.change(tEnabled);
   youtubeToggle.change(tYT);
   youtubeMusicToggle.change(tYTM);
   twitchToggle.change(tT);
+  mixerToggle.change(tMX);
   soundcloudToggle.change(tSC);
   netflixToggle.change(tN);
   mediaControlsToggle.change(tMC);
@@ -53,7 +54,6 @@ $(document).ready(function() {
   anime4YouToggle.change(tA4Y);
   crunchyrollToggle.change(tCR);
   aniflixToggle.change(tAF);
-  branitubeToggle.change(tBT);
   tabPriorityToggle.change(tTP);
 
   chrome.storage.sync.get(['options'], function(result) {
@@ -64,6 +64,7 @@ $(document).ready(function() {
       youtubeToggle.prop('checked', result.options.youtube)
       youtubeMusicToggle.prop('checked', result.options.youtubeMusic)
       twitchToggle.prop('checked', result.options.twitch)
+	  mixerToggle.prop('checked', result.options.mixer)
       soundcloudToggle.prop('checked', result.options.soundcloud)
       netflixToggle.prop('checked', result.options.netflix)
       rabbitToggle.prop('checked', result.options.rabbIt)
@@ -75,7 +76,6 @@ $(document).ready(function() {
       systemStartupToggle.prop('checked', result.options.systemStartup)
       darkThemeToggle.prop('checked', result.options.darkTheme)
       aniflixToggle.prop('checked', result.options.aniflix)
-	  branitubeToggle.prop('checked', result.options.branitube)
       crunchyrollToggle.prop('checked', result.options.crunchyroll)
       tabPriorityToggle.prop('checked', result.options.tabPriority)
     }
@@ -101,7 +101,10 @@ function tT() {
   options.twitch = !options.twitch
   sync()
 }
-
+function tMX() {
+  options.mixer = !options.mixer
+  sync()
+}
 function tSC() {
   options.soundcloud = !options.soundcloud
   sync()
@@ -149,10 +152,6 @@ function tCR() {
 
 function tAF() {
   options.aniflix = !options.aniflix
-  sync()
-}
-function tBT() {
-  options.branitube = !options.branitube
   sync()
 }
 function tTP() {

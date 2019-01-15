@@ -56,7 +56,7 @@ presencePauseSwitch = 0
 //* Updates the presence with the incomming data
 async function updatePresence(data) {
   lastKeepAliveSwitch = 0;
-
+  console.log(data);
   var setupService = setupServices.find(svice => svice.serviceName == data.service);
 
   if(!data.playback) presencePauseSwitch++; else presencePauseSwitch = 0;
