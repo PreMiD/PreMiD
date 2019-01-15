@@ -72,7 +72,7 @@ async function tabPriority() {
     updateTabPriorityService("soundcloud", "soundcloud.com", options)
     updateTabPriorityService("netflix", "www.netflix.com", options)
     updateTabPriorityService("twitch", "www.twitch.tv", options)
-	updateTabPriorityService("mixer", "www.mixer.com", options)
+    updateTabPriorityService("mixer", "www.mixer.com", options)
     updateTabPriorityService("aniflix", "www.aniflix.tv", options)
     updateTabPriorityService("anime4you", "www.anime4you.one", options)
     updateTabPriorityService("rabbIt", "www.rabb.it", options)
@@ -178,7 +178,7 @@ async function updateOptions() {
 
     options[checkStorage("youtube", options)]
     options[checkStorage("twitch", options)]
-	options[checkStorage("mixer", options)]
+    options[checkStorage("mixer", options)]
     options[checkStorage("netflix", options)]
     options[checkStorage("rabbIt", options)]
 
