@@ -62,7 +62,7 @@
       "js": ["js/presences/Video/Twitch.js"]
     },
 	{
-	  "matches": ["*://www.mixer.com/*"],
+	  "matches": ["*://mixer.com/*"],
 	  "js": ["js/presences/Video/Mixer.js"]
 	},
     {

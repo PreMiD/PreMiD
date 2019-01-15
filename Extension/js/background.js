@@ -1,4 +1,4 @@
-var allowedTabsStatic = ["www.youtube.com", "music.youtube.com", "soundcloud.com", "www.netflix.com", "www.aniflix.tv", "www.anime4you.one", "www.twitch.tv", "www.mixer.com", "www.rabb.it", "www.crunchyroll.com"]
+var allowedTabsStatic = ["www.youtube.com", "music.youtube.com", "soundcloud.com", "www.netflix.com", "www.aniflix.tv", "www.anime4you.one", "www.twitch.tv", "mixer.com", "www.rabb.it", "www.crunchyroll.com"]
 
 chrome.runtime.onInstalled.addListener(function(details) {
   switch(details.reason) {

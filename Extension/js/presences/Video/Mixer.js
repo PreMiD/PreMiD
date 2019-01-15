@@ -31,8 +31,7 @@ async function updateData() {
   urlForVideo = document.location.href;
   
   playback = $(".light-player") != undefined ? true : false
-  console.log(playback)
-
+ 
   //* If page has all required propertys
   if(playback) {
     if (urlForVideo != lastURL) {
@@ -40,18 +39,18 @@ async function updateData() {
       startTimeStamp = Math.floor(Date.now() / 1000);
     }
 
-    videoTitle = $(".stream-title span").innerHTML;
-    videoAuthor = $('.profile-header h2').innerHTML;
+    videoTitle = $(".stream-title span")[0].innerText;
+    videoAuthor = $(".profile-header h2")[0].innerText;
     playbackBoolean = !$(".light-player").paused;
     smallImageKey = playbackBoolean ? 'play' : 'pause'
     smallImageText = playbackBoolean ? await getString("presence.playback.playing") : await getString("presence.playback.paused")
 
     var data = {
-      clientID: '501021996336021504',
+      clientID: '534832037132107779',
       presenceData: {
-        details: "teste",
-        state: "teste",
-        largeImageKey: 'twitch_lg',
+        details: videoTitle,
+        state: videoAuthor,
+        largeImageKey: 'mixer_lg',
         largeImageText: chrome.runtime.getManifest().name + ' V' + chrome.runtime.getManifest().version,
         smallImageKey: smallImageKey,
         smallImageText: smallImageText,
