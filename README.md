@@ -75,13 +75,13 @@ If you're interested in helping us visit the [LOCALIZATION.md](/LOCALIZATION.md)
 | Linux            | Self-build  |   ✓    |  Beta   |
 | Mac OS           |      ✓      |   ✓    |  Beta   |
 
-#### **Browsers which also works with PreMiD**
+#### **Additional Browsers**
 
-| Opera | Vivaldi |
-| :---: | :---: |
-|   ✓   |   ✓   |
-|   ✓   |   ✓   |
-|   ✓   |   ✓   |
+| Operating System | Opera | Vivaldi |
+| :--------------- | :---: | :---: |
+| Windows          |   ✓   |   ✓   |
+| Linux            |   ✓   |   ✓   |
+| Mac OS           |   ✓   |   ✓   |
 
 ### **Services**
 
