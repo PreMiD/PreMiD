@@ -105,9 +105,17 @@ Want to request a support for other services? Open an [Issue](https://github.com
   <summary><b><u>Installing the Firefox extension</u></b> (Click to expand)</summary>
   <h1>Firefox Extension Installation</h1>
   <ol>
-    <li>Click <a href="https://addons.mozilla.org/de/firefox/addon/premid/">this</a> link</li>
+    <b>Firefox removed our Extension from the addon store.<br>
+      We're currently trying upload it to our own servers and could revive it from the dead.<br>
+      Until then, we have to stay positive and you have to download our addon manually <u>or just use another browser!</u></b>
+    <li>Switch to the <a href="https://github.com/PreMiD/PreMiD/releases">releases tab</a></li>
     </li>
-    <li>Click "Add to Firefox"</li>
+    <li>Download <a href="https://github.com/PreMiD/PreMiD/releases">premid-1.3.1.2-fx.xpi</a></li>
+    <li>Got to <a href="about:addons">about:addons</a></li>
+    <li>Click on the little gear symbol on the upper right hand side</li>
+    <li>Choose <b>"Install add-on from file"</b></li>
+    <li>Select the file you downloaded recently</li>
+    <li>Accept the installation by clicking on <b>"Add"</b></li>
     <li>Install the <a href="#application">application</a></li>
   </ol>
 </details>
