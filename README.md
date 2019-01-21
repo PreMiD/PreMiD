@@ -97,6 +97,8 @@ Want to request a support for other services? Open an [Issue](https://github.com
 
 # Installation
 
+<b><font size="4">YOU HAVE TO INSTALL BOTH THE EXTENSION AND THE APPLICATION</font></b>
+
 ## Extension
 
 <details>
