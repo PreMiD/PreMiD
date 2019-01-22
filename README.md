@@ -2,7 +2,7 @@
 
 # <img src="gitassets/icon.png" width="24px" draggable="false"><b> </b>PreMiD &middot; Discord Rich Presence for your Media!
 
-### ![version](https://img.shields.io/badge/Version-1.4-brightgreen.svg?style=for-the-badge) [![Code Quality](https://img.shields.io/codacy/grade/aaefef1998e644118a506a3c03c5b7e2.svg?style=for-the-badge)](https://www.codacy.com/project/xPazz/PreMiD/dashboard?utm_source=github.com&utm_medium=referral&utm_content=PreMiD/PreMiD&utm_campaign=Badge_Grade_Dashboard&branchId=10584370) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=for-the-badge)](https://discord.gg/Kw7WaYn) [![Chrome Web Store](https://img.shields.io/chrome-web-store/d/agjnjboanicjcpenljmaaigopkgdnihi.svg?label=Chrome&logo=google%20chrome&logoColor=white&colorA=4285F4&style=for-the-badge)](https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi)
+### ![version](https://img.shields.io/badge/Version-1.4-brightgreen.svg?style=for-the-badge) [![Code Quality](https://img.shields.io/codacy/grade/aaefef1998e644118a506a3c03c5b7e2.svg?style=for-the-badge)](https://www.codacy.com/project/xPazz/PreMiD/dashboard?utm_source=github.com&utm_medium=referral&utm_content=PreMiD/PreMiD&utm_campaign=Badge_Grade_Dashboard&branchId=10584370) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=for-the-badge)](https://discord.gg/WvfVZ8T) [![Chrome Web Store](https://img.shields.io/chrome-web-store/d/agjnjboanicjcpenljmaaigopkgdnihi.svg?label=Chrome&logo=google%20chrome&logoColor=white&colorA=4285F4&style=for-the-badge)](https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi)
 
 <img src="gitassets/PreMiDExample.png">
 
