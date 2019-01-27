@@ -1,28 +1,18 @@
-//* Handle Winstall
-require("./util/handleWinstall");
+//* Handle Windows Installation
+require("./util/handleWinstall")
 
-var { debug } = require("./util/debug");
+//* Import needed variables
+var {app, BrowserWindow} = require('electron'),
+  pjson = require('./package.json'),
+  os = require('os'),
+  updater = require('./util/updateChecker'),
+  Config = require('electron-store'),
+  options = new Config({name: "options"})
 
-//#region Define constants
-//* Declare needed constants
-const { app } = require("electron");
+//* Clear Console if not packaged
+if(!app.isPackaged) process.stdout.write("\u001b[2J\u001b[0;0H");
 
-//* Require config
-var pjson = require("./package.json");
-//* Require electron-config
-const os = require("os");
-//* Require Update checker
-const updater = require("./util/updateChecker");
-//* Require Needed packages
-const chalk = require("chalk");
-//* Setup electron-store
-const Config = require("electron-store");
-const userSettings = new Config({
-  name: "userSettings"
-});
-//#endregion
-
-//* Set app user model id
+//* Set app user model id for Notifications on windows
 app.setAppUserModelId("eu.Timeraa.premid");
 
 //* Define Global Variables
@@ -30,21 +20,23 @@ global.PLATFORM = os.platform();
 global.UPDATEAVAIABLE = "";
 global.VERSION = pjson.productVersion;
 
-if (pjson.devBuild) global.VERSIONSTRING = VERSION + "-DEV";
-else global.VERSIONSTRING = VERSION;
+if (!app.isPackaged)
+  global.VERSIONSTRING = VERSION + "-DEV";
+else
+  global.VERSIONSTRING = VERSION;
 
 global.BROWSERCONNECTIONSTATE = "NOT_CONNECTED";
 global.EXTENSIONSOCKET = null;
 global.TRAY = null;
-global.CONSOLEPREFIX =
-  chalk.bold(chalk.hex("#596cae")("PreMiD")) + chalk.hex("#ffffff")(": ");
-
-//* Clear console
-process.stdout.write("\u001b[2J\u001b[0;0H");
 
 //* Single instance lock
 app.requestSingleInstanceLock();
 
+//! DEPRECATED
+//#region DEPRECATED
+const userSettings = new Config({
+  name: "userSettings"
+});
 //* Set default values for electon-config userSettings
 if (userSettings.get("titleMenubar") == undefined)
   userSettings.set("titleMenubar", true);
@@ -54,34 +46,55 @@ if (userSettings.get("autoUpdateCheck") == undefined)
   userSettings.set("autoUpdateCheck", true);
 if (userSettings.get("mediaControls") == undefined)
   userSettings.set("mediaControls", true);
+//#endregion
 
-//* Set dock Badge to version
-if (PLATFORM == "darwin") {
-  app.dock.setBadge("V" + VERSION);
-}
-
-debug("info", "Loading...");
-
-//* App ready
-const appReady = async () => {
-  //* Setup MenuBar
-  require("./tray/createTray").run();
-  //* Require shortcuts
-  require("./util/shortcutHandler").register();
-  //* Include PresenceHandler
-  require("./presenceHandler.js");
-  //* Auto launch
-  require("./util/autoLaunch");
-
-  //* Automatically check for update
-  if (userSettings.get("autoUpdateCheck") == true) updater.checkForUpdate(true);
-
-  //* hide Dock icon when everything running
-  if (PLATFORM == "darwin") app.dock.hide();
-};
-
-//* Register Handler
+//* Electron initialized
 app.on("ready", appReady);
 
-//* Prevent default behaviour
+//* Prevent app.quit() when all windows closed
 app.on("window-all-closed", () => {});
+
+//* App ready
+async function appReady() {
+  //* Create BrowserWindow for .setProgressBar
+  var win = new BrowserWindow({show: false})
+  win.setProgressBar(0)
+
+  //* New Options
+  initOption("autoLaunch")
+  initOption("autoUpdate")
+  initOption("port", "3020")
+
+  win.setProgressBar(0.2)
+
+  //* Setup MenuBar
+  require("./tray/createTray")()
+  win.setProgressBar(0.35)
+
+  //* Auto launch
+  require("./util/autoLaunch").init();
+  win.setProgressBar(0.5)
+
+  //* Require shortcuts
+  require("./util/shortcutHandler").register();
+  win.setProgressBar(0.75)
+
+  //* Include PresenceHandler
+  require("./presenceHandler.js");
+  win.setProgressBar(1)
+  win.close()
+  win = null
+
+  //TODO ONLY HIDE IF NO ERROR
+  if(PLATFORM == "darwin")
+    app.dock.hide()
+
+  //* Automatically check for update
+  if (options.get("autoUpdate") == true)
+    updater.checkForUpdate(true);
+};
+
+async function initOption(option, defaultValue = true) {
+  if(options.get(option) == undefined)
+    options.set(option, defaultValue)
+}

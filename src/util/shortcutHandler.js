@@ -3,19 +3,21 @@ const userSettings = new Config({
   name: "userSettings"
 });
 
+var debug = require('./debug')
+
 const chalk = require('chalk')
 var { globalShortcut, app } = require('electron')
 
 module.exports.register = async () => {
   if(!userSettings.get('mediaControls')) return
-  console.log(CONSOLEPREFIX + chalk.yellow("Registering keyboard shortcuts..."))
+  debug.info("Registering keyboard shortcuts...")
   
-  globalShortcut.register('medianexttrack', () => {
+  var nxtTrack = globalShortcut.register('medianexttrack', () => {
     if (EXTENSIONSOCKET != null) EXTENSIONSOCKET.emit('mediaKeyHandler', { playback: "nextTrack" })
   })
   
   var pauseSkipToggle = 0;
-  globalShortcut.register('mediaplaypause', () => {
+  var ppTrack = globalShortcut.register('mediaplaypause', () => {
     pauseSkipToggle++
     setTimeout(() => {
       if (EXTENSIONSOCKET != null && pauseSkipToggle == 1) EXTENSIONSOCKET.emit('mediaKeyHandler', { playback: "pause" })
@@ -25,25 +27,28 @@ module.exports.register = async () => {
     }, 500)
   })
   
-  globalShortcut.register('mediaprevioustrack', () => {
+  var prvTrack = globalShortcut.register('mediaprevioustrack', () => {
     if (EXTENSIONSOCKET != null) EXTENSIONSOCKET.emit('mediaKeyHandler', { playback: "previousTrack" })
   })
-  
-  console.log(CONSOLEPREFIX + chalk.green("Successfully registered keyboard shortcuts."))
+
+  if(ppTrack, nxtTrack, prvTrack)
+    debug.success("Registering keyboard shortcuts... - Done");
+  else 
+    debug.error("Registering keyboard shortcuts... - Error");
 }
 
 module.exports.unregister = async () => {
-  console.log(CONSOLEPREFIX + chalk.red("Unregistering keyboard shortcuts..."))
+  debug.info("Unregistering keyboard shortcuts...")
   if(require('os').platform() == "darwin") {
     app.relaunch()
     app.exit(0)
   } else
   globalShortcut.unregisterAll()
-  console.log(CONSOLEPREFIX + chalk.green("Unregistered keyboard shortcuts"))
+  debug.success("Unregistering keyboard shortcuts... - Done")
 }
 
 app.on('will-quit', () => {
-  console.log(CONSOLEPREFIX + chalk.red("Unregistering keyboard shortcuts..."))
+  debug.info("Unregistering keyboard shortcuts...")
   globalShortcut.unregisterAll()
-  console.log(CONSOLEPREFIX + chalk.green("Unregistered keyboard shortcuts"))
+  debug.success("Unregistering keyboard shortcuts... - Done")
 })

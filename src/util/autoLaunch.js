@@ -1,33 +1,42 @@
 //* Declare needed constants
-const {app} = require('electron')
-const chalk = require("chalk")
-//* Setup electron-store
-const AutoLaunch = require('auto-launch')
+var { app } = require("electron"),
+  AutoLaunch = require("auto-launch"),
+  Config = require("electron-store"),
+  options = new Config({
+    name: "options"
+  }),
+  debug = require("../util/debug"),
+  autoLaunch = new AutoLaunch({
+    name: "PreMiD",
+    path: app.getPath("exe"),
+    isHidden: true
+  });
 
-const Config = require('electron-store');
-const userSettings = new Config({
-  name: "userSettings"
-});
-
-module.exports = async () => {  
-  if(userSettings.get('autoLaunch') == undefined || userSettings.get('autoLaunch') == true) {
-    userSettings.set('autoLaunch', true)
-    //* Add App to AutoLaunch
-    console.log(CONSOLEPREFIX + chalk.yellow("Adding App to autostart..."))
-    let autoLaunch = new AutoLaunch({
-      name: 'PreMiD',
-      path: app.getPath('exe'),
-      isHidden: true
-    });
-  
-    //* Enable AutoLaunch if disabled
-    autoLaunch.isEnabled().then(async (isEnabled) => {
-      if (!isEnabled) autoLaunch.enable();
-      console.log(CONSOLEPREFIX + chalk.green("Added App to autostart."))
-    })
-    //* Catch error
-    .catch(function(err) {
-      console.log(CONSOLEPREFIX + chalk.red("Error while adding App to autostart."))
-    })
+module.exports.init = async () => {
+  if (!app.isPackaged) {
+    debug.info("Skipping autoLaunch due to development instance.");
+    return
   }
-}
+
+  if (options.get("autoLaunch")) {
+    if (!(await autoLaunch.isEnabled())) {
+      debug.info("Adding App to startup items...");
+      autoLaunch.enable()
+        .then(() => debug.success("Adding App to startup items... - Done"))
+        .catch(err =>
+          debug.error("Adding App to startup items... - Error\n" + err.message)
+        );
+    } else debug.error("App already added to startup items, skipping...");
+  } else {
+    if (await autoLaunch.isEnabled()) {
+      debug.info("Removing App from startup items...");
+      autoLaunch.disable()
+        .then(() => debug.success("Removing App from startup items... - Done"))
+        .catch(err =>
+          debug.error(
+            "Removing App from startup items... - Error\n" + err.message
+          )
+        );
+    }
+  }
+};

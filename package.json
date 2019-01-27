@@ -20,17 +20,19 @@
   "author": "Timeraa",
   "license": "MIT",
   "devDependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^2.4.2",
+    "electron-installer-debian": "^1.1.0",
     "electron-installer-dmg": "^1.0.0",
     "electron-installer-windows": "^1.1.0",
     "electron-packager": "^12.2.0",
-    "electron-winstaller": "^2.7.0",
-    "electron-installer-debian": "^1.0.0"
+    "electron-winstaller": "^2.7.0"
   },
   "dependencies": {
     "datauri": "^1.1.0",
     "dotenv": "^6.2.0",
     "node-fetch": "^2.3.0",
-    "request-promise-native": "^1.0.5"
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5",
+    "socket.io": "^2.2.0"
   }
 }

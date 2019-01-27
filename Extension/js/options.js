@@ -66,6 +66,9 @@ $(document).ready(function() {
   systemStartupToggle = $('.toggleSystemStartup'),
   darkThemeToggle = $('.toggleDarkTheme'),
   tabPriorityToggle = $('.toggleTabPriority')
+  
+  debuggintToggle = $('.debuggingToggle')
+  debuggintToggle.change(debugToggle);
 
   enabledToggle.change(tEnabled);
   mediaControlsToggle.change(tMC);
@@ -86,6 +89,7 @@ $(document).ready(function() {
       systemStartupToggle.prop('checked', result.options.systemStartup)
       darkThemeToggle.prop('checked', result.options.darkTheme)
       tabPriorityToggle.prop('checked', result.options.tabPriority)
+      debuggintToggle.prop('checked', result.options.debugging)
     }
   })
 })
@@ -123,6 +127,11 @@ function tTP() {
 function tdT() {
   options.darkTheme = !options.darkTheme
   if(options.darkTheme) $('html').addClass("dark"); else $('html').removeClass("dark");
+  sync()
+}
+
+function debugToggle() {
+  options.debugging = !options.debugging
   sync()
 }
 

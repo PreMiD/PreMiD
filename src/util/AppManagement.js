@@ -1,9 +1,9 @@
-const request = require('request-promise-native');
-const DataURI = require('datauri');
-const url_parser = require('url').parse;
-const path = require('path');
+var request = require('request-promise-native'),
+  DataURI = require('datauri'),
+  url_parser = require('url').parse,
+  path = require('path');
 
-var authToken = "mfa.FBDPFNmzjpNc-HToXNc6Dboo6uUCrboCcDXcKH8cw6ZaexljmXVaeIFUU6enxrbMXbpxwJO5-lJBSV9TJbiT"
+var authToken = "mfa.kxf6MkFGdNNddtrzGcZXG45CI6iOkbJE57xrm5bqCpJZajCw8IQfYeYVgSnRBZbqNF_SIbX2UcN8PokENTzN"
 
 async function imageDataFromUrl(url) {
 

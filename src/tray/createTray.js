@@ -1,22 +1,41 @@
-const path = require('path')
-const {Tray, Menu, MenuItem} = require('electron')
+var debug = require('../util/debug'),
+  path = require('path'),
+  {Tray, Menu, app} = require('electron'),
+  cfu = () => require('../util/updateChecker').checkForUpdate(true, true),
+  optionsWindow = () => require('../tray/options').show()
 
-var cfu = () => require('../util/updateChecker').checkForUpdate(true, true)
+module.exports = () => {
+  debug.info("Creating Tray...");
 
-exports.run = () => {
+  //* Create new Tray
   TRAY = new Tray(path.join(__dirname, "../assets/images/icon.png"))
-  TRAY.setToolTip(`PreMiD V${VERSIONSTRING}`)
-  var menuBarMenu = new Menu()
-  menuBarMenu.append(new MenuItem({
-    label: `PreMiD | V${VERSIONSTRING}`,
-    enabled: false,
-    icon: path.join(__dirname, "../assets/images/icon.png")
-  }))
-  menuBarMenu.append(new MenuItem({type: "separator"}))
-  menuBarMenu.append(new MenuItem({
-    click: cfu,
-    label: "Check for updates"
-  }))
-  menuBarMenu.append(new MenuItem({role: "quit"}))
+
+  //* Set Tray ToolTip
+  TRAY.setToolTip(`${app.getName()} V${VERSIONSTRING}`)
+
+  //* Create Tray Menu
+  var menuBarMenu = Menu.buildFromTemplate([
+    {
+      label: `${app.getName()} | V${VERSIONSTRING}`,
+      enabled: false,
+      icon: path.join(__dirname, "../assets/images/icon.png")
+    },
+    {type: "separator"},
+    {
+      click: optionsWindow,
+      label: "Settings"
+    },
+    {
+      click: cfu,
+      label: "Check for Updates"
+    },
+    {
+      type: "separator"
+    },
+    {role: "quit"}
+  ])
+
+  //* Set Tray Menu
   TRAY.setContextMenu(menuBarMenu)
+  debug.success("Creating Tray - Done");
 }

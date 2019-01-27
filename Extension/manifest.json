@@ -16,7 +16,11 @@
     "1024": "icon.png"
   },
   "background": {
-    "scripts": ["js/util/socket.io-2.1.1.min.js", "js/background.js"]
+    "scripts": [
+      "js/util/socket.io-2.1.1.min.js",
+      "js/util/functions.js",
+      "js/background.js"
+    ]
   },
   "content_scripts": [
     {
@@ -25,7 +29,8 @@
         "js/util/jquery-3.3.1.min.js",
         "js/util/socketConnector.js",
         "js/util/langManager.js",
-        "js/util/presenceHandler.js"
+        "js/util/presenceHandler.js",
+        "js/util/functions.js"
       ],
       "css": ["css/connect.css"]
     },

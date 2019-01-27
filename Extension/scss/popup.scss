@@ -23,15 +23,31 @@ body {
   max-height: 600px;
 }
 
-/* Adds smooth transition when user changes theme 
-! Needs fix
-html,
-body,
-.tabs,
-.card-panel {
-  transition: all 0.3s ease-in-out;
+.debugging {
+  #header {
+    background-color: rgb(0, 200, 35);
+  }
+
+  #popupWrapper {
+    display: none;
+  }
+
+  #debugWrapper {
+    position: relative;
+    margin-top: 75px;
+    color: white;
+  }
 }
-*/
+
+html:not(.debugging) {
+  #header {
+    background-color: rgba(89, 107, 174, 1);
+  }
+
+  #debugWrapper {
+    display: none;
+  }
+}
 
 .dark {
   background-color: hsl(220, 7%, 11%);
@@ -93,7 +109,6 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
   position: fixed;
   height: 75px;
   width: 100%;
-  background-color: rgba(89, 107, 174, 1);
 }
 
 .headerTabs {

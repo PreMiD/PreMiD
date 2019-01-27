@@ -1,9 +1,7 @@
-const DiscordRPC = require('discord-rpc')
-const {uploadAsset, imageDataFromUrl} = require('./util/AppManagement')
-
-//* Require needed packages
-const chalk = require("chalk"),
-express = require("express")
+var DiscordRPC = require('discord-rpc'),
+  {uploadAsset, imageDataFromUrl} = require('./util/AppManagement'),
+  {app, dialog} = require('electron'),
+  express = require("express")
 
 //* Create server to listen for extension
 var extension = express(),
@@ -16,6 +14,12 @@ const Config = require('electron-store');
 const userSettings = new Config({
   name: "userSettings"
 });
+
+var options = new Config({
+  name: "options"
+});
+
+var debug = require('./util/debug')
 
 //* Define needed variables
 var lastKeepAliveSwitch = 0
@@ -36,9 +40,18 @@ async function keepAliveCheck() {
 }
 
 //* Listen on port 3020
-socketServer.listen(3020, () => {
-  console.log(CONSOLEPREFIX + chalk.green("Listening on Port 3020"))
-});
+socketServer.listen(options.get("port"), () => {
+  debug.success(`Listening on Port ${options.get("port")}`)
+})
+
+socketServer.on('error', e => {
+  if(e.code == "EADDRINUSE")
+    dialog.showMessageBox({
+      type: "error",
+      title: "Whoopsie! Port already in use...",
+      message: `Whoopsie! Port ${options.get("port")} is already in use... Is PreMiD running already?`
+    })
+})
 
 //* Socket connection event
 io.on('connection', function (socket) {
@@ -81,7 +94,7 @@ async function updatePresence(data) {
   if(presencePauseSwitch >= 60) {
     if(setupService != null) {
       setupService.rpc.clearActivity()
-      if(PLATFORMdf == "darwin") TRAY.setTitle("");
+      if(PLATFORM == "darwin") TRAY.setTitle("");
     }
   } else {
     if(setupService) {
@@ -103,9 +116,21 @@ async function tryLogin(service, clientID) {
   setupServices.push({rpc: new DiscordRPC.Client({ transport: "ipc" }), serviceName: service, ready: false})
   var serviceRPC = setupServices.find(svice => svice.serviceName == service)
   serviceRPC.rpc.login({ clientId: clientID })
-  .catch(err => console.log(`${CONSOLEPREFIX}PreMiD - RPC: ${err.message}`))  
+  .catch(err => debug.error(`RPC: ${err.message}`))  
   serviceRPC.rpc.on("ready", () => {
     clearInterval(serviceLogins.find(svice => svice.serviceName == service).intervalID)
     serviceRPC.ready = true
   })
 }
+
+app.on('will-quit', () => {
+  debug.info("Closing all active RPC connections...")
+  Promise.all(setupServices.map(service => {
+    service.rpc.clearActivity()
+    service.rpc.destroy()
+    return service
+  }))
+  .then((collection) => {
+    debug.success("Closing all active RPC connections... - Done | " + collection.map(service => service.serviceName).join(", "))
+  })
+})

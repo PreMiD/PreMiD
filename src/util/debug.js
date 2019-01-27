@@ -1,19 +1,17 @@
 var chalk = require('chalk')
+const { app } = require("electron");
 
-module.exports.debug = function(type, message) {
-  var color
-  switch(type) {
-    case "info":
-      color = "#dcff32"
-      break
-    case "success":
-      color = "#64c800"
-      break
-    case "error":
-      color = "#c80000"
-      break
-    default:
-      throw new Error("Invalid debug color.")
-  }
-  console.log(chalk.bold(chalk.hex('#596cae')("PreMiD")) + chalk.hex('#ffffff')(": ") + chalk.hex(color)(message))
+module.exports.info = (message) => {
+  if(!app.isPackaged)
+    console.log(`[${chalk.hex('#596cae')("PreMiD")}] ${chalk.hex("#5050ff")(message)}`)
+}
+
+module.exports.success = (message) => {
+  if(!app.isPackaged)
+    console.log(`[${chalk.hex('#596cae')("PreMiD")}] ${chalk.hex("#50ff50")(message)}`)
+}
+
+module.exports.error = (message) => {
+  if(!app.isPackaged)
+    console.log(`[${chalk.hex('#596cae')("PreMiD")}] ${chalk.hex("#ff5050")(message)}`)
 }

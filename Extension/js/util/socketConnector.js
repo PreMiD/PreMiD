@@ -69,4 +69,5 @@ function getTimestamps(videoTime, videoDuration) {
 
 window.addEventListener("PreMiD_UpdatePresence", function(data) {
   chrome.runtime.sendMessage({presence: data.detail})
+  PMD_debug("info", data.detail)
 });

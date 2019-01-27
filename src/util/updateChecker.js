@@ -1,16 +1,11 @@
-const {
-  BrowserWindow,
-  dialog
-} = require('electron');
-
-const path = require('path')
-
-const request = require("request")
-const chalk = require("chalk")
+var { BrowserWindow, dialog } = require('electron'),
+  path = require('path'),
+  request = require("request-promise-native"),
+  debug = require('./debug')
 
 async function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false) {
 
-  console.log(CONSOLEPREFIX + chalk.cyan("Checking for update..."))
+  debug.info("Checking for update...")
 
   request({
     url: "https://api.github.com/repos/Timeraa/YT-Presence/releases/latest",
@@ -20,7 +15,7 @@ async function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false
     }
   }, function (error, response, body) {
     if (error) {
-      console.log(CONSOLEPREFIX + chalk.red("Error while checking for update. " + error));
+      debug.error("Checking for update... - Error\n" + error.message);
       dialog.showMessageBox({
         type: 'error',
         title: 'PreMiD',
@@ -35,7 +30,7 @@ async function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false
     if (gitVersion > VERSION) {
       global.UPDATEAVAIABLE = gitVersion
 
-      console.log(CONSOLEPREFIX + chalk.cyan("New version avaiable: ") + chalk.red(`V${VERSION}`) + chalk.blue(' > ') + chalk.yellow(`V${gitVersion}`))
+      debug.info(`New version avaiable: V${VERSION} > V${gitVersion}`)
 
       var updateWindow = new BrowserWindow({
         center: true,
@@ -67,7 +62,7 @@ async function checkForUpdate(sendNotification = false, sendNoUpdateInfo = false
 
     } else {
       global.UPDATEAVAIABLE = false
-      console.log(CONSOLEPREFIX + chalk.cyan("Up to date! ") + chalk.yellow(`V${VERSION}`))
+      debug.success(`Checking for update... - Up to date`)
       if (sendNoUpdateInfo) {
         dialog.showMessageBox({
           type: 'info',
