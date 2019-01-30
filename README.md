@@ -63,7 +63,7 @@ Join our [Discord server](https://discord.gg/WvfVZ8T) and take a look in #how-to
 
 ## Contributing
 
-If you're interested in helping us visit the [LOCALIZATION.md](/LOCALIZATION.md)
+If you're interested in helping us visit the [LOCALIZATION.md](/.github/LOCALIZATION.md)
 
 # Support
 
