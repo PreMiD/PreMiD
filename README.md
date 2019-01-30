@@ -16,6 +16,7 @@
   <ol>
 
 <a target="_blank" href="https://ko-fi.com/E1E1HLLE"><img draggable="false" height="56px" src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
 <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US"><img src="gitassets/PayPal.svg" height="56px" draggable="false" alt="PayPal"></a>
 
 #### BitCoin: `18WHUcQbThwExKhUyLGPRFUGSwFqftpsEn`
@@ -62,7 +63,7 @@ Our application has a lot of languages included and we are happy to see a new tr
 
 ## Contributing
 
-If you're interested in helping us visit the [LOCALIZATION.md](.github/LOCALIZATION.md)
+If you're interested in helping us visit the [LOCALIZATION.md](LOCALIZATION.md)
 
 # Support
 
@@ -77,10 +78,10 @@ If you're interested in helping us visit the [LOCALIZATION.md](.github/LOCALIZAT
 #### **Additional Browsers**
 
 | Operating System | Opera | Vivaldi |
-| :--------------- | :---: | :---: |
-| Windows          |   ✓   |   ✓   |
-| Linux            |   ✓   |   ✓   |
-| Mac OS           |   ✓   |   ✓   |
+| :--------------- | :---: | :-----: |
+| Windows          |   ✓   |    ✓    |
+| Linux            |   ✓   |    ✓    |
+| Mac OS           |   ✓   |    ✓    |
 
 ### **Services**
 
