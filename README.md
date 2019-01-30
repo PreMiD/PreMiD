@@ -62,7 +62,7 @@ Our application has a lot of languages included and we are happy to see a new tr
 
 ## Contributing
 
-If you're interested in helping us visit the [LOCALIZATION.md](/LOCALIZATION.md)
+If you're interested in helping us visit the [LOCALIZATION.md](.github/LOCALIZATION.md)
 
 # Support
 
