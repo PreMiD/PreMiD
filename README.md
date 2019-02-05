@@ -36,6 +36,9 @@
 - Supports **YouTube, YouTube Music, Netflix, SoundCloud** and many more to come.
 - _Watch parties and more are coming soon!_
 
+# Installation
+We moved everything to our [Wiki](https://github.com/PreMiD/PreMiD/wiki/Installation).
+
 # Help
 We moved everything to our [Wiki](https://github.com/PreMiD/PreMiD/wiki). Visit it to [get support](https://github.com/PreMiD/PreMiD/wiki/Troubleshooting).
 
