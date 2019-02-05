@@ -2,7 +2,7 @@
 
 # <img src="gitassets/icon.png" width="24px" draggable="false"><b> </b>PreMiD &middot; Discord Rich Presence for your Media!
 
-### ![version](https://img.shields.io/badge/Version-1.4-brightgreen.svg?style=for-the-badge) [![Code Quality](https://img.shields.io/codacy/grade/d2ed4f74af954173836b9d7ea4aed697.svg?style=for-the-badge)](https://www.codacy.com/app/xPazz/PreMiD?utm_source=github.com&utm_medium=referral&utm_content=PreMiD/PreMiD&utm_campaign=Badge_Grade&branchId=10584369) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=for-the-badge)](https://discord.gg/WvfVZ8T) [![Chrome Web Store](https://img.shields.io/chrome-web-store/d/agjnjboanicjcpenljmaaigopkgdnihi.svg?label=Chrome&logo=google%20chrome&logoColor=white&colorA=4285F4&style=for-the-badge)](https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi)
+### ![version](https://img.shields.io/badge/Version-1.4-brightgreen.svg?style=for-the-badge) [![Code Quality](https://img.shields.io/codacy/grade/d2ed4f74af954173836b9d7ea4aed697.svg?style=for-the-badge)](https://www.codacy.com/app/PreMiD/PreMiD?utm_source=github.com&utm_medium=referral&utm_content=PreMiD/PreMiD&utm_campaign=Badge_Grade&branchId=10584369) [![Discord](https://img.shields.io/discord/493130730549805057.svg?style=for-the-badge)](https://discord.gg/WvfVZ8T) [![Chrome Web Store](https://img.shields.io/chrome-web-store/d/agjnjboanicjcpenljmaaigopkgdnihi.svg?label=Chrome&logo=google%20chrome&logoColor=white&colorA=4285F4&style=for-the-badge)](https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi)
 
 <img src="gitassets/PreMiDExample.png">
 
@@ -36,19 +36,7 @@
 - Supports **YouTube, YouTube Music, Netflix, SoundCloud** and many more to come.
 - _Watch parties and more are coming soon!_
 
-# Installation
+# Installation/Troubleshooting
 We moved everything to our [Wiki](https://github.com/PreMiD/PreMiD/wiki/Installation).
-
-# Help
-We moved everything to our [Wiki](https://github.com/PreMiD/PreMiD/wiki). Visit it to [get support](https://github.com/PreMiD/PreMiD/wiki/Troubleshooting).
-
-# Localization
-
-Our application has a lot of languages included and we are happy to see a new translators in our little project.<br>
-Join our [Discord server](https://discord.gg/WvfVZ8T) and take a look in `#how-to-contribute` to get started!
-
-## Contributing
-
-If you're interested in helping us visit the [Wiki](https://github.com/PreMiD/PreMiD/wiki/Contributing)
 
 [![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/0)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/0)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/1)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/1)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/2)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/2)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/3)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/3)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/4)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/4)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/5)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/5)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/6)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/6)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/7)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/7)
