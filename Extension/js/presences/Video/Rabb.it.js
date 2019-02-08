@@ -21,10 +21,10 @@ async function updateData() {
   }
   
   //* If page has all required propertys
-  if($('.roomName.on').get(0) != undefined) {
+  if($('.primary').get(0) != undefined) {
 
-    videoTitle = $('.roomName.on')[0].innerHTML
-    videoAuthor = $('.sessionsCount')[0].innerHTML.match("[0-9]*")[0] + " " + await getString("presence.watching")
+    videoTitle = $('.primary')[0].innerHTML
+    videoAuthor = $('.watching')[0].innerHTML.match("[0-9]*")[0] + " " + await getString("presence.watching")
     playbackBoolean = true
 
     var data = {
@@ -41,7 +41,7 @@ async function updateData() {
       service: 'Rabb.it'
     }
 
-  } else if(document.location.pathname == "/") {
+  } else {
     data = {
       clientID: '516742299355578380',
       presenceData: {
@@ -51,7 +51,7 @@ async function updateData() {
         startTimestamp: startTimeStamp
       },
       trayTitle: "",
-      service: 'Rabbit',
+      service: 'Rabb.it',
       playback: true
     }
   }
