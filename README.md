@@ -94,7 +94,7 @@ If you're interested in helping us visit the [LOCALIZATION.md](LOCALIZATION.md)
 
 <i>More availabe on our soon releasing presence store for free!</i>
 
-Want to request a support for other services? Open an [Issue](https://github.com/Timeraa/PreMiD/issues/new?template=service_request.md)!
+Want to request a support for other services? Open an [Issue](https://github.com/PreMiD/PreMiD/issues/new?template=service_request.md)!
 
 # Installation
 
@@ -147,7 +147,7 @@ Want to request a support for other services? Open an [Issue](https://github.com
   <summary><b><u>Mac OS</u></b> (Click to expand)</summary>
   <h1>Installation on Mac OS</h1>
   <ol>
-    <li>Download the latest version of the <a href="https://github.com/Timeraa/YT-Presence/releases/latest">application</a>
+    <li>Download the latest version of the <a href="https://github.com/PreMiD/PreMiD/releases/latest">application</a>
     </li>
     <li>Open the downloaded <b>.dmg</b> file</li>
     <li>Drag <b>PreMiD</b> Into your <b>Applications</b> Folder</li>
@@ -162,7 +162,7 @@ Want to request a support for other services? Open an [Issue](https://github.com
   <summary><b><u>Windows</u></b> (Click to expand)</summary>
   <h1>Installation on Windows</h1>
   <ol>
-    <li>Download the latest installer from <a href="https://github.com/Timeraa/YT-Presence/releases/">here</a></li>
+    <li>Download the latest installer from <a href="https://github.com/PreMiD/PreMiD/releases/">here</a></li>
     <li>Open the downloaded <b>.exe</b> installer</li>
     <li>If SmartScreen comes up press more informations then press run anyways. (It's not a virus, I promise.)</li>
     <li>YouTube Presence should install itself and start automatically. (You can tell by looking at the taskbar.)</li>
@@ -173,9 +173,9 @@ Want to request a support for other services? Open an [Issue](https://github.com
 <details>
   <summary><b><u>Linux</u></b> (Click to expand)</summary>
   <h1>Installation on Linux</h1>
-  <p>If you want to talk about the GNU/Linux support: https://github.com/Timeraa/PreMiD/issues/21</p>
+  <p>If you want to talk about the GNU/Linux support: https://github.com/PreMiD/PreMiD/issues/21</p>
   <ol>
-    <li>Clone the repository: <code>git clone https://github.com/Timeraa/PreMiD.git</code></li>
+    <li>Clone the repository: <code>git clone https://github.com/PreMiD/PreMiD.git</code></li>
     <li>Change the working directory: <code>cd PreMiD/src</code></li>
     <li>Install dependencies and the application itself: <code>npm install</code></li>
     <li>Now you can start the application: <code>npm start</code></li>
