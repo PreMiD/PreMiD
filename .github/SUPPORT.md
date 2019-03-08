@@ -1,6 +1,6 @@
 # How to get support
 
-## Take a look at the [wiki](https://github.com/PreMiD/PreMiD/wiki)
+## Take a look at the [wiki](https://wiki.premid.app)
 Our GitHub wiki is full of information around PreMiD.<br>
 Take a look and feel free to contribute if you want to add something new.
 
