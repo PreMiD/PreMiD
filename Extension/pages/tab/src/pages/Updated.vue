@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <title>PreMiD Updated</title>
-    <h2>Updated</h2>
+    <h2>Updated PreMiD!</h2>
   </div>
 </template>
 
@@ -9,7 +9,18 @@
 import request from "request";
 
 export default {
-  name: "contributors"
+  name: "contributors",
+  data() {
+    return {
+      changelog: [
+        {
+          version: "1.1",
+          summary: "FOO BAR ASDASDSDASDASDSDASDASD",
+          points: ["foo", "bar", "hello", "world"]
+        }
+      ]
+    };
+  }
 };
 </script>
 
