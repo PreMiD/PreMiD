@@ -7,27 +7,17 @@ export default new Router({
 	routes: [
 		{
 			path: '',
-			redirect: '/Settings'
+			redirect: '/Installed'
 		},
 		{
-			path: '/Settings',
-			name: 'Settings',
-			component: require('@/pages/Settings').default
+			path: '/Installed',
+			name: 'Installed',
+			component: require('@/pages/Installed').default
 		},
 		{
-			path: '/Share',
-			name: 'Share',
-			component: require('@/pages/Share').default
-		},
-		{
-			path: '/Credits',
-			name: 'Credits',
-			component: require('@/pages/Credits').default
-		},
-		{
-			path: '/Help',
-			name: 'Help',
-			component: require('@/pages/Help').default
+			path: '/Updated',
+			name: 'Updated',
+			component: require('@/pages/Updated').default
 		}
 	]
 });

@@ -37,7 +37,7 @@ body {
   padding: 0px 0px 0px 0px;
   height: 100%;
   font-family: Roboto;
-  background: #2c2f33;
+  background: #1a1b1e;
   overflow: hidden;
   color: @accent-primary;
 }
@@ -92,11 +92,6 @@ button:focus {
 
 ::-webkit-scrollbar-corner {
   background: transparent;
-}
-footer {
-  position: fixed;
-  width: 100%;
-  bottom: 0;
 }
 
 img {
