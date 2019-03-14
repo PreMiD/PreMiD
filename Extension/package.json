@@ -1,0 +1,12 @@
+{
+  "name": "extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "init": "git update-index --assume-unchanged installed.html && git update-index --assume-unchanged updated.html && git update-index --assume-unchanged html/popup.html && cd html/pages/popup/ && npm i && cd .. && cd tab && npm i",
+    "build": "cd html/pages/popup/ && npm run build && cd .. && cd tab && npm run build && cd ../../../ && cp -R html/pages/tab/www/* ./ && cp -R html/pages/popup/www/* html && mv html/index.html html/popup.html && cp index.html installed.html && mv index.html updated.html"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!-- Import materialize.css -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../../css/materialize.min.css"
+      media="screen,projection"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../../css/popup.css"
+      media="screen,projection"
+    />
+
+    <script src="../../js/util/jquery-3.3.1.min.js"></script>
+    <script src="../../js/util/langManager.js"></script>
+    <script src="../../js/options.js"></script>
+    <script src="../../js/credits.js"></script>
+    <script src="../../js/popup.js"></script>
+    <script src="../../js/debugging.js"></script>
+  </head>
+
+  <body>
+    <div id="header">
+      <img id="logo" draggable="false" src="../../icon.png" />
+    </div>
+    <div id="popupWrapper">
+      <ul class="tabs headerTabs">
+        <li class="tab col s3">
+          <a
+            term="popup.tabs.options"
+            draggable="false"
+            class="active waves-effect waves-discord"
+            href="#options"
+          ></a>
+        </li>
+        <li class="tab col s3">
+          <a
+            term="popup.tabs.credits"
+            draggable="false"
+            class="waves-effect waves-discord"
+            href="#credits"
+          ></a>
+        </li>
+      </ul>
+      <div id="tabContent">
+        <div id="options" class="col s12 tabContent">
+          <div class="row">
+            <div class="col s12 m5">
+              <div class="card-panel">
+                <h3 term="popup.options.headings.general" id="pMiDHeading"></h3>
+                <table id="options">
+                  <tr class="enabledToggle">
+                    <td>
+                      <h5 term="popup.options.enabled" id="pMiDOption"></h5>
+                    </td>
+                    <td>
+                      <div class="switch">
+                        <label>
+                          <input type="checkbox" class="togglePresence" /><span
+                            class="lever"
+                          ></span>
+                        </label>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h5
+                        term="popup.options.mediaControls"
+                        id="pMiDOption"
+                      ></h5>
+                    </td>
+                    <td>
+                      <div class="switch">
+                        <label>
+                          <input
+                            type="checkbox"
+                            class="toggleMediaControls"
+                          /><span class="lever"></span>
+                        </label>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h5
+                        term="popup.options.checkForUpdates"
+                        id="pMiDOption"
+                      ></h5>
+                    </td>
+                    <td>
+                      <div class="switch">
+                        <label>
+                          <input
+                            type="checkbox"
+                            class="toggleCheckUpdates"
+                          /><span class="lever"></span>
+                        </label>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h5
+                        term="popup.options.systemStartup"
+                        id="pMiDOption"
+                      ></h5>
+                    </td>
+                    <td>
+                      <div class="switch">
+                        <label>
+                          <input
+                            type="checkbox"
+                            class="toggleSystemStartup"
+                          /><span class="lever"></span>
+                        </label>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h5 term="popup.options.darkTheme" id="pMiDOption"></h5>
+                    </td>
+                    <td>
+                      <div class="switch">
+                        <label>
+                          <input type="checkbox" class="toggleDarkTheme" /><span
+                            class="lever"
+                          ></span>
+                        </label>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h5 term="popup.options.tabPriority" id="pMiDOption"></h5>
+                    </td>
+                    <td>
+                      <div class="switch">
+                        <label>
+                          <input
+                            type="checkbox"
+                            class="toggleTabPriority"
+                          /><span class="lever"></span>
+                        </label>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="card-panel presenceWrapper">
+                <h3
+                  term="popup.options.headings.presences"
+                  id="pMiDHeading"
+                ></h3>
+                <table id="options" class="presences"></table>
+                <a class="btn waves-effect waves-discord presenceStore"
+                  >Presenz Store</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="credits" class="tabContent">
+          <div class="credits_container"></div>
+        </div>
+      </div>
+    </div>
+    <div id="debugWrapper">
+      <table>
+        <tr>
+          <td><h5 id="pMiDOption">Debugging</h5></td>
+          <td>
+            <div class="switch">
+              <label>
+                <input type="checkbox" class="debuggingToggle" /><span
+                  class="lever"
+                ></span>
+              </label>
+            </div>
+          </td>
+        <tr>
+          <td><p>Browser Language</p></td>
+          <td><p class="browserLang"></p></td>
+        </tr>
+        <tr>
+          <td><p>Discord Auth token</p></td>
+          <td><p class="authToken"></p></td>
+        </tr>
+        </tr>
+      </table>
+    </div>
+    <script
+      type="text/javascript"
+      src="../../js/util/materialize.min.js"
+    ></script>
+  </body>
+</html>

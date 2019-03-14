@@ -2,7 +2,6 @@
 require('./check-versions')();
 
 require('dotenv').load();
-const Discord = require('discord.js');
 
 const ora = require('ora');
 const rm = require('rimraf');
