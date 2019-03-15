@@ -1,0 +1,5 @@
+.env
+node_modules
+static/assets
+www
+package-lock.json
