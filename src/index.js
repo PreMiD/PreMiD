@@ -1,31 +1,29 @@
 //* Handle Windows Installation
-require("./util/handleWinstall")
+require('./util/handleWinstall');
 
 //* Import needed variables
-var {app, BrowserWindow} = require('electron'),
-  pjson = require('./package.json'),
-  os = require('os'),
-  updater = require('./util/updateChecker'),
-  Config = require('electron-store'),
-  options = new Config({name: "options"})
+var { app, BrowserWindow } = require('electron'),
+	pjson = require('./package.json'),
+	os = require('os'),
+	updater = require('./util/updateChecker'),
+	Config = require('electron-store'),
+	options = new Config({ name: 'options' });
 
 //* Clear Console if not packaged
-if(!app.isPackaged) process.stdout.write("\u001b[2J\u001b[0;0H");
+if (!app.isPackaged) process.stdout.write('\u001b[2J\u001b[0;0H');
 
 //* Set app user model id for Notifications on windows
-app.setAppUserModelId("eu.Timeraa.premid");
+app.setAppUserModelId('eu.Timeraa.PreMiD');
 
 //* Define Global Variables
 global.PLATFORM = os.platform();
-global.UPDATEAVAIABLE = "";
+global.UPDATEAVAIABLE = '';
 global.VERSION = pjson.productVersion;
 
-if (!app.isPackaged)
-  global.VERSIONSTRING = VERSION + "-DEV";
-else
-  global.VERSIONSTRING = VERSION;
+if (!app.isPackaged) global.VERSIONSTRING = VERSION + '-DEV';
+else global.VERSIONSTRING = VERSION;
 
-global.BROWSERCONNECTIONSTATE = "NOT_CONNECTED";
+global.BROWSERCONNECTIONSTATE = 'NOT_CONNECTED';
 global.EXTENSIONSOCKET = null;
 global.TRAY = null;
 
@@ -35,66 +33,59 @@ app.requestSingleInstanceLock();
 //! DEPRECATED
 //#region DEPRECATED
 const userSettings = new Config({
-  name: "userSettings"
+	name: 'userSettings'
 });
+
 //* Set default values for electon-config userSettings
-if (userSettings.get("titleMenubar") == undefined)
-  userSettings.set("titleMenubar", true);
-if (userSettings.get("autoStart") == undefined)
-  userSettings.set("autoStart", true);
-if (userSettings.get("autoUpdateCheck") == undefined)
-  userSettings.set("autoUpdateCheck", true);
-if (userSettings.get("mediaControls") == undefined)
-  userSettings.set("mediaControls", true);
+if (userSettings.get('titleMenubar') == undefined) userSettings.set('titleMenubar', true);
+if (userSettings.get('autoStart') == undefined) userSettings.set('autoStart', true);
+if (userSettings.get('autoUpdateCheck') == undefined) userSettings.set('autoUpdateCheck', true);
+if (userSettings.get('mediaControls') == undefined) userSettings.set('mediaControls', true);
 //#endregion
 
 //* Electron initialized
-app.on("ready", appReady);
+app.on('ready', appReady);
 
 //* Prevent app.quit() when all windows closed
-app.on("window-all-closed", () => {});
+app.on('window-all-closed', () => {});
 
 //* App ready
 async function appReady() {
-  //* Create BrowserWindow for .setProgressBar
-  var win = new BrowserWindow({show: false})
-  win.setProgressBar(0)
+	//* Create BrowserWindow for .setProgressBar
+	var win = new BrowserWindow({ show: false });
+	win.setProgressBar(0);
 
-  //* New Options
-  initOption("autoLaunch")
-  initOption("autoUpdate")
-  initOption("port", "3020")
+	//* New Options
+	initOption('autoLaunch');
+	initOption('autoUpdate');
 
-  win.setProgressBar(0.2)
+	win.setProgressBar(0.2);
 
-  //* Setup MenuBar
-  require("./tray/createTray")()
-  win.setProgressBar(0.35)
+	//* Setup MenuBar
+	require('./tray/createTray')();
+	win.setProgressBar(0.35);
 
-  //* Auto launch
-  require("./util/autoLaunch").init();
-  win.setProgressBar(0.5)
+	//* Auto launch
+	require('./util/autoLaunch').init();
+	win.setProgressBar(0.5);
 
-  //* Require shortcuts
-  require("./util/shortcutHandler").register();
-  win.setProgressBar(0.75)
+	//* Require shortcuts
+	require('./util/shortcutHandler').register();
+	win.setProgressBar(0.75);
 
-  //* Include PresenceHandler
-  require("./presenceHandler.js");
-  win.setProgressBar(1)
-  win.close()
-  win = null
+	//* Include PresenceHandler
+	require('./presenceHandler.js');
+	win.setProgressBar(1);
+	win.close();
+	win = null;
 
-  //TODO ONLY HIDE IF NO ERROR
-  if(PLATFORM == "darwin")
-    app.dock.hide()
+	//TODO ONLY HIDE IF NO ERROR
+	if (PLATFORM == 'darwin') app.dock.hide();
 
-  //* Automatically check for update
-  if (options.get("autoUpdate") == true)
-    updater.checkForUpdate(true);
-};
+	//* Automatically check for update
+	if (options.get('autoUpdate') == true) updater.checkForUpdate(true);
+}
 
 async function initOption(option, defaultValue = true) {
-  if(options.get(option) == undefined)
-    options.set(option, defaultValue)
+	if (options.get(option) == undefined) options.set(option, defaultValue);
 }
