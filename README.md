@@ -165,7 +165,7 @@ Want to request a support for other services? Open an [Issue](https://github.com
     <li>Download the latest installer from <a href="https://github.com/Timeraa/YT-Presence/releases/">here</a></li>
     <li>Open the downloaded <b>.exe</b> installer</li>
     <li>If SmartScreen comes up press more informations then press run anyways. (It's not a virus, I promise.)</li>
-    <li>YouTube Presence should install itself and start automatically. (You can tell by looking at the taskbar.)</li>
+    <li>PreMiD should install itself and start automatically. (You can tell by looking at the taskbar.)</li>
     <li>Install the <a href="#extension">extension</a>, if you haven't already.</li>
   </ol>
 </details>
