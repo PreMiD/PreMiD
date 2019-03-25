@@ -13,14 +13,14 @@
 
 # Features
 
-- Integrates with Discord's official Rich Presence API library.
-- Supports your keyboard's **Media Control** function keys.
-- Automatically clears your current presence after 1 minute of inactivity.
-- Supports **YouTube, YouTube Music, Netflix, SoundCloud** and many more to come.
-- _Watch parties and more are coming soon!_
+· Integrates with Discord's official Rich Presence API library.<br>
+· Supports your keyboard's **Media Control** function keys.<br>
+· Automatically clears your current presence after 1 minute of inactivity.<br>
+· Supports **YouTube, YouTube Music, Netflix, SoundCloud** and many more to come.<br>
+· _Watch parties and more are coming soon!_
 
 # Installation/Troubleshooting
-We moved everything to our (new) [GitBook Wiki](https://wiki.premid.app).
+We moved everything to our (even better) [Wiki](https://wiki.premid.app).
 
 [![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/0)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/0)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/1)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/1)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/2)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/2)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/3)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/3)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/4)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/4)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/5)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/5)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/6)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/6)[![](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/images/7)](https://sourcerer.io/fame/Timeraa/Timeraa/PreMiD/links/7)
 
