@@ -32,7 +32,7 @@
 	},
 	"devDependencies": {
 		"chalk": "^2.4.2",
-		"electron": "^4.0.5",
+		"electron": "^4.1.0",
 		"nodemon": "^1.18.10"
 	}
 }
