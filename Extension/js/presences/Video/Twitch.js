@@ -29,7 +29,7 @@ async function handleMediaKeys(data) {
 async function updateData() {
 	urlForVideo = document.location.href;
 
-	playback = $('.player-video video')[0] != undefined && $('.tw-font-size-4').innerText;
+	playback = $('.player-video video')[0] != undefined && $('.tw-font-size-4') != '';
 
 	//* If page has all required propertys
 	if (playback) {
@@ -38,8 +38,8 @@ async function updateData() {
 			startTimeStamp = Math.floor(Date.now() / 1000);
 		}
 
-		videoTitle = $('.tw-font-size-4').innerText;
-		videoAuthor = $('.channel-header__user-avatar h5').innerHTML;
+		videoTitle = $('.tw-font-size-4').text();
+		videoAuthor = $('.channel-header__banner-toggle h5').text();
 		playbackBoolean = !$('.player-video video').paused;
 		smallImageKey = playbackBoolean ? 'play' : 'pause';
 		smallImageText = playbackBoolean
@@ -67,6 +67,7 @@ async function updateData() {
 			delete data.presenceData.startTimestamp;
 		}
 
+		console.log(data);
 		chrome.runtime.sendMessage({ presence: data });
 	}
 }
