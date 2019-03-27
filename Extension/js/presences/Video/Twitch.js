@@ -67,7 +67,6 @@ async function updateData() {
 			delete data.presenceData.startTimestamp;
 		}
 
-		console.log(data);
 		chrome.runtime.sendMessage({ presence: data });
 	}
 }
