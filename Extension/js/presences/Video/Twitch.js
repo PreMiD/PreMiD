@@ -38,7 +38,7 @@ async function updateData() {
 			startTimeStamp = Math.floor(Date.now() / 1000);
 		}
 
-		videoTitle = $('.tw-font-size-4').text();
+		videoTitle = $('.tw-ellipsis.tw-mg-b-05.tw-mg-r-2 .tw-font-size-4').text();
 		videoAuthor = $('.channel-header__banner-toggle h5').text();
 		playbackBoolean = !$('.player-video video').paused;
 		smallImageKey = playbackBoolean ? 'play' : 'pause';
