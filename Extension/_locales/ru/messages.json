@@ -1,1 +1,5 @@
-{"description":{"message":"PreMiD добавляет интеграцию с Discord Rich Presence, управление медиа и многое другое для YouTube/YouTube Music, Twitch и т.д."}}
+{
+	"description": {
+		"message": "PreMiD adds Discord Rich Presence support to a lot of services you use and love. It also gives the possibility to use your media keys to control the playback of those services."
+	}
+}
