@@ -121,7 +121,7 @@ Want to request a support for other services? Open an [Issue](https://github.com
       Until then, we have to stay positive and you have to download our addon manually <u>or just use another browser!</u></b>
     <li>Switch to the <a href="https://github.com/PreMiD/PreMiD/releases">releases tab</a></li>
     </li>
-    <li>Download <a href="https://github.com/PreMiD/PreMiD/releases">premid-1.3.1.2-fx.xpi</a></li>
+    <li>Download <a href="https://github.com/PreMiD/PreMiD/releases">premid-X.X.X.X.xpi</a></li>
     <li>Got to <a href="about:addons">about:addons</a></li>
     <li>Click on the little gear symbol on the upper right hand side</li>
     <li>Choose <b>"Install add-on from file"</b></li>
