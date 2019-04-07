@@ -30,19 +30,6 @@ global.TRAY = null;
 //* Single instance lock
 app.requestSingleInstanceLock();
 
-//! DEPRECATED
-//#region DEPRECATED
-const userSettings = new Config({
-	name: 'userSettings'
-});
-
-//* Set default values for electon-config userSettings
-if (userSettings.get('titleMenubar') == undefined) userSettings.set('titleMenubar', true);
-if (userSettings.get('autoStart') == undefined) userSettings.set('autoStart', true);
-if (userSettings.get('autoUpdateCheck') == undefined) userSettings.set('autoUpdateCheck', true);
-if (userSettings.get('mediaControls') == undefined) userSettings.set('mediaControls', true);
-//#endregion
-
 //* Electron initialized
 app.on('ready', appReady);
 
@@ -58,6 +45,8 @@ async function appReady() {
 	//* New Options
 	initOption('autoLaunch');
 	initOption('autoUpdate');
+	initOption('mediaKeys');
+	initOption('titleMenubar');
 
 	win.setProgressBar(0.2);
 

@@ -1,5 +1,5 @@
 {
-	"productVersion": "2.0",
+	"productVersion": "1.0",
 	"productName": "PreMiD",
 	"name": "premid",
 	"description": "Discord Rich Presence for websites.",
@@ -20,9 +20,8 @@
 	},
 	"dependencies": {
 		"auto-launch": "^5.0.5",
-		"datauri": "^1.1.0",
+		"del": "^4.1.0",
 		"discord-rpc": "^3.0.1",
-		"dotenv": "^6.2.0",
 		"electron-squirrel-startup": "^1.0.0",
 		"electron-store": "^2.0.0",
 		"express": "^4.16.4",
@@ -32,7 +31,7 @@
 	},
 	"devDependencies": {
 		"chalk": "^2.4.2",
-		"electron": "^4.1.0",
-		"nodemon": "^1.18.10"
+		"dotenv": "^6.2.0",
+		"electron": "^4.1.3"
 	}
 }

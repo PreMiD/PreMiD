@@ -1,32 +1,27 @@
-const Config = require('electron-store');
-const userSettings = new Config({
-	name: 'userSettings'
-});
-
-var debug = require('./debug');
-
-var { globalShortcut, app } = require('electron');
+var Config = require('electron-store'),
+	options = new Config({
+		name: 'options'
+	}),
+	debug = require('./debug'),
+	{ globalShortcut, app } = require('electron'),
+	pauseSkipToggle = 0,
+	ppTimeout = null;
 
 module.exports.register = async () => {
-	if (!userSettings.get('mediaControls')) return;
+	if (!options.get('mediaKeys')) return;
 	debug.info('Registering keyboard shortcuts...');
 
 	var nxtTrack = globalShortcut.register('medianexttrack', () => {
 		if (EXTENSIONSOCKET != null) EXTENSIONSOCKET.emit('mediaKeyHandler', { playback: 'nextTrack' });
 	});
 
-	var pauseSkipToggle = 0;
 	var ppTrack = globalShortcut.register('mediaplaypause', () => {
-		pauseSkipToggle++;
-		setTimeout(() => {
-			if (EXTENSIONSOCKET != null && pauseSkipToggle == 1)
-				EXTENSIONSOCKET.emit('mediaKeyHandler', { playback: 'pause' });
-			if (EXTENSIONSOCKET != null && pauseSkipToggle == 2)
-				EXTENSIONSOCKET.emit('mediaKeyHandler', { playback: 'nextTrack' });
-			if (EXTENSIONSOCKET != null && pauseSkipToggle == 3)
-				EXTENSIONSOCKET.emit('mediaKeyHandler', { playback: 'previousTrack' });
-			pauseSkipToggle = 0;
-		}, 500);
+		if (pauseSkipToggle < 3) pauseSkipToggle++;
+		else {
+			clearTimeout(ppTimeout);
+			handlePP();
+		}
+		if (!ppTimeout) ppTimeout = setTimeout(handlePP, 500);
 	});
 
 	var prvTrack = globalShortcut.register('mediaprevioustrack', () => {
@@ -37,12 +32,19 @@ module.exports.register = async () => {
 	else debug.error('Registering keyboard shortcuts... - Error');
 };
 
+function handlePP() {
+	ppTimeout = null;
+	if (EXTENSIONSOCKET != null && pauseSkipToggle == 1) EXTENSIONSOCKET.emit('mediaKeyHandler', { playback: 'pause' });
+	if (EXTENSIONSOCKET != null && pauseSkipToggle == 2)
+		EXTENSIONSOCKET.emit('mediaKeyHandler', { playback: 'nextTrack' });
+	if (EXTENSIONSOCKET != null && pauseSkipToggle == 3)
+		EXTENSIONSOCKET.emit('mediaKeyHandler', { playback: 'previousTrack' });
+	pauseSkipToggle = 0;
+}
+
 module.exports.unregister = async () => {
 	debug.info('Unregistering keyboard shortcuts...');
-	if (require('os').platform() == 'darwin') {
-		app.relaunch();
-		app.exit(0);
-	} else globalShortcut.unregisterAll();
+	globalShortcut.unregisterAll();
 	debug.success('Unregistering keyboard shortcuts... - Done');
 };
 

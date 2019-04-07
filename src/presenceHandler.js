@@ -1,5 +1,4 @@
 var DiscordRPC = require('discord-rpc'),
-	{ uploadAsset, imageDataFromUrl } = require('./util/AppManagement'),
 	{ app, dialog } = require('electron'),
 	express = require('express');
 
@@ -11,9 +10,6 @@ var extension = express(),
 
 //* Load Config
 const Config = require('electron-store');
-const userSettings = new Config({
-	name: 'userSettings'
-});
 
 var options = new Config({
 	name: 'options'
@@ -60,34 +56,15 @@ io.on('connection', function(socket) {
 
 	socket.on('playBackChange', updatePresence);
 	socket.on('updateData', updatePresence);
-	socket.on('settingsChange', require('./util/settingsHandler'));
+	socket.on('optionUpdate', require('./util/settingsHandler'));
 });
 
 var setupServices = [],
 	serviceLogins = [],
 	presencePauseSwitch = 0;
 
-var oldTitle = '',
-	oldService = '',
-	oldImage = '';
 //* Updates the presence with the incomming data
 async function updatePresence(data) {
-	/*
-  * Maybe next time :^D
-  if(true) {
-    if(data.presenceData.details != oldTitle || data.service != oldService) {
-      oldTitle = data.presenceData.details
-      oldService = data.service
-      imageDataFromUrl(data.coverArt)
-      .then(imageData => {
-        uploadAsset(1, data.presenceData.details.replace(/[^A-Z0-9]/ig, "_").toLowerCase().slice(0, 31), imageData)
-        .then(() => {oldImage = data.coverArt})
-      })
-      .catch(err => data.presenceData.largeImageKey = data.service)
-    }
-    data.presenceData.largeImageKey = data.presenceData.details.replace(/[^A-Z0-9]/ig, "_").toLowerCase().slice(0, 31);
-  }*/
-
 	lastKeepAliveSwitch = 0;
 
 	var setupService = setupServices.find((svice) => svice.serviceName == data.service);
@@ -101,10 +78,9 @@ async function updatePresence(data) {
 		}
 	} else {
 		if (setupService) {
-			if (userSettings.get('titleMenubar'))
+			if (options.get('titleMenubar'))
 				if (PLATFORM == 'darwin' && data.playback) TRAY.setTitle(data.trayTitle);
 				else TRAY.setTitle('');
-			//if(data.coverArt == oldImage)
 			if (data.hidden != undefined && data.hidden == true) {
 				setupService.rpc.clearActivity();
 			} else {
