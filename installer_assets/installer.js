@@ -10,13 +10,13 @@ if (os == 'darwin') {
 
 	createDMG(
 		{
-			appPath: '../out/PreMiD-darwin-x64/PreMiD.app',
+			appPath: '../dist/PreMiD-darwin-x64/PreMiD.app',
 			name: 'PreMiD',
 			background: './dmg-background.png',
 			icon: './appIcon.icns',
 			contents: [
 				{ x: 500, y: 250, type: 'link', path: '/Applications' },
-				{ x: 175, y: 250, type: 'file', path: path.join(__dirname, '../out/PreMiD-darwin-x64/PreMiD.app') }
+				{ x: 175, y: 250, type: 'file', path: path.join(__dirname, '../dist/PreMiD-darwin-x64/PreMiD.app') }
 			],
 			out: '../dist/installer/',
 			overwrite: true
@@ -31,7 +31,7 @@ if (os == 'darwin') {
 	var electronInstaller = require('electron-winstaller');
 
 	resultPromise = electronInstaller.createWindowsInstaller({
-		appDirectory: './out/PreMiD-win32-x64',
+		appDirectory: './dist/PreMiD-win32-x64',
 		outputDirectory: './dist/installer/',
 		exe: './PreMiD.exe',
 		iconUrl: 'https://raw.githubusercontent.com/Timeraa/PreMiD/master/installer_assets/appIcon.ico',
