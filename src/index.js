@@ -45,7 +45,7 @@ async function appReady() {
 	//* New Options
 	initOption('autoLaunch');
 	initOption('autoUpdate');
-	initOption('mediaKeys');
+	initOption('mediaKeys', false);
 	initOption('titleMenubar');
 
 	win.setProgressBar(0.2);
@@ -56,10 +56,6 @@ async function appReady() {
 
 	//* Auto launch
 	require('./util/autoLaunch').init();
-	win.setProgressBar(0.5);
-
-	//* Require shortcuts
-	require('./util/shortcutHandler').register();
 	win.setProgressBar(0.75);
 
 	//* Include PresenceHandler

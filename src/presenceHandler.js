@@ -73,11 +73,13 @@ async function updatePresence(data) {
 	else presencePauseSwitch = 0;
 	if (presencePauseSwitch >= 60) {
 		if (setupService != null) {
+			require('./util/shortcutHandler').unregister();
 			setupService.rpc.clearActivity();
 			if (PLATFORM == 'darwin') TRAY.setTitle('');
 		}
 	} else {
 		if (setupService) {
+			require('./util/shortcutHandler').register();
 			if (options.get('titleMenubar'))
 				if (PLATFORM == 'darwin' && data.playback) TRAY.setTitle(data.trayTitle);
 				else TRAY.setTitle('');
