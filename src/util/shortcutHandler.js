@@ -8,7 +8,7 @@ var Config = require('electron-store'),
 	ppTimeout = null;
 
 module.exports.register = async () => {
-	if (!options.get('mediaKeys')) return;
+	if (!options.get('mediaKeys') || globalShortcut.isRegistered('mediaplaypause')) return;
 	debug.info('Registering keyboard shortcuts...');
 
 	var nxtTrack = globalShortcut.register('medianexttrack', () => {
@@ -43,6 +43,7 @@ function handlePP() {
 }
 
 module.exports.unregister = async () => {
+	if (!globalShortcut.isRegistered('mediaplaypause')) return;
 	debug.info('Unregistering keyboard shortcuts...');
 	globalShortcut.unregisterAll();
 	debug.success('Unregistering keyboard shortcuts... - Done');
