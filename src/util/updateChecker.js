@@ -154,9 +154,4 @@ function downloadFile(configuration) {
 	});
 }
 
-function showProgress(received, total) {
-	var percentage = received * 100 / total;
-	console.log(percentage + '% | ' + received + ' bytes out of ' + total + ' bytes.');
-}
-
 module.exports.checkForUpdate = checkForUpdate;
