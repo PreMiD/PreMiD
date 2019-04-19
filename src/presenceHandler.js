@@ -67,6 +67,11 @@ var setupServices = [],
 async function updatePresence(data) {
 	lastKeepAliveSwitch = 0;
 
+	if (setupServices.length > 0 && data.hidden != undefined && data.hidden == true) {
+		setupServices.map((svice) => svice.rpc.clearActivity());
+		return;
+	}
+
 	var setupService = setupServices.find((svice) => svice.serviceName == data.service);
 
 	if (!data.playback) presencePauseSwitch++;
@@ -83,11 +88,7 @@ async function updatePresence(data) {
 			if (options.get('titleMenubar'))
 				if (PLATFORM == 'darwin' && data.playback) TRAY.setTitle(data.trayTitle);
 				else TRAY.setTitle('');
-			if (data.hidden != undefined && data.hidden == true) {
-				setupService.rpc.clearActivity();
-			} else {
-				setupService.rpc.setActivity(data.presenceData);
-			}
+			setupService.rpc.setActivity(data.presenceData);
 		} else {
 			tryLogin(data.service, data.clientID);
 			serviceLogins.push({
