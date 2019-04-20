@@ -24,7 +24,8 @@ var lastKeepAliveSwitch = 0;
 setInterval(keepAliveCheck, 1000);
 
 async function keepAliveCheck() {
-	if (lastKeepAliveSwitch > 0) {
+	//* Allow up to 5 seconds of potential browser lag
+	if (lastKeepAliveSwitch > 5) {
 		setupServices.forEach((service) => {
 			service.rpc.destroy();
 		});
