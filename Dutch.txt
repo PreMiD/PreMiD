@@ -1,0 +1,19 @@
+﻿
+
+**JE MOET ONZE OFFICIËLE APPLICATIE INSTALLEREN OM HET WERKEND TE KRIJGEN**
+  » https://wiki.premid.app/installation/application
+
+PreMiD voegt Rich Presence-ondersteuning toe aan vele services die je gebruikt en waarvan je houdt. Het geeft je ook de mogelijkheid om je mediabesturing te gebruiken voor het besturen van deze services.
+E.g. wanneer je begint met het kijken/luisteren van iets stuurt de browserextensie de metagegevens van de video of van het lied naar onze desktop applicatie waar PreMiD het verwerkt. PreMiD stuurt de informatie met de correcte vorm naar Discord en zet daarna automatisch je status.
+
+Ondersteunde services
+  » Kijk naar https://wiki.premid.app/support/services
+
+Onze Discord server
+  » Waarom niet praten tegen de ontwikkelaars van PreMiD? https://discord.premid.app
+
+Wij zijn Open Source!
+  » Geweldige dingen horen open te zijn voor iedereen. https://github.com/PreMiD/PreMiD
+
+Hulp nodig?
+  » https://wiki.premid.app
