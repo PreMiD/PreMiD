@@ -4,3 +4,5 @@ dist
 server
 .vscode
 .env
+*.exe
+*.xml.backup
