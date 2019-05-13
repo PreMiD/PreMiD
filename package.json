@@ -10,18 +10,12 @@
 		"pkgwin": "electron-packager ./src/ --out=./dist/ --overwrite --icon=./installer_assets/appIcon.ico",
 		"pkgwin32": "electron-packager ./src/ --out=./dist/ --overwrite --icon=./installer_assets/appIcon.ico --platform=win32 --arch=ia32",
 		"pkglinux": "electron-packager ./src/ --out=./dist/ --overwrite --icon=./appIcon.ico --asar --platform=linux --arch=x64",
-		"installer-mac": "npm run pkgmac && sudo pkgbuild --install-location /Applications --component ./dist/PreMiD-darwin-x64/PreMiD.app ./dist/installer/PreMiD.pkg --identifier eu.Timeraa.PreMiD --version 2.0 --timestamp=none",
-		"installer-win": "npm run pkgwin && node installer_assets/installer",
-		"installer-win32": "npm run pkgwin32 && node installer_assets/installerWin32",
-		"installer-linux": "npm run pkglinux && electron-installer-debian --src dist/PreMiD-linux-x64/ --dest dist/installer/ --arch amd64"
+		"installer_win": "node installer_assets/builder windows"
 	},
 	"license": "MIT",
 	"devDependencies": {
 		"chalk": "^2.4.2",
-		"electron-installer-debian": "^1.1.1",
-		"electron-installer-windows": "^1.1.1",
-		"electron-packager": "^12.2.0",
-		"electron-winstaller": "^2.7.0"
+		"electron-packager": "^12.2.0"
 	},
 	"dependencies": {
 		"datauri": "^1.1.0",

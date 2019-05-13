@@ -78,8 +78,8 @@
         </kill>
     </preInstallationActionList>
     <postInstallationActionList>
-        <setInstallerVariable name="update_xml_url" value="http://localhost:3001/app/update"/>
-        <setInstallerVariable name="application_version_id" value="0200"/>
+        <setInstallerVariable name="update_xml_url" value="https://api.premid.app/app/update"/>
+        <setInstallerVariable name="application_version_id" value="0101"/>
         <writeFile>
             <path>${installdir}/update.ini</path>
             <text>[Update]
@@ -87,7 +87,7 @@ url = ${update_xml_url}
 version_id = ${application_version_id}
 update_download_location = ${system_temp_directory}
 check_for_updates = 1
- </text>
+            </text>
         </writeFile>
         <deleteFile path="${project.rollbackBackupDirectory}"/>
         <runProgram>

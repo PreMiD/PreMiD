@@ -1,16 +1,18 @@
 var { execFile } = require('child_process'),
-	os = require('os').platform();
+	path = require('path');
 
-if (os == 'win32') os = 'windows';
+if (process.argv.length < 3) {
+	return;
+}
 
 execFile('C:\\Program Files (x86)\\BitRock InstallBuilder Enterprise 19.4.1\\autoupdate\\bin\\customize.exe', [
 	'build',
-	'./updater.xml',
-	os
+	path.resolve('installer_assets/updater.xml'),
+	process.argv[2]
 ]);
 
 execFile('C:\\Program Files (x86)\\BitRock InstallBuilder Enterprise 19.4.1\\bin\\builder-cli.exe', [
 	'quickbuild',
-	'./PreMiD.xml',
-	os
+	path.resolve('installer_assets/PreMiD.xml'),
+	process.argv[2]
 ]);
