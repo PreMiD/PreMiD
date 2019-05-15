@@ -52,6 +52,14 @@
                     <destination>${installdir}</destination>
                     <name>programfilesosx</name>
                     <platforms>osx</platforms>
+                    <distributionFileList>
+                        <distributionFile>
+                            <origin>updater.app</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>../dist/PreMiD-darwin-x64/PreMiD.app</origin>
+                        </distributionFile>
+                    </distributionFileList>
                 </folder>
             </folderList>
             <startMenuShortcutList>
@@ -90,14 +98,35 @@ check_for_updates = 1
             </text>
         </writeFile>
         <deleteFile path="${project.rollbackBackupDirectory}"/>
+        <createSymLink linkName="PreMiD" target="${installdir}/PreMiD.app"/>
+        <addFilesToUninstaller files="/Applications/PreMiD"/>
         <runProgram>
             <abortOnError>0</abortOnError>
-            <program>PreMID.exe</program>
+            <program>${product_fullname}-win32-x64/PreMID.exe</program>
             <programArguments>&amp;</programArguments>
             <progressText>Launching PreMiD</progressText>
             <show>0</show>
             <showMessageOnError>0</showMessageOnError>
-            <workingDirectory>${installdir}/${product_fullname}-win32-x64/</workingDirectory>
+            <workingDirectory>${installdir}</workingDirectory>
+            <ruleList>
+                <platformTest>
+                    <type>windows</type>
+                </platformTest>
+            </ruleList>
+        </runProgram>
+        <setInstallerVariableFromRegEx show="0">
+            <name>escaped_installdir</name>
+            <pattern> </pattern>
+            <substitution>\\ </substitution>
+            <text>${installdir}</text>
+        </setInstallerVariableFromRegEx>
+        <runProgram>
+            <program>open</program>
+            <programArguments> ${escaped_installdir}/PreMiD.app</programArguments>
+            <progressText>Launching PreMiD</progressText>
+            <runAs>${env(USER)}</runAs>
+            <useMSDOSPath>0</useMSDOSPath>
+            <workingDirectory>${installdir}/</workingDirectory>
         </runProgram>
     </postInstallationActionList>
     <preUninstallationActionList>
