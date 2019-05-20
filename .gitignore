@@ -5,4 +5,5 @@ server
 .vscode
 .env
 *.exe
+*.app
 *.xml.backup
