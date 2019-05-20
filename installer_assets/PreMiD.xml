@@ -83,7 +83,28 @@
             <path>${installdir}/${product_fullname}-win32-x64/PreMID.exe</path>
             <progressText>Killing ${product_fullname}</progressText>
             <showMessageOnError>0</showMessageOnError>
+            <ruleList>
+                <platformTest>
+                    <type>windows</type>
+                </platformTest>
+            </ruleList>
         </kill>
+        <runProgram>
+            <program>pkill</program>
+            <programArguments>PreMiD</programArguments>
+            <runAs>${env(USER)}</runAs>
+            <useMSDOSPath>0</useMSDOSPath>
+            <workingDirectory>${installdir}/</workingDirectory>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+                <processTest>
+                    <logic>is_running</logic>
+                    <name>PreMiD</name>
+                </processTest>
+            </ruleList>
+        </runProgram>
     </preInstallationActionList>
     <postInstallationActionList>
         <setInstallerVariable name="update_xml_url" value="https://api.premid.app/app/update"/>
@@ -98,8 +119,6 @@ check_for_updates = 1
             </text>
         </writeFile>
         <deleteFile path="${project.rollbackBackupDirectory}"/>
-        <createSymLink linkName="PreMiD" target="${installdir}/PreMiD.app"/>
-        <addFilesToUninstaller files="/Applications/PreMiD"/>
         <runProgram>
             <abortOnError>0</abortOnError>
             <program>${product_fullname}-win32-x64/PreMID.exe</program>
@@ -127,6 +146,11 @@ check_for_updates = 1
             <runAs>${env(USER)}</runAs>
             <useMSDOSPath>0</useMSDOSPath>
             <workingDirectory>${installdir}/</workingDirectory>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+            </ruleList>
         </runProgram>
     </postInstallationActionList>
     <preUninstallationActionList>
@@ -136,7 +160,28 @@ check_for_updates = 1
             <path>${installdir}/${product_fullname}-win32-x64/PreMID.exe</path>
             <progressText>Killing ${product_fullname}</progressText>
             <showMessageOnError>0</showMessageOnError>
+            <ruleList>
+                <platformTest>
+                    <type>windows</type>
+                </platformTest>
+            </ruleList>
         </kill>
+        <runProgram>
+            <program>pkill</program>
+            <programArguments>PreMiD</programArguments>
+            <runAs>${env(USER)}</runAs>
+            <useMSDOSPath>0</useMSDOSPath>
+            <workingDirectory>${installdir}/</workingDirectory>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+                <processTest>
+                    <logic>is_running</logic>
+                    <name>PreMiD</name>
+                </processTest>
+            </ruleList>
+        </runProgram>
     </preUninstallationActionList>
     <defaultInstallationMode>unattended</defaultInstallationMode>
     <enableRollback>0</enableRollback>
