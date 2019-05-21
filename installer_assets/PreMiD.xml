@@ -79,8 +79,7 @@
     <preInstallationActionList>
         <kill>
             <abortOnError>0</abortOnError>
-            <name>${product_fullname}</name>
-            <path>${installdir}/${product_fullname}-win32-x64/PreMID.exe</path>
+            <name>${product_fullname}.exe</name>
             <progressText>Killing ${product_fullname}</progressText>
             <showMessageOnError>0</showMessageOnError>
             <ruleList>
@@ -156,8 +155,7 @@ check_for_updates = 1
     <preUninstallationActionList>
         <kill>
             <abortOnError>0</abortOnError>
-            <name>${product_fullname}</name>
-            <path>${installdir}/${product_fullname}-win32-x64/PreMID.exe</path>
+            <name>${product_fullname}.exe</name>
             <progressText>Killing ${product_fullname}</progressText>
             <showMessageOnError>0</showMessageOnError>
             <ruleList>
