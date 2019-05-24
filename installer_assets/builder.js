@@ -8,17 +8,21 @@ if (process.argv.length < 3) {
 }
 
 if (process.argv[2] == "windows") {
-  bitRockBuilder =
-    "C:/Program Files (x86)/BitRock InstallBuilder Enterprise 19.4.1/bin/builder-cli.exe";
-  bitRockUpdater =
-    "C:/Program Files (x86)/BitRock InstallBuilder Enterprise 19.4.1/autoupdate/bin/customize.exe";
+  bitRockBuilder = path.resolve(
+    "C:/Program Files (x86)/BitRock InstallBuilder Enterprise 19.4.1/bin/builder-cli.exe"
+  );
+  bitRockUpdater = path.resolve(
+    "C:/Program Files (x86)/BitRock InstallBuilder Enterprise 19.4.1/autoupdate/bin/customize.exe"
+  );
 }
 
 if (process.argv[2] == "osx") {
-  bitRockBuilder =
-    "/Applications/BitRock InstallBuilder Enterprise 19.4.1/bin/Builder.app/Contents/MacOS/installbuilder.sh";
-  bitRockUpdater =
-    "/Applications/BitRock InstallBuilder Enterprise 19.4.1/autoupdate/bin/customize.sh";
+  bitRockBuilder = path.resolve(
+    "/Applications/BitRock InstallBuilder Enterprise 19.4.1/bin/Builder.app/Contents/MacOS/installbuilder.sh"
+  );
+  bitRockUpdater = path.resolve(
+    "/Applications/BitRock InstallBuilder Enterprise 19.4.1/autoupdate/bin/customize.sh"
+  );
 }
 
 execFile(bitRockUpdater, [
