@@ -76,6 +76,6 @@ async function updateData() {
 function getSeconds(string) {
   const a = string.split(":")
 
-  const seconds = +a[0] * 60 + +a[1]
+  const seconds = string.split(":").length - 1 > 1  ? +a[0] * 3600 + +a[1] * 60 + +a[2] : +a[0] * 60 + +a[1]
   return seconds
 }
