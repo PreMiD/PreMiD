@@ -1,0 +1,209 @@
+<project>
+    <shortName>PreMiD</shortName>
+    <fullName>PreMiD</fullName>
+    <version>2.0</version>
+    <installerFilename>${product_fullname}-${product_version}-installer.${platform_exec_suffix}</installerFilename>
+    <wrapLicenseFileText>0</wrapLicenseFileText>
+    <logoImage>appIcon.png</logoImage>
+    <componentList>
+        <component>
+            <name>default</name>
+            <description>Default Component</description>
+            <canBeEdited>1</canBeEdited>
+            <selected>1</selected>
+            <show>1</show>
+            <folderList>
+                <folder>
+                    <description>Program Files</description>
+                    <destination>${installdir}</destination>
+                    <name>programfiles</name>
+                    <platforms>all</platforms>
+                    <distributionFileList>
+                        <distributionFile>
+                            <origin>update.ini</origin>
+                        </distributionFile>
+                    </distributionFileList>
+                </folder>
+                <folder>
+                    <description>Program Files</description>
+                    <destination>${installdir}</destination>
+                    <name>programfileslinux</name>
+                    <platforms>linux</platforms>
+                </folder>
+                <folder>
+                    <description>Program Files</description>
+                    <destination>${installdir}</destination>
+                    <name>programfileswindows</name>
+                    <platforms>windows</platforms>
+                    <distributionFileList>
+                        <distributionDirectory>
+                            <origin>../dist/PreMiD-win32-ia32</origin>
+                        </distributionDirectory>
+                        <distributionFile>
+                            <origin>appIcon.ico</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>updater.exe</origin>
+                        </distributionFile>
+                    </distributionFileList>
+                </folder>
+                <folder>
+                    <description>Program Files</description>
+                    <destination>${installdir}</destination>
+                    <name>programfilesosx</name>
+                    <platforms>osx</platforms>
+                    <distributionFileList>
+                        <distributionFile>
+                            <origin>updater.app</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>../dist/PreMiD-darwin-x64/PreMiD.app</origin>
+                        </distributionFile>
+                    </distributionFileList>
+                </folder>
+            </folderList>
+            <startMenuShortcutList>
+                <startMenuShortcut>
+                    <comment></comment>
+                    <name>${product_fullname}</name>
+                    <runAsAdmin>0</runAsAdmin>
+                    <runInTerminal>0</runInTerminal>
+                    <windowsExec>${installdir}/${product_fullname}-win32-ia32/PreMID.exe</windowsExec>
+                    <windowsExecArgs></windowsExecArgs>
+                    <windowsIcon></windowsIcon>
+                    <windowsPath>${installdir}/</windowsPath>
+                </startMenuShortcut>
+            </startMenuShortcutList>
+        </component>
+    </componentList>
+    <preInstallationActionList>
+        <kill>
+            <abortOnError>0</abortOnError>
+            <name>${product_fullname}.exe</name>
+            <progressText>Killing ${product_fullname}</progressText>
+            <showMessageOnError>0</showMessageOnError>
+            <ruleList>
+                <platformTest>
+                    <type>windows</type>
+                </platformTest>
+            </ruleList>
+        </kill>
+        <runProgram>
+            <program>pkill</program>
+            <programArguments>PreMiD</programArguments>
+            <runAs>${env(USER)}</runAs>
+            <useMSDOSPath>0</useMSDOSPath>
+            <workingDirectory>${installdir}/</workingDirectory>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+                <processTest>
+                    <logic>is_running</logic>
+                    <name>PreMiD</name>
+                </processTest>
+            </ruleList>
+        </runProgram>
+    </preInstallationActionList>
+    <postInstallationActionList>
+        <setInstallerVariable name="update_xml_url" value="https://api.premid.app/app/update/32bit/"/>
+        <setInstallerVariable name="application_version_id" value="0200"/>
+        <writeFile>
+            <path>${installdir}/update.ini</path>
+            <text>[Update]
+url = ${update_xml_url}
+version_id = ${application_version_id}
+update_download_location = ${system_temp_directory}
+check_for_updates = 1
+            </text>
+        </writeFile>
+        <deleteFile path="${project.rollbackBackupDirectory}"/>
+        <runProgram>
+            <abortOnError>0</abortOnError>
+            <program>${product_fullname}-win32-ia32/PreMID.exe</program>
+            <programArguments>&amp;</programArguments>
+            <progressText>Launching PreMiD</progressText>
+            <show>0</show>
+            <showMessageOnError>0</showMessageOnError>
+            <workingDirectory>${installdir}</workingDirectory>
+            <ruleList>
+                <platformTest>
+                    <type>windows</type>
+                </platformTest>
+            </ruleList>
+        </runProgram>
+        <setInstallerVariableFromRegEx show="0">
+            <name>escaped_installdir</name>
+            <pattern> </pattern>
+            <substitution>\\ </substitution>
+            <text>${installdir}</text>
+        </setInstallerVariableFromRegEx>
+        <runProgram>
+            <program>open</program>
+            <programArguments> ${escaped_installdir}/PreMiD.app</programArguments>
+            <progressText>Launching PreMiD</progressText>
+            <runAs>${env(USER)}</runAs>
+            <useMSDOSPath>0</useMSDOSPath>
+            <workingDirectory>${installdir}/</workingDirectory>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+            </ruleList>
+        </runProgram>
+    </postInstallationActionList>
+    <preUninstallationActionList>
+        <kill>
+            <abortOnError>0</abortOnError>
+            <name>${product_fullname}.exe</name>
+            <progressText>Killing ${product_fullname}</progressText>
+            <showMessageOnError>0</showMessageOnError>
+            <ruleList>
+                <platformTest>
+                    <type>windows</type>
+                </platformTest>
+            </ruleList>
+        </kill>
+        <runProgram>
+            <program>pkill</program>
+            <programArguments>PreMiD</programArguments>
+            <runAs>${env(USER)}</runAs>
+            <useMSDOSPath>0</useMSDOSPath>
+            <workingDirectory>${installdir}/</workingDirectory>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+                <processTest>
+                    <logic>is_running</logic>
+                    <name>PreMiD</name>
+                </processTest>
+            </ruleList>
+        </runProgram>
+    </preUninstallationActionList>
+    <compressionAlgorithm>lzham-ultra</compressionAlgorithm>
+    <defaultInstallationMode>unattended</defaultInstallationMode>
+    <enableRollback>0</enableRollback>
+    <enableTimestamp>1</enableTimestamp>
+    <outputDirectory>../dist/installer</outputDirectory>
+    <productDisplayIcon>${installdir}/appIcon.ico</productDisplayIcon>
+    <saveRelativePaths>1</saveRelativePaths>
+    <unattendedModeUI>minimal</unattendedModeUI>
+    <vendor>Timeraa</vendor>
+    <windowsExecutableIcon>appIcon.ico</windowsExecutableIcon>
+    <parameterList>
+        <directoryParameter>
+            <name>installdir</name>
+            <description>Installer.Parameter.installdir.description</description>
+            <explanation>Installer.Parameter.installdir.explanation</explanation>
+            <value></value>
+            <default>${platform_install_prefix}/${product_shortname}</default>
+            <allowEmptyValue>0</allowEmptyValue>
+            <cliOptionName>prefix</cliOptionName>
+            <mustBeWritable>1</mustBeWritable>
+            <mustExist>0</mustExist>
+            <width>40</width>
+        </directoryParameter>
+    </parameterList>
+</project>
+

@@ -2,7 +2,7 @@
     <shortName>PreMiD</shortName>
     <fullName>PreMiD</fullName>
     <version>2.0</version>
-    <installerFilename>${product_fullname}-${product_version}-installer.${platform_exec_suffix}</installerFilename>
+    <installerFilename>${product_fullname}-${product_version}-installer_64bit.${platform_exec_suffix}</installerFilename>
     <wrapLicenseFileText>0</wrapLicenseFileText>
     <logoImage>appIcon.png</logoImage>
     <componentList>
@@ -106,8 +106,8 @@
         </runProgram>
     </preInstallationActionList>
     <postInstallationActionList>
-        <setInstallerVariable name="update_xml_url" value="https://api.premid.app/app/update"/>
-        <setInstallerVariable name="application_version_id" value="0101"/>
+        <setInstallerVariable name="update_xml_url" value="https://api.premid.app/app/update/64bit/"/>
+        <setInstallerVariable name="application_version_id" value="0200"/>
         <writeFile>
             <path>${installdir}/update.ini</path>
             <text>[Update]
@@ -181,6 +181,7 @@ check_for_updates = 1
             </ruleList>
         </runProgram>
     </preUninstallationActionList>
+    <compressionAlgorithm>lzham-ultra</compressionAlgorithm>
     <defaultInstallationMode>unattended</defaultInstallationMode>
     <enableRollback>0</enableRollback>
     <enableTimestamp>1</enableTimestamp>
