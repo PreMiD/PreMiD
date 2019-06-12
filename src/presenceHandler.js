@@ -25,9 +25,9 @@ setInterval(keepAliveCheck, 1000);
 
 async function keepAliveCheck() {
   //* Allow up to 5 seconds of potential browser lag
-  if (lastKeepAliveSwitch > 5) {
+  if (lastKeepAliveSwitch > 10) {
     setupServices.forEach(service => {
-      service.rpc.destroy();
+      service.rpc.destroy().catch(() => {});
     });
     setupServices = [];
     serviceLogins = [];
