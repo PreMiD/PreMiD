@@ -37,8 +37,13 @@ async function updateData() {
     //* If page has all required propertys
   if(playback) {
     var startTime = Math.floor(Date.now()/1000),
-    endTime = startTime -
-    getSeconds($('.playbackTimeline__timePassed').children().get(1).innerHTML) + getSeconds($('.playbackTimeline__duration').children().get(1).innerHTML);
+    endTime
+    
+    if ($('.playbackTimeline__duration').children().get(1).innerHTML[0] === '-') {
+      endTime = startTime + getSeconds($('.playbackTimeline__duration').children().get(1).innerHTML)
+    } else {
+      endTime = startTime - getSeconds($('.playbackTimeline__timePassed').children().get(1).innerHTML) + getSeconds($('.playbackTimeline__duration').children().get(1).innerHTML)
+    }
     
     songTitle = $('.playbackSoundBadge__titleLink').children().get(1).innerHTML
     songAuthors = $('.playbackSoundBadge__titleContextContainer').children().get(0).innerHTML
@@ -74,6 +79,10 @@ async function updateData() {
 }
 
 function getSeconds(string) {
+  if (string[0] === '-') {
+    string = string.substring(1);
+  }
+
   const a = string.split(":")
 
   const seconds = string.split(":").length - 1 > 1  ? +a[0] * 3600 + +a[1] * 60 + +a[2] : +a[0] * 60 + +a[1]
