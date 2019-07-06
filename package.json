@@ -15,7 +15,7 @@
 	"license": "MIT",
 	"devDependencies": {
 		"chalk": "^2.4.2",
-		"electron-packager": "^12.2.0"
+		"electron-packager": "^14.0.1"
 	},
 	"dependencies": {
 		"datauri": "^1.1.0",
