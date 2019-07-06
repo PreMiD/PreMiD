@@ -19,7 +19,7 @@
   "author": "Timeraa",
   "license": "MIT",
   "devDependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^2.4.2",
     "electron-installer-dmg": "^1.0.0",
     "electron-installer-windows": "^1.1.0",
     "electron-packager": "^12.2.0",
