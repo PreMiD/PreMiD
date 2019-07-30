@@ -21,6 +21,6 @@
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
-    "electron-prebuilt-compile": "3.0.13"
+    "electron-prebuilt-compile": "4.0.0"
   }
 }
