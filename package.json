@@ -23,7 +23,7 @@
     "electron-installer-dmg": "1.0.0",
     "electron-installer-windows": "1.1.1",
     "electron-packager": "12.2.0",
-    "electron-winstaller": "2.7.0",
+    "electron-winstaller": "4.0.0",
     "electron-installer-debian": "1.2.0"
   },
   "dependencies": {
