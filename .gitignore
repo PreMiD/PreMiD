@@ -1,9 +1,16 @@
 node_modules
 out
 dist
-server
+tmp
+
 .vscode
 .env
+
+src/package-lock.json
+src/package.json
+src/update.ini
+
 *.exe
 *.app
 *.xml.backup
+*.js

@@ -20,7 +20,7 @@
                     <platforms>all</platforms>
                     <distributionFileList>
                         <distributionFile>
-                            <origin>update.ini</origin>
+                            <origin>../tmp/update.ini</origin>
                         </distributionFile>
                     </distributionFileList>
                 </folder>
@@ -106,17 +106,6 @@
         </runProgram>
     </preInstallationActionList>
     <postInstallationActionList>
-        <setInstallerVariable name="update_xml_url" value="https://api.premid.app/app/update/64bit/"/>
-        <setInstallerVariable name="application_version_id" value="0200"/>
-        <writeFile>
-            <path>${installdir}/update.ini</path>
-            <text>[Update]
-url = ${update_xml_url}
-version_id = ${application_version_id}
-update_download_location = ${system_temp_directory}
-check_for_updates = 1
-            </text>
-        </writeFile>
         <deleteFile path="${project.rollbackBackupDirectory}"/>
         <runProgram>
             <abortOnError>0</abortOnError>
@@ -181,10 +170,10 @@ check_for_updates = 1
             </ruleList>
         </runProgram>
     </preUninstallationActionList>
-    <compressionAlgorithm>lzham-ultra</compressionAlgorithm>
     <defaultInstallationMode>unattended</defaultInstallationMode>
     <enableRollback>0</enableRollback>
     <enableTimestamp>1</enableTimestamp>
+    <osxPlatforms>osx-intel osx-x86_64</osxPlatforms>
     <outputDirectory>../dist/installer</outputDirectory>
     <productDisplayIcon>${installdir}/appIcon.ico</productDisplayIcon>
     <saveRelativePaths>1</saveRelativePaths>
