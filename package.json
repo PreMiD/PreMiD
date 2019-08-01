@@ -6,8 +6,8 @@
   "scripts": {
     "init": "npm i && tsc pkg devMode installer_assets/builder",
     "start": "electron dist/app/.",
-    "dev": "nodemon -L --quiet --exec \"node devMode.js & cd dist/app && electron index.js\" -w dist -e js",
-    "pkg": "node devMode && node pkg",
+    "dev": "node devMode.js",
+    "pkg": "node devMode compile && node pkg",
     "pkgdist": "npm run pkg && node installer_assets/builder compile",
     "pkgmac": "electron-packager ./src/ --out=./dist/ --asar --overwrite --icon=./installer_assets/appIcon.ico --osx-sign.identity='Florian Metz'",
     "pkgwin": "electron-packager ./src/ --out=./dist/ --overwrite --icon=./installer_assets/appIcon.ico",
@@ -30,7 +30,8 @@
     "fs-extra": "^8.1.0",
     "ini": "^1.3.5",
     "nodemon": "^1.19.1",
-    "source-map-support": "^0.5.12"
+    "source-map-support": "^0.5.12",
+    "typescript": "^3.5.3"
   },
   "dependencies": {
     "auto-launch": "5.0.5",
