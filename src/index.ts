@@ -45,6 +45,7 @@ app.once("ready", async () => {
 //* If second instance started, close old one
 app.on("second-instance", app.quit);
 
+// TODO Find better way to log
 process.on("uncaughtException", err => {
   if (platform() === "darwin") app.dock.show();
   app.focus();
