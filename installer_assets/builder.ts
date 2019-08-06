@@ -27,10 +27,10 @@ if (platform() === "win32") {
 
 if (platform() === "darwin") {
   bitRockBuilder = resolve(
-    "/Applications/BitRock Installbuilder/bin/Builder.app/Contents/MacOS/installbuilder.sh"
+    "/Applications/Installbuilder/bin/Builder.app/Contents/MacOS/installbuilder.sh"
   );
   bitRockUpdater = resolve(
-    "/Applications/BitRock Installbuilder/autoupdate/bin/customize.sh"
+    "/Applications/Installbuilder/autoupdate/bin/customize.sh"
   );
 }
 
