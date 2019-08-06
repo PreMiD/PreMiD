@@ -3,10 +3,9 @@ import { init as initSocket } from "./managers/socketManager";
 import { init as initTray } from "./managers/trayManager";
 import { update as initAutoLaunch } from "./managers/launchManager";
 import { platform } from "os";
-import inAppFolder from "./util/inAppFolder";
 import { checkForUpdate } from "./util/updateChecker";
 
-//* Source mac support
+//* Source .map support
 if (!app.isPackaged) require("source-map-support").install();
 
 export var updateCheckerInterval = null;
@@ -19,12 +18,6 @@ app.disableHardwareAcceleration();
 
 //* App ready
 app.once("ready", async () => {
-  //* Handle in App Folder (Mac OS) rejects if user clicks "Quit app"
-  await inAppFolder().catch(() => {
-    app.quit();
-    return;
-  });
-
   //* Mac OS truted accessability client
   if (
     platform() === "darwin" &&
