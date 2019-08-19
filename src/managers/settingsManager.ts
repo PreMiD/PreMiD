@@ -1,5 +1,4 @@
 import ElectronStore from "electron-store";
-import { destroy } from "./discordManager";
 import { tray } from "./trayManager";
 import { update as updateAutoLaunch } from "./launchManager";
 import { platform } from "os";
@@ -42,8 +41,6 @@ export var settings = new ElectronStore({
 export function update(extensionSettings: extensionSettings) {
   info("Updated settings from extension.");
 
-  //* Destroy rpc connections if disabled
-  if (!extensionSettings.enabled) destroy();
   //* remove title if disabled
   if (!extensionSettings.titleMenubar && platform() === "darwin")
     tray.setTitle("");

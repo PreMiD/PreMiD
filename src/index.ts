@@ -1,5 +1,5 @@
 import { app, systemPreferences, dialog } from "electron";
-import { init as initSocket } from "./managers/socketManager";
+import { init as initSocket, socket } from "./managers/socketManager";
 import { init as initTray } from "./managers/trayManager";
 import { update as initAutoLaunch } from "./managers/launchManager";
 import { platform } from "os";
@@ -44,6 +44,11 @@ app.once("ready", async () => {
 
 //* If second instance started, close old one
 app.on("second-instance", app.quit);
+
+//* Send errors from app to extension
+process.on("unhandledRejection", rejection =>
+  socket.emit("unhandledRejection", rejection)
+);
 
 // TODO Find better way to log
 process.on("uncaughtException", err => {

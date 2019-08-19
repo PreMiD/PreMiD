@@ -2,9 +2,7 @@ import * as Discord from "discord-rpc";
 import { app } from "electron";
 import { platform } from "os";
 import { tray } from "./trayManager";
-import { error, info } from "../util/debug";
-import { init as initInputs, deinit as deinitInputs } from "./inputManager";
-import { settings } from "./settingsManager";
+import { info } from "../util/debug";
 
 interface Presence {
   /**
@@ -54,122 +52,29 @@ interface PresenceData {
 }
 
 //* Define Presence array
-var loggedInPresences: Array<Presence> = [],
-  errorCount = 0,
-  //* Limit in seconds before clearing presence
-  presenceTimeoutLimit = 60,
-  presencePlaybackSwitch = presenceTimeoutLimit,
-  presenceTimeoutInterval = null;
-
-//* Close all presence connections on app exit to prevent issues
-app.once("will-quit", () => {
-  info("Closing all rpc connections...");
-  loggedInPresences.map((presence: Presence) => presence.rpc.destroy());
-});
+var loggedInPresences: Array<Presence> = [];
 
 /**
- * Clear PresenceTimout interval
+ * Sets the users activity
+ * @param presence PresenceData to set activity
  */
-export function clearPresenceTimeout() {
-  if (!presenceTimeoutInterval) return;
+export function setActivity(presence: PresenceData) {
+  //* Check if theres an active RPC connection that we can use
+  var rpc = loggedInPresences.find(p => p.id === presence.clientID);
 
-  clearInterval(presenceTimeoutInterval);
-  presenceTimeoutInterval = null;
-}
-
-/**
- * Destroys all rpc connections if no playback change since set timeout limit
- */
-function presenceTimeout() {
-  //* Increace if limit not reached
-  if (presencePlaybackSwitch < presenceTimeoutLimit) presencePlaybackSwitch++;
-
-  if (presencePlaybackSwitch == presenceTimeoutLimit) {
-    //* clear input bindings
-    deinitInputs();
-
-    //* Close active rpc connections
-    destroy();
-
-    //* Clear Presence Timeout interval
-    clearPresenceTimeout();
-  }
-}
-
-/**
- * Update Presence function handles data from extension
- * Opens rpc connection if none exists
- * Sets activity on discord
- */
-export async function updatePresence(presenceData: PresenceData) {
-  //* If playback == true set to 0, continue
-  //* Else if playBackSwitch is above limit return
-  if (presenceData.playback) presencePlaybackSwitch = 0;
-  else if (presencePlaybackSwitch == presenceTimeoutLimit) return;
-
-  //* Hide presence if specified
-  if (typeof presenceData.hidden === "boolean" && presenceData.hidden) {
-    //* Clear TrayTitle
-    tray.setTitle("");
-
-    //* Unregister keybinds
-    deinitInputs();
-
-    //* Clear activity for all presences
-    loggedInPresences.map(presence =>
-      presence.rpc
-        .clearActivity()
-        .catch(() => errorCount++)
-        .then(() => (errorCount = 0))
+  //* If we have one, use it
+  if (rpc) rpc.rpc.setActivity(presence.presenceData);
+  //* Create one and use it
+  else
+    loginPresence(presence.clientID).then(p =>
+      p.rpc.setActivity(presence.presenceData)
     );
-    return;
-  }
 
-  //* Check if presence found
-  var presence = loggedInPresences.find(
-    lIP => lIP.id === presenceData.clientID
-  );
+  //* If platform is darwin (Mac OS) set trayTitle if theres one
+  if (platform() === "darwin") tray.setTitle(presence.trayTitle);
 
-  //* If not log it in
-  if (!presence) {
-    presence = await loginPresence(presenceData.clientID);
-    if (presence == null) return;
-  } else if (!presence.ready) return;
-
-  //* Set timeout interval if not already
-  if (!presenceTimeoutInterval)
-    presenceTimeoutInterval = setInterval(presenceTimeout, 1000);
-
-  //* set input bindings
-  if (presenceData.mediaKeys) initInputs();
-  else deinitInputs();
-
-  //* Set Activity
-  presence.rpc
-    .setActivity(presenceData.presenceData)
-    .catch(() => errorCount++)
-    .then(() => (errorCount = 0));
-
-  //* Set tray title if os == darwin (Mac OS)
-  if (platform() == "darwin" && settings.get("trayTitle", true)) {
-    presenceData.playback
-      ? tray.setTitle(presenceData.trayTitle)
-      : tray.setTitle("");
-  }
-
-  //* If setActivity failed 10 times (10 seconds) close all rpc connections
-  if (errorCount >= 10) {
-    error("Connection to Discord lost, reconnecting...");
-    destroy().then(() => {
-      errorCount = 0;
-    });
-
-    //* Stop timeout interval if set
-    clearPresenceTimeout();
-  }
-
-  //* Increase counter if loggedInPresences > 0
-  if (loggedInPresences.length > 0) errorCount++;
+  //TODO remove
+  console.log(presence);
 }
 
 /**
@@ -189,8 +94,9 @@ function loginPresence(clientId: string) {
 
     //* Try login with client id
     presence.rpc.login({ clientId: clientId }).catch(() => {
-      destroy();
-      resolve();
+      loggedInPresences = loggedInPresences.filter(p => p.id !== presence.id);
+
+      reject();
     });
 
     //* Once ready change ready to true
@@ -201,24 +107,34 @@ function loginPresence(clientId: string) {
   });
 }
 
-/**
- * Destroy open rpc connections
- */
-export function destroy() {
-  return new Promise((resolve, reject) => {
-    if (loggedInPresences.length == 0) {
-      reject();
-      return;
+export function clearActivity(clientId: string = undefined) {
+  if (clientId) {
+    var pTC = loggedInPresences.find(p => p.id === clientId);
+    if (pTC) {
+      pTC.rpc.clearActivity();
+      loggedInPresences.filter(p => p.id !== clientId);
     }
 
-    if (platform() == "darwin") tray.setTitle("");
+    return;
+  }
 
-    Promise.all(
-      loggedInPresences.map((presence: Presence) => {
-        presence.rpc.destroy().catch(() => {});
-      })
-    ).then(resolve);
-
-    loggedInPresences = [];
-  });
+  loggedInPresences.map(p => p.rpc.clearActivity());
 }
+
+export function destroy() {
+  if (platform() === "darwin") tray.setTitle("");
+
+  var res = Promise.all(
+    loggedInPresences.map((presence: Presence) => presence.rpc.destroy())
+  );
+
+  loggedInPresences = [];
+
+  return res;
+}
+
+//* Close all presence connections on app exit to prevent issues
+app.once("will-quit", () => {
+  info("Closing all rpc connections...");
+  destroy();
+});

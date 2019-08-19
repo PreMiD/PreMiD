@@ -2,14 +2,10 @@ import socketIo from "socket.io";
 import { createServer, Server } from "http";
 import { app, dialog } from "electron";
 import { success, error } from "../util/debug";
-import {
-  updatePresence,
-  destroy as destroyRPCConnections,
-  clearPresenceTimeout
-} from "./discordManager";
 import { deinit as deinitInputs } from "./inputManager";
 import { update as updateSettings } from "./settingsManager";
 import { openFileDialog } from "./presenceDevManager";
+import { setActivity, clearActivity, destroy } from "./discordManager";
 
 export var io: socketIo.Server;
 export var socket: socketIo.Socket;
@@ -42,13 +38,16 @@ function socketConnection(cSocket: socketIo.Socket) {
   socket = cSocket;
 
   //* Handle updateData event
-  socket.on("updateData", updatePresence);
+  socket.on("setActivity", setActivity);
+
+  //* Handle updateData event
+  socket.on("clearActivity", clearActivity);
 
   //* Handle settingsUpdate
   socket.on("optionUpdate", updateSettings);
 
   //* Handle presenceDev
-  socket.on("watchPresenceFolder", openFileDialog);
+  socket.on("selectLocalPresence", openFileDialog);
 
   socket.once("disconnect", () => {
     //* Clear retryDiscordClient interval
@@ -57,11 +56,7 @@ function socketConnection(cSocket: socketIo.Socket) {
       retryDiscordClient = null;
     }
 
-    //* Clear timout interval if set
-    clearPresenceTimeout();
-
-    //* Close open rpc connections
-    destroyRPCConnections().catch(() => {});
+    destroy();
 
     //* Show debug
     error("Disconnected from extension.");
