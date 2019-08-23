@@ -45,6 +45,5 @@
     <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZU8Q766ACS2WS&lc=US">
       <img height="100%" src=".github/PayPal.svg" draggable="false" alt="PayPal">
     </a>
-    <a href="https://twitter.com/PreMiDapp?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @PreMiDapp</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 </div>
