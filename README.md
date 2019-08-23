@@ -1,4 +1,4 @@
-<a href="https://twitter.com/PreMiDapp?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @PreMiDapp</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <div align="center">
 
 <img src=".github/Logo.png" width="150px" draggable="false"><br>
