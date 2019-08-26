@@ -4,7 +4,7 @@
   "version": "2.0.2",
   "repository": "https://github.com/PreMiD/PreMiD",
   "scripts": {
-    "init": "npm i && tsc pkg devMode installer_assets/builder",
+    "init": "npm i && tsc && tsc pkg devMode installer_assets/builder && node devMode.js compile",
     "start": "electron dist/app/.",
     "dev": "node devMode.js",
     "pkg": "node devMode compile && node pkg",
@@ -17,6 +17,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/auto-launch": "^5.0.1",
+    "@types/chalk": "^2.2.0",
     "@types/discord-rpc": "^3.0.1",
     "@types/electron-packager": "^14.0.0",
     "@types/fs-extra": "^8.0.0",
