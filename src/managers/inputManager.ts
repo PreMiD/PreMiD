@@ -1,49 +1,52 @@
 import { app, globalShortcut } from "electron";
 import { socket } from "./socketManager";
 import { info, error, success } from "./../util/debug";
-import { settings } from "./settingsManager";
 
 var playPauseSwitch = null,
   playPauseTimeout = null;
-
-//* If app will quit deinit shortcuts
-app.once("will-quit", deinit);
 
 /**
  * Register media keyboard shortcuts
  */
 export function init() {
-  //* Check if registered
+  //* If registered or not enabled return
+  //* Bind mediaplaypause
+  //* Bind medianexttrack
+  //* Bind mediaprevioustrack
+  //* Debug if bound failed/succeeded
   if (
     globalShortcut.isRegistered("mediaplaypause") ||
-    !settings.get("mediaKeys", true)
+    globalShortcut.isRegistered("medianexttrack") ||
+    globalShortcut.isRegistered("mediaprevioustrack")
   )
     return;
-
-  //* Register shortcuts
   var mpp = globalShortcut.register("mediaplaypause", () => {
-    //* No need to test if not connected
-    if (!socket.connected) return;
-
-    //* Only set this once
-    //* 500ms timeout > switch play/pause, nextrack/previoustrack
-    if (!playPauseTimeout) playPauseTimeout = setTimeout(handlePlayPause, 500);
-
-    //* Increase switch each press
-    playPauseSwitch++;
-  });
-
-  var mnt = globalShortcut.register("medianexttrack", () => {
-    if (socket.connected)
-      socket.emit("mediaKeyHandler", { playback: "nextTrack" });
-  });
-
-  var mpt = globalShortcut.register("mediaprevioustrack", () => {
-    if (socket.connected)
-      socket.emit("mediaKeyHandler", { playback: "previousTrack" });
-  });
-
-  //* Debug either success/error
+      //* Return if not connected
+      //* if playPause timeout not set set it - 500ms timeout > switch play/pause, nextrack/previoustrack
+      //* Increase switch each press
+      //* Show debug
+      if (!socket.connected) return;
+      if (!playPauseTimeout)
+        playPauseTimeout = setTimeout(handlePlayPause, 500);
+      playPauseSwitch++;
+      info("Media Play/Pause");
+    }),
+    mnt = globalShortcut.register("medianexttrack", () => {
+      //* send keybind to app if connected
+      if (socket.connected)
+        socket.emit("keybinds", {
+          playback: "nextTrack"
+        });
+      info("Media Nextrack");
+    }),
+    mpt = globalShortcut.register("mediaprevioustrack", () => {
+      //* send keybind to app if connected
+      if (socket.connected)
+        socket.emit("keybinds", {
+          playback: "previousTrack"
+        });
+      info("Media Previoustrack");
+    });
   if (mpp && mnt && mpt) success("Registered keyboard shortcuts.");
   else error("Registering keyboard shortcuts failed.");
 }
@@ -52,19 +55,20 @@ export function init() {
  * Handle Play/Pause media key after 500ms timeout
  */
 function handlePlayPause() {
+  //* Switch case -> emit
+  //* Reset switch var
+  //* Reset timeout var
   switch (playPauseSwitch) {
     case 1:
-      socket.emit("mediaKeyHandler", { playback: "pause" });
+      socket.emit("keybinds", { playback: "pause" });
       break;
     case 2:
-      socket.emit("mediaKeyHandler", { playback: "nextTrack" });
+      socket.emit("keybinds", { playback: "nextTrack" });
       break;
     case 3:
-      socket.emit("mediaKeyHandler", { playback: "previousTrack" });
+      socket.emit("keybinds", { playback: "previousTrack" });
       break;
   }
-
-  //* Reset switch & timeout vars
   playPauseSwitch = null;
   playPauseTimeout = null;
 }
@@ -73,10 +77,18 @@ function handlePlayPause() {
  * Unregister all globalShortcuts set by app
  */
 export function deinit() {
-  //* Check if bound
-  if (!globalShortcut.isRegistered("mediaplaypause")) return;
-
-  //* Clear shortcuts
-  info("Clearing keyboard shortcuts...");
+  //* Return if they aren't bound
+  //* Clear keybinds
+  //* Show debug
+  if (
+    !globalShortcut.isRegistered("mediaplaypause") &&
+    !globalShortcut.isRegistered("medianexttrack") &&
+    !globalShortcut.isRegistered("mediaprevioustrack")
+  )
+    return;
   globalShortcut.unregisterAll();
+  info("Cleared keybinds");
 }
+
+//* If app will quit deinit keybinds
+app.once("will-quit", deinit);

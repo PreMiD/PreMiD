@@ -1,7 +1,8 @@
 import { Menu, Tray } from "electron";
 import { join } from "path";
-import { platform } from "os";
 
+//* Export tray
+//* Export trayContextMenu
 export var tray: Tray;
 export var trayContextMenu = Menu.buildFromTemplate([
   {
@@ -13,15 +14,13 @@ export var trayContextMenu = Menu.buildFromTemplate([
  * Create tray
  */
 export function init() {
+  //* Return promise resolves to Tray
   return new Promise<Tray>(function(resolve) {
-    //* Create tray
-    if (platform() === "darwin")
-      tray = new Tray(join(__dirname, "../assets/tray/IconTemplate.png"));
-    else tray = new Tray(join(__dirname, "../assets/tray/Icon.png"));
-
+    //* Create Tray
     //* Set its context menu
-    tray.setContextMenu(trayContextMenu);
     //* Resolve promise
+    tray = new Tray(join(__dirname, "../assets/tray/IconTemplate.png"));
+    tray.setContextMenu(trayContextMenu);
     resolve(tray);
   });
 }

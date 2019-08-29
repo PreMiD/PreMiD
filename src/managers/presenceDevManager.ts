@@ -1,19 +1,26 @@
 import { readdirSync, readFileSync, unwatchFile, watchFile } from "fs";
-import { dialog, app } from "electron";
+import { dialog } from "electron";
 import { socket } from "./socketManager";
 import { extname } from "path";
-import { platform } from "os";
+import { info } from "../util/debug";
 
 var presenceDevWatchedFiles = [],
   currWatchPath = "";
 
 export async function watchDir(path: string) {
+  //* Read dir
+  //* Set currWatchDir
+  //* Set watched files to files
+  //* Add file watcher to each file
   var files = await readdirSync(path);
-  currWatchPath = path;
+  currWatchPath = path + "/";
   presenceDevWatchedFiles = files;
-
   presenceDevWatchedFiles.map(f => {
-    watchFile(path + "/" + f, { interval: 100 }, async (curr, prev) => {
+    //* Watch file
+    //* ReadFiles
+    watchFile(currWatchPath + f, { interval: 250 }, async () => {
+      //* Read dir
+      //* ReadFiles
       files = await readdirSync(path);
       readFiles(files, path);
     });
@@ -22,6 +29,7 @@ export async function watchDir(path: string) {
 }
 
 async function readFiles(files, path) {
+  //* Send files to extension
   socket.emit("localPresence", {
     files: await Promise.all(
       files.map(f => {
@@ -42,24 +50,28 @@ async function readFiles(files, path) {
 }
 
 export async function openFileDialog() {
-  if (presenceDevWatchedFiles.length > 0) {
-    await Promise.all(
-      presenceDevWatchedFiles.map(f => unwatchFile(currWatchPath + "/" + f))
-    );
-  }
-
-  if (platform() === "darwin") app.dock.show();
-  app.show();
-  app.focus();
-  var { filePaths } = await dialog.showOpenDialog(null, {
+  //* Open file dialog
+  //* If user cancels
+  //* Unwatch all still watched files
+  //* Watch directory
+  var filePaths = await dialog.showOpenDialogSync(null, {
+    title: "Select Presence Folder",
+    message:
+      "Please select the folder that contains the presence you want to load.\n(metadata.json, presence.js, iframe.js)",
+    buttonLabel: "Load Presence",
     properties: ["openDirectory"]
   });
-  if (platform() === "darwin") app.dock.hide();
-  app.hide();
+  if (typeof filePaths === "undefined") {
+    //* Show debug
+    //* return
+    info("Presence load canceled.");
+    return;
+  }
+  info(`Watching ${filePaths[0]}`);
+  if (presenceDevWatchedFiles.length > 0)
+    await Promise.all(
+      presenceDevWatchedFiles.map(f => unwatchFile(currWatchPath + f))
+    );
 
-  //* User clicked cancel
-  if (!filePaths) return;
-
-  //* Start watching folder and send data to extension
   watchDir(filePaths[0]);
 }

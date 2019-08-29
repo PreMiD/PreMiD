@@ -37,14 +37,15 @@ async function fileChange(diagnostic: ts.Diagnostic) {
   //* TS compilation != done
   if (diagnostic.code !== 6194) {
     //* If error
-    if (diagnostic.code === 6193)
-      console.log(chalk.redBright(ts.formatDiagnostic(diagnostic, formatHost)));
-    else
+    if ([6031, 6032].includes(diagnostic.code))
       console.log(
         chalk.blueBright(ts.formatDiagnostic(diagnostic, formatHost))
       );
+    else
+      console.log(chalk.redBright(ts.formatDiagnostic(diagnostic, formatHost)));
     return;
-  }
+  } else
+    console.log(chalk.greenBright(ts.formatDiagnostic(diagnostic, formatHost)));
 
   //* Kill old child if exists && alive
   if (currChild && !currChild.killed) currChild.kill();

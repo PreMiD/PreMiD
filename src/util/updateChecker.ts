@@ -11,6 +11,7 @@ var sudoPrompt = require("sudo-prompt");
 var updaterPath: string;
 
 export async function checkForUpdate(autoUpdate = false) {
+  //TODO REDO AUTOUPDATER!!
   if (!app.isPackaged) {
     info("Skipping UpdateChecker");
     return;

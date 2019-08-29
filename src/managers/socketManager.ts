@@ -13,75 +13,64 @@ export var server: Server;
 
 export function init() {
   return new Promise(resolve => {
+    //* Create server
+    //* create SocketIo server, don't server client
+    //* Try to listen to port 3020
+    //* If that fails/some other error happens run socketError
+    //* If someone connects to socket socketConnection
     server = createServer();
     io = socketIo(server, { serveClient: false });
-
     server.listen(3020, () => {
+      //* Resolve promise
+      //* Debug info
       resolve();
-      success("Successfully bound port.");
+      success("Opened socket");
     });
-
-    //* On Socket errors
     server.on("error", socketError);
-
-    //* On socket connections
     io.on("connection", socketConnection);
   });
 }
 
-var retryDiscordClient = null;
 function socketConnection(cSocket: socketIo.Socket) {
   //* Show debug
-  success("Connected to extension.");
-
   //* Set exported socket variable to current socket
-  socket = cSocket;
-
-  //* Handle updateData event
-  socket.on("setActivity", setActivity);
-
-  //* Handle updateData event
-  socket.on("clearActivity", clearActivity);
-
+  //* Handle setActivity event
+  //* Handle clearActivity event
   //* Handle settingsUpdate
-  socket.on("optionUpdate", updateSettings);
-
   //* Handle presenceDev
+  //* Once socket user disconnects run cleanup
+  success("Socket connection");
+  socket = cSocket;
+  socket.on("setActivity", setActivity);
+  socket.on("clearActivity", clearActivity);
+  socket.on("settingUpdate", updateSettings);
   socket.on("selectLocalPresence", openFileDialog);
-
   socket.once("disconnect", () => {
-    //* Clear retryDiscordClient interval
-    if (retryDiscordClient) {
-      clearInterval(retryDiscordClient);
-      retryDiscordClient = null;
-    }
-
-    destroy();
-
     //* Show debug
-    error("Disconnected from extension.");
-
-    //* deinit input bindings
+    //* Destroy all open RPC connections
+    //* Clear input bindings
+    error("Socket disconnection.");
+    destroy();
     deinitInputs();
   });
 }
 
+//* Runs on socket errors
 function socketError(e: any) {
-  error(e.message);
-
-  //* Focus app so user notices
-  app.focus();
-
+  //* Show debug
   //* If port in use
+  error(e.message);
   if (e.code === "EADDRINUSE") {
+    //* Focus app
     //* Show error dialog
+    //* Exit app afterwards
+    app.focus();
     dialog.showErrorBox(
-      "Error while binding port",
+      "Oh noes! Port error...",
       `${app.getName()} could not bind to port ${
         e.port
-      }. Is ${app.getName()} running already?`
+      }.\nIs ${app.getName()} running already?`
     );
+    app.exit(0);
   }
-
-  app.exit(0);
 }
