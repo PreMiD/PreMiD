@@ -44,7 +44,7 @@ async function updateData() {
   if(playback) {
     if(!startTimestamp) startTimestamp = Math.floor(Date.now() / 1000)
     videoTitle = $('.ytd-video-primary-info-renderer .title').text()
-    videoAuthor = $("#upload-info .style-scope .ytd-video-owner-renderer").contents().first().html()
+    videoAuthor = $(".ytd-channel-name a").text()
     videoTimestamps = getTimestamps(Math.floor($('.video-stream')[0].currentTime), Math.floor($('.video-stream')[0].duration))
     playbackBoolean = !$('.video-stream')[0].paused
     liveBoolean = Boolean($('.ytp-live')[0])
