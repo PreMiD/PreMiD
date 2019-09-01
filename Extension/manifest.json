@@ -3,7 +3,7 @@
   "author": "Timeraa & Fruxh",
   "description": "__MSG_description__",
   "default_locale": "en",
-  "version": "1.3.2.3",
+  "version": "1.3.2.4",
   "manifest_version": 2,
   "web_accessible_resources": ["icon.png", "languages/*.json"],
   "browser_action": {
