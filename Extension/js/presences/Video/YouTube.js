@@ -50,7 +50,7 @@ async function updateData() {
     videoAuthor =
       document.querySelector("#owner-name a") !== null
         ? document.querySelector("#owner-name a").innerText
-        : document.querySelector(".ytd-channel-name a").innerText;
+        : document.querySelector("div#upload-info > ytd-channel-name > div > div > yt-formatted-string > a").innerText;
     videoTimestamps = getTimestamps(
       Math.floor($(".video-stream")[0].currentTime),
       Math.floor($(".video-stream")[0].duration)
