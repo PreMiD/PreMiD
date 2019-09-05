@@ -106,7 +106,6 @@
         </runProgram>
     </preInstallationActionList>
     <postInstallationActionList>
-        <deleteFile path="${project.rollbackBackupDirectory}"/>
         <runProgram>
             <abortOnError>0</abortOnError>
             <program>${product_fullname}-win32-x64/PreMID.exe</program>
@@ -142,6 +141,7 @@
         </runProgram>
     </postInstallationActionList>
     <preUninstallationActionList>
+        <addDirectoriesToUninstaller addContents="1" files="${installdir}" matchHiddenFiles="1"/>
         <kill>
             <abortOnError>0</abortOnError>
             <name>${product_fullname}.exe</name>

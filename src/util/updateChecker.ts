@@ -6,12 +6,12 @@ import { MenuItem, app } from "electron";
 import { tray } from "../managers/trayManager";
 import { platform } from "os";
 import { updateCheckerInterval } from "../index";
+import { existsSync } from "fs";
 var sudoPrompt = require("sudo-prompt");
 
 var updaterPath: string;
 
 export async function checkForUpdate(autoUpdate = false) {
-  //TODO REDO AUTOUPDATER!!
   if (!app.isPackaged) {
     info("Skipping UpdateChecker");
     return;
@@ -19,15 +19,18 @@ export async function checkForUpdate(autoUpdate = false) {
 
   switch (platform()) {
     case "darwin":
-      updaterPath = app.isPackaged
-        ? pResolve(
-            "/Applications/PreMiD/updater.app/Contents/MacOS/installbuilder.sh"
-          )
-        : pResolve("./updater.app/Contents/MacOS/installbuilder.sh");
+      updaterPath = pResolve(
+        `${app.getAppPath()}../../../../../updater.app/Contents/MacOS/installbuilder.sh`
+      );
       break;
     case "win32":
-      updaterPath = pResolve("./updater.exe");
+      updaterPath = pResolve(`${app.getAppPath()}/updater.exe`);
       break;
+  }
+
+  if (!existsSync(updaterPath)) {
+    error("Updater not found.");
+    return;
   }
 
   var child = spawn(updaterPath, ["--mode", "unattended"]);
