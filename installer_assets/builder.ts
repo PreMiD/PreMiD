@@ -18,10 +18,10 @@ var bitRockBuilder = "",
 
 if (platform() === "win32") {
   bitRockBuilder = resolve(
-    "C:/Program Files (x86)/BitRock Installbuilder/bin/builder-cli.exe"
+    '"C:/Program Files (x86)/BitRock InstallBuilder Enterprise 19.8.0/bin/builder-cli.exe"'
   );
   bitRockUpdater = resolve(
-    "C:/Program Files (x86)/BitRock Installbuilder/autoupdate/bin/customize.exe"
+    '"C:/Program Files (x86)/BitRock InstallBuilder Enterprise 19.8.0/autoupdate/bin/customize.exe"'
   );
 }
 

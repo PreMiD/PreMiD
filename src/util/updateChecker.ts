@@ -1,13 +1,13 @@
 import { spawn } from "child_process";
-import { resolve as pResolve } from "path";
+import { resolve } from "path";
 import { error, info } from "./debug";
 import { trayContextMenu } from "../managers/trayManager";
-import { MenuItem, app } from "electron";
+import { MenuItem, app, dialog } from "electron";
 import { tray } from "../managers/trayManager";
 import { platform } from "os";
 import { updateCheckerInterval } from "../index";
 import { existsSync } from "fs";
-var sudoPrompt = require("sudo-prompt");
+import sudoPrompt from "sudo-prompt";
 
 var updaterPath: string;
 
@@ -19,12 +19,12 @@ export async function checkForUpdate(autoUpdate = false) {
 
   switch (platform()) {
     case "darwin":
-      updaterPath = pResolve(
+      updaterPath = resolve(
         `${app.getAppPath()}../../../../../updater.app/Contents/MacOS/installbuilder.sh`
       );
       break;
     case "win32":
-      updaterPath = pResolve(`${app.getAppPath()}/updater.exe`);
+      updaterPath = resolve(`${app.getAppPath()}../../../updater.exe`);
       break;
   }
 
@@ -81,11 +81,12 @@ export async function checkForUpdate(autoUpdate = false) {
 
 export function update() {
   sudoPrompt.exec(
-    `${updaterPath} --mode unattended --unattendedmodebehavior download`,
+    `\"${updaterPath}\" --mode unattended --unattendedmodebehavior download`,
     {
       name: app.getName()
     },
     (error: Error) => {
+      dialog.showMessageBox({ message: error.message });
       if (error) {
         checkForUpdate();
         return;

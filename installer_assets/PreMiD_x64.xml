@@ -36,8 +36,8 @@
                     <name>programfileswindows</name>
                     <platforms>windows</platforms>
                     <distributionFileList>
-                        <distributionDirectory>
-                            <origin>../dist/PreMiD-win32-x64</origin>
+                        <distributionDirectory allowWildcards="1">
+                            <origin>../dist/PreMiD-win32-x64/*</origin>
                         </distributionDirectory>
                         <distributionFile>
                             <origin>appIcon.ico</origin>
@@ -108,7 +108,7 @@
     <postInstallationActionList>
         <runProgram>
             <abortOnError>0</abortOnError>
-            <program>${product_fullname}-win32-x64/PreMID.exe</program>
+            <program>PreMID.exe</program>
             <programArguments>&amp;</programArguments>
             <progressText>Launching PreMiD</progressText>
             <show>0</show>
@@ -139,6 +139,9 @@
                 </platformTest>
             </ruleList>
         </runProgram>
+        <deleteFile>
+            <path>${installdir}/update</path>
+        </deleteFile>
     </postInstallationActionList>
     <preUninstallationActionList>
         <kill>

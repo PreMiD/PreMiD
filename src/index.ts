@@ -1,5 +1,5 @@
 import { app, systemPreferences, dialog } from "electron";
-//* Source .map support
+//* Source .map support if devEnv
 if (!app.isPackaged) require("source-map-support").install();
 
 import { init as initSocket, socket } from "./managers/socketManager";
@@ -10,21 +10,18 @@ import { checkForUpdate } from "./util/updateChecker";
 import { info } from "./util/debug";
 
 //* Define and set it to null
-export var updateCheckerInterval = null;
-
 //* Set AppUserModelId for task manager etc
-app.setAppUserModelId("Timeraa.PreMiD");
-
 //* Hide app icon if Mac OS
-if (platform() === "darwin") app.dock.hide();
-
 //* Mac OS truted accessability client
-if (
-  platform() === "darwin" &&
+export var updateCheckerInterval = null;
+app.setAppUserModelId("Timeraa.PreMiD");
+if (platform() === "darwin") {
+  app.dock.hide();
+
   !systemPreferences.isTrustedAccessibilityClient(false)
-)
-  systemPreferences.isTrustedAccessibilityClient(true);
-else info("Trusted Accessibility Client");
+    ? systemPreferences.isTrustedAccessibilityClient(true)
+    : info("Trusted accessibility client.");
+}
 
 //* When app is ready
 app.whenReady().then(async () => {
@@ -34,13 +31,13 @@ app.whenReady().then(async () => {
   //* Check for updates > Update and relaunch
   //* Init socket
   //* init application tray icon
+  //* If app is packaged, run an update check every 15 mins
   await checkForUpdate(true);
   await initSocket();
   await initTray();
-
-  //* If app is packaged, run an update check every 15 mins
-  if (app.isPackaged)
-    updateCheckerInterval = setInterval(checkForUpdate, 15 * 1000 * 60);
+  app.isPackaged
+    ? (updateCheckerInterval = setInterval(checkForUpdate, 15 * 1000 * 60))
+    : undefined;
 });
 
 //* If second instance started, close old one

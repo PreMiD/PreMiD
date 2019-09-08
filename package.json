@@ -9,8 +9,6 @@
     "dev": "node devMode.js",
     "pkg": "rimraf dist installer_assets/updater.app && tsc && node devMode compile && cd dist/app/ && npm i && cd ../../ && node pkg",
     "pkgdist": "npm run pkg && node installer_assets/builder compile",
-    "pkgmac": "electron-packager ./src/ --out=./dist/ --asar --overwrite --icon=./installer_assets/appIcon.ico --osx-sign.identity='Florian Metz'",
-    "pkgwin": "electron-packager ./src/ --out=./dist/ --overwrite --icon=./installer_assets/appIcon.ico",
     "pkgwin32": "electron-packager ./src/ --out=./dist/ --overwrite --icon=./installer_assets/appIcon.ico --platform=win32 --arch=ia32",
     "pkglinux": "electron-packager ./src/ --out=./dist/ --overwrite --icon=./appIcon.ico --asar --platform=linux --arch=x64"
   },
