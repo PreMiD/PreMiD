@@ -1,7 +1,8 @@
 {
   "name": "premid",
   "productName": "PreMiD",
-  "version": "2.0.0",
+  "description": "Discord Rich Presence for websites.",
+  "version": "2.0.2",
   "repository": "https://github.com/PreMiD/PreMiD",
   "scripts": {
     "init": "npm i && tsc && tsc pkg devMode installer_assets/builder && node devMode.js compile",
