@@ -2,7 +2,7 @@
     <shortName>PreMiD</shortName>
     <fullName>PreMiD</fullName>
     <version>2.0</version>
-    <installerFilename>${product_fullname}-${product_version}-installer.${platform_exec_suffix}</installerFilename>
+    <installerFilename>${product_fullname}-${product_version}-installer_32bit.${platform_exec_suffix}</installerFilename>
     <wrapLicenseFileText>0</wrapLicenseFileText>
     <logoImage>appIcon.png</logoImage>
     <componentList>
@@ -36,8 +36,8 @@
                     <name>programfileswindows</name>
                     <platforms>windows</platforms>
                     <distributionFileList>
-                        <distributionDirectory>
-                            <origin>../dist/PreMiD-win32-ia32</origin>
+                        <distributionDirectory allowWildcards="1">
+                            <origin>../dist/PreMiD-win32-ia32/*</origin>
                         </distributionDirectory>
                         <distributionFile>
                             <origin>appIcon.ico</origin>
@@ -106,10 +106,9 @@
         </runProgram>
     </preInstallationActionList>
     <postInstallationActionList>
-        <deleteFile path="${project.rollbackBackupDirectory}"/>
         <runProgram>
             <abortOnError>0</abortOnError>
-            <program>${product_fullname}-win32-ia32/PreMID.exe</program>
+            <program>PreMID.exe</program>
             <programArguments>&amp;</programArguments>
             <progressText>Launching PreMiD</progressText>
             <show>0</show>
@@ -140,6 +139,9 @@
                 </platformTest>
             </ruleList>
         </runProgram>
+        <deleteFile>
+            <path>${installdir}/update</path>
+        </deleteFile>
     </postInstallationActionList>
     <preUninstallationActionList>
         <kill>
@@ -169,11 +171,14 @@
                 </processTest>
             </ruleList>
         </runProgram>
+        <deleteFile>
+            <path>${installdir}/update/</path>
+        </deleteFile>
     </preUninstallationActionList>
-    <compressionAlgorithm>lzham-ultra</compressionAlgorithm>
     <defaultInstallationMode>unattended</defaultInstallationMode>
     <enableRollback>0</enableRollback>
     <enableTimestamp>1</enableTimestamp>
+    <osxPlatforms>osx-intel osx-x86_64</osxPlatforms>
     <outputDirectory>../dist/installer</outputDirectory>
     <productDisplayIcon>${installdir}/appIcon.ico</productDisplayIcon>
     <saveRelativePaths>1</saveRelativePaths>
@@ -195,4 +200,3 @@
         </directoryParameter>
     </parameterList>
 </project>
-

@@ -23,7 +23,12 @@ electronPackager({
   darwinDarkModeSupport: true,
   icon: icon,
   overwrite: true,
-  quiet: true
+  quiet: true,
+  appBundleId: "eu.Timeraa.PreMiD",
+  appCategoryType: "Utilities",
+  appCopyright: "Timeraa 2018-2019",
+  prune: true,
+  arch: "ia32"
 }).then(() => {
   console.log("Successfully packaged app.");
 
@@ -42,10 +47,10 @@ electronPackager({
 
   if (platform() === "win32") {
     bitRockBuilder = resolve(
-      "C:/Program Files (x86)/BitRock Installbuilder/bin/builder-cli.exe"
+      "C:/Program Files (x86)/BitRock InstallBuilder Enterprise 19.8.0/bin/builder-cli.exe"
     );
     bitRockUpdater = resolve(
-      "C:/Program Files (x86)/BitRock Installbuilder/autoupdate/bin/customize.exe"
+      "C:/Program Files (x86)/BitRock InstallBuilder Enterprise 19.8.0/autoupdate/bin/customize.exe"
     );
   }
 
@@ -65,7 +70,9 @@ electronPackager({
 
   console.log("Building updater...");
   var updater = exec(
-    `${bitRockUpdater} build installer_assets/updater.xml osx`
+    `"${bitRockUpdater}" build installer_assets/updater.xml ${
+      platform() === "win32" ? "windows" : "osx"
+    }`
   );
 
   updater.once("exit", (code, signal) => {
@@ -76,7 +83,9 @@ electronPackager({
 
     console.log("Creating installer...");
     var builder = exec(
-      `${bitRockBuilder} build installer_assets/PreMiD_x64.xml osx`
+      `"${bitRockBuilder}" build installer_assets/PreMiD_x32.xml ${
+        platform() === "win32" ? "windows" : "osx"
+      }`
     );
 
     builder.once("exit", code => {

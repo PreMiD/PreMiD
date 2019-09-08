@@ -5,11 +5,11 @@
   "version": "2.0.2",
   "repository": "https://github.com/PreMiD/PreMiD",
   "scripts": {
-    "init": "npm i && tsc && tsc pkg devMode installer_assets/builder && node devMode.js compile",
+    "init": "npm i && tsc && tsc pkg devMode && node devMode.js compile",
     "start": "electron dist/app/.",
     "dev": "node devMode.js",
     "pkg": "rimraf dist installer_assets/updater.app && tsc && node devMode compile && cd dist/app/ && npm i && cd ../../ && node pkg",
-    "pkgdist": "npm run pkg && node installer_assets/builder compile",
+    "pkgdist": "npm run pkg && node compile",
     "pkgwin32": "electron-packager ./src/ --out=./dist/ --overwrite --icon=./installer_assets/appIcon.ico --platform=win32 --arch=ia32",
     "pkglinux": "electron-packager ./src/ --out=./dist/ --overwrite --icon=./appIcon.ico --asar --platform=linux --arch=x64"
   },
