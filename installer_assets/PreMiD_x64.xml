@@ -141,7 +141,6 @@
         </runProgram>
     </postInstallationActionList>
     <preUninstallationActionList>
-        <addDirectoriesToUninstaller addContents="1" files="${installdir}" matchHiddenFiles="1"/>
         <kill>
             <abortOnError>0</abortOnError>
             <name>${product_fullname}.exe</name>
@@ -169,6 +168,9 @@
                 </processTest>
             </ruleList>
         </runProgram>
+        <deleteFile>
+            <path>${installdir}/update/</path>
+        </deleteFile>
     </preUninstallationActionList>
     <defaultInstallationMode>unattended</defaultInstallationMode>
     <enableRollback>0</enableRollback>
