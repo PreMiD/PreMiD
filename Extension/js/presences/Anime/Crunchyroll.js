@@ -4,7 +4,8 @@ videoAuthor,
 videoTimestamps,
 playbackBoolean,
 smallImageKey,
-smallImageText
+smallImageText,
+episodeNumber
 
 /**
  * Updates the Presence data and sends it back
@@ -19,7 +20,8 @@ async function updateData() {
   //* If page has all required propertys
   if(playback) {
     videoTitle = $('#showmedia_about_media a:first').text()
-    videoAuthor = (await getString("presence.episode")).replace("{{episode}}", $('#showmedia_about_media h4').get(1).innerHTML.trim().match(new RegExp("[0-9].*"))[0]) + " - " + $('#showmedia_about_name').text(),
+    episodeNumber = ($('.collection-carousel-media-link-current').text().trim().match(/^[^\d]+(\d+)/) || [null, '??'])[1]
+    videoAuthor = (await getString("presence.episode")).replace("{{episode}}", episodeNumber) + " - " + $('#showmedia_about_name').text()
     
     videoTimestamps = getTimestamps(Math.floor(iframe_video.curr), Math.floor(iframe_video.dur))
     playbackBoolean = !iframe_video.paused
