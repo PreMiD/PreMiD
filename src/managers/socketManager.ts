@@ -7,9 +7,9 @@ import { update as updateSettings } from "./settingsManager";
 import { openFileDialog } from "./presenceDevManager";
 import { setActivity, clearActivity, destroy } from "./discordManager";
 
-export var io: socketIo.Server;
-export var socket: socketIo.Socket;
-export var server: Server;
+export let io: socketIo.Server;
+export let socket: socketIo.Socket;
+export let server: Server;
 
 export function init() {
   return new Promise(resolve => {
@@ -33,11 +33,12 @@ export function init() {
 
 function socketConnection(cSocket: socketIo.Socket) {
   //* Show debug
-  //* Set exported socket variable to current socket
+  //* Set exported socket letiable to current socket
   //* Handle setActivity event
   //* Handle clearActivity event
   //* Handle settingsUpdate
   //* Handle presenceDev
+  //* Handle version request
   //* Once socket user disconnects run cleanup
   success("Socket connection");
   socket = cSocket;
@@ -45,6 +46,9 @@ function socketConnection(cSocket: socketIo.Socket) {
   socket.on("clearActivity", clearActivity);
   socket.on("settingUpdate", updateSettings);
   socket.on("selectLocalPresence", openFileDialog);
+  socket.on("getVersion", () =>
+    socket.emit("receiveVersion", app.getVersion().replace(/[\D]/g, ""))
+  );
   socket.once("disconnect", () => {
     //* Show debug
     //* Destroy all open RPC connections

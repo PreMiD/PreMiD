@@ -4,7 +4,7 @@ import { settings } from "./settingsManager";
 import { info } from "../util/debug";
 
 //* Create autoLaunch object
-var autoLaunch = new AutoLaunch({
+let autoLaunch = new AutoLaunch({
   name: app.getName(),
   isHidden: true
 });

@@ -13,7 +13,7 @@ import { info } from "./util/debug";
 //* Set AppUserModelId for task manager etc
 //* Hide app icon if Mac OS
 //* Mac OS truted accessability client
-export var updateCheckerInterval = null;
+export let updateCheckerInterval = null;
 app.setAppUserModelId("Timeraa.PreMiD");
 if (platform() === "darwin") {
   app.dock.hide();

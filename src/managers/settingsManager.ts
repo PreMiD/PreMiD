@@ -6,7 +6,7 @@ import { deinit as deinitInputs } from "./inputManager";
 import { info } from "../util/debug";
 
 //* Export and set default settings
-export var settings = new ElectronStore({
+export let settings = new ElectronStore({
   defaults: {
     autoLaunch: true
   }

@@ -9,7 +9,7 @@ import { updateCheckerInterval } from "../index";
 import { existsSync } from "fs";
 import sudoPrompt from "sudo-prompt";
 
-var updaterPath: string;
+let updaterPath: string;
 
 export async function checkForUpdate(autoUpdate = false) {
   if (!app.isPackaged) {
@@ -33,7 +33,7 @@ export async function checkForUpdate(autoUpdate = false) {
     return;
   }
 
-  var child = spawn(updaterPath, ["--mode", "unattended"]);
+  let child = spawn(updaterPath, ["--mode", "unattended"]);
 
   child.on("error", err => {
     // @ts-ignore

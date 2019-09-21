@@ -47,6 +47,7 @@ async function fileChange(diagnostic: ts.Diagnostic) {
   } else
     console.log(chalk.greenBright(ts.formatDiagnostic(diagnostic, formatHost)));
 
+  console.log(currChild && currChild.killed);
   //* Kill old child if exists && alive
   if (currChild && !currChild.killed) currChild.kill();
 

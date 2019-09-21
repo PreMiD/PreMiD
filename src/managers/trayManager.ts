@@ -3,8 +3,8 @@ import { join } from "path";
 
 //* Export tray
 //* Export trayContextMenu
-export var tray: Tray;
-export var trayContextMenu = Menu.buildFromTemplate([
+export let tray: Tray;
+export let trayContextMenu = Menu.buildFromTemplate([
   {
     role: "quit"
   }

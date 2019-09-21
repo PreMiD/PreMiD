@@ -6,7 +6,7 @@ import { info } from "../util/debug";
 import { init as initKeybinds, deinit as deinitKeybinds } from "./inputManager";
 
 //* Define Presence array
-var loggedInPresences: Array<Presence> = [];
+let loggedInPresences: Array<Presence> = [];
 
 /**
  * Sets the user's activity
@@ -21,8 +21,9 @@ export function setActivity(presence: PresenceData) {
   //* Show debug
   if (presence.mediaKeys) initKeybinds();
   else deinitKeybinds();
-  if (platform() === "darwin") tray.setTitle(presence.trayTitle);
-  var rpc = loggedInPresences.find(p => p.clientId === presence.clientId);
+  if (platform() === "darwin" && presence.trayTitle)
+    tray.setTitle(presence.trayTitle);
+  let rpc = loggedInPresences.find(p => p.clientId === presence.clientId);
   if (rpc) rpc.rpc.setActivity(presence.presenceData);
   else
     loginPresence(presence.clientId).then(p =>
@@ -47,7 +48,7 @@ export function clearActivity(clientId: string = undefined) {
     //* Check if this presence is logged in
     //* If it is clear its activity
     //* Return to prevent further actions
-    var pTC = loggedInPresences.find(p => p.clientId === clientId);
+    let pTC = loggedInPresences.find(p => p.clientId === clientId);
     if (pTC) pTC.rpc.clearActivity();
     return;
   }
@@ -66,7 +67,8 @@ function loginPresence(clientId: string) {
     //* Add presence to object
     //* Try login with client id
     //* Once RPC connection is ready
-    var presence: Presence = {
+    //* Destroy all clients when Discord closed (My issue #42)
+    let presence: Presence = {
       clientId: clientId,
       rpc: new Discord.Client({ transport: "ipc" }),
       ready: false
@@ -86,6 +88,8 @@ function loginPresence(clientId: string) {
       presence.ready = true;
       resolve(presence);
     });
+    // @ts-ignore
+    presence.rpc.once("disconnected", destroy);
   });
 }
 
@@ -98,8 +102,10 @@ export function destroy() {
   //* Set loggedInPresences to new Array
   //* Return the promise
   if (platform() === "darwin") tray.setTitle("");
-  var res = Promise.all(
-    loggedInPresences.map((presence: Presence) => presence.rpc.destroy())
+  let res = Promise.all(
+    loggedInPresences.map((presence: Presence) =>
+      presence.rpc.destroy().catch(() => {})
+    )
   );
   loggedInPresences = [];
   return res;

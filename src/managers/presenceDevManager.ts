@@ -4,7 +4,7 @@ import { socket } from "./socketManager";
 import { extname } from "path";
 import { info } from "../util/debug";
 
-var presenceDevWatchedFiles = [],
+let presenceDevWatchedFiles = [],
   currWatchPath = "";
 
 export async function watchDir(path: string) {
@@ -12,7 +12,7 @@ export async function watchDir(path: string) {
   //* Set currWatchDir
   //* Set watched files to files
   //* Add file watcher to each file
-  var files = await readdirSync(path);
+  let files = await readdirSync(path);
   currWatchPath = path + "/";
   presenceDevWatchedFiles = files;
   presenceDevWatchedFiles.map(f => {
@@ -54,7 +54,7 @@ export async function openFileDialog() {
   //* If user cancels
   //* Unwatch all still watched files
   //* Watch directory
-  var filePaths = await dialog.showOpenDialogSync(null, {
+  let filePaths = await dialog.showOpenDialogSync(null, {
     title: "Select Presence Folder",
     message:
       "Please select the folder that contains the presence you want to load.\n(metadata.json, presence.js, iframe.js)",

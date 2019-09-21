@@ -2,7 +2,7 @@ import { app, globalShortcut } from "electron";
 import { socket } from "./socketManager";
 import { info, error, success } from "./../util/debug";
 
-var playPauseSwitch = null,
+let playPauseSwitch = null,
   playPauseTimeout = null;
 
 /**
@@ -20,7 +20,7 @@ export function init() {
     globalShortcut.isRegistered("mediaprevioustrack")
   )
     return;
-  var mpp = globalShortcut.register("mediaplaypause", () => {
+  let mpp = globalShortcut.register("mediaplaypause", () => {
       //* Return if not connected
       //* if playPause timeout not set set it - 500ms timeout > switch play/pause, nextrack/previoustrack
       //* Increase switch each press
@@ -56,8 +56,8 @@ export function init() {
  */
 function handlePlayPause() {
   //* Switch case -> emit
-  //* Reset switch var
-  //* Reset timeout var
+  //* Reset switch let
+  //* Reset timeout let
   switch (playPauseSwitch) {
     case 1:
       socket.emit("keybinds", { playback: "pause" });

@@ -27,8 +27,7 @@ electronPackager({
   appBundleId: "eu.Timeraa.PreMiD",
   appCategoryType: "Utilities",
   appCopyright: "Timeraa 2018-2019",
-  prune: true,
-  arch: "ia32"
+  prune: true
 }).then(() => {
   console.log("Successfully packaged app.");
 
@@ -83,7 +82,7 @@ electronPackager({
 
     console.log("Creating installer...");
     var builder = exec(
-      `"${bitRockBuilder}" build installer_assets/PreMiD_x32.xml ${
+      `"${bitRockBuilder}" build installer_assets/PreMiD_x64.xml ${
         platform() === "win32" ? "windows" : "osx"
       }`
     );
