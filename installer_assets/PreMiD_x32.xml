@@ -68,7 +68,7 @@
                     <name>${product_fullname}</name>
                     <runAsAdmin>0</runAsAdmin>
                     <runInTerminal>0</runInTerminal>
-                    <windowsExec>${installdir}/${product_fullname}-win32-ia32/PreMID.exe</windowsExec>
+                    <windowsExec>${installdir}/PreMID.exe</windowsExec>
                     <windowsExecArgs></windowsExecArgs>
                     <windowsIcon></windowsIcon>
                     <windowsPath>${installdir}/</windowsPath>
