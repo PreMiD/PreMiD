@@ -142,6 +142,10 @@
         <deleteFile>
             <path>${installdir}/update</path>
         </deleteFile>
+        <addDirectoriesToUninstaller>
+            <addContents>1</addContents>
+            <files>${installdir}</files>
+        </addDirectoriesToUninstaller>
     </postInstallationActionList>
     <preUninstallationActionList>
         <kill>
@@ -173,6 +177,9 @@
         </runProgram>
         <deleteFile>
             <path>${installdir}/update/</path>
+        </deleteFile>
+        <deleteFile>
+            <path>${windows_folder_appdata}/${product_fullname}</path>
         </deleteFile>
     </preUninstallationActionList>
     <defaultInstallationMode>unattended</defaultInstallationMode>

@@ -88,7 +88,7 @@ import * as ora from "ora";
   let icon: string;
 
   if (response.os == "darwin") icon = "./installer_assets/appIcon.icns";
-  if (["ia32", "x64"].includes(response.os))
+  if (["ia32", "x64"].includes(response.arch) || platform() === "win32")
     icon = "./installer_assets/appIcon.ico";
 
   if (existsSync("./dist/app/update.ini")) removeSync("./dist/app/update.ini");
@@ -188,6 +188,7 @@ import * as ora from "ora";
 
         spinner.text = "Done!";
         spinner.succeed();
+        return
       });
     });
   });
