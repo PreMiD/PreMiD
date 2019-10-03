@@ -4,12 +4,14 @@
 
 # PreMiD
 
-## Discord Rich Presence for websites!
+## Your Rich Presence for web services!
 
 ![version](https://img.shields.io/badge/Version-2.0-brightgreen.svg?style=for-the-badge)
 [![Code Quality](https://img.shields.io/codacy/grade/832995dd22a2428ba9d280ce1adefb87/master.svg?style=for-the-badge)](https://www.codacy.com/project/Timeraa/PreMiD/dashboard?utm_source=github.com&utm_medium=referral&utm_content=PreMiD/PreMiD&utm_campaign=Badge_Grade_Dashboard&branchId=10584370)
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/d/agjnjboanicjcpenljmaaigopkgdnihi.svg?label=Chrome&logo=google%20chrome&logoColor=white&colorA=4285F4&style=for-the-badge)](https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi)
 [![Follow us on Twitter](.github/TwitterButton.png)](https://twitter.com/PreMiDapp)
+
+<img src=".github/example.png" draggable="false"><br>
 
 # About
 
