@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2018",
+    "sourceMap": true,
+    "baseUrl": ".",
+    "outDir": "dist/app",
+    "removeComments": true,
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["devMode.ts", "pkg.ts", "installer_assets/builder.ts"]
+}
