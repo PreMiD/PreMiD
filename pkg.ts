@@ -87,7 +87,7 @@ import * as ora from "ora";
 
   let icon: string;
 
-  if (response.os == "darwin") icon = "./installer_assets/appIcon.icns";
+  if (response.os == "darwin" || response.os === "current" && platform() === "darwin") icon = "./installer_assets/appIcon.icns";
   if (["ia32", "x64"].includes(response.arch) || platform() === "win32")
     icon = "./installer_assets/appIcon.ico";
 
