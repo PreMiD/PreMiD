@@ -11,13 +11,15 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
-      - name: Prepare build
+      - name: Install Dependencies
+        run: npm i
+      - name: Prepare to package
+        run: npm run init
+      - name: Package
+        run: npm run pkg
+      - name: Upload to server
         env:
           SSH_HOST: ${{ secrets.SSHHOST }}
           SSH_USERNAME: ${{ secrets.SSHUSERNAME }}
           SSH_PASSWORD: ${{ secrets.SSHPASSWORD }}
-        run: |
-          npm i -s
-          npm run init
-          npm run pkg
-          npm run deploy
+        run: npm run deploy
