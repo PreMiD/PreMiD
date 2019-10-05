@@ -15,11 +15,10 @@ jobs:
         run: |
           npm run init
           npm run pkg
-      - uses: softprops/action-gh-release@v1
-        with:
-          files: dist/**
-          draft: true
-          name: DePloY
+      - uses: xresloader/upload-to-github-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GHTOKEN }}
-        
+        with:
+          file: dist/**
+          draft: true
+          overwrite: true
