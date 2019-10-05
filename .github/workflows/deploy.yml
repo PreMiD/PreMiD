@@ -1,8 +1,5 @@
 name: DePloY
-on:
-  push:
-    paths:
-      - "src/**/*"
+on: push
 jobs:
   prepare:
     runs-on: ubuntu-latest
