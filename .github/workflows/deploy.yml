@@ -15,12 +15,12 @@ jobs:
         run: |
           npm run init
           npm run pkg
-      - uses: AEnterprise/rsync-deploy@v1.0
+      - uses: SamKirkland/FTP-Deploy-Action@SFTP_Beta
         with:
-          SERVER_IP: ${{ secrets.HOST }}
-          SERVER_PORT: 22
-          USERNAME: ${{ secrets.USERNAME }}
-          DEPLOY_KEY: ${{ secrets.SSHKEY }}
-          FOLDER: "dist/"
-          SERVER_DESTINATION: "/home/PreMiD/builds/"
+          FTP_SERVER: ${{ secrets.HOST }}
+          FTP_USERNAME: ${{ secrets.USERNAME }}
+          FTP_PASSWORD: ${{ secrets.SSHKEY }}
+          LOCAL_DIR: "dist"
+          REMOTE_DIR: "/home/PreMiD/builds"
+          ARGS: --transfer-all --parallel=5
         
