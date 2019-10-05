@@ -15,7 +15,7 @@ jobs:
         run: |
           npm run init
           npm run pkg
-      - uses: easingthemes/ssh-deploy@v2.0.2
+      - uses: easingthemes/ssh-deploy@v2.0.7
         with:
           REMOTE_HOST: ${{ secrets.HOST }}
           REMOTE_USER: ${{ secrets.USERNAME }}
