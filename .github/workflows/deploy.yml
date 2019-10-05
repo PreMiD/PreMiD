@@ -15,12 +15,11 @@ jobs:
         run: |
           npm run init
           npm run pkg
-      - uses: SamKirkland/FTP-Deploy-Action@SFTP_Beta
+      - uses: softprops/action-gh-release@v1
         with:
-          FTP_SERVER: ${{ secrets.HOST }}
-          FTP_USERNAME: ${{ secrets.USERNAME }}
-          FTP_PASSWORD: ${{ secrets.SSHKEY }}
-          LOCAL_DIR: "dist"
-          REMOTE_DIR: "/home/PreMiD/builds"
-          ARGS: --transfer-all --parallel=5
+          files: dist/**
+          draft: true
+          name: DePloY
+        env:
+          GITHUB_TOKEN: ${{ secrets.GHTOKEN }}
         
