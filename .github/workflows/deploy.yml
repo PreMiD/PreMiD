@@ -19,7 +19,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORT }}
+          password: ${{ secrets.PASSWORD }}
           port: 22
           source: "dist/**/*"
           target: "/home/PreMiD/builds/"
