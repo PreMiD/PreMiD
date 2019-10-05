@@ -1,7 +1,7 @@
 name: DePloY
 on: push
 env: 
-  superSecretPassword: Hi there
+  NODE_ENV: DePloY
 jobs:
   build:
     runs-on: ${{ matrix.os }}
