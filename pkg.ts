@@ -9,85 +9,96 @@ import * as prompts from "prompts";
 import * as ora from "ora";
 
 (async () => {
-  let response = await prompts([
-    {
-      type: "select",
-      name: "arch",
-      message: "What architecture?",
-      choices: [
-        {
-          title: "current",
-          value: "current"
-        },
-        {
-          title: "all",
-          value: "all"
-        },
-        {
-          title: "arm64",
-          value: "arm64"
-        },
-        {
-          title: "armv7l",
-          value: "armv7l"
-        },
-        {
-          title: "ia32",
-          value: "ia32"
-        },
-        {
-          title: "mips64el",
-          value: "mips64el"
-        },
-        {
-          title: "x64",
-          value: "x64"
-        }
-      ]
-    },
-    {
-      type: "select",
-      name: "os",
-      message: "What operating system?",
-      choices: [
-        {
-          title: "current",
-          value: "current"
-        },
-        {
-          title: "all",
-          value: "all"
-        },
-        {
-          title: "darwin",
-          value: "darwin"
-        },
-        {
-          title: "linux",
-          value: "linux"
-        },
-        {
-          title: "mas",
-          value: "mas"
-        },
-        {
-          title: "win32",
-          value: "win32"
-        }
-      ]
-    },
-    {
-      type: "confirm",
-      name: "installer",
-      message: "With installer?"
-    }
-  ]);
+  let response = {
+    os: "current",
+    arch: "current",
+    installer: false
+  };
+
+  if (process.env.NODE_ENV !== "DePloY")
+    response = await prompts([
+      {
+        type: "select",
+        name: "arch",
+        message: "What architecture?",
+        choices: [
+          {
+            title: "current",
+            value: "current"
+          },
+          {
+            title: "all",
+            value: "all"
+          },
+          {
+            title: "arm64",
+            value: "arm64"
+          },
+          {
+            title: "armv7l",
+            value: "armv7l"
+          },
+          {
+            title: "ia32",
+            value: "ia32"
+          },
+          {
+            title: "mips64el",
+            value: "mips64el"
+          },
+          {
+            title: "x64",
+            value: "x64"
+          }
+        ]
+      },
+      {
+        type: "select",
+        name: "os",
+        message: "What operating system?",
+        choices: [
+          {
+            title: "current",
+            value: "current"
+          },
+          {
+            title: "all",
+            value: "all"
+          },
+          {
+            title: "darwin",
+            value: "darwin"
+          },
+          {
+            title: "linux",
+            value: "linux"
+          },
+          {
+            title: "mas",
+            value: "mas"
+          },
+          {
+            title: "win32",
+            value: "win32"
+          }
+        ]
+      },
+      {
+        type: "confirm",
+        name: "installer",
+        message: "With installer?"
+      }
+    ]);
 
   if (!response.os) return;
 
   let icon: string;
 
-  if (response.os == "darwin" || response.os === "current" && platform() === "darwin") icon = "./installer_assets/appIcon.icns";
+  if (
+    response.os == "darwin" ||
+    (response.os === "current" && platform() === "darwin")
+  )
+    icon = "./installer_assets/appIcon.icns";
   if (["ia32", "x64"].includes(response.arch) || platform() === "win32")
     icon = "./installer_assets/appIcon.ico";
 
@@ -116,6 +127,7 @@ import * as ora from "ora";
   if (response.arch === "current") delete packagingOptions.arch;
   if (response.os === "current") delete packagingOptions.platform;
 
+  // @ts-ignore
   electronPackager(packagingOptions).then(() => {
     if (!response.installer) {
       spinner.text = "Done!";
@@ -188,7 +200,7 @@ import * as ora from "ora";
 
         spinner.text = "Done!";
         spinner.succeed();
-        return
+        return;
       });
     });
   });
