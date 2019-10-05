@@ -20,7 +20,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          local: "dist/**/*"
+          local: "dist"
           remote: "/home/PreMiD/builds/"
           concurrency: 10
         
