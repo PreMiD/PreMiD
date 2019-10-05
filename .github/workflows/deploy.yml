@@ -15,4 +15,12 @@ jobs:
         run: |
           npm run init
           npm run pkg
+      - uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORT }}
+          port: 22
+          source: "dist/**/*"
+          target: "/home/PreMiD/builds/"
         
