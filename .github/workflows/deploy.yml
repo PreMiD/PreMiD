@@ -17,7 +17,7 @@ jobs:
           SSH_USERNAME: ${{ secrets.SSHUSERNAME }}
           SSH_PASSWORD: ${{ secrets.SSHPASSWORD }}
         run: |
-          npm i
+          npm i -s
           npm run init
           npm run pkg
           npm run deploy
