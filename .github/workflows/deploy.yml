@@ -1,0 +1,12 @@
+name: DePloY
+on:
+  push:
+    paths:
+      - "src/**/*"
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prepare build
+      - uses: actions/setup-node@master
+        run: npm run init
