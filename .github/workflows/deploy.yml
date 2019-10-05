@@ -12,13 +12,11 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
       - name: Prepare build
+        env:
+          SSH_HOST: ${{ secrets.SSHHOST }}
+          SSH_USERNAME: ${{ secrets.SSHUSERNAME }}
+          SSH_PASSWORD: ${{ secrets.SSHPASSWORD }}
         run: |
           npm run init
           npm run pkg
-      - uses: xresloader/upload-to-github-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GHTOKEN }}
-        with:
-          file: dist/**
-          draft: true
-          overwrite: true
+          npm run deploy
