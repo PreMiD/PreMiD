@@ -4,6 +4,7 @@ jobs:
   prepare:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
       - name: Prepare build
         run: npm run init
-      - uses: actions/setup-node@master
