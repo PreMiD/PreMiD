@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Prepare build
-      - uses: actions/setup-node@master
         run: npm run init
+      - uses: actions/setup-node@master
