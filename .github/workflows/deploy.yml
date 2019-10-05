@@ -17,9 +17,10 @@ jobs:
           npm run pkg
       - uses: easingthemes/ssh-deploy@v2.0.7
         with:
-          REMOTE_HOST: ${{ secrets.HOST }}
-          REMOTE_USER: ${{ secrets.USERNAME }}
-          SSH_PRIVATE_KEY: ${{ secrets.SSHKEY }}
-          SOURCE: "dist/"
-          TARGET: "/home/PreMiD/builds/"
+          SERVER_IP: ${{ secrets.HOST }}
+          SERVER_PORT: 22
+          USERNAME: ${{ secrets.USERNAME }}
+          DEPLOY_KEY: ${{ secrets.SSHKEY }}
+          FOLDER: "dist/"
+          SERVER_DESTINATION: "/home/PreMiD/builds/"
         
