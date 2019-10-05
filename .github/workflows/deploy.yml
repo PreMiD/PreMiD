@@ -15,12 +15,11 @@ jobs:
         run: |
           npm run init
           npm run pkg
-      - uses: garygrossgarten/github-action-scp@release
+      - uses: easingthemes/ssh-deploy@v2.0.2
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          local: "dist"
-          remote: "/home/PreMiD/builds/"
-          concurrency: 10
+          REMOTE_HOST: ${{ secrets.HOST }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSHKEY }}
+          SOURCE: "dist/"
+          TARGET: "/home/PreMiD/builds/"
         
