@@ -5,10 +5,11 @@
   "version": "2.0.3",
   "repository": "https://github.com/PreMiD/PreMiD",
   "scripts": {
-    "init": "npm i && tsc && tsc pkg devMode .github/deploy && node devMode.js compile",
+    "init": "npm i && tsc && tsc pkg devMode && node devMode.js compile",
     "start": "electron dist/app/.",
     "dev": "node devMode.js",
-    "pkg": "rimraf dist && tsc && node devMode compile && cd dist/app/ && npm i --prefer-offline && cd ../../ && node pkg"
+    "pkg": "rimraf dist && tsc && node devMode compile && cd dist/app/ && npm i --prefer-offline && cd ../../ && node pkg",
+    "deploy": "tsc .github/deploy && cd .github && node deploy.js"
   },
   "license": "MIT",
   "devDependencies": {
