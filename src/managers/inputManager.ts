@@ -9,6 +9,9 @@ let playPauseSwitch = null,
  * Register media keyboard shortcuts
  */
 export function init() {
+  //! Disabled for now
+  return
+
   //* If registered or not enabled return
   //* Bind mediaplaypause
   //* Bind medianexttrack
