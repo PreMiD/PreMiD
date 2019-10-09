@@ -104,6 +104,24 @@
                 </processTest>
             </ruleList>
         </runProgram>
+        <runProgram>
+            <program>${windows_folder_local_appdata}\premid\Update.exe</program>
+            <programArguments>--uninstall</programArguments>
+            <onErrorActionList>
+                <deleteFile>
+                    <matchHiddenFiles>1</matchHiddenFiles>
+                    <path>${windows_folder_local_appdata}\premid</path>
+                </deleteFile>
+            </onErrorActionList>
+            <ruleList>
+                <platformTest>
+                    <type>windows</type>
+                </platformTest>
+                <fileExists>
+                    <path>${windows_folder_local_appdata}\premid\PreMiD.exe</path>
+                </fileExists>
+            </ruleList>
+        </runProgram>
     </preInstallationActionList>
     <postInstallationActionList>
         <runProgram>
@@ -146,6 +164,14 @@
             <addContents>1</addContents>
             <files>${installdir}</files>
         </addDirectoriesToUninstaller>
+        <deleteFile>
+            <path>${windows_folder_local_appdata}\premid</path>
+            <ruleList>
+                <platformTest>
+                    <type>windows</type>
+                </platformTest>
+            </ruleList>
+        </deleteFile>
     </postInstallationActionList>
     <preUninstallationActionList>
         <kill>
@@ -179,6 +205,7 @@
             <path>${installdir}/update/</path>
         </deleteFile>
         <deleteFile>
+            <matchHiddenFiles>1</matchHiddenFiles>
             <path>${windows_folder_appdata}/${product_fullname}</path>
         </deleteFile>
     </preUninstallationActionList>
@@ -207,3 +234,4 @@
         </directoryParameter>
     </parameterList>
 </project>
+

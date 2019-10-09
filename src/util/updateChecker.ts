@@ -45,9 +45,13 @@ export async function checkForUpdate(autoUpdate = false) {
   });
 
   child.on("exit", code => {
-    //* If no update return
+    //* If no update or error return
     if (code === 1) {
       info("Up to date!");
+      return;
+    }
+    if (code === 2) {
+      error("Error while checking for updates");
       return;
     }
 
