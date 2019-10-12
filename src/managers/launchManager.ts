@@ -22,9 +22,8 @@ export async function update() {
     return;
   }
   if (settings.get("autoLaunch", true))
-    if (!(await autoLaunch.isEnabled()))
-      //* Enable if not enabled
-      autoLaunch.enable();
-    //* Disable if enabled
-    else if (await autoLaunch.isEnabled()) autoLaunch.disable();
+    //* Enable if not enabled
+    autoLaunch.enable();
+  //* Disable if enabled
+  else autoLaunch.disable();
 }
