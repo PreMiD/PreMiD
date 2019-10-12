@@ -28,9 +28,10 @@ export function update(extensionSettings: extensionSettings) {
   if (!extensionSettings.titleMenubar && platform() === "darwin")
     tray.setTitle("");
   if (!extensionSettings.mediaKeys) deinitInputs();
-  if (settings.get("autoLaunch") != extensionSettings.autoLaunch)
+  if (settings.get("autoLaunch") != extensionSettings.autoLaunch) {
+    settings.set("autoLaunch", extensionSettings.autoLaunch);
     updateAutoLaunch();
-  settings.set("autoLaunch", extensionSettings.autoLaunch);
+  }
 }
 
 //TODO Try to move types into file

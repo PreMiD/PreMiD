@@ -21,11 +21,10 @@ export async function update() {
     info("Skipping autoLaunch.");
     return;
   }
-  if (settings.get("autoLaunch", true)) {
-    //* Enable if not enabled
-    if (!(await autoLaunch.isEnabled())) autoLaunch.enable();
-  } else {
+  if (settings.get("autoLaunch", true))
+    if (!(await autoLaunch.isEnabled()))
+      //* Enable if not enabled
+      autoLaunch.enable();
     //* Disable if enabled
-    if (await autoLaunch.isEnabled()) autoLaunch.disable();
-  }
+    else if (await autoLaunch.isEnabled()) autoLaunch.disable();
 }
