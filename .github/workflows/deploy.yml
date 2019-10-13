@@ -20,13 +20,16 @@ jobs:
           echo "${{ secrets.IBLICENSE }}" >> licence.xml
           echo $PWD
   package:
+    container:
+      image: node:12
+      volumes:
+        - premid:/premid
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [windows-latest, macOS-latest]
     steps:
       - uses: actions/checkout@master
-      - uses: actions/setup-node@master
       - name: Install Dependencies
         run: npm i
       - name: Prepare to package
