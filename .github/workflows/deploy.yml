@@ -4,6 +4,10 @@ env:
   NODE_ENV: DePloY
 jobs:
   installbuilder:
+    container:
+      image: node:12
+      volumes:
+        - premid:/premid
     runs-on: "ubuntu-latest"
     steps:
       - name: Get and install
