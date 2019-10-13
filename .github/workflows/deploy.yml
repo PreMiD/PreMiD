@@ -3,7 +3,7 @@ on: push
 env:
   NODE_ENV: DePloY
 jobs:
-  test:
+  installbuilder:
     runs-on: "ubuntu-latest"
     steps:
       - name: Get and install
@@ -28,27 +28,6 @@ jobs:
       - name: Prepare to package
         run: npm run init
       - name: Package
-        run: npm run pkg
-      - name: Upload to server
-        env:
-          SSH_HOST: ${{ secrets.SSHHOST }}
-          SSH_USERNAME: ${{ secrets.SSHUSERNAME }}
-          SSH_PASSWORD: ${{ secrets.SSHPASSWORD }}
-        run: npm run deploy
-  installer:
-    needs: package
-    runs-on: "ubuntu-latest"
-    steps:
-      - name: Prepare for installer
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSHHOST }}
-          username: ${{ secrets.SSHUSERNAME }}
-          password: ${{ secrets.SSHPASSWORD }}
-          script: |
-            cd /home/PreMiD/builds
-            unzip darwin.zip win32.zip
-            mv darwin/PreMiD-darwin-x64 PreMiD-darwin-x64
-            mv win32/PreMiD-win32-ia32 PreMiD-win32-ia32
-            mv win32/PreMiD-win32-x64 PreMiD-win32-x64
-            rm -r win32.zip darwin.zip win32 darwin
+        run: |
+          npm run pkg
+          ls
