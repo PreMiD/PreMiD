@@ -3,12 +3,12 @@
     "module": "commonjs",
     "target": "es2018",
     "sourceMap": true,
-    "baseUrl": ".",
     "outDir": "dist/app",
     "removeComments": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "typeRoots": ["@types/*"]
   },
-  "include": ["src/**/*"],
+  "include": ["@types/*", "src/**/*"],
   "exclude": [
     "devMode.ts",
     "pkg.ts",

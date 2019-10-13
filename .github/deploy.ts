@@ -1,7 +1,7 @@
 import * as Client from "ssh2-sftp-client";
 import * as archiver from "archiver";
 import { platform, arch } from "os";
-import { createWriteStream } from "fs";
+import { createWriteStream, readdirSync } from "fs";
 
 let sftp = new Client();
 
@@ -15,6 +15,8 @@ sftp
     console.log("Zipping...");
     let output = createWriteStream("app.zip"),
       archive = archiver("zip");
+
+    console.log(readdirSync(`../dist/`));
 
     archive.directory(
       `../dist/PreMiD-${platform()}-${arch()}`,

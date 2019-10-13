@@ -1,5 +1,5 @@
 import * as electronPackager from "electron-packager";
-import { platform } from "os";
+import { platform, arch } from "os";
 import { existsSync, readFileSync, writeFileSync } from "fs";
 import { resolve } from "path";
 import { exec } from "child_process";
@@ -11,7 +11,7 @@ import * as ora from "ora";
 (async () => {
   let response = {
     os: "current",
-    arch: "current",
+    arch: "all",
     installer: false
   };
 
@@ -90,7 +90,26 @@ import * as ora from "ora";
       }
     ]);
 
-  if (!response.os) return;
+  //#region WIP
+  let installerXml = readFileSync(`installer_assets/installer.xml`, "utf-8");
+
+  installerXml = installerXml.replace(
+    "{{VERSION}}",
+    require("./package.json").version
+  );
+  installerXml = installerXml.replace(
+    /(PACKAGEDNAME)/g,
+    `PreMiD-${platform()}-${arch()}`
+  );
+
+  ensureDirSync("tmp");
+  writeFileSync("tmp/installer.xml", installerXml);
+  //#endregion
+
+  if (!response.os) {
+    process.exit();
+    return;
+  }
 
   let icon: string;
 
@@ -109,7 +128,7 @@ import * as ora from "ora";
     removeSync("./dist/app/updater.exe");
 
   let spinner = ora("Packaging app").start(),
-    packagingOptions = {
+    packagingOptions: electronPackager.Options = {
       dir: "./dist/app",
       out: "./dist",
       darwinDarkModeSupport: true,
@@ -120,7 +139,9 @@ import * as ora from "ora";
       appCategoryType: "Utilities",
       appCopyright: `Timeraa 2018-${new Date().getFullYear()}`,
       prune: true,
+      // @ts-ignore
       arch: response.arch,
+      // @ts-ignore
       platform: response.os
     };
 
@@ -132,6 +153,7 @@ import * as ora from "ora";
     if (!response.installer) {
       spinner.text = "Done!";
       spinner.succeed();
+      process.exit();
       return;
     }
 
@@ -166,6 +188,7 @@ import * as ora from "ora";
 
     if (!existsSync(bitRockBuilder) || !existsSync(bitRockUpdater)) {
       spinner.fail("Bitrock installation not found.");
+      process.exit();
       return;
     }
 
@@ -180,12 +203,13 @@ import * as ora from "ora";
     updater.once("exit", (code, signal) => {
       if (![0, 1].includes(code)) {
         spinner.fail(`Updater failed with code ${code}: ${signal}`);
+        process.exit();
         return;
       }
 
       spinner.text = "Building installer";
       let builder = exec(
-        `"${bitRockBuilder}" build installer_assets/PreMiD_x64.xml ${
+        `"${bitRockBuilder}" build tmp/installer.xml ${
           platform() === "win32" ? "windows" : "osx"
         }`
       );
@@ -195,11 +219,13 @@ import * as ora from "ora";
 
         if (code !== 0) {
           spinner.fail(`Error code: ${code}`);
+          process.exit();
           return;
         }
 
         spinner.text = "Done!";
         spinner.succeed();
+        process.exit();
         return;
       });
     });

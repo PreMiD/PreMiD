@@ -1,10 +1,11 @@
 <project>
     <shortName>PreMiD</shortName>
     <fullName>PreMiD</fullName>
-    <version>2.0</version>
+    <version>{{VERSION}}</version>
     <installerFilename>${product_fullname}-${product_version}-installer_64bit.${platform_exec_suffix}</installerFilename>
     <wrapLicenseFileText>0</wrapLicenseFileText>
-    <logoImage>appIcon.png</logoImage>
+    <logoImage>../installer_assets/appIcon.png</logoImage>
+    <osxApplicationBundleIcon>../installer_assets/appIcon.icns</osxApplicationBundleIcon>
     <componentList>
         <component>
             <name>default</name>
@@ -20,7 +21,7 @@
                     <platforms>all</platforms>
                     <distributionFileList>
                         <distributionFile>
-                            <origin>../tmp/update.ini</origin>
+                            <origin>update.ini</origin>
                         </distributionFile>
                     </distributionFileList>
                 </folder>
@@ -37,13 +38,13 @@
                     <platforms>windows</platforms>
                     <distributionFileList>
                         <distributionDirectory allowWildcards="1">
-                            <origin>../dist/PreMiD-win32-x64/*</origin>
+                            <origin>../dist/PACKAGEDNAME/*</origin>
                         </distributionDirectory>
                         <distributionFile>
-                            <origin>appIcon.ico</origin>
+                            <origin>../installer_assets/appIcon.ico</origin>
                         </distributionFile>
                         <distributionFile>
-                            <origin>updater.exe</origin>
+                            <origin>../installer_assets/updater.exe</origin>
                         </distributionFile>
                     </distributionFileList>
                 </folder>
@@ -54,10 +55,10 @@
                     <platforms>osx</platforms>
                     <distributionFileList>
                         <distributionFile>
-                            <origin>updater.app</origin>
+                            <origin>../installer_assets/updater.app</origin>
                         </distributionFile>
                         <distributionFile>
-                            <origin>../dist/PreMiD-darwin-x64/PreMiD.app</origin>
+                            <origin>../dist/PACKAGEDNAME/PreMiD.app</origin>
                         </distributionFile>
                     </distributionFileList>
                 </folder>
@@ -68,7 +69,7 @@
                     <name>${product_fullname}</name>
                     <runAsAdmin>0</runAsAdmin>
                     <runInTerminal>0</runInTerminal>
-                    <windowsExec>${installdir}/PreMID.exe</windowsExec>
+                    <windowsExec>${installdir}/PreMiD.exe</windowsExec>
                     <windowsExecArgs></windowsExecArgs>
                     <windowsIcon></windowsIcon>
                     <windowsPath>${installdir}/</windowsPath>
@@ -122,11 +123,29 @@
                 </fileExists>
             </ruleList>
         </runProgram>
+        <runProgram>
+            <program>${windows_folder_common_appdata}\${system_username}\premid\Update.exe</program>
+            <programArguments>--uninstall</programArguments>
+            <onErrorActionList>
+                <deleteFile>
+                    <matchHiddenFiles>1</matchHiddenFiles>
+                    <path>${windows_folder_common_appdata}\${system_username}\premid</path>
+                </deleteFile>
+            </onErrorActionList>
+            <ruleList>
+                <platformTest>
+                    <type>windows</type>
+                </platformTest>
+                <fileExists>
+                    <path>${windows_folder_common_appdata}\${system_username}\premid\PreMiD.exe</path>
+                </fileExists>
+            </ruleList>
+        </runProgram>
     </preInstallationActionList>
     <postInstallationActionList>
         <runProgram>
             <abortOnError>0</abortOnError>
-            <program>PreMID.exe</program>
+            <program>PreMiD.exe</program>
             <programArguments>&amp;</programArguments>
             <progressText>Launching PreMiD</progressText>
             <show>0</show>
@@ -212,13 +231,15 @@
     <defaultInstallationMode>unattended</defaultInstallationMode>
     <enableRollback>0</enableRollback>
     <enableTimestamp>1</enableTimestamp>
-    <osxPlatforms>osx-intel osx-x86_64</osxPlatforms>
+    <installationScope>user</installationScope>
+    <overwritePolicy>onlyIfNewer</overwritePolicy>
+    <osxApplicationBundleIdentifier>eu.Timeraa.PreMiD</osxApplicationBundleIdentifier>
     <outputDirectory>../dist/installer</outputDirectory>
     <productDisplayIcon>${installdir}/appIcon.ico</productDisplayIcon>
     <saveRelativePaths>1</saveRelativePaths>
     <unattendedModeUI>minimal</unattendedModeUI>
     <vendor>Timeraa</vendor>
-    <windowsExecutableIcon>appIcon.ico</windowsExecutableIcon>
+    <windowsExecutableIcon>../installer_assets/appIcon.ico</windowsExecutableIcon>
     <parameterList>
         <directoryParameter>
             <name>installdir</name>
@@ -234,4 +255,3 @@
         </directoryParameter>
     </parameterList>
 </project>
-
