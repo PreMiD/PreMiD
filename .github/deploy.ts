@@ -1,8 +1,8 @@
 import * as Client from "ssh2-sftp-client";
 import * as archiver from "archiver";
+import * as rimraf from "rimraf";
 import { platform } from "os";
 import { createWriteStream } from "fs";
-import rimraf from "rimraf";
 
 let sftp = new Client();
 

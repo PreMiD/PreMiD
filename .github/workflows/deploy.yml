@@ -24,6 +24,7 @@ jobs:
           SSH_PASSWORD: ${{ secrets.SSHPASSWORD }}
         run: npm run deploy
   installer:
+    needs: package
     runs-on: "ubuntu-latest"
     steps:
       - name: Prepare for installer
