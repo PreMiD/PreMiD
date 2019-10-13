@@ -8,7 +8,6 @@ import { update as initAutoLaunch } from "./managers/launchManager";
 import { platform } from "os";
 import { checkForUpdate } from "./util/updateChecker";
 import { info } from "./util/debug";
-import inApplicationsFolder from "./util/inApplicationsFolder";
 
 //* Define and set it to null
 //* Set AppUserModelId for task manager etc
@@ -24,13 +23,11 @@ if (platform() === "darwin") {
 
 //* When app is ready
 app.whenReady().then(async () => {
-  //* Handle Mac specific app folder
   //* Init auto launch
   //* Check for updates > Update and relaunch
   //* Init socket
   //* init application tray icon
   //* If app is packaged, run an update check every 15 mins
-  if (!(await inApplicationsFolder())) return;
   initAutoLaunch();
   await checkForUpdate(true);
   await initSocket();
