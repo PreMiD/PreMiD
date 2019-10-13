@@ -5,6 +5,9 @@ import { platform } from "os";
 import { deinit as deinitInputs } from "./inputManager";
 import { info } from "../util/debug";
 
+//* Import custom types
+import ExtensionSettings from "../../@types/PreMiD/ExtensionSettings";
+
 //* Export and set default settings
 export let settings = new ElectronStore({
   defaults: {
@@ -16,8 +19,7 @@ export let settings = new ElectronStore({
  * Update settings of app
  * @param extensionSettings Settings from extension
  */
-export function update(extensionSettings: extensionSettings) {
-  console.log(extensionSettings);
+export function update(extensionSettings: ExtensionSettings) {
   //* Show debug
   //* remove title if disabled
   //* unbind keybinds if disabled
@@ -32,28 +34,4 @@ export function update(extensionSettings: extensionSettings) {
     settings.set("autoLaunch", extensionSettings.autoLaunch);
     updateAutoLaunch();
   }
-}
-
-//TODO Try to move types into file
-interface extensionSettings {
-  /**
-   * If extension is enabled
-   */
-  enabled: boolean;
-  /**
-   * Autolaunch enabled
-   */
-  autoLaunch: boolean;
-  /**
-   * Media keys enabled
-   */
-  mediaKeys: boolean;
-  /**
-   * title menubar (TrayTitle)
-   */
-  titleMenubar: boolean;
-  /**
-   * language of extension
-   */
-  language: string;
 }

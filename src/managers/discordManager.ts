@@ -5,6 +5,10 @@ import { tray } from "./trayManager";
 import { info } from "../util/debug";
 import { init as initKeybinds, deinit as deinitKeybinds } from "./inputManager";
 
+//* Import custom types
+import Presence from "../../@types/PreMiD/Presence";
+import PresenceData from "../../@types/PreMiD/PresenceData";
+
 //* Define Presence array
 let loggedInPresences: Array<Presence> = [];
 
@@ -118,50 +122,3 @@ app.once("will-quit", () => {
   info("Closing rpc connections");
   destroy();
 });
-
-//TODO Try to move this to a type file
-interface Presence {
-  /**
-   * Client ID of presence
-   */
-  clientId: string;
-  /**
-   * Rich Procedual call connection
-   */
-  rpc: Discord.Client;
-  /**
-   * Connection ready?
-   */
-  ready: Boolean;
-}
-interface PresenceData {
-  /**
-   * Client ID of presence
-   */
-  clientId: string;
-  /**
-   * Tray title to be shown in Mac OS tray
-   */
-  trayTitle: string;
-  /**
-   * service name of presence
-   * @deprecated
-   */
-  service: string;
-  /**
-   * Determines if the service is currently playing something back or not, if false it will automatically hide after 1 minute
-   */
-  playback: boolean;
-  /**
-   * Discord Presence which gets sent directly to Discord app
-   */
-  presenceData: Discord.Presence;
-  /**
-   * Determines if the service should be hidden (clearActivity)
-   */
-  hidden: boolean;
-  /**
-   * Determines if the service is mediaKey able / uses them
-   */
-  mediaKeys: boolean;
-}
