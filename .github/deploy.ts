@@ -1,7 +1,8 @@
 import * as Client from "ssh2-sftp-client";
 import * as archiver from "archiver";
-import { platform, arch } from "os";
-import { createWriteStream, readdirSync } from "fs";
+import { platform } from "os";
+import { createWriteStream } from "fs";
+import { removeSync } from "fs-extra";
 
 let sftp = new Client();
 
@@ -12,6 +13,8 @@ sftp
     password: process.env.SSH_PASSWORD
   })
   .then(async () => {
+    removeSync("../zip/app/");
+
     console.log("Zipping...");
     let output = createWriteStream("app.zip"),
       archive = archiver("zip");
