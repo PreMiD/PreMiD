@@ -24,10 +24,10 @@ export function setActivity(presence: PresenceData) {
   if (platform() === "darwin" && presence.trayTitle)
     tray.setTitle(presence.trayTitle);
   let rpc = loggedInPresences.find(p => p.clientId === presence.clientId);
-  if (rpc) rpc.rpc.setActivity(presence.presenceData);
+  if (rpc) rpc.rpc.setActivity(presence.presenceData).catch(destroy);
   else
     loginPresence(presence.clientId).then(p =>
-      p.rpc.setActivity(presence.presenceData)
+      p.rpc.setActivity(presence.presenceData).catch(destroy)
     );
   info("setActivity");
 }
@@ -47,10 +47,10 @@ export function clearActivity(clientId: string = undefined) {
     //* If it is clear its activity
     //* Return to prevent further actions
     let pTC = loggedInPresences.find(p => p.clientId === clientId);
-    if (pTC) pTC.rpc.clearActivity();
+    if (pTC) pTC.rpc.clearActivity().catch(destroy);
     return;
   }
-  loggedInPresences.map(p => p.rpc.clearActivity());
+  loggedInPresences.map(p => p.rpc.clearActivity().catch(destroy));
   info("clearActivity");
 }
 
@@ -99,7 +99,7 @@ export function destroy() {
   //* Map through loggedInPresences and destroy their rpcs
   //* Set loggedInPresences to new Array
   //* Return the promise
-  if (platform() === "darwin") tray.setTitle("");
+  if (platform() === "darwin" && typeof tray !== "undefined") tray.setTitle("");
   let res = Promise.all(
     loggedInPresences.map((presence: Presence) =>
       presence.rpc.destroy().catch(() => {})
