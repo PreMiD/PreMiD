@@ -6,10 +6,11 @@ jobs:
   test:
     runs-on: "ubuntu-latest"
     steps:
-      run: |
-        wget https://installbuilder.bitrock.com/installbuilder-enterprise-19.9.0-linux-x64-installer.run
-        chmod u+x installbuilder-enterprise-19.9.0-linux-x64-installer.run
-        ./installbuilder-enterprise-19.9.0-linux-x64-installer.run
+      - name: Get and install
+        run: |
+          wget https://installbuilder.bitrock.com/installbuilder-enterprise-19.9.0-linux-x64-installer.run
+          chmod u+x installbuilder-enterprise-19.9.0-linux-x64-installer.run
+          ./installbuilder-enterprise-19.9.0-linux-x64-installer.run
   package:
     runs-on: ${{ matrix.os }}
     strategy:
