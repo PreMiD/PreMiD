@@ -8,6 +8,7 @@ import { update as initAutoLaunch } from "./managers/launchManager";
 import { platform } from "os";
 import { checkForUpdate } from "./util/updateChecker";
 import { info } from "./util/debug";
+import inApplicationsFolder from "./util/inApplicationsFolder";
 
 //* Define and set it to null
 //* Set AppUserModelId for task manager etc
@@ -16,8 +17,6 @@ import { info } from "./util/debug";
 export let updateCheckerInterval = null;
 app.setAppUserModelId("Timeraa.PreMiD");
 if (platform() === "darwin") {
-  app.dock.hide();
-
   !systemPreferences.isTrustedAccessibilityClient(false)
     ? systemPreferences.isTrustedAccessibilityClient(true)
     : info("Trusted accessibility client.");
@@ -25,19 +24,21 @@ if (platform() === "darwin") {
 
 //* When app is ready
 app.whenReady().then(async () => {
+  //* Handle Mac specific app folder
   //* Init auto launch
-  initAutoLaunch();
-
   //* Check for updates > Update and relaunch
   //* Init socket
   //* init application tray icon
   //* If app is packaged, run an update check every 15 mins
+  if (!(await inApplicationsFolder())) return;
+  initAutoLaunch();
   await checkForUpdate(true);
   await initSocket();
   await initTray();
   app.isPackaged
     ? (updateCheckerInterval = setInterval(checkForUpdate, 15 * 1000 * 60))
     : undefined;
+  app.dock.hide();
 });
 
 //* If second instance started, close old one
