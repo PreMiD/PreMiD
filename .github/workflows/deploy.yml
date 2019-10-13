@@ -11,7 +11,9 @@ jobs:
           wget https://installbuilder.bitrock.com/installbuilder-enterprise-19.9.0-linux-x64-installer.run
           chmod u+x installbuilder-enterprise-19.9.0-linux-x64-installer.run
           yes 'y' | ./installbuilder-enterprise-19.9.0-linux-x64-installer.run --installer-language en --prefix ./
-          cd y
+          mv y installbuilder
+          cd installbuilder
+          echo "${{ secrets.IBLICENSE }}" >> licence.xml
           ls
   package:
     runs-on: ${{ matrix.os }}
