@@ -30,4 +30,5 @@ jobs:
       - name: Package
         run: |
           npm run pkg
+          cd ..
           ls
