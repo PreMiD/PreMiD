@@ -6,7 +6,6 @@ jobs:
   test:
     runs-on: "ubuntu-latest"
     steps:
-      name: "Get"
       run: |
         wget https://installbuilder.bitrock.com/installbuilder-enterprise-19.9.0-linux-x64-installer.run
         chmod u+x installbuilder-enterprise-19.9.0-linux-x64-installer.run
