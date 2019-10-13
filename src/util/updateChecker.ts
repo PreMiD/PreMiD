@@ -1,4 +1,4 @@
-import { spawn } from "child_process";
+import { spawn, exec } from "child_process";
 import { resolve } from "path";
 import { error, info } from "./debug";
 import { trayContextMenu } from "../managers/trayManager";
@@ -12,11 +12,15 @@ import sudoPrompt from "sudo-prompt";
 let updaterPath: string;
 
 export async function checkForUpdate(autoUpdate = false) {
-  if (!app.isPackaged) {
+  //* Skip Update checker if unsupported OS / not packaged
+  if (!app.isPackaged || !["darwin", "win32"].includes(platform())) {
+    //* Show debug
+    //* return
     info("Skipping UpdateChecker");
     return;
   }
 
+  //* Resolve paths for each OS
   switch (platform()) {
     case "darwin":
       updaterPath = resolve(
@@ -28,21 +32,16 @@ export async function checkForUpdate(autoUpdate = false) {
       break;
   }
 
+  // TODO remove?
+  //* return if update doesn't exist
   if (!existsSync(updaterPath)) {
     error("Updater not found.");
+    clearInterval(updateCheckerInterval);
     return;
   }
 
+  //* Spawn update checker
   let child = spawn(updaterPath, ["--mode", "unattended"]);
-
-  child.on("error", err => {
-    // @ts-ignore
-    if (err.code === "ENOENT") {
-      error("Updater file not found. Skipping updater functions.");
-      clearInterval(updateCheckerInterval);
-      return;
-    }
-  });
 
   child.on("exit", code => {
     //* If no update or error return
@@ -84,13 +83,26 @@ export async function checkForUpdate(autoUpdate = false) {
 }
 
 export function update() {
+  if (platform() === "darwin") {
+    exec(
+      `\"${updaterPath}\" --mode unattended --unattendedmodebehavior download`,
+      () => {
+        dialog.showErrorBox(
+          "Error while updating",
+          `${app.getName()} was unable to update itself. Please try again later.`
+        );
+      }
+    );
+    return;
+  }
+
   sudoPrompt.exec(
     `\"${updaterPath}\" --mode unattended --unattendedmodebehavior download`,
-    {
-      name: app.getName()
-    },
     (error: Error) => {
-      dialog.showMessageBox({ message: error.message });
+      dialog.showErrorBox(
+        "Error while updating",
+        `${app.getName()} was unable to update itself. Please try again later.`
+      );
       if (error) {
         checkForUpdate();
         return;
