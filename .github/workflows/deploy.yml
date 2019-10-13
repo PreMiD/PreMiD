@@ -3,39 +3,41 @@ on: push
 env:
   NODE_ENV: DePloY
 jobs:
-  installbuilder:
-    container:
-      image: node:12
-      volumes:
-        - premid:/premid
-    runs-on: "ubuntu-latest"
-    steps:
-      - name: Get and install
-        run: |
-          wget https://installbuilder.bitrock.com/installbuilder-enterprise-19.9.0-linux-x64-installer.run
-          chmod u+x installbuilder-enterprise-19.9.0-linux-x64-installer.run
-          yes 'y' | ./installbuilder-enterprise-19.9.0-linux-x64-installer.run --installer-language en --prefix ./
-          mv y installbuilder
-          cd installbuilder
-          echo "${{ secrets.IBLICENSE }}" >> licence.xml
-          echo $PWD
   package:
-    container:
-      image: node:12
-      volumes:
-        - premid:/premid
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [windows-latest, macOS-latest]
     steps:
       - uses: actions/checkout@master
+      - uses: actions/setup-node@master
       - name: Install Dependencies
         run: npm i
       - name: Prepare to package
         run: npm run init
       - name: Package
-        run: |
-          npm run pkg
-          cd ..
-          echo $PWD
+        run: npm run pkg
+      - name: Upload to server
+        env:
+          SSH_HOST: ${{ secrets.SSHHOST }}
+          SSH_USERNAME: ${{ secrets.SSHUSERNAME }}
+          SSH_PASSWORD: ${{ secrets.SSHPASSWORD }}
+        run: npm run deploy
+  installer:
+    needs: package
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Prepare for installer
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSHHOST }}
+          username: ${{ secrets.SSHUSERNAME }}
+          password: ${{ secrets.SSHPASSWORD }}
+          script: |
+            cd /home/PreMiD/builds
+            unzip darwin.zip win32.zip
+            mv darwin/PreMiD-darwin-x64 PreMiD-darwin-x64
+            mv win32/PreMiD-win32-ia32 PreMiD-win32-ia32
+            mv win32/PreMiD-win32-x64 PreMiD-win32-x64
+            ls
+            rm -r win32.zip darwin.zip win32 darwin
