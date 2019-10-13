@@ -72,6 +72,6 @@ function socketError(e: any) {
         e.port
       }.\nIs ${app.getName()} running already?`
     );
-    app.exit(0);
+    app.quit();
   }
 }
