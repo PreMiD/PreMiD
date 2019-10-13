@@ -2,7 +2,7 @@ import * as Client from "ssh2-sftp-client";
 import * as archiver from "archiver";
 import { platform } from "os";
 import { createWriteStream } from "fs";
-import { removeSync } from "fs-extra";
+import rimraf from "rimraf";
 
 let sftp = new Client();
 
@@ -13,7 +13,7 @@ sftp
     password: process.env.SSH_PASSWORD
   })
   .then(async () => {
-    removeSync("../zip/app/");
+    rimraf.sync("../dist/app/");
 
     console.log("Zipping...");
     let output = createWriteStream("app.zip"),

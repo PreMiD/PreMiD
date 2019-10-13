@@ -1,6 +1,6 @@
 name: DePloY
 on: push
-env: 
+env:
   NODE_ENV: DePloY
 jobs:
   build:
@@ -23,3 +23,15 @@ jobs:
           SSH_USERNAME: ${{ secrets.SSHUSERNAME }}
           SSH_PASSWORD: ${{ secrets.SSHPASSWORD }}
         run: npm run deploy
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSHHOST }}
+          username: ${{ secrets.SSHUSERNAME }}
+          password: ${{ secrets.SSHPASSWORD }}
+          script: |
+            cd /home/PreMiD/builds
+            unzip darwin.zip
+            rm -r darwin.zip
+            unzip win32.zip
+            rm -r win32.zip

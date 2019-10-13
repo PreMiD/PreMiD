@@ -23,6 +23,7 @@
     "@types/ora": "3.2.0",
     "@types/prompts": "2.0.1",
     "@types/request-promise-native": "1.0.17",
+    "@types/rimraf": "^2.0.2",
     "@types/socket.io": "2.1.4",
     "@types/ssh2-sftp-client": "4.1.0",
     "archiver": "3.1.1",
