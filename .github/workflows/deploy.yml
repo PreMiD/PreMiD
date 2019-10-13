@@ -10,8 +10,7 @@ jobs:
         run: |
           wget https://installbuilder.bitrock.com/installbuilder-enterprise-19.9.0-linux-x64-installer.run
           chmod u+x installbuilder-enterprise-19.9.0-linux-x64-installer.run
-          yes 'y' | ./installbuilder-enterprise-19.9.0-linux-x64-installer.run --installer-language en
-          cd /opt/installbuilder-19.9.0
+          yes 'y' | ./installbuilder-enterprise-19.9.0-linux-x64-installer.run --installer-language en --prefix ./
           ls
   package:
     runs-on: ${{ matrix.os }}
