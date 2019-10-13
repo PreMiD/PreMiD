@@ -2,7 +2,6 @@ import ElectronStore from "electron-store";
 import { tray } from "./trayManager";
 import { update as updateAutoLaunch } from "./launchManager";
 import { platform } from "os";
-import { deinit as deinitInputs } from "./inputManager";
 import { info } from "../util/debug";
 
 //* Import custom types
@@ -22,14 +21,11 @@ export let settings = new ElectronStore({
 export function update(extensionSettings: ExtensionSettings) {
   //* Show debug
   //* remove title if disabled
-  //* unbind keybinds if disabled
   //* Update autolaunch if updated
   //* Save Settings
-
   info("Updated settings");
   if (!extensionSettings.titleMenubar && platform() === "darwin")
     tray.setTitle("");
-  if (!extensionSettings.mediaKeys) deinitInputs();
   if (settings.get("autoLaunch") != extensionSettings.autoLaunch) {
     settings.set("autoLaunch", extensionSettings.autoLaunch);
     updateAutoLaunch();

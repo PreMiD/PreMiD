@@ -2,7 +2,6 @@ import socketIo from "socket.io";
 import { createServer, Server } from "http";
 import { app, dialog } from "electron";
 import { success, error } from "../util/debug";
-import { deinit as deinitInputs } from "./inputManager";
 import { update as updateSettings } from "./settingsManager";
 import { openFileDialog } from "./presenceDevManager";
 import { setActivity, clearActivity, destroy } from "./discordManager";
@@ -52,10 +51,8 @@ function socketConnection(cSocket: socketIo.Socket) {
   socket.once("disconnect", () => {
     //* Show debug
     //* Destroy all open RPC connections
-    //* Clear input bindings
     error("Socket disconnection.");
     destroy();
-    deinitInputs();
   });
 }
 

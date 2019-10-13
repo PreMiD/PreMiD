@@ -3,7 +3,6 @@ import { app } from "electron";
 import { platform } from "os";
 import { tray } from "./trayManager";
 import { info } from "../util/debug";
-import { init as initKeybinds, deinit as deinitKeybinds } from "./inputManager";
 
 //* Import custom types
 import Presence from "../../@types/PreMiD/Presence";
@@ -17,14 +16,11 @@ let loggedInPresences: Array<Presence> = [];
  * @param presence PresenceData to set activity
  */
 export function setActivity(presence: PresenceData) {
-  //* If presence.mediakeys defined & enabled, init
   //* If platform is darwin (Mac OS) set trayTitle if theres one
   //* Check if theres an active RPC connection that we can use
   //* If we have one, use it
   //* Else create one and use it
   //* Show debug
-  if (presence.mediaKeys) initKeybinds();
-  else deinitKeybinds();
   if (platform() === "darwin" && presence.trayTitle)
     tray.setTitle(presence.trayTitle);
   let rpc = loggedInPresences.find(p => p.clientId === presence.clientId);
@@ -41,12 +37,10 @@ export function setActivity(presence: PresenceData) {
  * @param clientId clientId of presence to clear
  */
 export function clearActivity(clientId: string = undefined) {
-  //* Clear keybinds
   //* Clear tray title
   //* If clientId set
   //* Else map through presences and clear them
   //* Show Debug
-  deinitKeybinds();
   if (platform() === "darwin") tray.setTitle("");
   if (clientId) {
     //* Check if this presence is logged in
