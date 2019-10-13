@@ -11,7 +11,7 @@ import * as ora from "ora";
 (async () => {
   let response = {
     os: "current",
-    arch: "all",
+    arch: ["x64", "ia32"],
     installer: false
   };
 

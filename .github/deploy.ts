@@ -16,20 +16,12 @@ sftp
     let output = createWriteStream("app.zip"),
       archive = archiver("zip");
 
-    console.log(readdirSync(`../dist/`));
-
-    archive.directory(
-      `../dist/PreMiD-${platform()}-${arch()}`,
-      `PreMiD-${platform()}-${arch()}`
-    );
+    archive.directory(`../dist/`, platform());
 
     output.on("close", function() {
       console.log("Uploading...");
       sftp
-        .fastPut(
-          "app.zip",
-          `/home/PreMiD/builds/PreMiD-${platform()}-${arch()}.zip`
-        )
+        .fastPut("app.zip", `/home/PreMiD/builds/${platform()}.zip`)
         .then(() => {
           console.log("Done!");
           sftp.end();
