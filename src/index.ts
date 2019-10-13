@@ -38,7 +38,7 @@ app.whenReady().then(async () => {
   app.isPackaged
     ? (updateCheckerInterval = setInterval(checkForUpdate, 15 * 1000 * 60))
     : undefined;
-  app.dock.hide();
+  if (platform() === "darwin") app.dock.hide();
 });
 
 //* If second instance started, close old one
