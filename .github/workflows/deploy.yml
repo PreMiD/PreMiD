@@ -3,11 +3,11 @@ on: push
 env:
   NODE_ENV: DePloY
 jobs:
-  build:
+  package:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [windows-latest, macOS-latest]
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
@@ -23,7 +23,10 @@ jobs:
           SSH_USERNAME: ${{ secrets.SSHUSERNAME }}
           SSH_PASSWORD: ${{ secrets.SSHPASSWORD }}
         run: npm run deploy
-      - name: executing remote ssh commands using password
+  installer:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Prepare for installer
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSHHOST }}
