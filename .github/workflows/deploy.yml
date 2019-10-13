@@ -11,7 +11,7 @@ jobs:
           wget https://installbuilder.bitrock.com/installbuilder-enterprise-19.9.0-linux-x64-installer.run
           chmod u+x installbuilder-enterprise-19.9.0-linux-x64-installer.run
           ./installbuilder-enterprise-19.9.0-linux-x64-installer.run
-          y
+          yes yes
   package:
     runs-on: ${{ matrix.os }}
     strategy:
