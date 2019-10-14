@@ -51,6 +51,26 @@ jobs:
             cd /home/PreMiD/builds
             node prepare.js PreMiD-win32-ia32
             /opt/installbuilder-19.9.0/bin/builder build installer.xml windows
+      - name: Create installer
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSHHOST }}
+          username: ${{ secrets.SSHUSERNAME }}
+          password: ${{ secrets.SSHPASSWORD }}
+          script: |
+            cd /home/PreMiD/builds
+            node prepare.js PreMiD-win32-x64
+            /opt/installbuilder-19.9.0/bin/builder build installer.xml windows
+      - name: Create installer
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSHHOST }}
+          username: ${{ secrets.SSHUSERNAME }}
+          password: ${{ secrets.SSHPASSWORD }}
+          script: |
+            cd /home/PreMiD/builds
+            node prepare.js PreMiD-darwin-x64
+            /opt/installbuilder-19.9.0/bin/builder build installer.xml osx
 
 
             
