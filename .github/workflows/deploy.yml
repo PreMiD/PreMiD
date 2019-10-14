@@ -51,7 +51,6 @@ jobs:
             cd /home/PreMiD/builds
             node prepare.js PreMiD-win32-x64
             /opt/installbuilder-19.9.0/bin/builder build installer.xml windows
-            node prepare.js PreMiD-win32-ia32
-            /opt/installbuilder-19.9.0/bin/builder build installer.xml windows
+
 
             
