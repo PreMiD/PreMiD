@@ -78,6 +78,7 @@ jobs:
           username: ${{ secrets.SSHUSERNAME }}
           password: ${{ secrets.SSHPASSWORD }}
           script: |
+            cd /home/PreMiD/builds
             rm -r PreMiD-darwin-x64 PreMiD-win32-ia32 PreMiD-win32-x64
 
             
