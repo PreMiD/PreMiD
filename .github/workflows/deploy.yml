@@ -55,4 +55,4 @@ jobs:
             /opt/installbuilder-19.9.0/bin/builder build installer.xml windows
             node prepare.js PreMiD-darwin-x64
             /opt/installbuilder-19.9.0/bin/builder build installer.xml osx
-            rm -r PreMiD-darwin-x64 PreMiD-win32-ia32 PreMiD-win32-x64
+            
