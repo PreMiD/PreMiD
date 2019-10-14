@@ -40,10 +40,11 @@ jobs:
             mv darwin/PreMiD-darwin-x64 PreMiD-darwin-x64
             mv win32/PreMiD-win32-ia32 PreMiD-win32-ia32
             mv win32/PreMiD-win32-x64 PreMiD-win32-x64
-            rm -r win32.zip darwin.zip
+            rm -r win32.zip darwin.zip darwin win32
             node prepare.js PreMiD-win32-x64
             /opt/installbuilder-19.9.0/bin/builder build installer.xml windows
             node prepare.js PreMiD-win32-ia32
             /opt/installbuilder-19.9.0/bin/builder build installer.xml windows
             node prepare.js PreMiD-darwin-x64
             /opt/installbuilder-19.9.0/bin/builder build installer.xml osx
+            rm -r PreMiD-darwin-x64 PreMiD-win32-ia32 PreMiD-win32-x64
