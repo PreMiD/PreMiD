@@ -7,21 +7,12 @@ import { init as initTray } from "./managers/trayManager";
 import { update as initAutoLaunch } from "./managers/launchManager";
 import { platform } from "os";
 import { checkForUpdate } from "./util/updateChecker";
-import { info } from "./util/debug";
 
 //* Define and set it to null
 //* Set AppUserModelId for task manager etc
-//* Hide app icon if Mac OS
-//* Mac OS truted accessability client
+//* When app is ready
 export let updateCheckerInterval = null;
 app.setAppUserModelId("Timeraa.PreMiD");
-if (platform() === "darwin") {
-  !systemPreferences.isTrustedAccessibilityClient(false)
-    ? systemPreferences.isTrustedAccessibilityClient(true)
-    : info("Trusted accessibility client.");
-}
-
-//* When app is ready
 app.whenReady().then(async () => {
   //* Init auto launch
   //* Check for updates > Update and relaunch
