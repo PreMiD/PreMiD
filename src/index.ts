@@ -1,4 +1,4 @@
-import { app, systemPreferences, dialog } from "electron";
+import { app, dialog } from "electron";
 //* Source .map support if devEnv
 if (!app.isPackaged) require("source-map-support").install();
 
