@@ -7,7 +7,7 @@
 ## Your Rich Presence for web services!
 
 ![GitHub](https://img.shields.io/github/license/PreMiD/PreMiD?style=for-the-badge)
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/PreMiD/PreMiD?include_prereleases&label=Application&style=for-the-badge)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/premid/premid?label=Application&style=for-the-badge)
 ![Chrome Web Store](https://img.shields.io/chrome-web-store/v/agjnjboanicjcpenljmaaigopkgdnihi?label=Extension&style=for-the-badge)
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/d/agjnjboanicjcpenljmaaigopkgdnihi.svg?label=Chrome&logo=google%20chrome&logoColor=white&colorA=4285F4&style=for-the-badge)](https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi)
 ![Website](https://img.shields.io/website?down_message=offline&label=PreMiD.app&style=for-the-badge&up_message=online&url=https%3A%2F%2Fpremid.app)
