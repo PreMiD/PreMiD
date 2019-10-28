@@ -89,7 +89,7 @@ export function update() {
       () => {
         dialog.showErrorBox(
           "Error while updating",
-          `${app.getName()} was unable to update itself. Please try again later.`
+          `${app.name} was unable to update itself. Please try again later.`
         );
       }
     );
@@ -101,7 +101,7 @@ export function update() {
     (error: Error) => {
       dialog.showErrorBox(
         "Error while updating",
-        `${app.getName()} was unable to update itself. Please try again later.`
+        `${app.name} was unable to update itself. Please try again later.`
       );
       if (error) {
         checkForUpdate();

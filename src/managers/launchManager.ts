@@ -5,7 +5,7 @@ import { info } from "../util/debug";
 
 //* Create autoLaunch object
 let autoLaunch = new AutoLaunch({
-  name: app.getName(),
+  name: app.name,
   isHidden: true
 });
 

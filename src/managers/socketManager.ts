@@ -68,9 +68,9 @@ function socketError(e: any) {
     app.focus();
     dialog.showErrorBox(
       "Oh noes! Port error...",
-      `${app.getName()} could not bind to port ${
+      `${app.name} could not bind to port ${
         e.port
-      }.\nIs ${app.getName()} running already?`
+      }.\nIs ${app.name} running already?`
     );
     app.quit();
   }
