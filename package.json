@@ -8,7 +8,7 @@
     "init": "tsc && tsc pkg devMode && node devMode.js compile",
     "start": "electron dist/app/.",
     "dev": "node devMode.js",
-    "pkg": "rimraf dist && tsc && node devMode compile && cd dist/app/ && npm i --prefer-offline && cd ../../ && node pkg",
+    "pkg": "rimraf dist && tsc && node devMode compile && cd dist/app/ && yarn && cd ../../ && node pkg",
     "deploy": "tsc .github/deploy && cd .github && node deploy.js"
   },
   "license": "MIT",
@@ -38,7 +38,8 @@
     "rimraf": "3.0.0",
     "source-map-support": "0.5.13",
     "ssh2-sftp-client": "4.2.1",
-    "typescript": "3.6.4"
+    "typescript": "3.6.4",
+    "yarn": "^1.19.1"
   },
   "dependencies": {
     "auto-launch": "5.0.5",
