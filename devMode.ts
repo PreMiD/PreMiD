@@ -58,7 +58,7 @@ async function fileChange(diagnostic: ts.Diagnostic) {
   console.clear();
 
   //* Run child
-  currChild = spawn("npm run --silent start", {
+  currChild = spawn("yarn start", {
     shell: true,
     stdio: "inherit"
   });
