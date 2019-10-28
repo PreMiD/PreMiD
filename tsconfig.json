@@ -5,10 +5,9 @@
     "sourceMap": true,
     "outDir": "dist/app",
     "removeComments": true,
-    "esModuleInterop": true,
-    "typeRoots": ["@types/*"]
+    "esModuleInterop": true
   },
-  "include": ["@types/*", "src/**/*"],
+  "include": ["src/**/*"],
   "exclude": [
     "devMode.ts",
     "pkg.ts",
