@@ -1,4 +1,4 @@
-import * as Discord from "discord-rpc";
+import { Client } from "discord-rpc";
 import { app } from "electron";
 import { platform } from "os";
 import { tray } from "./trayManager";
@@ -68,7 +68,7 @@ function loginPresence(clientId: string) {
     //* Destroy all clients when Discord closed (My issue #42)
     let presence: Presence = {
       clientId: clientId,
-      rpc: new Discord.Client({ transport: "ipc" }),
+      rpc: new Client({ transport: "ipc" }),
       ready: false
     };
     loggedInPresences.push(presence);
