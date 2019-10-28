@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es2018",
-    "sourceMap": true,
+    "inlineSourceMap": true,
     "outDir": "dist/app",
     "removeComments": true,
     "esModuleInterop": true
