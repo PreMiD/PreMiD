@@ -36,7 +36,7 @@
     "ora": "4.0.2",
     "prompts": "2.2.1",
     "rimraf": "3.0.0",
-    "source-map-support": "0.5.13",
+    "source-map-support": "0.5.15",
     "ssh2-sftp-client": "4.2.1",
     "typescript": "3.6.4",
     "yarn": "^1.19.1"
