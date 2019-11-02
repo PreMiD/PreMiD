@@ -1,5 +1,9 @@
 name: DePloY
-on: [push]
+on:
+  push:
+    paths:
+      - "src/**/*"
+      - "**.ts"
 
 env:
   NODE_ENV: DePloY
