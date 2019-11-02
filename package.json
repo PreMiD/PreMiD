@@ -10,7 +10,7 @@
     "start": "electron dist/app/.",
     "dev": "node devMode.js",
     "pkg": "rimraf dist && tsc && node devMode compile && cd dist/app/ && yarn && cd ../../ && node pkg",
-    "build": "electron-builder install-app-deps && electron-builder",
+    "build": "rimraf dist && tsc && node devMode compile && cd dist/app/ && yarn && electron-builder install-app-deps && electron-builder && cd ../../",
     "deploy": "tsc .github/deploy && cd .github && node deploy.js"
   },
   "build": {
