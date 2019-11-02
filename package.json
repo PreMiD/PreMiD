@@ -20,7 +20,7 @@
       "maintainer": "DooMLorD#2792",
       "category": "Utility",
       "target": "AppImage",
-      "icon": "../../installer_assets/icon.icns"
+      "icon": "../../installer_assets/appIcon.icns"
     }
   },
   "license": "MIT",
