@@ -33,20 +33,12 @@ jobs:
       - uses: actions/setup-node@master
       - name: Install Dependencies
         run: npm i -g yarn
-      - name: Compile ts files
-        run: |
-          npx tsc
-          node devMode compile
-          cd dist/app/
       - name: Prepare to package
         run: |
           yarn
           yarn run init
-          npx electron-builder install-app-deps
-      - name : Postinstall and package
-        run: |
-          npx electron-builder
-          cd ../../
+      - name: Package
+        run: yarn build
       - name: Upload to server
         env:
           SSH_HOST: ${{ secrets.SSHHOST }}
