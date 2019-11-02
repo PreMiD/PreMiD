@@ -1,5 +1,6 @@
 {
   "name": "premid",
+  "author": "Timeraa",
   "productName": "PreMiD",
   "description": "Discord Rich Presence for websites.",
   "version": "2.0.3",
@@ -8,8 +9,18 @@
     "init": "tsc && tsc pkg devMode && node devMode.js compile",
     "start": "electron dist/app/.",
     "dev": "node devMode.js",
-    "pkg": "rimraf dist && tsc && node devMode compile && cd dist/app/ && yarn && cd ../../ && node pkg",
+    "pkg": "rimraf dist && tsc && node devMode compile && cd dist/app/ && yarn && cd ../../",
     "deploy": "tsc .github/deploy && cd .github && node deploy.js"
+  },
+  "build": {
+    "appId": "eu.Timeraa.PreMiD",
+    "copyright": "PreMiD Org.",
+    "linux": {
+      "maintainer": "DooMLorD#2792",
+      "category": "Utility",
+      "target": "AppImage",
+      "icon": "../../installer_assets/icon.icns"
+    }
   },
   "license": "MIT",
   "devDependencies": {
@@ -28,6 +39,7 @@
     "archiver": "3.1.1",
     "chalk": "2.4.2",
     "electron": "7.0.0",
+    "electron-builder": "22.1.0",
     "electron-packager": "14.0.6",
     "fast-glob": "3.1.0",
     "fs-extra": "8.1.0",
@@ -37,7 +49,7 @@
     "prompts": "2.2.1",
     "rimraf": "3.0.0",
     "source-map-support": "0.5.13",
-    "ssh2-sftp-client": "4.2.2",
+    "ssh2-sftp-client": "4.2.1",
     "typescript": "3.6.4",
     "yarn": "^1.19.1"
   },
