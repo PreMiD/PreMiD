@@ -1,9 +1,5 @@
 name: DePloY
-on:
-  push:
-    paths:
-      - "src/**/*"
-      - "**.ts"
+on: [push]
 env:
   NODE_ENV: DePloY
 jobs:
@@ -23,6 +19,34 @@ jobs:
           yarn run init
       - name: Package
         run: yarn pkg
+      - name: Upload to server
+        env:
+          SSH_HOST: ${{ secrets.SSHHOST }}
+          SSH_USERNAME: ${{ secrets.SSHUSERNAME }}
+          SSH_PASSWORD: ${{ secrets.SSHPASSWORD }}
+        run: yarn deploy
+  linux_build:
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+      - name: Install Dependencies
+        run: npm i -g yarn
+      - name: Compile ts files
+        run: |
+          npx rimraf dist
+          npx tsc
+          node devMode compile
+          cd dist/app/
+      - name: Prepare to package
+        run: |
+          yarn
+          yarn run init
+          npx electron-builder install-app-deps
+      - name : Postinstall and package
+        run: |
+          npx electron-builder
+          cd ../../
       - name: Upload to server
         env:
           SSH_HOST: ${{ secrets.SSHHOST }}
