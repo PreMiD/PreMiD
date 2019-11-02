@@ -1,5 +1,6 @@
 name: DePloY
 on: [push]
+
 env:
   NODE_ENV: DePloY
 jobs:
