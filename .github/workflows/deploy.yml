@@ -35,7 +35,6 @@ jobs:
         run: npm i -g yarn
       - name: Compile ts files
         run: |
-          npx rimraf dist
           npx tsc
           node devMode compile
           cd dist/app/
