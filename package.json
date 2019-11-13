@@ -20,7 +20,7 @@
     "@types/fs-extra": "8.0.1",
     "@types/ini": "1.3.30",
     "@types/node": "^12.11.7",
-    "@types/prompts": "2.0.2",
+    "@types/prompts": "2.0.3",
     "@types/request-promise-native": "1.0.17",
     "@types/rimraf": "2.0.3",
     "@types/socket.io": "2.1.4",
