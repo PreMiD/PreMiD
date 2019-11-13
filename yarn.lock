@@ -3095,10 +3095,10 @@ sprintf-js@^1.1.2:
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.1.2.tgz#da1765262bf8c0f571749f2ad6c26300207ae673"
   integrity sha512-VE0SOVEHCk7Qc8ulkWw3ntAzXuqf7S2lvwQaDLRnUeIEaKNQJzV6BwmLKhOqT61aGhfUMrXeaBk+oDGCzvhcug==
 
-ssh2-sftp-client@4.2.2:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/ssh2-sftp-client/-/ssh2-sftp-client-4.2.2.tgz#cc1beba994ecd1c137d844152a3496aab4b5f68c"
-  integrity sha512-Yv1ZwkFGVw8duN7cFDLUUSLFXfRV/j0cybKcewr1R/xrq/1eUFUylbsXhA+JpQowCJFfARPyk/OnuC9sPBmtdA==
+ssh2-sftp-client@4.2.3:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/ssh2-sftp-client/-/ssh2-sftp-client-4.2.3.tgz#5be60c4d7598ffcbc04e7d283367ec2d9f7c3adc"
+  integrity sha512-0+C5VY7H+av4ztHecpRVqLUqOOu8kTb98GOCzfWf5D2r37+fYd0DZGvuZ5nAzLH+5m1Rrzh8dHb/pu43h0ZDmQ==
   dependencies:
     concat-stream "^2.0.0"
     retry "^0.12.0"
