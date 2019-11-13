@@ -24,7 +24,7 @@
     "@types/request-promise-native": "1.0.17",
     "@types/rimraf": "2.0.3",
     "@types/socket.io": "2.1.4",
-    "@types/ssh2-sftp-client": "4.1.0",
+    "@types/ssh2-sftp-client": "4.1.1",
     "archiver": "3.1.1",
     "chalk": "2.4.2",
     "electron": "7.1.1",
