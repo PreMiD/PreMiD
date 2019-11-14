@@ -1,5 +1,5 @@
 import * as ts from "typescript";
-import chalk from "chalk";
+import chalk = require("chalk");
 import { ChildProcess, spawn } from "child_process";
 import { removeSync, writeFileSync, copySync } from "fs-extra";
 import { extname } from "path";
