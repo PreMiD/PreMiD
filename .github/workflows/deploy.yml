@@ -46,8 +46,7 @@ jobs:
           name: macOS-latest
       - name: Create installer (MacOS 64bit)
         run: |
-          cd macOS-latest
-          ls -ls
+          ls -ls macOS-latest/
           tsc util/prepare
           node util/prepare PreMiD-darwin-x64
           installbuilder/bin/builder build installer.xml osx
