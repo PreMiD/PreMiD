@@ -2,6 +2,7 @@ name: DePloY
 on:
   push:
     paths:
+      - ".github/**/*"
       - "src/**/*"
       - "**.ts"
 env:
