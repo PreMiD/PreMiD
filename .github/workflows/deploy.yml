@@ -12,7 +12,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, macOS-latest]
+        os: [macOS-latest]
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
@@ -21,7 +21,13 @@ jobs:
       - name: Prepare to package
         run: npm run init
       - name: Package
-        run: npm run pkg
+        run: |
+          npm run pkg
+          rm -r dist/app
+      - uses: actions/upload-artifact@master
+        with:
+          name: ${{ matrix.os }}
+          path: dist
   installer:
     needs: package
     runs-on: "ubuntu-latest"
@@ -34,12 +40,8 @@ jobs:
         run: |
           ./installbuilder-enterprise-19.10.0-linux-x64-installer.run --installer-language en --prefix ./installbuilder --mode unattended
           echo "${{ secrets.IBLICENSE }}" > ./installbuilder/license.xml
-      - name: Create installer (Windows 32bit)
-        run: |
-          tsc prepare
-          node prepare PreMiD-win32-ia32
-          installbuilder/bin/builder build installer.xml windows
-      - uses: actions/upload-artifact@master
+      - uses: actions/download-artifact@master
         with:
-          name: PreMiD-win32-ia32
-          path: dist/installer
+          name: macOS-latest
+      - name: Test Stuff
+        run: ls -ls
