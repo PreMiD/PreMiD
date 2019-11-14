@@ -32,7 +32,6 @@ jobs:
     needs: package
     runs-on: "ubuntu-latest"
     steps:
-      - uses: actions/checkout@master
       - name: Download InstallBuilder
         run: |
           wget https://clients.bitrock.com/installbuilder/installbuilder-enterprise-19.10.0-linux-x64-installer.run
@@ -46,7 +45,7 @@ jobs:
           name: macOS-latest
       - name: Create installer (MacOS 64bit)
         run: |
-          ls -ls macOS-latest/
+          mv macOS-latest/PreMiD-darwin-x64 dist/PreMiD-darwin-x64
           tsc util/prepare
           node util/prepare PreMiD-darwin-x64
           installbuilder/bin/builder build installer.xml osx
