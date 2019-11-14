@@ -32,5 +32,5 @@ jobs:
           chmod u+x installbuilder-enterprise-19.10.0-linux-x64-installer.run
       - name: Install InstallBuilder
         run: |
-          ./installbuilder-enterprise-19.10.0-linux-x64-installer.run --installer-language en --prefix /root/installbuilder --mode unattended
+          ./installbuilder-enterprise-19.10.0-linux-x64-installer.run --installer-language en --prefix ./installbuilder --mode unattended
           echo "${{ secrets.IBLICENSE }}" > ./installbuilder/license.xml
