@@ -32,6 +32,7 @@ jobs:
     needs: package
     runs-on: "ubuntu-latest"
     steps:
+      - uses: actions/checkout@master
       - name: Download InstallBuilder
         run: |
           wget https://clients.bitrock.com/installbuilder/installbuilder-enterprise-19.10.0-linux-x64-installer.run
@@ -43,8 +44,9 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: macOS-latest
-      - name: Test Stuff
-        run: ls -ls
+        run: |
+          cd macOS-latest
+          ls -ls
       - name: Create installer (MacOS 64bit)
         run: |
           tsc util/prepare
