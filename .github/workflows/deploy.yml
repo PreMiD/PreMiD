@@ -34,3 +34,12 @@ jobs:
         run: |
           ./installbuilder-enterprise-19.10.0-linux-x64-installer.run --installer-language en --prefix ./installbuilder --mode unattended
           echo "${{ secrets.IBLICENSE }}" > ./installbuilder/license.xml
+      - name: Create installer (Windows 32bit)
+        run: |
+          tsc prepare
+          node prepare PreMiD-win32-ia32
+          installbuilder/bin/builder build installer.xml windows
+      - uses: actions/upload-artifact@master
+        with:
+          name: PreMiD-win32-ia32
+          path: dist/installer
