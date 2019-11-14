@@ -45,3 +45,12 @@ jobs:
           name: macOS-latest
       - name: Test Stuff
         run: ls -ls
+      - name: Create installer (MacOS 64bit)
+        run: |
+          tsc util/prepare
+          node util/prepare PreMiD-darwin-x64
+          installbuilder/bin/builder build installer.xml osx
+      - uses: actions/upload-artifact@master
+        with:
+          name: PreMiD-darwin-x64
+          path: dist/installer
