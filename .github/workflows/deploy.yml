@@ -16,7 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
-      - uses: actions/cache@v1.0.0
       - name: Install Dependencies
         run: npm i
       - name: Prepare to package
@@ -33,7 +32,14 @@ jobs:
     needs: package
     runs-on: "ubuntu-latest"
     steps:
+      - name: InstallBuilder Cache
+        id: installbuilder
+        uses: actions/cache@master
+        with:
+          path: installbuilder
+          key: ${{ runner.os }}-installbuilder
       - name: Download InstallBuilder
+        if: steps.installbuilder.outputs.cache-hit != 'true'
         run: |
           wget https://clients.bitrock.com/installbuilder/installbuilder-enterprise-19.10.0-linux-x64-installer.run
           chmod u+x installbuilder-enterprise-19.10.0-linux-x64-installer.run
