@@ -32,6 +32,8 @@ jobs:
     needs: package
     runs-on: "ubuntu-latest"
     steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
       - name: InstallBuilder Cache
         id: installbuilder
         uses: actions/cache@v1.0.0
