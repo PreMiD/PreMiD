@@ -32,8 +32,6 @@ jobs:
     needs: package
     runs-on: "ubuntu-latest"
     steps:
-      - name: Test stuff
-        run: ls -ls
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
       - name: InstallBuilder Cache
@@ -58,6 +56,8 @@ jobs:
         run: ls -ls
       - name: Create installer (MacOS 64bit)
         run: |
+          npm i
+          mkdir dist
           mv macOS-latest/PreMiD-darwin-x64 PreMiD-darwin-x64
           tsc util/prepare
           node util/prepare PreMiD-darwin-x64
