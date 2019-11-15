@@ -50,6 +50,10 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: macOS-latest
+      - name: Test scheiße
+        run: |
+          cd macOS-latest
+          ls -ls
       - name: Create installer (MacOS 64bit)
         run: |
           cd macOS-latest
