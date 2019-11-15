@@ -16,6 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
+      - name: Test stuff
+        run: ls -ls
       - name: Install Dependencies
         run: npm i
       - name: Prepare to package
