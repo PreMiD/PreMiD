@@ -8,30 +8,11 @@ on:
 env:
   NODE_ENV: DePloY
 jobs:
-  package:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [macOS-latest]
+  installer:
+    runs-on: "ubuntu-latest"
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
-      - name: Install Dependencies
-        run: npm i
-      - name: Prepare to package
-        run: npm run init
-      - name: Package
-        run: |
-          npm run pkg
-          rm -r dist/app
-      - uses: actions/upload-artifact@master
-        with:
-          name: ${{ matrix.os }}
-          path: dist
-  installer:
-    needs: package
-    runs-on: "ubuntu-latest"
-    steps:
       - name: InstallBuilder Cache
         id: installbuilder
         uses: actions/cache@v1.0.0
@@ -50,14 +31,8 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: macOS-latest
-      - name: Test scheiße
-        run: |
-          cd macOS-latest
-          ls -ls
       - name: Create installer (MacOS 64bit)
         run: |
-          cd macOS-latest
-          ls -ls
           mv macOS-latest/PreMiD-darwin-x64 dist/PreMiD-darwin-x64
           tsc util/prepare
           node util/prepare PreMiD-darwin-x64
