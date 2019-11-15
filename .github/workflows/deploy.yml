@@ -16,6 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
+      - uses: actions/cache@v1.0.0
       - name: Install Dependencies
         run: npm i
       - name: Prepare to package
@@ -45,6 +46,8 @@ jobs:
           name: macOS-latest
       - name: Create installer (MacOS 64bit)
         run: |
+          cd macOS-latest
+          ls -ls
           mv macOS-latest/PreMiD-darwin-x64 dist/PreMiD-darwin-x64
           tsc util/prepare
           node util/prepare PreMiD-darwin-x64
