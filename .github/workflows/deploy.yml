@@ -34,7 +34,7 @@ jobs:
     steps:
       - name: InstallBuilder Cache
         id: installbuilder
-        uses: actions/cache@master
+        uses: actions/cache@v1.0.0
         with:
           path: installbuilder
           key: ${{ runner.os }}-installbuilder
