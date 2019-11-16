@@ -54,7 +54,8 @@ jobs:
           name: macOS-latest
       - name: Create Updater File
         run: |
-          installbuilder/autoupdate/bin/customize.sh build installer_assets/updater.xml osx
+          cd installbuilder
+          ls -ls
       - name: Create installer (MacOS 64bit)
         run: |
           npm i
