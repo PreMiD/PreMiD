@@ -46,6 +46,6 @@
     "discord-rpc": "github:discordjs/RPC",
     "electron-store": "5.1.0",
     "socket.io": "2.3.0",
-    "sudo-prompt": "9.0.0"
+    "sudo-prompt": "9.1.1"
   }
 }
