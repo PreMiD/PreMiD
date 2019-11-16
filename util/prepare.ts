@@ -8,4 +8,6 @@ file = file.replace(/(PACKAGEDNAME)/g, process.argv[2]);
 if (process.argv[2].includes("ia32"))
   file = file.replace(/(installer_64bit)/g, "installer_32bit");
 
+file = file.replace(/(..\/)/g, "");
+
 writeFileSync("installer.xml", file);
