@@ -32,7 +32,16 @@ jobs:
     needs: package
     runs-on: "ubuntu-latest"
     steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+      - name: InstallBuilder Cache
+        id: installbuilder
+        uses: actions/cache@v1.0.0
+        with:
+          path: installbuilder
+          key: ${{ runner.os }}-installbuilder
       - name: Download InstallBuilder
+        if: steps.installbuilder.outputs.cache-hit != 'true'
         run: |
           wget https://clients.bitrock.com/installbuilder/installbuilder-enterprise-19.10.0-linux-x64-installer.run
           chmod u+x installbuilder-enterprise-19.10.0-linux-x64-installer.run
@@ -43,5 +52,17 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: macOS-latest
-      - name: Test Stuff
+      - name: Test stuff
         run: ls -ls
+      - name: Create installer (MacOS 64bit)
+        run: |
+          npm i
+          mkdir dist
+          mv macOS-latest/PreMiD-darwin-x64 dist/PreMiD-darwin-x64
+          tsc util/prepare
+          node util/prepare PreMiD-darwin-x64
+          installbuilder/bin/builder build installer.xml osx
+      - uses: actions/upload-artifact@master
+        with:
+          name: PreMiD-darwin-x64
+          path: dist/installer
