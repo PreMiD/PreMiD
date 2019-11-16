@@ -2,13 +2,13 @@
   "name": "premid",
   "productName": "PreMiD",
   "description": "Discord Rich Presence for websites.",
-  "version": "2.0.3",
+  "version": "1.0.0",
   "repository": "https://github.com/PreMiD/PreMiD",
   "scripts": {
-    "init": "tsc && tsc pkg devMode && node devMode.js compile",
+    "init": "tsc && tsc pkg && devScript --copyOnly",
     "start": "electron dist/app/.",
-    "dev": "node devMode.js",
-    "pkg": "rimraf dist && tsc && node devMode compile && cd dist/app/ && yarn && cd ../../ && node pkg",
+    "dev": "devScript",
+    "pkg": "rimraf dist && tsc && devScript --copyOnly && cd dist/app/ && yarn && cd ../../ && node pkg",
     "deploy": "tsc .github/deploy && cd .github && node deploy.js"
   },
   "license": "MIT",
