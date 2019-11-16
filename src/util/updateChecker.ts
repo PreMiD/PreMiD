@@ -98,7 +98,11 @@ export function update() {
 
   sudoPrompt.exec(
     `\"${updaterPath}\" --mode unattended --unattendedmodebehavior download`,
-    (error: Error) => {
+    {
+      name: app.name,
+      icns: "assets/appIcon.icns"
+    },
+    error => {
       dialog.showErrorBox(
         "Error while updating",
         `${app.name} was unable to update itself. Please try again later.`
