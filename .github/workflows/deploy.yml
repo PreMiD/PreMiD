@@ -58,7 +58,7 @@ jobs:
         run: |
           npm i
           mkdir dist
-          mv macOS-latest/PreMiD-darwin-x64 PreMiD-darwin-x64
+          mv macOS-latest/PreMiD-darwin-x64 dist/PreMiD-darwin-x64
           tsc util/prepare
           node util/prepare PreMiD-darwin-x64
           installbuilder/bin/builder build installer.xml osx
