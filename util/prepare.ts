@@ -15,9 +15,9 @@ file = file.replace(/(\.\.\/)/g, "");
 writeFileSync("installer.xml", file);
 
 let versionId = "0" + require("../package.json").version.replace(/[.]/g, ""),
-  updateIni = parse(readFileSync("../installer_assets/update.ini", "utf-8"));
+  updateIni = parse(readFileSync("installer_assets/update.ini", "utf-8"));
 
 updateIni.Update.version_id = versionId;
 
-ensureDirSync("../tmp");
-writeFileSync("../tmp/update.ini", stringify(updateIni));
+ensureDirSync("tmp");
+writeFileSync("tmp/update.ini", stringify(updateIni));
