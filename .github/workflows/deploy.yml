@@ -54,7 +54,7 @@ jobs:
           name: macOS-latest
       - name: Create Updater File
         run: |
-          cd installbuilder
+          cd installbuilder/autoupdate/
           ls -ls
       - name: Create installer (MacOS 64bit)
         run: |
