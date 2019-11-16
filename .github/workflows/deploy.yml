@@ -5,6 +5,7 @@ on:
       - ".github/**/*"
       - "src/**/*"
       - "**.ts"
+      - "package.json"
 env:
   NODE_ENV: DePloY
 jobs:
