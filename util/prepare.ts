@@ -19,5 +19,4 @@ let versionId = "0" + require("../package.json").version.replace(/[.]/g, ""),
 
 updateIni.Update.version_id = versionId;
 
-ensureDirSync("tmp");
-writeFileSync("tmp/update.ini", stringify(updateIni));
+writeFileSync("update.ini", stringify(updateIni));
