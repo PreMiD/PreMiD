@@ -34,14 +34,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
-      - name: InstallBuilder Cache
-        id: installbuilder
-        uses: actions/cache@v1.0.0
-        with:
-          path: installbuilder
-          key: ${{ runner.os }}-installbuilder
       - name: Download InstallBuilder
-        if: steps.installbuilder.outputs.cache-hit != 'true'
         run: |
           wget https://clients.bitrock.com/installbuilder/installbuilder-enterprise-19.10.0-linux-x64-installer.run
           chmod u+x installbuilder-enterprise-19.10.0-linux-x64-installer.run
