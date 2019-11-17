@@ -28,8 +28,8 @@ jobs:
       - name: Deploy to Server
         uses: garygrossgarten/github-action-scp@v0.3.0
         with:
-          local: dist/
-          remote: /root/test/
+          local: dist/PreMiD-darwin-x64
+          remote: /home
           host: ${{ secrets.SSHHost }}
           username: ${{ secrets.SSHUSERNAME }}
           password: ${{ secrets.SSHPASSWORD }}
