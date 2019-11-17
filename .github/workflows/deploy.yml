@@ -17,6 +17,8 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
+        with:
+          node-version: '13.x'
       - name: Install Dependencies
         run: npm i
       - name: Prepare to package
