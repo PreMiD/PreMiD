@@ -25,15 +25,12 @@ jobs:
         run: |
           npm run pkg
           rm -r dist/app
-      - name: Deploy to Server
-        uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      - name: Upload to server
         env:
-          FTP_SERVER: ${{ secrets.SSHost }}
-          FTP_USERNAME: ${{ secrets.SSHUSERNAME }}
-          FTP_PASSWORD: ${{ secrets.SSHPASSWORD }}
-          METHOD: sftp
-          LOCAL_DIR: dist
-          REMOTE_DIR: /root
+          SSH_HOST: ${{ secrets.SSHost }}
+          SSH_USERNAME: ${{ secrets.SSHUSERNAME }}
+          SSH_PASSWORD: ${{ secrets.SSHPASSWORD }}
+        run: yarn deploy
       - uses: actions/upload-artifact@master
         with:
           name: ${{ matrix.os }}
