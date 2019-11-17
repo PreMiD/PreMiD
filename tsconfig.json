@@ -8,10 +8,5 @@
     "esModuleInterop": true
   },
   "include": ["src/**/*"],
-  "exclude": [
-    "devMode.ts",
-    "pkg.ts",
-    "installer_assets/builder.ts",
-    ".github/deploy.ts"
-  ]
+  "exclude": ["pkg.ts", "installer_assets/builder.ts", ".github/deploy.ts"]
 }
