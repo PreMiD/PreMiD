@@ -17,8 +17,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
-        with:
-          node-version: '10.x'
       - name: Install Dependencies
         run: npm i
       - name: Prepare to package
@@ -28,13 +26,13 @@ jobs:
           npm run pkg
           rm -r dist/app
       - name: Deploy to Server
-        uses: easingthemes/ssh-deploy@v2.0.2
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSHKEY }}
-          SOURCE: "dist/"
-          REMOTE_HOST: ${{ secrets.SSHHost }}
-          REMOTE_USER: ${{ secrets.SSHUSERNAME }}
-          TARGET: /root/test/
+        uses: garygrossgarten/github-action-scp@v0.3.0
+        with:
+          local: dist/
+          remote: /root/test/
+          host: ${{ secrets.SSHHost }}
+          username: ${{ secrets.SSHUSERNAME }}
+          password: ${{ secrets.SSHPASSWORD }}
       - uses: actions/upload-artifact@master
         with:
           name: ${{ matrix.os }}
