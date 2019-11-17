@@ -49,7 +49,6 @@ jobs:
           name: macOS-latest
       - name: Unzip File
         run: |
-          unzip macOS-latest.zip
           unzip macOS-latest/macOS-latest.zip
           mkdir dist/
           mv macOS-latest/dist/**/* dist/
