@@ -36,6 +36,12 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
+      - uses: actions/download-artifact@master
+        with:
+          name: macOS-latest
+      - name: Unzip File
+        run: |
+          unzip macOS-latest/macOS-latest.zip
       - name: Download InstallBuilder
         run: |
           wget https://clients.bitrock.com/installbuilder/installbuilder-enterprise-19.10.0-linux-x64-installer.run
@@ -44,21 +50,12 @@ jobs:
         run: |
           ./installbuilder-enterprise-19.10.0-linux-x64-installer.run --installer-language en --prefix ./installbuilder --mode unattended
           echo "${{ secrets.IBLICENSE }}" > ./installbuilder/license.xml
-      - uses: actions/download-artifact@master
-        with:
-          name: macOS-latest
-      - name: Unzip File
-        run: |
-          unzip ${{ matrix.os }}.zip
-          rm ${{ matrix.os }}.zip
       - name: Create Updater File
         run: |
           installbuilder/autoupdate/bin/customize.run build installer_assets/updater.xml osx
       - name: Create installer (MacOS 64bit)
         run: |
           npm i
-          mkdir dist
-          mv darwin/PreMiD-darwin-x64 dist/PreMiD-darwin-x64
           tsc util/prepare
           node util/prepare PreMiD-darwin-x64
           installbuilder/bin/builder build installer.xml osx
