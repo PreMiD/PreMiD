@@ -42,10 +42,6 @@ jobs:
       - name: Unzip File
         run: |
           unzip macOS-latest/macOS-latest.zip
-          ls -ls macOS-latest/
-          ls -ls macOS-latest/macOS-latest/
-          ls -ls macOS-latest/dist
-          mv macOS-latest/dist/**/* dist/
       - name: Download InstallBuilder
         run: |
           wget https://clients.bitrock.com/installbuilder/installbuilder-enterprise-19.10.0-linux-x64-installer.run
