@@ -26,7 +26,7 @@ jobs:
           npm run pkg
           rm -r dist/app
       - name: Zip file
-        run: zip ${{ matrix.os }}.zip dist/**/*
+        run: zip ${{ matrix.os }}.zip dist/PreMiD-darwin-x64/**/*
       - uses: actions/upload-artifact@master
         with:
           name: ${{ matrix.os }}
@@ -50,8 +50,8 @@ jobs:
           name: macOS-latest
       - name: Unzip File
         run: |
-          unzip darwin.zip
-          rm darwin.zip
+          unzip ${{ matrix.os }}.zip
+          rm ${{ matrix.os }}.zip
       - name: Create Updater File
         run: |
           installbuilder/autoupdate/bin/customize.run build installer_assets/updater.xml osx
