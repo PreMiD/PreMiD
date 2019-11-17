@@ -25,16 +25,11 @@ jobs:
         run: |
           npm run pkg
           rm -r dist/app
-      - name: Upload to server
-        env:
-          SSH_HOST: ${{ secrets.SSHHost }}
-          SSH_USERNAME: ${{ secrets.SSHUSERNAME }}
-          SSH_PASSWORD: ${{ secrets.SSHPASSWORD }}
-        run: yarn deploy
+          zip ${{ matrix.os }}.zip dist/**/*
       - uses: actions/upload-artifact@master
         with:
           name: ${{ matrix.os }}
-          path: dist
+          path: ${{ matrix.os }}.zip
   installer:
     needs: package
     runs-on: "ubuntu-latest"
@@ -52,6 +47,10 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: macOS-latest
+      - name: Unzip File
+        run: |
+          unzip darwin.zip
+          rm darwin.zip
       - name: Create Updater File
         run: |
           installbuilder/autoupdate/bin/customize.run build installer_assets/updater.xml osx
@@ -59,11 +58,12 @@ jobs:
         run: |
           npm i
           mkdir dist
-          mv macOS-latest/PreMiD-darwin-x64 dist/PreMiD-darwin-x64
+          mv darwin/PreMiD-darwin-x64 dist/PreMiD-darwin-x64
           tsc util/prepare
           node util/prepare PreMiD-darwin-x64
           installbuilder/bin/builder build installer.xml osx
+          zip PreMiD-darwin-x64.zip dist/installer/**/*
       - uses: actions/upload-artifact@master
         with:
           name: PreMiD-darwin-x64
-          path: dist/installer
+          path: PreMiD-darwin-x64.zip
