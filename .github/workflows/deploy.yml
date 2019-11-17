@@ -25,8 +25,7 @@ jobs:
         run: |
           npm run pkg
           rm -r dist/app
-      - name: Zip file
-        run: zip ${{ matrix.os }}.zip dist/PreMiD-darwin-x64/**/*
+          zip -r ${{ matrix.os }}.zip dist
       - uses: actions/upload-artifact@master
         with:
           name: ${{ matrix.os }}
@@ -63,7 +62,7 @@ jobs:
           tsc util/prepare
           node util/prepare PreMiD-darwin-x64
           installbuilder/bin/builder build installer.xml osx
-          zip PreMiD-darwin-x64.zip dist/installer/**/*
+          zip -r PreMiD-darwin-x64.zip dist/installer
       - uses: actions/upload-artifact@master
         with:
           name: PreMiD-darwin-x64
