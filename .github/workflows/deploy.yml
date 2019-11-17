@@ -25,6 +25,14 @@ jobs:
         run: |
           npm run pkg
           rm -r dist/app
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@v2.0.2
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSHKEY }}
+          SOURCE: "dist/"
+          REMOTE_HOST: ${{ secrets.SSHHost }}
+          REMOTE_USER: ${{ secrets.SSHUSERNAME }}
+          TARGET: /root/test/
       - uses: actions/upload-artifact@master
         with:
           name: ${{ matrix.os }}
