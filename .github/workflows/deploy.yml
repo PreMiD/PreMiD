@@ -56,7 +56,6 @@ jobs:
       - name: Create installer (MacOS 64bit)
         run: |
           npm i
-          mv  /PreMiD-darwin-x64 dist/PreMiD-darwin-x64
           tsc util/prepare
           node util/prepare PreMiD-darwin-x64
           installbuilder/bin/builder build installer.xml osx
