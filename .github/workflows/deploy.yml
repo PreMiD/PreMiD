@@ -25,7 +25,8 @@ jobs:
         run: |
           npm run pkg
           rm -r dist/app
-          zip ${{ matrix.os }}.zip dist/**/*
+      - name: Zip file
+        run: zip ${{ matrix.os }}.zip dist/**/*
       - uses: actions/upload-artifact@master
         with:
           name: ${{ matrix.os }}
