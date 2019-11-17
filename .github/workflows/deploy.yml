@@ -36,19 +36,15 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
-      - name: Install Dependencies
-        run: |
-          npm i
-          tsc util/prepare util/zip
       - uses: actions/download-artifact@master
         with:
           name: macOS-latest
       - name: Unzip MacOS
         run: |
-          node util/zip macOS-latest/macOS-latest.zip
+          unzip macOS-latest/macOS-latest.zip
       - name: Unzip Windows
         run: |
-          node util/zip windows-latest/windows-latest.zip
+          unzip windows-latest/windows-latest.zip
       - name: Download InstallBuilder
         run: |
           wget https://clients.bitrock.com/installbuilder/installbuilder-enterprise-19.10.0-linux-x64-installer.run
@@ -57,6 +53,10 @@ jobs:
         run: |
           ./installbuilder-enterprise-19.10.0-linux-x64-installer.run --installer-language en --prefix ./installbuilder --mode unattended
           echo "${{ secrets.IBLICENSE }}" > ./installbuilder/license.xml
+      - name: Install Dependencies
+        run: |
+          npm i
+          tsc util/prepare
       - name: Create Updaters
         run: |
           installbuilder/autoupdate/bin/customize.run build installer_assets/updater.xml osx
@@ -65,17 +65,26 @@ jobs:
         run: |
           node util/prepare PreMiD-darwin-x64
           installbuilder/bin/builder build installer.xml osx
-          node util/zip -r PreMiD-darwin-x64.zip dist/installer --zip
+          zip -r PreMiD-darwin-x64.zip dist/installer
       - uses: actions/upload-artifact@master
         with:
           name: PreMiD-darwin-x64
           path: PreMiD-darwin-x64.zip
       - name: Create installer (Windows 64bit)
         run: |
-          node util/prepare PreMiD-windows-x64
-          installbuilder/bin/builder build installer.xml osx
-          node util/zip -r PreMiD-windows-x64.zip dist/installer --zip
+          node util/prepare PreMiD-win32-x64
+          installbuilder/bin/builder build installer.xml windows
+          zip -r PreMiD-win32-x64.zip dist/installer
       - uses: actions/upload-artifact@master
         with:
-          name: PreMiD-windows-x64
-          path: PreMiD-windows-x64.zip
+          name: PreMiD-win32-x64
+          path: PreMiD-win32-x64.zip
+      - name: Create installer (Windows 32bit)
+        run: |
+          node util/prepare PreMiD-win32-ia32
+          installbuilder/bin/builder build installer.xml windows
+          zip -r PreMiD-win32-ia32.zip dist/installer
+      - uses: actions/upload-artifact@master
+        with:
+          name: PreMiD-win32-ia32
+          path: PreMiD-win32-ia32.zip
