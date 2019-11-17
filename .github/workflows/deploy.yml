@@ -25,7 +25,7 @@ jobs:
         run: |
           npm run pkg
           rm -r dist/app
-          zip -r ${{ matrix.os }}.zip dist
+          node util/zip dist ${{ matrix.os }}.zip --zip
       - uses: actions/upload-artifact@master
         with:
           name: ${{ matrix.os }}
@@ -36,15 +36,19 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
+      - name: Install Dependencies
+        run: |
+          npm i
+          tsc util/prepare util/zip
       - uses: actions/download-artifact@master
         with:
           name: macOS-latest
       - name: Unzip MacOS
         run: |
-          unzip macOS-latest/macOS-latest.zip
+          node util/zip macOS-latest/macOS-latest.zip
       - name: Unzip Windows
         run: |
-          unzip windows-latest/windows-latest.zip
+          node util/zip windows-latest/windows-latest.zip
       - name: Download InstallBuilder
         run: |
           wget https://clients.bitrock.com/installbuilder/installbuilder-enterprise-19.10.0-linux-x64-installer.run
@@ -53,10 +57,6 @@ jobs:
         run: |
           ./installbuilder-enterprise-19.10.0-linux-x64-installer.run --installer-language en --prefix ./installbuilder --mode unattended
           echo "${{ secrets.IBLICENSE }}" > ./installbuilder/license.xml
-      - name: Install Dependencies
-        run: |
-          npm i
-          tsc util/prepare
       - name: Create Updaters
         run: |
           installbuilder/autoupdate/bin/customize.run build installer_assets/updater.xml osx
@@ -65,7 +65,7 @@ jobs:
         run: |
           node util/prepare PreMiD-darwin-x64
           installbuilder/bin/builder build installer.xml osx
-          zip -r PreMiD-darwin-x64.zip dist/installer
+          node util/zip -r PreMiD-darwin-x64.zip dist/installer --zip
       - uses: actions/upload-artifact@master
         with:
           name: PreMiD-darwin-x64
@@ -74,7 +74,7 @@ jobs:
         run: |
           node util/prepare PreMiD-windows-x64
           installbuilder/bin/builder build installer.xml osx
-          zip -r PreMiD-windows-x64.zip dist/installer
+          node util/zip -r PreMiD-windows-x64.zip dist/installer --zip
       - uses: actions/upload-artifact@master
         with:
           name: PreMiD-windows-x64

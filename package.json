@@ -5,7 +5,7 @@
   "version": "2.0.5",
   "repository": "https://github.com/PreMiD/PreMiD",
   "scripts": {
-    "init": "tsc && tsc pkg && devScript --copyOnly",
+    "init": "tsc && tsc pkg util/prepare util/zip && devScript --copyOnly",
     "start": "electron dist/app/.",
     "dev": "devScript",
     "pkg": "rimraf dist && tsc && devScript --copyOnly && cd dist/app/ && yarn && cd ../../ && node pkg",
@@ -26,6 +26,7 @@
     "@types/rimraf": "2.0.3",
     "@types/socket.io": "2.1.4",
     "@types/ssh2-sftp-client": "4.1.1",
+    "@types/unzipper": "^0.10.1",
     "archiver": "3.1.1",
     "chalk": "3.0.0",
     "electron": "7.1.1",
@@ -40,6 +41,7 @@
     "source-map-support": "0.5.16",
     "ssh2-sftp-client": "4.2.3",
     "typescript": "3.7.2",
+    "unzipper": "^0.10.5",
     "yarn": "^1.19.1"
   },
   "dependencies": {
