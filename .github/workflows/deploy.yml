@@ -13,7 +13,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macOS-latest]
+        os: [macOS-latest, windows-latest]
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
@@ -39,9 +39,12 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: macOS-latest
-      - name: Unzip File
+      - name: Unzip MacOS
         run: |
           unzip macOS-latest/macOS-latest.zip
+      - name: Unzip Windows
+        run: |
+          unzip windows-latest/windows-latest.zip
       - name: Download InstallBuilder
         run: |
           wget https://clients.bitrock.com/installbuilder/installbuilder-enterprise-19.10.0-linux-x64-installer.run
@@ -50,13 +53,16 @@ jobs:
         run: |
           ./installbuilder-enterprise-19.10.0-linux-x64-installer.run --installer-language en --prefix ./installbuilder --mode unattended
           echo "${{ secrets.IBLICENSE }}" > ./installbuilder/license.xml
-      - name: Create Updater File
+      - name: Install Dependencies
+        run: |
+        npm i
+        tsc util/prepare
+      - name: Create Updaters
         run: |
           installbuilder/autoupdate/bin/customize.run build installer_assets/updater.xml osx
+          installbuilder/autoupdate/bin/customize.run build installer_assets/updater.xml windows
       - name: Create installer (MacOS 64bit)
         run: |
-          npm i
-          tsc util/prepare
           node util/prepare PreMiD-darwin-x64
           installbuilder/bin/builder build installer.xml osx
           zip -r PreMiD-darwin-x64.zip dist/installer
@@ -64,3 +70,12 @@ jobs:
         with:
           name: PreMiD-darwin-x64
           path: PreMiD-darwin-x64.zip
+      - name: Create installer (Windows 64bit)
+        run: |
+          node util/prepare PreMiD-windows-x64
+          installbuilder/bin/builder build installer.xml osx
+          zip -r PreMiD-windows-x64.zip dist/installer
+      - uses: actions/upload-artifact@master
+        with:
+          name: PreMiD-windows-x64
+          path: PreMiD-windows-x64.zip
