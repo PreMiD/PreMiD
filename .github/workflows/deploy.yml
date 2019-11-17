@@ -36,6 +36,13 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
+      - uses: actions/download-artifact@master
+        with:
+          name: macOS-latest
+      - name: Unzip File
+        run: |
+          unzip macOS-latest/macOS-latest.zip
+          mv macOS-latest/dist/**/* dist/
       - name: Download InstallBuilder
         run: |
           wget https://clients.bitrock.com/installbuilder/installbuilder-enterprise-19.10.0-linux-x64-installer.run
@@ -44,14 +51,6 @@ jobs:
         run: |
           ./installbuilder-enterprise-19.10.0-linux-x64-installer.run --installer-language en --prefix ./installbuilder --mode unattended
           echo "${{ secrets.IBLICENSE }}" > ./installbuilder/license.xml
-      - uses: actions/download-artifact@master
-        with:
-          name: macOS-latest
-      - name: Unzip File
-        run: |
-          unzip macOS-latest/macOS-latest.zip
-          mkdir dist/
-          mv macOS-latest/dist/**/* dist/
       - name: Create Updater File
         run: |
           installbuilder/autoupdate/bin/customize.run build installer_assets/updater.xml osx
