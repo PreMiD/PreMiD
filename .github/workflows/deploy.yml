@@ -26,13 +26,14 @@ jobs:
           npm run pkg
           rm -r dist/app
       - name: Deploy to Server
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.SSHHost }}
-          username: ${{ secrets.SSHUSERNAME }}
-          password: ${{ secrets.SSHPASSWORD }}
-          source: "dist/**/*"
-          target: "/home/test"
+        uses: SamKirkland/FTP-Deploy-Action@2.0.0
+        env:
+          FTP_SERVER: ${{ secrets.SSHost }}
+          FTP_USERNAME: ${{ secrets.SSHUSERNAME }}
+          FTP_PASSWORD: ${{ secrets.SSHPASSWORD }}
+          METHOD: sftp
+          LOCAL_DIR: dist
+          REMOTE_DIR: /root
       - uses: actions/upload-artifact@master
         with:
           name: ${{ matrix.os }}
