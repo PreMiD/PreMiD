@@ -43,7 +43,7 @@ jobs:
         run: |
           mkdir dist/
           unzip macOS-latest/macOS-latest.zip
-          mv macOS-latest/**/* dist/
+          mv macOS-latest/* dist/
           ls -ls dist/
       - name: Download InstallBuilder
         run: |
@@ -78,7 +78,7 @@ jobs:
           rm -r dist/
           mkdir dist
           unzip windows-latest/windows-latest.zip
-          mv windows-latest/**/* dist/
+          mv windows-latest/** dist/
       - name: Create installer (Windows 64bit)
         run: |
           node util/prepare PreMiD-win32-x64
