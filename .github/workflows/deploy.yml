@@ -62,7 +62,7 @@ jobs:
           echo "${{ secrets.IBLICENSE }}" > ./installbuilder/license.xml
       - name: Install Dependencies
         run: |
-          npm i
+          npm i -D
           tsc util/prepare
       - name: Create Updaters
         run: |
