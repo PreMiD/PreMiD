@@ -42,6 +42,7 @@ jobs:
       - name: Unzip MacOS
         run: |
           unzip macOS-latest/macOS-latest.zip
+          mv macOS-latest/**/* dist/
       - name: Download InstallBuilder
         run: |
           wget https://clients.bitrock.com/installbuilder/installbuilder-enterprise-19.10.0-linux-x64-installer.run
@@ -73,6 +74,7 @@ jobs:
       - name: Unzip Windows
         run: |
           unzip windows-latest/windows-latest.zip
+          mv windows-latest/**/* dist/
       - name: Create installer (Windows 64bit)
         run: |
           node util/prepare PreMiD-win32-x64
