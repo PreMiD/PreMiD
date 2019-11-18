@@ -39,6 +39,9 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: macOS-latest
+      - uses: actions/download-artifact@master
+        with:
+          name: windows-latest
       - name: Unzip MacOS
         run: |
           unzip macOS-latest/macOS-latest.zip
