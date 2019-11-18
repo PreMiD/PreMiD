@@ -42,6 +42,8 @@ jobs:
       - name: Unzip MacOS
         run: |
           unzip macOS-latest/macOS-latest.zip
+          ls -ls
+          ls -ls macOS-latest/
           mv macOS-latest/**/* dist/
       - name: Download InstallBuilder
         run: |
