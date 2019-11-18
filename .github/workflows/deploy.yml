@@ -79,6 +79,7 @@ jobs:
           path: PreMiD-darwin-x64.zip
       - name: Create installer (Windows 64bit)
         run: |
+          rm -r dist/installer/*
           node util/prepare PreMiD-win32-x64
           installbuilder/bin/builder build installer.xml windows
           zip -r PreMiD-win32-x64.zip dist/installer
@@ -88,6 +89,7 @@ jobs:
           path: PreMiD-win32-x64.zip
       - name: Create installer (Windows 32bit)
         run: |
+          rm -r dist/installer/*
           node util/prepare PreMiD-win32-ia32
           installbuilder/bin/builder build installer.xml windows
           zip -r PreMiD-win32-ia32.zip dist/installer
