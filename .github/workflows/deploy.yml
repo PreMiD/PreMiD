@@ -45,13 +45,6 @@ jobs:
           unzip macOS-latest/macOS-latest.zip
           ls -ls macOS-latest/
           mv macOS-latest/**/* dist/
-      - uses: actions/download-artifact@master
-        with:
-          name: windows-latest
-      - name: Unzip Windows
-        run: |
-          unzip windows-latest/windows-latest.zip
-          mv windows-latest/**/* dist/
       - name: Download InstallBuilder
         run: |
           wget https://clients.bitrock.com/installbuilder/installbuilder-enterprise-19.10.0-linux-x64-installer.run
@@ -77,6 +70,15 @@ jobs:
         with:
           name: PreMiD-darwin-x64
           path: PreMiD-darwin-x64.zip
+      - uses: actions/download-artifact@master
+        with:
+          name: windows-latest
+      - name: Unzip Windows
+        run: |
+          rm -r dist/
+          mkdir dist
+          unzip windows-latest/windows-latest.zip
+          mv windows-latest/**/* dist/
       - name: Create installer (Windows 64bit)
         run: |
           node util/prepare PreMiD-win32-x64
