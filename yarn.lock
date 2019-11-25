@@ -2436,14 +2436,14 @@ sprintf-js@^1.1.2:
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.1.2.tgz#da1765262bf8c0f571749f2ad6c26300207ae673"
   integrity sha512-VE0SOVEHCk7Qc8ulkWw3ntAzXuqf7S2lvwQaDLRnUeIEaKNQJzV6BwmLKhOqT61aGhfUMrXeaBk+oDGCzvhcug==
 
-ssh2-sftp-client@4.2.3:
-  version "4.2.3"
-  resolved "https://registry.yarnpkg.com/ssh2-sftp-client/-/ssh2-sftp-client-4.2.3.tgz#5be60c4d7598ffcbc04e7d283367ec2d9f7c3adc"
-  integrity sha512-0+C5VY7H+av4ztHecpRVqLUqOOu8kTb98GOCzfWf5D2r37+fYd0DZGvuZ5nAzLH+5m1Rrzh8dHb/pu43h0ZDmQ==
+ssh2-sftp-client@4.2.4:
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/ssh2-sftp-client/-/ssh2-sftp-client-4.2.4.tgz#02562bad78631704265d2a40d8ad4734edbc0866"
+  integrity sha512-Izzqn49PriC/V4rbtKqJCJXVOAw7ks+f6qYFXdXJfhj80TrK2gFyhieNT5Kd+a8GpSW6U9DZiZqteeTrGI1ZJw==
   dependencies:
     concat-stream "^2.0.0"
     retry "^0.12.0"
-    ssh2 "^0.8.2"
+    ssh2 "^0.8.6"
 
 ssh2-streams@~0.4.7:
   version "0.4.7"
@@ -2454,7 +2454,7 @@ ssh2-streams@~0.4.7:
     bcrypt-pbkdf "^1.0.2"
     streamsearch "~0.1.2"
 
-ssh2@^0.8.2:
+ssh2@^0.8.6:
   version "0.8.6"
   resolved "https://registry.yarnpkg.com/ssh2/-/ssh2-0.8.6.tgz#dcc62e1d3b9e58a21f711f5186f043e4e792e6da"
   integrity sha512-T0cPmEtmtC8WxSupicFDjx3vVUdNXO8xu2a/D5bjt8ixOUCe387AgvxU3mJgEHpu7+Sq1ZYx4d3P2pl/yxMH+w==
