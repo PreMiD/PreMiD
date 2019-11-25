@@ -42,7 +42,7 @@
     "ssh2-sftp-client": "4.2.3",
     "typescript": "3.7.2",
     "unzipper": "^0.10.5",
-    "yarn": "^1.19.1"
+    "yarn": "^1.19.2"
   },
   "dependencies": {
     "auto-launch": "5.0.5",
