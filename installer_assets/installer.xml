@@ -229,14 +229,22 @@
         </deleteFile>
     </preUninstallationActionList>
     <defaultInstallationMode>unattended</defaultInstallationMode>
+    <deleteOnExit>1</deleteOnExit>
     <enableRollback>0</enableRollback>
     <enableTimestamp>1</enableTimestamp>
     <installationScope>user</installationScope>
     <overwritePolicy>onlyIfNewer</overwritePolicy>
     <osxApplicationBundleIdentifier>eu.Timeraa.PreMiD</osxApplicationBundleIdentifier>
     <outputDirectory>../dist/installer</outputDirectory>
+    <overwritePolicy>onlyIfNewer</overwritePolicy>
+    <productComments>Your Rich Presence for web services!</productComments>
     <productDisplayIcon>${installdir}/appIcon.ico</productDisplayIcon>
+    <productUrlHelpLink>https://discord.premid.app</productUrlHelpLink>
+    <productUrlInfoAbout>https://premid.app</productUrlInfoAbout>
+    <removeLogFile>1</removeLogFile>
+    <removeUninstallationLogFile>1</removeUninstallationLogFile>
     <saveRelativePaths>1</saveRelativePaths>
+    <singleInstanceCheck>1</singleInstanceCheck>
     <unattendedModeUI>minimal</unattendedModeUI>
     <vendor>Timeraa</vendor>
     <windowsExecutableIcon>../installer_assets/appIcon.ico</windowsExecutableIcon>
