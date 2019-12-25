@@ -54,24 +54,24 @@ export async function openFileDialog() {
   //* If user cancels
   //* Unwatch all still watched files
   //* Watch directory
-  let filePaths = await dialog.showOpenDialogSync(null, {
+  let oDialog = await dialog.showOpenDialog(null, {
     title: "Select Presence Folder",
     message:
       "Please select the folder that contains the presence you want to load.\n(metadata.json, presence.js, iframe.js)",
     buttonLabel: "Load Presence",
     properties: ["openDirectory"]
   });
-  if (typeof filePaths === "undefined") {
+  if (oDialog.canceled) {
     //* Show debug
     //* return
     info("Presence load canceled.");
     return;
   }
-  info(`Watching ${filePaths[0]}`);
+  info(`Watching ${oDialog.filePaths[0]}`);
   if (presenceDevWatchedFiles.length > 0)
     await Promise.all(
       presenceDevWatchedFiles.map(f => unwatchFile(currWatchPath + f))
     );
 
-  watchDir(filePaths[0]);
+  watchDir(oDialog.filePaths[0]);
 }
