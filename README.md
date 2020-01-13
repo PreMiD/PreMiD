@@ -13,6 +13,7 @@
 ![Website](https://img.shields.io/website?down_message=offline&label=PreMiD.app&style=for-the-badge&up_message=online&url=https%3A%2F%2Fpremid.app)
 ![Twitter Follow](https://img.shields.io/twitter/follow/PreMiDapp?label=PreMiD&style=social)
 ![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/premid?label=PreMiD&style=social)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FPreMiD%2FPreMiD.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FPreMiD%2FPreMiD?ref=badge_shield)
 
 <img src=".github/example.png" draggable="false"><br>
 
@@ -41,3 +42,7 @@
       <img height="75px" draggable="false" src="https://discordapp.com/api/guilds/493130730549805057/widget.png?style=banner2" alt="Join my Discord!">
     </a>
   </div>
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FPreMiD%2FPreMiD.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FPreMiD%2FPreMiD?ref=badge_large)
