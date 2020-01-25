@@ -13,7 +13,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macOS-latest, windows-latest, ubuntu-latest]
+        os: [macOS-latest, windows-latest]
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
@@ -24,34 +24,22 @@ jobs:
       - name: Package
         run: |
           npm run pkg
-          rm -r dist/app
           node util/zip dist ${{ matrix.os }}.zip --zip
-      - uses: actions/upload-artifact@master
-        with:
-          name: ${{ matrix.os }}
-          path: ${{ matrix.os }}.zip
-  installer:
-    needs: package
+      - name: Uplaod bundle
+        env:
+          SSHHOST: ${{ secrets.SSHHOST }}
+          SSHUSERNAME: ${{ secrets.SSHUSERNAME }}
+          SSHPASSWORD: ${{ secrets.SSHPASSWORD }}
+        run: |
+          tsc util/uploadFile
+          node util/uploadFile ${{ matrix.os }}.zip /home/PreMiD/download/util/${{ matrix.os }}.zip
+  createInstallers:
     runs-on: "ubuntu-latest"
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
-      - uses: actions/download-artifact@master
-        with:
-          name: macOS-latest
-      - uses: actions/download-artifact@master
-        with:
-          name: windows-latest
-      - name: Unzip MacOS
-        run: |
-          mkdir dist/
-          unzip macOS-latest/macOS-latest.zip
-          mv macOS-latest/* dist/
-          ls -ls dist/
-      - name: Unzip Windows
-        run: |
-          unzip windows-latest/windows-latest.zip
-          mv windows-latest/** dist/
+      - name: Install dependencies
+        run: npm i
       - name: Download InstallBuilder
         run: |
           wget https://clients.bitrock.com/installbuilder/installbuilder-enterprise-19.10.0-linux-x64-installer.run
@@ -60,40 +48,23 @@ jobs:
         run: |
           ./installbuilder-enterprise-19.10.0-linux-x64-installer.run --installer-language en --prefix ./installbuilder --mode unattended
           echo "${{ secrets.IBLICENSE }}" > ./installbuilder/license.xml
-      - name: Install Dependencies
+      - name: Prepare Upgrade Installer
         run: |
-          npm i -D
           tsc util/prepare
-      - name: Create Updaters
+          node util/prepare
+      - name: Create Upgrade Installer (MacOS 64bit)
         run: |
-          installbuilder/autoupdate/bin/customize.run build installer_assets/updater.xml osx
-          installbuilder/autoupdate/bin/customize.run build installer_assets/updater.xml windows
-      - name: Create installer (MacOS 64bit)
+          installbuilder/bin/builder build installer_assets/PreMiD-Upgrade.xml osx
+      - name: Create Upgrade Installer (Windows)
         run: |
-          node util/prepare PreMiD-darwin-x64
-          installbuilder/bin/builder build installer.xml osx
-          zip -r PreMiD-darwin-x64.zip dist/installer
-      - uses: actions/upload-artifact@master
-        with:
-          name: PreMiD-darwin-x64
-          path: PreMiD-darwin-x64.zip
-      - name: Create installer (Windows 64bit)
+          installbuilder/bin/builder build installer_assets/PreMiD-Upgrade.xml windows
+      - name: Upload files
+        env:
+          SSHHOST: ${{ secrets.SSHHOST }}
+          SSHUSERNAME: ${{ secrets.SSHUSERNAME }}
+          SSHPASSWORD: ${{ secrets.SSHPASSWORD }}
         run: |
-          rm -r dist/installer/*
-          node util/prepare PreMiD-win32-x64
-          installbuilder/bin/builder build installer.xml windows
-          zip -r PreMiD-win32-x64.zip dist/installer
-      - uses: actions/upload-artifact@master
-        with:
-          name: PreMiD-win32-x64
-          path: PreMiD-win32-x64.zip
-      - name: Create installer (Windows 32bit)
-        run: |
-          rm -r dist/installer/*
-          node util/prepare PreMiD-win32-ia32
-          installbuilder/bin/builder build installer.xml windows
-          zip -r PreMiD-win32-ia32.zip dist/installer
-      - uses: actions/upload-artifact@master
-        with:
-          name: PreMiD-win32-ia32
-          path: PreMiD-win32-ia32.zip
+          tsc util/uploadFile
+          node util/uploadFile installer_assets/update.ini /home/PreMiD/download/util/update.ini
+          node util/uploadFile dist/installer/upgrader.exe /home/PreMiD/download/upgrader.exe
+          node util/uploadFile dist/installer/upgrader.app /home/PreMiD/download/upgrader.app

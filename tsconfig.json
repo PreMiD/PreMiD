@@ -1,17 +1,17 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "es2018",
-    "inlineSourceMap": true,
-    "outDir": "dist/app",
-    "removeComments": true,
-    "esModuleInterop": true
-  },
-  "include": ["src/**/*"],
-  "exclude": [
-    "pkg.ts",
-    "util/**/*",
-    "installer_assets/builder.ts",
-    ".github/deploy.ts"
-  ]
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es2018",
+		"inlineSourceMap": true,
+		"outDir": "dist/app",
+		"removeComments": true,
+		"esModuleInterop": true
+	},
+	"include": ["src/**/*"],
+	"exclude": [
+		"pkg.ts",
+		"util/**/*",
+		"installer_assets/builder.ts",
+		".github/uploadFile.ts"
+	]
 }

@@ -1,7 +1,7 @@
 <project>
     <shortName>PreMiD</shortName>
     <fullName>PreMiD</fullName>
-    <version>2.1</version>
+    <version>VERSION</version>
     <installerFilename>upgrader.${platform_exec_suffix}</installerFilename>
     <debugLevel>0</debugLevel>
     <licenseFile>../LICENSE</licenseFile>
@@ -141,7 +141,7 @@
     <readyToInstallActionList>
         <actionGroup>
             <actionList>
-                <!-- Remove the old ARP Entry 
+                <!-- Remove the old ARP Entry
  Get the old version -->
                 <registryGet>
                     <key>HKEY_LOCAL_MACHINE\Software\${project.windowsSoftwareRegistryPrefix}</key>
@@ -460,4 +460,3 @@
         </platformOptions>
     </platformOptionsList>
 </project>
-

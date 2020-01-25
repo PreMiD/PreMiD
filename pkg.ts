@@ -3,7 +3,7 @@ import { platform, arch } from "os";
 import { existsSync, readFileSync, writeFileSync, copyFileSync } from "fs";
 import { resolve } from "path";
 import { exec } from "child_process";
-import { removeSync, ensureDirSync } from "fs-extra";
+import { removeSync } from "fs-extra";
 import { parse, stringify } from "ini";
 import * as prompts from "prompts";
 import * as ora from "ora";
