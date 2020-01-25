@@ -1,116 +1,115 @@
-import { spawn, exec } from "child_process";
+import { exec } from "child_process";
 import { resolve } from "path";
 import { error, info } from "./debug";
 import { trayContextMenu } from "../managers/trayManager";
 import { MenuItem, app, dialog } from "electron";
 import { tray } from "../managers/trayManager";
 import { platform } from "os";
-import { updateCheckerInterval } from "../index";
-import { existsSync } from "fs";
 import sudoPrompt from "sudo-prompt";
+import axios from "axios";
+import { Notification } from "electron";
 
 let updaterPath: string;
+//* Resolve paths for each OS
+switch (platform()) {
+	case "darwin":
+		updaterPath = resolve(
+			`${app.getAppPath()}../../../../../updater.app/Contents/MacOS/installbuilder.sh`
+		);
+		break;
+	case "win32":
+		updaterPath = resolve(`${app.getAppPath()}../../../updater.exe`);
+		break;
+}
 
 export async function checkForUpdate(autoUpdate = false) {
-  //* Skip Update checker if unsupported OS / not packaged
-  if (!app.isPackaged || !["darwin", "win32"].includes(platform())) {
-    //* Show debug
-    //* return
-    info("Skipping UpdateChecker");
-    return;
-  }
+	//* Skip Update checker if unsupported OS / not packaged
+	if (!app.isPackaged || !["darwin", "win32"].includes(platform())) {
+		//* Show debug
+		//* return
+		info("Skipping UpdateChecker");
+		return;
+	}
 
-  //* Resolve paths for each OS
-  switch (platform()) {
-    case "darwin":
-      updaterPath = resolve(
-        `${app.getAppPath()}../../../../../updater.app/Contents/MacOS/installbuilder.sh`
-      );
-      break;
-    case "win32":
-      updaterPath = resolve(`${app.getAppPath()}../../../updater.exe`);
-      break;
-  }
+	try {
+		let latestAppVersion = (
+			await axios.get("https://api.premid.app/v2/versions")
+		).data.app;
+		if (app.getVersion() >= latestAppVersion) return;
+		if (autoUpdate) {
+			update();
+			return;
+		}
+	} catch (err) {
+		error(err);
+	}
 
-  // TODO remove?
-  //* return if update doesn't exist
-  if (!existsSync(updaterPath)) {
-    error("Updater not found.");
-    clearInterval(updateCheckerInterval);
-    return;
-  }
+	let updateNotification = new Notification({
+		title: "Update available!",
+		body: "A new version of PreMiD is available! Click here to update."
+	});
 
-  //* Spawn update checker
-  let child = spawn(updaterPath, ["--mode", "unattended"]);
+	updateNotification.once("click", update);
 
-  child.on("exit", code => {
-    //* If no update or error return
-    if (code === 1) {
-      info("Up to date!");
-      return;
-    }
-    if (code === 2) {
-      error("Error while checking for updates");
-      return;
-    }
+	updateNotification.show();
 
-    //* If autoUpdate == true
-    if (autoUpdate) {
-      update();
-      return;
-    }
-
-    if (trayContextMenu.items.length < 3) {
-      trayContextMenu.insert(
-        0,
-        new MenuItem({
-          label: "Update available!",
-          click() {
-            update();
-          }
-        })
-      );
-
-      trayContextMenu.insert(
-        1,
-        new MenuItem({
-          type: "separator"
-        })
-      );
-      tray.setContextMenu(trayContextMenu);
-    }
-  });
+	addTray();
 }
 
 export function update() {
-  if (platform() === "darwin") {
-    exec(
-      `\"${updaterPath}\" --mode unattended --unattendedmodebehavior download`,
-      () => {
-        dialog.showErrorBox(
-          "Error while updating",
-          `${app.name} was unable to update itself. Please try again later.`
-        );
-      }
-    );
-    return;
-  }
+	if (platform() === "darwin") {
+		exec(
+			`\"${updaterPath}\" --mode unattended --unattendedmodebehavior download`,
+			() => {
+				dialog.showErrorBox(
+					"Error while updating",
+					`${app.name} was unable to update itself. Please try again later.`
+				);
+			}
+		);
+		return;
+	}
 
-  sudoPrompt.exec(
-    `\"${updaterPath}\" --mode unattended --unattendedmodebehavior download`,
-    {
-      name: app.name,
-      icns: "assets/appIcon.icns"
-    },
-    error => {
-      dialog.showErrorBox(
-        "Error while updating",
-        `${app.name} was unable to update itself. Please try again later.`
-      );
-      if (error) {
-        checkForUpdate();
-        return;
-      }
-    }
-  );
+	sudoPrompt.exec(
+		`\"${updaterPath}\" --mode unattended --unattendedmodebehavior download`,
+		{
+			name: app.name,
+			icns: "assets/appIcon.icns"
+		},
+		err => {
+			// @ts-ignore
+			if (err.message === "User did not grant permission.") {
+				// @ts-ignore
+				error(err.message);
+				addTray();
+			} else
+				dialog.showErrorBox(
+					"Error while updating",
+					// @ts-ignore
+					`${app.name} was unable to update itself. Please try again later.\n\nError: ${err.message}`
+				);
+		}
+	);
+}
+
+function addTray() {
+	if (trayContextMenu.items.length < 3) {
+		trayContextMenu.insert(
+			0,
+			new MenuItem({
+				label: "Update available!",
+				click() {
+					update();
+				}
+			})
+		);
+
+		trayContextMenu.insert(
+			1,
+			new MenuItem({
+				type: "separator"
+			})
+		);
+		tray.setContextMenu(trayContextMenu);
+	}
 }
