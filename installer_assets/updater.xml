@@ -6,6 +6,6 @@
     <singleInstanceCheck>1</singleInstanceCheck>
     <requestedExecutionLevel>asInvoker</requestedExecutionLevel>
     <enableSslSupport>1</enableSslSupport>
-    <outputDirectory>./</outputDirectory>
+    <outputDirectory>../dist/app/</outputDirectory>
     <installerFilename>updater.${platform_exec_suffix}</installerFilename>
 </autoUpdateProject>
