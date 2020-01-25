@@ -14,32 +14,31 @@ import { checkForUpdate } from "./util/updateChecker";
 export let updateCheckerInterval = null;
 app.setAppUserModelId("Timeraa.PreMiD");
 app.whenReady().then(async () => {
-  //* Init auto launch
-  //* Check for updates > Update and relaunch
-  //* Init socket
-  //* init application tray icon
-  //* If app is packaged, run an update check every 15 mins
-  initAutoLaunch();
-  await checkForUpdate(true);
-  await initSocket();
-  await initTray();
-  app.isPackaged
-    ? (updateCheckerInterval = setInterval(checkForUpdate, 15 * 1000 * 60))
-    : undefined;
-  if (platform() === "darwin") app.dock.hide();
+	//* Init auto launch
+	//* Check for updates > Update and relaunch
+	//* Init socket
+	//* init application tray icon
+	//* If app is packaged, run an update check every 15 mins
+	initAutoLaunch();
+	await Promise.all([checkForUpdate(true), initSocket(), initTray()]);
+	app.isPackaged
+		? (updateCheckerInterval = setInterval(checkForUpdate, 15 * 1000 * 60))
+		: undefined;
+	if (platform() === "darwin") app.dock.hide();
 });
 
 //* If second instance started, close old one
-app.on("second-instance", app.quit);
+app.on("second-instance", () => app.exit(0));
 
 //* Send errors from app to extension
 process.on("unhandledRejection", rejection => {
-  console.log(rejection);
-  socket.emit("unhandledRejection", rejection);
+	console.error(rejection);
+	if (socket && socket.connected) socket.emit("unhandledRejection", rejection);
 });
 
 // TODO Find better way to log
 process.on("uncaughtException", err => {
-  dialog.showErrorBox(err.name, err.stack);
-  app.exit(0);
+	console.error(err.stack);
+	dialog.showErrorBox(err.name, err.stack);
+	app.exit(0);
 });
