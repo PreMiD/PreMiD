@@ -18,20 +18,22 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
       - name: Install Dependencies
-        run: npm i
+        run: |
+          npm i
+          npm i -g typescript
       - name: Prepare to package
         run: npm run init
       - name: Package
         run: |
           npm run pkg
           node util/zip dist ${{ matrix.os }}.zip --zip
-      - name: Uplaod bundle
+      - name: Upload bundle
         env:
           SSHHOST: ${{ secrets.SSHHOST }}
           SSHUSERNAME: ${{ secrets.SSHUSERNAME }}
           SSHPASSWORD: ${{ secrets.SSHPASSWORD }}
         run: |
-          tsc util/uploadFile
+          tsc util/uploadFile util/zip
           node util/uploadFile ${{ matrix.os }}.zip /home/PreMiD/download/util/${{ matrix.os }}.zip
   createInstallers:
     runs-on: "ubuntu-latest"
@@ -39,7 +41,9 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
       - name: Install dependencies
-        run: npm i
+        run: |
+          npm i
+          npm i -g typescript
       - name: Download InstallBuilder
         run: |
           wget https://clients.bitrock.com/installbuilder/installbuilder-enterprise-19.10.0-linux-x64-installer.run
@@ -64,7 +68,8 @@ jobs:
           SSHUSERNAME: ${{ secrets.SSHUSERNAME }}
           SSHPASSWORD: ${{ secrets.SSHPASSWORD }}
         run: |
-          tsc util/uploadFile
+          tsc util/uploadFile util/zip
           node util/uploadFile installer_assets/update.ini /home/PreMiD/download/util/update.ini
           node util/uploadFile dist/installer/upgrader.exe /home/PreMiD/download/upgrader.exe
-          node util/uploadFile dist/installer/upgrader.app /home/PreMiD/download/upgrader.app
+          node util/zip dist/installer/upgrader.app dist/installer/upgrader.app.zip --zip
+          node util/uploadFile dist/installer/upgrader.app.zip /home/PreMiD/download/upgrader.app
