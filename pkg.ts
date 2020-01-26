@@ -187,10 +187,12 @@ import * as ora from "ora";
 			);
 
 			copyFileSync(
-				"./dist/app/updater.exe",
+				"./dist/app/PreMiD-Updater.exe",
 				`./dist/PreMiD-${
 					response.os === "current" ? platform() : response.os
-				}-${response.arch === "current" ? arch() : response.arch}/updater.exe`
+				}-${
+					response.arch === "current" ? arch() : response.arch
+				}/PreMiD-Updater.exe`
 			);
 
 			spinner.succeed();

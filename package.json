@@ -38,13 +38,13 @@
 		"ora": "4.0.3",
 		"prompts": "2.3.0",
 		"rimraf": "3.0.0",
-		"source-map-support": "0.5.16",
 		"ssh2-sftp-client": "5.0.2",
 		"typescript": "3.7.5",
 		"unzipper": "0.10.7",
 		"yarn": "1.21.1"
 	},
 	"dependencies": {
+		"source-map-support": "0.5.16",
 		"auto-launch": "5.0.5",
 		"axios": "0.19.2",
 		"discord-rpc": "github:discordjs/RPC",
