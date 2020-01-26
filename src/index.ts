@@ -1,12 +1,13 @@
-import { app, dialog } from "electron";
-//* Source .map support if devEnv
-if (!app.isPackaged) require("source-map-support").install();
+import "source-map-support/register";
 
+import { app, dialog } from "electron";
 import { init as initSocket, socket } from "./managers/socketManager";
-import { init as initTray } from "./managers/trayManager";
 import { update as initAutoLaunch } from "./managers/launchManager";
 import { platform } from "os";
 import { checkForUpdate } from "./util/updateChecker";
+import { TrayManager } from "./managers/trayManager";
+
+export let trayManager: TrayManager;
 
 //* Define and set it to null
 //* Set AppUserModelId for task manager etc
@@ -14,13 +15,10 @@ import { checkForUpdate } from "./util/updateChecker";
 export let updateCheckerInterval = null;
 app.setAppUserModelId("Timeraa.PreMiD");
 app.whenReady().then(async () => {
-	//* Init auto launch
-	//* Check for updates > Update and relaunch
-	//* Init socket
-	//* init application tray icon
-	//* If app is packaged, run an update check every 15 mins
-	initAutoLaunch();
-	await Promise.all([checkForUpdate(true), initSocket(), initTray()]);
+	trayManager = new TrayManager();
+
+	await Promise.all([checkForUpdate(true), initAutoLaunch(), initSocket()]);
+
 	app.isPackaged
 		? (updateCheckerInterval = setInterval(checkForUpdate, 15 * 1000 * 60))
 		: undefined;

@@ -4,10 +4,11 @@
     <vendor>Timeraa</vendor>
     <version>2.0</version>
     <singleInstanceCheck>1</singleInstanceCheck>
-    <requestedExecutionLevel>asInvoker</requestedExecutionLevel>
     <enableSslSupport>1</enableSslSupport>
     <outputDirectory>../dist/app/</outputDirectory>
-    <installerFilename>updater.${platform_exec_suffix}</installerFilename>
+    <installerFilename>PreMiD-Updater.${platform_exec_suffix}</installerFilename>
     <osxPlatforms>osx-intel osx-x86_64</osxPlatforms>
     <createOsxBundleZip>1</createOsxBundleZip>
+    <windowsExecutableIcon>appIcon.ico</windowsExecutableIcon>
+    <osxApplicationBundleIcon>appIcon.icns</osxApplicationBundleIcon>
 </autoUpdateProject>

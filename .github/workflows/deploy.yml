@@ -83,9 +83,9 @@ jobs:
             mv upgrader.app.tgz ../
             rm -rf upgrader.app upgrader.app.zip
             unzip windows-latest.zip
-            cp updater.exe windows-latest/PreMiD-win32-x64/updater.exe
+            cp PreMiD-Updater.exe windows-latest/PreMiD-win32-x64/PreMiD-Updater.exe
             cp update.ini windows-latest/PreMiD-win32-x64/update.ini
-            cp updater.exe windows-latest/PreMiD-win32-ia32/updater.exe
+            cp PreMiD-Updater.exe windows-latest/PreMiD-win32-ia32/PreMiD-Updater.exe
             cp update.ini windows-latest/PreMiD-win32-ia32/update.ini
             cd windows-latest/PreMiD-win32-x64/
             zip -r ../../PreMiD-win32-x64.zip .
@@ -96,7 +96,7 @@ jobs:
             cd ../..
             rm -rf windows-latest windows-latest.zip
             unzip macOS-latest.zip
-            cp -r updater.app macOS-latest/PreMiD-darwin-x64/updater.app
+            cp -r PreMiD-Updater.app macOS-latest/PreMiD-darwin-x64/PreMiD-Updater.app
             cp update.ini macOS-latest/PreMiD-darwin-x64/update.ini
             cd macOS-latest/PreMiD-darwin-x64/
             zip -r ../../PreMiD-darwin-x64.zip .

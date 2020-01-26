@@ -7,7 +7,7 @@
 	"scripts": {
 		"init": "tsc --skipLibCheck && tsc pkg util/prepare util/zip && devScript --copyOnly",
 		"start": "electron dist/app/.",
-		"dev": "devScript",
+		"dev": "nodemon --exec yarn start -S --watch dist/app",
 		"pkg": "rimraf dist && tsc --skipLibCheck && devScript --copyOnly && cd dist/app/ && yarn && cd ../../ && node pkg",
 		"deploy": "tsc --skipLibCheck .github/deploy && cd .github && node deploy.js"
 	},
@@ -49,7 +49,6 @@
 		"axios": "0.19.2",
 		"discord-rpc": "github:discordjs/RPC",
 		"electron-store": "5.1.0",
-		"socket.io": "2.3.0",
-		"sudo-prompt": "9.1.1"
+		"socket.io": "2.3.0"
 	}
 }

@@ -1,24 +1,22 @@
 import { exec } from "child_process";
 import { resolve } from "path";
 import { error, info } from "./debug";
-import { trayContextMenu } from "../managers/trayManager";
 import { MenuItem, app, dialog } from "electron";
-import { tray } from "../managers/trayManager";
 import { platform } from "os";
-import sudoPrompt from "sudo-prompt";
 import axios from "axios";
 import { Notification } from "electron";
+import { trayManager } from "..";
 
 let updaterPath: string;
 //* Resolve paths for each OS
 switch (platform()) {
 	case "darwin":
 		updaterPath = resolve(
-			`${app.getAppPath()}../../../../../updater.app/Contents/MacOS/installbuilder.sh`
+			`${app.getAppPath()}../../../../../PreMiD-Updater.app/Contents/MacOS/installbuilder.sh`
 		);
 		break;
 	case "win32":
-		updaterPath = resolve(`${app.getAppPath()}../../../updater.exe`);
+		updaterPath = resolve(`${app.getAppPath()}../../../PreMiD-Updater.exe`);
 		break;
 }
 
@@ -70,22 +68,15 @@ export function update() {
 		return;
 	}
 
-	sudoPrompt.exec(
+	exec(
 		`\"${updaterPath}\" --mode unattended --unattendedmodebehavior download`,
-		{
-			name: app.name,
-			icns: "assets/appIcon.icns"
-		},
 		err => {
-			// @ts-ignore
 			if (err.message === "User did not grant permission.") {
-				// @ts-ignore
 				error(err.message);
 				addTray();
 			} else
 				dialog.showErrorBox(
 					"Error while updating",
-					// @ts-ignore
 					`${app.name} was unable to update itself. Please try again later.\n\nError: ${err.message}`
 				);
 		}
@@ -93,8 +84,8 @@ export function update() {
 }
 
 function addTray() {
-	if (trayContextMenu.items.length < 3) {
-		trayContextMenu.insert(
+	if (trayManager.trayContextMenu.items.length < 3) {
+		trayManager.trayContextMenu.insert(
 			0,
 			new MenuItem({
 				label: "Update available!",
@@ -104,12 +95,12 @@ function addTray() {
 			})
 		);
 
-		trayContextMenu.insert(
+		trayManager.trayContextMenu.insert(
 			1,
 			new MenuItem({
 				type: "separator"
 			})
 		);
-		tray.setContextMenu(trayContextMenu);
+		trayManager.tray.setContextMenu(trayManager.trayContextMenu);
 	}
 }

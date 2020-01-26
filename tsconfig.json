@@ -2,13 +2,16 @@
 	"compilerOptions": {
 		"module": "commonjs",
 		"target": "es2018",
+		"moduleResolution": "node",
 		"inlineSourceMap": true,
 		"outDir": "dist/app",
 		"removeComments": true,
-		"esModuleInterop": true
+		"esModuleInterop": true,
+		"skipLibCheck": true
 	},
 	"include": ["src/**/*"],
 	"exclude": [
+		"**/node_modules/",
 		"pkg.ts",
 		"util/**/*",
 		"installer_assets/builder.ts",
