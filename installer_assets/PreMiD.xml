@@ -156,36 +156,51 @@
             <customErrorMessage>Couldn't download release... Try again later.</customErrorMessage>
             <progressText>Downloading latest release...</progressText>
             <actionList>
-                <httpGet>
-                    <customErrorMessage>${platform_name}</customErrorMessage>
-                    <filename>${system_temp_directory}/PreMiD-release.zip</filename>
-                    <url>https://dl.premid.app/PreMiD-win32-x64.zip</url>
+                <showProgressDialog>
+                    <title>Downloading latest release...</title>
+                    <actionList>
+                        <httpGet>
+                            <customErrorMessage>${platform_name}</customErrorMessage>
+                            <filename>${system_temp_directory}/PreMiD-release.zip</filename>
+                            <url>https://dl.premid.app/PreMiD-win32-x64.zip</url>
+                        </httpGet>
+                    </actionList>
                     <ruleList>
                         <platformTest>
                             <type>windows-x64</type>
                         </platformTest>
                     </ruleList>
-                </httpGet>
-                <httpGet>
-                    <customErrorMessage>${platform_name}</customErrorMessage>
-                    <filename>${system_temp_directory}/PreMiD-release.zip</filename>
-                    <url>https://dl.premid.app/PreMiD-win32-x86.zip</url>
+                </showProgressDialog>
+                <showProgressDialog>
+                    <title>Downloading latest release...</title>
+                    <actionList>
+                        <httpGet>
+                            <customErrorMessage>${platform_name}</customErrorMessage>
+                            <filename>${system_temp_directory}/PreMiD-release.zip</filename>
+                            <url>https://dl.premid.app/PreMiD-win32-x86.zip</url>
+                        </httpGet>
+                    </actionList>
                     <ruleList>
                         <platformTest>
                             <type>windows-x86</type>
                         </platformTest>
                     </ruleList>
-                </httpGet>
-                <httpGet>
-                    <customErrorMessage>${platform_name}</customErrorMessage>
-                    <filename>${system_temp_directory}/PreMiD-release.zip</filename>
-                    <url>https://dl.premid.app/PreMiD-darwin-x64.zip</url>
+                </showProgressDialog>
+                <showProgressDialog>
+                    <title>Downloading latest release...</title>
+                    <actionList>
+                        <httpGet>
+                            <customErrorMessage>${platform_name}</customErrorMessage>
+                            <filename>${system_temp_directory}/PreMiD-release.zip</filename>
+                            <url>https://dl.premid.app/PreMiD-darwin-x64.zip</url>
+                        </httpGet>
+                    </actionList>
                     <ruleList>
                         <platformTest>
                             <type>osx</type>
                         </platformTest>
                     </ruleList>
-                </httpGet>
+                </showProgressDialog>
             </actionList>
         </actionGroup>
     </readyToInstallActionList>
@@ -440,4 +455,3 @@
         </platformOptions>
     </platformOptionsList>
 </project>
-
