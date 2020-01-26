@@ -1,11 +1,7 @@
 name: DePloY
 on:
-  push:
-    paths:
-      - ".github/**/*"
-      - "src/**/*"
-      - "**.ts"
-      - "package.json"
+  release:
+    types: [published]
 env:
   NODE_ENV: DePloY
 jobs:
