@@ -8,4 +8,6 @@
     <enableSslSupport>1</enableSslSupport>
     <outputDirectory>../dist/app/</outputDirectory>
     <installerFilename>updater.${platform_exec_suffix}</installerFilename>
+    <osxPlatforms>osx-intel osx-x86_64</osxPlatforms>
+    <createOsxBundleZip>1</createOsxBundleZip>
 </autoUpdateProject>

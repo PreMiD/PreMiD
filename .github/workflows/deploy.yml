@@ -73,7 +73,6 @@ jobs:
           tsc util/uploadFile util/zip
           node util/uploadFile installer_assets/update.ini /home/PreMiD/download/util/update.ini
           node util/uploadFile dist/installer/upgrader.exe /home/PreMiD/download/upgrader.exe
-          node util/zip dist/installer/upgrader.app dist/installer/upgrader.app.zip --zip
           node util/uploadFile dist/installer/upgrader.app.zip /home/PreMiD/download/util/upgrader.app.zip
       - name: Finalize build
         uses: appleboy/ssh-action@master

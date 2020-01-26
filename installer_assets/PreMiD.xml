@@ -2,7 +2,7 @@
     <shortName>PreMiD</shortName>
     <fullName>PreMiD</fullName>
     <version>latest</version>
-    <installerFilename>${product_shortname}-${platform_name}-installer.${platform_exec_suffix}</installerFilename>
+    <installerFilename>${product_shortname}-installer.${platform_exec_suffix}</installerFilename>
     <debugLevel>0</debugLevel>
     <licenseFile>../LICENSE</licenseFile>
     <leftImage>leftSide.png</leftImage>
@@ -93,17 +93,6 @@
             </startMenuShortcutList>
         </component>
     </componentList>
-    <initializationActionList>
-        <setInstallerVariable>
-            <name>project.installationType</name>
-            <value>upgrade</value>
-            <ruleList>
-                <fileExists>
-                    <path>${installdir}</path>
-                </fileExists>
-            </ruleList>
-        </setInstallerVariable>
-    </initializationActionList>
     <preInstallationActionList>
         <actionGroup>
             <progressText>Killing ${product_fullname}...</progressText>
@@ -140,7 +129,7 @@
     <readyToInstallActionList>
         <actionGroup>
             <actionList>
-                <!-- Remove the old ARP Entry 
+                <!-- Remove the old ARP Entry
  Get the old version -->
                 <registryGet>
                     <key>HKEY_LOCAL_MACHINE\Software\${project.windowsSoftwareRegistryPrefix}</key>
@@ -190,7 +179,7 @@
                 <httpGet>
                     <customErrorMessage>${platform_name}</customErrorMessage>
                     <filename>${system_temp_directory}/PreMiD-release.zip</filename>
-                    <url>https://dl.premid.app/PreMiD-osx.zip</url>
+                    <url>https://dl.premid.app/PreMiD-darwin-x64.zip</url>
                     <ruleList>
                         <platformTest>
                             <type>osx</type>
@@ -287,6 +276,7 @@
         </actionGroup>
     </postUninstallationActionList>
     <compressionAlgorithm>lzham-ultra</compressionAlgorithm>
+    <createOsxBundleZip>1</createOsxBundleZip>
     <description>Rich Presence for web services.</description>
     <disableSplashScreen>1</disableSplashScreen>
     <enableRollback>0</enableRollback>
@@ -296,6 +286,7 @@
     <licenseFileEncoding>utf-8</licenseFileEncoding>
     <osxApplicationBundleIcon>appIcon.icns</osxApplicationBundleIcon>
     <osxApplicationBundleIdentifier>eu.Timeraa.PreMiD</osxApplicationBundleIdentifier>
+    <osxPlatforms>osx-intel osx-x86_64</osxPlatforms>
     <osxUninstallerApplicationBundleIcon>appIcon.icns</osxUninstallerApplicationBundleIcon>
     <outputDirectory>../dist/installer</outputDirectory>
     <overwritePolicy>onlyIfNewer</overwritePolicy>
@@ -361,11 +352,6 @@
                     <value>true</value>
                     <default>true</default>
                     <displayStyle>checkbox-left</displayStyle>
-                    <ruleList>
-                        <platformTest>
-                            <type>windows</type>
-                        </platformTest>
-                    </ruleList>
                 </booleanParameter>
                 <labelParameter>
                     <name>extra</name>

@@ -191,7 +191,7 @@
                 <httpGet>
                     <customErrorMessage>${platform_name}</customErrorMessage>
                     <filename>${system_temp_directory}/PreMiD-release.zip</filename>
-                    <url>https://dl.premid.app/PreMiD-osx.zip</url>
+                    <url>https://dl.premid.app/PreMiD-darwin-x64.zip</url>
                     <ruleList>
                         <platformTest>
                             <type>osx</type>
@@ -316,6 +316,7 @@
     </postUninstallationActionList>
     <checkForUpdates>1</checkForUpdates>
     <compressionAlgorithm>lzham-ultra</compressionAlgorithm>
+    <createOsxBundleZip>1</createOsxBundleZip>
     <defaultInstallationMode>unattended</defaultInstallationMode>
     <description>Rich Presence for web services.</description>
     <disableSplashScreen>1</disableSplashScreen>
@@ -327,6 +328,7 @@
     <licenseFileEncoding>utf-8</licenseFileEncoding>
     <osxApplicationBundleIcon>appIcon.icns</osxApplicationBundleIcon>
     <osxApplicationBundleIdentifier>eu.Timeraa.PreMiD</osxApplicationBundleIdentifier>
+    <osxPlatforms>osx-intel osx-x86_64</osxPlatforms>
     <osxUninstallerApplicationBundleIcon>appIcon.icns</osxUninstallerApplicationBundleIcon>
     <outputDirectory>../dist/installer</outputDirectory>
     <overwritePolicy>onlyIfNewer</overwritePolicy>
