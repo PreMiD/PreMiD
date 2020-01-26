@@ -38,6 +38,7 @@ jobs:
           node util/uploadFile ${{ matrix.os }}.zip /home/PreMiD/download/util/${{ matrix.os }}.zip
   createInstallers:
     runs-on: "ubuntu-latest"
+    needs: package
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
