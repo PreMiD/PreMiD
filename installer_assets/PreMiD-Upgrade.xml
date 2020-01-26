@@ -225,6 +225,33 @@
                 </platformTest>
             </ruleList>
         </registrySet>
+        <runProgram>
+            <abortOnError>0</abortOnError>
+            <program>PreMiD.exe</program>
+            <programArguments>&amp;</programArguments>
+            <progressText>Launching PreMiD...</progressText>
+            <showMessageOnError>0</showMessageOnError>
+            <workingDirectory>${installdir}</workingDirectory>
+            <ruleList>
+                <platformTest>
+                    <type>windows</type>
+                </platformTest>
+            </ruleList>
+        </runProgram>
+        <runProgram>
+            <abortOnError>0</abortOnError>
+            <program>open</program>
+            <programArguments>${installdir}/PreMiD.app</programArguments>
+            <progressText>Launching PreMiD...</progressText>
+            <runAs>${env(USER)}</runAs>
+            <showMessageOnError>0</showMessageOnError>
+            <useMSDOSPath>0</useMSDOSPath>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+            </ruleList>
+        </runProgram>
     </postInstallationActionList>
     <preUninstallationActionList>
         <actionGroup>
@@ -409,39 +436,6 @@
                         </quickLaunchShortcut>
                     </shortcutList>
                 </createShortcuts>
-                <runProgram>
-                    <abortOnError>0</abortOnError>
-                    <program>PreMiD.exe</program>
-                    <programArguments>&amp;</programArguments>
-                    <progressText>Launching PreMiD...</progressText>
-                    <showMessageOnError>0</showMessageOnError>
-                    <workingDirectory>${installdir}</workingDirectory>
-                    <ruleList>
-                        <platformTest>
-                            <type>windows</type>
-                        </platformTest>
-                        <isTrue>
-                            <value>${launchApp}</value>
-                        </isTrue>
-                    </ruleList>
-                </runProgram>
-                <runProgram>
-                    <abortOnError>0</abortOnError>
-                    <program>open</program>
-                    <programArguments>${installdir}/PreMiD.app</programArguments>
-                    <progressText>Launching PreMiD...</progressText>
-                    <runAs>${env(USER)}</runAs>
-                    <showMessageOnError>0</showMessageOnError>
-                    <useMSDOSPath>0</useMSDOSPath>
-                    <ruleList>
-                        <platformTest>
-                            <type>osx</type>
-                        </platformTest>
-                        <isTrue>
-                            <value>${launchApp}</value>
-                        </isTrue>
-                    </ruleList>
-                </runProgram>
                 <launchBrowser>
                     <url>https://premid.app/store</url>
                     <ruleList>
@@ -460,3 +454,4 @@
         </platformOptions>
     </platformOptionsList>
 </project>
+

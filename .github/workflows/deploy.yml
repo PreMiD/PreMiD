@@ -83,6 +83,10 @@ jobs:
           password: ${{ secrets.SSHPASSWORD }}
           script: |
             cd /home/PreMiD/download/util
+            unzip upgrader.app.zip
+            tar -czvf upgrader.app.tgz upgrader.app
+            mv upgrader.app.tgz ../
+            rm -rf upgrader.app upgrader.app.zip
             unzip windows-latest.zip
             cp updater.exe windows-latest/PreMiD-win32-x64/updater.exe
             cp update.ini windows-latest/PreMiD-win32-x64/update.ini
@@ -95,7 +99,7 @@ jobs:
             zip -r ../../PreMiD-win32-x86.zip .
             mv ../../PreMiD-win32-x86.zip /home/PreMiD/download/
             cd ../..
-            rm -rf windows-latest
+            rm -rf windows-latest windows-latest.zip
             unzip macOS-latest.zip
             cp -r updater.app macOS-latest/PreMiD-darwin-x64/updater.app
             cp update.ini macOS-latest/PreMiD-darwin-x64/update.ini
@@ -103,4 +107,4 @@ jobs:
             zip -r ../../PreMiD-darwin-x64.zip .
             mv ../../PreMiD-darwin-x64.zip /home/PreMiD/download/
             cd ../..
-            rm -rf macOS-latest
+            rm -rf macOS-latest macOS-latest.zip

@@ -286,7 +286,6 @@
             </ruleList>
         </actionGroup>
     </postUninstallationActionList>
-    <checkForUpdates>1</checkForUpdates>
     <compressionAlgorithm>lzham-ultra</compressionAlgorithm>
     <description>Rich Presence for web services.</description>
     <disableSplashScreen>1</disableSplashScreen>
@@ -308,9 +307,7 @@
     <removeUninstallationLogFile>1</removeUninstallationLogFile>
     <saveRelativePaths>1</saveRelativePaths>
     <summary>Rich Presence for web services.</summary>
-    <updateInformationURL>https://api.premid.app/app/update</updateInformationURL>
     <vendor>Timeraa</vendor>
-    <versionId>200</versionId>
     <windowsExecutableIcon>appIcon.ico</windowsExecutableIcon>
     <windowsResourceFileDescription>Rich Presence for web services.</windowsResourceFileDescription>
     <windowsUninstallerExecutableIcon>appIcon.ico</windowsUninstallerExecutableIcon>
