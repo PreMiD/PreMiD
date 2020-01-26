@@ -20,12 +20,13 @@ jobs:
       - name: Install Dependencies
         run: |
           npm i
-          npm i -g typescript
+          npm i -g typescript rimraf
       - name: Prepare to package
         run: npm run init
       - name: Package
         run: |
           npm run pkg
+          rimraf dist/app
           node util/zip dist ${{ matrix.os }}.zip --zip
       - name: Upload bundle
         env:
@@ -72,4 +73,33 @@ jobs:
           node util/uploadFile installer_assets/update.ini /home/PreMiD/download/util/update.ini
           node util/uploadFile dist/installer/upgrader.exe /home/PreMiD/download/upgrader.exe
           node util/zip dist/installer/upgrader.app dist/installer/upgrader.app.zip --zip
-          node util/uploadFile dist/installer/upgrader.app.zip /home/PreMiD/download/upgrader.app
+          node util/uploadFile dist/installer/upgrader.app.zip /home/PreMiD/download/util/upgrader.app.zip
+      - name: Finalize build
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSHHOST }}
+          username: ${{ secrets.SSHUSERNAME }}
+          password: ${{ secrets.SSHPASSWORD }}
+          script: |
+            cd /home/PreMiD/download/util
+            unzip windows-latest.zip
+            cp updater.exe windows-latest/PreMiD-win32-x64/updater.exe
+            cp update.ini windows-latest/PreMiD-win32-x64/update.ini
+            cp updater.exe windows-latest/PreMiD-win32-ia32/updater.exe
+            cp update.ini windows-latest/PreMiD-win32-ia32/update.ini
+            cd windows-latest/PreMiD-win32-x64/
+            zip -r ../../PreMiD-win32-x64.zip .
+            mv ../../PreMiD-win32-x64.zip /home/PreMiD/download/
+            cd ../PreMiD-win32-ia32/
+            zip -r ../../PreMiD-win32-x86.zip .
+            mv ../../PreMiD-win32-x86.zip /home/PreMiD/download/
+            cd ../..
+            rm -rf windows-latest
+            unzip macOS-latest.zip
+            cp -r updater.app macOS-latest/PreMiD-darwin-x64/updater.app
+            cp update.ini macOS-latest/PreMiD-darwin-x64/update.ini
+            cd macOS-latest/PreMiD-darwin-x64/
+            zip -r ../../PreMiD-darwin-x64.zip .
+            mv ../../PreMiD-darwin-x64.zip /home/PreMiD/download/
+            cd ../..
+            rm -rf macOS-latest
