@@ -52,7 +52,8 @@
 
 "@timeraa/devscript@Timeraa/DevScript":
   version "1.0.3"
-  resolved "https://codeload.github.com/Timeraa/DevScript/tar.gz/201329e3396b9f1a6b9ce514df1ef05fa274504a"
+  uid "21f374756b682a29c816931bbb410778a3ab163c"
+  resolved "https://codeload.github.com/Timeraa/DevScript/tar.gz/21f374756b682a29c816931bbb410778a3ab163c"
   dependencies:
     chalk "^3.0.0"
     chokidar "^3.3.1"
