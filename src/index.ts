@@ -1,6 +1,6 @@
 import "source-map-support/register";
 
-import { app, dialog, Tray } from "electron";
+import { app, dialog } from "electron";
 import { init as initSocket, socket } from "./managers/socketManager";
 import { update as initAutoLaunch } from "./managers/launchManager";
 import { platform } from "os";

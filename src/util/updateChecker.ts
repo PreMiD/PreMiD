@@ -1,5 +1,5 @@
-import { exec } from "child_process";
-import { resolve } from "path";
+import { exec, execFile } from "child_process";
+import { resolve, dirname } from "path";
 import { error, info } from "./debug";
 import { app, dialog } from "electron";
 import { platform } from "os";
@@ -13,11 +13,13 @@ export let updateAvailable = false;
 switch (platform()) {
 	case "darwin":
 		updaterPath = resolve(
-			`${app.getAppPath()}../../../../../PreMiD-Updater.app/Contents/MacOS/installbuilder.sh`
+			`${dirname(
+				app.getPath("exe")
+			)}/PreMiD-Updater.app/Contents/MacOS/installbuilder.sh`
 		);
 		break;
 	case "win32":
-		updaterPath = resolve(`${app.getAppPath()}../../../PreMiD-Updater.exe`);
+		updaterPath = resolve(`${dirname(app.getPath("exe"))}/PreMiD-Updater.exe`);
 		break;
 }
 
@@ -36,6 +38,7 @@ export async function checkForUpdate(autoUpdate = false) {
 		).data.app;
 		if (app.getVersion() >= latestAppVersion) return;
 		if (autoUpdate) {
+			updateTray();
 			update();
 			return;
 		}
@@ -59,29 +62,26 @@ export function update() {
 	if (platform() === "darwin") {
 		exec(
 			`\"${updaterPath}\" --mode unattended --unattendedmodebehavior download`,
-			() => {
-				dialog.showErrorBox(
-					"Error while updating",
-					`${app.name} was unable to update itself. Please try again later.`
-				);
-			}
+			errorHandler
 		);
 		return;
 	}
 
 	exec(
 		`\"${updaterPath}\" --mode unattended --unattendedmodebehavior download`,
-		err => {
-			if (err.message === "User did not grant permission.") {
-				error(err.message);
-				updateTray();
-			} else
-				dialog.showErrorBox(
-					"Error while updating",
-					`${app.name} was unable to update itself. Please try again later.\n\nError: ${err.message}`
-				);
-		}
+		errorHandler
 	);
+}
+
+function errorHandler(err: Error) {
+	if (err.message === "User did not grant permission.") {
+		error(err.message);
+		updateTray();
+	} else
+		dialog.showErrorBox(
+			"Error while updating",
+			`${app.name} was unable to update itself. Please try again later.\n\nError: ${err.message}`
+		);
 }
 
 function updateTray() {

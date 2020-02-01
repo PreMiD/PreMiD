@@ -129,6 +129,7 @@ import * as ora from "ora";
 			appCategoryType: "Utilities",
 			appCopyright: `Timeraa 2018-${new Date().getFullYear()}`,
 			prune: true,
+			asar: true,
 			// @ts-ignore
 			arch: response.arch,
 			// @ts-ignore
