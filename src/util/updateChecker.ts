@@ -1,4 +1,4 @@
-import { exec, execFile } from "child_process";
+import { exec } from "child_process";
 import { resolve, dirname } from "path";
 import { error, info } from "./debug";
 import { app, dialog } from "electron";
@@ -46,15 +46,13 @@ export async function checkForUpdate(autoUpdate = false) {
 		error(err);
 	}
 
-	let updateNotification = new Notification({
+	const updateNotification = new Notification({
 		title: "Update available!",
 		body: "A new version of PreMiD is available! Click here to update."
 	});
 
 	updateNotification.once("click", update);
-
 	updateNotification.show();
-
 	updateTray();
 }
 
