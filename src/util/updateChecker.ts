@@ -1,13 +1,14 @@
 import { exec } from "child_process";
 import { resolve } from "path";
 import { error, info } from "./debug";
-import { MenuItem, app, dialog } from "electron";
+import { app, dialog } from "electron";
 import { platform } from "os";
 import axios from "axios";
 import { Notification } from "electron";
 import { trayManager } from "..";
 
 let updaterPath: string;
+export let updateAvailable = false;
 //* Resolve paths for each OS
 switch (platform()) {
 	case "darwin":
@@ -51,7 +52,7 @@ export async function checkForUpdate(autoUpdate = false) {
 
 	updateNotification.show();
 
-	addTray();
+	updateTray();
 }
 
 export function update() {
@@ -73,7 +74,7 @@ export function update() {
 		err => {
 			if (err.message === "User did not grant permission.") {
 				error(err.message);
-				addTray();
+				updateTray();
 			} else
 				dialog.showErrorBox(
 					"Error while updating",
@@ -83,24 +84,7 @@ export function update() {
 	);
 }
 
-function addTray() {
-	if (trayManager.trayContextMenu.items.length < 3) {
-		trayManager.trayContextMenu.insert(
-			0,
-			new MenuItem({
-				label: "Update available!",
-				click() {
-					update();
-				}
-			})
-		);
-
-		trayManager.trayContextMenu.insert(
-			1,
-			new MenuItem({
-				type: "separator"
-			})
-		);
-		trayManager.tray.setContextMenu(trayManager.trayContextMenu);
-	}
+function updateTray() {
+	updateAvailable = true;
+	trayManager.update();
 }

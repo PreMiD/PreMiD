@@ -2,12 +2,12 @@
 	"name": "premid",
 	"productName": "PreMiD",
 	"description": "Discord Rich Presence for websites.",
-	"version": "2.0.7",
+	"version": "2.1.0",
 	"repository": "https://github.com/PreMiD/PreMiD",
 	"scripts": {
 		"init": "tsc --skipLibCheck && tsc pkg util/prepare util/zip && devScript --copyOnly",
-		"start": "electron dist/app/.",
-		"dev": "nodemon --exec yarn start -S --watch dist/app",
+		"start": "devScript --copyOnly && electron dist/app/.",
+		"dev": "nodemon --exec yarn start -S --watch dist/app -e .js",
 		"pkg": "rimraf dist && tsc --skipLibCheck && devScript --copyOnly && cd dist/app/ && yarn && cd ../../ && node pkg",
 		"deploy": "tsc --skipLibCheck .github/deploy && cd .github && node deploy.js"
 	},
@@ -50,6 +50,6 @@
 		"discord-rpc": "github:discordjs/RPC",
 		"electron-store": "5.1.0",
 		"socket.io": "2.3.0",
-		"source-map-support": "0.5.16"
+		"source-map-support": "^0.5.16"
 	}
 }

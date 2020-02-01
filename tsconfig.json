@@ -3,7 +3,7 @@
 		"module": "commonjs",
 		"target": "es2018",
 		"moduleResolution": "node",
-		"inlineSourceMap": true,
+		"sourceMap": true,
 		"outDir": "dist/app",
 		"removeComments": true,
 		"esModuleInterop": true,

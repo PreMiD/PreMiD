@@ -4,11 +4,18 @@ import { app, dialog } from "electron";
 import { success, error } from "../util/debug";
 import { update as updateSettings } from "./settingsManager";
 import { openFileDialog } from "./presenceDevManager";
-import { rpcClients, setActivity, clearActivity } from "./discordManager";
+import {
+	rpcClients,
+	setActivity,
+	clearActivity,
+	getDiscordUser
+} from "./discordManager";
+import { trayManager } from "..";
 
 export let io: socketIo.Server;
 export let socket: socketIo.Socket;
 export let server: Server;
+export let connected: boolean = false;
 
 export function init() {
 	return new Promise(resolve => {
@@ -41,6 +48,7 @@ function socketConnection(cSocket: socketIo.Socket) {
 	//* Once socket user disconnects run cleanup
 	success("Socket connection");
 	socket = cSocket;
+	getDiscordUser().then(user => socket.emit("discordUser", user));
 	socket.on("setActivity", setActivity);
 	socket.on("clearActivity", clearActivity);
 	socket.on("settingUpdate", updateSettings);
@@ -49,11 +57,15 @@ function socketConnection(cSocket: socketIo.Socket) {
 		socket.emit("receiveVersion", app.getVersion().replace(/[\D]/g, ""))
 	);
 	socket.once("disconnect", () => {
+		connected = false;
+		trayManager.update();
 		//* Show debug
 		//* Destroy all open RPC connections
 		error("Socket disconnection.");
 		rpcClients.forEach(c => c.destroy());
 	});
+	connected = true;
+	trayManager.update();
 }
 
 //* Runs on socket errors

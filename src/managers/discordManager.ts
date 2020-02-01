@@ -39,8 +39,6 @@ class RPCClient {
 
 		if (!this.clientReady || !presenceData) return;
 
-		console.log("SetActivity");
-
 		if (presenceData.trayTitle)
 			trayManager.tray.setTitle(presenceData.trayTitle);
 
@@ -69,8 +67,6 @@ class RPCClient {
  * @param presence PresenceData to set activity
  */
 export function setActivity(presence: PresenceData) {
-	info("setActivity");
-
 	let client = rpcClients.find(c => c.clientId === presence.clientId);
 
 	if (!client) {
@@ -92,6 +88,13 @@ export function clearActivity(clientId: string = undefined) {
 	} else {
 		rpcClients.forEach(c => c.clearActivity());
 	}
+}
+
+export async function getDiscordUser() {
+	const user = await new Client({ transport: "ipc" }).login({
+		clientId: "503557087041683458"
+	});
+	return user.user;
 }
 
 app.once("will-quit", () => {
