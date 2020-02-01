@@ -15,7 +15,7 @@ switch (platform()) {
 		updaterPath = resolve(
 			`${dirname(
 				app.getPath("exe")
-			)}/PreMiD-Updater.app/Contents/MacOS/installbuilder.sh`
+			)}/../../../PreMiD-Updater.app/Contents/MacOS/installbuilder.sh`
 		);
 		break;
 	case "win32":
