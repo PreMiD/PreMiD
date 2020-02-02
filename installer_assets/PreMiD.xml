@@ -93,7 +93,84 @@
             </startMenuShortcutList>
         </component>
     </componentList>
-    <preInstallationActionList>
+    <readyToInstallActionList>
+        <actionGroup>
+            <customErrorMessage>Couldn't download release... Try again later.</customErrorMessage>
+            <progressText>Downloading latest release...</progressText>
+            <actionList>
+                <showProgressDialog>
+                    <title>Downloading latest release...</title>
+                    <width>450</width>
+                    <actionList>
+                        <httpGet>
+                            <customErrorMessage>${platform_name}</customErrorMessage>
+                            <filename>${system_temp_directory}/PreMiD-release.zip</filename>
+                            <url>https://github.com/PreMiD/PreMiD/releases/latest/download/PreMiD-win32-x64.zip</url>
+                        </httpGet>
+                    </actionList>
+                    <ruleList>
+                        <platformTest>
+                            <type>windows-x64</type>
+                        </platformTest>
+                    </ruleList>
+                </showProgressDialog>
+                <showProgressDialog>
+                    <title>Downloading latest release...</title>
+                    <actionList>
+                        <httpGet>
+                            <customErrorMessage>${platform_name}</customErrorMessage>
+                            <filename>${system_temp_directory}/PreMiD-release.zip</filename>
+                            <url>https://github.com/PreMiD/PreMiD/releases/latest/download/PreMiD-win32-ia32.zip</url>
+                        </httpGet>
+                    </actionList>
+                    <ruleList>
+                        <platformTest>
+                            <type>windows-x86</type>
+                        </platformTest>
+                    </ruleList>
+                </showProgressDialog>
+                <showProgressDialog>
+                    <title>Downloading latest release...</title>
+                    <actionList>
+                        <httpGet>
+                            <customErrorMessage>${platform_name}</customErrorMessage>
+                            <filename>${system_temp_directory}/PreMiD-release.zip</filename>
+                            <url>https://github.com/PreMiD/PreMiD/releases/latest/download/PreMiD-darwin-x64.zip</url>
+                        </httpGet>
+                    </actionList>
+                    <ruleList>
+                        <platformTest>
+                            <type>osx</type>
+                        </platformTest>
+                    </ruleList>
+                </showProgressDialog>
+            </actionList>
+        </actionGroup>
+        <actionGroup>
+            <actionList>
+                <!-- Remove the old ARP Entry
+ Get the old version -->
+                <registryGet>
+                    <key>HKEY_LOCAL_MACHINE\Software\${project.windowsSoftwareRegistryPrefix}</key>
+                    <name>Version</name>
+                    <variable>oldVersion</variable>
+                </registryGet>
+
+                <!-- Delete the old ARP registry keys -->
+                <registryDelete>
+                    <key>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\${project.fullName} ${oldVersion}</key>
+                    <name></name>
+                </registryDelete>
+                <registryDelete>
+                    <key>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Management\ARPCache\${project.fullName} ${oldVersion}</key>
+                    <name></name>
+                </registryDelete>
+            </actionList>
+            <ruleList>
+                <platformTest type="windows"/>
+                <isTrue value="${isUpgradeMode}"/>
+            </ruleList>
+        </actionGroup>
         <actionGroup>
             <progressText>Killing ${product_fullname}...</progressText>
             <actionList>
@@ -125,88 +202,10 @@
                 </runProgram>
             </actionList>
         </actionGroup>
-    </preInstallationActionList>
-    <readyToInstallActionList>
-        <actionGroup>
-            <actionList>
-                <!-- Remove the old ARP Entry
- Get the old version -->
-                <registryGet>
-                    <key>HKEY_LOCAL_MACHINE\Software\${project.windowsSoftwareRegistryPrefix}</key>
-                    <name>Version</name>
-                    <variable>oldVersion</variable>
-                </registryGet>
-
-                <!-- Delete the old ARP registry keys -->
-                <registryDelete>
-                    <key>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\${project.fullName} ${oldVersion}</key>
-                    <name></name>
-                </registryDelete>
-                <registryDelete>
-                    <key>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Management\ARPCache\${project.fullName} ${oldVersion}</key>
-                    <name></name>
-                </registryDelete>
-            </actionList>
-            <ruleList>
-                <platformTest type="windows"/>
-                <isTrue value="${isUpgradeMode}"/>
-            </ruleList>
-        </actionGroup>
-        <actionGroup>
-            <customErrorMessage>Couldn't download release... Try again later.</customErrorMessage>
-            <progressText>Downloading latest release...</progressText>
-            <actionList>
-                <showProgressDialog>
-                    <title>Downloading latest release...</title>
-                    <actionList>
-                        <httpGet>
-                            <customErrorMessage>${platform_name}</customErrorMessage>
-                            <filename>${system_temp_directory}/PreMiD-release.zip</filename>
-                            <url>https://dl.premid.app/PreMiD-win32-x64.zip</url>
-                        </httpGet>
-                    </actionList>
-                    <ruleList>
-                        <platformTest>
-                            <type>windows-x64</type>
-                        </platformTest>
-                    </ruleList>
-                </showProgressDialog>
-                <showProgressDialog>
-                    <title>Downloading latest release...</title>
-                    <actionList>
-                        <httpGet>
-                            <customErrorMessage>${platform_name}</customErrorMessage>
-                            <filename>${system_temp_directory}/PreMiD-release.zip</filename>
-                            <url>https://dl.premid.app/PreMiD-win32-x86.zip</url>
-                        </httpGet>
-                    </actionList>
-                    <ruleList>
-                        <platformTest>
-                            <type>windows-x86</type>
-                        </platformTest>
-                    </ruleList>
-                </showProgressDialog>
-                <showProgressDialog>
-                    <title>Downloading latest release...</title>
-                    <actionList>
-                        <httpGet>
-                            <customErrorMessage>${platform_name}</customErrorMessage>
-                            <filename>${system_temp_directory}/PreMiD-release.zip</filename>
-                            <url>https://dl.premid.app/PreMiD-darwin-x64.zip</url>
-                        </httpGet>
-                    </actionList>
-                    <ruleList>
-                        <platformTest>
-                            <type>osx</type>
-                        </platformTest>
-                    </ruleList>
-                </showProgressDialog>
-            </actionList>
-        </actionGroup>
     </readyToInstallActionList>
     <postInstallationActionList>
         <unzip>
-            <addToUninstaller>0</addToUninstaller>
+            <addToUninstaller>1</addToUninstaller>
             <destinationDirectory>${installdir}</destinationDirectory>
             <progressText>Extracting release...</progressText>
             <zipFile>${system_temp_directory}/PreMiD-release.zip</zipFile>
@@ -292,6 +291,7 @@
     </postUninstallationActionList>
     <compressionAlgorithm>lzham-ultra</compressionAlgorithm>
     <createOsxBundleZip>1</createOsxBundleZip>
+    <deleteOnExit>1</deleteOnExit>
     <description>Rich Presence for web services.</description>
     <disableSplashScreen>1</disableSplashScreen>
     <enableRollback>0</enableRollback>
@@ -316,6 +316,7 @@
     <vendor>Timeraa</vendor>
     <windowsExecutableIcon>appIcon.ico</windowsExecutableIcon>
     <windowsResourceFileDescription>Rich Presence for web services.</windowsResourceFileDescription>
+    <windowsResourceFileVersion>${product_version}</windowsResourceFileVersion>
     <windowsUninstallerExecutableIcon>appIcon.ico</windowsUninstallerExecutableIcon>
     <licenseFileList>
         <licenseFile>
@@ -455,3 +456,4 @@
         </platformOptions>
     </platformOptionsList>
 </project>
+

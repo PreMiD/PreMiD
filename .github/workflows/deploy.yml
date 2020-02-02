@@ -67,7 +67,6 @@ jobs:
           SSHPASSWORD: ${{ secrets.SSHPASSWORD }}
         run: |
           tsc util/uploadFile util/zip
-          node util/uploadFile installer_assets/update.ini /home/PreMiD/download/util/update.ini
           node util/uploadFile dist/installer/upgrader.exe /home/PreMiD/download/upgrader.exe
           node util/uploadFile dist/installer/upgrader.app.zip /home/PreMiD/download/util/upgrader.app.zip
       - name: Finalize build
@@ -83,10 +82,6 @@ jobs:
             mv upgrader.app.tgz ../
             rm -rf upgrader.app upgrader.app.zip
             unzip windows-latest.zip
-            cp PreMiD-Updater.exe windows-latest/PreMiD-win32-x64/PreMiD-Updater.exe
-            cp update.ini windows-latest/PreMiD-win32-x64/update.ini
-            cp PreMiD-Updater.exe windows-latest/PreMiD-win32-ia32/PreMiD-Updater.exe
-            cp update.ini windows-latest/PreMiD-win32-ia32/update.ini
             cd windows-latest/PreMiD-win32-x64/
             zip -r ../../PreMiD-win32-x64.zip .
             mv ../../PreMiD-win32-x64.zip /home/PreMiD/download/
@@ -96,8 +91,6 @@ jobs:
             cd ../..
             rm -rf windows-latest windows-latest.zip
             unzip macOS-latest.zip
-            cp -r PreMiD-Updater.app macOS-latest/PreMiD-darwin-x64/PreMiD-Updater.app
-            cp update.ini macOS-latest/PreMiD-darwin-x64/update.ini
             cd macOS-latest/PreMiD-darwin-x64/
             zip -r ../../PreMiD-darwin-x64.zip .
             mv ../../PreMiD-darwin-x64.zip /home/PreMiD/download/

@@ -57,6 +57,7 @@ class RPCClient {
 
 	destroy() {
 		console.log("Destroy client", this.clientId);
+		if (this.client) this.client.destroy().catch(() => {});
 		rpcClients = rpcClients.filter(client => client.clientId !== this.clientId);
 		trayManager.tray.setTitle("");
 	}

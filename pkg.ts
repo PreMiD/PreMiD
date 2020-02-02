@@ -1,18 +1,12 @@
 import * as electronPackager from "electron-packager";
-import { platform, arch } from "os";
-import { existsSync, readFileSync, writeFileSync, copyFileSync } from "fs";
-import { resolve } from "path";
-import { exec } from "child_process";
-import { removeSync } from "fs-extra";
-import { parse, stringify } from "ini";
+import { platform } from "os";
 import * as prompts from "prompts";
 import * as ora from "ora";
 
 (async () => {
 	let response = {
 		os: "current",
-		arch: "all",
-		installer: false
+		arch: "all"
 	};
 
 	if (process.env.NODE_ENV !== "DePloY")
@@ -82,11 +76,6 @@ import * as ora from "ora";
 						value: "win32"
 					}
 				]
-			},
-			{
-				name: "installer",
-				type: "confirm",
-				message: "Updater?"
 			}
 		]);
 
@@ -103,19 +92,6 @@ import * as ora from "ora";
 		icon = "./installer_assets/appIcon.icns";
 	if (["ia32", "x64"].includes(response.arch) || platform() === "win32")
 		icon = "./installer_assets/appIcon.ico";
-
-	if (existsSync("./dist/app/update.ini")) removeSync("./dist/app/update.ini");
-	if (existsSync("./dist/app/updater.app"))
-		removeSync("./dist/app/updater.app");
-	if (existsSync("./dist/app/updater.exe"))
-		removeSync("./dist/app/updater.exe");
-
-	let versionId = "0" + require("./package.json").version.replace(/[.]/g, ""),
-		updateIni = parse(readFileSync("./installer_assets/update.ini", "utf-8"));
-
-	updateIni.Update.version_id = versionId;
-
-	writeFileSync("./dist/app/update.ini", stringify(updateIni));
 
 	let spinner = ora("Packaging app").start(),
 		packagingOptions: electronPackager.Options = {
@@ -139,65 +115,9 @@ import * as ora from "ora";
 	if (response.arch === "current") delete packagingOptions.arch;
 	if (response.os === "current") delete packagingOptions.platform;
 
-	// @ts-ignore
 	electronPackager(packagingOptions).then(() => {
-		if (!response.installer) {
-			spinner.text = "Done!";
-			spinner.succeed();
-			process.exit();
-		}
-
-		let bitRockUpdater = "";
-
-		if (platform() === "win32") {
-			bitRockUpdater = resolve(
-				"C:/Program Files (x86)/BitRock InstallBuilder Enterprise 19.12.0/autoupdate/bin/customize.exe"
-			);
-		}
-
-		if (platform() === "darwin") {
-			bitRockUpdater = resolve(
-				"/Applications/Installbuilder/autoupdate/bin/customize.sh"
-			);
-		}
-
-		if (!existsSync(bitRockUpdater)) {
-			spinner.fail("Bitrock installation not found.");
-			process.exit();
-		}
-
-		spinner.text = "Building updater";
-
-		let updater = exec(
-			`"${bitRockUpdater}" build installer_assets/updater.xml ${
-				platform() === "win32" ? "windows" : "osx"
-			}`
-		);
-
-		updater.once("exit", (code, signal) => {
-			if (![0, 1].includes(code)) {
-				spinner.fail(`Updater failed with code ${code}: ${signal}`);
-				process.exit();
-			}
-
-			copyFileSync(
-				"./dist/app/update.ini",
-				`./dist/PreMiD-${
-					response.os === "current" ? platform() : response.os
-				}-${response.arch === "current" ? arch() : response.arch}/update.ini`
-			);
-
-			copyFileSync(
-				"./dist/app/PreMiD-Updater.exe",
-				`./dist/PreMiD-${
-					response.os === "current" ? platform() : response.os
-				}-${
-					response.arch === "current" ? arch() : response.arch
-				}/PreMiD-Updater.exe`
-			);
-
-			spinner.succeed();
-			process.exit();
-		});
+		spinner.text = "Done!";
+		spinner.succeed();
+		process.exit();
 	});
 })();
