@@ -39,7 +39,7 @@
 		"rimraf": "3.0.1",
 		"ssh2-sftp-client": "5.0.2",
 		"typescript": "3.7.5",
-		"unzipper": "0.10.7",
+		"unzipper": "0.10.8",
 		"yarn": "1.21.1"
 	},
 	"dependencies": {

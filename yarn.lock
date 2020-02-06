@@ -2691,10 +2691,10 @@ unzip-response@^2.0.1:
   resolved "https://registry.yarnpkg.com/unzip-response/-/unzip-response-2.0.1.tgz#d2f0f737d16b0615e72a6935ed04214572d56f97"
   integrity sha1-0vD3N9FrBhXnKmk17QQhRXLVb5c=
 
-unzipper@0.10.7:
-  version "0.10.7"
-  resolved "https://registry.yarnpkg.com/unzipper/-/unzipper-0.10.7.tgz#ed5d72d12337f66f790d42fef47eb9f9de0a0906"
-  integrity sha512-0ltrg7/F12h3KqY1zBfZB6bVnPTVlzhdK1iu2xCaGxGMF/Es9ETMAS0M89CnCB4hemPb/AoTWtj+62l7XFZKqQ==
+unzipper@0.10.8:
+  version "0.10.8"
+  resolved "https://registry.yarnpkg.com/unzipper/-/unzipper-0.10.8.tgz#d7e898f572009128692641331c29b398ff3e5f16"
+  integrity sha512-CZRd20MbyAfWL1Xc+lqgNFYDj5e/HaH9pLEWZgseQWCvEtNfX0wOjnhaJ6PcGpNnDvifSW1ZNSCHX6GoNliR0A==
   dependencies:
     big-integer "^1.6.17"
     binary "~0.3.0"
