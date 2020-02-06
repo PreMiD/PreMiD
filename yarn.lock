@@ -175,10 +175,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/ssh2-sftp-client@4.1.2":
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/@types/ssh2-sftp-client/-/ssh2-sftp-client-4.1.2.tgz#2cc20f6b398cb2a9d6895ab774c4eb89213c0e86"
-  integrity sha512-h+hagttBBiqRHKRmWH6bVleJ0kk2xktSxY+3mwckzncn4LLW9usBEnvUSFbYI02Ox1mMIR1JmeZcCWtnzUYfbg==
+"@types/ssh2-sftp-client@4.1.3":
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/@types/ssh2-sftp-client/-/ssh2-sftp-client-4.1.3.tgz#f1d9c57d5876971eca18b227b29aab76b75c70de"
+  integrity sha512-x52g1JmebxlmFKrfMQFMbg0JxYTO4LVjGu36AyX7wtLvCJzVBQCcQ40vXg/qqMN5v4q5ef5Wz7veacXNQN9HiA==
   dependencies:
     "@types/ssh2" "*"
     "@types/ssh2-streams" "*"
