@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync, unwatchFile, watchFile } from "fs";
+import { readdirSync, readFileSync, unwatchFile } from "fs";
 import { dialog, app } from "electron";
 import { socket } from "./socketManager";
 import { extname } from "path";

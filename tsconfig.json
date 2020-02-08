@@ -3,11 +3,13 @@
 		"module": "commonjs",
 		"target": "es2018",
 		"moduleResolution": "node",
-		"sourceMap": true,
+		"inlineSourceMap": true,
 		"outDir": "dist/app",
 		"removeComments": true,
 		"esModuleInterop": true,
-		"skipLibCheck": true
+		"skipLibCheck": true,
+		"noUnusedParameters": true,
+		"noUnusedLocals": true
 	},
 	"include": ["src/**/*"],
 	"exclude": [

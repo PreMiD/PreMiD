@@ -26,12 +26,18 @@ class RPCClient {
 			this.clientReady = true;
 			this.setActivity();
 		});
-		// @ts-ignore
-		this.client.once("disconnected", this.destroy);
+		this.client.once(
+			// @ts-ignore
+			"disconnected",
+			() =>
+				(rpcClients = rpcClients.filter(
+					client => client.clientId !== this.clientId
+				))
+		);
 
-		this.client.login({ clientId: this.clientId }).catch(this.destroy);
+		this.client.login({ clientId: this.clientId }).catch(() => this.destroy());
 
-		console.log("Create client");
+		info(`Create RPC client (${this.clientId})`);
 	}
 
 	setActivity(presenceData?: PresenceData) {
@@ -42,7 +48,9 @@ class RPCClient {
 		if (presenceData.trayTitle)
 			trayManager.tray.setTitle(presenceData.trayTitle);
 
-		this.client.setActivity(presenceData.presenceData).catch(this.destroy);
+		this.client
+			.setActivity(presenceData.presenceData)
+			.catch(() => this.destroy());
 		info("setActivity");
 	}
 
@@ -51,15 +59,21 @@ class RPCClient {
 
 		if (!this.clientReady) return;
 
-		this.client.clearActivity().catch(this.destroy);
+		this.client.clearActivity().catch(() => this.destroy());
 		trayManager.tray.setTitle("");
 	}
 
-	destroy() {
-		console.log("Destroy client", this.clientId);
-		if (this.client) this.client.destroy().catch(() => {});
-		rpcClients = rpcClients.filter(client => client.clientId !== this.clientId);
-		trayManager.tray.setTitle("");
+	async destroy() {
+		try {
+			info(`Destroy RPC client (${this.clientId})`);
+			this.client.clearActivity();
+			this.client.destroy();
+
+			trayManager.tray.setTitle("");
+			rpcClients = rpcClients.filter(
+				client => client.clientId !== this.clientId
+			);
+		} catch (err) {}
 	}
 }
 
@@ -86,9 +100,7 @@ export function clearActivity(clientId: string = undefined) {
 	if (clientId) {
 		let client = rpcClients.find(c => c.clientId === clientId);
 		client.clearActivity();
-	} else {
-		rpcClients.forEach(c => c.clearActivity());
-	}
+	} else rpcClients.forEach(c => c.clearActivity());
 }
 
 export async function getDiscordUser() {
@@ -98,6 +110,7 @@ export async function getDiscordUser() {
 	return user.user;
 }
 
-app.once("will-quit", () => {
-	rpcClients.map(c => c.destroy());
-});
+app.once(
+	"will-quit",
+	async () => await Promise.all(rpcClients.map(c => c.destroy()))
+);

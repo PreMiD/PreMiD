@@ -52,7 +52,7 @@ export class TrayManager {
 				},
 				{
 					label: "Check for Updates...",
-					click: () => checkForUpdate(),
+					click: () => checkForUpdate(false, true),
 					visible: !updateAvailable
 				},
 				{

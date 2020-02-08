@@ -1,5 +1,5 @@
-import { exec, execFile } from "child_process";
-import { resolve, dirname } from "path";
+import { exec } from "child_process";
+import { resolve } from "path";
 import { error, info } from "./debug";
 import { app, dialog, shell } from "electron";
 import { platform } from "os";
@@ -11,7 +11,7 @@ import { createWriteStream, existsSync, unlinkSync } from "fs";
 export let updateAvailable = false;
 let initialNotification = true;
 
-export async function checkForUpdate(autoUpdate = false) {
+export async function checkForUpdate(autoUpdate = false, manual = false) {
 	//* Skip Update checker if unsupported OS / not packaged
 	if (!app.isPackaged || !["darwin", "win32"].includes(platform())) {
 		//* Show debug
@@ -24,7 +24,14 @@ export async function checkForUpdate(autoUpdate = false) {
 		let latestAppVersion = (
 			await axios.get("https://api.premid.app/v2/versions")
 		).data.app;
-		if (app.getVersion() >= latestAppVersion) return;
+		if (app.getVersion() >= latestAppVersion) {
+			if (manual)
+				dialog.showMessageBox(null, {
+					message: "There are currently no updates available.",
+					type: "info"
+				});
+			return;
+		}
 		if (autoUpdate) {
 			updateTray();
 			update();
