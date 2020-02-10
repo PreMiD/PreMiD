@@ -1,5 +1,7 @@
 name: DePloY
-on: push
+on:
+  release:
+    types: [published]
 env:
   NODE_ENV: DePloY
 jobs:
