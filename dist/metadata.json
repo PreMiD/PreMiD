@@ -1,0 +1,18 @@
+{
+	"author": {
+		"name": "OGLLE.COM.BR",
+		"id": "641614088215986186"
+	},
+	"service": "OGLLE.COM.BR",
+	"description": {
+        "pt-BR": "Precisa de um BOT para Discord? Edição/criação de sites? Ou qualquer outro serviço fora do comum? Este é o site feito para você!",
+        "en": "Need a BOT for Discord? Website editing/creation? Or any other out-of-the-ordinary service? This is the site made for you!"
+	},
+	"url": ["https://oglle.com.br/#Inicio"],
+	"version": "0.0.1",
+	"logo": "https://oglle.com.br/wp-content/uploads/2019/11/cropped-Logo-T%C3%ADtulo.png",
+	"thumbnail": "https://i.imgur.com/Cr52ZSV.png",
+	"color": "#005eff",
+	"tags": ["random", "oglle", "discord", "bots", "serviços", "apps", "programas"] ,
+	"category": "other"
+}
