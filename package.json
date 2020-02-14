@@ -35,7 +35,7 @@
 		"fs-extra": "8.1.0",
 		"nodemon": "2.0.2",
 		"ora": "4.0.3",
-		"prompts": "2.3.0",
+		"prompts": "2.3.1",
 		"rimraf": "3.0.2",
 		"ssh2-sftp-client": "5.0.2",
 		"typescript": "3.7.5",
