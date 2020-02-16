@@ -20,39 +20,44 @@ export async function checkForUpdate(autoUpdate = false, manual = false) {
 		return;
 	}
 
-	try {
-		let latestAppVersion = (
-			await axios.get("https://api.premid.app/v2/versions")
-		).data.app;
-		if (app.getVersion() >= latestAppVersion) {
-			if (manual)
-				dialog.showMessageBox(null, {
-					message: "There are currently no updates available.",
-					type: "info"
+	axios
+		.get("https://api.premid.app/v2/versions")
+		.then(({ data }) => {
+			if (!data?.app) return;
+
+			const latestAppVersion = data.app;
+
+			if (app.getVersion() >= latestAppVersion) {
+				if (manual)
+					dialog.showMessageBox(null, {
+						message: "There are currently no updates available.",
+						type: "info"
+					});
+				return;
+			}
+
+			if (autoUpdate) {
+				updateTray();
+				update();
+				return;
+			}
+
+			if (initialNotification) {
+				const updateNotification = new Notification({
+					title: "Update available!",
+					body: "A new version of PreMiD is available! Click here to update."
 				});
-			return;
-		}
-		if (autoUpdate) {
-			updateTray();
-			update();
-			return;
-		}
-	} catch (err) {
-		error(err);
-	}
 
-	if (initialNotification) {
-		const updateNotification = new Notification({
-			title: "Update available!",
-			body: "A new version of PreMiD is available! Click here to update."
+				updateNotification.once("click", update);
+				updateNotification.show();
+				updateTray();
+
+				initialNotification = false;
+			}
+		})
+		.catch(err => {
+			error(err.message);
 		});
-
-		updateNotification.once("click", update);
-		updateNotification.show();
-		updateTray();
-
-		initialNotification = false;
-	}
 }
 
 export async function update() {
