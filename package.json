@@ -31,7 +31,7 @@
 		"chalk": "3.0.0",
 		"electron": "8.0.1",
 		"electron-packager": "14.2.1",
-		"fast-glob": "3.2.1",
+		"fast-glob": "3.2.2",
 		"fs-extra": "8.1.0",
 		"nodemon": "2.0.2",
 		"ora": "4.0.3",
