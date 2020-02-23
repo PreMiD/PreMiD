@@ -30,7 +30,7 @@
 
 # Installation/Troubleshooting
 
-### Installation instructions, Troubleshooting guides etc. can be found in our [**Wiki**](https://wiki.premid.app).
+### Installation instructions, Troubleshooting guides etc. can be located at our [**docs**](https://docs.premid.app).
 
 # Support us
 
