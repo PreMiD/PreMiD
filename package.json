@@ -29,7 +29,7 @@
 		"@types/unzipper": "^0.10.2",
 		"archiver": "3.1.1",
 		"chalk": "3.0.0",
-		"electron": "8.0.1",
+		"electron": "8.0.2",
 		"electron-packager": "14.2.1",
 		"fast-glob": "3.2.2",
 		"fs-extra": "8.1.0",
