@@ -21,7 +21,7 @@
 		"@types/fs-extra": "8.1.0",
 		"@types/ini": "1.3.30",
 		"@types/node": "13.9.0",
-		"@types/prompts": "2.0.4",
+		"@types/prompts": "2.0.5",
 		"@types/request-promise-native": "1.0.17",
 		"@types/rimraf": "2.0.3",
 		"@types/socket.io": "2.1.4",

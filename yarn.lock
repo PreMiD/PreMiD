@@ -138,10 +138,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.26.tgz#213e153babac0ed169d44a6d919501e68f59dea9"
   integrity sha512-UmUm94/QZvU5xLcUlNR8hA7Ac+fGpO1EG/a8bcWVz0P0LqtxFmun9Y2bbtuckwGboWJIT70DoWq1r3hb56n3DA==
 
-"@types/prompts@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@types/prompts/-/prompts-2.0.4.tgz#dbd829fe8114a8ffe17503bd767a047c285268f6"
-  integrity sha512-UlgMLjQMxfAUHesZDFeOlIZD8nyuX8HMdkcT2swgP1QLoLlPvTTZmEr7oYQgP8HxDl+dS45I0Mf/7fFya/Z9jw==
+"@types/prompts@2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@types/prompts/-/prompts-2.0.5.tgz#b3cb5cd2c69a0da11b21ea6618bffdab6091336c"
+  integrity sha512-07dV9H+uEmGjtudYst7UlRnctQfd/22zJ2/k1ykZR4Kx/n42hC314v1NCxvaesZebvJJ8i5AVMtBaMbSIR3oBw==
 
 "@types/request-promise-native@1.0.17":
   version "1.0.17"
