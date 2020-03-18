@@ -37,7 +37,7 @@
 		"ora": "4.0.3",
 		"prompts": "2.3.1",
 		"rimraf": "3.0.2",
-		"ssh2-sftp-client": "5.1.1",
+		"ssh2-sftp-client": "5.1.2",
 		"typescript": "3.8.3",
 		"unzipper": "0.10.10",
 		"yarn": "1.22.4"
