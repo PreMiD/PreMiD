@@ -203,10 +203,10 @@
   resolved "https://registry.yarnpkg.com/@types/tough-cookie/-/tough-cookie-2.3.6.tgz#c880579e087d7a0db13777ff8af689f4ffc7b0d5"
   integrity sha512-wHNBMnkoEBiRAd3s8KTKwIuO9biFtTf0LehITzBhSco+HQI0xkXZbLOD55SW3Aqw3oUkHstkm5SPv58yaAdFPQ==
 
-"@types/unzipper@^0.10.2":
-  version "0.10.2"
-  resolved "https://registry.yarnpkg.com/@types/unzipper/-/unzipper-0.10.2.tgz#35c2da714d406b2cd7ada5006e1e206bdd0eb2f4"
-  integrity sha512-VgYoNEyj8xkz9I+RTWD00iB9JVViK/RBteNDjOIV3/kdCUPaskka7xAZfFlIxRwKGSPf77F8yje5bJt2PefofQ==
+"@types/unzipper@^0.10.3":
+  version "0.10.3"
+  resolved "https://registry.yarnpkg.com/@types/unzipper/-/unzipper-0.10.3.tgz#9eea872fb1fa460da76f253878b6275af588f464"
+  integrity sha512-01mQdTLp3/KuBVDhP82FNBf+enzVOjJ9dGsCWa5z8fcYAFVgA9bqIQ2NmsgNFzN/DhD0PUQj4n5p7k6I9mq80g==
   dependencies:
     "@types/node" "*"
 
