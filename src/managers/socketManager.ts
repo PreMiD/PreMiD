@@ -48,7 +48,9 @@ function socketConnection(cSocket: socketIo.Socket) {
 	//* Once socket user disconnects run cleanup
 	success("Socket connection");
 	socket = cSocket;
-	getDiscordUser().then(user => socket.emit("discordUser", user));
+	getDiscordUser()
+		.then(user => socket.emit("discordUser", user))
+		.catch(_ => socket.emit("discordUser", null));
 	socket.on("setActivity", setActivity);
 	socket.on("clearActivity", clearActivity);
 	socket.on("settingUpdate", updateSettings);
