@@ -1,7 +1,5 @@
 name: DePloY
 on:
-  push:
-    branches: stable
   release:
     types: [published]
 env:
