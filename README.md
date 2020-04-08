@@ -11,8 +11,6 @@
 ![Chrome Web Store](https://img.shields.io/chrome-web-store/v/agjnjboanicjcpenljmaaigopkgdnihi?label=Extension&style=for-the-badge)
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/d/agjnjboanicjcpenljmaaigopkgdnihi.svg?label=Chrome&logo=google%20chrome&logoColor=white&colorA=4285F4&style=for-the-badge)](https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi)
 ![Website](https://img.shields.io/website?down_message=offline&label=PreMiD.app&style=for-the-badge&up_message=online&url=https%3A%2F%2Fpremid.app)
-![Twitter Follow](https://img.shields.io/twitter/follow/PreMiDapp?label=PreMiD&style=social)
-![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/premid?label=PreMiD&style=social)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FPreMiD%2FPreMiD.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FPreMiD%2FPreMiD?ref=badge_shield)
 
 <img src=".github/example.png" draggable="false"><br>
