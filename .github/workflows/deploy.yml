@@ -1,5 +1,6 @@
 name: DePloY
 on:
+  push:
   release:
     types: [published]
 env:
@@ -44,11 +45,11 @@ jobs:
           npm i -g typescript
       - name: Download InstallBuilder
         run: |
-          wget https://clients.bitrock.com/installbuilder/installbuilder-enterprise-19.10.0-linux-x64-installer.run
-          chmod u+x installbuilder-enterprise-19.10.0-linux-x64-installer.run
+          wget https://clients.bitrock.com/installbuilder/installbuilder-enterprise-20.3.0-linux-x64-installer.run
+          chmod u+x installbuilder-enterprise-20.3.0-linux-x64-installer.run
       - name: Install InstallBuilder
         run: |
-          ./installbuilder-enterprise-19.10.0-linux-x64-installer.run --installer-language en --prefix ./installbuilder --mode unattended
+          ./installbuilder-enterprise-20.3.0-linux-x64-installer.run --installer-language en --prefix ./installbuilder --mode unattended
           echo "${{ secrets.IBLICENSE }}" > ./installbuilder/license.xml
       - name: Prepare Upgrade Installer
         run: |
