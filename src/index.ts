@@ -1,12 +1,18 @@
 import "source-map-support/register";
 
-import { app, dialog } from "electron";
-import { init as initSocket, socket } from "./managers/socketManager";
+import { app } from "electron";
+import { init as initSocket } from "./managers/socketManager";
 import { update as initAutoLaunch } from "./managers/launchManager";
 import { platform } from "os";
 import { checkForUpdate } from "./util/updateChecker";
 import { TrayManager } from "./managers/trayManager";
+import * as Sentry from "@sentry/electron";
 
+if (app.isPackaged)
+	Sentry.init({
+		dsn:
+			"https://c11e044610da45b7a4dc3bac6c006037@o357239.ingest.sentry.io/5193608"
+	});
 export let trayManager: TrayManager;
 
 //* Define and set it to null
@@ -27,16 +33,3 @@ app.whenReady().then(async () => {
 
 //* If second instance started, close old one
 app.on("second-instance", () => app.exit(0));
-
-//* Send errors from app to extension
-process.on("unhandledRejection", rejection => {
-	console.error(rejection);
-	if (socket && socket.connected) socket.emit("unhandledRejection", rejection);
-});
-
-// TODO Find better way to log
-process.on("uncaughtException", err => {
-	console.error(err.stack);
-	dialog.showErrorBox(err.name, err.stack);
-	app.exit(0);
-});
