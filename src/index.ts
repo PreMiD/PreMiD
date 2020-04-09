@@ -19,6 +19,14 @@ export let trayManager: TrayManager;
 //* Set AppUserModelId for task manager etc
 //* When app is ready
 export let updateCheckerInterval = null;
+
+//* Attempt to get lock to prevent multiple instances of PreMiD from running
+let singleInstanceLock = app.requestSingleInstanceLock();
+
+//* Application already running?
+if (!singleInstanceLock)
+	app.quit();
+
 app.setAppUserModelId("Timeraa.PreMiD");
 app.whenReady().then(async () => {
 	trayManager = new TrayManager();
@@ -30,6 +38,3 @@ app.whenReady().then(async () => {
 		: undefined;
 	if (platform() === "darwin") app.dock.hide();
 });
-
-//* If second instance started, close old one
-app.on("second-instance", () => app.exit(0));
