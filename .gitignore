@@ -5,6 +5,7 @@ tmp
 
 .vscode
 .env
+.yarn
 
 src/package-lock.json
 src/package.json
