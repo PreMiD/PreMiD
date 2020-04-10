@@ -66,8 +66,10 @@ class RPCClient {
 	async destroy() {
 		try {
 			info(`Destroy RPC client (${this.clientId})`);
-			this.client.clearActivity();
-			this.client.destroy();
+			if (this.clientReady) {
+				this.client.clearActivity();
+				this.client.destroy();
+			}
 
 			trayManager.tray.setTitle("");
 			rpcClients = rpcClients.filter(
