@@ -5,6 +5,10 @@ tmp
 
 .vscode
 .env
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
 
 src/package-lock.json
 src/package.json

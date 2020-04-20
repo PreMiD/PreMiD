@@ -5,10 +5,20 @@ import { checkForUpdate, update, updateAvailable } from "../util/updateChecker";
 import { connected } from "./socketManager";
 import { platform } from "os";
 
-let trayIcon =
-	platform() === "darwin"
-		? join(__dirname, "../assets/tray/IconTemplate.png")
-		: join(__dirname, "../assets/tray/Icon@2x.png");
+let trayIcon;
+
+switch (platform()) {
+	case "darwin":
+		trayIcon = join(__dirname, "../assets/tray/IconTemplate.png");
+		break;
+	case "win32":
+		trayIcon = join(__dirname, "../assets/tray/Icon.ico");
+		break;
+	default:
+		trayIcon = join(__dirname, "../assets/tray/Icon@4x.png");
+		break;
+}
+
 export class TrayManager {
 	tray: Tray;
 
@@ -26,7 +36,7 @@ export class TrayManager {
 					icon:
 						platform() === "darwin"
 							? join(__dirname, "../assets/tray/IconTemplate.png")
-							: join(__dirname, "../assets/tray/Icon.png"),
+							: join(__dirname, "../assets/tray/Icon@4x.png"),
 					label: `${app.name} v${app.getVersion()}`,
 					enabled: false
 				},
