@@ -50,6 +50,6 @@
 		"discord-rpc": "github:discordjs/RPC",
 		"electron-store": "5.1.1",
 		"socket.io": "2.3.0",
-		"source-map-support": "^0.5.16"
+		"source-map-support": "^0.5.19"
 	}
 }
