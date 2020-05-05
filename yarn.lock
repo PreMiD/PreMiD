@@ -1013,8 +1013,9 @@ detect-node@^2.0.4:
   integrity sha512-ZIzRpLJrOj7jjP2miAtgqIfmzbxa4ZOr5jJc601zklsfEx9oTzmmj2nVpIPRpNlRTIh8lc1kyViIY7BWSGNmKw==
 
 "discord-rpc@github:discordjs/RPC":
-  version "3.1.0"
-  resolved "https://codeload.github.com/discordjs/RPC/tar.gz/cfddf66c372abe430a284ff3ea885e8cc0477f99"
+  version "3.1.1"
+  uid df0a9e00b17b86c728e7b43bc2bae2641560a887
+  resolved "https://codeload.github.com/discordjs/RPC/tar.gz/df0a9e00b17b86c728e7b43bc2bae2641560a887"
   dependencies:
     node-fetch "2.6.0"
     ws "7.1.2"
