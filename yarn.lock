@@ -178,10 +178,10 @@
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
   integrity sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
 
-"@types/discord-rpc@3.0.3":
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/@types/discord-rpc/-/discord-rpc-3.0.3.tgz#1d8da2213881f34d5707f726ed38cc5776b7da8e"
-  integrity sha512-4GCRutyJ1EoQV1If3hEnvorv+VHsrY8q5jPvfFT4LC8V7Xd47+zUkcjEhLGZX61OtDZUVg5C1zGaOvmECPQChA==
+"@types/discord-rpc@3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@types/discord-rpc/-/discord-rpc-3.0.4.tgz#2b8c380ff17797b1408fd231b3a9944da515c331"
+  integrity sha512-Ee0vt82qcg05OeJrQZ/YN+NQwaBCnAul1rVLYaMLPkwR5f44WC3BpBQNvn5Z3Axu9szaVOHqXEDBI+uAXAiyrg==
 
 "@types/electron-packager@14.0.0":
   version "14.0.0"
