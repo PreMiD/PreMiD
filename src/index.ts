@@ -1,40 +1,60 @@
+import DiscordManager from "./util/DiscordManager";
+import LogManager from "./util/LogManager";
+import SocketIO from "socket.io";
+import UpdateManager from "./util/UpdateManager";
+import { join } from "path";
+import { readFileSync } from "fs";
 import "source-map-support/register";
 
-import { app } from "electron";
-import { init as initSocket } from "./managers/socketManager";
-import { update as initAutoLaunch } from "./managers/launchManager";
-import { platform } from "os";
-import { checkForUpdate } from "./util/updateChecker";
-import { TrayManager } from "./managers/trayManager";
-import * as Sentry from "@sentry/electron";
+export let server: SocketIO.Server, socket: SocketIO.Socket;
 
-if (app.isPackaged)
-	Sentry.init({
-		dsn:
-			"https://c11e044610da45b7a4dc3bac6c006037@o357239.ingest.sentry.io/5193608"
+export let packageJSON = JSON.parse(
+		readFileSync(join(__dirname, "package.json"), "utf-8")
+	),
+	logManager = new LogManager(),
+	discordManager = new DiscordManager(),
+	updateManager = new UpdateManager();
+
+async function main() {
+	setInterval(() => {
+		packageJSON = JSON.parse(
+			readFileSync(join(__dirname, "package.json"), "utf-8")
+		);
+	}, 1000);
+
+	await updateManager.checkForUpdate();
+
+	server = SocketIO();
+
+	server.on("connection", s => {
+		socket = s;
+
+		socket.on("setActivity", (activity: any) =>
+			discordManager.setActivity(activity.clientId, activity.presenceData)
+		);
+
+		socket.on("clearActivity", () => discordManager.clearActivity());
+
+		socket.on("getVersion", () =>
+			socket.emit("receiveVersion", packageJSON.version.replace(/\D/g, ""))
+		);
 	});
-export let trayManager: TrayManager;
 
-//* Define and set it to null
-//* Set AppUserModelId for task manager etc
-//* When app is ready
-export let updateCheckerInterval = null;
+	try {
+		logManager.info("Listening on port 3020");
+		server.listen(3020);
+	} catch (err) {
+		logManager.error(`Error binding port: ${err.message}`);
+		process.exit(0);
+	}
+}
 
-//* Attempt to get lock to prevent multiple instances of PreMiD from running
-let singleInstanceLock = app.requestSingleInstanceLock();
+main();
 
-//* Application already running?
-if (!singleInstanceLock)
-	app.quit();
-
-app.setAppUserModelId("Timeraa.PreMiD");
-app.whenReady().then(async () => {
-	trayManager = new TrayManager();
-
-	await Promise.all([checkForUpdate(true), initAutoLaunch(), initSocket()]);
-
-	app.isPackaged
-		? (updateCheckerInterval = setInterval(checkForUpdate, 15 * 1000 * 60))
-		: undefined;
-	if (platform() === "darwin") app.dock.hide();
+//* Terminate strategy
+process.once("SIGTERM", () => {
+	socket?.disconnect(true);
+	server.close();
+	discordManager.currentClient?.client.destroy().catch(() => {});
+	process.kill(process.pid, "SIGTERM");
 });

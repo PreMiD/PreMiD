@@ -1,22 +1,13 @@
 {
 	"compilerOptions": {
+		"target": "ESNEXT",
 		"module": "commonjs",
-		"target": "es2018",
+		"outDir": "./dist",
+		"strict": true,
 		"moduleResolution": "node",
-		"inlineSourceMap": true,
-		"outDir": "dist/app",
-		"removeComments": true,
 		"esModuleInterop": true,
-		"skipLibCheck": true,
-		"noUnusedParameters": true,
-		"noUnusedLocals": true
+		"inlineSourceMap": true,
+		"forceConsistentCasingInFileNames": true
 	},
-	"include": ["src/**/*"],
-	"exclude": [
-		"**/node_modules/",
-		"pkg.ts",
-		"util/**/*",
-		"installer_assets/builder.ts",
-		".github/uploadFile.ts"
-	]
+	"include": ["src/**/*"]
 }
