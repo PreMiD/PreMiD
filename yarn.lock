@@ -193,6 +193,13 @@
     electron-notarize "^0.1.1"
     electron-osx-sign "^0.4.11"
 
+"@types/engine.io@*":
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/@types/engine.io/-/engine.io-3.1.3.tgz#06a0d4f3674653032ea47a6f3a543b84624c24ca"
+  integrity sha512-h0bIEHAKT2HGnp5qPEE4hzI9QkTn7FlWeTJquGvK1ZqF0dguDdTSzWm/CG0n9MhSLawzBd6OVxKdve2ABXIu0w==
+  dependencies:
+    "@types/node" "*"
+
 "@types/events@*":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
@@ -266,11 +273,12 @@
     "@types/glob" "*"
     "@types/node" "*"
 
-"@types/socket.io@2.1.5":
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/@types/socket.io/-/socket.io-2.1.5.tgz#3d792b1cc15b84c7aa079f28ee4aa2bec2ed7fbf"
-  integrity sha512-1eItGHI9nI8FMXPZNXdr5QP95Gr/CSQqVQ0ZyBhd4SMbLMFuB7cIbmyl66t85mvx9WAvhl1vbPA+cuwv3j9W4g==
+"@types/socket.io@2.1.6":
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/@types/socket.io/-/socket.io-2.1.6.tgz#b8edfebbe643ddd692b368ed77bd95b9cf3172fc"
+  integrity sha512-z1+D0k2arj+6dy9vnOy4/PxT3gmI7/BInzL8Jtbr5ijKOQyvSx+nOUhax+Hw69htpRmEdVNkWZUOVxsvvm1SrQ==
   dependencies:
+    "@types/engine.io" "*"
     "@types/node" "*"
 
 "@types/ssh2-sftp-client@4.1.3":
