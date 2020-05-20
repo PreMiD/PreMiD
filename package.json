@@ -38,7 +38,7 @@
 		"prompts": "2.3.2",
 		"rimraf": "3.0.2",
 		"ssh2-sftp-client": "5.1.2",
-		"typescript": "3.9.2",
+		"typescript": "3.9.3",
 		"unzipper": "0.10.11",
 		"yarn": "1.22.4"
 	},
