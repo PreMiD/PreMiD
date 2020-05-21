@@ -273,10 +273,10 @@
     "@types/glob" "*"
     "@types/node" "*"
 
-"@types/socket.io@2.1.7":
-  version "2.1.7"
-  resolved "https://registry.yarnpkg.com/@types/socket.io/-/socket.io-2.1.7.tgz#2f480d4852d2b332b5991499cb866bf296156222"
-  integrity sha512-yJiCW87NL3p8Umtf2XqPM8ebaexcJLE/VeSPI/0dcXyIeLx0PdHTN3VjFic563LQXMca+9FSnq3xZSmvENiOJg==
+"@types/socket.io@2.1.8":
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/@types/socket.io/-/socket.io-2.1.8.tgz#ffc3aac0163a58bf50a463d50b1baabed91638cc"
+  integrity sha512-NIQfh9WwJuJKlgmby4NgwMpoBOmNPCDgaRNPiLYZBtkbHkszK/9R52B5yGkd5a34rbVdAADuo8FhOS/5AZDemw==
   dependencies:
     "@types/engine.io" "*"
     "@types/node" "*"
