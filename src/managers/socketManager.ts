@@ -26,6 +26,10 @@ export function init() {
 		//* If someone connects to socket socketConnection
 		server = createServer();
 		io = socketIo(server, { serveClient: false });
+		io.origins((o, c) => {
+			if (o !== '*') c('Not a chrome extension, socket denied.', false);
+			c(null, true);
+		});
 		server.listen(3020, () => {
 			//* Resolve promise
 			//* Debug info
