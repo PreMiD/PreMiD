@@ -25,6 +25,10 @@ async function main() {
 	await updateManager.checkForUpdate();
 
 	server = SocketIO();
+	server.origins((o, c) => {
+		if (o !== '*') c('Not a chrome extension, socket denied.', false);
+		c(null, true);
+	});
 
 	server.on("connection", s => {
 		socket = s;
