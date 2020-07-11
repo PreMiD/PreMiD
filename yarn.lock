@@ -281,10 +281,10 @@
     "@types/engine.io" "*"
     "@types/node" "*"
 
-"@types/ssh2-sftp-client@4.1.3":
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/@types/ssh2-sftp-client/-/ssh2-sftp-client-4.1.3.tgz#f1d9c57d5876971eca18b227b29aab76b75c70de"
-  integrity sha512-x52g1JmebxlmFKrfMQFMbg0JxYTO4LVjGu36AyX7wtLvCJzVBQCcQ40vXg/qqMN5v4q5ef5Wz7veacXNQN9HiA==
+"@types/ssh2-sftp-client@5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@types/ssh2-sftp-client/-/ssh2-sftp-client-5.1.0.tgz#06e69e4b10046f2d38f67d523411ecc0386b1a13"
+  integrity sha512-j1Sd7K1kdYbP5aG/bjOpYz7+jswBfg+1I5NXzsT3h18jUzRSvMH/73vS6GlnvTD3zGHifY3khZ3HjSiphl4cNg==
   dependencies:
     "@types/ssh2" "*"
     "@types/ssh2-streams" "*"
