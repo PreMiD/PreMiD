@@ -30,7 +30,7 @@
 		"archiver": "4.0.2",
 		"chalk": "4.0.0",
 		"electron": "8.3.0",
-		"electron-packager": "14.2.1",
+		"electron-packager": "15.0.0",
 		"fast-glob": "3.2.4",
 		"fs-extra": "9.0.1",
 		"nodemon": "2.0.4",
