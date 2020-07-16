@@ -1080,9 +1080,9 @@ diff@4.0.2:
   integrity sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==
 
 "discord-rpc@github:discordjs/RPC":
-  version "3.1.1"
-  uid df0a9e00b17b86c728e7b43bc2bae2641560a887
-  resolved "https://codeload.github.com/discordjs/RPC/tar.gz/df0a9e00b17b86c728e7b43bc2bae2641560a887"
+  version "3.1.2"
+  uid "69915999307d337688b92f6011ea4961a7f8313e"
+  resolved "https://codeload.github.com/discordjs/RPC/tar.gz/69915999307d337688b92f6011ea4961a7f8313e"
   dependencies:
     node-fetch "2.6.0"
     ws "7.1.2"
