@@ -146,15 +146,15 @@
     defer-to-connect "^1.0.1"
 
 "@timeraa/devscript@Timeraa/DevScript":
-  version "1.0.4"
-  uid "4b11f60572409704ddb2bbbe0483050f0e429495"
-  resolved "https://codeload.github.com/Timeraa/DevScript/tar.gz/4b11f60572409704ddb2bbbe0483050f0e429495"
+  version "1.0.8"
+  uid "5f896f5ad0b98ac36f8a85fe89485638ade5c00d"
+  resolved "https://codeload.github.com/Timeraa/DevScript/tar.gz/5f896f5ad0b98ac36f8a85fe89485638ade5c00d"
   dependencies:
     chalk "^4.0.0"
-    chokidar "^3.3.1"
+    chokidar "^3.4.0"
     fast-glob "^3.2.2"
-    fs-extra "^9.0.0"
-    typescript "^3.8.3"
+    fs-extra "^9.0.1"
+    typescript "^3.9.5"
 
 "@types/archiver@3.1.0":
   version "3.1.0"
@@ -756,7 +756,7 @@ chokidar@3.3.1:
   optionalDependencies:
     fsevents "~2.1.2"
 
-chokidar@3.4.1, chokidar@^3.2.2, chokidar@^3.3.1:
+chokidar@3.4.1, chokidar@^3.2.2, chokidar@^3.4.0:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.4.1.tgz#e905bdecf10eaa0a0b1db0c664481cc4cbc22ba1"
   integrity sha512-TQTJyr2stihpC4Sya9hs2Xh+O2wf+igjL36Y75xx2WdHuiICcn/XJza46Jwt0eT5hVpQOzo3FpY3cj3RVYLX0g==
@@ -1459,7 +1459,7 @@ fs-constants@^1.0.0:
   resolved "https://registry.yarnpkg.com/fs-constants/-/fs-constants-1.0.0.tgz#6be0de9be998ce16af8afc24497b9ee9b7ccd9ad"
   integrity sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==
 
-fs-extra@9.0.1, fs-extra@^9.0.0:
+fs-extra@9.0.1, fs-extra@^9.0.1:
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.0.1.tgz#910da0062437ba4c39fedd863f1675ccfefcb9fc"
   integrity sha512-h2iAoN838FqAFJY2/qVpzFXy+EBxfVE220PalAqQLDVsFOHLJrZvut5puAbCdNv6WJk+B8ihI+k0c7JK5erwqQ==
@@ -3182,7 +3182,7 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@3.9.6, typescript@^3.8.3:
+typescript@3.9.6, typescript@^3.9.5:
   version "3.9.6"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.6.tgz#8f3e0198a34c3ae17091b35571d3afd31999365a"
   integrity sha512-Pspx3oKAPJtjNwE92YS05HQoY7z2SFyOpHo9MqJor3BXAGNaPUs83CuVp9VISFkSjyRfiTpmKuAYGJB7S7hOxw==
