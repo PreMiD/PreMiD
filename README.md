@@ -36,8 +36,8 @@
     <a target="_blank" href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button" title="Support me on Patreon!">
       <img height="75px" draggable="false" src=".github/Patreon.png">
     </a>
-    <a target="_blank" href="https://discord.gg/WvfVZ8T" title="Join our Discord!">
-      <img height="75px" draggable="false" src="https://discordapp.com/api/guilds/493130730549805057/widget.png?style=banner2" alt="Join my Discord!">
+    <a target="_blank" href="https://discord.premid.app/" title="Join our Discord!">
+		<img  src="https://discordapp.com/api/guilds/493130730549805057/widget.png?style=banner2" height="76px" draggable="false" alt="Join our Discord!">
     </a>
   </div>
 
