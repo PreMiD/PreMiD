@@ -143,16 +143,6 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@timeraa/devscript@Timeraa/DevScript":
-  version "1.0.8"
-  resolved "https://codeload.github.com/Timeraa/DevScript/tar.gz/5f896f5ad0b98ac36f8a85fe89485638ade5c00d"
-  dependencies:
-    chalk "^4.0.0"
-    chokidar "^3.4.0"
-    fast-glob "^3.2.2"
-    fs-extra "^9.0.1"
-    typescript "^3.9.5"
-
 "@types/archiver@3.1.1":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@types/archiver/-/archiver-3.1.1.tgz#10cc1be44af8911e57484342c7b3b32a5f178a1a"
@@ -174,13 +164,6 @@
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/@types/discord-rpc/-/discord-rpc-3.0.4.tgz#2b8c380ff17797b1408fd231b3a9944da515c331"
   integrity sha512-Ee0vt82qcg05OeJrQZ/YN+NQwaBCnAul1rVLYaMLPkwR5f44WC3BpBQNvn5Z3Axu9szaVOHqXEDBI+uAXAiyrg==
-
-"@types/electron-packager@15.0.1":
-  version "15.0.1"
-  resolved "https://registry.yarnpkg.com/@types/electron-packager/-/electron-packager-15.0.1.tgz#51e84f25aa41211259b7fd4126fdeee334b3d248"
-  integrity sha512-HpFK6U0eC2BuEijYjPHMLUm+0MdCdrTeWmzYW2NMwPfhPrcnrECiXRjHSI5fN5DomCPhLzT5ywviUuCbFzxDxw==
-  dependencies:
-    electron-packager "*"
 
 "@types/engine.io@*":
   version "3.1.4"
@@ -1033,7 +1016,7 @@ electron-osx-sign@^0.4.11:
     minimist "^1.2.0"
     plist "^3.0.1"
 
-electron-packager@*, electron-packager@15.1.0:
+electron-packager@15.1.0:
   version "15.1.0"
   resolved "https://registry.yarnpkg.com/electron-packager/-/electron-packager-15.1.0.tgz#16a3733e4cad26112a2ac36f0b0f35c3b0170eff"
   integrity sha512-THNm4bz1DfvR9f0g51+NjuAYELflM8+1vhQ/iv/G8vyZNKzSMuFd5doobngQKq3rRsLdPNZVnGqDdgS884d7Og==
@@ -2674,6 +2657,17 @@ truncate-utf8-bytes@^1.0.0:
   integrity sha1-QFkjkJWS1W94pYGENLC3hInKXys=
   dependencies:
     utf8-byte-length "^1.0.1"
+
+ts-devscript@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/ts-devscript/-/ts-devscript-1.0.8.tgz#284071b80a5b5f13e86c8e522ecf438bb198bd6e"
+  integrity sha512-K/jWZnCBJuUPtfFPfp//Rwxk1juDZWTGXnM6DDBZ9iRiX2uJvZc/jjoRbUaMbcs64H01zVvfm2DBlMcj2Xz17g==
+  dependencies:
+    chalk "^4.0.0"
+    chokidar "^3.4.0"
+    fast-glob "^3.2.2"
+    fs-extra "^9.0.1"
+    typescript "^3.9.5"
 
 tslib@^1.9.3:
   version "1.14.1"
