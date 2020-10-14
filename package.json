@@ -31,7 +31,7 @@
 		"electron-packager": "15.1.0",
 		"fast-glob": "3.2.4",
 		"fs-extra": "9.0.1",
-		"nodemon": "2.0.4",
+		"nodemon": "2.0.5",
 		"ora": "5.1.0",
 		"prompts": "2.3.2",
 		"rimraf": "3.0.2",
