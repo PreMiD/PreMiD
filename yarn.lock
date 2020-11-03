@@ -972,7 +972,8 @@ detect-node@^2.0.4:
 
 "discord-rpc@github:discordjs/RPC":
   version "3.1.4"
-  resolved "https://codeload.github.com/discordjs/RPC/tar.gz/14a915ff1020ba97889100b7429379e95a6776b6"
+  uid "8474baee8e0d92b6acf81b37b478cb5de872511a"
+  resolved "https://codeload.github.com/discordjs/RPC/tar.gz/8474baee8e0d92b6acf81b37b478cb5de872511a"
   dependencies:
     node-fetch "^2.6.1"
     ws "^7.3.1"
