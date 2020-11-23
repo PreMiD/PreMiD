@@ -44,7 +44,7 @@
 	"dependencies": {
 		"@sentry/electron": "2.0.4",
 		"auto-launch": "5.0.5",
-		"axios": "0.20.0",
+		"axios": "0.21.0",
 		"chokidar": "3.4.3",
 		"discord-rpc": "github:discordjs/RPC",
 		"electron-store": "6.0.1",
