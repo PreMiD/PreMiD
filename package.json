@@ -25,7 +25,7 @@
 		"@types/socket.io": "2.1.11",
 		"@types/ssh2-sftp-client": "5.3.0",
 		"@types/unzipper": "^0.10.3",
-		"archiver": "5.0.2",
+		"archiver": "5.2.0",
 		"chalk": "4.1.0",
 		"electron": "10.1.5",
 		"electron-packager": "15.1.0",
