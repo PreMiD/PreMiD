@@ -1,18 +1,13 @@
 import "source-map-support/register";
 
 import { app } from "electron";
-import { init as initSocket } from "./managers/socketManager";
-import { update as initAutoLaunch } from "./managers/launchManager";
 import { platform } from "os";
-import { checkForUpdate } from "./util/updateChecker";
-import { TrayManager } from "./managers/trayManager";
-import * as Sentry from "@sentry/electron";
 
-if (app.isPackaged)
-	Sentry.init({
-		dsn:
-			"https://c11e044610da45b7a4dc3bac6c006037@o357239.ingest.sentry.io/5193608"
-	});
+import { update as initAutoLaunch } from "./managers/launchManager";
+import { init as initSocket } from "./managers/socketManager";
+import { TrayManager } from "./managers/trayManager";
+import { checkForUpdate } from "./util/updateChecker";
+
 export let trayManager: TrayManager;
 
 //* Define and set it to null
@@ -24,8 +19,7 @@ export let updateCheckerInterval = null;
 let singleInstanceLock = app.requestSingleInstanceLock();
 
 //* Application already running?
-if (!singleInstanceLock)
-	app.quit();
+if (!singleInstanceLock) app.quit();
 
 app.setAppUserModelId("Timeraa.PreMiD");
 app.whenReady().then(async () => {
