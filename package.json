@@ -47,7 +47,7 @@
 		"chokidar": "3.5.1",
 		"discord-rpc": "github:discordjs/RPC",
 		"electron-store": "7.0.2",
-		"socket.io": "2.3.0",
+		"socket.io": "2.4.0",
 		"source-map-support": "^0.5.19"
 	},
 	"devScript": {
