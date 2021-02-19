@@ -18,7 +18,7 @@ export let server: Server;
 export let connected: boolean = false;
 
 export function init() {
-	return new Promise(resolve => {
+	return new Promise<void>(resolve => {
 		//* Create server
 		//* create SocketIo server, don't server client
 		//* Try to listen to port 3020
