@@ -1013,8 +1013,9 @@ dir-glob@^3.0.1:
     path-type "^4.0.0"
 
 "discord-rpc@github:discordjs/RPC":
-  version "3.1.4"
-  resolved "https://codeload.github.com/discordjs/RPC/tar.gz/cbdd31f98b20de0222a793ae0b14018f8119cfb2"
+  version "3.2.0"
+  uid "50376b913d089e8e28220fc67416c3e9bc5bca53"
+  resolved "https://codeload.github.com/discordjs/RPC/tar.gz/50376b913d089e8e28220fc67416c3e9bc5bca53"
   dependencies:
     node-fetch "^2.6.1"
     ws "^7.3.1"
