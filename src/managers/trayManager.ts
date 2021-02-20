@@ -57,17 +57,17 @@ export class TrayManager {
 					type: "separator"
 				},
 				{
-					label: `Update ${app.name}`,
+					label: `Update ${app.name}!`,
 					visible: updateAvailable,
 					click: () => update()
 				},
 				{
-					label: "Check for Updates...",
+					label: "Check for Updates",
 					click: () => checkForUpdate(false, true),
 					visible: !updateAvailable
 				},
 				{
-					label: "Acknowledgments",
+					label: "Contributors",
 					click: () => shell.openExternal("https://premid.app/contributors")
 				},
 				{
