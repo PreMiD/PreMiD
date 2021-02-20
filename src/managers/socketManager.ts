@@ -1,16 +1,12 @@
-import socketIo from "socket.io";
-import { createServer, Server } from "http";
 import { app, dialog } from "electron";
-import { success, error } from "../util/debug";
-import { update as updateSettings } from "./settingsManager";
+import { createServer, Server } from "http";
+import socketIo from "socket.io";
+
+import { trayManager } from "../";
+import { error, success } from "../util/debug";
+import { clearActivity, getDiscordUser, rpcClients, setActivity } from "./discordManager";
 import { openFileDialog } from "./presenceDevManager";
-import {
-	rpcClients,
-	setActivity,
-	clearActivity,
-	getDiscordUser
-} from "./discordManager";
-import { trayManager } from "..";
+import { update as updateSettings } from "./settingsManager";
 
 export let io: socketIo.Server;
 export let socket: socketIo.Socket;
@@ -18,17 +14,17 @@ export let server: Server;
 export let connected: boolean = false;
 
 export function init() {
-	return new Promise(resolve => {
+	return new Promise<void>(resolve => {
 		//* Create server
 		//* create SocketIo server, don't server client
 		//* Try to listen to port 3020
 		//* If that fails/some other error happens run socketError
 		//* If someone connects to socket socketConnection
 		server = createServer();
-		io = socketIo(server, { serveClient: false });
-		io.origins((o, c) => {
-			if (o !== '*') c('Not a chrome extension, socket denied.', false);
-			c(null, true);
+		io = new socketIo.Server(server, {
+			serveClient: false,
+			allowEIO3: true,
+			cors: { origin: "*" }
 		});
 		server.listen(3020, () => {
 			//* Resolve promise

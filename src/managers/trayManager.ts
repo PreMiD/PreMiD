@@ -1,9 +1,10 @@
-import { Menu, Tray, app, shell } from "electron";
+import { app, Menu, shell, Tray } from "electron";
+import { platform } from "os";
 import { join } from "path";
-import { trayManager } from "..";
+
+import { trayManager } from "../";
 import { checkForUpdate, update, updateAvailable } from "../util/updateChecker";
 import { connected } from "./socketManager";
-import { platform } from "os";
 
 let trayIcon;
 
@@ -81,4 +82,4 @@ export class TrayManager {
 	}
 }
 
-app.once("quit", () => trayManager.tray.destroy());
+app.once("quit", () => trayManager?.tray.destroy());
