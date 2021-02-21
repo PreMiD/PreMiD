@@ -28,7 +28,7 @@ jobs:
         env:
           SSHHOST: ${{ secrets.MAIN_HOST }}
           SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
-          SSHKEY: ${{ secrets.SSH_KEY }}
+          SSH_KEY: ${{ secrets.SSH_KEY }}
         run: |
           tsc util/uploadFile util/zip
           node util/uploadFile ${{ matrix.os }}.zip /home/PreMiD/download/util/${{ matrix.os }}.zip
@@ -64,7 +64,7 @@ jobs:
         env:
           SSHHOST: ${{ secrets.MAIN_HOST }}
           SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
-          SSHKEY: ${{ secrets.SSH_KEY }}
+          SSH_KEY: ${{ secrets.SSH_KEY }}
         run: |
           tsc util/uploadFile util/zip
           node util/uploadFile dist/installer/upgrader.exe /home/PreMiD/download/upgrader.exe
