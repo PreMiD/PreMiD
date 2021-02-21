@@ -5,8 +5,8 @@ let sftp = new Client();
 sftp
 	.connect({
 		host: process.env.SSHHOST,
-		username: process.env.SSHUSERNAME,
-		password: process.env.SSHPASSWORD
+		username: process.env.SSH_USERNAME,
+		privateKey: process.env.SSH_KEY
 	})
 	.then(async () => {
 		sftp
