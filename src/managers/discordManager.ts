@@ -1,10 +1,10 @@
 import { Client } from "discord-rpc";
 import { app } from "electron";
-import { info } from "../util/debug";
 
+import { trayManager } from "../";
 //* Import custom types
 import PresenceData from "../../@types/PreMiD/PresenceData";
-import { trayManager } from "..";
+import { info } from "../util/debug";
 
 export let rpcClients: Array<RPCClient> = [];
 

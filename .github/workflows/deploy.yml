@@ -26,9 +26,9 @@ jobs:
           node util/zip dist ${{ matrix.os }}.zip --zip
       - name: Upload bundle
         env:
-          SSHHOST: ${{ secrets.SSHHOST }}
-          SSHUSERNAME: ${{ secrets.SSHUSERNAME }}
-          SSHPASSWORD: ${{ secrets.SSHPASSWORD }}
+          SSHHOST: ${{ secrets.MAIN_HOST }}
+          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+          SSH_KEY: ${{ secrets.SSH_KEY }}
         run: |
           tsc util/uploadFile util/zip
           node util/uploadFile ${{ matrix.os }}.zip /home/PreMiD/download/util/${{ matrix.os }}.zip
@@ -40,15 +40,15 @@ jobs:
       - uses: actions/setup-node@master
       - name: Install dependencies
         run: |
-          npm i
-          npm i -g typescript
+          sudo npm i
+          sudo npm i -g typescript
       - name: Download InstallBuilder
         run: |
-          wget https://clients.bitrock.com/installbuilder/installbuilder-enterprise-20.3.0-linux-x64-installer.run
-          chmod u+x installbuilder-enterprise-20.3.0-linux-x64-installer.run
+          wget https://clients.bitrock.com/installbuilder/installbuilder-enterprise-20.12.0-linux-x64-installer.run
+          chmod u+x installbuilder-enterprise-20.12.0-linux-x64-installer.run
       - name: Install InstallBuilder
         run: |
-          ./installbuilder-enterprise-20.3.0-linux-x64-installer.run --installer-language en --prefix ./installbuilder --mode unattended
+          ./installbuilder-enterprise-20.12.0-linux-x64-installer.run --installer-language en --prefix ./installbuilder --mode unattended
           echo "${{ secrets.IBLICENSE }}" > ./installbuilder/license.xml
       - name: Prepare Upgrade Installer
         run: |
@@ -62,9 +62,9 @@ jobs:
           installbuilder/bin/builder build installer_assets/PreMiD-Upgrade.xml windows
       - name: Upload files
         env:
-          SSHHOST: ${{ secrets.SSHHOST }}
-          SSHUSERNAME: ${{ secrets.SSHUSERNAME }}
-          SSHPASSWORD: ${{ secrets.SSHPASSWORD }}
+          SSHHOST: ${{ secrets.MAIN_HOST }}
+          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+          SSH_KEY: ${{ secrets.SSH_KEY }}
         run: |
           tsc util/uploadFile util/zip
           node util/uploadFile dist/installer/upgrader.exe /home/PreMiD/download/upgrader.exe
@@ -72,9 +72,9 @@ jobs:
       - name: Finalize build
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SSHHOST }}
-          username: ${{ secrets.SSHUSERNAME }}
-          password: ${{ secrets.SSHPASSWORD }}
+          host: ${{ secrets.MAIN_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
           script: |
             cd /home/PreMiD/download/util
             unzip upgrader.app.zip

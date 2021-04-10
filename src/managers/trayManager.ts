@@ -1,9 +1,10 @@
-import { Menu, Tray, app, shell } from "electron";
+import { app, Menu, shell, Tray } from "electron";
+import { platform } from "os";
 import { join } from "path";
-import { trayManager } from "..";
+
+import { trayManager } from "../";
 import { checkForUpdate, update, updateAvailable } from "../util/updateChecker";
 import { connected } from "./socketManager";
-import { platform } from "os";
 
 let trayIcon;
 
@@ -56,17 +57,17 @@ export class TrayManager {
 					type: "separator"
 				},
 				{
-					label: `Update ${app.name}`,
+					label: `Update ${app.name}!`,
 					visible: updateAvailable,
 					click: () => update()
 				},
 				{
-					label: "Check for Updates...",
+					label: "Check for Updates",
 					click: () => checkForUpdate(false, true),
 					visible: !updateAvailable
 				},
 				{
-					label: "Acknowledgments",
+					label: "Contributors",
 					click: () => shell.openExternal("https://premid.app/contributors")
 				},
 				{
@@ -81,4 +82,4 @@ export class TrayManager {
 	}
 }
 
-app.once("quit", () => trayManager.tray.destroy());
+app.once("quit", () => trayManager?.tray.destroy());
