@@ -1,3 +1,7 @@
+<!-- NOTE -->
+<!-- Keep all presence related bugs in our Presences repository! -->
+<!-- https://github.com/PreMiD/Presences/issues -->
+
 ---
 name: Bug report
 about: Create a report to help us improve
