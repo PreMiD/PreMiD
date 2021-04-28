@@ -271,7 +271,7 @@
     <outputDirectory>../dist/installer</outputDirectory>
     <overwritePolicy>onlyIfNewer</overwritePolicy>
     <productDisplayIcon>C:/Users/metzf/Documents/Development/PreMiD/PreMiD/installer_assets/appIcon.ico</productDisplayIcon>
-    <productUrlHelpLink>https://discord.gg/PreMiD</productUrlHelpLink>
+    <productUrlHelpLink>https://discord.premid.app</productUrlHelpLink>
     <productUrlInfoAbout>https://premid.app</productUrlInfoAbout>
     <readmeFileEncoding>utf-8</readmeFileEncoding>
     <removeLogFile>1</removeLogFile>

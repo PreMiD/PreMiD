@@ -8,6 +8,6 @@ Take a look and feel free to contribute if you want to add something new.
 Simply open a issue if you don't feel allright.<br>
 *Aand there he goes...*
 
-## Ask a staff member in [#support](https://discord.gg/WvfVZ8T)
+## Ask a staff member in [#support](https://discord.premid.app)
 The team is ready to tell you the secrets of the underworld.<br>
-Join our [Discord server](https://discord.gg/WvfVZ8T) and find out what we're hiding.
+Join our [Discord server](https://discord.premid.app) and find out what we're hiding.
