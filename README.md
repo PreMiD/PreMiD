@@ -23,7 +23,7 @@
 
 · Displays your current web service in Discord as your status.<br>
 · Grants full control over Presences.<br>
-· Supports over 100 web services, still rising!<br>
+· Supports over 800 web services, still rising!<br>
 · _Watch parties and more are coming soon!_
 
 # Installation/Troubleshooting
@@ -41,6 +41,6 @@
     </a>
   </div>
 
-
 ## License
+
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FPreMiD%2FPreMiD.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FPreMiD%2FPreMiD?ref=badge_large)
