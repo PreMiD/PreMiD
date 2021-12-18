@@ -24,7 +24,10 @@ export function init() {
 		io = new socketIo.Server(server, {
 			serveClient: false,
 			allowEIO3: true,
-			cors: { origin: "*" }
+			allowRequest: (req, callback) => {
+				const noOriginHeader = req.headers.origin === undefined;
+				callback(null, noOriginHeader);
+			}
 		});
 		server.listen(3020, () => {
 			//* Resolve promise
