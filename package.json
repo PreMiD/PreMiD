@@ -13,7 +13,7 @@
 	},
 	"license": "MPL-2.0",
 	"devDependencies": {
-		"@types/archiver": "5.1.0",
+		"@types/archiver": "5.3.1",
 		"@types/auto-launch": "5.0.1",
 		"@types/discord-rpc": "3.0.4",
 		"@types/fs-extra": "9.0.11",
