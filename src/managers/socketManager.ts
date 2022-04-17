@@ -67,7 +67,7 @@ function socketConnection(cSocket: socketIo.Socket) {
 		//* Show debug
 		//* Destroy all open RPC connections
 		error("Socket disconnection.");
-		rpcClients.forEach(c => c.destroy());
+		rpcClients.forEach(c => c.destroy("Socket disconnection"));
 	});
 	connected = true;
 	trayManager.update();

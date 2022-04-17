@@ -35,7 +35,7 @@ class RPCClient {
 				))
 		);
 
-		this.client.login({ clientId: this.clientId }).catch(() => this.destroy());
+		this.client.login({ clientId: this.clientId }).catch(() => this.destroy("Login failed"));
 
 		info(`Create RPC client (${this.clientId})`);
 	}
@@ -50,7 +50,7 @@ class RPCClient {
 
 		this.client
 			.setActivity(presenceData.presenceData)
-			.catch(() => this.destroy());
+			.catch(() => this.destroy("setActivity failed"));
 		info("setActivity");
 	}
 
@@ -59,13 +59,13 @@ class RPCClient {
 
 		if (!this.clientReady) return;
 
-		this.client.clearActivity().catch(() => this.destroy());
+		this.client.clearActivity().catch(() => this.destroy("clearActivity failed"));
 		trayManager.tray.setTitle("");
 	}
 
-	async destroy() {
+	async destroy(reason: string) {
 		try {
-			info(`Destroy RPC client (${this.clientId})`);
+			info(`Destroy RPC client (${this.clientId}): ${reason}`);
 			if (this.clientReady) {
 				this.client.clearActivity();
 				this.client.destroy();
@@ -119,5 +119,5 @@ export async function getDiscordUser() {
 
 app.once(
 	"will-quit",
-	async () => await Promise.all(rpcClients.map(c => c.destroy()))
+	async () => await Promise.all(rpcClients.map(c => c.destroy("App quit")))
 );
