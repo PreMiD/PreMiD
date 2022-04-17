@@ -42,12 +42,14 @@ class RPCClient {
 	}
 
 	setActivity(presenceData?: PresenceData) {
+		presenceData = presenceData ? presenceData : this.currentPresence;
 		try {
 			deepStrictEqual(presenceData, this.currentPresence);
 			return;
-		} catch(err) {}
+		} catch(err) {
+			this.currentPresence = presenceData;
+		}
 
-		presenceData = presenceData ? presenceData : this.currentPresence;
 		if (!this.clientReady || !presenceData) return;
 
 		if (presenceData.trayTitle)
