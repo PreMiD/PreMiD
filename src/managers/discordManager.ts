@@ -1,5 +1,6 @@
 import { Client } from "discord-rpc";
 import { app } from "electron";
+import { deepStrictEqual } from "assert";
 
 import { trayManager } from "../";
 //* Import custom types
@@ -41,8 +42,12 @@ class RPCClient {
 	}
 
 	setActivity(presenceData?: PresenceData) {
-		presenceData = presenceData ? presenceData : this.currentPresence;
+		try {
+			deepStrictEqual(presenceData, this.currentPresence);
+			return;
+		} catch(err) {}
 
+		presenceData = presenceData ? presenceData : this.currentPresence;
 		if (!this.clientReady || !presenceData) return;
 
 		if (presenceData.trayTitle)
