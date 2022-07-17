@@ -1,12 +1,11 @@
-<!-- NOTE -->
-<!-- Keep all presence related bugs in our Presences repository! -->
-<!-- https://github.com/PreMiD/Presences/issues -->
-
 ---
 name: Bug report
 about: Create a report to help us improve
-
 ---
+
+<!-- NOTE -->
+<!-- Keep all presence related bugs in our Presences repository! -->
+<!-- https://github.com/PreMiD/Presences/issues -->
 
 **Describe the bug**
 A clear and concise description of what the bug is.
