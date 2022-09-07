@@ -25,6 +25,10 @@ import * as ora from "ora";
 						value: "all"
 					},
 					{
+						title: "universal",
+						value: "universal"
+					},
+					{
 						title: "arm64",
 						value: "arm64"
 					},
@@ -83,7 +87,7 @@ import * as ora from "ora";
 		process.exit();
 	}
 
-	let icon: string;
+	let icon = "";
 
 	if (
 		response.os == "darwin" ||
