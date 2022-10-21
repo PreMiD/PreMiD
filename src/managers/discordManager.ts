@@ -1,5 +1,6 @@
 import { Client } from "discord-rpc";
 import { app } from "electron";
+import { setInterval } from "timers";
 
 import { trayManager } from "../";
 //* Import custom types
@@ -14,9 +15,14 @@ class RPCClient {
 	client: Client;
 	clientReady: boolean = false;
 
-	constructor(clientId: string) {
+	rpcUpdateQueue: PresenceData;
+	queueIntervalId: ReturnType<typeof setInterval>;
+	updateInterval: number;
+
+	constructor(clientId: string, updateInterval: number) {
 		rpcClients.push(this);
 
+		this.updateInterval = updateInterval;
 		this.clientId = clientId;
 		this.client = new Client({
 			transport: "ipc"
@@ -24,6 +30,7 @@ class RPCClient {
 
 		this.client.once("ready", () => {
 			this.clientReady = true;
+			this.resetInterval();
 			this.setActivity();
 		});
 		this.client.once(
@@ -48,10 +55,8 @@ class RPCClient {
 		if (presenceData.trayTitle)
 			trayManager.tray.setTitle(presenceData.trayTitle);
 
-		this.client
-			.setActivity(presenceData.presenceData)
-			.catch(() => this.destroy());
-		info("setActivity");
+		this.rpcUpdateQueue = presenceData
+		info("queue setActivity");
 	}
 
 	clearActivity() {
@@ -60,7 +65,21 @@ class RPCClient {
 		if (!this.clientReady) return;
 
 		this.client.clearActivity().catch(() => this.destroy());
+		this.rpcUpdateQueue = null;
 		trayManager.tray.setTitle("");
+	}
+
+	resetInterval() {
+		clearInterval(this.queueIntervalId);
+		this.queueIntervalId = setInterval(() => {
+			const presenceData = this.rpcUpdateQueue;
+			if (!presenceData || !this.clientReady) return;
+			this.client
+				.setActivity(presenceData.presenceData)
+				.catch(() => this.destroy());
+			info("setActivity");
+		}, this.updateInterval);
+		info("reset interval")
 	}
 
 	async destroy() {
@@ -86,8 +105,11 @@ class RPCClient {
 export function setActivity(presence: PresenceData) {
 	let client = rpcClients.find(c => c.clientId === presence.clientId);
 
+	// RPC will be updated once every second
+	let updateInterval = 1000
+
 	if (!client) {
-		client = new RPCClient(presence.clientId);
+		client = new RPCClient(presence.clientId, updateInterval);
 		client.currentPresence = presence;
 	} else client.setActivity(presence);
 }
