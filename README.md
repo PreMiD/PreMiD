@@ -23,7 +23,7 @@
 
 · Displays your current web service in Discord as your status.<br>
 · Grants full control over Presences.<br>
-· Supports over 900 web services, still rising!<br>
+· Supports over 1,000 web services, still rising!<br>
 · _Watch parties and more are coming soon!_
 
 # Installation/Troubleshooting
