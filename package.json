@@ -2,7 +2,7 @@
 	"name": "premid",
 	"productName": "PreMiD",
 	"description": "Discord Rich Presence for web services.",
-	"version": "2.2.0",
+	"version": "2.2.1",
 	"repository": "https://github.com/PreMiD/PreMiD",
 	"scripts": {
 		"init": "tsc --skipLibCheck && tsc pkg util/prepare util/zip && devScript --copyOnly",
