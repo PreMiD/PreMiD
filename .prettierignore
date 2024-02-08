@@ -2,3 +2,4 @@
 *.cjs
 *.ts
 *.vue
+pnpm-lock.yaml
