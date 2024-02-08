@@ -18,3 +18,5 @@ src/update.ini
 *.app
 *.xml.backup
 *.js
+
+coverage

@@ -1,56 +1,38 @@
 {
 	"name": "premid",
-	"productName": "PreMiD",
-	"description": "Discord Rich Presence for web services.",
-	"version": "2.2.1",
-	"repository": "https://github.com/PreMiD/PreMiD",
+	"version": "1.0.0",
+	"description": "Monorepo containing most of PreMiD's codebase",
+	"type": "module",
 	"scripts": {
-		"init": "tsc --skipLibCheck && tsc pkg util/prepare util/zip && devScript --copyOnly",
-		"start": "electron dist/app/. --unhandled-rejections=strict",
-		"dev": "devscript --depCheck",
-		"pkg": "rimraf dist && tsc --skipLibCheck && devScript --copyOnly && cd dist/app/ && yarn && cd ../../ && node pkg",
-		"deploy": "tsc --skipLibCheck .github/deploy && cd .github && node deploy.js"
+		"prepare": "husky",
+		"lint": "eslint . --ext .ts,.js && prettier --check .",
+		"lint:fix": "eslint . --ext .ts,.js --fix && prettier --write .",
+		"build": "pnpm clean && tsc -b tsconfig.app.json",
+		"build:watch": "pnpm clean && tsc -b tsconfig.app.json -w",
+		"clean": "tsc -b tsconfig.app.json --clean",
+		"test": "vitest --run",
+		"test:ui": "vitest --ui"
+	},
+	"author": {
+		"name": "Recodive oHG",
+		"email": "contact@recodive.com",
+		"url": "https://recodive.com"
 	},
 	"license": "MPL-2.0",
 	"devDependencies": {
-		"@types/archiver": "5.1.0",
-		"@types/auto-launch": "5.0.1",
-		"@types/discord-rpc": "3.0.4",
-		"@types/fs-extra": "9.0.11",
-		"@types/ini": "1.3.30",
-		"@types/node": "14.14.41",
-		"@types/prompts": "2.0.11",
-		"@types/request-promise-native": "1.0.17",
-		"@types/rimraf": "3.0.0",
-		"@types/socket.io": "2.1.13",
-		"@types/ssh2-sftp-client": "5.3.1",
-		"@types/unzipper": "^0.10.3",
-		"archiver": "5.2.0",
-		"chalk": "4.1.1",
-		"electron": "11.3.0",
-		"electron-packager": "15.2.0",
-		"fast-glob": "3.2.5",
-		"fs-extra": "9.1.0",
-		"nodemon": "2.0.7",
-		"ora": "5.3.0",
-		"prompts": "2.4.1",
-		"rimraf": "3.0.2",
-		"ssh2-sftp-client": "6.0.1",
-		"ts-devscript": "^3.0.3",
-		"typescript": "4.1.5",
-		"unzipper": "0.10.11",
-		"yarn": "1.22.10"
+		"@recodive/configs": "^1.7.1",
+		"@recodive/eslint-config": "^1.7.1",
+		"@rushstack/eslint-patch": "^1.7.2",
+		"@vitest/coverage-v8": "^1.2.2",
+		"@vitest/ui": "^1.2.2",
+		"eslint": "^8.56.0",
+		"husky": "^9.0.10",
+		"prettier": "^3.2.5",
+		"typescript": "^5.3.3",
+		"vitest": "^1.2.2"
 	},
-	"dependencies": {
-		"auto-launch": "5.0.5",
-		"axios": "0.21.1",
-		"chokidar": "3.5.1",
-		"discord-rpc": "github:discordjs/RPC",
-		"electron-store": "7.0.3",
-		"socket.io": "3.1.2",
-		"source-map-support": "^0.5.19"
-	},
-	"devScript": {
-		"out": "dist/app"
+	"packageManager": "pnpm@8.14.3",
+	"engines": {
+		"node": "^20.0.0"
 	}
 }

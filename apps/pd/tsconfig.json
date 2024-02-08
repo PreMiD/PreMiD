@@ -1,0 +1,7 @@
+{
+	"extends": "./tsconfig.app.json",
+	"include": ["environment.d.ts"],
+	"compilerOptions": {
+		"noEmit": true
+	}
+}
