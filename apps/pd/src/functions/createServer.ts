@@ -1,4 +1,5 @@
 import cors from "@fastify/cors";
+import fastifyMultipart from "@fastify/multipart";
 import ratelimit from "@fastify/rate-limit";
 import fastify from "fastify";
 
@@ -25,8 +26,15 @@ export async function createServer() {
 		timeWindow: "1 minute",
 	});
 
-	server.get("/create/image", createFromImage);
-	server.get("/create/base64", createFromBase64);
+	await server.register(fastifyMultipart, {
+		limits: {
+			fileSize: process.env.MAX_FILE_SIZE ?? 5 * 1024 * 1024,
+			files: 1,
+		},
+	});
+
+	server.post("/create/image", createFromImage);
+	server.post("/create/base64", createFromBase64);
 	server.get("/create/*", createShortenedLink);
 
 	server.get(

@@ -1,7 +1,7 @@
 import got from "got";
 import { describe, expect, it, vi } from "vitest";
 
-describe("getCloudFlareAddresses", async () => {
+describe.concurrent("getCloudFlareAddresses", async () => {
 	it("should return an array of CIDR objects", async () => {
 		const { default: getCloudFlareAddr } = await import("../functions/getCloudFlareAddresses.js");
 

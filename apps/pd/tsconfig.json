@@ -1,7 +1,8 @@
 {
 	"extends": "./tsconfig.app.json",
-	"include": ["environment.d.ts"],
+	"include": ["environment.d.ts", "src"],
 	"compilerOptions": {
-		"noEmit": true
+		"noEmit": true,
+		"types": ["@types/node"]
 	}
 }

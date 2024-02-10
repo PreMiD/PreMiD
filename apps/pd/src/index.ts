@@ -10,3 +10,4 @@ const url = await server.listen({
 });
 
 console.log(`Server listening at ${url}`);
+// TODO Make proper error codes & json responses

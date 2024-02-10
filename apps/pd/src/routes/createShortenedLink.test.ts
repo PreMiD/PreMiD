@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import { createServer } from "../functions/createServer.js";
 
-describe("/create", async () => {
+describe.concurrent("/create", async () => {
 	const server = await createServer();
 
 	it("should return a 400 status code when no URL is provided", async () => {
