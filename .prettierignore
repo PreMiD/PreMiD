@@ -3,3 +3,4 @@
 *.ts
 *.vue
 pnpm-lock.yaml
+cache
