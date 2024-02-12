@@ -41,7 +41,7 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 	]);
 
 	reply.header("Cache-control", `public, max-age=${30 * 60}`);
-	return reply.send(process.env.HOST + uniqueId);
+	return reply.send(process.env.BASE_URL + uniqueId);
 };
 
 export default handler;
