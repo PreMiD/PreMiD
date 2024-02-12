@@ -20,3 +20,4 @@ src/update.ini
 *.js
 
 coverage
+*.tsbuildinfo
