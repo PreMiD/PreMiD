@@ -25,30 +25,13 @@ jobs:
   build-docker:
     name: Build Docker Images
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: [pd, schema-server]
+      fail-fast: false
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v3
-      - name: Setup Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      - name: Build pd Docker Image
-        uses: docker/build-push-action@v5
+      - name: Build Docker Image
+        uses: premid/premid/.github/actions/build-docker@monorepo
         with:
-          context: .
-          file: ./apps/pd/Dockerfile
-          platforms: linux/amd64,linux/arm64
-          push: false
-          tags: pd
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-      - name: Build pd Docker Image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: ./apps/schema-server/Dockerfile
-          platforms: linux/amd64,linux/arm64
-          push: false
-          tags: schema-server
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          dockerfile: ./apps/pd/Dockerfile
+          tags: ${{ matrix.project }}
