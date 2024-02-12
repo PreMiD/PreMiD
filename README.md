@@ -13,6 +13,7 @@ This monorepo is split into multiple packages / projects. Here's a list of them:
 
 - [apps/docs](apps/docs) - The official documentation for PreMiD.
 - [apps/pd](apps/pd/README.md) - A simple url shortener service to shorten urls longer than 256 characters.
+- [apps/schema-server](apps/schema-server) - Simple Schema server for the Presence manifest.
 
 ## License
 
