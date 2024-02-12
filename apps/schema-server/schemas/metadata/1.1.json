@@ -1,0 +1,252 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"$id": "https://schemas.premid.app/metadata/1.0",
+
+	"title": "Metadata",
+	"type": "object",
+	"description": "Metadata that describes a presence.",
+
+	"definitions": {
+		"user": {
+			"type": "object",
+			"description": "User information.",
+
+			"properties": {
+				"name": {
+					"type": "string",
+					"description": "The name of the user."
+				},
+
+				"id": {
+					"type": "string",
+					"description": "The Discord snowflake of the user.",
+					"pattern": "^\\d+$"
+				}
+			},
+
+			"additionalProperties": false,
+			"required": ["name", "id"]
+		}
+	},
+
+	"properties": {
+		"$schema": {
+			"$comment": "This is required otherwise the schema will fail itself when it is applied to a document via $schema. This is optional so that validators that use this schema don't fail if the metadata doesn't have the $schema property.",
+
+			"type": "string",
+			"description": "The metadata schema URL."
+		},
+
+		"author": {
+			"$ref": "#/definitions/user",
+			"description": "The author of this presence."
+		},
+
+		"contributors": {
+			"type": "array",
+			"description": "Any extra contributors to this presence.",
+
+			"items": {
+				"$ref": "#/definitions/user"
+			}
+		},
+
+		"service": {
+			"type": "string",
+			"description": "The service this presence is for."
+		},
+
+		"altnames": {
+			"type": "array",
+			"description": "Alternative names for the service.",
+
+			"items": {
+				"type": "string",
+				"description": "An alternative name."
+			},
+			"minItems": 1
+		},
+
+		"description": {
+			"type": "object",
+			"description": "A description of the presence in multiple languages.",
+
+			"propertyNames": {
+				"type": "string",
+				"description": "The language key. The key must be languagecode(_REGIONCODE).",
+				"pattern": "^[a-z]{2}(_[A-Z]{2})?$"
+			},
+			"patternProperties": {
+				"^[a-z]{2}(_[A-Z]{2})?$": {
+					"type": "string",
+					"description": "The description of the presence in the key's language."
+				}
+			},
+
+			"additionalProperties": false,
+			"required": ["en"]
+		},
+
+		"url": {
+			"type": ["string", "array"],
+			"description": "The service's website URL, or an array of URLs. Protocols should not be added.",
+			"pattern": "^(([a-z0-9-]+\\.)*[0-9a-z_-]+(\\.[a-z]+)+|(\\d{1,3}\\.){3}\\d{1,3}|localhost)$",
+
+			"items": {
+				"type": "string",
+				"description": "One of the service's website URLs.",
+				"pattern": "^(([a-z0-9-]+\\.)*[0-9a-z_-]+(\\.[a-z]+)+|(\\d{1,3}\\.){3}\\d{1,3}|localhost)$"
+			},
+			"minItems": 2
+		},
+
+		"version": {
+			"type": "string",
+			"description": "The SemVer version of the presence. Must just be major.minor.patch.",
+			"pattern": "^\\d+\\.\\d+\\.\\d+$"
+		},
+
+		"logo": {
+			"type": "string",
+			"description": "The logo of the service this presence is for.",
+			"pattern": "^https?:\\/\\/?(?:[a-z0-9-]+\\.)*[0-9a-z_-]+(?:\\.[a-z]+)+\\/.*$"
+		},
+
+		"thumbnail": {
+			"type": "string",
+			"description": "A thumbnail of the service this presence is for.",
+			"pattern": "^https?:\\/\\/?([a-z0-9-]+\\.)*[0-9a-z_-]+(\\.[a-z]+)+\\/.*$"
+		},
+
+		"color": {
+			"type": "string",
+			"description": "The theme color of the service this presence is for. Must be either a 6 digit or a 3 digit hex code.",
+			"pattern": "^#([A-Fa-f0-9]{3}){1,2}$"
+		},
+
+		"tags": {
+			"type": ["array"],
+			"description": "The tags for the presence.",
+
+			"items": {
+				"type": "string",
+				"description": "A tag.",
+				"pattern": "^[^A-Z\\s!\"#$%&'()*+,./:;<=>?@\\[\\\\\\]^_`{|}~]+$"
+			},
+			"minItems": 1
+		},
+
+		"category": {
+			"type": "string",
+			"description": "The category the presence falls under.",
+			"enum": ["anime", "games", "music", "socials", "videos", "other"]
+		},
+
+		"iframe": {
+			"type": "boolean",
+			"description": "Whether or not the presence should run in IFrames."
+		},
+
+		"regExp": {
+			"type": "string",
+			"description": "A regular expression used to match URLs for the presence to inject into."
+		},
+
+		"iFrameRegExp": {
+			"type": "string",
+			"description": "A regular expression used to match IFrames for the presence to inject into."
+		},
+
+		"button": {
+			"type": "boolean",
+			"description": "Controls whether the presence is automatically added when the extension is installed. For partner presences only."
+		},
+
+		"warning": {
+			"type": "boolean",
+			"description": "Shows a warning saying that it requires additional steps for the presence to function correctly."
+		},
+
+		"settings": {
+			"type": "array",
+			"description": "An array of settings the user can change in the presence.",
+
+			"items": {
+				"type": "object",
+				"description": "A setting.",
+
+				"properties": {
+					"id": {
+						"type": "string",
+						"description": "The ID of the setting."
+					},
+
+					"title": {
+						"type": "string",
+						"description": "The title of the setting. Required only if `multiLanguage` is disabled."
+					},
+
+					"icon": {
+						"type": "string",
+						"description": "The icon of the setting. Required only if `multiLanguage` is disabled.",
+						"pattern": "^fa[bs] fa-[0-9a-z-]+$"
+					},
+
+					"if": {
+						"type": "object",
+						"description": "Restrict showing this setting if another setting is the defined value.",
+
+						"propertyNames": {
+							"type": "string",
+							"description": "The ID of the setting."
+						},
+
+						"patternProperties": {
+							"": {
+								"type": ["string", "number", "boolean"],
+								"description": "The value of the setting."
+							}
+						},
+
+						"additionalProperties": false
+					},
+
+					"placeholder": {
+						"type": "string",
+						"description": "The placeholder for settings that require input. Shown when the input is empty."
+					},
+
+					"value": {
+						"type": ["string", "number", "boolean"],
+						"description": "The default value of the setting. Not compatible with `values`."
+					},
+
+					"values": {
+						"type": "array",
+						"description": "The default values of the setting. Not compatible with `value`.",
+
+						"items": {
+							"type": ["string", "number", "boolean"],
+							"description": "The value of the setting."
+						}
+					},
+
+					"multiLanguage": {
+						"type": ["string", "boolean", "array"],
+						"description": "When false, multi-localization is disabled. When true, strings from the `general.json` file are available for use. When a string, it is the name of a file (excluding .json) of a used language from the localization GitHub repo. When an array of strings, it is all of the file names (excluding .json) of used languages from the localization GitHub repo.",
+
+						"items": {
+							"type": "string",
+							"description": "The name of a file from the localization GitHub repository."
+						}
+					}
+				},
+
+				"additionalProperties": false
+			}
+		}
+	},
+
+	"additionalProperties": false,
+	"required": ["author", "service", "description", "url", "version", "logo", "thumbnail", "color", "tags", "category"]
+}
