@@ -146,10 +146,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/request-promise-native@1.0.17":
-  version "1.0.17"
-  resolved "https://registry.yarnpkg.com/@types/request-promise-native/-/request-promise-native-1.0.17.tgz#74a2d7269aebf18b9bdf35f01459cf0a7bfc7fab"
-  integrity sha512-05/d0WbmuwjtGMYEdHIBZ0tqMJJQ2AD9LG2F6rKNBGX1SSFR27XveajH//2N/XYtual8T9Axwl+4v7oBtPUZqg==
+"@types/request-promise-native@1.0.21":
+  version "1.0.21"
+  resolved "https://registry.yarnpkg.com/@types/request-promise-native/-/request-promise-native-1.0.21.tgz#9356d70b81475a29e4e20fd43c705a02c91a4332"
+  integrity sha512-NJ1M6iqWTEUT+qdP+OmXsRZ6tSdkoBdblHKatIWTVP1HdYpHU3IkfpLPf4MWb0+CC4Nl3TtLpYhDlhjZxytDIA==
   dependencies:
     "@types/request" "*"
 
