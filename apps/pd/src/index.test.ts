@@ -1,4 +1,4 @@
-import { expect, it, test } from "vitest";
+import { expect, it, test, vi } from "vitest";
 
 import { createServer } from "./functions/createServer.js";
 
@@ -14,8 +14,8 @@ test("/health", async () => {
 });
 
 it("should have a server variable", async () => {
+	vi.mock("./functions/createServer.js", () => ({ createServer: async () => ({ listen: async () => void {} }) }));
 	const index = await import("./index.js");
 	expect(index.server).toBeDefined();
-
-	await index.server.close();
+	vi.unmock("./functions/createServer.js");
 });
