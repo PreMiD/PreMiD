@@ -92,10 +92,12 @@
   resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.10.tgz#61cc8469849e5bcdd0c7044122265c39cec10cf4"
   integrity sha512-C7srjHiVG3Ey1nR6d511dtDkCEjxuN9W1HWAEjGq8kpcwmNM6JJkpC0xvabM7BXTG2wDq8Eu33iH9aQKa7IvLQ==
 
-"@types/discord-rpc@3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@types/discord-rpc/-/discord-rpc-3.0.4.tgz#2b8c380ff17797b1408fd231b3a9944da515c331"
-  integrity sha512-Ee0vt82qcg05OeJrQZ/YN+NQwaBCnAul1rVLYaMLPkwR5f44WC3BpBQNvn5Z3Axu9szaVOHqXEDBI+uAXAiyrg==
+"@types/discord-rpc@4.0.8":
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/@types/discord-rpc/-/discord-rpc-4.0.8.tgz#454a34b9fc18e91a16f044a697ca56219eb2af85"
+  integrity sha512-1tZf217Natkj+TziNXRRLwNmdm5GNa1bnrQr8VWowquo/Su5hMjdhobj8URxW1COMk2da28XCU1ahsYCAlxirA==
+  dependencies:
+    "@types/events" "*"
 
 "@types/engine.io@*":
   version "3.1.5"
@@ -103,6 +105,11 @@
   integrity sha512-DLVpLEGTEZGBXOYoYoagHSxXkDHONc0fZouF2ayw7Q18aRu1Afwci+1CFKvPpouCUOVWP+dmCaAWpQjswe7kpg==
   dependencies:
     "@types/node" "*"
+
+"@types/events@*":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.3.tgz#a8ef894305af28d1fc6d2dfdfc98e899591ea529"
+  integrity sha512-trOc4AAUThEz9hapPtSd7wf5tiQKvTtu5b371UxXdTuqzIh0ArcRspRP0i0Viu+LXstIQ1z96t1nsPxT9ol01g==
 
 "@types/fs-extra@9.0.11":
   version "9.0.11"
