@@ -22,9 +22,9 @@ runs:
       run: echo ::set-output name=version::$(node -p "require('./apps/${{ inputs.app }}/package.json').version")
       shell: bash
 
-    - name: Convert repository name to lowercase
+    - name: Convert repository owner to lowercase
       id: repo
-      run: echo "::set-output name=lowercase::$(echo ${{ github.repository }} | awk '{print tolower($0)}')"
+      run: echo "::set-output name=lowercase::$(echo ${{ github.repository_owner }} | awk '{print tolower($0)}')"
       shell: bash
 
     - name: Build and Push Docker Image
