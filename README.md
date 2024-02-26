@@ -1,8 +1,16 @@
+<img src="https://cdn.rcd.gg/PreMiD.png" width="150px" />
+
+# PreMiD
+
 [![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/PreMiD/PreMiD)
 
-# PreMiD Monorepo
+This is the monorepo for PreMiD. PreMiD is a simple, configurable utility that allows you to show what you're watching/listening to on your Discord profile.
 
-This is the monorepo for the PreMiD project. PreMiD is a simple, configurable utility that allows you to show what you're watching/listening to on your Discord profile.
+## Getting Started
+
+**If you are a user looking to install PreMiD, please visit the [official website](https://premid.app).**
+
+If you are a developer looking to contribute to PreMiD, read along.
 
 ## Table of Contents
 
