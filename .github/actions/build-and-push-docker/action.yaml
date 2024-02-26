@@ -1,0 +1,31 @@
+name: "Build and Push Docker Image"
+description: "Builds a Docker image and pushes it to GitHub Container Registry"
+inputs:
+  app:
+    description: "Name of the app"
+    required: true
+  token:
+    description: "GitHub token"
+    required: true
+outputs:
+  version:
+    description: "Version of the app"
+    value: ${{ steps.get_version.outputs.version }}
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Get package.json version
+      id: get_version
+      run: echo ::set-output name=version::$(node -p "require('./${{ inputs.app }}/package.json').version")
+      shell: bash
+
+    - name: Build and Push Docker Image
+      uses: premid/premid/.github/actions/build-docker@monorepo
+      with:
+        dockerfile: ./apps/${{ inputs.app }}/Dockerfile
+        push: true
+        token: ${{ secrets.GITHUB_TOKEN }}
+        tags: ghcr.io/${{ github.repository_owner }}/${{ inputs.app }}:${{ steps.get_version.outputs.version }},ghcr.io/${{ github.repository_owner }}/${{ inputs.app }}:latest
