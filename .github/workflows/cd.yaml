@@ -2,7 +2,7 @@ name: Build schema-server
 on:
   push:
     tags:
-      - "v*"
+      - "*-v*"
 
 permissions:
   packages: write
@@ -20,8 +20,9 @@ jobs:
         id: set-matrix
         run: |
           TAG_NAME=${GITHUB_REF#refs/tags/}
-          APP_NAME=${TAG_NAME#v}
-          MATRIX="[\"$APP_NAME\"]"
+          APP_NAME=${TAG_NAME%-v*}
+          VERSION=${TAG_NAME#*-v}
+          MATRIX="{\"app\": \"$APP_NAME\", \"version\": \"$VERSION\"}"
           echo "::set-output name=matrix::$MATRIX"
 
   build:
@@ -29,14 +30,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        app: ${{fromJson(needs.prepare.outputs.matrix)}}
+        include: ${{fromJson(needs.prepare.outputs.matrix)}}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Get package.json version
-        id: get_version
-        run: echo ::set-output name=version::$(node -p "require('./apps/${{ matrix.app }}/package.json').version")
+        uses: actions/checkout@v4
 
       - name: Build Docker Image
         uses: premid/premid/.github/actions/build-docker@monorepo
@@ -44,4 +41,4 @@ jobs:
           dockerfile: ./apps/${{ matrix.app }}/Dockerfile
           push: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          tags: ghcr.io/${{ github.repository_owner }}/${{ matrix.app }}:${{ steps.get_version.outputs.version }},ghcr.io/${{ github.repository_owner }}/${{ matrix.app }}:latest
+          tags: ghcr.io/${{ github.repository_owner }}/${{ matrix.app }}:${{ matrix.version }},ghcr.io/${{ github.repository_owner }}/${{ matrix.app }}:latest
