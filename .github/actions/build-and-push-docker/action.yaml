@@ -27,5 +27,5 @@ runs:
       with:
         dockerfile: ./apps/${{ inputs.app }}/Dockerfile
         push: true
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ inputs.token }}
         tags: ghcr.io/${{ github.repository_owner }}/${{ inputs.app }}:${{ steps.get_version.outputs.version }},ghcr.io/${{ github.repository_owner }}/${{ inputs.app }}:latest
