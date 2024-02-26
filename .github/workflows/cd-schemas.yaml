@@ -3,6 +3,8 @@ on:
   push:
     tags:
       - "schema-server-v*"
+permissions:
+  packages: write
 jobs:
   build:
     name: Build schema-server
@@ -20,4 +22,5 @@ jobs:
         with:
           dockerfile: ./apps/schema-server/Dockerfile
           push: true
+          token: ${{ secrets.GITHUB_TOKEN }}
           tags: ghcr.io/premid/schema-server:${{ steps.get_version.outputs.version }},ghcr.io/premid/schema-server:latest

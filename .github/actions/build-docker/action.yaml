@@ -11,6 +11,9 @@ inputs:
     description: "Whether to push the Docker image to the registry"
     required: false
     default: "false"
+  token:
+    description: "GitHub Token"
+    required: true
 runs:
   using: "composite"
   steps:
@@ -28,7 +31,7 @@ runs:
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        password: ${{ inputs.token }}
 
     - name: Build Docker Image
       uses: docker/build-push-action@v5
