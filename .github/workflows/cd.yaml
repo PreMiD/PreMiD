@@ -1,0 +1,47 @@
+name: Build schema-server
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  packages: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set matrix for build
+        id: set-matrix
+        run: |
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          APP_NAME=${TAG_NAME#v}
+          MATRIX="[\"$APP_NAME\"]"
+          echo "::set-output name=matrix::$MATRIX"
+
+  build:
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        app: ${{fromJson(needs.prepare.outputs.matrix)}}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Get package.json version
+        id: get_version
+        run: echo ::set-output name=version::$(node -p "require('./apps/${{ matrix.app }}/package.json').version")
+
+      - name: Build Docker Image
+        uses: premid/premid/.github/actions/build-docker@monorepo
+        with:
+          dockerfile: ./apps/${{ matrix.app }}/Dockerfile
+          push: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tags: ghcr.io/${{ github.repository_owner }}/${{ matrix.app }}:${{ steps.get_version.outputs.version }},ghcr.io/${{ github.repository_owner }}/${{ matrix.app }}:latest
