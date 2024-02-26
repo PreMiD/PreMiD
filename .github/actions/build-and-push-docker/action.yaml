@@ -22,10 +22,15 @@ runs:
       run: echo ::set-output name=version::$(node -p "require('./apps/${{ inputs.app }}/package.json').version")
       shell: bash
 
+    - name: Convert repository name to lowercase
+      id: repo
+      run: echo "::set-output name=lowercase::$(echo ${{ github.repository }} | awk '{print tolower($0)}')"
+      shell: bash
+
     - name: Build and Push Docker Image
       uses: premid/premid/.github/actions/build-docker@monorepo
       with:
         dockerfile: ./apps/${{ inputs.app }}/Dockerfile
         push: true
         token: ${{ inputs.token }}
-        tags: ghcr.io/${{ github.repository_owner }}/${{ inputs.app }}:${{ steps.get_version.outputs.version }},ghcr.io/${{ github.repository_owner }}/${{ inputs.app }}:latest
+        tags: ghcr.io/${{ steps.repo.outputs.lowercase }}/${{ inputs.app }}:${{ steps.get_version.outputs.version }},ghcr.io/${{ steps.repo.outputs.lowercase }}/${{ inputs.app }}:latest
