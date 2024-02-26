@@ -1,0 +1,16 @@
+name: Build schema-server
+on:
+  push:
+    tags:
+      - "schema-server-*"
+jobs:
+  build:
+    name: Build schema-server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Docker Image
+        uses: premid/premid/.github/actions/build-docker@monorepo
+        with:
+          dockerfile: ./apps/schema-server/Dockerfile
+          push: true
+          tags: ghcr.io/premid/schema-server:${{ github.ref }},ghcr.io/premid/schema-server:latest

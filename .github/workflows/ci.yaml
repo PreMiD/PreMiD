@@ -22,6 +22,7 @@ jobs:
         run: pnpm run build
       - name: Test
         run: pnpm test
+
   build-docker:
     name: Build Docker Images
     runs-on: ubuntu-latest

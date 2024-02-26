@@ -7,6 +7,10 @@ inputs:
   tags:
     description: "Comma-separated list of tags for the Docker image"
     required: true
+  push:
+    description: "Whether to push the Docker image to the registry"
+    required: false
+    default: "false"
 runs:
   using: "composite"
   steps:
@@ -22,7 +26,7 @@ runs:
         context: .
         file: ${{ inputs.dockerfile }}
         platforms: linux/amd64,linux/arm64
-        push: false
+        push: ${{ inputs.push }}
         tags: ${{ inputs.tags }}
         cache-from: type=gha
         cache-to: type=gha,mode=max
