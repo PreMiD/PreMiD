@@ -1,6 +1,6 @@
 {
 	"name": "@premid/schema-server",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "A small service to serve the JSON schemas for PreMiD",
 	"main": "dist/index.js",
 	"type": "module",
