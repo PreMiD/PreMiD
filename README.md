@@ -32,12 +32,14 @@ This monorepo is split into multiple packages / projects. Here's a list of them:
 To release a new version of a package, run the following command:
 
 ```bash
+cd apps/<app>
 pnpm bumpp -y -t <app>-v
 ```
 
 Replace `<app>` with the name of the package you want to release. For example, to release a new version of the `schema-server` package, you would run:
 
 ```bash
+cd apps/schema-server
 pnpm bumpp -y -t schema-server-v
 ```
 
