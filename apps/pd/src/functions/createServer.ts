@@ -20,15 +20,15 @@ export async function createServer(redis?: Redis) {
 	});
 
 	await server.register(ratelimit, {
-		max: 25,
+		max: Number.parseInt(process.env.RATELIMIT_MAX ?? "25"),
 		nameSpace: "pd-ratelimit-",
 		redis,
-		timeWindow: "1 minute",
+		timeWindow: process.env.RATELIMIT_WINDOW ?? "1 minute",
 	});
 
 	await server.register(fastifyMultipart, {
 		limits: {
-			fileSize: process.env.MAX_FILE_SIZE ?? 5 * 1024 * 1024,
+			fileSize: Number.parseInt(process.env.MAX_FILE_SIZE ?? (5 * 1024 * 1024).toString()),
 			files: 1,
 		},
 	});
