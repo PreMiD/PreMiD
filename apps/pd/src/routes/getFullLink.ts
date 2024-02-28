@@ -1,3 +1,5 @@
+import crypto from "node:crypto";
+
 import { RouteHandlerMethod } from "fastify";
 
 import isInCIDRRange from "../functions/isInCidRange.js";
@@ -23,7 +25,9 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 	const url = await keyv.get(id);
 	if (!url) return reply.code(404).send("Unknown ID");
 
-	await keyv.set(url, id, 1800);
+	const hash = crypto.createHash("sha256").update(url).digest("hex");
+
+	await Promise.all([keyv.set(hash, id, 30 * 60 * 1000), keyv.set(id, url, 30 * 60 * 1000)]);
 	reply.header("Cache-control", "public, max-age=1800");
 
 	//* If it is not a base64 string, redirect to it

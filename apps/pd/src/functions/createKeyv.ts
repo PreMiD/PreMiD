@@ -9,6 +9,7 @@ export default async function createKeyv() {
 	/* c8 ignore next 8 */
 	if (process.env.REDIS_URL) {
 		options = {
+			namespace: "pd",
 			store: new KeyvRedis(redis),
 		};
 	}

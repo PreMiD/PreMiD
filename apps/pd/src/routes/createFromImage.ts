@@ -1,3 +1,5 @@
+import crypto from "node:crypto";
+
 import { RouteHandlerMethod } from "fastify";
 import { fileTypeFromBuffer } from "file-type";
 import { nanoid } from "nanoid";
@@ -26,22 +28,18 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 
 	const buffer = await file.toBuffer(),
 		body = `data:${type.mime};base64,${buffer.toString("base64")}`,
-		url = await keyv.get(body);
+		hash = crypto.createHash("sha256").update(body).digest("hex"),
+		existingUrl = await keyv.get(hash);
 
-	if (url) {
-		await Promise.all([
-			keyv.set(url, body, 30 * 60 * 1000),
-			keyv.set(body, url, 30 * 60 * 1000),
-		]);
-
+	if (existingUrl) {
 		reply.header("Cache-control", `public, max-age=${30 * 60}`);
-		return reply.send(process.env.HOST + url);
+		return reply.send(process.env.HOST + existingUrl);
 	}
 
 	const uniqueId = `${nanoid(10)}.${type.ext}`;
 
 	await Promise.all([
-		keyv.set(body, uniqueId, 30 * 60 * 1000),
+		keyv.set(hash, uniqueId, 30 * 60 * 1000),
 		keyv.set(uniqueId, body, 30 * 60 * 1000),
 	]);
 
