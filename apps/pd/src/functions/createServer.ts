@@ -21,7 +21,7 @@ export async function createServer(redis?: Redis) {
 
 	await server.register(ratelimit, {
 		max: 25,
-		nameSpace: "pd",
+		nameSpace: "pd-ratelimit-",
 		redis,
 		timeWindow: "1 minute",
 	});

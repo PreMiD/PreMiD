@@ -1,7 +1,7 @@
 import { RouteHandlerMethod } from "fastify";
 import { nanoid } from "nanoid";
 
-import { keyv } from "../constants.js";
+import keyv from "../keyv.js";
 
 const handler: RouteHandlerMethod = async (request, reply) => {
 	const url = request.url.replace("/create/", "").trim();

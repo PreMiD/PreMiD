@@ -2,9 +2,9 @@ import { hostname } from "node:os";
 
 import { Redis } from "ioredis";
 
+/* c8 ignore start */
 export default function createRedis(): Redis {
-	const redis = new Redis({
-		host: process.env.REDIS_URL,
+	const redis = new Redis(process.env.REDIS_URL ?? "redis://127.0.0.1:6379", {
 		name: `pd-${hostname()}`,
 	});
 

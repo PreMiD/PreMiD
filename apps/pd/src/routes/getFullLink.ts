@@ -1,7 +1,8 @@
 import { RouteHandlerMethod } from "fastify";
 
-import { googleCIDRs, keyv } from "../constants.js";
 import isInCIDRRange from "../functions/isInCidRange.js";
+import googleCIDRs from "../googleCIDRs.js";
+import keyv from "../keyv.js";
 
 const handler: RouteHandlerMethod = async (request, reply) => {
 	/* c8 ignore next 1 */
@@ -32,7 +33,8 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 			url.replace(/^data:image\/\w+;base64,/, ""),
 			"base64",
 		),
-		mime = url.split(";")[0].split(":")[1];
+		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+		mime = url.split(";")[0]!.split(":")[1]!;
 
 	return reply.type(mime).send(image);
 };

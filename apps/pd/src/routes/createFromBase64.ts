@@ -2,7 +2,7 @@ import { RouteHandlerMethod } from "fastify";
 import mime from "mime-types";
 import { nanoid } from "nanoid";
 
-import { keyv } from "../constants.js";
+import keyv from "../keyv.js";
 
 const handler: RouteHandlerMethod = async (request, reply) => {
 	const { body } = request;

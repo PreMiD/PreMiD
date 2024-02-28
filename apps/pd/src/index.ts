@@ -1,11 +1,10 @@
 /* c8 ignore start */
-import createRedis from "./functions/createRedis.js";
 import { createServer } from "./functions/createServer.js";
+import redis from "./redis.js";
 
 if (!process.env.REDIS_URL) console.log("WARNING: No REDIS_URL environment variable set");
 
-export const redis = createRedis();
-export const server = await createServer();
+export const server = await createServer(redis);
 
 const url = await server.listen({
 	host: process.env.HOST ?? "0.0.0.0",

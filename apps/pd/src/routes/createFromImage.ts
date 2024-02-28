@@ -2,7 +2,7 @@ import { RouteHandlerMethod } from "fastify";
 import { fileTypeFromBuffer } from "file-type";
 import { nanoid } from "nanoid";
 
-import { keyv } from "../constants.js";
+import keyv from "../keyv.js";
 
 const handler: RouteHandlerMethod = async (request, reply) => {
 	if (!request.isMultipart()) return reply.status(400).send("Request is not multipart");
