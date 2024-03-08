@@ -7,7 +7,7 @@ export default async function createKeyv() {
 	let options: Keyv.Options<string> | undefined;
 
 	/* c8 ignore next 8 */
-	if (process.env.REDIS_URL) {
+	if (process.env.REDIS_SENTINELS) {
 		options = {
 			namespace: "pd",
 			store: new KeyvRedis(redis),

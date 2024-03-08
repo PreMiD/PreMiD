@@ -2,7 +2,7 @@
 import { createServer } from "./functions/createServer.js";
 import redis from "./redis.js";
 
-if (!process.env.REDIS_URL) console.log("WARNING: No REDIS_URL environment variable set");
+if (!process.env.REDIS_SENTINELS) console.log("WARNING: No REDIS_SENTINELS environment variable set");
 
 export const server = await createServer(redis);
 

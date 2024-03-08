@@ -4,8 +4,13 @@ import { Redis } from "ioredis";
 
 /* c8 ignore start */
 export default function createRedis(): Redis {
-	const redis = new Redis(process.env.REDIS_URL ?? "redis://127.0.0.1:6379", {
+	const redis = new Redis({
+		lazyConnect: true,
 		name: `pd-${hostname()}`,
+		sentinels: process.env.REDIS_SENTINELS?.split(",")?.map(s => ({
+			host: s,
+			port: 26_379,
+		})),
 	});
 
 	/* c8 ignore next 3 */
