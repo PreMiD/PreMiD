@@ -1,6 +1,6 @@
 {
 	"name": "@premid/pd",
-	"version": "1.1.4",
+	"version": "1.1.5",
 	"description": "A small service to shorten image urls to get around Discord's 256 character limit",
 	"main": "dist/index.js",
 	"type": "module",
