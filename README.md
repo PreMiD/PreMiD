@@ -1,46 +1,50 @@
-<div align="center">
-
-<img src=".github/Logo.png" width="150px" draggable="false"><br>
+<img src="https://cdn.rcd.gg/PreMiD.png" width="150px" />
 
 # PreMiD
 
-## Your Rich Presence for web services!
+[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/PreMiD/PreMiD)
 
-![GitHub](https://img.shields.io/github/license/PreMiD/PreMiD?style=for-the-badge)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/premid/premid?label=Application&style=for-the-badge)
-![Chrome Web Store](https://img.shields.io/chrome-web-store/v/agjnjboanicjcpenljmaaigopkgdnihi?label=Extension&style=for-the-badge)
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/d/agjnjboanicjcpenljmaaigopkgdnihi.svg?label=Chrome&logo=google%20chrome&logoColor=white&colorA=4285F4&style=for-the-badge)](https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi)
-![Website](https://img.shields.io/website?down_message=offline&label=PreMiD.app&style=for-the-badge&up_message=online&url=https%3A%2F%2Fpremid.app)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FPreMiD%2FPreMiD.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FPreMiD%2FPreMiD?ref=badge_shield)
+This is the monorepo for PreMiD. PreMiD is a simple, configurable utility that allows you to show what you're watching/listening to on your Discord profile.
 
-<img src=".github/example.png" draggable="false"><br>
+## Getting Started
 
-# About
+**If you are a user looking to install PreMiD, please visit the [official website](https://premid.app).**
 
-**PreMiD** is a simple, configurable utility that allows you to show what you're doing on the web in your Discord **now playing status**. It supports many different websites, and will support multiple users watching the same content simultaneously in an upcoming update.
+If you are a developer looking to contribute to PreMiD, read along.
 
-# Features
+## Table of Contents
 
-· Displays your current web service in Discord as your status.<br>
-· Grants full control over Presences.<br>
-· Supports over 1,000 web services, still rising!<br>
-· _Watch parties and more are coming soon!_
+- [Packages](#packages)
+- [License](#license)
 
-# Installation/Troubleshooting
+## Packages
 
-### Installation instructions, Troubleshooting guides etc. can be located at our [**docs**](https://docs.premid.app).
+This monorepo is split into multiple packages / projects. Here's a list of them:
 
-# Support us
+- [apps/docs](apps/docs) - The official documentation for PreMiD.
+- [apps/pd](apps/pd/README.md) - A simple url shortener service to shorten urls longer than 256 characters.
+- [apps/schema-server](apps/schema-server) - Simple Schema server for the Presence manifest.
 
-  <div>
-    <a target="_blank" href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button" title="Support me on Patreon!">
-      <img height="75px" draggable="false" src=".github/Patreon.png">
-    </a>
-    <a target="_blank" href="https://discord.premid.app/" title="Join our Discord!">
-		<img  src="https://discordapp.com/api/guilds/493130730549805057/widget.png?style=banner2" height="76px" draggable="false" alt="Join our Discord!">
-    </a>
-  </div>
+## Development
+
+### Release
+
+To release a new version of a package, run the following command:
+
+```bash
+cd apps/<app>
+pnpm bumpp -y -t <app>-v
+```
+
+Replace `<app>` with the name of the package you want to release. For example, to release a new version of the `schema-server` package, you would run:
+
+```bash
+cd apps/schema-server
+pnpm bumpp -y -t schema-server-v
+```
+
+This will use bumpp to bump the version of the package in the `package.json` file, create a tag for the new version, and push the changes to the remote repository.
 
 ## License
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FPreMiD%2FPreMiD.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FPreMiD%2FPreMiD?ref=badge_large)
+This project is licensed under the [MPL-2.0 License](LICENSE).

@@ -1,0 +1,17 @@
+name: Build schema-server
+on:
+  push:
+    tags:
+      - "schema-server-v*"
+permissions:
+  packages: write
+jobs:
+  build:
+    name: Build schema-server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build and Push Docker Image
+        uses: premid/premid/.github/actions/build-and-push-docker@monorepo
+        with:
+          app: schema-server
+          token: ${{ secrets.GITHUB_TOKEN }}

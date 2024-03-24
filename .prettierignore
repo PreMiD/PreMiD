@@ -1,0 +1,8 @@
+.pnpm-store
+
+*.js
+*.cjs
+*.ts
+*.vue
+pnpm-lock.yaml
+cache
