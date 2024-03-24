@@ -8,5 +8,6 @@ declare namespace NodeJS {
 		HOST?: string;
 		RATELIMIT_MAX?: string;
 		RATELIMIT_WINDOW?: string;
+		BASE_URL?: string;
 	}
 }

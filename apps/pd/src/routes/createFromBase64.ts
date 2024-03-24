@@ -28,7 +28,7 @@ const	handler: RouteHandlerMethod = async (request, reply) => {
 
 	if (existingUrl) {
 		reply.header("Cache-control", `public, max-age=${30 * 60}`);
-		return reply.send(process.env.HOST + existingUrl);
+		return reply.send(process.env.BASE_URL + existingUrl);
 	}
 
 	const uniqueId = `${nanoid(10)}.${type}`;
