@@ -15,7 +15,7 @@ hero:
       link: /getting-started
     - theme: alt
       text: Presence Development
-      link: /presence-development
+      link: /dev/getting-started
 features:
   - icon: 🛠️
     title: Extensible

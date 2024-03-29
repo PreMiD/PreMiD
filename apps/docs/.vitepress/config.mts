@@ -18,7 +18,7 @@ export default defineConfig({
 		nav: [
 			{
 				text: "Presence Development",
-				link: "/presence-development/",
+				link: "/dev/getting-started",
 			},
 			{
 				text: "Reference",
