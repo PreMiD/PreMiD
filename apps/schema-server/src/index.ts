@@ -6,7 +6,7 @@ import { globby } from "globby";
 
 export const app = fastify();
 
-app.register(helmet);
+await app.register(helmet);
 
 app.get("/", (_, reply) => reply.send({ date: new Date() }));
 
@@ -30,7 +30,7 @@ for (const schemaPath of await globby(resolve(import.meta.dirname, "../schemas/*
 	if (!schemaVersions)
 		schemaVersions = [];
 
-	const { default: content } = await import(schemaPath, { with: { type: "json" } });
+	const { default: content } = await import(schemaPath, { with: { type: "json" } }) as { default: Record<string, unknown> };
 	schemaVersions.push({
 		content,
 		version: version.replace(extname(version), ""),
@@ -52,7 +52,7 @@ app.get<versionRequest>("/:schemaName/:version", async (request, reply) => {
 if (process.env.NODE_ENV !== "test") {
 	const url = await app.listen({
 		host: process.env.HOST ?? "0.0.0.0",
-		port: Number.parseInt(process.env.PORT || "80"),
+		port: Number.parseInt(process.env.PORT ?? "80"),
 	});
 
 	// eslint-disable-next-line no-console

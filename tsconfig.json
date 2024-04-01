@@ -2,6 +2,6 @@
 	"extends": "./tsconfig.base.json",
 	"compilerOptions": {
 		"noEmit": true,
-		"types": ["vitest"]
+		"types": ["@types/node", "vitest"]
 	}
 }

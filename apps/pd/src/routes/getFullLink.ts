@@ -7,7 +7,8 @@ import googleCIDRs from "../googleCIDRs.js";
 import keyv from "../keyv.js";
 
 const handler: RouteHandlerMethod = async (request, reply) => {
-	/* c8 ignore next 1 */
+	/* c8 ignore next 2 */
+	// eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
 	const ip = request.headers["cf-connecting-ip"]?.toString() || request.socket.remoteAddress || request.ip;
 
 	if (
@@ -28,7 +29,7 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 	const hash = crypto.createHash("sha256").update(url).digest("hex");
 
 	await Promise.all([keyv.set(hash, id, 30 * 60 * 1000), keyv.set(id, url, 30 * 60 * 1000)]);
-	reply.header("Cache-control", "public, max-age=1800");
+	void reply.header("Cache-control", "public, max-age=1800");
 
 	//* If it is not a base64 string, redirect to it
 	if (!url.startsWith("data:image")) return reply.redirect(url);

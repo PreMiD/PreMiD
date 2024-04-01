@@ -22,14 +22,14 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 
 	if (existingShortenedUrl) {
 		await Promise.all([keyv.set(hash, existingShortenedUrl, 1800), keyv.set(existingShortenedUrl, url, 1800)]);
-		return reply.send(process.env.BASE_URL + existingShortenedUrl);
+		return reply.send(process.env.BASE_URL! + existingShortenedUrl);
 	}
 
 	const uniqueId = nanoid(10);
 
 	await Promise.all([keyv.set(hash, uniqueId, 1800), keyv.set(uniqueId, url, 1800)]);
 
-	return reply.send(process.env.BASE_URL + uniqueId);
+	return reply.send(process.env.BASE_URL! + uniqueId);
 };
 
 export default handler;

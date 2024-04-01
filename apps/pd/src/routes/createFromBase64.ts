@@ -17,7 +17,7 @@ const	handler: RouteHandlerMethod = async (request, reply) => {
 
 	if (!matches || matches.length === 0) return reply.status(400).send("Invalid base64 string");
 
-	const type = mime.extension(matches.at(1) as string);
+	const type = mime.extension(matches.at(1)!);
 
 	if (!type) return reply.status(400).send("Invalid base64 string");
 
@@ -27,8 +27,8 @@ const	handler: RouteHandlerMethod = async (request, reply) => {
 		existingUrl = await keyv.get(hash);
 
 	if (existingUrl) {
-		reply.header("Cache-control", `public, max-age=${30 * 60}`);
-		return reply.send(process.env.BASE_URL + existingUrl);
+		void reply.header("Cache-control", `public, max-age=${(30 * 60).toString()}`);
+		return reply.send(process.env.BASE_URL! + existingUrl);
 	}
 
 	const uniqueId = `${nanoid(10)}.${type}`;
@@ -36,8 +36,8 @@ const	handler: RouteHandlerMethod = async (request, reply) => {
 	await keyv.set(hash, uniqueId, 30 * 60 * 1000);
 	await keyv.set(uniqueId, body, 30 * 60 * 1000);
 
-	reply.header("Cache-control", `public, max-age=${30 * 60}`);
-	return reply.send(process.env.BASE_URL + uniqueId);
+	void reply.header("Cache-control", `public, max-age=${(30 * 60).toString()}`);
+	return reply.send(process.env.BASE_URL! + uniqueId);
 };
 
 export default handler;

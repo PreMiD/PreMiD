@@ -3,7 +3,7 @@ import Keyv from "keyv";
 
 import redis from "../redis.js";
 
-export default async function createKeyv() {
+export default function createKeyv() {
 	let options: Keyv.Options<string> | undefined;
 
 	/* c8 ignore next 8 */

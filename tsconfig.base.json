@@ -13,6 +13,7 @@
 
 		/* Strictness */
 		"strict": true,
+		"strictNullChecks": true,
 		"noUncheckedIndexedAccess": true,
 
 		/* If transpiling with TypeScript: */

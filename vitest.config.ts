@@ -5,7 +5,7 @@ export default defineConfig({
 		coverage: {
 			all: true,
 			enabled: true,
-			exclude: [...configDefaults.coverage.exclude ?? [], "commitlint.config.cjs"],
+			exclude: [...configDefaults.coverage.exclude ?? [], "commitlint.config.cjs", "**/generated/**", "**/codegen.ts", "**/lib/**"],
 			reportOnFailure: true,
 			skipFull: true,
 			thresholds: {

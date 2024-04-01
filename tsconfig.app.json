@@ -2,10 +2,16 @@
 	"files": [],
 	"references": [
 		{
+			"path": "./packages/db/tsconfig.build.json"
+		},
+		{
 			"path": "./apps/pd/tsconfig.app.json"
 		},
 		{
 			"path": "./apps/schema-server/tsconfig.app.json"
+		},
+		{
+			"path": "./apps/api/tsconfig.app.json"
 		}
 	]
 }

@@ -9,12 +9,13 @@ describe("schemas", () => {
 		const result = await app.inject({ url: "/" });
 
 		expect(result.statusCode).toBe(200);
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 		expect(result.json()).toEqual({ date: expect.any(String) });
 	});
 
 	test("/metadata/1.0 should return metadata schema", async () => {
 		const result = await app.inject({ url: "/metadata/1.0" }),
-			schema = await import(resolve(import.meta.dirname, "../schemas/metadata/1.0.json"));
+			schema = await import(resolve(import.meta.dirname, "../schemas/metadata/1.0.json")) as { default: Record<string, unknown> };
 
 		expect(result.statusCode).toBe(200);
 		expect(result.json()).toEqual(schema.default);
@@ -22,7 +23,7 @@ describe("schemas", () => {
 
 	test("/metadata/1.0 should return cached metadata schema", async () => {
 		const result = await app.inject({ url: "/metadata/1.0" }),
-			schema = await import(resolve(import.meta.dirname, "../schemas/metadata/1.0.json"));
+			schema = await import(resolve(import.meta.dirname, "../schemas/metadata/1.0.json")) as { default: Record<string, unknown> };
 
 		expect(result.statusCode).toBe(200);
 		expect(result.json()).toEqual(schema.default);

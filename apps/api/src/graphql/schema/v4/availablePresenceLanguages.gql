@@ -1,0 +1,22 @@
+type Query {
+	"""
+	Get the available presence languages for a specific presence
+	"""
+	availablePresenceLanguages(
+		"""
+		Presence, e.g. 'Netflix'
+		"""
+		presence: StringOrStringArray
+	): [PresenceLanguage!]!
+}
+
+type PresenceLanguage {
+	"""
+	Presence, e.g. 'Netflix'
+	"""
+	presence: String!
+	"""
+	The available languages for the presence
+	"""
+	languages: [Language!]!
+}

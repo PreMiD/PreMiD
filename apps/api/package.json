@@ -1,0 +1,41 @@
+{
+	"name": "@premid/api",
+	"version": "1.0.0",
+	"description": "PreMiD's api",
+	"main": "dist/index.js",
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"start": "node --enable-source-maps .",
+		"dev": "node --watch --env-file .env --enable-source-maps .",
+		"build": "tsc -p tsconfig.app.json",
+		"codegen": "graphql-codegen --config codegen.ts"
+	},
+	"private": true,
+	"license": "MPL-2.0",
+	"dependencies": {
+		"@envelop/sentry": "^8.0.0",
+		"@escape.tech/graphql-armor-max-aliases": "^2.3.0",
+		"@escape.tech/graphql-armor-max-depth": "^2.2.0",
+		"@escape.tech/graphql-armor-max-directives": "^2.1.0",
+		"@escape.tech/graphql-armor-max-tokens": "^2.3.0",
+		"@premid/db": "*",
+		"@sentry/node": "^7.104.0",
+		"@sentry/tracing": "^7.104.0",
+		"fastify": "^4.26.0",
+		"graphql": "^16.8.1",
+		"graphql-parse-resolve-info": "^4.13.0",
+		"graphql-yoga": "^5.1.1",
+		"mongoose": "^8.2.0"
+	},
+	"devDependencies": {
+		"@graphql-codegen/cli": "5.0.2",
+		"@graphql-codegen/schema-ast": "^4.0.2",
+		"@graphql-codegen/typescript": "4.0.6",
+		"@graphql-codegen/typescript-resolvers": "4.0.6",
+		"@parcel/watcher": "^2.4.1",
+		"typescript": "^5.3.3"
+	}
+}

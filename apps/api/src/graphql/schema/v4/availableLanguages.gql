@@ -1,0 +1,21 @@
+type Query {
+	"""
+	Get the available languages
+	"""
+	availableLanguages: [Language!]!
+}
+
+type Language {
+	"""
+	Language code
+	"""
+	lang: String!
+	"""
+	Native name of the language, eg. 'English', 'Deutsch', 'Español', etc.
+	"""
+	nativeName: String!
+	"""
+	'ltr' or 'rtl'
+	"""
+	direction: String!
+}

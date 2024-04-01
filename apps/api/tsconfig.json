@@ -1,0 +1,8 @@
+{
+	"extends": "./tsconfig.app.json",
+	"include": ["environment.d.ts", "src", "codegen.ts"],
+	"compilerOptions": {
+		"rootDir": ".",
+		"noEmit": true
+	}
+}

@@ -5,8 +5,8 @@
 	"type": "module",
 	"scripts": {
 		"prepare": "husky",
-		"lint": "eslint . --ext .ts,.js && prettier --check .",
-		"lint:fix": "eslint . --ext .ts,.js --fix && prettier --write .",
+		"lint": "eslint . && prettier --check .",
+		"lint:fix": "eslint . --fix && prettier --write .",
 		"build": "pnpm clean && tsc -b tsconfig.app.json",
 		"build:watch": "pnpm clean && tsc -b tsconfig.app.json -w",
 		"clean": "tsc -b tsconfig.app.json --clean",
@@ -22,7 +22,7 @@
 	"devDependencies": {
 		"@commitlint/cli": "^18.6.0",
 		"@recodive/configs": "^1.7.5",
-		"@recodive/eslint-config": "^1.7.5",
+		"@recodive/eslint-config": "^1.8.4",
 		"@rushstack/eslint-patch": "^1.7.2",
 		"@types/node": "^20.11.17",
 		"@vitest/coverage-v8": "^1.2.2",

@@ -24,7 +24,7 @@ describe.concurrent("createFromImage", async () => {
 	});
 
 	afterAll(() => {
-		server.close();
+		void server.close();
 	});
 
 	it("should return a 400 when request is not multipart", async ({ expect }) => {
