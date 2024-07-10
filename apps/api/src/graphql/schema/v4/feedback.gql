@@ -1,0 +1,13 @@
+type Mutation {
+	sendFeedback(input: String!, type: FeedbackType!, email: String, discord: String): FeedbackResult!
+}
+
+enum FeedbackType {
+	extension
+	feature
+	other
+}
+
+type FeedbackResult {
+	success: Boolean!
+}
