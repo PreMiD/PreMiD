@@ -1,35 +1,34 @@
 import { resolve } from "node:path";
 
-import { describe, expect, test } from "vitest";
+import { describe, expect, it } from "vitest";
 
 import { app } from "./index.js";
 
 describe("schemas", () => {
-	test("/ should return date", async () => {
+	it("/ should return date", async () => {
 		const result = await app.inject({ url: "/" });
 
 		expect(result.statusCode).toBe(200);
-		// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 		expect(result.json()).toEqual({ date: expect.any(String) });
 	});
 
-	test("/metadata/1.0 should return metadata schema", async () => {
-		const result = await app.inject({ url: "/metadata/1.0" }),
-			schema = await import(resolve(import.meta.dirname, "../schemas/metadata/1.0.json")) as { default: Record<string, unknown> };
+	it("/metadata/1.0 should return metadata schema", async () => {
+		const result = await app.inject({ url: "/metadata/1.0" });
+		const schema = await import(resolve(import.meta.dirname, "../schemas/metadata/1.0.json")) as { default: Record<string, unknown> };
 
 		expect(result.statusCode).toBe(200);
 		expect(result.json()).toEqual(schema.default);
 	});
 
-	test("/metadata/1.0 should return cached metadata schema", async () => {
-		const result = await app.inject({ url: "/metadata/1.0" }),
-			schema = await import(resolve(import.meta.dirname, "../schemas/metadata/1.0.json")) as { default: Record<string, unknown> };
+	it("/metadata/1.0 should return cached metadata schema", async () => {
+		const result = await app.inject({ url: "/metadata/1.0" });
+		const schema = await import(resolve(import.meta.dirname, "../schemas/metadata/1.0.json")) as { default: Record<string, unknown> };
 
 		expect(result.statusCode).toBe(200);
 		expect(result.json()).toEqual(schema.default);
 	});
 
-	test("/metadata/1 should return 404", async () => {
+	it("/metadata/1 should return 404", async () => {
 		const result = await app.inject({ url: "/metadata/1" });
 
 		expect(result.statusCode).toBe(404);

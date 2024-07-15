@@ -52,10 +52,8 @@ describe.concurrent("createFromBase64", async () => {
 
 		expect(result.statusCode).toBe(400);
 		expect(result.body).toMatchInlineSnapshot("\"Invalid base64 string\"");
-	});
 
-	it("should return a 400 when the base64 string is not a valid image", async ({ expect }) => {
-		const result = await server.inject({
+		const result2 = await server.inject({
 			headers: {
 				"Content-Type": "text/plain",
 			},
@@ -64,8 +62,8 @@ describe.concurrent("createFromBase64", async () => {
 			url: "/create/base64",
 		});
 
-		expect(result.statusCode).toBe(400);
-		expect(result.body).toMatchInlineSnapshot("\"Supported types: png, jpeg, jpg, gif, webp\"");
+		expect(result2.statusCode).toBe(400);
+		expect(result2.body).toMatchInlineSnapshot("\"Supported types: png, jpeg, jpg, gif, webp\"");
 	});
 
 	it("should return a 200 when the base64 string is valid", async ({ expect }) => {
@@ -80,10 +78,8 @@ describe.concurrent("createFromBase64", async () => {
 
 		expect(result.statusCode).toBe(200);
 		expect(result.body).toStrictEqual(expect.any(String));
-	});
 
-	it("should return a 200 when the base64 string is valid", async ({ expect }) => {
-		const result = await server.inject({
+		const result2 = await server.inject({
 			headers: {
 				"Content-Type": "text/plain",
 			},
@@ -92,7 +88,7 @@ describe.concurrent("createFromBase64", async () => {
 			url: "/create/base64",
 		});
 
-		expect(result.statusCode).toBe(200);
-		expect(result.body).toStrictEqual(expect.any(String));
+		expect(result2.statusCode).toBe(200);
+		expect(result2.body).toStrictEqual(expect.any(String));
 	});
 });

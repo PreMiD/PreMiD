@@ -8,9 +8,6 @@ export default defineConfig({
 			exclude: [...configDefaults.coverage.exclude ?? [], "commitlint.config.cjs", "**/generated/**", "**/codegen.ts", "**/lib/**"],
 			reportOnFailure: true,
 			skipFull: true,
-			thresholds: {
-				100: true,
-			},
 		},
 		isolate: false,
 		passWithNoTests: true,

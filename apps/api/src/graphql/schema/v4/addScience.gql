@@ -1,5 +1,10 @@
 type Mutation {
-	addScience(identifier: String!, presences: [String], os: String, arch: String): AddScienceResult
+	addScience(
+		identifier: String!
+		presences: [String]
+		os: String
+		arch: String
+	): AddScienceResult
 }
 
 type AddScienceResult {

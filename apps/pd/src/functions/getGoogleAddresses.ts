@@ -1,10 +1,10 @@
 import got from "got";
 
-import { CIDR } from "./isInCidRange.js";
+import type { CIDR } from "./isInCidRange.js";
 
 export default async function getGoogleAddresses(): Promise<CIDR> {
-	const { body } = await got.get("https://www.gstatic.com/ipranges/cloud.json"),
-		result = JSON.parse(body) as GoogleResult;
+	const { body } = await got.get("https://www.gstatic.com/ipranges/cloud.json");
+	const result = JSON.parse(body) as GoogleResult;
 	return result.prefixes.map(({ ipv4Prefix, ipv6Prefix }) => {
 		return ipv6Prefix ? { ipv6Prefix } : { ipv4Prefix };
 	});

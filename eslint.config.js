@@ -1,17 +1,14 @@
-import config from "@recodive/eslint-config/strictFlat";
+import antfu from "@antfu/eslint-config";
 
-export default [
-	...config,
-	{
-		files: ["apps/pd/**/*", "apps/api/**/*"],
-		rules: {
-			"no-console": "off",
-		},
+export default antfu({
+	ignores: [".pnpm-store/**", "**/lib/**", "**/generated/**"],
+	formatters: true,
+	unocss: true,
+	vue: true,
+	stylistic: {
+		indent: "tab",
+		semi: true,
+		quotes: "double",
 	},
-	{
-		rules: {
-			//* See when not to use it
-			"@typescript-eslint/no-non-null-assertion": "off",
-		},
-	},
-];
+	typescript: true,
+});

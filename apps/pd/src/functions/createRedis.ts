@@ -1,5 +1,7 @@
+/* eslint-disable no-console */
 import { hostname } from "node:os";
 
+import process from "node:process";
 import { Redis } from "ioredis";
 
 /* c8 ignore start */

@@ -1,41 +1,42 @@
 {
 	"name": "premid",
-	"version": "1.0.0",
-	"description": "Monorepo containing most of PreMiD's codebase",
 	"type": "module",
-	"scripts": {
-		"prepare": "husky",
-		"lint": "eslint . && prettier --check .",
-		"lint:fix": "eslint . --fix && prettier --write .",
-		"build": "pnpm clean && tsc -b tsconfig.app.json",
-		"build:watch": "pnpm clean && tsc -b tsconfig.app.json -w",
-		"clean": "tsc -b tsconfig.app.json --clean",
-		"test": "vitest --run",
-		"test:ui": "vitest --ui"
-	},
+	"version": "1.0.0",
+	"packageManager": "pnpm@8.14.3",
+	"description": "Monorepo containing most of PreMiD's codebase",
 	"author": {
 		"name": "Recodive oHG",
 		"email": "contact@recodive.com",
 		"url": "https://recodive.com"
 	},
 	"license": "MPL-2.0",
+	"engines": {
+		"node": "^20.0.0"
+	},
+	"scripts": {
+		"prepare": "husky",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"build": "pnpm clean && tsc -b tsconfig.app.json",
+		"build:watch": "pnpm clean && tsc -b tsconfig.app.json -w",
+		"clean": "tsc -b tsconfig.app.json --clean",
+		"test": "vitest --run",
+		"test:ui": "vitest --ui"
+	},
 	"devDependencies": {
+		"@antfu/eslint-config": "^2.22.2",
 		"@commitlint/cli": "^18.6.0",
 		"@recodive/configs": "^1.7.5",
-		"@recodive/eslint-config": "^1.8.4",
-		"@rushstack/eslint-patch": "^1.7.2",
 		"@types/node": "^20.11.17",
-		"@vitest/coverage-v8": "^1.2.2",
-		"@vitest/ui": "^1.2.2",
+		"@unocss/eslint-plugin": "^0.61.3",
+		"@vitest/coverage-v8": "^2.0.2",
+		"@vitest/ui": "^2.0.2",
 		"bumpp": "^9.3.0",
-		"eslint": "^8.56.0",
+		"eslint": "9.7.0",
+		"eslint-plugin-format": "^0.1.2",
 		"husky": "^9.0.10",
 		"prettier": "^3.2.5",
 		"typescript": "^5.3.3",
-		"vitest": "^1.2.2"
-	},
-	"packageManager": "pnpm@8.14.3",
-	"engines": {
-		"node": "^20.0.0"
+		"vitest": "^2.0.2"
 	}
 }

@@ -1,5 +1,9 @@
 type Mutation {
-	heartbeat(identifier: String!, presence: HeartbeatPresenceInput, extension: HeartbeatExtensionInput!): HeartbeatResult!
+	heartbeat(
+		identifier: String!
+		presence: HeartbeatPresenceInput
+		extension: HeartbeatExtensionInput!
+	): HeartbeatResult!
 }
 
 input HeartbeatPresenceInput {

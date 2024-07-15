@@ -1,5 +1,6 @@
 import { readFile } from "node:fs/promises";
 
+import { Buffer } from "node:buffer";
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 
 import { createServer } from "../functions/createServer.js";
@@ -71,17 +72,17 @@ describe("getFullLink", async () => {
 	});
 
 	it("should return the correct image", async () => {
-		const imageBuffer = await readFile(new URL("../../fixtures/test.mp4", import.meta.url)),
-			imageBase64 = `data:image/png;base64,${imageBuffer.toString("base64")}`,
+		const imageBuffer = await readFile(new URL("../../fixtures/test.mp4", import.meta.url));
+		const imageBase64 = `data:image/png;base64,${imageBuffer.toString("base64")}`;
 
-			{ body } = await server.inject({
-				headers: {
-					"Content-Type": "text/plain",
-				},
-				method: "POST",
-				payload: imageBase64,
-				url: "/create/base64",
-			});
+		const { body } = await server.inject({
+			headers: {
+				"Content-Type": "text/plain",
+			},
+			method: "POST",
+			payload: imageBase64,
+			url: "/create/base64",
+		});
 
 		expect(body).toStrictEqual(expect.any(String));
 

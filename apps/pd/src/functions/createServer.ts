@@ -1,8 +1,9 @@
+import process from "node:process";
 import cors from "@fastify/cors";
 import fastifyMultipart from "@fastify/multipart";
 import ratelimit from "@fastify/rate-limit";
 import fastify from "fastify";
-import { Redis } from "ioredis";
+import type { Redis } from "ioredis";
 
 import createFromBase64 from "../routes/createFromBase64.js";
 import createFromImage from "../routes/createFromImage.js";

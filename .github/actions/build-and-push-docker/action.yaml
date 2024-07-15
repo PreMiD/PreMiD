@@ -1,18 +1,18 @@
-name: "Build and Push Docker Image"
-description: "Builds a Docker image and pushes it to GitHub Container Registry"
+name: Build and Push Docker Image
+description: Builds a Docker image and pushes it to GitHub Container Registry
 inputs:
   app:
-    description: "Name of the app"
+    description: Name of the app
     required: true
   token:
-    description: "GitHub token"
+    description: GitHub token
     required: true
 outputs:
   version:
-    description: "Version of the app"
+    description: Version of the app
     value: ${{ steps.get_version.outputs.version }}
 runs:
-  using: "composite"
+  using: composite
   steps:
     - name: Checkout Repository
       uses: actions/checkout@v4

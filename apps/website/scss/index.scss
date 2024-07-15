@@ -1,0 +1,18 @@
+@screen lt-sm {
+	#header {
+		background-color: hsl(227, 18%, 8%);
+	}
+}
+
+html,
+body {
+	background-color: hsl(227, 18%, 8%);
+	color: #fff;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+}
+a {
+	text-decoration: none;
+	color: white;
+}

@@ -1,5 +1,13 @@
 type Query {
-	presences(service: StringOrStringArray, author: String, contributor: String, start: Int, limit: Int, query: String, tag: String): [Presence!]!
+	presences(
+		service: StringOrStringArray
+		author: String
+		contributor: String
+		start: Int
+		limit: Int
+		query: String
+		tag: String
+	): [Presence!]!
 }
 
 type Presence {

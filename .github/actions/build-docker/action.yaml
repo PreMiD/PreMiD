@@ -1,21 +1,21 @@
-name: "Build Docker Image"
-description: "Builds a Docker image using Docker Buildx"
+name: Build Docker Image
+description: Builds a Docker image using Docker Buildx
 inputs:
   dockerfile:
-    description: "Path to the Dockerfile"
+    description: Path to the Dockerfile
     required: true
   tags:
-    description: "Comma-separated list of tags for the Docker image"
+    description: Comma-separated list of tags for the Docker image
     required: true
   push:
-    description: "Whether to push the Docker image to the registry"
+    description: Whether to push the Docker image to the registry
     required: false
     default: "false"
   token:
-    description: "GitHub Token"
+    description: GitHub Token
     required: false
 runs:
-  using: "composite"
+  using: composite
   steps:
     - name: Checkout Repository
       uses: actions/checkout@v4

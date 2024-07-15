@@ -1,18 +1,18 @@
 {
 	"name": "@premid/db",
-	"version": "1.0.0",
 	"type": "module",
-	"dependencies": {
-		"mongoose": "^8.2.0"
-	},
-	"files": [
-		"lib"
-	],
+	"version": "1.0.0",
 	"exports": {
 		".": {
 			"import": "./lib/index.js",
 			"require": "./lib/index.js"
 		},
 		"./*": "./lib/*"
+	},
+	"files": [
+		"lib"
+	],
+	"dependencies": {
+		"mongoose": "^8.2.0"
 	}
 }

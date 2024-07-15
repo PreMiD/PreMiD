@@ -62,7 +62,7 @@ const enum Asset {
 
 presence.on("UpdateData", async () => {
 	const title = document.querySelector("title");
-	const description = document.querySelector('meta[name="description"]');
+	const description = document.querySelector("meta[name=\"description\"]");
 
 	const data: PresenceData = {
 		details: title.textContent,

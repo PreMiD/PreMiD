@@ -1,0 +1,5 @@
+query getIndexData {
+	usage {
+		count
+	}
+}

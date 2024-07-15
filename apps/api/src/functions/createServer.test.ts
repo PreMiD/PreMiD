@@ -1,16 +1,16 @@
-import { describe, expect, it, test } from "vitest";
+import { describe, expect, it } from "vitest";
 
 describe.concurrent("createServer", () => {
-	test("should create a server", async () => {
-		const createServer = await import("./createServer.js"),
-			server = await createServer.default();
+	it("should create a server", async () => {
+		const createServer = await import("./createServer.js");
+		const server = await createServer.default();
 		expect(server).toBeDefined();
 		expect(server).toHaveProperty("listen");
 	});
 
 	it("should handle graphql requests", async () => {
-		const createServer = await import("./createServer.js"),
-			server = await createServer.default();
+		const createServer = await import("./createServer.js");
+		const server = await createServer.default();
 		expect(server).toBeDefined();
 		expect(server).toHaveProperty("listen");
 

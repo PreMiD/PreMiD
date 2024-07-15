@@ -1,9 +1,13 @@
+/* eslint-disable no-console */
 /* c8 ignore start */
+import process from "node:process";
 import { createServer } from "./functions/createServer.js";
 import redis from "./redis.js";
 
-if (!process.env.REDIS_SENTINELS) console.log("WARNING: No REDIS_SENTINELS environment variable set");
-if (process.env.NODE_ENV === "production" && !process.env.BASE_URL) throw new Error("BASE_URL environment variable is required in production");
+if (!process.env.REDIS_SENTINELS)
+	console.log("WARNING: No REDIS_SENTINELS environment variable set");
+if (process.env.NODE_ENV === "production" && !process.env.BASE_URL)
+	throw new Error("BASE_URL environment variable is required in production");
 
 export const server = await createServer(redis);
 

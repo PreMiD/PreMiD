@@ -1,2 +1,0 @@
-#!/bin/sh
-if ! diff --quiet HEAD@{1} HEAD -- package.json; then pnpm i --frozen-lockfile; fi

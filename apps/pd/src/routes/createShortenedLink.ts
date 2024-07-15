@@ -1,6 +1,7 @@
 import crypto from "node:crypto";
 
-import { RouteHandlerMethod } from "fastify";
+import process from "node:process";
+import type { RouteHandlerMethod } from "fastify";
 import { nanoid } from "nanoid";
 
 import keyv from "../keyv.js";
@@ -8,15 +9,18 @@ import keyv from "../keyv.js";
 const handler: RouteHandlerMethod = async (request, reply) => {
 	const url = request.url.replace("/create/", "").trim();
 
-	if (url.length === 0) return reply.status(400).send("Invalid URL");
+	if (url.length === 0)
+		return reply.status(400).send("Invalid URL");
 
-	if (url.length < 256) return reply.status(400).send("URL is too short");
+	if (url.length < 256)
+		return reply.status(400).send("URL is too short");
 
 	const urlObject = new URL(url);
-	if (!["http:", "https:"].includes(urlObject.protocol)) return reply.status(400).send("Invalid URL");
+	if (!["http:", "https:"].includes(urlObject.protocol))
+		return reply.status(400).send("Invalid URL");
 
-	const hash = crypto.createHash("sha256").update(url).digest("hex"),
-		existingShortenedUrl = await keyv.get(hash);
+	const hash = crypto.createHash("sha256").update(url).digest("hex");
+	const existingShortenedUrl = await keyv.get(hash);
 
 	void reply.header("Cache-control", "public, max-age=1800");
 

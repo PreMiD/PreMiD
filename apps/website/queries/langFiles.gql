@@ -1,0 +1,5 @@
+query langFiles($code: String!) {
+	langFiles(project: "website", lang: $code) {
+		translations
+	}
+}

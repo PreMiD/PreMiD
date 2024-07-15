@@ -20,6 +20,9 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
+      - name: Codegen
+        run: pnpm -r codegen
+
       - name: Lint
         run: pnpm run lint
 
@@ -34,11 +37,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        project: [pd, schema-server]
+        project: [pd, schema-server, api, website]
       fail-fast: false
     steps:
       - name: Build Docker Image
         uses: premid/premid/.github/actions/build-docker@monorepo
         with:
-          dockerfile: ./apps/pd/Dockerfile
+          dockerfile: ./apps/${{ matrix.project }}/Dockerfile
           tags: ${{ matrix.project }}

@@ -1,0 +1,44 @@
+name: Build website
+on:
+  push:
+    tags:
+      - "website-v*"
+    branches:
+      - monorepo
+permissions:
+  packages: write
+jobs:
+  build:
+    name: Build website (Tag)
+    if: github.ref_type == 'tag'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build and Push Docker Image
+        uses: premid/premid/.github/actions/build-and-push-docker@monorepo
+        with:
+          app: website
+          token: ${{ secrets.GITHUB_TOKEN }}
+  build-latest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set up tags
+        id: vars
+        run: echo "SHA_TAG=ghcr.io/website:beta-${{ github.sha }}-${{ github.run_number }}" >> $GITHUB_ENV
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          build-args: |
+            GH_NPM_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          push: true
+          tags: ${{ env.SHA_TAG }}
