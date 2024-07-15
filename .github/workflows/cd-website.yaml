@@ -35,7 +35,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Set up tags
         id: vars
-        run: echo "SHA_TAG=ghcr.io/${{ github.repository_owner }}/website:beta-${{ github.sha }}-${{ github.run_number }}" >> $GITHUB_ENV
+        run: echo "SHA_TAG=ghcr.io/premid/website:beta-${{ github.sha }}-${{ github.run_number }}" >> $GITHUB_ENV
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
