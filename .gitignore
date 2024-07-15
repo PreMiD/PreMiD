@@ -2,6 +2,7 @@ node_modules
 out
 dist
 tmp
+lib
 
 .vscode
 .env
