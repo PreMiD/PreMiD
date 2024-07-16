@@ -6,8 +6,9 @@ export default defineNuxtConfig({
 	},
 	security: {
 		rateLimiter: false,
-		headers: {
-			crossOriginEmbedderPolicy: "unsafe-none",
+		strict: true,
+		/* headers: {
+			crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
 			contentSecurityPolicy: {
 				"img-src": ["'self'", "data:", "https:"],
 				"script-src": [
@@ -20,7 +21,7 @@ export default defineNuxtConfig({
 				],
 				"script-src-attr": ["'self'"],
 			},
-		},
+		}, */
 	},
 	app: {
 		pageTransition: {
