@@ -14,7 +14,7 @@ export default defineNuxtConfig({
 					"'self'",
 					"'nonce-{{nonce}}'",
 					"'strict-dynamic'",
-					 // Add Cloudflare's script sources
+					// Add Cloudflare's script sources
 					"*.cloudflare.com",
 					"*.cloudflareinsights.com",
 				],

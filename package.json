@@ -2,7 +2,7 @@
 	"name": "premid",
 	"type": "module",
 	"version": "1.0.0",
-	"packageManager": "pnpm@8.14.3",
+	"packageManager": "pnpm@9.5.0",
 	"description": "Monorepo containing most of PreMiD's codebase",
 	"author": {
 		"name": "Recodive oHG",

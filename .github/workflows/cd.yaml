@@ -1,0 +1,56 @@
+name: CD
+on:
+  push:
+    branches:
+      - monorepo
+    tags:
+      - "*"
+permissions:
+  packages: write
+jobs:
+  build:
+    name: Build Docker Images
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [pd, schema-server, website]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and Push website
+        uses: docker/build-push-action@v6
+        if: matrix.target == 'website'
+        with:
+          platforms: linux/amd64,linux/arm64
+          target: ${{ matrix.target }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          tags: ghcr.io/premid/${{ matrix.target }}:beta-${{ github.sha }}-${{ github.run_number }}
+
+      - name: Get package.json version
+        if: matrix.target != 'website'
+        id: get_version
+        run: echo ::set-output name=version::$(node -p "require('./apps/${{ matrix.target }}/package.json').version")
+        shell: bash
+
+      - name: Build and push other images
+        uses: docker/build-push-action@v6
+        if: matrix.target != 'website' && github.event_name == 'push'
+        with:
+          platforms: linux/amd64,linux/arm64
+          target: ${{ matrix.target }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          tags: ghcr.io/premid/${{ matrix.target }}:latest,ghcr.io/premid/${{ matrix.target }}:${{ steps.get_version.outputs.version }}

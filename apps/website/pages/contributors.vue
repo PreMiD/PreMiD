@@ -108,7 +108,7 @@ useSeoMeta({
 				/>
 			</div>
 			<div v-else>
-				<h1 class="color-primary font-discord font-size-8 mb-2">
+				<h1 class="color-primary mb-2 font-discord font-size-8">
 					Error
 				</h1>
 				<p>{{ error }}</p>

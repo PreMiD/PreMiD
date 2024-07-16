@@ -36,12 +36,17 @@ jobs:
     name: Build Docker Images
     runs-on: ubuntu-latest
     strategy:
-      matrix:
-        project: [pd, schema-server, api, website]
       fail-fast: false
+      matrix:
+        target: [pd, schema-server, api, website]
     steps:
-      - name: Build Docker Image
-        uses: premid/premid/.github/actions/build-docker@monorepo
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build
+        uses: docker/build-push-action@v6
         with:
-          dockerfile: ./apps/${{ matrix.project }}/Dockerfile
-          tags: ${{ matrix.project }}
+          target: ${{ matrix.target }}

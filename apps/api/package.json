@@ -21,7 +21,7 @@
 		"@escape.tech/graphql-armor-max-depth": "^2.2.0",
 		"@escape.tech/graphql-armor-max-directives": "^2.1.0",
 		"@escape.tech/graphql-armor-max-tokens": "^2.3.0",
-		"@premid/db": "*",
+		"@premid/db": "workspace:*",
 		"@sentry/node": "^7.104.0",
 		"@sentry/tracing": "^7.104.0",
 		"fastify": "^4.26.0",

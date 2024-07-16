@@ -2,7 +2,6 @@
 	"name": "@premid/website",
 	"type": "module",
 	"private": true,
-	"packageManager": "pnpm@9.5.0",
 	"license": "MPL-2.0",
 	"scripts": {
 		"build": "nuxt build",
@@ -46,5 +45,8 @@
 		"vue": "^3.4.31",
 		"vue-router": "^4.4.0",
 		"vue-tsc": "^2.0.26"
+	},
+	"devDependencies": {
+		"@nuxt/kit": "^3.12.3"
 	}
 }
