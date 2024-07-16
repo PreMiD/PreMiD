@@ -33,6 +33,7 @@ jobs:
         uses: docker/build-push-action@v6
         if: matrix.target == 'website'
         with:
+          push: true
           platforms: linux/amd64,linux/arm64
           target: ${{ matrix.target }}
           cache-from: type=gha
@@ -49,6 +50,7 @@ jobs:
         uses: docker/build-push-action@v6
         if: matrix.target != 'website' && github.event_name == 'push'
         with:
+          push: true
           platforms: linux/amd64,linux/arm64
           target: ${{ matrix.target }}
           cache-from: type=gha
