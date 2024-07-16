@@ -51,4 +51,6 @@ jobs:
         with:
           platforms: linux/amd64,linux/arm64
           target: ${{ matrix.target }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           tags: ghcr.io/premid/${{ matrix.target }}:latest,ghcr.io/premid/${{ matrix.target }}:${{ steps.get_version.outputs.version }}

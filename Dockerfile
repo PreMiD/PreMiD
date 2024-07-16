@@ -15,6 +15,7 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 
 RUN pnpm run -r codegen
 RUN pnpm run build
+RUN pnpm run -r build
 RUN pnpm deploy --filter @premid/pd --prod /prod/pd
 RUN pnpm deploy --filter @premid/schema-server --prod /prod/schema-server
 RUN pnpm deploy --filter @premid/api --prod /prod/api
