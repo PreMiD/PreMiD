@@ -54,7 +54,7 @@ useHead({
 						active-class="active"
 						:aria-label="`Link to ${link.name}`"
 					>
-						<span class="items-center gap-2 inline-flex">
+						<span class="items-center inline-flex gap-2">
 							<span
 								class="inline-flex iconOutline bg-link-icon-bg border-rd-100 p-2"
 							>
