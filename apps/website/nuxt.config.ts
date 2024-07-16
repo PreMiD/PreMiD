@@ -8,7 +8,7 @@ export default defineNuxtConfig({
 		rateLimiter: false,
 		headers: {
 			crossOriginEmbedderPolicy: false,
-			/* contentSecurityPolicy: {
+			contentSecurityPolicy: {
 				"img-src": ["'self'", "data:", "https:"],
 				"script-src": [
 					"'self'",
@@ -19,8 +19,7 @@ export default defineNuxtConfig({
 					"*.cloudflareinsights.com",
 				],
 				"script-src-attr": ["'self'"],
-			}, */
-			contentSecurityPolicy: false,
+			},
 		},
 	},
 	app: {
