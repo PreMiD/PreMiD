@@ -12,11 +12,11 @@ export default defineNuxtConfig({
 				"img-src": ["'self'", "data:", "https:"],
 				"script-src": [
 					"'self'",
-					"'nonce-{{nonce}}'",
+					"https:",
+					"'unsafe-inline",
 					"'strict-dynamic'",
-					// Add Cloudflare's script sources
-					"*.cloudflare.com",
-					"*.cloudflareinsights.com",
+					"'nonce-{{nonce}}'",
+					"'unsafe-eval'",
 				],
 				"script-src-attr": ["'self'"],
 			},
