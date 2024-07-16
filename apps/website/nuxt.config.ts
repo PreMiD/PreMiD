@@ -7,10 +7,21 @@ export default defineNuxtConfig({
 	},
 	security: {
 		rateLimiter: false,
+		sri: false,
 		headers: {
 			//* Nuxt Devtools
 			crossOriginEmbedderPolicy: "unsafe-none",
-			contentSecurityPolicy: false,
+			contentSecurityPolicy: {
+				"img-src": ["'self'", "data:", "https:"],
+				"script-src": [
+					"'self'",
+					"https:",
+					"'unsafe-inline'",
+					"'strict-dynamic'",
+					"'nonce-{{nonce}}'",
+					"'unsafe-eval'",
+				],
+			},
 			/* crossOriginEmbedderPolicy: process.env.NODE_ENV === "development" ? "unsafe-none" : "require-corp",
 			contentSecurityPolicy: {
 				"img-src": ["'self'", "data:", "https:"],
