@@ -1,5 +1,4 @@
 import { readdirSync } from "node:fs";
-import process from "node:process";
 
 export default defineNuxtConfig({
 	nitro: {
@@ -22,26 +21,7 @@ export default defineNuxtConfig({
 					"'unsafe-eval'",
 				],
 			},
-			/* crossOriginEmbedderPolicy: process.env.NODE_ENV === "development" ? "unsafe-none" : "require-corp",
-			contentSecurityPolicy: {
-				"img-src": ["'self'", "data:", "https:"],
-			}, */
 		},
-		/* headers: {
-			crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
-			contentSecurityPolicy: {
-				"img-src": ["'self'", "data:", "https:"],
-				"script-src": [
-					"'self'",
-					"https:",
-					"'unsafe-inline'",
-					"'strict-dynamic'",
-					"'nonce-{{nonce}}'",
-					"'unsafe-eval'",
-				],
-				"script-src-attr": ["'self'"],
-			},
-		}, */
 	},
 	app: {
 		pageTransition: {
