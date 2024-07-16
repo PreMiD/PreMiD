@@ -33,6 +33,8 @@ const cardGradientColor = computed(() => {
 	computedBackground = computed(() => {
 		return `background: linear-gradient(-35deg, ${cardGradientColor.value.secondary} 20%, ${cardGradientColor.value.primary} 130%); box-shadow: 0 2px 52px 0 ${cardShadowColor.value}`;
 	});
+
+const nonce = useNonce();
 </script>
 
 <template>
@@ -53,6 +55,7 @@ const cardGradientColor = computed(() => {
 		<div class="relative ml2">
 			<NuxtImg
 				v-if="user?.user?.avatar"
+				:nonce="nonce"
 				:src="`${user?.user?.avatar}?size=40`"
 				class="h-auto w-10 min-w-10 rd-100"
 				draggable="false"

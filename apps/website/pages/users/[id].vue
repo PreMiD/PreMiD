@@ -10,13 +10,15 @@ const presences = computed(() => [...data.value.authorPresences, ...data.value.c
 if (status.value === "success" && !user.value) {
 	router.replace("/store");
 }
+
+const nonce = useNonce();
 </script>
 
 <template>
 	<div class="flex flex-col gap-10 w-full">
 		<template v-if="user">
 			<div class="flex justify-center items-center gap-3">
-				<NuxtImg :src="`${user?.avatar}?size=1024`" alt="User Avatar" class="w-20 h-20 rounded-full" />
+				<NuxtImg :src="`${user?.avatar}?size=1024`" alt="User Avatar" class="w-20 h-20 rounded-full" :nonce="nonce" />
 				<h1 class="font-bold text-xl">
 					{{ user?.name }}
 				</h1>

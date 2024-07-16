@@ -140,6 +140,8 @@ const computedUsage = computed(() =>
 );
 
 const localePath = useLocalePath();
+
+const nonce = useNonce();
 </script>
 
 <template>
@@ -156,6 +158,7 @@ const localePath = useLocalePath();
 					class="mb-2 w-32"
 					width="128px"
 					height="128px"
+					:nonce="nonce"
 				/>
 				<h1 class="font-extrabold mb-4 text-4xl">
 					{{ $t("page.home.title") }}

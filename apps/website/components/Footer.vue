@@ -97,6 +97,8 @@ const linkSections = computed(() => [
 		],
 	},
 ] as LinkSection[] satisfies LinkSection[]);
+
+const nonce = useNonce();
 </script>
 
 <template>
@@ -115,7 +117,7 @@ const linkSections = computed(() => [
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<NuxtImg :src="partner.image" :alt="partner.label" height="32px" width="32px" />
+						<NuxtImg :src="partner.image" :alt="partner.label" height="32px" width="32px" :nonce="nonce" />
 					</a>
 				</div>
 			</div>

@@ -24,6 +24,8 @@ const userColor = computed(() => {
 });
 
 const localePath = useLocalePath();
+
+const nonce = useNonce();
 </script>
 
 <template>
@@ -34,6 +36,7 @@ const localePath = useLocalePath();
 					class="rounded-full h-6 w-6"
 					:src="userAvatar"
 					alt="User avatar"
+					:nonce="nonce"
 				/>
 				<p
 					class="font-bold" :style="{
