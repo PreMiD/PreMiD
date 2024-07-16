@@ -37,6 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+      max-parallel: 1
       matrix:
         target: [pd, schema-server, api, website]
     steps:
@@ -50,3 +51,5 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           target: ${{ matrix.target }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

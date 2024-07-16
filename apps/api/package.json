@@ -12,7 +12,7 @@
 	"scripts": {
 		"start": "node --enable-source-maps .",
 		"dev": "node --watch --env-file .env --enable-source-maps .",
-		"build": "pnpm codegen && tsc -p tsconfig.app.json",
+		"build": "pnpm codegen",
 		"codegen": "graphql-codegen --config codegen.ts"
 	},
 	"dependencies": {
@@ -35,7 +35,6 @@
 		"@graphql-codegen/schema-ast": "^4.0.2",
 		"@graphql-codegen/typescript": "4.0.9",
 		"@graphql-codegen/typescript-resolvers": "4.2.1",
-		"@parcel/watcher": "^2.4.1",
-		"typescript": "^5.3.3"
+		"@parcel/watcher": "^2.4.1"
 	}
 }
