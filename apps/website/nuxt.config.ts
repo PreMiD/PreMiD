@@ -13,7 +13,7 @@ export default defineNuxtConfig({
 				"script-src": [
 					"'self'",
 					"https:",
-					"'unsafe-inline",
+					"'unsafe-inline'",
 					"'strict-dynamic'",
 					"'nonce-{{nonce}}'",
 					"'unsafe-eval'",
