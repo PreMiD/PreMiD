@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 	security: {
 		rateLimiter: false,
 		headers: {
-			crossOriginEmbedderPolicy: false,
+			crossOriginEmbedderPolicy: "unsafe-none",
 			contentSecurityPolicy: {
 				"img-src": ["'self'", "data:", "https:"],
 				"script-src": [
