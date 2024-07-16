@@ -1,4 +1,5 @@
 import { readdirSync } from "node:fs";
+import process from "node:process";
 
 export default defineNuxtConfig({
 	nitro: {
@@ -6,7 +7,15 @@ export default defineNuxtConfig({
 	},
 	security: {
 		rateLimiter: false,
-		strict: true,
+		headers: {
+			//* Nuxt Devtools
+			crossOriginEmbedderPolicy: "unsafe-none",
+			contentSecurityPolicy: false,
+			/* crossOriginEmbedderPolicy: process.env.NODE_ENV === "development" ? "unsafe-none" : "require-corp",
+			contentSecurityPolicy: {
+				"img-src": ["'self'", "data:", "https:"],
+			}, */
+		},
 		/* headers: {
 			crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
 			contentSecurityPolicy: {
