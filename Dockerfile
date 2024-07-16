@@ -47,7 +47,9 @@ CMD ["pnpm", "start"]
 FROM base AS website
 WORKDIR /app
 
+ENV PORT=80
+
 COPY --from=build /app/apps/website/.output /app
-EXPOSE 3000
+EXPOSE 80
 
 CMD ["node", "server/index.mjs"]
