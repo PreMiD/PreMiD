@@ -24,11 +24,11 @@
 		"test:ui": "vitest --ui"
 	},
 	"devDependencies": {
-		"@antfu/eslint-config": "^2.22.2",
+		"@antfu/eslint-config": "^2.22.4",
 		"@commitlint/cli": "^18.6.0",
 		"@recodive/configs": "^1.7.5",
 		"@types/node": "^20.11.17",
-		"@unocss/eslint-plugin": "^0.61.3",
+		"@unocss/eslint-plugin": "^0.61.4",
 		"@vitest/coverage-v8": "^2.0.2",
 		"@vitest/ui": "^2.0.2",
 		"bumpp": "^9.3.0",
