@@ -16,23 +16,23 @@
 		"codegen": "graphql-codegen --config codegen.ts"
 	},
 	"dependencies": {
-		"@envelop/sentry": "^8.0.0",
-		"@escape.tech/graphql-armor-max-aliases": "^2.3.0",
-		"@escape.tech/graphql-armor-max-depth": "^2.2.0",
-		"@escape.tech/graphql-armor-max-directives": "^2.1.0",
-		"@escape.tech/graphql-armor-max-tokens": "^2.3.0",
+		"@envelop/sentry": "^9.0.0",
+		"@escape.tech/graphql-armor-max-aliases": "^2.5.0",
+		"@escape.tech/graphql-armor-max-depth": "^2.3.0",
+		"@escape.tech/graphql-armor-max-directives": "^2.2.0",
+		"@escape.tech/graphql-armor-max-tokens": "^2.4.0",
 		"@premid/db": "workspace:*",
-		"@sentry/node": "^7.104.0",
-		"@sentry/tracing": "^7.104.0",
-		"fastify": "^4.26.0",
-		"graphql": "^16.8.1",
+		"@sentry/node": "^8.17.0",
+		"@sentry/tracing": "^7.114.0",
+		"fastify": "^4.28.1",
+		"graphql": "^16.9.0",
 		"graphql-parse-resolve-info": "^4.13.0",
-		"graphql-yoga": "^5.1.1",
-		"mongoose": "^8.2.0"
+		"graphql-yoga": "^5.6.0",
+		"mongoose": "^8.5.1"
 	},
 	"devDependencies": {
 		"@graphql-codegen/cli": "5.0.2",
-		"@graphql-codegen/schema-ast": "^4.0.2",
+		"@graphql-codegen/schema-ast": "^4.1.0",
 		"@graphql-codegen/typescript": "4.0.9",
 		"@graphql-codegen/typescript-resolvers": "4.2.1",
 		"@parcel/watcher": "^2.4.1"

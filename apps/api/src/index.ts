@@ -2,14 +2,14 @@
 import "@sentry/tracing";
 
 import process from "node:process";
-import Sentry from "@sentry/node";
+import * as Sentry from "@sentry/node";
 import { connect } from "mongoose";
 
 import createServer from "./functions/createServer.js";
 
 // TODO SETUP SENTRY
 Sentry.init({
-	integrations: [new Sentry.Integrations.GraphQL(), new Sentry.Integrations.Mongo({ useMongoose: true })],
+	integrations: [Sentry.graphqlIntegration(), Sentry.mongooseIntegration()],
 });
 
 if (!process.env.DATABASE_URL)

@@ -19,6 +19,7 @@
 		"@fortawesome/vue-fontawesome": "^3.0.8",
 		"@nuxt/fonts": "^0.7.1",
 		"@nuxt/image": "^1.7.0",
+		"@nuxt/kit": "^3.12.3",
 		"@nuxt/scripts": "^0.6.3",
 		"@nuxtjs/device": "^3.1.1",
 		"@nuxtjs/google-fonts": "^3.2.0",
@@ -31,6 +32,7 @@
 		"@unocss/nuxt": "^0.61.4",
 		"@unocss/reset": "^0.61.4",
 		"@unocss/transformer-directives": "^0.61.4",
+		"@vueuse/core": "^10.11.0",
 		"@vueuse/nuxt": "^10.11.0",
 		"bowser": "^2.11.0",
 		"discord-api-types": "^0.37.92",
@@ -45,8 +47,5 @@
 		"vue": "^3.4.31",
 		"vue-router": "^4.4.0",
 		"vue-tsc": "^2.0.26"
-	},
-	"devDependencies": {
-		"@nuxt/kit": "^3.12.3"
 	}
 }
