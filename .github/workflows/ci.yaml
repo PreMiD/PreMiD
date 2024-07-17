@@ -1,5 +1,9 @@
 name: Build, Lint and Test
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - monorepo
+  pull_request:
 jobs:
   build:
     name: Build, Lint and Test
