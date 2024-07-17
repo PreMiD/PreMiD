@@ -115,5 +115,5 @@ export default defineNuxtConfig({
 	ogImage: {
 		enabled: false,
 	},
-	compatibilityDate: "2024-07-09",
+	compatibilityDate: "2024-07-17",
 });
