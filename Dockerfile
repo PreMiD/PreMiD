@@ -1,4 +1,4 @@
-FROM gplane/pnpm:node20-alpine AS base
+FROM gplane/pnpm:node20 AS base
 #ENV PNPM_HOME=/pnpm
 #ENV PATH=$PNPM_HOME/bin:$PATH
 RUN corepack enable
