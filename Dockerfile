@@ -1,17 +1,17 @@
-FROM node:20-alpine AS base
-ENV PNPM_HOME=/pnpm
-ENV PATH=$PNPM_HOME/bin:$PATH
+FROM gplane/pnpm:node20-alpine AS base
+#ENV PNPM_HOME=/pnpm
+#ENV PATH=$PNPM_HOME/bin:$PATH
 RUN corepack enable
 
 FROM base AS build
 WORKDIR /app
 
 COPY package.json pnpm-lock.yaml /app/
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm fetch --frozen-lockfile
+#RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm fetch --frozen-lockfile
 
 COPY . /app
 
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile --offline
+RUN  pnpm install --frozen-lockfile
 
 RUN pnpm run -r codegen
 RUN pnpm run build
