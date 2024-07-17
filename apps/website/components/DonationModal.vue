@@ -40,7 +40,7 @@ defineExpose({
 <template>
 	<Transition name="fade">
 		<div v-if="visible" class="flex items-center justify-center fixed inset-0 bg-black bg-opacity-50 z-9999">
-			<div class="shadow-lg relative bg-gray w-full rounded-lg bg-gray-800 p-6 max-w-md">
+			<div class="relative bg-gray w-full shadow-lg rounded-lg bg-gray-800 p-6 max-w-md">
 				<button class="cursor-pointer transition-colors absolute bg-transparent border-none top-4 right-4 text-text hover:text-red" @click="visible = false">
 					<FAIcon icon="fa-solid fa-times" class="h-5 w-5" />
 				</button>

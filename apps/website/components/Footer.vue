@@ -136,7 +136,7 @@ const nonce = useNonce();
 			</div>
 		</div>
 		<div class="justify-center text-center mt-5 pb-5">
-			<span class="items-center gap-2 inline-flex">
+			<span class="items-center inline-flex gap-2">
 				{{ t('footer.withLoveBy') }}
 				<FAIcon class="h-4 w-4 c-red" icon="fa-solid fa-heart" />
 				{{ t('footer.by') }}

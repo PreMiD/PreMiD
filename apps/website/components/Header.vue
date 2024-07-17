@@ -75,7 +75,7 @@ useHead({
 			<!-- Mobile Nav -->
 			<div class="md:hidden">
 				<button
-					class="md:hidden cursor-pointer b-none bg-transparent c-primary p0 h7"
+					class="md:hidden cursor-pointer bg-transparent b-none c-primary p0 h7"
 					aria-label="Toggle navigation menu"
 					@click="navOpen = !navOpen"
 				>

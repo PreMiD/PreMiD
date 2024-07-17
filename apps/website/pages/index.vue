@@ -296,7 +296,7 @@ const nonce = useNonce();
 				</p>
 				<NuxtLink
 					:to="localePath('/downloads')"
-					class="b-none font-size-4 font-bold px-6 rounded-full shadow-lg transition-colors cursor-pointer bg-white text-black py-3 hover:bg-light-900"
+					class="b-none font-size-4 font-bold px-6 rounded-full shadow-lg transition-colors cursor-pointer py-3 bg-white text-black hover:bg-light-900"
 				>
 					{{ $t("page.home.sections.callToAction.button") }}
 				</NuxtLink>

@@ -8,7 +8,7 @@ useHead({
 
 <template>
 	<Header />
-	<div class="flex justify-center min-h-screen">
+	<div class="flex justify-center flex-col min-h-screen">
 		<!-- <ScriptGoogleAdsense
 			data-ad-client="ca-pub-1575460061917202"
 			data-ad-slot="9125593977"
@@ -19,7 +19,7 @@ useHead({
 				{{ $t("layout.ads.error") }}
 			</template>
 		</ScriptGoogleAdsense> -->
-		<div class="max-w-screen-lg mx5 mt-5">
+		<div class="mt-5 max-w-screen-lg mx5">
 			<slot />
 		</div>
 	<!-- 	<ScriptGoogleAdsense

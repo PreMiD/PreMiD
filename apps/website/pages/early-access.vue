@@ -9,7 +9,7 @@ function openBetaModal() {
 	<div>
 		<div class="mx-auto max-w-6xl">
 			<header class="text-center mb-12">
-				<h1 class="text-4xl font-bold text-primary">
+				<h1 class="font-bold text-primary text-4xl">
 					Join Our Early Access Program
 				</h1>
 				<p class="text-lg mt-4">
@@ -28,7 +28,7 @@ function openBetaModal() {
 							Gain first access to new developments and actively participate in shaping the product's direction.
 						</p>
 					</div>
-					<button class="bg-orange-500 rounded-full cursor-pointer hover:bg-orange-600 text-white py-3 px-4 b-solid b-none transition-colors font-bold text-nowrap w-min rounded" @click="openAlphaModal">
+					<button class="bg-orange-500 rounded-full cursor-pointer hover:bg-orange-600 text-white px-4 b-solid b-none transition-colors font-bold text-nowrap w-min py-3 rounded" @click="openAlphaModal">
 						Get Alpha Access
 					</button>
 				</div>
