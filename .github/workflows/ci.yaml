@@ -50,9 +50,14 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
+      - name: Get Target
+        id: get_target
+        run: echo "target=$([[ ${{ matrix.target }} == 'website' ]] && echo 'website' || echo 'prod')" >> $GITHUB_OUTPUT
+
       - name: Build
         uses: docker/build-push-action@v6
         with:
-          target: ${{ matrix.target }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          target: ${{ steps.get_target.outputs.target }}
+          build-args: SERVICE=${{ matrix.target }}
