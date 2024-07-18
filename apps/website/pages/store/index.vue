@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { LocationQuery } from "vue-router";
 import { useExtensionStore } from "~/stores/useExtension";
-import { breakpoints } from "~/uno.config";
+import breakpoints from "~/breakpoints";
 
 const extension = useExtensionStore();
 
