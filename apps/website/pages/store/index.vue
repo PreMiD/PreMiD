@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { LocationQuery } from "vue-router";
 import { useExtensionStore } from "~/stores/useExtension";
+import breakpoints from "~/breakpoints";
 
 const extension = useExtensionStore();
 
@@ -11,32 +12,24 @@ useSeoMeta({
 
 const { data } = await useAsyncGql({ operation: "presences" });
 
-const sortBy = ref<string>("");
-const totalPages = ref(0);
-const presences = computed(() => getPresencePage());
 const route = useRoute();
 const currentPage = ref(Number.parseInt(route.query.page?.toString() || "1"));
 const searchTerm = ref(route.query.search?.toString() || "");
 const selectedCategory = ref("");
 
-async function handleQuery(query: LocationQuery) {
-	const pageQuery = query.page?.toString() || "1";
-	const parsedPage = Number.parseInt(Number.isNaN(Number(pageQuery)) ? "1" : pageQuery);
-	currentPage.value = Math.max(1, Math.min(parsedPage, totalPages.value));
-	searchTerm.value = query.search?.toString() || "";
-	selectedCategory.value = query.category?.toString() || "";
-}
+const sortBy = ref<string>("");
+const pageSize = ref(9);
+const totalPages = computed(() => Math.ceil(data.value.presences.length / pageSize.value));
 
-function getPresencePage(page = currentPage.value, search = searchTerm.value) {
-	const pageSize = 8;
-	const startIndex = (page - 1) * pageSize;
-	const endIndex = startIndex + pageSize;
+const presences = computed(() => {
+	const startIndex = (currentPage.value - 1) * pageSize.value;
+	const endIndex = startIndex + pageSize.value;
 	const sortedPresences = (
 		selectedCategory.value
 			? data.value.presences.filter(p => p.metadata.category === selectedCategory.value)
 			: data.value.presences
 	)
-		.filter(p => p.metadata.service.toLowerCase().includes(search.toLowerCase()))
+		.filter(p => p.metadata.service.toLowerCase().includes(searchTerm.value.toLowerCase()))
 		.sort((a, b) => {
 			if (sortBy.value === t("component.searchBar.sort.mostUsed"))
 				return b.users - a.users;
@@ -46,14 +39,37 @@ function getPresencePage(page = currentPage.value, search = searchTerm.value) {
 		})
 		.sort(a => extension.presences.includes(a.metadata.service) ? -1 : 1);
 
-	totalPages.value = Math.ceil(sortedPresences.length / pageSize);
 	return {
-		currentPage: page,
 		data: sortedPresences.slice(startIndex, endIndex),
 		pageSize,
 		totalItems: sortedPresences.length,
 	};
+});
+
+async function handleQuery(query: LocationQuery) {
+	const pageQuery = query.page?.toString() || "1";
+	const parsedPage = Number.parseInt(Number.isNaN(Number(pageQuery)) ? "1" : pageQuery);
+	currentPage.value = Math.max(1, Math.min(parsedPage, totalPages.value));
+	searchTerm.value = query.search?.toString() || "";
+	selectedCategory.value = query.category?.toString() || "";
 }
+
+function resizePageSize() {
+	if (window.innerWidth > Number.parseInt(breakpoints.lg)) {
+		pageSize.value = 9;
+	}
+	else {
+		pageSize.value = 8;
+	}
+}
+
+onMounted(() => {
+	window.addEventListener("resize", resizePageSize);
+});
+
+onUnmounted(() => {
+	window.removeEventListener("resize", resizePageSize);
+});
 
 function getLinkProperties({ page = currentPage.value, search = searchTerm.value, category = selectedCategory.value }) {
 	const query = { category, page, search };
@@ -63,11 +79,10 @@ function getLinkProperties({ page = currentPage.value, search = searchTerm.value
 }
 
 function startPage() {
-	const { currentPage } = presences.value;
 	const middleOffset = Math.floor(Math.min(5, totalPages.value) / 2);
-	return currentPage >= totalPages.value - middleOffset
+	return currentPage.value >= totalPages.value - middleOffset
 		? Math.max(2, totalPages.value - 5)
-		: Math.max(2, currentPage - middleOffset);
+		: Math.max(2, currentPage.value - middleOffset);
 }
 
 watch(
@@ -93,7 +108,7 @@ onMounted(() => {
 			</div>
 		</div>
 		<div v-if="presences.data.length > 0" class="items-center mt-5 flex-col flex sm:mt-10 min-h-688px">
-			<div class="gap-4 grid grid-cols-[fit-content(0%)] lg:grid-cols-[repeat(2,fit-content(0%))] overflow-unset">
+			<div class="gap-4 grid grid-cols-[fit-content(0%)] sm-md:grid-cols-[repeat(2,fit-content(0%))] lg:grid-cols-[repeat(3,fit-content(0%))] overflow-unset">
 				<StoreCard v-for="presence in presences.data" :key="presence.metadata.service" :presence="presence" />
 			</div>
 			<!-- Pagination -->
@@ -103,7 +118,7 @@ onMounted(() => {
 					:replace="true"
 					prefetch
 					class="page-nav-button"
-					:class="{ active: 1 === presences.currentPage }"
+					:class="{ active: 1 === currentPage }"
 				>
 					1
 				</NuxtLink>
@@ -114,7 +129,7 @@ onMounted(() => {
 					prefetch
 					:to="getLinkProperties({ page: startPage() + i - 1 })"
 					class="page-nav-button"
-					:class="{ active: startPage() + i - 1 === presences.currentPage }"
+					:class="{ active: startPage() + i - 1 === currentPage }"
 				>
 					{{ startPage() + i - 1 }}
 				</NuxtLink>
@@ -122,7 +137,7 @@ onMounted(() => {
 					v-if="totalPages > 1"
 					:to="getLinkProperties({ page: totalPages })"
 					prefetch
-					:class="{ active: totalPages === presences.currentPage }"
+					:class="{ active: totalPages === currentPage }"
 					class="page-nav-button"
 				>
 					{{ totalPages }}
