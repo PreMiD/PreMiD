@@ -1,4 +1,4 @@
-FROM gplane/pnpm:node20 AS base
+FROM gplane/pnpm:node20-alpine AS base
 RUN corepack enable
 ARG SERVICE
 
