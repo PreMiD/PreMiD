@@ -220,7 +220,7 @@ const nonce = useNonce();
 		</section>
 
 		<!-- Unique Feature Section -->
-		<section class="text-white mx5 pb-12 mt-10">
+		<section class="text-white mx5 mt-10 pb-12">
 			<div class="text-center mx-auto container">
 				<h2 class="text-4xl font-extrabold mb-12">
 					{{ $t("page.home.sections.feature.title") }}

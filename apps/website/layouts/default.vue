@@ -8,7 +8,7 @@ useHead({
 
 <template>
 	<Header />
-	<div class="justify-center min-h-screen mx5 flex">
+	<div class="justify-center mx5 flex min-h-screen">
 		<!-- <ScriptGoogleAdsense
 			data-ad-client="ca-pub-1575460061917202"
 			data-ad-slot="9125593977"

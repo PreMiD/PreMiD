@@ -39,7 +39,7 @@ const hasPresence = computed(() => extension.presences.includes(presence.metadat
 		@mouseover="hovered = true"
 		@mouseleave="hovered = false"
 	>
-		<div class="w-full absolute top-0 left-0 h-full z-1" @click="goToPresence" />
+		<div class="w-full absolute h-full top-0 left-0 z-1" @click="goToPresence" />
 
 		<img
 			format="webp"

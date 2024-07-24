@@ -103,7 +103,7 @@ const nonce = useNonce();
 
 <template>
 	<div class="mt-10">
-		<div class="min-h-50 bg-gray">
+		<div class="bg-gray min-h-50">
 			<div class="max-w-screen-lg mx-auto">
 				<div class="flex justify-between flex-wrap gap-5 mx-5 py-5">
 					<div>
