@@ -1,5 +1,6 @@
 pull_request_title: "chore: Update Crowdin translations"
 commit_message: "chore(%language%): Update %original_file_name% translation from Crowdin"
+append_commit_message: false
 
 files:
   - source: /apps/website/locales
