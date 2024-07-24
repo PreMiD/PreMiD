@@ -59,7 +59,7 @@ onBeforeUnmount(() => {
 <template>
 	<ClientOnly>
 		<VTooltip :disabled="!isWIP">
-			<div class="flex items-center font-bold relative select-none cursor-pointer transition-colors bg-gray gap-2 px5 border-rounded w-50 h-20" :class="[highlight && !isWIP ? 'bg-primary hover:bg-primary-highlight c-black' : '', isWIP ? 'bg-op-60 cursor-not-allowed' : 'hover:bg-primary']" @click="!isWIP && emit('click')">
+			<div class="flex items-center font-bold cursor-pointer transition-colors relative select-none bg-gray gap-2 px5 border-rounded w-50 h-20" :class="[highlight && !isWIP ? 'bg-primary hover:bg-primary-highlight c-black' : '', isWIP ? 'bg-op-60 cursor-not-allowed' : 'hover:bg-primary']" @click="!isWIP && emit('click')">
 				<FAIcon
 					class="h-auto mr-2 w-7"
 					:icon="currentIcon"

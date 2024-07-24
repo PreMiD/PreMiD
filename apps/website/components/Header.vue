@@ -84,7 +84,7 @@ useHead({
 				<Transition>
 					<div
 						v-if="navOpen"
-						class="top-0 w-full transition-opacity fixed left-0 p-5 z-50 h-screen bg-black/70 backdrop-blur-sm"
+						class="top-0 w-full fixed transition-opacity left-0 p-5 z-50 h-screen bg-black/70 backdrop-blur-sm"
 					>
 						<div class="flex gap-2 flex-col">
 							<button
