@@ -4,5 +4,5 @@ append_commit_message: false
 
 files:
   - source: /apps/website/locales
-    translation: /apps/website/locales/%two_letters_code%/%original_file_name%
+    translation: /apps/website/locales/%two_letters_code%.%file_extension%
     dest: website/%original_file_name%
