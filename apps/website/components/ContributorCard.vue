@@ -45,7 +45,7 @@ const nonce = useNonce();
 		@mouseleave="hovered = false"
 	>
 		<div class="grid gap-1">
-			<h1 class="font-size-4.5 text-ellipsis overflow-hidden whitespace-nowrap font-800">
+			<h1 class="text-ellipsis overflow-hidden whitespace-nowrap font-size-4.5 font-800">
 				{{ user?.user?.name }}
 			</h1>
 			<p class="font-bold color-white:70 font-size-3.5">
