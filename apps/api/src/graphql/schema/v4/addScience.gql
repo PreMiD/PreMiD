@@ -1,15 +1,23 @@
 type Mutation {
 	addScience(
 		identifier: String!
-		presences: [String]
-		os: String
-		arch: String
+		presences: [String!]!
+		platform: PlatformInput!
 	): AddScienceResult
 }
 
+input PlatformInput {
+	arch: String!
+	os: String!
+}
+
 type AddScienceResult {
-	identifier: String
-	presences: [String]
-	os: String
-	arch: String
+	identifier: String!
+	presences: [String!]!
+	platform: Platform!
+}
+
+type Platform {
+	arch: String!
+	os: String!
 }

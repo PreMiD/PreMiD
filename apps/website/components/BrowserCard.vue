@@ -67,7 +67,7 @@ onBeforeUnmount(() => {
 				<span>
 					{{ browser }}
 				</span>
-				<span v-if="isWIP" class="absolute text-ellipsis overflow-hidden py-1 whitespace-nowrap rounded-full top--2 right--2 bg-red-500 px-2 max-w-25 max-h-7">
+				<span v-if="isWIP" class="rounded-full absolute text-ellipsis overflow-hidden py-1 whitespace-nowrap bg-red-500 top--2 right--2 px-2 max-w-25 max-h-7">
 					{{ $t("component.browserCard.wip") }}
 				</span>
 			</div>

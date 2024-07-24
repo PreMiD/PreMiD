@@ -77,6 +77,9 @@ importers:
       '@sentry/tracing':
         specifier: ^7.114.0
         version: 7.114.0
+      arktype:
+        specifier: 2.0.0-beta.0
+        version: 2.0.0-beta.0
       fastify:
         specifier: ^4.28.1
         version: 4.28.1
@@ -89,6 +92,9 @@ importers:
       graphql-yoga:
         specifier: ^5.6.0
         version: 5.6.0(graphql@16.9.0)
+      ioredis:
+        specifier: ^5.3.2
+        version: 5.4.1
       mongoose:
         specifier: ^8.5.1
         version: 8.5.1
@@ -435,6 +441,12 @@ packages:
   '@ardatan/sync-fetch@0.0.1':
     resolution: {integrity: sha512-xhlTqH0m31mnsG0tIP4ETgfSB6gXDaYYsUWTrlUV93fFQPI9dd8hE0Ot6MHLCtqgB32hwJAC3YZMWlXZw7AleA==}
     engines: {node: '>=14'}
+
+  '@ark/schema@0.2.0':
+    resolution: {integrity: sha512-IkNWCSHdjaoemMXpps4uFHEAQzwJPbTAS8K2vcQpk90sa+eNBuPSVyB/81/Qyl1VYW0iX3ceGC5NL/OznQv1jg==}
+
+  '@ark/util@0.1.0':
+    resolution: {integrity: sha512-qCLYICQoCy3kEKDVwirQp8qvxhY7NJd8BhhoHaj1l3wCFAk9NUbcDsxAkPStZEMdPI/d7NcbGJe8SWZuRG2twQ==}
 
   '@babel/code-frame@7.24.7':
     resolution: {integrity: sha512-BcYH1CVJBO9tvyIZ2jVeXgSIMvGZ2FDRvDdOIVQyuklNKSsx+eppDEBq/g47Ayw+RqNFE+URvOShmf+f/qwAlA==}
@@ -3366,6 +3378,9 @@ packages:
 
   argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
+
+  arktype@2.0.0-beta.0:
+    resolution: {integrity: sha512-fE3ssMiXjr/bLqFPzlDhRlXngdyHQreu7p7i8+dtcY1CA+f8WrVUcue6JxywhnqEJXPG4HOcIwQcC+q4VfeUMQ==}
 
   array-ify@1.0.0:
     resolution: {integrity: sha512-c5AMf34bKdvPhQ7tBGhqkgKNUzMr4WUs+WDtC2ZUGOUncbxKMTvqxYctiseW3+L4bA8ec+GcZ6/A/FW4m8ukng==}
@@ -8039,6 +8054,12 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
+  '@ark/schema@0.2.0':
+    dependencies:
+      '@ark/util': 0.1.0
+
+  '@ark/util@0.1.0': {}
+
   '@babel/code-frame@7.24.7':
     dependencies:
       '@babel/highlight': 7.24.7
@@ -12026,6 +12047,11 @@ snapshots:
       readable-stream: 3.6.2
 
   argparse@2.0.1: {}
+
+  arktype@2.0.0-beta.0:
+    dependencies:
+      '@ark/schema': 0.2.0
+      '@ark/util': 0.1.0
 
   array-ify@1.0.0: {}
 

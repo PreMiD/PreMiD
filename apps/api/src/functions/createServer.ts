@@ -11,6 +11,7 @@ import fastify from "fastify";
 import { createSchema, createYoga } from "graphql-yoga";
 
 import { resolvers } from "../graphql/resolvers/v4/index.js";
+import createRedis from "./createRedis.js";
 
 export interface FastifyContext {
 	request: FastifyRequest;
@@ -20,19 +21,38 @@ export interface FastifyContext {
 const __dirname = new URL(".", import.meta.url).pathname;
 
 export default async function createServer() {
-	const
-		app = fastify({ logger: true });
+	const app = fastify({ logger: true });
 	const yoga = createYoga<FastifyContext>({
 		graphqlEndpoint: "/v4",
 		logging: {
 			/* c8 ignore next 4 */
-			debug: (...arguments_) => { for (const argument of arguments_) app.log.debug(argument); },
-			error: (...arguments_) => { for (const argument of arguments_) app.log.error(argument); },
-			info: (...arguments_) => { for (const argument of arguments_) app.log.info(argument); },
-			warn: (...arguments_) => { for (const argument of arguments_) app.log.warn(argument); },
+			debug: (...arguments_) => {
+				for (const argument of arguments_) app.log.debug(argument);
+			},
+			error: (...arguments_) => {
+				for (const argument of arguments_) app.log.error(argument);
+			},
+			info: (...arguments_) => {
+				for (const argument of arguments_) app.log.info(argument);
+			},
+			warn: (...arguments_) => {
+				for (const argument of arguments_) app.log.warn(argument);
+			},
 		},
-		plugins: [maxAliasesPlugin(), maxDepthPlugin(), maxDirectivesPlugin(), maxTokensPlugin(), useSentry()],
-		schema: createSchema<FastifyContext>({ resolvers, typeDefs: await readFile(resolve(__dirname, "../generated/schema-v4.graphql"), "utf8") }),
+		plugins: [
+			maxAliasesPlugin(),
+			maxDepthPlugin(),
+			maxDirectivesPlugin(),
+			maxTokensPlugin(),
+			useSentry(),
+		],
+		schema: createSchema<FastifyContext>({
+			resolvers,
+			typeDefs: await readFile(
+				resolve(__dirname, "../generated/schema-v4.graphql"),
+				"utf8",
+			),
+		}),
 	});
 
 	app.route({
@@ -56,3 +76,5 @@ export default async function createServer() {
 
 	return app;
 }
+
+export const redis = createRedis();
