@@ -25,7 +25,7 @@ export default async function createServer() {
 	const yoga = createYoga<FastifyContext>({
 		graphqlEndpoint: "/v4",
 		logging: {
-			/* c8 ignore next 4 */
+			/* c8 ignore next 12 */
 			debug: (...arguments_) => {
 				for (const argument of arguments_) app.log.debug(argument);
 			},

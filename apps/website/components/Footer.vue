@@ -105,7 +105,7 @@ const nonce = useNonce();
 	<div class="mt-10">
 		<div class="bg-gray min-h-50">
 			<div class="max-w-screen-lg mx-auto">
-				<div class="flex justify-between flex-wrap gap-5 mx-5 py-5">
+				<div class="flex justify-between flex-wrap mx-5 gap-5 py-5">
 					<div>
 						<h1 class="font-bold font-size-4.5 pb2">
 							{{ t('footer.partners') }}

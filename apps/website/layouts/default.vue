@@ -19,7 +19,7 @@ useHead({
 				{{ $t("layout.ads.error") }}
 			</template>
 		</ScriptGoogleAdsense> -->
-		<div class="mt-5 max-w-screen-lg">
+		<div class="max-w-screen-lg mt-5">
 			<slot />
 		</div>
 	<!-- 	<ScriptGoogleAdsense

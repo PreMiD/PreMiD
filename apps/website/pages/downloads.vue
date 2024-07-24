@@ -68,7 +68,7 @@ function goToStore() {
 		<DonationModal ref="donationModal" @continue="goToStore" />
 		<section class="flex justify-center items-center relative mb-10 gap-10 h100 lt-md:flex-col">
 			<div class="max-w-60%">
-				<h1 class="font-extrabold mb-6 font-size-10 c-primary">
+				<h1 class="font-extrabold mb-6 c-primary font-size-10">
 					{{ $t("page.downloads.section.heading.title") }}
 				</h1>
 				<p class="font-semibold font-size-5 lt-sm:font-size-4.5">
@@ -91,7 +91,7 @@ function goToStore() {
 				{{ $t("page.downloads.section.heading.extension") }}
 			</h1>
 			<!-- User on mobile, not supported error -->
-			<div v-if="isMobile" class="text-white rounded-lg flex flex-col items-center justify-center gap-2 mb-5 p-5 bg-red-500">
+			<div v-if="isMobile" class="text-white rounded-lg flex flex-col items-center justify-center gap-2 p-5 bg-red-500 mb-5">
 				<h2 class="font-bold font-size-5">
 					{{ $t("page.downloads.mobile.title") }}
 				</h2>

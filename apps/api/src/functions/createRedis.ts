@@ -20,7 +20,7 @@ export default function createRedis(): Redis {
 		console.error("Redis error", error);
 	});
 
-	/* c8 ignore next 3 */
+	/* c8 ignore next 4 */
 	redis.on("connect", () => {
 		// eslint-disable-next-line no-console
 		console.log("Redis connected");
