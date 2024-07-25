@@ -215,23 +215,23 @@ export default defineI18nLocale(() => ({
     },
     store: {
       title: "Магазин",
-      noPresence: false,
+      noPresence: "Не найдено Presence по вашему запросу...",
       presence: {
         button: {
-          reportIssue: false,
-          suggestFeature: false,
-          viewCode: false
+          reportIssue: "Сообщить о проблеме",
+          suggestFeature: "Предложить улучшение",
+          viewCode: "Посмотреть код"
         },
         title: {
           description: "Описание",
           information: "Информация"
         },
         informationSection: {
-          contributors: false,
-          version: false,
-          users: false,
-          tags: false,
-          supportedUrls: false
+          contributors: "Участники:",
+          version: "Версия: {version}",
+          users: "Пользователей: {users}",
+          tags: "Метки:",
+          supportedUrls: "Поддерживаемые ссылки:"
         }
       },
       header: {
@@ -242,9 +242,9 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "Партнеры",
-    followUs: false,
+    followUs: "Подпишитесь на нас",
     supportUs: "Поддержите нас",
-    more: "Больше",
+    more: "Подробнее",
     legal: false,
     supportList: {
       donate: "Пожертвовать",
@@ -258,11 +258,11 @@ export default defineI18nLocale(() => ({
     },
     legalList: {
       privacyPolicy: "Политика конфиденциальности",
-      termsOfService: false,
+      termsOfService: "Пользовательское Соглашение",
       cookiePolicy: "Политика куки"
     },
-    withLoveBy: false,
-    by: false,
+    withLoveBy: "С",
+    by: "от",
     copyright: "© {year}-{currentYear} {company} Все права защищены."
   },
   error: {
