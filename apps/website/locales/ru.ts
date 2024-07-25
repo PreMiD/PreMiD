@@ -2,17 +2,17 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "Пожалуйста, поддержите нас, отключив свой блокировщик рекламы."
     }
   },
   component: {
     searchBar: {
       search: "Поиск",
-      sortBy: false,
+      sortBy: "Сортировать по",
       searchPresence: "Поиск Presence",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "Часто используемые",
+        alphabetical: "По алфавиту"
       },
       categories: {
         all: "Всё",
@@ -25,26 +25,26 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: false,
+      wip: "В разработке",
       support: {
-        safari: false
+        safari: "Мы работаем над поддержкой Safari, следите за обновлениями!"
       }
     },
     userChip: {
-      loading: false
+      loading: "Загрузка..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "Добавить",
+      removePresence: "Удалить"
     },
     donationModal: {
-      title: false,
-      description: false,
-      continue: false,
+      title: "Небольшое одолжение...",
+      description: "Мы надеемся, что вам понравится PreMiD! Если это вызывает улыбку на вашем лице, почему бы не ответить взаимностью? Наша команда волонтёров вкладывает душу в то, чтобы сделать его потрясающим только для вас!",
+      continue: "Продолжить",
       close: "Закрыть",
-      patreon: false,
-      github: false,
-      holdTight: false
+      patreon: "Поддержка на {name}",
+      github: "Спонсор на {name}",
+      holdTight: "Держитесь крепче... загружаем волшебную кнопку..."
     }
   },
   header: {
@@ -263,21 +263,21 @@ export default defineI18nLocale(() => ({
     },
     withLoveBy: false,
     by: false,
-    copyright: false
+    copyright: "© {year}-{currentYear} {company} Все права защищены."
   },
   error: {
     404: {
       title: false,
-      message: false
+      message: "Страница, которую вы ищете, не существует."
     },
     500: {
       title: false,
-      message: false
+      message: "Что-то пошло не так с нашей стороны."
     },
     default: {
-      title: false,
-      message: false,
-      button: false
+      title: "Ошибка",
+      message: "Что-то пошло не так с нашей стороны.",
+      button: "Вернуться назад"
     }
   }
 }));
