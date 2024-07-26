@@ -60,8 +60,8 @@ export default defineI18nLocale(() => ({
       userPage: {
         title: false,
         error: {
-          title: false,
-          description: false
+          title: "Ошибка",
+          description: "У нас возникла проблема с загрузкой этого пользователя... Пожалуйста, повторите попытку позже."
         }
       }
     },
@@ -153,35 +153,35 @@ export default defineI18nLocale(() => ({
       },
       section: {
         heading: {
-          title: "Время шоу.",
+          title: "Пришло время покрасоваться.",
           description: "Начните использовать PreMiD сейчас и покажите своим друзьям, чем вы занимаетесь, может быть, вы найдете кого-нибудь со схожими интересами.",
           getStarted: "Давайте начнём",
           extension: "Установить расширение"
         }
       },
       browser: {
-        your: false,
-        other: false,
-        based: false
+        your: "Ваш браузер",
+        other: "Другие браузеры",
+        based: "На основе {browser}"
       },
       mobile: {
-        title: false,
-        description: false
+        title: "Плохие новости!",
+        description: "PreMiD недоступен для мобильных устройств, приносим извинения!"
       },
       alphaAccess: {
-        title: false,
-        description: false,
-        callToAction: false
+        title: "Разблокируйте эксклюзивный доступ к Альфа!",
+        description: "Шагните в будущее PreMiD, став Patron'ом или спонсором на GitHub. Ваша поддержка не только продвигает нашу разработку, но и дает вам доступ к самым инновационным функциям, которые мы создаем. Ознакомьтесь с современными решениями, которые может предложить PreMiD, и повлияйте на его путь с вашим отзывом. Это не о том, чтобы просто быть первым, а о том, чтобы быть частью чего-то большего.",
+        callToAction: "Узнайте больше и присоединитесь к инновациям"
       },
-      faq: false,
+      faq: "Часто Задаваемые Вопросы (FAQ)",
       faqs: {
         q1: {
-          question: false,
-          answer: false
+          question: "Что такое PreMiD?",
+          answer: "PreMiD — это простая настраиваемая утилита, которая позволяет вам показывать в статусе своей активности в Discord, чем вы занимаетесь в сети."
         },
         q2: {
-          question: false,
-          answer: false
+          question: "Как мне использовать PreMiD?",
+          answer: "Вы можете использовать PreMiD, установив расширение и войдя в свою учетную запись Discord. После входа в систему вы можете добавлять Presence'ы в свой профиль и хвастаться ими перед друзьями."
         },
         q3: {
           question: false,
