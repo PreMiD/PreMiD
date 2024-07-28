@@ -58,7 +58,7 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: false,
+        title: "Вклады в Presence",
         error: {
           title: "Ошибка",
           description: "У нас возникла проблема с загрузкой этого пользователя... Пожалуйста, повторите попытку позже."
@@ -69,7 +69,7 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "Главная страница"
       },
-      title: false,
+      title: "Улучшите Свой Онлайн Presence с PreMiD",
       subtitle: false,
       words: {
         music: "Музыка",
@@ -77,21 +77,21 @@ export default defineI18nLocale(() => ({
         streams: false,
         media: false
       },
-      description: false,
+      description: "PreMiD — это простой и мощный инструмент, который позволяет вам делиться своей текущей активностью в медиа на нескольких платформах, таких как YouTube, Disney+, Netflix и т. д. Оставайтесь на связи и дайте своим друзьям увидеть, чем вы занимаетесь в реальном времени.",
       getStarted: "Давайте начнём",
       sections: {
         feature: {
-          title: false,
+          title: "Почему вы любите PreMiD",
           feature1: {
-            title: false,
-            description: false
+            title: "Контроль конфиденциальности",
+            description: "Возьмите под контроль настройки конфиденциальности и решите, какими активностями вы делитесь с другими. Ваши данные — ваши правила."
           },
           feature2: {
-            title: false,
-            description: false
+            title: "Управляемый сообществом",
+            description: "Опыт непревзойденной поддержки множества платформ, основанных на страстном и преданном сообществе."
           },
           feature3: {
-            title: false,
+            title: "Настраиваемые параметры",
             description: false
           },
           feature4: {
@@ -140,16 +140,16 @@ export default defineI18nLocale(() => ({
       supporters: "Спонсоры",
       translators: "Переводчики",
       avatar: {
-        tooltip: false
+        tooltip: "Нажмите, чтобы скопировать аватар {name}"
       }
     },
     downloads: {
       title: "Загрузки ",
       steps: {
-        install: false,
-        login: false,
-        add: false,
-        showoff: false
+        install: "Установить расширение",
+        login: "Войти через Discord",
+        add: "Добавить Presence",
+        showoff: "Хвастаться!"
       },
       section: {
         heading: {
@@ -184,32 +184,32 @@ export default defineI18nLocale(() => ({
           answer: "Вы можете использовать PreMiD, установив расширение и войдя в свою учетную запись Discord. После входа в систему вы можете добавлять Presence'ы в свой профиль и хвастаться ими перед друзьями."
         },
         q3: {
-          question: false,
-          answer: false
+          question: "PreMiD нарушает пользовательское соглашение Discord?",
+          answer: "Нет, PreMiD не нарушает пользовательское соглашение Discord. PreMiD использует API Discord (включая закрытые точки API, предоставленные Discord) для настройки вашей активности. Это означает, что PreMiD полностью соответствует пользовательскому соглашению Discord."
         },
         q4: {
-          question: false,
-          answer: false
+          question: "Какие сервисы поддерживает PreMiD?",
+          answer: "PreMiD поддерживает множество различных сервисов, включая YouTube, Twitch и Netflix. Список поддерживаемых сервисов постоянно растет. Вы можете просмотреть полный список Presence на странице нашего магазина."
         },
         q5: {
-          question: false,
-          answer: false
+          question: "Как я могу помочь в PreMiD?",
+          answer: "Вы можете внести свой вклад в PreMiD, присоединившись к нашему сообществу на GitHub. Вы можете помочь, сообщая о проблемах, предлагая функции или дополняя код."
         },
         q6: {
-          question: false,
-          answer: false
+          question: "Бесплатно ли использование PreMiD?",
+          answer: "Да, PreMiD является бесплатным в использовании. Однако, мы принимаем пожертвования через Patreon и GitHub Sponsors, чтобы помочь в разработке проекта."
         },
         q7: {
-          question: false,
-          answer: false
+          question: "Что делать, если я столкнулся с проблемой в PreMiD?",
+          answer: "Если вы столкнулись с проблемами с PreMiD, вы можете присоединиться к нашему серверу Discord для поддержки. У нас также есть руководство по устранению неполадок в нашей документации."
         },
         q8: {
-          question: false,
-          answer: false
+          question: "PreMiD не поддерживает xyz, можете ли вы добавить его?",
+          answer: "Наши так называемые Presence создаются сообществом, у нас нет ресурсов для добавления каждой отдельной платформы. Однако, вы можете добавить свой собственный Presence, следуя инструкциям по нашей документации."
         },
         q9: {
-          question: false,
-          answer: false
+          question: "Как часто обновляется PreMiD?",
+          answer: "Мы являемся небольшим проектом на добровольной основе, стремимся как можно чаще обновлять PreMiD, но не можем обещать, что всегда будем на вершине."
         }
       }
     },
