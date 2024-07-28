@@ -2,17 +2,17 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "โปรดสนับสนุนทีมงานโดยการปิดตัวบล๊อกโฆษณา"
     }
   },
   component: {
     searchBar: {
-      search: "่ค้นหา",
-      sortBy: false,
+      search: "ค้นหา",
+      sortBy: "เรียงตาม",
       searchPresence: "ค้นหา Presence",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "ใช้มากที่สุด",
+        alphabetical: "ตามตัวอักษร"
       },
       categories: {
         all: "ทั้งหมด",
@@ -31,11 +31,11 @@ export default defineI18nLocale(() => ({
       }
     },
     userChip: {
-      loading: false
+      loading: "กำลังโหลด…..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "เพิ่ม",
+      removePresence: "ลบ"
     },
     donationModal: {
       title: false,
@@ -135,7 +135,7 @@ export default defineI18nLocale(() => ({
     },
     contributors: {
       title: "ผู้พัฒนา",
-      presenceDevelopers: false,
+      presenceDevelopers: "นักพัฒนา Presence",
       staff: "ทีมงาน",
       supporters: "ผู้สนับสนุน",
       translators: "แปลภาษา",
@@ -218,20 +218,20 @@ export default defineI18nLocale(() => ({
       noPresence: false,
       presence: {
         button: {
-          reportIssue: false,
-          suggestFeature: false,
-          viewCode: false
+          reportIssue: "รายงานปัญหา",
+          suggestFeature: "เสนอแนะฟีเจอร์",
+          viewCode: "ดูซอร์สโค้ด"
         },
         title: {
           description: "คำอธิบาย",
           information: "ข้อมูล"
         },
         informationSection: {
-          contributors: false,
-          version: false,
-          users: false,
-          tags: false,
-          supportedUrls: false
+          contributors: "ผู้ร่วมพัฒนา:",
+          version: "เวอร์ชั่น: {version}",
+          users: "จำนวนผู้ใช้: {users}",
+          tags: "แท็ก:",
+          supportedUrls: "URL ที่รองรับ:"
         }
       },
       header: {
@@ -242,23 +242,23 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "ผู้ร่วมมือ",
-    followUs: false,
+    followUs: "ติดตามเรา",
     supportUs: "สนับสนุนเรา",
     more: "อื่น ๆ",
-    legal: false,
+    legal: "กฎหมาย",
     supportList: {
       donate: "บริจาค",
       contribute: "เว็บไซต์",
       translate: "แปลภาษา"
     },
     moreList: {
-      faq: false,
-      documentation: "เอกสาร",
+      faq: "คำถามที่พบบ่อย",
+      documentation: "เอกสารประกอบ",
       status: "สถานะ"
     },
     legalList: {
       privacyPolicy: "นโยบายความเป็นส่วนตัว",
-      termsOfService: false,
+      termsOfService: "เงื่อนไขการใช้บริการ",
       cookiePolicy: "นโยบายเกี่ยวกับคุกกี้"
     },
     withLoveBy: false,
