@@ -25,19 +25,19 @@ presence.on("UpdateData", () => {
     presence.setActivity(presenceData);
 });
 ```
+
 ## Constructors
 
-### constructor(options: [`PresenceOptions`](#presence-options)) 
+### constructor(options: [`PresenceOptions`](#presence-options)) {#constructor}
 
 ## Methods
-
 
 ### setActivity(data: [`PresenceData`](#presence-data) | [`Slideshow`](#slideshow)): Promise\<void\>
 
 Sets the presence activity and sends it to the application.
 
 
-::: details PresenceData {open}
+::: details Example with PresenceData {open}
 ```ts
 const [startTimestamp, endTimestamp] = presence.getTimestamps(video.currentTime, video.duration);
 
@@ -61,7 +61,7 @@ presence.setActivity({
 
 
 
-## Presence Options
+## [`Presence Options`](#presence-options)
 Options that change the behavior of the presence
 
 ### [`clientId`](#clientId)
