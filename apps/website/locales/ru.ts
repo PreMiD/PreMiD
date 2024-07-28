@@ -70,12 +70,12 @@ export default defineI18nLocale(() => ({
         title: "Главная страница"
       },
       title: "Улучшите Свой Онлайн Presence с PreMiD",
-      subtitle: false,
+      subtitle: "Покажите своим друзьям, {word} вы наслаждаетесь.",
       words: {
-        music: "Музыка",
-        videos: "Видеоролики",
-        streams: false,
-        media: false
+        music: "какой музыкой",
+        videos: "какими видео",
+        streams: "какими трансляциями",
+        media: "какими медиа"
       },
       description: "PreMiD — это простой и мощный инструмент, который позволяет вам делиться своей текущей активностью в медиа на нескольких платформах, таких как YouTube, Disney+, Netflix и т. д. Оставайтесь на связи и дайте своим друзьям увидеть, чем вы занимаетесь в реальном времени.",
       getStarted: "Давайте начнём",
@@ -92,44 +92,44 @@ export default defineI18nLocale(() => ({
           },
           feature3: {
             title: "Настраиваемые параметры",
-            description: false
+            description: "Настройте PreMiD под свои предпочтения и потребности с помощью обширных возможностей настройки."
           },
           feature4: {
-            title: false,
-            description: false
+            title: "Простая установка",
+            description: "Начните работу с PreMiD в кратчайшие сроки. Наш простой процесс настройки гарантирует беспроблемный запуск."
           },
           feature5: {
-            title: false,
-            description: false
+            title: "Соответствует условиям использования Discord",
+            description: "Полное соответствие условиям использования Discord, используя официальные конечные точки, предоставленные Discord."
           },
           feature6: {
-            title: false,
-            description: false
+            title: "Будущие возможности",
+            description: "Будьте в курсе новых интересных возможностей и улучшений, которые еще больше увеличат ваш опыт использования PreMiD."
           }
         },
         howItWorks: {
-          title: false,
+          title: "Как это работает",
           step1: {
-            title: false,
-            description: false
+            title: "Установите Расширение",
+            description: "Добавьте PreMiD в свой браузер."
           },
           step2: {
-            title: false,
-            description: false
+            title: "Войдите через Discord",
+            description: "Подключите PreMiD к своей учётной записи Discord."
           },
           step3: {
-            title: false,
-            description: false
+            title: "Добавьте Сервисы",
+            description: "Выберите сервисы для отображения такие, как YouTube, Disney+ и многие другое."
           },
           step4: {
-            title: false,
-            description: false
+            title: "Наслаждайтесь",
+            description: "Поделитесь своей активностью и наслаждайтесь, используя PreMiD."
           }
         },
         callToAction: {
-          title: false,
-          description: false,
-          button: false
+          title: "Готовы Начать?",
+          description: "Присоединяйтесь к {count} пользователям, которые уже любят PreMiD.",
+          button: "Начать сейчас"
         }
       }
     },
@@ -184,8 +184,8 @@ export default defineI18nLocale(() => ({
           answer: "Вы можете использовать PreMiD, установив расширение и войдя в свою учетную запись Discord. После входа в систему вы можете добавлять Presence'ы в свой профиль и хвастаться ими перед друзьями."
         },
         q3: {
-          question: "PreMiD нарушает пользовательское соглашение Discord?",
-          answer: "Нет, PreMiD не нарушает пользовательское соглашение Discord. PreMiD использует API Discord (включая закрытые точки API, предоставленные Discord) для настройки вашей активности. Это означает, что PreMiD полностью соответствует пользовательскому соглашению Discord."
+          question: "PreMiD нарушает условия использования Discord?",
+          answer: "Нет, PreMiD не нарушает условия использования Discord. PreMiD использует API Discord (включая закрытые точки API, предоставленные Discord) для настройки вашей активности. Это означает, что PreMiD полностью соответствует условиям использования Discord."
         },
         q4: {
           question: "Какие сервисы поддерживает PreMiD?",
@@ -245,20 +245,20 @@ export default defineI18nLocale(() => ({
     followUs: "Подпишитесь на нас",
     supportUs: "Поддержите нас",
     more: "Подробнее",
-    legal: false,
+    legal: "Правовая информация",
     supportList: {
       donate: "Пожертвовать",
       contribute: "Внести вклад",
       translate: "Перевести"
     },
     moreList: {
-      faq: false,
+      faq: "FAQ",
       documentation: "Документация",
       status: "Состояние"
     },
     legalList: {
       privacyPolicy: "Политика конфиденциальности",
-      termsOfService: "Пользовательское Соглашение",
+      termsOfService: "Условия использования",
       cookiePolicy: "Политика куки"
     },
     withLoveBy: "С",
