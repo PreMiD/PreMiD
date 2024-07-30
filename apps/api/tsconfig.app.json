@@ -3,6 +3,7 @@
 	"compilerOptions": {
 		"composite": true,
 		"rootDir": "src",
+		"types": ["@ark/schema"],
 		"outDir": "dist"
 	},
 	"include": ["src/**/*"]
