@@ -6,7 +6,7 @@ import { Redis } from "ioredis";
 /* c8 ignore start */
 export default function createRedis(): Redis {
 	const redis = new Redis({
-		connectionName: `api-${hostname()}-${process.pid.toString()}`,
+		connectionName: `api-master-${hostname()}-${process.pid.toString()}`,
 		lazyConnect: true,
 		name: "mymaster",
 		sentinels: process.env.REDIS_SENTINELS?.split(",").map(s => ({

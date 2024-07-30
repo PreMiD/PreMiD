@@ -7,7 +7,7 @@ const heartbeatSchema = type({
 		service: "format.trim",
 		version: "semver",
 		language: "format.trim",
-		since: "integer",
+		since: "unixTimestamp",
 	},
 	extension: {
 		"version": "semver",

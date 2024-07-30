@@ -10,7 +10,9 @@ import type { FastifyReply, FastifyRequest } from "fastify";
 import fastify from "fastify";
 import { createSchema, createYoga } from "graphql-yoga";
 
+import fastifyWebsocket from "@fastify/websocket";
 import { resolvers } from "../graphql/resolvers/v4/index.js";
+import { Socket } from "../classes/Socket.js";
 import createRedis from "./createRedis.js";
 
 export interface FastifyContext {
@@ -72,6 +74,14 @@ export default async function createServer() {
 		},
 		method: ["GET", "POST", "OPTIONS"],
 		url: "/v4",
+	});
+
+	app.register(fastifyWebsocket);
+
+	app.register(async (app) => {
+		app.get("/ws", { websocket: true }, (websocket, request) => {
+			void new Socket(websocket, request);
+		});
 	});
 
 	return app;
