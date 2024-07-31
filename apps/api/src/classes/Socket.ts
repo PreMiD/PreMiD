@@ -10,15 +10,12 @@ const schema = scope({
 		"+": "delete",
 		"type": "'token'",
 		"token": "format.trim",
-		"scope": "format.trim",
-		"refreshToken": "format.trim",
 		"expires": "unixTimestamp",
 	},
 	session: {
 		"+": "delete",
 		"type": "'session'",
 		"token": "format.trim",
-		"expires": "unixTimestamp",
 	},
 	validMessages: "token | session",
 }).export();
