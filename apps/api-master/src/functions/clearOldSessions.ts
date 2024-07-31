@@ -1,4 +1,4 @@
-import ky from "ky";
+import { REST } from "@discordjs/rest";
 import { redis } from "../index.js";
 
 export async function clearOldSesssions() {
@@ -18,12 +18,11 @@ export async function clearOldSesssions() {
 
 		// ? Delete the session
 		try {
-			await ky.post("https://discord.com/api/v10/users/@me/headless-sessions/delete", {
-				json: {
+			const discord = new REST({ version: "v10", authPrefix: "Bearer" });
+			discord.setToken(session.token);
+			await discord.post("/users/@me/headless-sessions/delete", {
+				body: {
 					token: session.session,
-				},
-				headers: {
-					Authorization: `Bearer ${session.token}`,
 				},
 			});
 		}

@@ -1,8 +1,9 @@
 import { scope, type } from "arktype";
 import type { FastifyRequest } from "fastify";
-import ky from "ky";
 import WebSocket from "ws";
 import type { RawData } from "ws";
+import { REST } from "@discordjs/rest";
+import { Routes } from "discord-api-types/v10";
 import { redis } from "../functions/createServer.js";
 
 const schema = scope({
@@ -23,6 +24,7 @@ const schema = scope({
 export class Socket {
 	currentToken: typeof schema.token.infer | undefined;
 	currentSesssion: typeof schema.session.infer | undefined;
+	discord = new REST({ version: "v10", authPrefix: "Bearer" });
 
 	constructor(
 		public readonly socket: WebSocket.WebSocket,
@@ -42,6 +44,7 @@ export class Socket {
 
 			switch (out.type) {
 				case "token": {
+					this.discord.setToken(out.token);
 					if (!await this.isTokenValid(out)) {
 						return this.close(1003, "Invalid token");
 					}
@@ -82,13 +85,8 @@ export class Socket {
 		}
 
 		try {
-			await ky.post("https://discord.com/api/v10/users/@me/headless-sessions/delete", {
-				json: {
-					token: this.currentSesssion.token,
-				},
-				headers: {
-					Authorization: `Bearer ${this.currentToken.token}`,
-				},
+			await this.discord.post("/users/@me/headless-sessions/delete", {
+				body: { token: this.currentSesssion.token },
 			});
 		}
 		catch (error) {
@@ -103,11 +101,7 @@ export class Socket {
 
 		// ? See if we can get the user's information
 		try {
-			await ky.get("https://discord.com/api/v10/users/@me", {
-				headers: {
-					Authorization: `Bearer ${token.token}`,
-				},
-			});
+			await this.discord.get(Routes.user());
 			return true;
 		}
 		catch {
