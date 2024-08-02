@@ -11,4 +11,6 @@ void new CronJob(
 	async () => {
 		clearOldSesssions();
 	},
+	undefined,
+	true,
 );

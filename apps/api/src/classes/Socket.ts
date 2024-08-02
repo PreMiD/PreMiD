@@ -24,7 +24,7 @@ const schema = scope({
 export class Socket {
 	currentToken: typeof schema.token.infer | undefined;
 	currentSesssion: typeof schema.session.infer | undefined;
-	discord = new REST({ version: "v10", authPrefix: "Bearer" });
+	discord = new REST({ version: "10", authPrefix: "Bearer" });
 
 	constructor(
 		public readonly socket: WebSocket.WebSocket,
@@ -52,9 +52,6 @@ export class Socket {
 					break;
 				}
 				case "session": {
-					if (this.currentSesssion && this.currentSesssion.token !== out.token)
-						await this.onClose(true);
-
 					await redis.hdel("pmd-api.sessions", out.token);
 					this.currentSesssion = out;
 					break;
@@ -67,31 +64,19 @@ export class Socket {
 		}
 	}
 
-	async onClose(force: boolean = false) {
+	async onClose() {
 		if (!this.currentToken || !this.currentSesssion)
 			return;
 
-		if (!force) {
-			await redis.hset(
-				"pmd-api.sessions",
-				this.currentSesssion.token,
-				JSON.stringify({
-					session: this.currentSesssion.token,
-					token: this.currentToken.token,
-					lastUpdated: Date.now(),
-				}),
-			);
-			return;
-		}
-
-		try {
-			await this.discord.post("/users/@me/headless-sessions/delete", {
-				body: { token: this.currentSesssion.token },
-			});
-		}
-		catch (error) {
-			console.error(error);
-		}
+		await redis.hset(
+			"pmd-api.sessions",
+			this.currentSesssion.token,
+			JSON.stringify({
+				session: this.currentSesssion.token,
+				token: this.currentToken.token,
+				lastUpdated: Date.now(),
+			}),
+		);
 	}
 
 	async isTokenValid(token: typeof schema.token.infer) {

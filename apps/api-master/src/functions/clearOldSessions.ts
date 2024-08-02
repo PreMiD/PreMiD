@@ -18,7 +18,7 @@ export async function clearOldSesssions() {
 
 		// ? Delete the session
 		try {
-			const discord = new REST({ version: "v10", authPrefix: "Bearer" });
+			const discord = new REST({ version: "10", authPrefix: "Bearer" });
 			discord.setToken(session.token);
 			await discord.post("/users/@me/headless-sessions/delete", {
 				body: {
