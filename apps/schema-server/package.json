@@ -1,7 +1,7 @@
 {
 	"name": "@premid/schema-server",
 	"type": "module",
-	"version": "1.0.0",
+	"version": "1.0.3",
 	"private": true,
 	"description": "A small service to serve the JSON schemas for PreMiD",
 	"license": "MPL-2.0",
