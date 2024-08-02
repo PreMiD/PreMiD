@@ -11,7 +11,7 @@ import fastify from "fastify";
 import { createSchema, createYoga } from "graphql-yoga";
 
 import fastifyWebsocket from "@fastify/websocket";
-import { resolvers } from "../graphql/resolvers/v4/index.js";
+import { resolvers } from "../graphql/resolvers/v5/index.js";
 import { Socket } from "../classes/Socket.js";
 import createRedis from "./createRedis.js";
 
@@ -25,7 +25,7 @@ const __dirname = new URL(".", import.meta.url).pathname;
 export default async function createServer() {
 	const app = fastify({ logger: true });
 	const yoga = createYoga<FastifyContext>({
-		graphqlEndpoint: "/v4",
+		graphqlEndpoint: "/v5/graphql",
 		logging: {
 			/* c8 ignore next 12 */
 			debug: (...arguments_) => {
@@ -73,13 +73,13 @@ export default async function createServer() {
 			return reply;
 		},
 		method: ["GET", "POST", "OPTIONS"],
-		url: "/v4",
+		url: "/v5/graphql",
 	});
 
 	app.register(fastifyWebsocket);
 
 	app.register(async (app) => {
-		app.get("/ws", { websocket: true }, (websocket, request) => {
+		app.get("/v5/ws", { websocket: true }, (websocket, request) => {
 			void new Socket(websocket, request);
 		});
 	});
