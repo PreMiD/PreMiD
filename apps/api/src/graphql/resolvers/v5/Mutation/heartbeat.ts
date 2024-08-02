@@ -1,5 +1,5 @@
 import { type } from "arktype";
-import type { MutationResolvers } from "../../../../generated/graphql-v4.js";
+import type { MutationResolvers } from "../../../../generated/graphql-v5.js";
 
 const heartbeatSchema = type({
 	identifier: "uuid & format.lowercase",

@@ -3,7 +3,7 @@ import type { PresenceSchema } from "@premid/db/Presence.js";
 import { parseResolveInfo } from "graphql-parse-resolve-info";
 import type { FilterQuery } from "mongoose";
 
-import type { QueryResolvers } from "../../../../generated/graphql-v4.js";
+import type { QueryResolvers } from "../../../../generated/graphql-v5.js";
 
 const resolver: QueryResolvers["presences"] = async (
 	_parent,

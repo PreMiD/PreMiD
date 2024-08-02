@@ -51,7 +51,7 @@ export default async function createServer() {
 		schema: createSchema<FastifyContext>({
 			resolvers,
 			typeDefs: await readFile(
-				resolve(__dirname, "../generated/schema-v4.graphql"),
+				resolve(__dirname, "../generated/schema-v5.graphql"),
 				"utf8",
 			),
 		}),

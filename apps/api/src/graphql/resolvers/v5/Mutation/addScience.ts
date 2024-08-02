@@ -1,5 +1,5 @@
 import { type } from "arktype";
-import type { MutationResolvers } from "../../../../generated/graphql-v4.js";
+import type { MutationResolvers } from "../../../../generated/graphql-v5.js";
 import { redis } from "../../../../functions/createServer.js";
 
 const addScienceSchema = type({

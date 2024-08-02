@@ -1,4 +1,4 @@
-import type { Resolvers } from "../../../generated/graphql-v4.js";
+import type { Resolvers } from "../../../generated/graphql-v5.js";
 import { Query } from "./Query/index.js";
 import { Mutation } from "./Mutation/index.js";
 
