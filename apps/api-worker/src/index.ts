@@ -9,7 +9,10 @@ import createServer from "./functions/createServer.js";
 
 // TODO SETUP SENTRY
 Sentry.init({
-	integrations: [Sentry.graphqlIntegration(), Sentry.mongooseIntegration()],
+	integrations: [
+		Sentry.graphqlIntegration(),
+		Sentry.mongooseIntegration(),
+	],
 });
 
 if (!process.env.DATABASE_URL)
@@ -18,6 +21,9 @@ if (!process.env.DATABASE_URL)
 await connect(process.env.DATABASE_URL, { appName: "PreMiD API" });
 
 const server = await createServer();
-const url = await server.listen({ port: 3001 });
+const url = await server.listen({
+	port: Number.parseInt(process.env.PORT ?? "3001"),
+	host: process.env.HOST ?? "0.0.0.0",
+});
 
 console.log(`Server listening at ${url}`);

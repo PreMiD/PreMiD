@@ -1,7 +1,7 @@
 {
 	"name": "@premid/api",
 	"type": "module",
-	"version": "1.0.0",
+	"version": "0.0.1",
 	"private": true,
 	"description": "PreMiD's api",
 	"license": "MPL-2.0",

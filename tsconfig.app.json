@@ -13,7 +13,7 @@
 			"path": "./apps/api-master/tsconfig.app.json"
 		},
 		{
-			"path": "./apps/api/tsconfig.app.json"
+			"path": "./apps/api-worker/tsconfig.app.json"
 		}
 	],
 	"files": []

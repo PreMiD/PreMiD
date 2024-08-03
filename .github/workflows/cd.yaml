@@ -14,7 +14,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [pd, schema-server, website]
+        target:
+          - pd
+          - schema-server
+          - website
+          - api-worker
+          - api-master
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -52,7 +57,7 @@ jobs:
 
       - name: Build and push other images
         uses: docker/build-push-action@v6
-        if: matrix.target != 'website' && github.event_name == 'push'
+        if: matrix.target != 'website' && github.event_name == 'tag'
         with:
           push: true
           platforms: linux/amd64,linux/arm64
