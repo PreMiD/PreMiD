@@ -39,7 +39,7 @@ const nonce = useNonce();
 
 <template>
 	<div
-		class="flex items-center select-none py-1 duration-200 justify-between h-17 w-60 rd-2 px-3 transition-all hover:translate-y--1.5"
+		class="flex items-center select-none py-1 justify-between duration-200 h-17 w-60 rd-2 px-3 transition-all hover:translate-y--1.5"
 		:style="computedBackground"
 		@mouseover="hovered = true"
 		@mouseleave="hovered = false"

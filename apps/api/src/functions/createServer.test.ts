@@ -16,7 +16,7 @@ describe.concurrent("createServer", () => {
 
 		const response = await server.inject({
 			method: "GET",
-			url: "/v4",
+			url: "/v5/graphql",
 		});
 
 		expect(response).toBeDefined();

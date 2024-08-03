@@ -91,7 +91,7 @@ function goToStore() {
 				{{ $t("page.downloads.section.heading.extension") }}
 			</h1>
 			<!-- User on mobile, not supported error -->
-			<div v-if="isMobile" class="bg-red-500 text-white rounded-lg flex flex-col items-center justify-center gap-2 mb-5 p-5">
+			<div v-if="isMobile" class="text-white rounded-lg flex flex-col items-center justify-center gap-2 bg-red-500 mb-5 p-5">
 				<h2 class="font-bold font-size-5">
 					{{ $t("page.downloads.mobile.title") }}
 				</h2>

@@ -54,7 +54,7 @@ useHead({
 						active-class="active"
 						:aria-label="`Link to ${link.name}`"
 					>
-						<span class="items-center inline-flex gap-2">
+						<span class="items-center gap-2 inline-flex">
 							<span
 								class="inline-flex iconOutline bg-link-icon-bg border-rd-100 p-2"
 							>
@@ -75,7 +75,7 @@ useHead({
 			<!-- Mobile Nav -->
 			<div class="md:hidden">
 				<button
-					class="md:hidden cursor-pointer bg-transparent b-none c-primary p0 h7"
+					class="md:hidden cursor-pointer b-none bg-transparent c-primary p0 h7"
 					aria-label="Toggle navigation menu"
 					@click="navOpen = !navOpen"
 				>

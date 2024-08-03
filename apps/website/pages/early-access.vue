@@ -28,7 +28,7 @@ function openBetaModal() {
 							Gain first access to new developments and actively participate in shaping the product's direction.
 						</p>
 					</div>
-					<button class="bg-orange-500 rounded-full cursor-pointer hover:bg-orange-600 text-white px-4 b-solid b-none transition-colors font-bold text-nowrap w-min py-3 rounded" @click="openAlphaModal">
+					<button class="bg-orange-500 rounded-full cursor-pointer hover:bg-orange-600 text-white px-4 b-solid b-none transition-colors font-bold py-3 text-nowrap w-min rounded" @click="openAlphaModal">
 						Get Alpha Access
 					</button>
 				</div>

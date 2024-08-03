@@ -1,7 +1,6 @@
 // Credit: https://www.totaltypescript.com/tsconfig-cheat-sheet
 {
 	"compilerOptions": {
-
 		/* AND if you're building for a library in a monorepo: */
 		"composite": true,
 		"target": "es2022",

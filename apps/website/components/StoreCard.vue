@@ -68,7 +68,7 @@ const hasPresence = computed(() => extension.presences.includes(presence.metadat
 				class="relative my-a z-20 transition-color text-3 mr-4 text-color font-50 w-6/9"
 			>
 				<h1
-					class="card-shadow font-bold overflow-hidden text-ellipsis text-xl text-nowrap"
+					class="card-shadow font-bold overflow-hidden text-ellipsis text-nowrap text-xl"
 					@click="goToPresence"
 				>
 					{{ presence.metadata.service }}
