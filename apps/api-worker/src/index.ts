@@ -1,6 +1,4 @@
 /* eslint-disable no-console */
-import "@sentry/tracing";
-
 import process from "node:process";
 import * as Sentry from "@sentry/node";
 import { connect } from "mongoose";

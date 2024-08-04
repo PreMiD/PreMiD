@@ -17,7 +17,6 @@
 		"@discordjs/rest": "^2.3.0",
 		"@envelop/sentry": "^9.0.0",
 		"@sentry/node": "^8.17.0",
-		"@sentry/tracing": "^7.114.0",
 		"cron": "^3.1.7",
 		"ioredis": "^5.3.2"
 	}
