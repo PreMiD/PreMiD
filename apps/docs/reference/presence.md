@@ -4,45 +4,40 @@ outline: "deep"
 
 # Presence
 
-
 The [`Presence`](#presence) class represents a client, which can be used to interact with the PreMiD extension.
-
 
 It also provides lifecycle events via [`UpdateData`](#update_data) and [`iFrameData`](#iframe_data).
 
 ### Creating a client
 
-
 ```ts
 // Create a new Presence instance
 const presence = new Presence({
-    clientId: "514271496134389561", // [!code warning] determines the activity's name (pre 2.6)
+  clientId: "514271496134389561", // [!code warning] determines the activity's name (pre 2.6)
 });
 
 // Listen for the UpdateData lifecycle event
 presence.on("UpdateData", () => {
-    // Read information from the DOM
-    const videoElement = document.querySelector("video");
+  // Read information from the DOM
+  const videoElement = document.querySelector("video");
 
-    const presenceData: PresenceData = {
-        details: "Watching a video",
-        state: videoElement.paused ? "Playback paused" : "Playing",
-    };
+  const presenceData: PresenceData = {
+    details: "Watching a video",
+    state: videoElement.paused ? "Playback paused" : "Playing",
+  };
 
-    // use setActivity to update the user's activity
-    presence.setActivity(presenceData);
+  // use setActivity to update the user's activity
+  presence.setActivity(presenceData);
 });
 ```
 
 ## constructor(options: [`PresenceOptions`](#presence-options)) {#constructor}
-
 
 ## setActivity(data: [`PresenceData`](#presence-data) | [`Slideshow`](#slideshow))
 
 The main way to update the user's activity.
 
 It can also be used with Slideshows, read more at [`createSlideshow`](#createSlideshow)
-
 
 ```ts{16}
 const presenceData: PresenceData = {
@@ -64,6 +59,7 @@ presence.setActivity(presenceData);
 ```
 
 ::: details Example with Slideshow
+
 ```ts
 // Creates a new slideshow
 const slideshow = presence.createSlideshow();
@@ -91,26 +87,23 @@ a list of translations can be found in the [Translations Repository](#TODO)
 
 to add your own custom translations check [Custom Translations](#TODO)
 
-
 ```ts
 // type definition
-function getStrings<T extends Record<string, string>>(
-	strings: T,
-): Promise<T>;
+function getStrings<T extends Record<string, string>>(strings: T): Promise<T>;
 ```
 
-
 Example
+
 ```ts {7-9}
 const strings = await presence.getStrings({
-	playing: "general.playing",
-	paused: "general.paused",
-	search: "general.search",
+  playing: "general.playing",
+  paused: "general.paused",
+  search: "general.search",
 }); // { playing: "Playing", paused: "Paused", search: "Searching" }
 
-console.log(strings.paused);    // EN: Paused
-console.log(strings.playing);   // DE: Spielt
-console.log(strings.search);    // RU: Ищет 
+console.log(strings.paused); // EN: Paused
+console.log(strings.playing); // DE: Spielt
+console.log(strings.search); // RU: Ищет
 ```
 
 ## clearActivity()
@@ -118,6 +111,7 @@ console.log(strings.search);    // RU: Ищет
 Clears the user's activity, can be used when the user is idle (e,g: video paused)
 
 Example
+
 ```ts{4-5}
 presence.on("UpdateData", () => {
     const videoElement = document.querySelector("video");
@@ -134,17 +128,14 @@ presence.on("UpdateData", () => {
 
 ```
 
-
-
-
 ## [`Presence Options`](#presence-options)
+
 Options that change the behavior of the presence
 
 ### [`clientId`](#clientId)
 
 - **Type:** `string`
-- **Required** 
+- **Required**
 
 This property is required to make your presence work, because it uses your application id to display its logo and assets.
 You can get it on your [applications page](https://discordapp.com/developers/applications)
-
