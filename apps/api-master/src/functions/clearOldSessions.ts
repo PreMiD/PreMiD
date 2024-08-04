@@ -1,10 +1,18 @@
 import { REST } from "@discordjs/rest";
-import { redis } from "../index.js";
+import { mainLog, redis } from "../index.js";
 
 export async function clearOldSesssions() {
 	const sessions = await redis.hgetall("pmd-api.sessions");
 	const now = Date.now();
 
+	if (Object.keys(sessions).length === 0) {
+		mainLog("No sessions to clear");
+		return;
+	}
+
+	mainLog(`Checking ${Object.keys(sessions).length} sessions`);
+
+	let cleared = 0;
 	for (const [key, value] of Object.entries(sessions)) {
 		const session = JSON.parse(value) as {
 			token: string;
@@ -27,9 +35,13 @@ export async function clearOldSesssions() {
 			});
 		}
 		catch (error) {
-			console.error(error);
+			mainLog(`Failed to delete session: %O`, error);
 		}
+
+		cleared++;
 
 		await redis.hdel("pmd-api.sessions", key);
 	}
+
+	mainLog(`Cleared ${cleared} sessions`);
 }
