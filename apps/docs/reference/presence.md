@@ -137,5 +137,9 @@ Options that change the behavior of the presence
 - **Type:** `string`
 - **Required**
 
-This property is required to make your presence work, because it uses your application id to display its logo and assets.
-You can get it on your [applications page](https://discordapp.com/developers/applications)
+This property is used for legacy users running the PreMiD application ([`Prefer App`](#prefer-app))
+
+You can get the `clientId` by making a new application in the [Discord Developer Portal](https://discordapp.com/developers/applications)
+
+> [!NOTE]
+> Make sure to use the name of the service, as it's displayed for legacy users.
