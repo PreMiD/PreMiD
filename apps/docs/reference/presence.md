@@ -45,9 +45,9 @@ const presenceData: PresenceData = {
 	type: ActivityType.Watching,
 	details: "The Best Speedtech Cup of The Day in 2024!",
 	state: "WirtualTV",
-	largeImageKey: "<thumbnail_url>",
+	largeImageKey: "https://img.youtube.com/vi/gQ3A9Ph1Nuo/maxresdefault.jpg",
 	largeImageText: "Watching a video by WirtualTV",
-	smallImageKey: "<channel_pic>",
+	smallImageKey: "https://i.imgur.com/6yp7YeO.jpeg",
 	smallImageText: "WirtualTV",
 	buttons: [
 		{ label: "Watch", url: "https://youtu.be/gQ3A9Ph1Nuo" },
