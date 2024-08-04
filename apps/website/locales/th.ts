@@ -60,7 +60,7 @@ export default defineI18nLocale(() => ({
       userPage: {
         title: false,
         error: {
-          title: false,
+          title: "เกิดข้อผิดพลาด",
           description: false
         }
       }
@@ -74,8 +74,8 @@ export default defineI18nLocale(() => ({
       words: {
         music: "เพลง",
         videos: "วีดีโอ",
-        streams: false,
-        media: false
+        streams: "สตรีม",
+        media: "มีเดีย"
       },
       description: false,
       getStarted: "เริ่มใช้งาน",
@@ -108,14 +108,14 @@ export default defineI18nLocale(() => ({
           }
         },
         howItWorks: {
-          title: false,
+          title: "มันทำงานอย่างไร",
           step1: {
-            title: false,
-            description: false
+            title: "ติดตั้งส่วนขยาย",
+            description: "เพิ่ม PreMiD ลงในเบราว์เซอร์ของคุณ"
           },
           step2: {
-            title: false,
-            description: false
+            title: "เข้าสู่ระบบด้วย Discord",
+            description: "เชื่อมต่อ PreMiD กับบัญชี Discord ของคุณ"
           },
           step3: {
             title: false,
@@ -147,7 +147,7 @@ export default defineI18nLocale(() => ({
       title: "ดาวน์โหลด",
       steps: {
         install: false,
-        login: false,
+        login: "เข้าสู่ระบบด้วย Discord",
         add: false,
         showoff: false
       },
@@ -275,7 +275,7 @@ export default defineI18nLocale(() => ({
       message: false
     },
     default: {
-      title: false,
+      title: "เกิดข้อผิดพลาด",
       message: false,
       button: false
     }
