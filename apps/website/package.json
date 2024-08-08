@@ -11,7 +11,7 @@
 		"postinstall": "nuxt prepare"
 	},
 	"dependencies": {
-		"@discord-user-card/vue": "^0.0.8",
+		"@discord-user-card/vue": "^0.0.9",
 		"@discordjs/rest": "^2.3.0",
 		"@fortawesome/fontawesome-svg-core": "^6.6.0",
 		"@fortawesome/free-brands-svg-icons": "^6.6.0",
