@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
-
+import process from "node:process";
 import { useSentry } from "@envelop/sentry";
 import { maxAliasesPlugin } from "@escape.tech/graphql-armor-max-aliases";
 import { maxDepthPlugin } from "@escape.tech/graphql-armor-max-depth";
@@ -11,6 +11,7 @@ import fastify from "fastify";
 import { createSchema, createYoga } from "graphql-yoga";
 
 import fastifyWebsocket from "@fastify/websocket";
+import { defu } from "defu";
 import { resolvers } from "../graphql/resolvers/v5/index.js";
 import { Socket } from "../classes/Socket.js";
 import createRedis from "./createRedis.js";
@@ -82,6 +83,17 @@ export default async function createServer() {
 		app.get("/v5/ws", { websocket: true }, (websocket, request) => {
 			void new Socket(websocket, request);
 		});
+	});
+
+	app.get("/v5/feature-flags", async (request, reply) => {
+		const disabledFlags = process.env.DISABLED_FEATURE_FLAGS?.split(",") ?? [];
+		const flags = Object.fromEntries(disabledFlags.map(flag => [flag, false]));
+
+		const test = defu(flags, {
+			WebSocketManager: true,
+		});
+
+		void reply.send(test);
 	});
 
 	return app;

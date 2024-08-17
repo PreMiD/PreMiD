@@ -108,6 +108,9 @@ importers:
       arktype:
         specifier: 2.0.0-beta.2
         version: 2.0.0-beta.2
+      defu:
+        specifier: ^6.1.4
+        version: 6.1.4
       discord-api-types:
         specifier: ^0.37.92
         version: 0.37.93
@@ -216,8 +219,8 @@ importers:
   apps/website:
     dependencies:
       '@discord-user-card/vue':
-        specifier: ^0.0.8
-        version: 0.0.8(vue@3.4.34(typescript@5.5.4))
+        specifier: ^0.0.9
+        version: 0.0.9(vue@3.4.34(typescript@5.5.4))
       '@discordjs/rest':
         specifier: ^2.3.0
         version: 2.3.0
@@ -971,11 +974,11 @@ packages:
     resolution: {integrity: sha512-tpyc+7i6bPG9mvaBbtKUeghfyZSDgWquIDfMgqYtTbmZ9Y9VzEm2je9EYcQ0aoz5o7NvGS+rcDec93yO08MHYA==}
     engines: {node: '>=v18'}
 
-  '@discord-user-card/core@0.0.8':
-    resolution: {integrity: sha512-Q7M8bB/ZIEKPoiXm9CQ/NfvJxxTGOmeuX7EU/714PMGU+sDaVgCX6ES616pB9ARGzBjYK8+9IFukw3H+Sc6TgA==}
+  '@discord-user-card/core@0.0.9':
+    resolution: {integrity: sha512-Vr7jbKtCCnz4Te1UgyC3gxzI/MUy2hN6TmCNfhrTqMuXPOJUxcV9JKDcgp5iYFODURH/tKOrmhDVaYB64G+snQ==}
 
-  '@discord-user-card/vue@0.0.8':
-    resolution: {integrity: sha512-4DADGSz0QHUtjEPxuHI2CkfLb+yIHBqmOIjiYV4WM71CzvebXTqAmFZotlxpUzvJGwDmDUFba67TdS4+Y1ueJg==}
+  '@discord-user-card/vue@0.0.9':
+    resolution: {integrity: sha512-uWrCNJbdfhQCOPpiXz6IplAjXaoNby1ouAd90ZL2r+XSzXDSo2x++I3bWZlSDsrau3l7yhBvxByJI4OuTP52rA==}
     peerDependencies:
       vue: ^3.0.0
 
@@ -2597,6 +2600,7 @@ packages:
 
   '@rollup/rollup-linux-arm64-gnu@4.19.1':
     resolution: {integrity: sha512-C7evongnjyxdngSDRRSQv5GvyfISizgtk9RM+z2biV5kY6S/NF/wta7K+DanmktC5DkuaJQgoKGf7KUDmA7RUw==}
+    cpu: [arm64]
     os: [linux]
 
   '@rollup/rollup-linux-arm64-musl@4.18.1':
@@ -4515,8 +4519,8 @@ packages:
   discord-api-types@0.37.93:
     resolution: {integrity: sha512-M5jn0x3bcXk8EI2c6F6V6LeOWq10B/cJf+YJSyqNmg7z4bdXK+Z7g9zGJwHS0h9Bfgs0nun2LQISFOzwck7G9A==}
 
-  discord-user-card@0.0.8:
-    resolution: {integrity: sha512-mSPvXFEhDuWKY/Vt4jC27S1P1MqQ2Q0MJoAD5LcbRSEYoRu5OPIveXLNhrN8p76yiFFCODcq8I7bPlWTqbcFQQ==}
+  discord-user-card@0.0.9:
+    resolution: {integrity: sha512-oNW2WLScbDhmNSxE3f5wgJYKAbjGa39gQQ57LqLG/GML7aeWYgrhvadZwpdLP0AZKdZoRh9ZdCA+6BBufJ3mYQ==}
 
   doctrine@3.0.0:
     resolution: {integrity: sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==}
@@ -9314,11 +9318,11 @@ snapshots:
       '@types/conventional-commits-parser': 5.0.0
       chalk: 5.3.0
 
-  '@discord-user-card/core@0.0.8': {}
+  '@discord-user-card/core@0.0.9': {}
 
-  '@discord-user-card/vue@0.0.8(vue@3.4.34(typescript@5.5.4))':
+  '@discord-user-card/vue@0.0.9(vue@3.4.34(typescript@5.5.4))':
     dependencies:
-      discord-user-card: 0.0.8
+      discord-user-card: 0.0.9
       vue: 3.4.34(typescript@5.5.4)
 
   '@discordjs/collection@2.1.0': {}
@@ -13969,9 +13973,9 @@ snapshots:
 
   discord-api-types@0.37.93: {}
 
-  discord-user-card@0.0.8:
+  discord-user-card@0.0.9:
     dependencies:
-      '@discord-user-card/core': 0.0.8
+      '@discord-user-card/core': 0.0.9
 
   doctrine@3.0.0:
     dependencies:
