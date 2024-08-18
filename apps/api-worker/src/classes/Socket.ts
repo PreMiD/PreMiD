@@ -5,6 +5,7 @@ import type { RawData } from "ws";
 import { REST } from "@discordjs/rest";
 import { Routes } from "discord-api-types/v10";
 import { redis } from "../functions/createServer.js";
+import { counter } from "../tracing.js";
 
 const schema = scope({
 	token: {
@@ -30,6 +31,7 @@ export class Socket {
 		public readonly socket: WebSocket.WebSocket,
 		public readonly request: FastifyRequest,
 	) {
+		counter.add(1);
 		socket.on("message", this.onMessage.bind(this));
 		socket.on("close", () => this.onClose());
 	}
@@ -65,6 +67,8 @@ export class Socket {
 	}
 
 	async onClose() {
+		counter.add(-1);
+
 		if (!this.currentToken || !this.currentSesssion)
 			return;
 

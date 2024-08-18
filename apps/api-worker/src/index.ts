@@ -2,6 +2,7 @@
 import process from "node:process";
 import * as Sentry from "@sentry/node";
 import { connect } from "mongoose";
+import "./tracing.js";
 
 import createServer from "./functions/createServer.js";
 
