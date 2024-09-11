@@ -1,6 +1,6 @@
 import { Presence } from "@premid/db";
-import type { PresenceSchema } from "@premid/db/Presence.js";
 import { parseResolveInfo } from "graphql-parse-resolve-info";
+import type { PresenceSchema } from "@premid/db/Presence.js";
 import type { FilterQuery } from "mongoose";
 
 import type { QueryResolvers } from "../../../../generated/graphql-v5.js";

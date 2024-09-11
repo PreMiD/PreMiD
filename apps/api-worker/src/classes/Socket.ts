@@ -1,9 +1,9 @@
-import { scope, type } from "arktype";
-import type { FastifyRequest } from "fastify";
-import WebSocket from "ws";
-import type { RawData } from "ws";
 import { REST } from "@discordjs/rest";
+import { scope, type } from "arktype";
 import { Routes } from "discord-api-types/v10";
+import WebSocket from "ws";
+import type { FastifyRequest } from "fastify";
+import type { RawData } from "ws";
 import { redis } from "../functions/createServer.js";
 import { counter } from "../tracing.js";
 
@@ -11,20 +11,20 @@ const schema = scope({
 	token: {
 		"+": "delete",
 		"type": "'token'",
-		"token": "format.trim",
-		"expires": "unixTimestamp",
+		"token": "string.trim",
+		"expires": "number.epoch",
 	},
 	session: {
 		"+": "delete",
 		"type": "'session'",
-		"token": "format.trim",
+		"token": "string.trim",
 	},
 	validMessages: "token | session",
 }).export();
 
 export class Socket {
 	currentToken: typeof schema.token.infer | undefined;
-	currentSesssion: typeof schema.session.infer | undefined;
+	currentSession: typeof schema.session.infer | undefined;
 	discord = new REST({ version: "10", authPrefix: "Bearer" });
 
 	constructor(
@@ -54,8 +54,8 @@ export class Socket {
 					break;
 				}
 				case "session": {
-					await redis.hdel("pmd-api.sessions", out.token);
-					this.currentSesssion = out;
+					await redis.del(`pmd:session:${out.token}`);
+					this.currentSession = out;
 					break;
 				}
 			}
@@ -69,18 +69,20 @@ export class Socket {
 	async onClose() {
 		counter.add(-1);
 
-		if (!this.currentToken || !this.currentSesssion)
+		if (!this.currentToken || !this.currentSession)
 			return;
 
-		await redis.hset(
-			"pmd-api.sessions",
-			this.currentSesssion.token,
-			JSON.stringify({
-				session: this.currentSesssion.token,
-				token: this.currentToken.token,
-				lastUpdated: Date.now(),
-			}),
+		const now = Math.floor(Date.now() / 1000);
+
+		await redis.hmset(
+			`pmd:session:${this.currentSession.token}`,
+			{
+				t: this.currentToken.token,
+				u: now,
+			},
 		);
+
+		await redis.expire(`pmd:session:${this.currentSession.token}`, 60); // Expire after 1 minute
 	}
 
 	async isTokenValid(token: typeof schema.token.infer) {

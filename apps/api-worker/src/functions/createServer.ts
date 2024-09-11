@@ -6,14 +6,15 @@ import { maxAliasesPlugin } from "@escape.tech/graphql-armor-max-aliases";
 import { maxDepthPlugin } from "@escape.tech/graphql-armor-max-depth";
 import { maxDirectivesPlugin } from "@escape.tech/graphql-armor-max-directives";
 import { maxTokensPlugin } from "@escape.tech/graphql-armor-max-tokens";
-import type { FastifyReply, FastifyRequest } from "fastify";
-import fastify from "fastify";
-import { createSchema, createYoga } from "graphql-yoga";
-
 import fastifyWebsocket from "@fastify/websocket";
 import { defu } from "defu";
-import { resolvers } from "../graphql/resolvers/v5/index.js";
+import fastify from "fastify";
+
+import { createSchema, createYoga } from "graphql-yoga";
+import type { FastifyReply, FastifyRequest } from "fastify";
 import { Socket } from "../classes/Socket.js";
+import { resolvers } from "../graphql/resolvers/v5/index.js";
+import { sessionKeepAlive } from "../routes/sessionKeepAlive.js";
 import createRedis from "./createRedis.js";
 
 export interface FastifyContext {
@@ -91,10 +92,13 @@ export default async function createServer() {
 
 		const test = defu(flags, {
 			WebSocketManager: true,
+			SessionKeepAlive: true,
 		});
 
 		void reply.send(test);
 	});
+
+	app.post("/v5/session-keep-alive", sessionKeepAlive);
 
 	return app;
 }

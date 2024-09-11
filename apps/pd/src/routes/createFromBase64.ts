@@ -1,9 +1,9 @@
 import crypto from "node:crypto";
 
 import process from "node:process";
-import type { RouteHandlerMethod } from "fastify";
 import mime from "mime-types";
 import { nanoid } from "nanoid";
+import type { RouteHandlerMethod } from "fastify";
 
 import keyv from "../keyv.js";
 

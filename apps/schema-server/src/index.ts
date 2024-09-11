@@ -2,9 +2,9 @@ import { extname, resolve } from "node:path";
 
 import process from "node:process";
 import helmet from "@fastify/helmet";
-import type { RequestGenericInterface } from "fastify";
 import fastify from "fastify";
 import { globby } from "globby";
+import type { RequestGenericInterface } from "fastify";
 
 export const app = fastify();
 

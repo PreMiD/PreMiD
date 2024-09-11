@@ -1,9 +1,5 @@
 type Mutation {
-	addScience(
-		identifier: String!
-		presences: [String!]!
-		platform: PlatformInput!
-	): AddScienceResult
+	addScience(identifier: String!, presences: [String!]!, platform: PlatformInput!): AddScienceResult
 }
 
 input PlatformInput {

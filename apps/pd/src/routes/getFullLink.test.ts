@@ -1,6 +1,6 @@
-import { readFile } from "node:fs/promises";
-
 import { Buffer } from "node:buffer";
+
+import { readFile } from "node:fs/promises";
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 
 import { createServer } from "../functions/createServer.js";

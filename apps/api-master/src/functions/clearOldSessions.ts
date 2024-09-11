@@ -1,36 +1,38 @@
 import { REST } from "@discordjs/rest";
 import { mainLog, redis } from "../index.js";
 
-export async function clearOldSesssions() {
-	const sessions = await redis.hgetall("pmd-api.sessions");
-	const now = Date.now();
+export async function clearOldSessions() {
+	const sessionKeys = await redis.keys("pmd:session:*");
+	const now = Math.floor(Date.now() / 1000);
 
-	if (Object.keys(sessions).length === 0) {
+	if (sessionKeys.length === 0) {
 		mainLog("No sessions to clear");
 		return;
 	}
 
-	mainLog(`Checking ${Object.keys(sessions).length} sessions`);
+	mainLog(`Checking ${sessionKeys.length} sessions`);
 
 	let cleared = 0;
-	for (const [key, value] of Object.entries(sessions)) {
-		const session = JSON.parse(value) as {
-			token: string;
-			session: string;
-			lastUpdated: number;
-		};
+	for (const key of sessionKeys) {
+		const session = await redis.hgetall(key);
 
-		// ? If the session is younger than 30seconds, skip it
-		if (now - session.lastUpdated < 30000)
+		if (!session.t || !session.u) {
+			await redis.del(key);
+			cleared++;
+			continue;
+		}
+
+		//* If the session is younger than 30 seconds, skip it
+		if (now - Number(session.u) < 30)
 			continue;
 
-		// ? Delete the session
+		//* Delete the session
 		try {
 			const discord = new REST({ version: "10", authPrefix: "Bearer" });
-			discord.setToken(session.token);
+			discord.setToken(session.t);
 			await discord.post("/users/@me/headless-sessions/delete", {
 				body: {
-					token: session.session,
+					token: key.split(":")[2], // Extract session token from key
 				},
 			});
 		}
@@ -39,8 +41,7 @@ export async function clearOldSesssions() {
 		}
 
 		cleared++;
-
-		await redis.hdel("pmd-api.sessions", key);
+		await redis.del(key);
 	}
 
 	mainLog(`Cleared ${cleared} sessions`);

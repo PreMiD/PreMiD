@@ -22,6 +22,7 @@ export const useExtensionStore = defineStore("extension", () => {
 		}
 	}
 
+	// eslint-disable-next-line unicorn/consistent-function-scoping
 	function fetchPresences() {
 		window.dispatchEvent(new CustomEvent("PreMiD_GetPresenceList"));
 	}

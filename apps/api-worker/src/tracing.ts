@@ -1,6 +1,6 @@
+import { ValueType } from "@opentelemetry/api";
 import { PrometheusExporter } from "@opentelemetry/exporter-prometheus";
 import { MeterProvider } from "@opentelemetry/sdk-metrics";
-import { ValueType } from "@opentelemetry/api";
 
 const prometheusExporter = new PrometheusExporter();
 

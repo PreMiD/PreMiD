@@ -1,4 +1,5 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
+import { faBrave, faChrome, faDiscord, faEdge, faFirefox, faGithub, faOpera, faPatreon, faSafari, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import {
 	faBars,
 	faBolt,
@@ -33,7 +34,6 @@ import {
 	faUsers,
 	faVideo,
 } from "@fortawesome/free-solid-svg-icons";
-import { faBrave, faChrome, faDiscord, faEdge, faFirefox, faGithub, faOpera, faPatreon, faSafari, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 
 export default defineNuxtPlugin(() => {
 	library.add(
