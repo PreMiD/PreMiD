@@ -28,7 +28,7 @@
 		"@opentelemetry/node": "^0.24.0",
 		"@premid/db": "workspace:*",
 		"@sentry/node": "^8.17.0",
-		"arktype": "2.0.0-beta.2",
+		"arktype": "2.0.0-rc.6",
 		"defu": "^6.1.4",
 		"discord-api-types": "^0.37.92",
 		"fastify": "^4.28.1",
