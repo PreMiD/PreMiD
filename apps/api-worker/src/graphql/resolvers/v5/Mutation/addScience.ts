@@ -3,11 +3,11 @@ import { redis } from "../../../../functions/createServer.js";
 import type { MutationResolvers } from "../../../../generated/graphql-v5.js";
 
 const addScienceSchema = type({
-	identifier: "uuid & format.lowercase",
-	presences: "format.trim[]",
+	identifier: "string.uuid & string.lower",
+	presences: "string.trim[]",
 	platform: {
-		arch: "format.trim", // ? "format.trim" is just a string that is trimmed
-		os: "format.trim",
+		arch: "string.trim",
+		os: "string.trim",
 	},
 });
 

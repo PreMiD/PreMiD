@@ -20,7 +20,7 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 		return reply.status(400).send("Invalid URL");
 
 	const hash = crypto.createHash("sha256").update(url).digest("hex");
-	const existingShortenedUrl = await keyv.get(hash);
+	const existingShortenedUrl = await keyv.get<string>(hash);
 
 	void reply.header("Cache-control", "public, max-age=1800");
 

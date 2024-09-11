@@ -2,18 +2,18 @@ import { type } from "arktype";
 import type { MutationResolvers } from "../../../../generated/graphql-v5.js";
 
 const heartbeatSchema = type({
-	identifier: "uuid & format.lowercase",
+	identifier: "string.uuid & string.lower",
 	presences: {
-		service: "format.trim",
-		version: "semver",
-		language: "format.trim",
-		since: "unixTimestamp",
+		service: "string.trim",
+		version: "string.semver",
+		language: "string.trim",
+		since: "number.epoch",
 	},
 	extension: {
-		"version": "semver",
-		"language": "format.trim",
+		"version": "string.semver",
+		"language": "string.trim",
 		"connected?": {
-			app: "integer",
+			app: "number.integer",
 			discord: "boolean",
 		},
 	},
