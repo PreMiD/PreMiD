@@ -16,7 +16,7 @@ export async function clearOldSessions() {
 	for (const key of sessionKeys) {
 		const session = await redis.hgetall(key);
 
-		if (!session.t || !session.u) {
+		if (!session.t || !session.u || !session.s) {
 			await redis.del(key);
 			cleared++;
 			continue;
@@ -32,7 +32,7 @@ export async function clearOldSessions() {
 			discord.setToken(session.t);
 			await discord.post("/users/@me/headless-sessions/delete", {
 				body: {
-					token: key.split(":")[2], // Extract session token from key
+					token: session.s,
 				},
 			});
 		}

@@ -5,6 +5,7 @@ import WebSocket from "ws";
 import type { FastifyRequest } from "fastify";
 import type { RawData } from "ws";
 import { redis } from "../functions/createServer.js";
+import { shortHash } from "../functions/shortHash.js";
 import { counter } from "../tracing.js";
 
 const schema = scope({
@@ -75,14 +76,15 @@ export class Socket {
 		const now = Math.floor(Date.now() / 1000);
 
 		await redis.hmset(
-			`pmd:session:${this.currentSession.token}`,
+			`pmd:session:${shortHash(this.currentSession.token, this.currentToken.token)}`,
 			{
 				t: this.currentToken.token,
 				u: now,
+				s: this.currentSession.token,
 			},
 		);
 
-		await redis.expire(`pmd:session:${this.currentSession.token}`, 60); // Expire after 1 minute
+		await redis.expire(`pmd:session:${shortHash(this.currentSession.token, this.currentToken.token)}`, 60); // Expire after 1 minute
 	}
 
 	async isTokenValid(token: typeof schema.token.infer) {
