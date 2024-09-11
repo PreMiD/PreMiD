@@ -5,7 +5,6 @@ import WebSocket from "ws";
 import type { FastifyRequest } from "fastify";
 import type { RawData } from "ws";
 import { redis } from "../functions/createServer.js";
-import { shortHash } from "../functions/shortHash.js";
 import { counter } from "../tracing.js";
 
 const schema = scope({
@@ -55,7 +54,7 @@ export class Socket {
 					break;
 				}
 				case "session": {
-					await redis.del(`pmd:session:${out.token}`);
+					await redis.hdel("pmd-api.sessions", out.token);
 					this.currentSession = out;
 					break;
 				}
@@ -73,18 +72,15 @@ export class Socket {
 		if (!this.currentToken || !this.currentSession)
 			return;
 
-		const now = Math.floor(Date.now() / 1000);
-
-		await redis.hmset(
-			`pmd:session:${shortHash(this.currentSession.token, this.currentToken.token)}`,
-			{
-				t: this.currentToken.token,
-				u: now,
-				s: this.currentSession.token,
-			},
+		await redis.hset(
+			"pmd-api.sessions",
+			this.currentSession.token,
+			JSON.stringify({
+				session: this.currentSession.token,
+				token: this.currentToken.token,
+				lastUpdated: Date.now(),
+			}),
 		);
-
-		await redis.expire(`pmd:session:${shortHash(this.currentSession.token, this.currentToken.token)}`, 60); // Expire after 1 minute
 	}
 
 	async isTokenValid(token: typeof schema.token.infer) {

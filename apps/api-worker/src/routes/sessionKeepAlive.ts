@@ -4,7 +4,6 @@ import { type } from "arktype";
 import { Routes } from "discord-api-types/v10";
 import type { FastifyReply, FastifyRequest } from "fastify";
 import { redis } from "../functions/createServer.js";
-import { shortHash } from "../functions/shortHash.js";
 
 const schema = type({
 	token: "string.trim",
@@ -24,19 +23,15 @@ export async function sessionKeepAlive(request: FastifyRequest, reply: FastifyRe
 	if (!await isTokenValid(out.token))
 		return reply.status(400).send({ code: "INVALID_TOKEN", message: "The token is invalid" });
 
-	const now = Math.floor(Date.now() / 1000); // Unix timestamp in seconds
-
-	await redis.hmset(
-		`pmd:session:${shortHash(out.session, out.token)}`,
-		{
-			t: out.token,
-			u: now,
-			s: out.session,
-		},
+	await redis.hset(
+		"pmd-api.sessions",
+		out.token,
+		JSON.stringify({
+			session: out.session,
+			token: out.token,
+			lastUpdated: Date.now(),
+		}),
 	);
-
-	// Set expiration for the hash
-	await redis.expire(`pmd:session:${shortHash(out.session, out.token)}`, 60); // Expire after 1 minute
 
 	const interval = Number.parseInt(process.env.SESSION_KEEP_ALIVE_INTERVAL ?? "5000");
 
