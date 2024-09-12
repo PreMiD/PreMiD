@@ -16,6 +16,9 @@
 	"dependencies": {
 		"@discordjs/rest": "^2.3.0",
 		"@envelop/sentry": "^9.0.0",
+		"@opentelemetry/api": "^1.9.0",
+		"@opentelemetry/exporter-prometheus": "^0.52.1",
+		"@opentelemetry/node": "^0.24.0",
 		"@sentry/node": "^8.17.0",
 		"cron": "^3.1.7",
 		"debug": "^4.3.6",
