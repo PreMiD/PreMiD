@@ -1,12 +1,11 @@
 import process from "node:process";
 import KeyvRedis from "@keyv/redis";
 import Keyv from "keyv";
-import type { KeyvOptions } from "keyv";
 
 import redis from "../redis.js";
 
 export default function createKeyv() {
-	let options: KeyvOptions | undefined;
+	let options: Keyv.Options<string> | undefined;
 
 	/* c8 ignore next 8 */
 	if (process.env.REDIS_SENTINELS) {
@@ -16,7 +15,7 @@ export default function createKeyv() {
 		};
 	}
 
-	const keyv = new Keyv(
+	const keyv = new Keyv<string>(
 		options,
 	);
 
