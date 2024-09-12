@@ -25,7 +25,7 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 	if (id.split(".")[0]?.length !== 10)
 		return reply.code(404).send("Invalid ID");
 
-	const url = await keyv.get<string>(id);
+	const url = await keyv.get(id);
 	if (!url)
 		return reply.code(404).send("Unknown ID");
 
