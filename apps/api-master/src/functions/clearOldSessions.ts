@@ -96,18 +96,12 @@ async function deleteSession(session: { token: string; session: string }, key: s
 	}
 	catch (error) {
 		clearTimeout(timeoutId);
-		//* Log detailed error information
-		mainLog(`Delete session error for key ${key}:`, {
-			errorName: error instanceof Error ? error.name : "Unknown",
-			errorMessage: error instanceof Error ? error.message : String(error),
-			errorStack: error instanceof Error ? error.stack : "No stack trace",
-		});
 
 		if (error instanceof Error && error.name === "AbortError") {
 			mainLog(`Session deletion aborted due to timeout for key ${key}`);
 		}
 		else if (error instanceof Error) {
-			mainLog(`Failed to delete session for key ${key}: ${error.message}`);
+			mainLog(`Failed to delete session for key ${key}: [${error.name}] ${error.message}`);
 		}
 		else {
 			mainLog(`Failed to delete session for key ${key}: Unknown error`);
