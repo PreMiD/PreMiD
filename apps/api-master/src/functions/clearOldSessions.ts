@@ -78,7 +78,7 @@ export async function clearOldSessions() {
 
 async function deleteSession(session: { token: string; session: string }, key: string): Promise<string> {
 	const abortController = new AbortController();
-	const timeoutId = setTimeout(() => abortController.abort(), 5000); //* 5 second timeout
+	const timeoutId = setTimeout(() => abortController.abort("Timeout"), 5000); //* 5 second timeout
 
 	try {
 		const discord = new REST({ version: "10", authPrefix: "Bearer" });
