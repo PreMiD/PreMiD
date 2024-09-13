@@ -76,7 +76,7 @@ export async function clearOldSessions() {
 	inProgress = false;
 }
 
-async function deleteSession(session: { token: string; session: string }, key: string): Promise<string | null> {
+async function deleteSession(session: { token: string; session: string }, key: string): Promise<string> {
 	try {
 		const abortController = new AbortController();
 		const discord = new REST({ version: "10", authPrefix: "Bearer" });
@@ -97,6 +97,6 @@ async function deleteSession(session: { token: string; session: string }, key: s
 		else {
 			mainLog(`Failed to delete session: %O`, (typeof error === "object" && error && "message" in error ? error.message : error));
 		}
-		return null;
+		return key;
 	}
 }
