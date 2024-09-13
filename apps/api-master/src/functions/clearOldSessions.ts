@@ -51,18 +51,18 @@ export async function clearOldSessions() {
 						token: session.session,
 					},
 				});
-
-				keysToDelete.push(key);
-				cleared++;
-
-				//* Delete in batches to avoid memory bloat
-				if (keysToDelete.length >= batchSize) {
-					await redis.hdel("pmd-api.sessions", ...keysToDelete);
-					keysToDelete = [];
-				}
 			}
 			catch (error) {
 				mainLog(`Failed to delete session: %O`, (typeof error === "object" && error && "message" in error ? error.message : error));
+			}
+
+			keysToDelete.push(key);
+			cleared++;
+
+			//* Delete in batches to avoid memory bloat
+			if (keysToDelete.length >= batchSize) {
+				await redis.hdel("pmd-api.sessions", ...keysToDelete);
+				keysToDelete = [];
 			}
 		}
 	} while (cursor !== "0");
