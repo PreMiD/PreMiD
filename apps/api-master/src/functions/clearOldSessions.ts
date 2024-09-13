@@ -13,12 +13,14 @@ export async function clearOldSessions() {
 	let cursor = "0";
 	let totalSessions = 0;
 	let cleared = 0;
+	const batchSize = 100;
+	let keysToDelete = [];
 
 	mainLog("Starting session cleanup");
 
 	do {
 		//* Use hscan to iterate through sessions
-		const [nextCursor, result] = await redis.hscan("pmd-api.sessions", cursor, "COUNT", "100");
+		const [nextCursor, result] = await redis.hscan("pmd-api.sessions", cursor, "COUNT", batchSize);
 		cursor = nextCursor;
 		totalSessions += result.length / 2;
 
@@ -40,7 +42,7 @@ export async function clearOldSessions() {
 			if (now - session.lastUpdated < 30000)
 				continue;
 
-			//* Delete the session
+			//* Mark the session for deletion
 			try {
 				const discord = new REST({ version: "10", authPrefix: "Bearer" });
 				discord.setToken(session.token);
@@ -50,14 +52,25 @@ export async function clearOldSessions() {
 					},
 				});
 
-				await redis.hdel("pmd-api.sessions", key);
+				keysToDelete.push(key);
 				cleared++;
+
+				//* Delete in batches to avoid memory bloat
+				if (keysToDelete.length >= batchSize) {
+					await redis.hdel("pmd-api.sessions", ...keysToDelete);
+					keysToDelete = [];
+				}
 			}
 			catch (error) {
 				mainLog(`Failed to delete session: %O`, (typeof error === "object" && error && "message" in error ? error.message : error));
 			}
 		}
 	} while (cursor !== "0");
+
+	//* Delete any remaining keys
+	if (keysToDelete.length > 0) {
+		await redis.hdel("pmd-api.sessions", ...keysToDelete);
+	}
 
 	if (totalSessions === 0) {
 		mainLog("No sessions to clear");
