@@ -1,4 +1,4 @@
-import { ActivityType, flagsToBadges, PresenceUpdateStatus } from "@discord-user-card/vue";
+import { ActivityType, PresenceUpdateStatus, flagsToBadges } from "@discord-user-card/vue";
 import { REST } from "@discordjs/rest";
 import { Routes } from "discord-api-types/v10";
 import type { DiscordUserCardActivity, DiscordUserCardUser } from "@discord-user-card/vue";

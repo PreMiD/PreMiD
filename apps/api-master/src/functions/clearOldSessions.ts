@@ -1,7 +1,14 @@
 import { REST } from "@discordjs/rest";
 import { mainLog, redis } from "../index.js";
 
+let inProgress = false;
 export async function clearOldSessions() {
+	if (inProgress) {
+		mainLog("Session cleanup already in progress");
+		return;
+	}
+
+	inProgress = true;
 	const now = Date.now();
 	let cursor = "0";
 	let totalSessions = 0;
@@ -47,7 +54,7 @@ export async function clearOldSessions() {
 				cleared++;
 			}
 			catch (error) {
-				mainLog(`Failed to delete session: %O`, error);
+				mainLog(`Failed to delete session: %O`, (typeof error === "object" && error && "message" in error ? error.message : error));
 			}
 		}
 	} while (cursor !== "0");
@@ -58,4 +65,6 @@ export async function clearOldSessions() {
 	else {
 		mainLog(`Checked ${totalSessions} sessions, cleared ${cleared}`);
 	}
+
+	inProgress = false;
 }
