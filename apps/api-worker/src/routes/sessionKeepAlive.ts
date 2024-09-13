@@ -8,13 +8,17 @@ import { redis } from "../functions/createServer.js";
 const schema = type({
 	token: "string.trim",
 	session: "string.trim",
+	version: "string.semver & string.trim",
+	scienceId: "string.trim",
 });
 
 export async function sessionKeepAlive(request: FastifyRequest, reply: FastifyReply) {
-	//* Get the 2 headers
+	//* Get the headers
 	const out = schema({
 		token: request.headers["x-token"],
 		session: request.headers["x-session"],
+		version: request.headers["x-version"] ?? "2.6.8",
+		scienceId: request.headers["x-science-id"] ?? request.headers["x-token"],
 	});
 
 	if (out instanceof type.errors)
@@ -25,7 +29,7 @@ export async function sessionKeepAlive(request: FastifyRequest, reply: FastifyRe
 
 	await redis.hset(
 		"pmd-api.sessions",
-		out.token,
+		out.scienceId,
 		JSON.stringify({
 			session: out.session,
 			token: out.token,
