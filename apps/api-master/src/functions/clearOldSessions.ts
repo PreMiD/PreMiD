@@ -81,21 +81,28 @@ async function deleteSession(session: { token: string; session: string }, key: s
 		const abortController = new AbortController();
 		const discord = new REST({ version: "10", authPrefix: "Bearer" });
 		discord.setToken(session.token);
-		setTimeout(() => abortController.abort(), 5000);
+
+		const timeoutId = setTimeout(() => abortController.abort(), 5000); //* 1 second timeout
+
 		await discord.post("/users/@me/headless-sessions/delete", {
 			signal: abortController.signal,
 			body: {
 				token: session.session,
 			},
 		});
+
+		clearTimeout(timeoutId);
 		return key;
 	}
 	catch (error) {
-		if (error instanceof DOMException && error.name === "AbortError") {
-			mainLog("Timeout while deleting session");
+		if (error instanceof Error && error.name === "AbortError") {
+			mainLog("Session deletion aborted due to timeout");
+		}
+		else if (error instanceof Error) {
+			mainLog(`Failed to delete session: ${error.message}`);
 		}
 		else {
-			mainLog(`Failed to delete session: %O`, (typeof error === "object" && error && "message" in error ? error.message : error));
+			mainLog(`Failed to delete session: Unknown error`);
 		}
 		return key;
 	}
