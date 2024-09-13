@@ -77,12 +77,12 @@ export async function clearOldSessions() {
 }
 
 async function deleteSession(session: { token: string; session: string }, key: string): Promise<string> {
+	const abortController = new AbortController();
+	const timeoutId = setTimeout(() => abortController.abort(), 1); //* 5 second timeout
+
 	try {
-		const abortController = new AbortController();
 		const discord = new REST({ version: "10", authPrefix: "Bearer" });
 		discord.setToken(session.token);
-
-		const timeoutId = setTimeout(() => abortController.abort(), 5000); //* 1 second timeout
 
 		await discord.post("/users/@me/headless-sessions/delete", {
 			signal: abortController.signal,
@@ -95,14 +95,22 @@ async function deleteSession(session: { token: string; session: string }, key: s
 		return key;
 	}
 	catch (error) {
+		clearTimeout(timeoutId);
+		//* Log detailed error information
+		mainLog(`Delete session error for key ${key}:`, {
+			errorName: error instanceof Error ? error.name : "Unknown",
+			errorMessage: error instanceof Error ? error.message : String(error),
+			errorStack: error instanceof Error ? error.stack : "No stack trace",
+		});
+
 		if (error instanceof Error && error.name === "AbortError") {
-			mainLog("Session deletion aborted due to timeout");
+			mainLog(`Session deletion aborted due to timeout for key ${key}`);
 		}
 		else if (error instanceof Error) {
-			mainLog(`Failed to delete session: ${error.message}`);
+			mainLog(`Failed to delete session for key ${key}: ${error.message}`);
 		}
 		else {
-			mainLog(`Failed to delete session: Unknown error`);
+			mainLog(`Failed to delete session for key ${key}: Unknown error`);
 		}
 		return key;
 	}
