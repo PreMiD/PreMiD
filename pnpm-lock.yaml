@@ -53,9 +53,6 @@ importers:
 
   apps/api-master:
     dependencies:
-      '@discordjs/rest':
-        specifier: ^2.3.0
-        version: 2.4.0
       '@envelop/sentry':
         specifier: ^9.0.0
         version: 9.0.0(@envelop/core@5.0.2)(@sentry/node@8.30.0)(graphql@16.9.0)
@@ -80,6 +77,9 @@ importers:
       ioredis:
         specifier: ^5.3.2
         version: 5.4.1
+      ky:
+        specifier: ^1.7.2
+        version: 1.7.2
       p-limit:
         specifier: ^6.1.0
         version: 6.1.0
@@ -2959,7 +2959,6 @@ packages:
 
   '@rollup/rollup-linux-arm64-gnu@4.21.2':
     resolution: {integrity: sha512-69CF19Kp3TdMopyteO/LJbWufOzqqXzkrv4L2sP8kfMaAQ6iwky7NoXTp7bD6/irKgknDKM0P9E/1l5XxVQAhw==}
-    cpu: [arm64]
     os: [linux]
 
   '@rollup/rollup-linux-arm64-musl@4.18.1':
@@ -6146,6 +6145,10 @@ packages:
 
   kolorist@1.8.0:
     resolution: {integrity: sha512-Y+60/zizpJ3HRH8DCss+q95yr6145JXZo46OTpFvDZWLfRCE4qChOyk1b26nMaNpfHHgxagk9dXT5OP0Tfe+dQ==}
+
+  ky@1.7.2:
+    resolution: {integrity: sha512-OzIvbHKKDpi60TnF9t7UUVAF1B4mcqc02z5PIvrm08Wyb+yOcz63GRvEuVxNT18a9E1SrNouhB4W2NNLeD7Ykg==}
+    engines: {node: '>=18'}
 
   launch-editor@2.9.1:
     resolution: {integrity: sha512-Gcnl4Bd+hRO9P9icCP/RVVT2o8SFlPXofuCxvA2SaZuH45whSvf5p8x5oih5ftLiVhEI4sp5xDY+R+b3zJBh5w==}
@@ -13514,7 +13517,7 @@ snapshots:
       pathe: 1.1.2
       sirv: 2.0.4
       tinyrainbow: 1.2.0
-      vitest: 2.0.5(@types/node@20.16.5)(@vitest/ui@2.0.5)(happy-dom@15.7.4)(sass@1.78.0)(terser@5.32.0)
+      vitest: 2.0.5(@types/node@22.5.4)(@vitest/ui@2.0.5)(happy-dom@15.0.0)(sass@1.78.0)(terser@5.32.0)
 
   '@vitest/utils@2.0.5':
     dependencies:
@@ -16738,6 +16741,8 @@ snapshots:
   knitwork@1.1.0: {}
 
   kolorist@1.8.0: {}
+
+  ky@1.7.2: {}
 
   launch-editor@2.9.1:
     dependencies:

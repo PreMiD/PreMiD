@@ -1,5 +1,5 @@
-import { REST } from "@discordjs/rest";
 import pLimit from "p-limit";
+import ky, { HTTPError, TimeoutError } from "ky";
 import { mainLog, redis } from "../index.js";
 
 let inProgress = false;
@@ -77,35 +77,29 @@ export async function clearOldSessions() {
 }
 
 async function deleteSession(session: { token: string; session: string }, key: string): Promise<string> {
-	const abortController = new AbortController();
-	const timeoutId = setTimeout(() => abortController.abort("Timeout"), 5000); //* 5 second timeout
-
 	try {
-		const discord = new REST({ version: "10", authPrefix: "Bearer" });
-		discord.setToken(session.token);
-
-		await discord.post("/users/@me/headless-sessions/delete", {
-			signal: abortController.signal,
-			body: {
+		await ky.post("https://discord.com/api/v10/users/@me/headless-sessions/delete", {
+			json: {
 				token: session.session,
 			},
+			headers: {
+				Authorization: `Bearer ${session.token}`,
+			},
+			retry: 3,
+			timeout: 5000,
 		});
-
-		clearTimeout(timeoutId);
-		return key;
 	}
 	catch (error) {
-		clearTimeout(timeoutId);
-
-		if (error instanceof Error && error.name === "AbortError") {
+		if (error instanceof TimeoutError) {
 			mainLog(`Session deletion aborted due to timeout for key ${key}`);
 		}
-		else if (error instanceof Error) {
-			mainLog(`Failed to delete session for key ${key}: [${error.name}] ${error.message}`);
+		else if (error instanceof HTTPError) {
+			mainLog(`Failed to delete session for key ${key}: [${error.name}] ${error.message} ${JSON.stringify(await error.response.json())}`);
 		}
 		else {
 			mainLog(`Failed to delete session for key ${key}: Unknown error`);
 		}
-		return key;
 	}
+
+	return key;
 }
