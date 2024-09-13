@@ -1,13 +1,11 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import process from "node:process";
 import { useSentry } from "@envelop/sentry";
 import { maxAliasesPlugin } from "@escape.tech/graphql-armor-max-aliases";
 import { maxDepthPlugin } from "@escape.tech/graphql-armor-max-depth";
 import { maxDirectivesPlugin } from "@escape.tech/graphql-armor-max-directives";
 import { maxTokensPlugin } from "@escape.tech/graphql-armor-max-tokens";
 import fastifyWebsocket from "@fastify/websocket";
-import { defu } from "defu";
 import fastify from "fastify";
 
 import { createSchema, createYoga } from "graphql-yoga";
@@ -15,6 +13,7 @@ import type { FastifyReply, FastifyRequest } from "fastify";
 import { Socket } from "../classes/Socket.js";
 import { resolvers } from "../graphql/resolvers/v5/index.js";
 import { sessionKeepAlive } from "../routes/sessionKeepAlive.js";
+import { featureFlags } from "../constants.js";
 import createRedis from "./createRedis.js";
 
 export interface FastifyContext {
@@ -87,15 +86,7 @@ export default async function createServer() {
 	});
 
 	app.get("/v5/feature-flags", async (request, reply) => {
-		const disabledFlags = process.env.DISABLED_FEATURE_FLAGS?.split(",") ?? [];
-		const flags = Object.fromEntries(disabledFlags.map(flag => [flag, false]));
-
-		const test = defu(flags, {
-			WebSocketManager: true,
-			SessionKeepAlive: true,
-		});
-
-		void reply.send(test);
+		void reply.send(featureFlags);
 	});
 
 	app.post("/v5/session-keep-alive", sessionKeepAlive);

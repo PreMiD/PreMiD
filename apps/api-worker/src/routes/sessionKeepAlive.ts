@@ -4,6 +4,7 @@ import { type } from "arktype";
 import { Routes } from "discord-api-types/v10";
 import type { FastifyReply, FastifyRequest } from "fastify";
 import { redis } from "../functions/createServer.js";
+import { featureFlags } from "../constants.js";
 
 const schema = type({
 	token: "string.trim",
@@ -13,6 +14,9 @@ const schema = type({
 });
 
 export async function sessionKeepAlive(request: FastifyRequest, reply: FastifyReply) {
+	if (!featureFlags.SessionKeepAlive)
+		return reply.status(202).send();
+
 	//* Get the headers
 	const out = schema({
 		token: request.headers["x-token"],
