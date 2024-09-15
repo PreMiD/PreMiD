@@ -27,7 +27,7 @@ const mutation: MutationResolvers["heartbeat"] = async (_parent, input) => {
 		throw new Error(out.summary);
 
 	// * Use Redis Hash with 'service' in the key to store heartbeat data
-	const redisKey = `pmd-api.heartbeatUpdates.${out.identifier}.${out.presence.service}`;
+	const redisKey = `pmd-api.heartbeatUpdates.${out.identifier}`;
 	await redis.hset(redisKey, {
 		service: out.presence.service,
 		version: out.presence.version,
@@ -35,8 +35,8 @@ const mutation: MutationResolvers["heartbeat"] = async (_parent, input) => {
 		since: out.presence.since.toString(),
 		extension_version: out.extension.version,
 		extension_language: out.extension.language,
-		extension_connected_app: out.extension.connected?.app?.toString() || "",
-		extension_connected_discord: out.extension.connected?.discord?.toString() || "",
+		extension_connected_app: out.extension.connected?.app?.toString(),
+		extension_connected_discord: out.extension.connected?.discord?.toString(),
 	});
 	await redis.expire(redisKey, 300);
 
