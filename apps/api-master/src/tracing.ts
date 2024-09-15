@@ -15,4 +15,10 @@ export const counter = meter.createUpDownCounter("active_activites", {
 	valueType: ValueType.INT,
 });
 
+// * Replace Observable Gauge with regular Gauge
+export const activePresenceGauge = meter.createGauge("active_presence_names", {
+	description: "Number of active presence names per service",
+	valueType: ValueType.INT,
+});
+
 prometheusExporter.startServer();

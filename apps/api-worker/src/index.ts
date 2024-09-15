@@ -3,8 +3,6 @@ import process from "node:process";
 import * as Sentry from "@sentry/node";
 import { connect } from "mongoose";
 import "./tracing.js";
-
-// eslint-disable-next-line perfectionist/sort-imports
 import createServer from "./functions/createServer.js";
 
 // TODO SETUP SENTRY

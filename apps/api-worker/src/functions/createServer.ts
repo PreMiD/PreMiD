@@ -47,7 +47,7 @@ export default async function createServer() {
 			maxDepthPlugin(),
 			maxDirectivesPlugin(),
 			maxTokensPlugin(),
-			useSentry(),
+			/* useSentry(), */
 		],
 		schema: createSchema<FastifyContext>({
 			resolvers,
