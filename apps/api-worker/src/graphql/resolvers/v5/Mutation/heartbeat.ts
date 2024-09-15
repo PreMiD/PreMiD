@@ -38,9 +38,7 @@ const mutation: MutationResolvers["heartbeat"] = async (_parent, input) => {
 		extension_connected_app: out.extension.connected?.app?.toString() || "",
 		extension_connected_discord: out.extension.connected?.discord?.toString() || "",
 	});
-	await redis.expire(redisKey, 5);
-
-	// * End the custom metric or adjust as needed
+	await redis.expire(redisKey, 300);
 
 	return {
 		__typename: "HeartbeatResult",
