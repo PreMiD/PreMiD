@@ -24,15 +24,15 @@ export async function updateActivePresenceGauge() {
 
 	// Set current counts and remove from previousServices
 	serviceCounts.forEach((count, serviceVersion) => {
-		const [service, version] = serviceVersion.split(":");
-		activePresenceGauge.record(count, { service, version }); //* Include version in labels
+		const [presence_name, version] = serviceVersion.split(":");
+		activePresenceGauge.record(count, { presence_name, version });
 		previousServices.delete(serviceVersion);
 	});
 
 	// Set gauge to 0 for services that are no longer active
 	previousServices.forEach((serviceVersion) => {
-		const [service, version] = serviceVersion.split(":");
-		activePresenceGauge.record(0, { service, version });
+		const [presence_name, version] = serviceVersion.split(":");
+		activePresenceGauge.record(0, { presence_name, version });
 	});
 
 	// Update the set of previous services
