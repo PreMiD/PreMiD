@@ -2,7 +2,7 @@ import type { InferInsertModel } from "drizzle-orm";
 import { db, onlineUsersIpData } from "../db.js";
 import { lookupIp } from "./lookupIp.js";
 
-const batchSize = 10000;
+const batchSize = 1000;
 
 export async function insertIpData(
 	data: Map<string, {
