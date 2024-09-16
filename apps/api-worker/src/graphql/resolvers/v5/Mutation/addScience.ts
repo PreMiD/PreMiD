@@ -1,4 +1,5 @@
 import { type } from "arktype";
+import { GraphQLError } from "graphql";
 import { redis } from "../../../../functions/createServer.js";
 import type { MutationResolvers } from "../../../../generated/graphql-v5.js";
 
@@ -15,7 +16,7 @@ const mutation: MutationResolvers["addScience"] = async (_parent, input) => {
 	const out = addScienceSchema(input);
 
 	if (out instanceof type.errors)
-		throw new Error(out.summary);
+		throw new GraphQLError(out.summary);
 
 	await redis.hset(
 		"pmd-api.scienceUpdates",

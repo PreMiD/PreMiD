@@ -3,6 +3,7 @@
 	"compilerOptions": {
 		"composite": true,
 		"rootDir": "src",
+		"types": ["./environment.d.ts"],
 		"outDir": "dist"
 	},
 	"include": ["src/**/*"]

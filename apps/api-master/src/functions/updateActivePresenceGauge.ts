@@ -1,14 +1,16 @@
 import { redis } from "../index.js";
-import { activePresenceGauge } from "../tracing.js";
-
-//* Track previously recorded services
-const previousServices = new Set<string>();
+import { activeIpsGauge, activePresenceGauge } from "../tracing.js";
+import { lookupIp } from "./lookupIp.js";
 
 //* Function to update the gauge with per-service counts
 export async function updateActivePresenceGauge() {
 	const pattern = "pmd-api.heartbeatUpdates.*";
 	let cursor: string = "0";
 	const serviceCounts = new Map<string, number>();
+	const ips = new Map<string, {
+		presences: string[];
+		sessions: number;
+	}>();
 
 	do {
 		const [newCursor, keys] = await redis.scan(cursor, "MATCH", pattern, "COUNT", 1000); //* Use SCAN with COUNT for memory efficiency
@@ -17,23 +19,46 @@ export async function updateActivePresenceGauge() {
 			const hash = await redis.hgetall(key);
 			const service = hash.service;
 			const version = hash.version; //* Get version from hash
-			serviceCounts.set(`${service}:${version}`, (serviceCounts.get(`${service}:${version}`) || 0) + 1);
+			const ip = hash.ip_address;
+			if (service && version) {
+				serviceCounts.set(`${service}:${version}`, (serviceCounts.get(`${service}:${version}`) || 0) + 1);
+			}
+			else {
+				serviceCounts.set("none", (serviceCounts.get("none") || 0) + 1);
+			}
+			if (ip) {
+				const presenceName = service && version ? `${service}:${version}` : undefined;
+				const ipData = ips.get(ip) || { presences: [], sessions: 0 };
+				ipData.presences = [...new Set<string>([...ipData.presences, presenceName].filter(Boolean) as string[])];
+				ipData.sessions++;
+				ips.set(ip, ipData);
+			}
 		}
 	} while (cursor !== "0");
 
-	// Set current counts and remove from previousServices
-	serviceCounts.forEach((count, serviceVersion) => {
-		const [presence_name, version] = serviceVersion.split(":");
-		activePresenceGauge.record(count, { presence_name, version });
-		previousServices.delete(serviceVersion);
-	});
+	// Clear previous data
+	activePresenceGauge.clear();
+	activeIpsGauge.clear();
 
-	// Set gauge to 0 for services that are no longer active
-	previousServices.forEach((serviceVersion) => {
+	// Set new data
+	for (const [serviceVersion, count] of serviceCounts.entries()) {
 		const [presence_name, version] = serviceVersion.split(":");
-		activePresenceGauge.record(0, { presence_name, version });
-	});
+		activePresenceGauge.set(serviceVersion, count, {
+			presence_name,
+			version,
+		});
+	}
 
-	// Update the set of previous services
-	serviceCounts.forEach((_, serviceVersion) => previousServices.add(serviceVersion));
+	await Promise.all(Array.from(ips).map(async ([ip, { presences, sessions }]) => {
+		const parsed = await lookupIp(ip);
+		if (parsed) {
+			activeIpsGauge.set(ip, sessions, {
+				country: parsed.country,
+				ip,
+				latitude: parsed.latitude,
+				longitude: parsed.longitude,
+				presence_names: presences,
+			});
+		}
+	}));
 }
