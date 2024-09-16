@@ -31,17 +31,15 @@ export async function sessionKeepAlive(request: FastifyRequest, reply: FastifyRe
 	if (!await isTokenValid(out.token))
 		return reply.status(400).send({ code: "INVALID_TOKEN", message: "The token is invalid" });
 
-	await redis.hset(
-		"pmd-api.sessions",
-		out.scienceId,
-		JSON.stringify({
-			session: out.session,
-			token: out.token,
-			lastUpdated: Date.now(),
-		}),
-	);
+	const redisKey = `pmd-api.sessions.${out.scienceId}`;
+	await redis.hset(redisKey, {
+		session: out.session,
+		token: out.token,
+		lastUpdated: Date.now(),
+	});
+	await redis.expire(redisKey, 300); // 5 minutes
 
-	const interval = Number.parseInt(process.env.SESSION_KEEP_ALIVE_INTERVAL ?? "5000");
+	const interval = Number.parseInt(process.env.SESSION_KEEP_ALIVE_INTERVAL ?? "5000"); // 5 seconds
 
 	return reply.status(200).send({
 		code: "OK",
