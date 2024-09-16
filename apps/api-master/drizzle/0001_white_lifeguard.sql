@@ -1,0 +1,2 @@
+CREATE INDEX IF NOT EXISTS "idx_online_users_uuid" ON "online_users_ip_data" USING btree ("uuid");--> statement-breakpoint
+CREATE INDEX IF NOT EXISTS "idx_online_users_timestamp" ON "online_users_ip_data" USING btree ("timestamp");

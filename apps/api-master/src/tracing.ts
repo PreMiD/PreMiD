@@ -21,11 +21,6 @@ export const activePresenceGauge = new ClearableGaugeMetric(
 	"Per presence name+version, active number of users",
 );
 
-export const activeIpsGauge = new ClearableGaugeMetric(
-	"active_ips",
-	"Per ip, list of presences and the number of sessions",
-);
-
 updatePrometheusMetrics(prometheusExporter);
 
 prometheusExporter.startServer();

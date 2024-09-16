@@ -1,6 +1,6 @@
 import { redis } from "../index.js";
-import { activeIpsGauge, activePresenceGauge } from "../tracing.js";
-import { lookupIp } from "./lookupIp.js";
+import { activePresenceGauge } from "../tracing.js";
+import { insertIpData } from "./insertIpData.js";
 
 //* Function to update the gauge with per-service counts
 export async function updateActivePresenceGauge() {
@@ -38,7 +38,6 @@ export async function updateActivePresenceGauge() {
 
 	// Clear previous data
 	activePresenceGauge.clear();
-	activeIpsGauge.clear();
 
 	// Set new data
 	for (const [serviceVersion, count] of serviceCounts.entries()) {
@@ -49,16 +48,5 @@ export async function updateActivePresenceGauge() {
 		});
 	}
 
-	await Promise.all(Array.from(ips).map(async ([ip, { presences, sessions }]) => {
-		const parsed = await lookupIp(ip);
-		if (parsed) {
-			activeIpsGauge.set(ip, sessions, {
-				country: parsed.country,
-				ip,
-				latitude: parsed.latitude,
-				longitude: parsed.longitude,
-				presence_names: presences,
-			});
-		}
-	}));
+	insertIpData(ips);
 }

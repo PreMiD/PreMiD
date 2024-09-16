@@ -11,7 +11,11 @@
 	],
 	"scripts": {
 		"start": "node --enable-source-maps .",
-		"dev": "node --watch --env-file .env --enable-source-maps ."
+		"dev": "node --watch --env-file .env --enable-source-maps .",
+		"db:generate": "drizzle-kit generate",
+		"db:migrate": "drizzle-kit migrate",
+		"db:update": "pnpm db:generate && pnpm db:migrate",
+		"db:studio": "drizzle-kit studio"
 	},
 	"dependencies": {
 		"@envelop/sentry": "^9.0.0",
@@ -21,12 +25,15 @@
 		"@sentry/node": "^8.17.0",
 		"cron": "^3.1.7",
 		"debug": "^4.3.6",
+		"drizzle-orm": "^0.33.0",
 		"ioredis": "^5.3.2",
 		"ip-location-api": "^1.0.0",
 		"ky": "^1.7.2",
-		"p-limit": "^6.1.0"
+		"p-limit": "^6.1.0",
+		"postgres": "^3.4.4"
 	},
 	"devDependencies": {
-		"@types/debug": "^4.1.12"
+		"@types/debug": "^4.1.12",
+		"drizzle-kit": "^0.24.2"
 	}
 }

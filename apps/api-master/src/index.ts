@@ -7,12 +7,11 @@ import { setSessionCounter } from "./functions/setSessionCounter.js";
 import "./tracing.js";
 import { updateActivePresenceGauge } from "./functions/updateActivePresenceGauge.js";
 import { reloadIpLocationApi } from "./functions/lookupIp.js";
+import { cleanupOldUserData } from "./functions/cleanupOldUserData.js";
 
 export const redis = createRedis();
 
 export const mainLog = debug("api-master");
-
-reloadIpLocationApi();
 
 debug("Starting cron jobs");
 
@@ -52,6 +51,22 @@ void new CronJob(
 	() => {
 		reloadIpLocationApi();
 	},
+	undefined,
+	true,
+	undefined,
+	undefined,
+	true,
+);
+
+void new CronJob(
+	// Every day at 1am
+	"0 1 * * *",
+	() => {
+		cleanupOldUserData(14); // Keep 14 days of data
+	},
+	undefined,
+	true,
+	undefined,
 	undefined,
 	true,
 );

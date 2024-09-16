@@ -8,3 +8,9 @@ declare module "ip-location-api" {
 	export function updateDb(options: { fields?: string[]; dataDir?: string; tmpDataDir?: string }): Promise<void>;
 	export function reload(options: { fields?: string[]; dataDir?: string; tmpDataDir?: string }): Promise<void>;
 }
+
+declare namespace NodeJS {
+	export interface ProcessEnv {
+		METRICS_DATABASE_URL?: string;
+	}
+}
