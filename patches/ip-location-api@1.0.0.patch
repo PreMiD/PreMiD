@@ -1,0 +1,62 @@
+diff --git a/browser/country/README.md b/browser/country/README.md
+deleted file mode 100644
+index ac8fc934b4998f2a2cb7a92bf68bbdadd9e3d36d..0000000000000000000000000000000000000000
+diff --git a/browser/country-extra/README.md b/browser/country-extra/README.md
+deleted file mode 100644
+index 71e7237722915b2697b56ccb14171524eb4b40fb..0000000000000000000000000000000000000000
+diff --git a/browser/geocode/README.md b/browser/geocode/README.md
+deleted file mode 100644
+index 9d9a2205061f332b363b82d7561a0e3829d5bf2c..0000000000000000000000000000000000000000
+diff --git a/browser/geocode-extra/README.md b/browser/geocode-extra/README.md
+deleted file mode 100644
+index 38e17eebdd8532d07b460fbe7f385f36625ece9d..0000000000000000000000000000000000000000
+diff --git a/src/db.mjs b/src/db.mjs
+index 378b8a22084f860cc89720d1783a235c034717b2..cbffe1eaa84a94df536059d4b4af3f8f5ceb0ca7 100644
+--- a/src/db.mjs
++++ b/src/db.mjs
+@@ -33,7 +33,12 @@ export const update = async () => {
+ 	if(refreshTmpDir || !fsSync.existsSync(setting.tmpDataDir)){
+ 		// refresh tmp folder
+ 		await rimraf(setting.tmpDataDir)
+-		await fs.mkdir(setting.tmpDataDir)
++		await fs.mkdir(setting.tmpDataDir, {recursive: true})
++	}
++
++	// When specifying a custom dataDir, it doesn't always exists
++	if (!fsSync.existsSync(setting.dataDir)){
++		await fs.mkdir(setting.dataDir, {recursive: true})
+ 	}
+ 
+ 	console.log('Downloading database')
+diff --git a/src/main.mjs b/src/main.mjs
+index d001aca60902bc7fe41271c6fa7a0b6648607b15..5b2c125d8e7590afee82c794bf771accd656b2b7 100644
+--- a/src/main.mjs
++++ b/src/main.mjs
+@@ -3,7 +3,7 @@ import fs from 'fs/promises'
+ import fsSync from 'fs'
+ import path from 'path'
+ import { exec } from 'child_process'
+-
++import { fileURLToPath } from "url"
+ import { countries, continents } from 'countries-list'
+ 
+ import { setting, setSetting, getSettingCmd } from './setting.mjs'
+@@ -14,6 +14,9 @@ const v6db = setting.v6
+ const locFieldHash = setting.locFieldHash
+ const mainFieldHash = setting.mainFieldHash
+ 
++const __filename = fileURLToPath(import.meta.url)
++const __dirname = path.dirname(__filename)
++
+ //---------------------------------------
+ // Database lookup
+ //---------------------------------------
+@@ -235,7 +238,7 @@ export const updateDb = (_setting) => {
+ 	// However, db.js import many external modules, it makes slow down the startup time and uses more memory.
+ 	// Therefore, we use exec() to run the script in the other process.
+ 	return new Promise((resolve, reject) => {
+-		var cmd = 'node ' + path.resolve(__dirname, '..', 'script', 'updatedb.js')
++		var cmd = 'node ' + path.resolve(__dirname, '..', 'script', 'updatedb.mjs')
+ 		var arg
+ 		if(_setting){
+ 			var oldSetting = Object.assign({}, setting)

@@ -11,6 +11,7 @@ export async function clearOldSessions() {
 
 	inProgress = true;
 	const now = Date.now();
+	const pattern = "pmd-api.sessions.*";
 	let cursor = "0";
 	let totalSessions = 0;
 	let cleared = 0;
@@ -22,21 +23,15 @@ export async function clearOldSessions() {
 	const limit = pLimit(100); // Create a limit of 100 concurrent operations
 
 	do {
-		const [nextCursor, result] = await redis.hscan("pmd-api.sessions", cursor, "COUNT", batchSize);
-		cursor = nextCursor;
-		totalSessions += result.length / 2;
+		const [newCursor, keys] = await redis.scan(cursor, "MATCH", pattern, "COUNT", 1000); //* Use SCAN with COUNT for memory efficiency
 
-		const deletePromises = [];
+		cursor = newCursor;
+		totalSessions += keys.length;
 
-		for (let i = 0; i < result.length; i += 2) {
-			const key = result[i];
-			const value = result[i + 1];
+		const deletePromises: Promise<string>[] = [];
 
-			if (!key || !value) {
-				continue;
-			}
-
-			const session = JSON.parse(value) as {
+		for (const key of keys) {
+			const session = await redis.hgetall(key) as unknown as {
 				token: string;
 				session: string;
 				lastUpdated: number;
@@ -57,13 +52,13 @@ export async function clearOldSessions() {
 		});
 
 		if (keysToDelete.length >= batchSize) {
-			await redis.hdel("pmd-api.sessions", ...keysToDelete);
+			await redis.del(...keysToDelete);
 			keysToDelete = [];
 		}
 	} while (cursor !== "0");
 
 	if (keysToDelete.length > 0) {
-		await redis.hdel("pmd-api.sessions", ...keysToDelete);
+		await redis.del(...keysToDelete);
 	}
 
 	if (totalSessions === 0) {

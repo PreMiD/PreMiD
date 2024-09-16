@@ -1,6 +1,7 @@
 import { ValueType } from "@opentelemetry/api";
 import { PrometheusExporter } from "@opentelemetry/exporter-prometheus";
 import { MeterProvider } from "@opentelemetry/sdk-metrics";
+import { ClearableGaugeMetric, updatePrometheusMetrics } from "./functions/clearableGaugeMetric.js";
 
 const prometheusExporter = new PrometheusExporter();
 
@@ -10,15 +11,21 @@ const provider = new MeterProvider({
 
 const meter = provider.getMeter("nice");
 
-export const counter = meter.createUpDownCounter("active_activites", {
-	description: "Number of active activities",
+export const activeSessionsCounter = meter.createUpDownCounter("active_sessions", {
+	description: "Number of active sessions",
 	valueType: ValueType.INT,
 });
 
-// * Replace Observable Gauge with regular Gauge
-export const activePresenceGauge = meter.createGauge("active_presence_names", {
-	description: "Number of active presence names per service",
-	valueType: ValueType.INT,
-});
+export const activePresenceGauge = new ClearableGaugeMetric(
+	"active_presences",
+	"Per presence name+version, active number of users",
+);
+
+export const activeIpsGauge = new ClearableGaugeMetric(
+	"active_ips",
+	"Per ip, list of presences and the number of sessions",
+);
+
+updatePrometheusMetrics(prometheusExporter);
 
 prometheusExporter.startServer();

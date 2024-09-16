@@ -38,5 +38,10 @@
 		"prettier": "^3.2.5",
 		"typescript": "^5.5.4",
 		"vitest": "^2.0.2"
+	},
+	"pnpm": {
+		"patchedDependencies": {
+			"ip-location-api@1.0.0": "patches/ip-location-api@1.0.0.patch"
+		}
 	}
 }
