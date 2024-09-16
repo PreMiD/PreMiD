@@ -1,101 +1,101 @@
 {
-  "id": "c1b8dbed-b232-4d66-9e74-b9af333095bc",
-  "prevId": "4aa32a8e-f573-43b9-976a-2d078a0df0ea",
-  "version": "7",
-  "dialect": "postgresql",
-  "tables": {
-    "public.online_users_ip_data": {
-      "name": "online_users_ip_data",
-      "schema": "",
-      "columns": {
-        "uuid": {
-          "name": "uuid",
-          "type": "uuid",
-          "primaryKey": true,
-          "notNull": true,
-          "default": "gen_random_uuid()"
-        },
-        "ip": {
-          "name": "ip",
-          "type": "varchar(45)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "country": {
-          "name": "country",
-          "type": "varchar(2)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "latitude": {
-          "name": "latitude",
-          "type": "numeric(10, 8)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "longitude": {
-          "name": "longitude",
-          "type": "numeric(11, 8)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "name": {
-          "name": "name",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "timestamp": {
-          "name": "timestamp",
-          "type": "timestamp with time zone",
-          "primaryKey": false,
-          "notNull": false,
-          "default": "now()"
-        }
-      },
-      "indexes": {
-        "idx_online_users_uuid": {
-          "name": "idx_online_users_uuid",
-          "columns": [
-            {
-              "expression": "uuid",
-              "isExpression": false,
-              "asc": true,
-              "nulls": "last"
-            }
-          ],
-          "isUnique": false,
-          "concurrently": false,
-          "method": "btree",
-          "with": {}
-        },
-        "idx_online_users_timestamp": {
-          "name": "idx_online_users_timestamp",
-          "columns": [
-            {
-              "expression": "timestamp",
-              "isExpression": false,
-              "asc": true,
-              "nulls": "last"
-            }
-          ],
-          "isUnique": false,
-          "concurrently": false,
-          "method": "btree",
-          "with": {}
-        }
-      },
-      "foreignKeys": {},
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
-    }
-  },
-  "enums": {},
-  "schemas": {},
-  "sequences": {},
-  "_meta": {
-    "columns": {},
-    "schemas": {},
-    "tables": {}
-  }
+	"id": "c1b8dbed-b232-4d66-9e74-b9af333095bc",
+	"prevId": "4aa32a8e-f573-43b9-976a-2d078a0df0ea",
+	"version": "7",
+	"dialect": "postgresql",
+	"tables": {
+		"public.online_users_ip_data": {
+			"name": "online_users_ip_data",
+			"schema": "",
+			"columns": {
+				"uuid": {
+					"name": "uuid",
+					"type": "uuid",
+					"primaryKey": true,
+					"notNull": true,
+					"default": "gen_random_uuid()"
+				},
+				"ip": {
+					"name": "ip",
+					"type": "varchar(45)",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"country": {
+					"name": "country",
+					"type": "varchar(2)",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"latitude": {
+					"name": "latitude",
+					"type": "numeric(10, 8)",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"longitude": {
+					"name": "longitude",
+					"type": "numeric(11, 8)",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"name": {
+					"name": "name",
+					"type": "varchar(255)",
+					"primaryKey": false,
+					"notNull": false
+				},
+				"timestamp": {
+					"name": "timestamp",
+					"type": "timestamp with time zone",
+					"primaryKey": false,
+					"notNull": false,
+					"default": "now()"
+				}
+			},
+			"indexes": {
+				"idx_online_users_uuid": {
+					"name": "idx_online_users_uuid",
+					"columns": [
+						{
+							"expression": "uuid",
+							"isExpression": false,
+							"asc": true,
+							"nulls": "last"
+						}
+					],
+					"isUnique": false,
+					"concurrently": false,
+					"method": "btree",
+					"with": {}
+				},
+				"idx_online_users_timestamp": {
+					"name": "idx_online_users_timestamp",
+					"columns": [
+						{
+							"expression": "timestamp",
+							"isExpression": false,
+							"asc": true,
+							"nulls": "last"
+						}
+					],
+					"isUnique": false,
+					"concurrently": false,
+					"method": "btree",
+					"with": {}
+				}
+			},
+			"foreignKeys": {},
+			"compositePrimaryKeys": {},
+			"uniqueConstraints": {}
+		}
+	},
+	"enums": {},
+	"schemas": {},
+	"sequences": {},
+	"_meta": {
+		"columns": {},
+		"schemas": {},
+		"tables": {}
+	}
 }

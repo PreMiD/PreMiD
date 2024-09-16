@@ -1,41 +1,41 @@
 {
-  "version": "7",
-  "dialect": "postgresql",
-  "entries": [
-    {
-      "idx": 0,
-      "version": "7",
-      "when": 1726516195146,
-      "tag": "0000_flippant_marrow",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1726516348344,
-      "tag": "0001_white_lifeguard",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1726516660134,
-      "tag": "0002_new_darkhawk",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "7",
-      "when": 1726517073510,
-      "tag": "0003_narrow_mastermind",
-      "breakpoints": true
-    },
-    {
-      "idx": 4,
-      "version": "7",
-      "when": 1726517405363,
-      "tag": "0004_tiresome_puff_adder",
-      "breakpoints": true
-    }
-  ]
+	"version": "7",
+	"dialect": "postgresql",
+	"entries": [
+		{
+			"idx": 0,
+			"version": "7",
+			"when": 1726516195146,
+			"tag": "0000_flippant_marrow",
+			"breakpoints": true
+		},
+		{
+			"idx": 1,
+			"version": "7",
+			"when": 1726516348344,
+			"tag": "0001_white_lifeguard",
+			"breakpoints": true
+		},
+		{
+			"idx": 2,
+			"version": "7",
+			"when": 1726516660134,
+			"tag": "0002_new_darkhawk",
+			"breakpoints": true
+		},
+		{
+			"idx": 3,
+			"version": "7",
+			"when": 1726517073510,
+			"tag": "0003_narrow_mastermind",
+			"breakpoints": true
+		},
+		{
+			"idx": 4,
+			"version": "7",
+			"when": 1726517405363,
+			"tag": "0004_tiresome_puff_adder",
+			"breakpoints": true
+		}
+	]
 }
