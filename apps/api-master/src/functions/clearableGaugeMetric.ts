@@ -23,8 +23,13 @@ export class ClearableGaugeMetric {
 		this.data.set(key, { value, attributes });
 	}
 
-	clear() {
-		this.data.clear();
+	clear({ except }: { except?: string[] }) {
+		for (const key of this.data.keys()) {
+			if (except && except.includes(key))
+				continue;
+
+			this.data.delete(key);
+		}
 	}
 
 	toMetricData(): GaugeMetricData {

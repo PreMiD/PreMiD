@@ -6,7 +6,7 @@ import createRedis from "./functions/createRedis.js";
 import { setSessionCounter } from "./functions/setSessionCounter.js";
 import "./tracing.js";
 import { updateActivePresenceGauge } from "./functions/updateActivePresenceGauge.js";
-import { reloadIpLocationApi } from "./functions/lookupIp.js";
+// import { reloadIpLocationApi } from "./functions/lookupIp.js";
 import { cleanupOldUserData } from "./functions/cleanupOldUserData.js";
 
 export const redis = createRedis();
@@ -45,18 +45,18 @@ void new CronJob(
 	true,
 );
 
-void new CronJob(
-	// Every day at 9am
-	"0 9 * * *",
-	() => {
-		reloadIpLocationApi();
-	},
-	undefined,
-	true,
-	undefined,
-	undefined,
-	true,
-);
+// void new CronJob(
+// 	// Every day at 9am
+// 	"0 9 * * *",
+// 	() => {
+// 		reloadIpLocationApi();
+// 	},
+// 	undefined,
+// 	true,
+// 	undefined,
+// 	undefined,
+// 	true,
+// );
 
 void new CronJob(
 	// Every day at 1am

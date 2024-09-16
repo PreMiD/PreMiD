@@ -23,7 +23,7 @@ export async function lookupIp(ip: string): Promise<{ latitude: number; longitud
 	}
 }
 
-let reloading: Promise<void> | undefined;
+let reloading: Promise<void> | undefined = Promise.resolve();
 let log: debug.Debugger | undefined;
 
 export async function reloadIpLocationApi() {

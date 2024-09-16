@@ -37,7 +37,7 @@ export async function updateActivePresenceGauge() {
 	} while (cursor !== "0");
 
 	// Clear previous data
-	activePresenceGauge.clear();
+	activePresenceGauge.clear({ except: [...serviceCounts.keys()] });
 
 	// Set new data
 	for (const [serviceVersion, count] of serviceCounts.entries()) {
