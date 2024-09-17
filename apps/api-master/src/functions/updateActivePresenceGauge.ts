@@ -1,3 +1,4 @@
+import process from "node:process";
 import pLimit from "p-limit";
 import { mainLog, redis } from "../index.js";
 import { activePresenceGauge } from "../tracing.js";
@@ -5,6 +6,8 @@ import { insertIpData } from "./insertIpData.js";
 
 export const updateActivePresenceGaugeLimit = pLimit(1);
 let log: debug.Debugger | undefined;
+
+const scanCount = Number.parseInt(process.env.SCAN_COUNT || "1000", 10);
 
 export async function updateActivePresenceGauge() {
 	await updateActivePresenceGaugeLimit(async () => {
@@ -20,7 +23,7 @@ export async function updateActivePresenceGauge() {
 		}>();
 
 		do {
-			const [newCursor, keys] = await redis.scan(cursor, "MATCH", pattern, "COUNT", 1000);
+			const [newCursor, keys] = await redis.scan(cursor, "MATCH", pattern, "COUNT", scanCount);
 			cursor = newCursor;
 
 			//* Use pipelining for batch Redis operations
