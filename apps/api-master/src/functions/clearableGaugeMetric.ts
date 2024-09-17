@@ -8,14 +8,9 @@ const registeredMetrics = new Map<string, ClearableGaugeMetric>();
 
 //* Custom gauge metric class
 export class ClearableGaugeMetric {
-	private data: Map<string, { value: number; attributes: Attributes }>;
-	private name: string;
-	private description: string;
+	private data = new Map<string, { value: number; attributes: Attributes }>();
 
-	constructor(name: string, description: string) {
-		this.data = new Map();
-		this.name = name;
-		this.description = description;
+	constructor(private readonly name: string, private readonly description: string) {
 		registeredMetrics.set(name, this);
 	}
 

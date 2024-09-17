@@ -7,6 +7,7 @@ const fields = ["latitude", "longitude", "country"];
 
 const dataDir = join(process.cwd(), "data");
 const tmpDataDir = join(process.cwd(), "tmp");
+const smallMemory = true;
 
 let initialized = false;
 
@@ -34,8 +35,8 @@ export async function reloadIpLocationApi() {
 
 	reloading = new Promise((resolve, reject) => {
 		log?.("Reloading IP location API");
-		updateDb({ fields, dataDir, tmpDataDir }).then(async () => {
-			await reload({ fields, dataDir, tmpDataDir });
+		updateDb({ fields, dataDir, tmpDataDir, smallMemory }).then(async () => {
+			await reload({ fields, dataDir, tmpDataDir, smallMemory });
 			log?.("IP location API reloaded");
 			initialized = true;
 			reloading = undefined;

@@ -1,9 +1,12 @@
-import { redis } from "../index.js";
+import { mainLog, redis } from "../index.js";
 import { activePresenceGauge } from "../tracing.js";
 import { insertIpData } from "./insertIpData.js";
 
+let log: debug.Debugger | undefined;
 //* Function to update the gauge with per-service counts
 export async function updateActivePresenceGauge() {
+	log ??= mainLog.extend("Heartbeat-Updates");
+
 	const pattern = "pmd-api.heartbeatUpdates.*";
 	let cursor: string = "0";
 	const serviceCounts = new Map<string, number>();
@@ -35,6 +38,8 @@ export async function updateActivePresenceGauge() {
 			}
 		}
 	} while (cursor !== "0");
+
+	log?.("Updating active presence gauge");
 
 	// Clear previous data
 	activePresenceGauge.clear({ except: [...serviceCounts.keys()] });
