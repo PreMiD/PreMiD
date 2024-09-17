@@ -11,13 +11,14 @@ export async function insertIpData(
 	}>,
 ) {
 	const timestamp = new Date();
-	const list = Array.from(data.entries());
+	const list = [...data.keys()];
 	//* Split into batches of batchSize
 	for (let i = 0; i < list.length; i += batchSize) {
 		const batch = list.slice(i, i + batchSize);
-		const mapped = await Promise.all(batch.map(async ([ip, { presences, sessions }]) => {
+		const mapped = await Promise.all(batch.map(async (ip) => {
 			const parsed = await lookupIp(ip);
 			if (parsed) {
+				const { presences, sessions } = data.get(ip)!;
 				return {
 					ip,
 					country: parsed.country,
