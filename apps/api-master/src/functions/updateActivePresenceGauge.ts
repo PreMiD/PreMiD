@@ -54,11 +54,11 @@ export async function updateActivePresenceGauge() {
 		log?.("Updating active presence gauge");
 
 		//* Batch update the gauge
-		activePresenceGauge.clear({ except: [...serviceCounts.keys()] });
-		for (const [serviceVersion, count] of serviceCounts) {
-			const [presence_name, version] = serviceVersion.split(":");
-			activePresenceGauge.set(serviceVersion, count, { presence_name, version });
-		}
+		// activePresenceGauge.clear({ except: [...serviceCounts.keys()] });
+		// for (const [serviceVersion, count] of serviceCounts) {
+		// 	const [presence_name, version] = serviceVersion.split(":");
+		// 	activePresenceGauge.set(serviceVersion, count, { presence_name, version });
+		// }
 
 		//* Convert IP data for insertion
 		const ipDataForInsertion = new Map(
