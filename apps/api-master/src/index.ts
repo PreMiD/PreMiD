@@ -1,11 +1,11 @@
+import process from "node:process";
 import { CronJob } from "cron";
-
 import debug from "debug";
 import { clearOldSessions } from "./functions/clearOldSessions.js";
 import createRedis from "./functions/createRedis.js";
 import { setSessionCounter } from "./functions/setSessionCounter.js";
 import "./tracing.js";
-import { updateActivePresenceGauge } from "./functions/updateActivePresenceGauge.js";
+import { updateActivePresenceGauge, updateActivePresenceGaugeLimit } from "./functions/updateActivePresenceGauge.js";
 // import { reloadIpLocationApi } from "./functions/lookupIp.js";
 import { cleanupOldUserData } from "./functions/cleanupOldUserData.js";
 
@@ -19,27 +19,16 @@ void new CronJob(
 	// Every 5 seconds
 	"*/5 * * * * *",
 	() => {
-		clearOldSessions();
-	},
-	undefined,
-	true,
-);
-
-void new CronJob(
-	// Every second
-	"* * * * * *",
-	() => {
-		setSessionCounter();
-	},
-	undefined,
-	true,
-);
-
-void new CronJob(
-	// Every 5 seconds
-	"*/5 * * * * *",
-	() => {
-		updateActivePresenceGauge();
+		if (process.env.DISABLE_CLEAR_OLD_SESSIONS !== "true") {
+			clearOldSessions();
+		}
+		if (process.env.DISABLE_SET_SESSION_COUNTER !== "true") {
+			setSessionCounter();
+		}
+		if (process.env.DISABLE_ACTIVE_PRESENCE_GAUGE !== "true") {
+			updateActivePresenceGaugeLimit.clearQueue();
+			updateActivePresenceGauge();
+		}
 	},
 	undefined,
 	true,
