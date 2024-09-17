@@ -28,6 +28,11 @@ export async function updateActivePresenceGauge() {
 			keys.forEach(key => pipeline.hmget(key, "service", "version", "ip_address"));
 			const hashes = await pipeline.exec();
 
+			if (!hashes) {
+				log?.("No hashes found");
+				return;
+			}
+
 			hashes.forEach(([err, hash]) => {
 				if (err || !Array.isArray(hash))
 					return;
