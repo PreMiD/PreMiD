@@ -1,7 +1,7 @@
 import process from "node:process";
 import pLimit from "p-limit";
+import type { Gauge } from "prom-client";
 import { mainLog, redis } from "../index.js";
-import { activePresenceGauge } from "../tracing.js";
 import { insertIpData } from "./insertIpData.js";
 
 export const updateActivePresenceGaugeLimit = pLimit(1);
@@ -9,7 +9,7 @@ let log: debug.Debugger | undefined;
 
 const scanCount = Number.parseInt(process.env.SCAN_COUNT || "1000", 10);
 
-export async function updateActivePresenceGauge() {
+export async function updateActivePresenceGauge(gauge: Gauge) {
 	await updateActivePresenceGaugeLimit(async () => {
 		log ??= mainLog.extend("Heartbeat-Updates");
 		log?.("Starting active presence gauge update");
@@ -57,11 +57,11 @@ export async function updateActivePresenceGauge() {
 		log?.("Updating active presence gauge");
 
 		//* Batch update the gauge
-		// activePresenceGauge.clear({ except: [...serviceCounts.keys()] });
-		// for (const [serviceVersion, count] of serviceCounts) {
-		// 	const [presence_name, version] = serviceVersion.split(":");
-		// 	activePresenceGauge.set(serviceVersion, count, { presence_name, version });
-		// }
+		gauge.reset();
+		for (const [serviceVersion, count] of serviceCounts) {
+			const [presence_name, version] = serviceVersion.split(":");
+			gauge.set({ presence_name, version }, count);
+		}
 
 		//* Convert IP data for insertion
 		const ipDataForInsertion = new Map(

@@ -1,26 +1,33 @@
-import { ValueType } from "@opentelemetry/api";
-import { PrometheusExporter } from "@opentelemetry/exporter-prometheus";
-import { MeterProvider } from "@opentelemetry/sdk-metrics";
-import { ClearableGaugeMetric, updatePrometheusMetrics } from "./functions/clearableGaugeMetric.js";
+import process from "node:process";
+import { Counter, Gauge, Registry, collectDefaultMetrics } from "prom-client";
+import { updateActivePresenceGauge, updateActivePresenceGaugeLimit } from "./functions/updateActivePresenceGauge.js";
+import { redis } from "./index.js";
 
-const prometheusExporter = new PrometheusExporter();
+export const register = new Registry();
+collectDefaultMetrics({ register });
 
-const provider = new MeterProvider({
-	readers: [prometheusExporter],
+export const activeSessionsCounter = new Counter({
+	name: "active_sessions",
+	help: "Number of active sessions",
+	async collect() {
+		this.reset();
+		const length = await redis.hlen("pmd-api.sessions");
+		this.inc(length);
+	},
 });
 
-const meter = provider.getMeter("nice");
-
-export const activeSessionsCounter = meter.createUpDownCounter("active_sessions", {
-	description: "Number of active sessions",
-	valueType: ValueType.INT,
+export const activePresencesCounter = new Gauge({
+	name: "active_presences",
+	help: "Number of active presences",
+	labelNames: ["presence_name", "version"],
+	async collect() {
+		if (process.env.DISABLE_ACTIVE_PRESENCE_GAUGE !== "true") {
+			this.reset();
+			updateActivePresenceGaugeLimit.clearQueue();
+			await updateActivePresenceGauge(this);
+		}
+	},
 });
 
-export const activePresenceGauge = new ClearableGaugeMetric(
-	"active_presences",
-	"Per presence name+version, active number of users",
-);
-
-updatePrometheusMetrics(prometheusExporter);
-
-prometheusExporter.startServer();
+register.registerMetric(activeSessionsCounter);
+register.registerMetric(activePresencesCounter);
