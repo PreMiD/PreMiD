@@ -3,6 +3,8 @@ import { Counter, Gauge, Registry, collectDefaultMetrics } from "prom-client";
 import { updateActivePresenceGauge, updateActivePresenceGaugeLimit } from "./functions/updateActivePresenceGauge.js";
 import { redis } from "./index.js";
 
+const scanCount = Number.parseInt(process.env.SCAN_COUNT || "1000", 10);
+
 export const register = new Registry();
 collectDefaultMetrics({ register });
 
@@ -11,7 +13,13 @@ export const activeSessionsCounter = new Counter({
 	help: "Number of active sessions",
 	async collect() {
 		this.reset();
-		const length = await redis.hlen("pmd-api.sessions");
+		let length = 0;
+		let cursor = "0";
+		do {
+			const reply = await redis.scan(cursor, "MATCH", "pmd-api.sessions.*", "COUNT", scanCount);
+			cursor = reply[0];
+			length += reply[1].length;
+		} while (cursor !== "0");
 		this.inc(length);
 	},
 });
