@@ -93,4 +93,4 @@ const presenceSchema = new Schema<PresenceSchema>({
 	url: { required: true, type: String },
 });
 
-export default mongoose.model("Presence", presenceSchema);
+export default mongoose.model("Presence", presenceSchema, "presences");

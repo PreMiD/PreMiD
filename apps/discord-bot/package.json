@@ -1,0 +1,24 @@
+{
+	"name": "@premid/discord-bot",
+	"type": "module",
+	"version": "0.0.1",
+	"private": true,
+	"description": "PreMiD's discord bot",
+	"license": "MPL-2.0",
+	"main": "dist/index.js",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"start": "node --enable-source-maps .",
+		"dev": "node --watch --env-file .env --enable-source-maps ."
+	},
+	"dependencies": {
+		"@premid/db": "workspace:*",
+		"defu": "^6.1.4",
+		"discord.js": "^14.16.2",
+		"glob": "^11.0.0",
+		"mongoose": "^8.2.0",
+		"winston": "^3.14.2"
+	}
+}
