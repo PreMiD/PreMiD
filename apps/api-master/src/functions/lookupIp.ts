@@ -1,6 +1,6 @@
 import { join } from "node:path";
 import process from "node:process";
-import { lookup, reload, updateDb } from "ip-location-api";
+import { lookup, reload } from "ip-location-api";
 import { mainLog } from "../index.js";
 
 const fields = ["latitude", "longitude", "country"];
@@ -24,7 +24,7 @@ export async function lookupIp(ip: string): Promise<{ latitude: number; longitud
 	}
 }
 
-let reloading: Promise<void> | undefined = Promise.resolve();
+let reloading: Promise<void> | undefined;
 let log: debug.Debugger | undefined;
 
 export async function reloadIpLocationApi() {
@@ -35,8 +35,7 @@ export async function reloadIpLocationApi() {
 
 	reloading = new Promise((resolve, reject) => {
 		log?.("Reloading IP location API");
-		updateDb({ fields, dataDir, tmpDataDir, smallMemory }).then(async () => {
-			await reload({ fields, dataDir, tmpDataDir, smallMemory });
+		reload({ fields, dataDir, tmpDataDir, smallMemory, autoUpdate: "0 9 * * *" }).then(() => {
 			log?.("IP location API reloaded");
 			initialized = true;
 			reloading = undefined;
