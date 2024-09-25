@@ -12,7 +12,7 @@ export default defineI18nLocale(() => ({
       searchPresence: "Rechercher une Presence",
       sort: {
         mostUsed: "Les plus utilisés",
-        alphabetical: false
+        alphabetical: "De A à Z"
       },
       categories: {
         all: "Tout",
@@ -27,23 +27,23 @@ export default defineI18nLocale(() => ({
     browserCard: {
       wip: false,
       support: {
-        safari: false
+        safari: "Nous travaillons sur le support de Safari, restez à l'écoute !"
       }
     },
     userChip: {
-      loading: false
+      loading: "Chargement..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "Ajouter",
+      removePresence: "Retirer"
     },
     donationModal: {
       title: false,
       description: false,
       continue: false,
       close: "Fermer",
-      patreon: false,
-      github: false,
+      patreon: "Soutenir sur {name}",
+      github: "Parrainer sur {name}",
       holdTight: false
     }
   },
@@ -60,7 +60,7 @@ export default defineI18nLocale(() => ({
       userPage: {
         title: false,
         error: {
-          title: false,
+          title: "Erreur",
           description: false
         }
       }
@@ -81,7 +81,7 @@ export default defineI18nLocale(() => ({
       getStarted: "Commencer",
       sections: {
         feature: {
-          title: false,
+          title: "Pourquoi tu vas adorer PreMiD",
           feature1: {
             title: false,
             description: false
@@ -114,7 +114,7 @@ export default defineI18nLocale(() => ({
             description: false
           },
           step2: {
-            title: false,
+            title: "Se connecter à Discord",
             description: false
           },
           step3: {
@@ -140,15 +140,15 @@ export default defineI18nLocale(() => ({
       supporters: "Supporteurs",
       translators: "Traducteurs",
       avatar: {
-        tooltip: false
+        tooltip: "Clique pour copier l'avatar de {name}"
       }
     },
     downloads: {
       title: "Téléchargements",
       steps: {
-        install: false,
-        login: false,
-        add: false,
+        install: "Installer l'extension",
+        login: "Se connecter à Discord",
+        add: "Ajouter des Présences",
         showoff: false
       },
       section: {
@@ -160,31 +160,31 @@ export default defineI18nLocale(() => ({
         }
       },
       browser: {
-        your: false,
-        other: false,
-        based: false
+        your: "Ton navigateur",
+        other: "Autres navigateurs",
+        based: "Basé sur {browser}"
       },
       mobile: {
-        title: false,
-        description: false
+        title: "Mauvaise nouvelle !",
+        description: "PreMiD n'est pas disponible pour les appareils mobiles, désolé !"
       },
       alphaAccess: {
-        title: false,
+        title: "Débloque l'accès exclusif à l'alpha !",
         description: false,
         callToAction: false
       },
-      faq: false,
+      faq: "Questions fréquemment posées",
       faqs: {
         q1: {
-          question: false,
+          question: "Qu'est-ce que PreMiD ?",
           answer: false
         },
         q2: {
-          question: false,
+          question: "Comment utiliser PreMiD ?",
           answer: false
         },
         q3: {
-          question: false,
+          question: "PreMiD est-il contraire aux CGU de Discord ?",
           answer: false
         },
         q4: {
@@ -192,7 +192,7 @@ export default defineI18nLocale(() => ({
           answer: false
         },
         q5: {
-          question: false,
+          question: "Comment puis-je contribuer à PreMiD ?",
           answer: false
         },
         q6: {
@@ -204,80 +204,80 @@ export default defineI18nLocale(() => ({
           answer: false
         },
         q8: {
-          question: false,
+          question: "PreMiD ne supporte pas xyz, pouvez-vous l'ajouter ?",
           answer: false
         },
         q9: {
-          question: false,
+          question: "À quelle fréquence PreMiD est-il mis à jour ?",
           answer: false
         }
       }
     },
     store: {
       title: "Boutique",
-      noPresence: false,
+      noPresence: "Aucune présence ne correspond à votre recherche...",
       presence: {
         button: {
-          reportIssue: false,
-          suggestFeature: false,
-          viewCode: false
+          reportIssue: "Signaler un problème",
+          suggestFeature: "Suggérer une fonctionnalité",
+          viewCode: "Voir le code"
         },
         title: {
           description: "Description",
           information: "Information"
         },
         informationSection: {
-          contributors: false,
-          version: false,
-          users: false,
-          tags: false,
-          supportedUrls: false
+          contributors: "Contributeurs :",
+          version: "Version : {version}",
+          users: "Utilisateurs : {users}",
+          tags: "Tags :",
+          supportedUrls: "URL prises en charge :"
         }
       },
       header: {
         categories: "Catégories",
-        search: "Rechercher une Presence"
+        search: "Rechercher une Présence"
       }
     }
   },
   footer: {
     partners: "Partenaires",
-    followUs: false,
+    followUs: "Suivez-nous",
     supportUs: "Aidez-nous",
     more: "Plus",
-    legal: false,
+    legal: "Mentions Légales",
     supportList: {
       donate: "Faire un don",
       contribute: "Contribuer",
       translate: "Traduire"
     },
     moreList: {
-      faq: false,
+      faq: "Foire Aux Questions",
       documentation: "Documentation",
       status: "État"
     },
     legalList: {
       privacyPolicy: "Politique de Confidentialité",
-      termsOfService: false,
+      termsOfService: "Conditions générales d'utilisation",
       cookiePolicy: "Politique de Cookies"
     },
-    withLoveBy: false,
-    by: false,
-    copyright: false
+    withLoveBy: "Avec",
+    by: "par",
+    copyright: "©️ {year}-{currentYear} {company} Tous droits réservés."
   },
   error: {
     404: {
       title: false,
-      message: false
+      message: "La page que tu cherches n'existe pas."
     },
     500: {
       title: false,
       message: false
     },
     default: {
-      title: false,
+      title: "Erreur",
       message: false,
-      button: false
+      button: "Revenir en arrière"
     }
   }
 }));
