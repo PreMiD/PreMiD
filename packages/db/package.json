@@ -13,6 +13,6 @@
 		"lib"
 	],
 	"dependencies": {
-		"mongoose": "^8.2.0"
+		"mongoose": "^8.6.3"
 	}
 }

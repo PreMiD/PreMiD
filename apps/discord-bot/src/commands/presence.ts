@@ -7,7 +7,7 @@ import { presenceList } from "../util/presenceList.js";
 import { client } from "../constants.js";
 
 export default {
-	data: () => new SlashCommandBuilder()
+	data: new SlashCommandBuilder()
 		.setName("presence")
 		.setDescription("Search for a presence")
 		.addStringOption(option =>
@@ -18,8 +18,8 @@ export default {
 		),
 	autocomplete: async (interaction: AutocompleteInteraction) => {
 		const focusedValue = interaction.options.getFocused();
-		const filtered = presenceList.filter(presence => presence.toLowerCase().includes(focusedValue.toLowerCase()));
-		return interaction.respond(filtered.slice(0, 25).map(presence => ({ name: presence, value: presence })));
+		const filtered = presenceList.filter(({ service }) => service.toLowerCase().includes(focusedValue.toLowerCase()));
+		return interaction.respond(filtered.slice(0, 25).map(({ service }) => ({ name: service, value: service })));
 	},
 	execute: async (interaction: ChatInputCommandInteraction) => {
 		const query = interaction.options.getString("query");
@@ -64,7 +64,7 @@ export default {
 		if (author) {
 			embed.setAuthor({
 				name: author.username,
-				iconURL: author.defaultAvatarURL,
+				iconURL: author.displayAvatarURL(),
 			});
 		}
 
@@ -77,5 +77,19 @@ export default {
 						.setStyle(ButtonStyle.Link),
 				),
 		] });
+	},
+	help: {
+		name: "presence",
+		value: "presence",
+		command: "/presence <query>",
+		commandDescription: "Search for a presence",
+		embed: createStandardEmbed({
+			title: "Command: /presence",
+			description: "Search for a presence",
+			fields: [
+				{ name: "Usage", value: "`/presence <query>`", inline: true },
+				{ name: "Example", value: "`/presence YouTube`", inline: true },
+			],
+		}),
 	},
 } satisfies Command;

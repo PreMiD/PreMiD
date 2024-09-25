@@ -10,7 +10,7 @@ import { createStandardEmbed } from "../util/createStandardEmbed.js";
 import { type Command, commands } from "../util/loadCommands.js";
 
 export default {
-	data: () => new SlashCommandBuilder()
+	data: new SlashCommandBuilder()
 		.setName("help")
 		.setDescription("Shows help and usage information for PreMiD commands")
 		.addStringOption(option =>

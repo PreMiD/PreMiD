@@ -9,10 +9,9 @@ export interface CommandHelp extends APIApplicationCommandOptionChoice<string> {
 }
 
 export interface Command {
-	data: SharedSlashCommandOptions<any> | (() => SharedSlashCommandOptions<any>);
+	data: SharedSlashCommandOptions<any>;
 	execute: (interaction: any) => Promise<any>;
 	autocomplete?: (interaction: any) => Promise<any>;
-	init?: () => Promise<any>;
 	help?: CommandHelp;
 }
 

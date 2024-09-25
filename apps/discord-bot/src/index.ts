@@ -1,6 +1,7 @@
 import process from "node:process";
 import { connect } from "mongoose";
-import { client, processEnv } from "./constants.js";
+import { Routes } from "discord.js";
+import { client, processEnv, rest } from "./constants.js";
 import { getActivity } from "./util/getActivity.js";
 import loadCommands from "./util/loadCommands.js";
 import loadEvents from "./util/loadEvents.js";
@@ -10,8 +11,16 @@ import { updatePresenceList } from "./util/presenceList.js";
 logger.info("Starting bot initialization...");
 
 try {
-	await loadCommands();
+	const commands = await loadCommands();
 	logger.info("Commands loaded successfully");
+
+	//* Register guild-specific commands
+	await rest.put(Routes.applicationGuildCommands(processEnv.CLIENT_ID, processEnv.GUILD_ID), {
+		body: Array.from(commands.values()).map(({ data }) => data),
+	});
+
+	//* Clear global commands
+	await rest.put(Routes.applicationCommands(processEnv.CLIENT_ID), { body: [] });
 }
 catch (error) {
 	logger.error("Error loading commands:", error);
@@ -39,7 +48,10 @@ catch (error) {
 }
 
 client.login(processEnv.TOKEN)
-	.then(() => logger.info("Bot logged in successfully"))
+	.then(async () => {
+		logger.info("Bot logged in successfully");
+		client.user?.setActivity(getActivity({}));
+	})
 	.catch((error) => {
 		logger.error("Failed to log in:", error);
 		process.exit(1);
@@ -47,10 +59,9 @@ client.login(processEnv.TOKEN)
 
 client.once("ready", () => {
 	logger.info(`Bot is ready! Logged in as ${client.user?.tag}`);
-	logger.info(`Serving ${client.guilds.cache.size} guilds`);
 });
 
-setInterval(() => {
+setInterval(async () => {
 	const newActivity = getActivity({
 		previous: client.user?.presence.activities[0]?.name,
 	});

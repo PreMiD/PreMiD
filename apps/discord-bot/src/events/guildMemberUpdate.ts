@@ -6,7 +6,7 @@ client.on(Events.GuildMemberUpdate, async (oldMember, newMember) => {
 	const highestRole = newMember.roles.cache
 		.filter(role => (Object.values(rolesEnv) as string[]).includes(role.id))
 		.sort((a, b) => b.position - a.position)
-		.at(0)!;
+		.at(0);
 
 	await Promise.all([
 		DiscordUsers.updateOne(
@@ -22,26 +22,28 @@ client.on(Events.GuildMemberUpdate, async (oldMember, newMember) => {
 			},
 			{ upsert: true },
 		),
-		Credits.updateOne(
-			{ userId: newMember.id },
-			{
-				$set: {
-					userId: newMember.id,
-					name: newMember.user.username,
-					tag: newMember.user.discriminator,
-					avatar: newMember.user.avatar,
-					premium_since: newMember.premiumSince !== null ? newMember.premiumSinceTimestamp! : undefined,
-					role: newMember.roles.cache.filter(r => r.name !== "@everyone").map(r => r.name),
-					roleIds: newMember.roles.cache.filter(r => r.name !== "@everyone").map(r => r.id),
-					roleColor: roleColors[
-						Object.entries(rolesEnv).find(([, id]) => id === highestRole.id)![0] as keyof typeof roleColors
-					],
-					rolePosition: highestRole.position,
-					status: newMember.presence?.status ?? "offline",
+		highestRole
+			? Credits.updateOne(
+				{ userId: newMember.id },
+				{
+					$set: {
+						userId: newMember.id,
+						name: newMember.user.username,
+						tag: newMember.user.discriminator,
+						avatar: newMember.user.avatar,
+						premium_since: newMember.premiumSince !== null ? newMember.premiumSinceTimestamp! : undefined,
+						role: newMember.roles.cache.filter(r => r.name !== "@everyone").map(r => r.name),
+						roleIds: newMember.roles.cache.filter(r => r.name !== "@everyone").map(r => r.id),
+						roleColor: roleColors[
+							Object.entries(rolesEnv).find(([, id]) => id === highestRole.id)![0] as keyof typeof roleColors
+						],
+						rolePosition: highestRole.position,
+						status: newMember.presence?.status ?? "offline",
+					},
 				},
-			},
-			{ upsert: true },
-		),
+				{ upsert: true },
+			)
+			: Promise.resolve(),
 	]);
 
 	const roles = newMember.roles.cache.map(role => role.id);
@@ -76,17 +78,3 @@ client.on(Events.GuildMemberUpdate, async (oldMember, newMember) => {
 		]);
 	}
 });
-
-//* Beta can be requested from the website so we need to periodically check for that
-setInterval(async () => {
-	const betaUsers = await BetaUsers.find({});
-	const guild = await client.guilds.fetch(processEnv.GUILD_ID);
-
-	for (const betaUser of betaUsers) {
-		const member = await guild.members.fetch(betaUser.userId);
-
-		if (!member.roles.cache.has(processEnv.BETA_ROLE)) {
-			await member.roles.add(processEnv.BETA_ROLE, "User should have Beta Role");
-		}
-	}
-}, 1000 * 60 * 5);

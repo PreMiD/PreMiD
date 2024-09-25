@@ -1,7 +1,6 @@
 import process from "node:process";
 import { defu } from "defu";
-import { Client, GatewayIntentBits } from "discord.js";
-import { getActivity } from "./util/getActivity.js";
+import { Client, GatewayIntentBits, REST } from "discord.js";
 
 export const processEnv = defu({
 	TOKEN: process.env.TOKEN,
@@ -20,10 +19,11 @@ export const processEnv = defu({
 export const client = new Client({
 	intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildPresences],
 	presence: {
-		activities: [getActivity({})],
 		status: "online",
 	},
 });
+
+export const rest = new REST().setToken(processEnv.TOKEN);
 
 export const roles = {
 	PROJECT_LEADER: "493135149274365975",

@@ -220,7 +220,7 @@ const shortInfos: {
 };
 
 export default {
-	data: () => new SlashCommandBuilder()
+	data: new SlashCommandBuilder()
 		.setName("info")
 		.setDescription("Posts an information message")
 		.addStringOption(option =>
@@ -271,5 +271,19 @@ export default {
 		}
 
 		return interaction.reply({ embeds: [embed], content: user ? user.toString() : undefined, components: actionRow ? [actionRow] : undefined });
+	},
+	help: {
+		name: "info",
+		value: "info",
+		command: "/info <query> [user]",
+		commandDescription: "Posts an information message",
+		embed: createStandardEmbed({
+			title: "Command: /info",
+			description: "Posts an information message",
+			fields: [
+				{ name: "Usage", value: "`/info <query> [user]`", inline: true },
+				{ name: "Example", value: "`/info troubleshooting`\n`/info beta @User`", inline: true },
+			],
+		}),
 	},
 } satisfies Command;
