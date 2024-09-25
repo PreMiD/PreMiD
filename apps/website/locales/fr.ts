@@ -83,7 +83,7 @@ export default defineI18nLocale(() => ({
         feature: {
           title: "Pourquoi tu vas adorer PreMiD",
           feature1: {
-            title: false,
+            title: "Contrôle de la vie privée",
             description: false
           },
           feature2: {
@@ -110,16 +110,16 @@ export default defineI18nLocale(() => ({
         howItWorks: {
           title: false,
           step1: {
-            title: false,
-            description: false
+            title: "Installe l'extension",
+            description: "Ajoute PreMiD à ton navigateur."
           },
           step2: {
             title: "Se connecter à Discord",
             description: false
           },
           step3: {
-            title: false,
-            description: false
+            title: "Ajouter des Services",
+            description: "Choisis les services que tu souhaites afficher, comme YouTube, Disney+, et plus encore."
           },
           step4: {
             title: false,
@@ -128,7 +128,7 @@ export default defineI18nLocale(() => ({
         },
         callToAction: {
           title: false,
-          description: false,
+          description: "Rejoins les {count} utilisateurs qui aiment déjà PreMiD.",
           button: false
         }
       }
