@@ -2,16 +2,16 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "Merci de nous soutenir en désactivant ton bloqueur de pub."
     }
   },
   component: {
     searchBar: {
       search: "Rechercher",
-      sortBy: false,
+      sortBy: "Trier par",
       searchPresence: "Rechercher une Presence",
       sort: {
-        mostUsed: false,
+        mostUsed: "Les plus utilisés",
         alphabetical: false
       },
       categories: {
