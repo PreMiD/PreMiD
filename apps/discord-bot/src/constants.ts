@@ -4,18 +4,15 @@ import { Client, GatewayIntentBits, REST } from "discord.js";
 
 export const processEnv = defu({
 	TOKEN: process.env.TOKEN,
-	CLIENT_ID: process.env.CLIENT_ID,
 	DATABASE_URL: process.env.DATABASE_URL,
-	PRESENCE_DEV_ROLE: process.env.PRESENCE_DEV_ROLE,
 	SENTRY_DSN: process.env.SENTRY_DSN,
 }, {
 	TOKEN: "",
-	CLIENT_ID: "503557087041683458",
-	GUILD_ID: "493130730549805057",
 	DATABASE_URL: "mongodb://localhost:27017/premid",
+	SENTRY_DSN: "",
+	GUILD_ID: "493130730549805057",
 	BETA_ROLE: "591284574823120909",
 	ALPHA_ROLE: "694481247564595211",
-	SENTRY_DSN: "",
 });
 
 export const client = new Client({
