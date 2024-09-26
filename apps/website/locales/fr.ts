@@ -2,7 +2,7 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: "Merci de nous soutenir en désactivant ton bloqueur de pub."
+      error: "Merci de nous soutenir en désactivant votre bloqueur de publicité."
     }
   },
   component: {
@@ -110,8 +110,8 @@ export default defineI18nLocale(() => ({
         howItWorks: {
           title: false,
           step1: {
-            title: "Installe l'extension",
-            description: "Ajoute PreMiD à ton navigateur."
+            title: "Installer l'extension",
+            description: "Ajoutez PreMiD à votre navigateur."
           },
           step2: {
             title: "Se connecter à Discord",
@@ -119,7 +119,7 @@ export default defineI18nLocale(() => ({
           },
           step3: {
             title: "Ajouter des Services",
-            description: "Choisis les services que tu souhaites afficher, comme YouTube, Disney+, et plus encore."
+            description: "Choisissez les services que vous souhaitez afficher, comme YouTube, Disney+, et plus encore."
           },
           step4: {
             title: false,
@@ -128,7 +128,7 @@ export default defineI18nLocale(() => ({
         },
         callToAction: {
           title: false,
-          description: "Rejoins les {count} utilisateurs qui aiment déjà PreMiD.",
+          description: "Rejoignez les {count} utilisateurs qui aiment déjà PreMiD.",
           button: false
         }
       }
@@ -140,7 +140,7 @@ export default defineI18nLocale(() => ({
       supporters: "Supporteurs",
       translators: "Traducteurs",
       avatar: {
-        tooltip: "Clique pour copier l'avatar de {name}"
+        tooltip: "Cliquez pour copier l'avatar de {name}"
       }
     },
     downloads: {
@@ -169,7 +169,7 @@ export default defineI18nLocale(() => ({
         description: "PreMiD n'est pas disponible pour les appareils mobiles, désolé !"
       },
       alphaAccess: {
-        title: "Débloque l'accès exclusif à l'alpha !",
+        title: "Débloquez l'accès exclusif à l'alpha !",
         description: false,
         callToAction: false
       },
@@ -268,7 +268,7 @@ export default defineI18nLocale(() => ({
   error: {
     404: {
       title: false,
-      message: "La page que tu cherches n'existe pas."
+      message: "La page que vous cherchez n'existe pas."
     },
     500: {
       title: false,
