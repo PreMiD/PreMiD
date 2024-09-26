@@ -25,3 +25,4 @@ src/update.ini
 coverage
 *.tsbuildinfo
 .DS_Store
+*.log
