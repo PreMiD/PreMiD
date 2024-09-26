@@ -81,7 +81,7 @@ export default defineI18nLocale(() => ({
       getStarted: "Commencer",
       sections: {
         feature: {
-          title: "Pourquoi tu vas adorer PreMiD",
+          title: "Pourquoi vous allez adorer PreMiD",
           feature1: {
             title: "Contrôle de la vie privée",
             description: false
@@ -160,7 +160,7 @@ export default defineI18nLocale(() => ({
         }
       },
       browser: {
-        your: "Ton navigateur",
+        your: "Votre navigateur",
         other: "Autres navigateurs",
         based: "Basé sur {browser}"
       },
