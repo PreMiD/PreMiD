@@ -30,15 +30,21 @@ client.on(Events.GuildMemberUpdate, async (oldMember, newMember) => {
 						userId: newMember.id,
 						name: newMember.user.username,
 						tag: newMember.user.discriminator,
-						avatar: newMember.user.avatar,
+						avatar: newMember.user.displayAvatarURL({
+							extension: "png",
+							forceStatic: false,
+						}),
 						premium_since: newMember.premiumSince !== null ? newMember.premiumSinceTimestamp! : undefined,
-						role: newMember.roles.cache.filter(r => r.name !== "@everyone").map(r => r.name),
+						role: highestRole.name,
+						roleId: highestRole.id,
+						roles: newMember.roles.cache.filter(r => r.name !== "@everyone").map(r => r.name),
 						roleIds: newMember.roles.cache.filter(r => r.name !== "@everyone").map(r => r.id),
 						roleColor: roleColors[
 							Object.entries(rolesEnv).find(([, id]) => id === highestRole.id)![0] as keyof typeof roleColors
 						],
 						rolePosition: highestRole.position,
 						status: newMember.presence?.status ?? "offline",
+						flags: newMember.user.flags?.toArray() ?? [],
 					},
 				},
 				{ upsert: true },

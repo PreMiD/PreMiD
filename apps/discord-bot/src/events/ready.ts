@@ -122,6 +122,7 @@ client.once(Events.ClientReady, async () => {
 							roleColor: color,
 							rolePosition: highestRole.position,
 							status: member.presence?.status ?? "offline",
+							flags: member.user.flags?.toArray() ?? [],
 						},
 					},
 					upsert: true,
