@@ -7,6 +7,7 @@ export const processEnv = defu({
 	CLIENT_ID: process.env.CLIENT_ID,
 	DATABASE_URL: process.env.DATABASE_URL,
 	PRESENCE_DEV_ROLE: process.env.PRESENCE_DEV_ROLE,
+	SENTRY_DSN: process.env.SENTRY_DSN,
 }, {
 	TOKEN: "",
 	CLIENT_ID: "503557087041683458",
@@ -14,6 +15,7 @@ export const processEnv = defu({
 	DATABASE_URL: "mongodb://localhost:27017/premid",
 	BETA_ROLE: "591284574823120909",
 	ALPHA_ROLE: "694481247564595211",
+	SENTRY_DSN: "",
 });
 
 export const client = new Client({

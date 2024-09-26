@@ -1,12 +1,20 @@
 import process from "node:process";
 import { connect } from "mongoose";
 import { Routes } from "discord.js";
+import * as Sentry from "@sentry/node";
 import { client, processEnv, rest } from "./constants.js";
 import { getActivity } from "./util/getActivity.js";
 import loadCommands from "./util/loadCommands.js";
 import loadEvents from "./util/loadEvents.js";
 import { logger } from "./util/logger.js";
 import { updatePresenceList } from "./util/presenceList.js";
+
+Sentry.init({
+	integrations: [
+		Sentry.mongooseIntegration(),
+	],
+	dsn: processEnv.SENTRY_DSN,
+});
 
 logger.info("Starting bot initialization...");
 

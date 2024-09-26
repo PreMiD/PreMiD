@@ -184,6 +184,9 @@ importers:
       '@premid/db':
         specifier: workspace:*
         version: link:../../packages/db
+      '@sentry/node':
+        specifier: ^8.17.0
+        version: 8.30.0
       defu:
         specifier: ^6.1.4
         version: 6.1.4
@@ -3173,6 +3176,7 @@ packages:
 
   '@rollup/rollup-linux-arm64-gnu@4.21.2':
     resolution: {integrity: sha512-69CF19Kp3TdMopyteO/LJbWufOzqqXzkrv4L2sP8kfMaAQ6iwky7NoXTp7bD6/irKgknDKM0P9E/1l5XxVQAhw==}
+    cpu: [arm64]
     os: [linux]
 
   '@rollup/rollup-linux-arm64-musl@4.18.1':
@@ -14222,7 +14226,7 @@ snapshots:
       pathe: 1.1.2
       sirv: 2.0.4
       tinyrainbow: 1.2.0
-      vitest: 2.0.5(@types/node@22.6.1)(@vitest/ui@2.0.5)(happy-dom@15.0.0)(sass@1.78.0)(terser@5.33.0)
+      vitest: 2.0.5(@types/node@20.16.5)(@vitest/ui@2.0.5)(happy-dom@15.7.4)(sass@1.78.0)(terser@5.33.0)
 
   '@vitest/utils@2.0.5':
     dependencies:
