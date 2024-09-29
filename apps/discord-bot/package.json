@@ -1,7 +1,7 @@
 {
 	"name": "@premid/discord-bot",
 	"type": "module",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"private": true,
 	"description": "PreMiD's discord bot",
 	"license": "MPL-2.0",
