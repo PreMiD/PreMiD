@@ -1,5 +1,5 @@
 import { resolve } from "node:path";
-import type { APIApplicationCommandOptionChoice, EmbedBuilder, SharedSlashCommandOptions } from "discord.js";
+import type { APIApplicationCommandOptionChoice, EmbedBuilder, SharedSlashCommandOptions, SlashCommandSubcommandsOnlyBuilder } from "discord.js";
 import { glob } from "glob";
 
 export interface CommandHelp extends APIApplicationCommandOptionChoice<string> {
@@ -9,7 +9,7 @@ export interface CommandHelp extends APIApplicationCommandOptionChoice<string> {
 }
 
 export interface Command {
-	data: SharedSlashCommandOptions<any>;
+	data: SharedSlashCommandOptions<any> | SlashCommandSubcommandsOnlyBuilder;
 	execute: (interaction: any) => Promise<any>;
 	autocomplete?: (interaction: any) => Promise<any>;
 	help?: CommandHelp;
