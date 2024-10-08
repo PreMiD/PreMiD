@@ -20,7 +20,7 @@ src/update.ini
 *.app
 *.xml.backup
 *.js
-!eslint.config.js
+!*.config.js
 
 coverage
 *.tsbuildinfo
