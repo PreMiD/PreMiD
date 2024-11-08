@@ -8,11 +8,11 @@ export default defineI18nLocale(() => ({
   component: {
     searchBar: {
       search: "검색",
-      sortBy: false,
+      sortBy: "정렬 기준",
       searchPresence: "Presence 검색",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "최다 사용순",
+        alphabetical: "알파벳순"
       },
       categories: {
         all: "모두",
@@ -31,16 +31,16 @@ export default defineI18nLocale(() => ({
       }
     },
     userChip: {
-      loading: false
+      loading: "불러오는 중..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "추가",
+      removePresence: "제거"
     },
     donationModal: {
       title: false,
       description: false,
-      continue: false,
+      continue: "계속",
       close: "닫기",
       patreon: false,
       github: false,
