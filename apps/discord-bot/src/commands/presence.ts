@@ -14,7 +14,8 @@ export default {
 			option
 				.setName("query")
 				.setDescription("The presence to search for")
-				.setAutocomplete(true),
+				.setAutocomplete(true)
+				.setRequired(true),
 		),
 	autocomplete: async (interaction: AutocompleteInteraction) => {
 		const focusedValue = interaction.options.getFocused();
