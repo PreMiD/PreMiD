@@ -3,7 +3,7 @@ import { ActionRowBuilder, ButtonBuilder, ButtonStyle, SlashCommandBuilder } fro
 import { Presence } from "@premid/db";
 import { createStandardEmbed } from "../util/createStandardEmbed.js";
 import type { Command } from "../util/loadCommands.js";
-import { presenceList } from "../util/presenceList.js";
+import { getPresenceList } from "../util/presenceList.js";
 import { client } from "../constants.js";
 
 export default {
@@ -19,7 +19,9 @@ export default {
 		),
 	autocomplete: async (interaction: AutocompleteInteraction) => {
 		const focusedValue = interaction.options.getFocused();
+		const presenceList = getPresenceList();
 		const filtered = presenceList.filter(({ service }) => service.toLowerCase().includes(focusedValue.toLowerCase()));
+
 		return interaction.respond(filtered.slice(0, 25).map(({ service }) => ({ name: service, value: service })));
 	},
 	execute: async (interaction: ChatInputCommandInteraction) => {
