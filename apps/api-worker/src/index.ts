@@ -16,7 +16,7 @@ Sentry.init({
 if (!process.env.DATABASE_URL)
 	throw new Error("DATABASE_URL is not set");
 
-await connect(process.env.DATABASE_URL, { appName: "PreMiD API" });
+await connect(process.env.DATABASE_URL, { appName: "PreMiD API", dbName: "PreMiD" });
 
 const server = await createServer();
 const url = await server.listen({
