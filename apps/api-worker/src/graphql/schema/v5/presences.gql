@@ -19,6 +19,7 @@ type Presence {
 }
 
 type PresenceMetadata {
+	apiVersion: Int!
 	author: PresenceMetadataUser!
 	contributors: [PresenceMetadataUser!]
 	altnames: [String!]
@@ -49,14 +50,9 @@ type PresenceMetadataSettings {
 	id: String!
 	title: String
 	icon: String
-	if: PresenceMetadataSettingsIf # serialize
+	if: Scalar # serialize
 	placeholder: String
 	value: Scalar # serialize
 	values: Scalar # serialize
 	multiLanguage: Scalar # serialize
-}
-
-type PresenceMetadataSettingsIf {
-	propertyNames: String
-	patternProperties: Scalar
 }
