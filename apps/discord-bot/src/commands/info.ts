@@ -90,7 +90,7 @@ const shortInfos: {
 		title: "Download PreMiD",
 		emoji: "📦",
 		description:
-			"You can download PreMiD and its extension for your browser, but don't forget that **you need both application and extension** to get PreMiD to work.\n :warning: PreMiD does not support the web version of Discord, you **must** use the desktop version of Discord.",
+			"You can download PreMiD's extension for your browser via the button below.\n**Note:** You no longer need to download any application!",
 		links: [{ label: "Downloads", url: "https://premid.app/downloads" }],
 	},
 	donate: {
