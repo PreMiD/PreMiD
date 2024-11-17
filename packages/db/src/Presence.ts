@@ -12,6 +12,7 @@ export interface PresenceSchema {
 
 export interface PresenceMetadata {
 	$schema: string;
+	apiVersion: number;
 	altnames?: string[];
 	author: PresenceMetadataContributor;
 	category: PresenceMetadataCategory;
@@ -82,6 +83,7 @@ const PresenceMetadataSchema = new Schema<PresenceMetadata>({
 	thumbnail: { required: true, type: String },
 	url: { required: true, type: [String] },
 	version: { required: true, type: String },
+	apiVersion: { required: true, type: Number },
 });
 const presenceSchema = new Schema<PresenceSchema>({
 	folderName: { required: true, type: String },
