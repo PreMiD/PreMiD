@@ -13,6 +13,7 @@ import { Socket } from "../classes/Socket.js";
 import { resolvers } from "../graphql/resolvers/v5/index.js";
 import { sessionKeepAlive } from "../routes/sessionKeepAlive.js";
 import { featureFlags } from "../constants.js";
+import { presences } from "../routes/presences.js";
 import createRedis from "./createRedis.js";
 
 export interface FastifyContext {
@@ -89,6 +90,7 @@ export default async function createServer() {
 	});
 
 	app.post("/v5/session-keep-alive", sessionKeepAlive);
+	app.get("/v5/presence/:service/:file", presences);
 
 	return app;
 }
