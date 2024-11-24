@@ -1,4 +1,4 @@
-## Part 1: Resetting PreMiD to Discord Hooks
+## Part 1: Resetting PreMiD To Discord Hooks
 
 - Close and reopen your web-browser.
 - Navigate to PreMiD extension, make sure you're logged in with Discord (Your icon should appear in the top right of the extension)

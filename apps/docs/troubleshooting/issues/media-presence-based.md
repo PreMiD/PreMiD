@@ -77,7 +77,7 @@ outline: [2, 3]
   - Turn OFF **Privacy Overwrite Button**
 - Reload the video page. You should now see the title and timestamp after a number of seconds.
 
-## Other: MetaData/Thumbnails Not appearing
+## Other: MetaData/Thumbnails Not Appearing
 
 <sub>_"Video or Audio Presence isn't showing my media names or images!"_</sub>
 
