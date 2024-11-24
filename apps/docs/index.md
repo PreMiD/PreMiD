@@ -18,7 +18,7 @@ hero:
       link: /dev/getting-started
     - theme: alt
       text: Troubleshooting
-      link: /general-troubleshooting
+      link: /troubleshooting
 features:
   - icon: 🛠️
     title: Extensible
