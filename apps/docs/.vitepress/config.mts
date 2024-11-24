@@ -146,6 +146,10 @@ function sidebarTroubleshooting(): DefaultTheme.SidebarItem[] {
 				text: "Feature Guide",
    				link: "/extglossary",
 			},
+  {
+				text: "Manual Install",
+   				link: "/manual-install",
+			},
 			{
 				text: "Resolving Issues",
 				link: "/resolving-issues",
