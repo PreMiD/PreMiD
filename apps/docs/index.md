@@ -16,6 +16,9 @@ hero:
     - theme: alt
       text: Presence Development
       link: /dev/getting-started
+    - theme: alt
+      text: Troubleshooting
+      link: /general-troubleshooting
 features:
   - icon: 🛠️
     title: Extensible
