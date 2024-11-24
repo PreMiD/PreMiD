@@ -144,7 +144,7 @@ function sidebarTroubleshooting(): DefaultTheme.SidebarItem[] {
 			},
 			{
 				text: "Function Glossary",
-   				link: "/extension-glossary",
+   				link: "/extglossary",
 			},
 			{
 				text: "Resolving Issues",
