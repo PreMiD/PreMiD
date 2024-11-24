@@ -6,6 +6,11 @@ _Please note, this portion of the guide is always expanding. Alpha, Beta, and Re
 
 ## PreMiD Extension Functions
 
+> [!NOTE]
+> There will be images contained that are from development versions of PreMiD. These will not always show all of the listed functions.
+
+![PreMiD Functions](/guide-images/gu-p1-pmsetting.png)
+
 **Heartbeat** 
  - Heartbeat is a diagnostic tool. This enables developers to see information about the PreMiD extension as well as the installed presences on your machine, which allows for easier error reporting and fixing when attempting to get to the bottom of an issue. For the normal every-day user, this will have absolutely no usage. 
 
@@ -26,9 +31,10 @@ _Please note, this portion of the guide is always expanding. Alpha, Beta, and Re
 
 ## Bundled Presence Functions
 
-_This is not a fully comprehensive list, but should give a relatively comfortable idea of how presences function with different options._
+> [!NOTE]
+> This is not a fully comprehensive list, but should give a relatively comfortable idea of how presences function with different options.
 
-<sub>This includes Twitch, Youtube, Youtube Music, Netflix, and Spotify. These are the presences that are included with the application upon install. Other presences available will have the same or similar options, with the same functionality.</sub>
+<sub>This includes the presences that are included with the application on install. Other presences available will have the same or similar options, with the same functionality.</sub>
 
 **Privacy Mode**
 - Included in almost all PreMiD presences.
@@ -62,7 +68,9 @@ _This is not a fully comprehensive list, but should give a relatively comfortabl
 - Enable and/or disable the additional UI buttons on Discord.
 - These buttons give other users the ability to easily click "Watch" or "Listen" to join-in on the currently hooked media.
 - All presences with this option will function the same. 
-  - _Note: Previously a person could see their own buttons on a secondary device. This is no longer the case. Only other users can now see buttons._
+
+> [!IMPORTANT]
+> Previously a person could see their own buttons on a secondary device. This is no longer the case. Only other users can now see buttons.
 
 **Show Title as Presence**
 - This changes the presence name from "Soundcloud" or "Netflix" to the media name. 

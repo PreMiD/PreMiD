@@ -29,6 +29,9 @@ const members = [
 - You should confirm you are logged into Discord via PreMiD.
 - You should have Activity Privacy > Detected Activities turned on in your Discord settings.
 
+> [!TIP] 
+> If you have _not_ attempted to restart your web browser before starting this guide, you should begin by doing so. Most of the steps contained in this guide will begin with this step.
+
 ---
 
 Troubleshooting Guides brought to you by
