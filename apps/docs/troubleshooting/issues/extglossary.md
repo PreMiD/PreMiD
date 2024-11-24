@@ -73,7 +73,4 @@ _This is not a fully comprehensive list, but should give a relatively comfortabl
 - All presences with this option will function the same. 
 
 ## Addon Presence Functions
-- I'll fill this in as I see questions. In other words: 
-``` 
-¯\_(ツ)_/¯ 
-```
+- I'll fill this in as I see questions. In other words: Shrug
