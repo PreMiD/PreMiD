@@ -24,29 +24,30 @@
 - You **CANNOT USE** desktop applications such as YouTube or Netflix. Media _must be played_ on your browser that PreMiD is installed on, from the _supported host URL's._
 - You **can **use PreMiD on mobile,** as long as your browser allows you to use extensions** and you have to access the websites, not the apps.
 
-## "I can't see the buttons on my presence in Discord!"
+## Buttons don't show on Discord
 
-- **You won't.** This is only seen on a device that isn't the one PreMiD is running on.
+- **You won't see buttons on your own device.** This is only seen on a device that isn't the one PreMiD is running on.
 - If on PC, look at yourself on your phone and vice versa.
 
-## "The presence won't SHUT OFF!"/"The hook time is way too slow!"
+## Presence hook/unhook time
+
+<sub>_""I can't get the last video I was watching to go away!"_</sub>
 
 - PreMiD can take up to **20 minutes** to fully unhook from a closed page.
 - Previously you could install the app in-addition to the extension to decrease hook-times. This is **NO LONGER THE CASE**. This is a DISCORD delegation.
 - If you want to hard-shutdown a presence, just turn the presence off and on to re-register it.
-- You can also restart both your Discord client and web browser to force the system to unhook, or begin a new rich-presence activity to overwrite it.
+- You can also restart your Discord client and web browser to force the system to unhook, or begin a new rich-presence activity to overwrite it.
 - The hook time is currently being worked on from a developer standpoint on the PreMiD side, however-- there is only so much that can be done. Discord itself has the majority of the limitations.
 
-## "My Discord account isn't syncing!" (Yellow ! Error)
+## Timestamps incorrect
 
-- Check that you do not have any antiviruses which can interfere with the port connection between PreMiD and Discord.
-- Ensure you are using the _Official Discord Client_ instead of a modified/forked version. Unofficial clients can have different code that PreMiD is incompatible with.
-  - EG: BetterDiscord or PowerCord
-- Reinstall PreMiD completely. Do this _after_ disabling your AntiVirus and Firewall temporarially. (This includes Malwarebytes). Please note this is just for testing purposes.
-- You may benefit from visiting the [Official Discord Server](https://discord.premid.app/) to request help with navigating console logs and diagnosing the problem.
-- If you still cannot connect to your Discord account after following the troubleshooting steps, and you are **not using a modified client** please visit the [Bug Report Submission Form](https://github.com/PreMiD/Presences/issues/new?assignees=&labels=bug%2Cneeds+repro&template=bug_report.yml) and let the developers know.
-
-## "My timestamps are wrong!/Eternal "Green Time" issue."
-
-- Discord is having some timestamp bugs depending on version. Again, check **your account on another device**, and you may see these timestamps working properly instead of showing Elapsed Playtime.
+- Ensure your presence is not in **privacy mode**. Timestamps will not reflect properly if the presence in-use is set to use this mode.
+- There may be another activity interfering. Turn on and off PreMiD, and refresh the webpage being used for rich presence.
+- Discord is having some timestamp bugs depending on version. Check **your account on another device**, and you may see these timestamps working properly instead of showing Elapsed Playtime.
 - This is not an issue with PreMiD, but Discord. Sometimes it functions perfect, sometimes it does not. **There is nothing anyone can do about it** besides trying a refresh or restart using the above steps.
+
+## Other issues/found a software bug.
+
+- Reinstall PreMiD completely if you haven't already.
+- You may benefit from visiting the [Official Discord Server](https://discord.premid.app/) to request help with navigating console logs and diagnosing the problem.
+- You can use the [Bug Report Submission Form](https://github.com/PreMiD/Presences/issues/new?assignees=&labels=bug%2Cneeds+repro&template=bug_report.yml) and let the developers know.
