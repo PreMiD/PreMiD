@@ -23,8 +23,8 @@
 
 - You can do this with "Allow this extension to read and change all your data on websites you visit" "On click"
 - Once you go to those pages, _click_ the extension to ensure it's active for those sites. Re-load any pages after.
-- Go to PreMiD and select your icon to see settings. Ensure "Enabled" is on
-  - You can turn "Enabled" **off** and back **on** to jumpstart the extension.
+- Go to PreMiD and select your icon to see settings. Ensure "Enabled" is on, or "Paused" is _Not_ on in newer versions.
+  - You can turn "Enabled" **off** and back **on** to jumpstart the extension. (In newer versions, this is "PAUSED" and can be flipped **on** then **off**)
   - Sometimes just turning "Use Playing Status" **off** and back **on** will cause the presence to load.
 - In your _web browser, fully reload all pages using PreMiD or restart the browser_
   - Most problems can be fixed by relaunching your web browser!
@@ -37,7 +37,7 @@ If **all of the above steps were followed in order:**
 ![YouTube Presence Settings](/guide-images/gu-p1-ytsetting.png)
 
 - Turn Privacy mode On and Off. If using YouTube there may be an icon in the bottom of a video with a slash through an eye. Click this! Give it a moment to load and check your Discord Status.
-- Turn "Enabled" off and on.
+- Turn "Enabled" off and on. (In newer versions, this is "PAUSED" and can be flipped **on** then **off**)
 
 ![PreMiD Settings](/guide-images/gu-p1-pmsetting.png)
 

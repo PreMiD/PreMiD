@@ -23,7 +23,9 @@ outline: [2, 3]
 
 <sub>_"Netflix Thumbnails aren't working!"_</sub>
 
-*Most of the time this problem is caused by privacy mode being enabled.*
+> [!NOTE]
+>Most of the time this problem is caused by privacy mode being enabled.
+
 - Tick **Privacy Mode** **on and off**.
 - If there are settings for the Netflix presence to have a still-frame thumbnail or a media-specific one, set the option you prefer under the presence settings.
 - Turn off the presence (disable the switch-box) and re-enable the presence (turn on the switch-box)
@@ -55,7 +57,11 @@ outline: [2, 3]
 
 <sub>_"YouTube Thumbnails aren't working!"_</sub>
 
-*Most of the time this problem is caused by privacy mode being enabled.*
+![YouTube Privacy Overwrite](/guide-images/gu-p4-privorte.png)
+
+> [!NOTE]
+>Most of the time this problem is caused by privacy mode being enabled.
+
 - Tick **Privacy Mode** **on and off**.
 - If you have **Privacy Overwrite** enabled, turn it off.
 - Go to the YouTube Presence in the extension. Ensure you have the "THUMBNAIL" setting turned ON.
@@ -63,6 +69,8 @@ outline: [2, 3]
 ## YouTube Metadata
 
 <sub>_"YouTube Isn't showing titles!"_</sub>
+
+![YouTube Presence Settings](/guide-images/gu-p1-ytsetting.png)
 
 - Open the YouTube Presence under PreMiD and do the following:
   - Turn OFF **Privacy Mode**
@@ -73,7 +81,9 @@ outline: [2, 3]
 
 <sub>_"Video or Audio Presence isn't showing my media names or images!"_</sub>
 
-_Most media presences have a privacy mode. Some are enabled by default and will need to be turned off._
+> [!NOTE]
+>Most media presences have a privacy mode. Some are enabled by default and will need to be turned off.
+
 - Open the Presence under PreMiD and do the following:
   - Turn OFF **Privacy Mode**
   - (If the presence has the setting) Turn OFF **Privacy Overwrite Button**
