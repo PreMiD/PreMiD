@@ -144,7 +144,7 @@ function sidebarTroubleshooting(): DefaultTheme.SidebarItem[] {
 			},
   {
 				text: "Feature Guide",
-   				link: "/extglossary",
+   				link: "/troubleshooting/extglossary",
 			},
 			{
 				text: "Resolving Issues",
