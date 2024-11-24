@@ -1,7 +1,6 @@
 ## Part 1: Resetting PreMiD to Discord Hooks
 
-- Close your web-browser fully.
-- Open your web-browser again.
+- Close and reopen your web-browser.
 - Navigate to PreMiD extension, make sure you're logged in with Discord (Your icon should appear in the top right of the extension)
 - Select your user-icon in the top-right corner of the extension.
 - Select "Logout" to log out of Discord from the PreMiD extension.
@@ -11,7 +10,7 @@
 - Ensure you have **no** other games or programs running that will take priority.
 - Navigate to a presence-enabled site or [Click Here](https://www.youtube.com/watch?v=jNQXAC9IVRw) to test your PreMiD with YouTube.
 
-## **Part 2: Presence Fixing**
+## Part 2: Presence Fixing
 
 - Turn on your presence and ensure privacy mode is **off**
 - Right-click the extension in your **browser** and go to "Manage"
@@ -29,7 +28,7 @@
 - Finally, you should see your activity.
 - If this doesn't work, flick off and on "Playing Status" and it should kick online.
 
-## **Part 3: Kickstarts**
+## Part 3: Kickstarts
 
 If **all of the above steps were followed in order:**
 
