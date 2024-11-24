@@ -36,7 +36,7 @@ _This is not a fully comprehensive list, but should give a relatively comfortabl
 - Allows a user to hide what they are watching while still showing the specific presence application.
   - _EG: Watching Netflix for 2:49_
 
-![YouTube Privacy](/guide-images/gu-p4-priorte.png)
+![YouTube Privacy](/guide-images/gu-p4-privorte.png)
 
 **Privacy Overwrite Button**
 - _YouTube Specific_
