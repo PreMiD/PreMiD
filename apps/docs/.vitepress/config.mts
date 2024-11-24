@@ -143,6 +143,10 @@ function sidebarTroubleshooting(): DefaultTheme.SidebarItem[] {
 				link: "/",
 			},
 			{
+				text: "Function Glossary",
+   				link: "/extension-glossary",
+			},
+			{
 				text: "Resolving Issues",
 				link: "/resolving-issues",
 				base: "/troubleshooting/issues",
