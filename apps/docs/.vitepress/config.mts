@@ -142,6 +142,10 @@ function sidebarTroubleshooting(): DefaultTheme.SidebarItem[] {
 				text: "Troubleshooting",
 				link: "/",
 			},
+  {
+				text: "Feature Guide",
+   				link: "/extglossary",
+			},
 			{
 				text: "Resolving Issues",
 				link: "/resolving-issues",
@@ -160,10 +164,6 @@ function sidebarTroubleshooting(): DefaultTheme.SidebarItem[] {
 						],
 						link: "/media-presence-based",
 					},
-{
-				text: "Function Glossary",
-   				link: "/extglossary",
-			},
 				],
 			},
 		],
