@@ -26,8 +26,10 @@
 
 ## Buttons don't show on Discord
 
-- **You won't see buttons on your own device.** This is only seen on a device that isn't the one PreMiD is running on.
-- If on PC, look at yourself on your phone and vice versa.
+![Show Buttons](/guide-images/gu-p4-buttons.png)
+
+- **You won't see buttons on your own account.** 
+  - _Note: Previously a person could see their own buttons on a secondary device. This is no longer the case. Only other users can now see buttons._
 
 ## Presence hook/unhook time
 
