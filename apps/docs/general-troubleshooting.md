@@ -29,10 +29,7 @@
 - Right-click the extension in your **browser** and go to "Manage" 
 - Check under "Site access" and make sure the correct pages are enabled.
 
-<<<<<<< HEAD
-=======
-![Browser Extension Settings](apps/docs/public/guide-images/gu-p1-browser.png)
->>>>>>> 67ce21006263515f39c437e22abf344b7fe8f1a2
+![Browser Extension Settings](public/guide-images/gu-p1-browser.png)
   - You can do this with "Allow this extension to read and change all your data on websites you visit" "On click"  
  - Once you go to those pages, *click* the extension to ensure it's active for those sites. Re-load any pages after!
 - Go to Settings for the plugin, click your icon and make sure "Enabled" is on
@@ -46,18 +43,11 @@
 ### **Part 3: Kickstarts**
 If **all of the above steps were followed in order:**
 
-<<<<<<< HEAD
-![alt text](veryCrunchy/PreMiD/apps/docs/public/guide-images/gu-p1-ytsetting.png)
-=======
-![YouTube Presence Settings](public/YTSettings.png)
->>>>>>> 67ce21006263515f39c437e22abf344b7fe8f1a2
+![YouTube Presence Settings](public/guide-images/gu-p1-ytsetting.png)
 - Turn Privacy mode On and Off. If using Youtube there may be an icon in the bottom of a video with a slash through an eye. Click this! Give it a moment to load and check your Discord Status. 
 - Turn "Enabled" off and on 
 
-<<<<<<< HEAD
-![PreMiD Settings](apps/docs/public/guide-images/gu-p1-pmsetting.png)
-=======
->>>>>>> 67ce21006263515f39c437e22abf344b7fe8f1a2
+![PreMiD Settings](public/guide-images/gu-p1-pmsetting.png)
 - Check the store page for your extension, as sometimes it only activates from certain web URLS.
   - *EG: Soundcloud will only work if the page listed in the presence store is from "Soundcloud.com" You cannot use other hosts!*
 - Fully check your Web Extension > Manage page and ensure it is set up to work.
