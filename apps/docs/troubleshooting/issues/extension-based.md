@@ -31,7 +31,7 @@
 - **You won't see buttons on your own account.**
 
 > [!IMPORTANT]
-> Previously a person could see their own buttons on a secondary device. This is no longer the case. Only other users can now see buttons. Previously a person could see their own buttons on a secondary device. This is no longer the case. Only other users can now see buttons.\_
+> Previously a person could see their own buttons on a secondary device. This is no longer the case. Only other users can now see buttons.
 
 ## Presence Hook/Unhook Time
 
