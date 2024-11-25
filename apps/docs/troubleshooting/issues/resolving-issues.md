@@ -45,5 +45,5 @@ If **all of the above steps were followed in order:**
   - _EG: Soundcloud will only work if the page listed in the presence store is from "Soundcloud.com" You cannot use other hosts!_
 - Fully check your Web Extension > Manage page and ensure it is set up to work.
   - _EG: "Allow this extension to read and change all your data on websites you visit > On Specific Sites" "https://www.youtube.com/"_
-  - _Note: An "*"/Asterisk is a wildcard value, meaning any page from that host can be accessed._
+  - _Note: An "\*"/Asterisk is a wildcard value, meaning any page from that host can be accessed._
 - After any changes are made, it's always a good idea to close your web browser and Discord to reload.

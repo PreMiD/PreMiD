@@ -2,21 +2,21 @@
 
 <sub>_"I don't know how to install a zip file!"_</sub>
 
-- If given a zip file for your installation of PreMiD, it will be browser-dependent on how to navigate to the correct pages. 
+- If given a zip file for your installation of PreMiD, it will be browser-dependent on how to navigate to the correct pages.
 - Know whether your browser is based on **Chromium**, **Safari** or **Firefox**'s architecture. This will make a difference for installation and change the base file that you need.
-  - Each browser generally uses one of these three backend systems. Opera/Opera GX/Edge all use Chromium, as an example. 
+  - Each browser generally uses one of these three backend systems. Opera/Opera GX/Edge all use Chromium, as an example.
 
 ## Firefox-Based Extension
 
 ![Firefox Extension Button](/guide-images/gu-p2-ffexsel.png)
 
-- Navigate to the top right of your browser page. Click the Puzzle-Piece icon. 
+- Navigate to the top right of your browser page. Click the Puzzle-Piece icon.
 - Under the menu, select **Extensions**.
 
 ![Firefox Install](/guide-images/gu-p2-ffexman.png)
 
-- When in the Extensions menu, you will see a cog at the mid-right corner of the page. Select it. 
-- You will see "Install Extension from File." 
+- When in the Extensions menu, you will see a cog at the mid-right corner of the page. Select it.
+- You will see "Install Extension from File."
 - Select your PreMiD zip-file. You do **not have to unzip it.**
 - Enable the extension.
 
@@ -25,7 +25,7 @@
 ![Chromium Extension Button](/guide-images/gu-p2-chrexsel.png)
 
 - Navigate to the top right of your browser page. Click the Puzzle-Piece or box-shaped icon.
-  - Between browsers this may look different. This demonstration was captured on Opera GX. 
+  - Between browsers this may look different. This demonstration was captured on Opera GX.
 - Under the menu, select **Manage Extensions**.
 
 ![Chromium Install](/guide-images/gu-p2-chrexman.png)
@@ -42,9 +42,9 @@
 
 ![Discord Login](/guide-images/gu-pmdislink.png)
 
-- After logging in, the <span style="color:Red">**Red Exclamation Point (!)**</span> will disappear. You can now use PreMiD normally. 
-- Manually installing has no negative impact on your ability to use any of the PreMiD functions. 
-- If you are installing manually as an update, be sure to _remove the previous install_ from your extensions menu. 
+- After logging in, the <span style="color:Red">**Red Exclamation Point (!)**</span> will disappear. You can now use PreMiD normally.
+- Manually installing has no negative impact on your ability to use any of the PreMiD functions.
+- If you are installing manually as an update, be sure to _remove the previous install_ from your extensions menu.
 - If updating via manual installation, you will have to visit the [PreMiD Store](https://premid.app/store) to re-add your non-default presences.
 
 > [!NOTE]

@@ -24,7 +24,7 @@ outline: [2, 3]
 <sub>_"Netflix Thumbnails aren't working!"_</sub>
 
 > [!NOTE]
->Most of the time this problem is caused by privacy mode being enabled.
+> Most of the time this problem is caused by privacy mode being enabled.
 
 - Tick **Privacy Mode** **on and off**.
 - If there are settings for the Netflix presence to have a still-frame thumbnail or a media-specific one, set the option you prefer under the presence settings.
@@ -60,7 +60,7 @@ outline: [2, 3]
 ![YouTube Privacy Overwrite](/guide-images/gu-p4-privorte.png)
 
 > [!NOTE]
->Most of the time this problem is caused by privacy mode being enabled.
+> Most of the time this problem is caused by privacy mode being enabled.
 
 - Tick **Privacy Mode** **on and off**.
 - If you have **Privacy Overwrite** enabled, turn it off.
@@ -82,14 +82,14 @@ outline: [2, 3]
 <sub>_"Video or Audio Presence isn't showing my media names or images!"_</sub>
 
 > [!NOTE]
->Most media presences have a privacy mode. Some are enabled by default and will need to be turned off.
+> Most media presences have a privacy mode. Some are enabled by default and will need to be turned off.
 
 - Open the Presence under PreMiD and do the following:
   - Turn OFF **Privacy Mode**
   - (If the presence has the setting) Turn OFF **Privacy Overwrite Button**
   - (Optional) Turn ON **Show Title As Presence** (This setting MAY NOT be applicable!)
 - Reload the video page. You should now see the title and timestamp after a number of seconds.
-- Some presences may not have thumbnail information (EG: Plex) 
+- Some presences may not have thumbnail information (EG: Plex)
 
 ## Other: Timestamp Malfunction
 

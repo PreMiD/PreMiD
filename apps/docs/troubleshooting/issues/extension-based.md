@@ -28,10 +28,10 @@
 
 ![Show Buttons](/guide-images/gu-p4-buttons.png)
 
-- **You won't see buttons on your own account.** 
+- **You won't see buttons on your own account.**
 
 > [!IMPORTANT]
-> Previously a person could see their own buttons on a secondary device. This is no longer the case. Only other users can now see buttons. Previously a person could see their own buttons on a secondary device. This is no longer the case. Only other users can now see buttons._
+> Previously a person could see their own buttons on a secondary device. This is no longer the case. Only other users can now see buttons. Previously a person could see their own buttons on a secondary device. This is no longer the case. Only other users can now see buttons.\_
 
 ## Presence Hook/Unhook Time
 
@@ -55,22 +55,22 @@
 _This section assumes a general knoweledge of how to access your browser's extension menu. There is a vague informational guide to do this located under The [Manual Install](../manual-install.md#manually-installingno-extension-store/manual-install.md) section._
 
 - You should attempt to install PreMiD on another browser to test for functionality.
-  - If PreMiD <ins>is</ins> functional in another browser, this isolates the issue to your web-browser. Further troubleshooting should be done on the browser itself. 
+  - If PreMiD <ins>is</ins> functional in another browser, this isolates the issue to your web-browser. Further troubleshooting should be done on the browser itself.
     - Restart the browser, if you have not.
     - Clear your browser cache/cookies/history.
     - Update your browser, ensuring it is on the most updated version.
     - Ensure the PreMiD extension is fully up-to-date.
-    - On the webpage being used to test your presence detection, use ***CTRL+F5*** to hard-refresh the page, or duplicate the tab whenever changes are made.
-    - Under Extensions, disable all extensions except PreMiD and test for hooking ability. If you ***are*** able to use PreMiD after this point, begin enabling Extensions one-by-one until the conflict is located.
+    - On the webpage being used to test your presence detection, use **_CTRL+F5_** to hard-refresh the page, or duplicate the tab whenever changes are made.
+    - Under Extensions, disable all extensions except PreMiD and test for hooking ability. If you **_are_** able to use PreMiD after this point, begin enabling Extensions one-by-one until the conflict is located.
 
 > [!IMPORTANT]
 > If you come across any kind of incompatibility between extensions while using this guide, it is **highly encouraged** to submit a [Bug Report](https://github.com/PreMiD/Presences/issues/new?assignees=&labels=bug%2Cneeds+repro&template=bug_report.yml). **Issues unknown to developers are unable to be investigated, and not all extensions can be tested for compatibility**
 
-  - If PreMiD <ins>is not</ins> functional in another browser (preferably a more-utilized one such as Chrome, Firefox, Edge, etc.) check the version of the extension is up-to-date, all browsers are up-to-date, and restart the machine.
-    - Update Discord, if able.
-    - Update the operating system if there are pending updates.
-    - Check for any alerts under prorgams such as Windows Defender, Malwarebytes, and similar. 
-    - (Optional) Run a system scan in your antivirus of choice. While not typical, a system issue may cause bugs in other software.
+- If PreMiD <ins>is not</ins> functional in another browser (preferably a more-utilized one such as Chrome, Firefox, Edge, etc.) check the version of the extension is up-to-date, all browsers are up-to-date, and restart the machine.
+  - Update Discord, if able.
+  - Update the operating system if there are pending updates.
+  - Check for any alerts under prorgams such as Windows Defender, Malwarebytes, and similar.
+  - (Optional) Run a system scan in your antivirus of choice. While not typical, a system issue may cause bugs in other software.
 
 If after all steps are exhausted no change is seen, it is encouraged to notate your troubleshooting steps as well as software versions and send a [Bug Report](https://github.com/PreMiD/Presences/issues/new?assignees=&labels=bug%2Cneeds+repro&template=bug_report.yml), or visit the [Official Discord Server](https://discord.premid.app/) to explore more in-depth solutions.
 
