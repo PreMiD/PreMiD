@@ -25,11 +25,11 @@ const members = [
 
 ### Prerequisites
 
-- [x] PreMiD should be installled at this point.
-- [x] Confirm you are logged into Discord via PreMiD.
-- [x] Activity Privacy > Detected Activities must turned on in Discord settings.
-- [x] Clearing your browser cache/cookies/history may fix a presence not registering.
-- [x] <ins>Your web browser should be up to date.</ins>
+- [:heavy_check_mark:] PreMiD should be installled at this point.
+- [:heavy_check_mark:] Confirm you are logged into Discord via PreMiD.
+- [:heavy_check_mark:] Activity Privacy > Detected Activities must turned on in Discord settings.
+- [:heavy_check_mark:] Clearing your browser cache/cookies/history may fix a presence not registering.
+- [:heavy_check_mark:] <ins>Your web browser should be up to date.</ins>
 
 > [!TIP] 
 > If you have _not_ attempted to restart your web browser before starting this guide, you should begin by doing so. Most of the steps contained in this guide will begin with this step.
