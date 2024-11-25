@@ -25,16 +25,17 @@ const members = [
 
 ### Prerequisites
 
-- [x] PreMiD should be installled at this point.
-- [x] Confirm you are logged into Discord via PreMiD.
-- [x] Activity Privacy > Detected Activities must be turned on in Discord settings.
-- [x] Clearing your browser cache/cookies/history may fix a presence not registering.
-- [x] <ins>Your web browser should be up to date.</ins>
+1.  PreMiD should be installled. If not; [Get PreMiD](https://premid.app/downloads).
+1.  Confirm you are logged in with the right Discord account inside the PreMiD extension.
+1.  Inside your discord settings, make sure the following setting is enabled.
+    > Activity Setting > Activity Privacy > Share your detected activities with others
+1.  Your web browser should be up to date.
+1.  The PreMiD extension should be up to date.
 
 > [!TIP]
-> If you have _not_ attempted to restart your web browser before starting this guide, you should begin by doing so. Most of the steps contained in this guide will begin with this step.
+> If you have not yet attempted to restart your web browser before starting this guide, you should begin by doing so. Most of the steps contained in this guide will begin with this.
 
 ---
 
-Troubleshooting Guides brought to you by
+Authored by
 <VPTeamMembers size="small" :members="members" />
