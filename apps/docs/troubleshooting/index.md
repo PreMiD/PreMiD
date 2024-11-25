@@ -25,7 +25,7 @@ const members = [
 
 ### Prerequisites
 
-- [:heavy_check_mark:] PreMiD should be installled at this point.
+- [:heavy_check_mark:] PreMiD should be installed at this point.
 - [:heavy_check_mark:] Confirm you are logged into Discord via PreMiD.
 - [:heavy_check_mark:] Activity Privacy > Detected Activities must turned on in Discord settings.
 - [:heavy_check_mark:] Clearing your browser cache/cookies/history may fix a presence not registering.
