@@ -13,11 +13,11 @@ _Please note, this portion of the guide is always expanding. Alpha, Beta, and Re
 
 **Heartbeat**
 
-- Heartbeat is a diagnostic tool. This enables developers to see information about the PreMiD extension as well as the installed presences on your machine, which allows for easier error reporting and fixing when attempting to get to the bottom of an issue. For the normal every-day user, this will have absolutely no usage.
+  - Heartbeat is a diagnostic tool. In *future versions of PreMiD* this will show some fancy information and statistics. 
 
 **Developer Mode**
 
-- Another diagnostic tool for most. If you're reading this thread you will most likely never use this. When flipped on, PreMiD will send information to the service worker of your browser in a readable format that allows for easier information gathering. This isn't helpful for most users, unless you're developing a presence or helping a presence developer to diagnose an issue.
+- A diagnostic and development tool.  Most users will never use this. Toggling this on will open the websocket port of PreMiD. 
 
 **Sync Language**
 
