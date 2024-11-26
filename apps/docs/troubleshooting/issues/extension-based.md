@@ -1,6 +1,6 @@
-# Extension Based Issues
+# PreMiD Extension Issues
 
-## Dissapearing Presences
+## Presences Disappear
 
 <sub>_"My presence disappears randomly!"_</sub>
 
@@ -11,7 +11,7 @@
 - Discord may auto-update which will overwrite a presence until the page you're using for presence is the active window and refreshed.
 - You may need to reinstall your presences to get them to work. If all else fails, **disable all presences you are not currently using and reinstall the one you are.**
 
-## App Not Working
+## App Unavailable
 
 ![There is no app](/guide-images/there-is-no-app.png)
 
@@ -24,7 +24,7 @@
 - You **CANNOT USE** desktop applications such as YouTube or Netflix. Media _must be played_ on your browser that PreMiD is installed on, from the _supported host URL's._
 - You **can **use PreMiD on mobile,** as long as your browser allows you to use extensions** and you have to access the websites, not the apps.
 
-## Buttons Shown In Discord
+## Buttons Are Missing
 
 ![Show Buttons](/guide-images/gu-p4-buttons.png)
 
@@ -33,9 +33,9 @@
 > [!IMPORTANT]
 > Previously a person could see their own buttons on a secondary device. This is no longer the case. Only other users can now see buttons.
 
-## Presence Hook/Unhook Time
+## Presence Hooking
 
-<sub>_""I can't get the last video I was watching to go away!"_</sub>
+<sub>_"I can't get the last video I was watching to go away!"_</sub>
 
 - PreMiD can take up to **20 minutes** to fully unhook from a closed page.
 - Previously you could install the app in-addition to the extension to decrease hook-times. This is **NO LONGER THE CASE**. The application was too-limited in scope and caused more issues than necessary.
@@ -45,10 +45,17 @@
 
 ## Timestamps Incorrect
 
-- Ensure your presence is not in **privacy mode**. Timestamps will not reflect properly if the presence in-use is set to use this mode.
-- There may be another activity interfering. Turn on and off PreMiD, and refresh the webpage being used for rich presence.
-- Discord is having some timestamp bugs depending on version. Check **your account on another device**, and you may see these timestamps working properly instead of showing Elapsed Playtime.
-- In some cases this is an issue with Discord. Sometimes it functions perfect, sometimes it does not. **There is nothing anyone can do about it** besides trying a refresh or restart using the above steps.
+<sub>_"Discord is only showing how long I've had my profile open!" or "There's nothing here..."_</sub>
+
+- Ensure your presence is not in **Privacy Mode**. Timestamps will not reflect properly if the presence in-use is set to use this mode.
+- In some cases, ***CTRL+F5***/hard refresh your browser page may fix the problem. 
+- Older versions of PreMiD suffer from this error. If there is an update available, update!
+- There may be another activity interfering. 
+    - On the settings page of PreMiD, navigate to "Enable" or "Pause" depending on your version. 
+    - Turn it Off and back On (Enable) or Off and back On (Pause)
+    - Reresh the webpage being used, or restart the browser. Sometimes ***CTRL+F5***/hard refresh works best. 
+- Browser errors do occur. Update your browser version to the latest release. 
+- In some cases this is an issue with Discord. Sometimes it functions perfect, sometimes it does not. **There is nothing anyone can do about it** besides updating the software. 
 
 ## Advanced Troubleshooting
 
