@@ -13,11 +13,11 @@ _Please note, this portion of the guide is always expanding. Alpha, Beta, and Re
 
 **Heartbeat**
 
-  - Heartbeat is a diagnostic tool. In *future versions of PreMiD* this will show some fancy information and statistics. 
+- Heartbeat is a diagnostic tool. In _future versions of PreMiD_ this will show some fancy information and statistics.
 
 **Developer Mode**
 
-- A diagnostic and development tool.  Most users will never use this. Toggling this on will open the websocket port of PreMiD. 
+- A diagnostic and development tool. Most users will never use this. Toggling this on will open the websocket port of PreMiD.
 
 **Sync Language**
 
@@ -53,7 +53,7 @@ _Please note, this portion of the guide is always expanding. Alpha, Beta, and Re
 **Privacy Overwrite Button**
 
 - _YouTube Specific_
-- Allows a user to impliment a small eye-shaped button on the media-player that can control privacy-mode without opening the PreMiD extension.
+- Allows a user to implement a small eye-shaped button on the media-player that can control privacy-mode without opening the PreMiD extension.
 - This can be toggled on-and-off.
 
 **Privacy Overwrite TTL**
@@ -62,7 +62,7 @@ _Please note, this portion of the guide is always expanding. Alpha, Beta, and Re
 - When using the Privacy Overwrite option, it can be set to have a total lifespan.
 - Has no function if not using Privacy Mode.
 
-**Show Livestreams**
+**Show Live streams**
 
 - _Twitch Specific_
 - Shows information in regards to live broadcasts when on the applicable page.

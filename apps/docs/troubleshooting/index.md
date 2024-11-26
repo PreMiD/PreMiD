@@ -25,7 +25,7 @@ const members = [
 
 ### Prerequisites
 
-1.  PreMiD should be installled. If not; [Get PreMiD](https://premid.app/downloads).
+1.  PreMiD should be installed. If not; [Get PreMiD](https://premid.app/downloads).
 1.  Confirm you are logged in with the right Discord account inside the PreMiD extension.
 1.  Inside your discord settings, make sure the following setting is enabled.
     > Activity Setting > Activity Privacy > Share your detected activities with others
