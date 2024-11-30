@@ -49,7 +49,7 @@ export default defineI18nLocale(() => ({
   },
   header: {
     links: {
-      contributors: "ผู้พัฒนา",
+      contributors: "ผู้ร่วมพัฒนา",
       downloads: "ดาวน์โหลด",
       features: "ฟีเจอร์",
       store: "ร้านค้า"
@@ -134,11 +134,11 @@ export default defineI18nLocale(() => ({
       }
     },
     contributors: {
-      title: "ผู้พัฒนา",
+      title: "ผู้ร่วมพัฒนา",
       presenceDevelopers: "นักพัฒนา Presence",
       staff: "ทีมงาน",
       supporters: "ผู้สนับสนุน",
-      translators: "แปลภาษา",
+      translators: "ผู้แปลภาษา",
       avatar: {
         tooltip: "คลิกเพื่อคัดลอกอวาตาร์ของ {name}"
       }
