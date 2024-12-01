@@ -143,7 +143,7 @@ function sidebarTroubleshooting(): DefaultTheme.SidebarItem[] {
 				link: "/",
 			},
   {
-				text: "Feature Guide",
+				text: "Function Guide",
    				link: "/extglossary",
 			},
   {
