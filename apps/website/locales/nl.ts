@@ -2,17 +2,17 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "Ondersteun ons door je adblocker uit te schakelen."
     }
   },
   component: {
     searchBar: {
-      search: "Zoeken",
-      sortBy: false,
+      search: false,
+      sortBy: "Sorteer op",
       searchPresence: "Presence zoeken",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "Meest Gebruikt",
+        alphabetical: "Alfabetisch"
       },
       categories: {
         all: "Alle",
@@ -34,8 +34,8 @@ export default defineI18nLocale(() => ({
       loading: false
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "Voeg toe",
+      removePresence: "Verwijder"
     },
     donationModal: {
       title: false,
@@ -146,10 +146,10 @@ export default defineI18nLocale(() => ({
     downloads: {
       title: "Downloads",
       steps: {
-        install: false,
-        login: false,
-        add: false,
-        showoff: false
+        install: "Installeer extensie",
+        login: "Login met Discord",
+        add: "Presences toevoegen",
+        showoff: "Laat zien!"
       },
       section: {
         heading: {
