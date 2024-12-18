@@ -227,7 +227,7 @@ export default defineI18nLocale(() => ({
           information: "정보"
         },
         informationSection: {
-          contributors: false,
+          contributors: "기여자:",
           version: false,
           users: false,
           tags: false,
