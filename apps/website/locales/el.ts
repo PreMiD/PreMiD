@@ -41,7 +41,7 @@ export default defineI18nLocale(() => ({
       title: false,
       description: false,
       continue: false,
-      close: false,
+      close: "Κλείσιμο",
       patreon: false,
       github: false,
       holdTight: false
@@ -257,9 +257,9 @@ export default defineI18nLocale(() => ({
       status: "Κατάσταση"
     },
     legalList: {
-      privacyPolicy: false,
+      privacyPolicy: "Πολιτική Απορρήτου",
       termsOfService: false,
-      cookiePolicy: false
+      cookiePolicy: "Πολιτική των Cookies"
     },
     withLoveBy: false,
     by: false,
