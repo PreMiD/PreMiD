@@ -2,17 +2,17 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "Vă rugăm să ne susțineți dezactivând sistemul de blocare a reclamelor."
     }
   },
   component: {
     searchBar: {
       search: "Caută",
-      sortBy: false,
+      sortBy: "Sortează după",
       searchPresence: "Căutare Prezență",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "Cele mai utilizate",
+        alphabetical: "Alfabetic"
       },
       categories: {
         all: "Toate",
@@ -25,26 +25,26 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: false,
+      wip: "WIP",
       support: {
-        safari: false
+        safari: "Lucrăm pentru a susține Safari, stai pe fază!"
       }
     },
     userChip: {
-      loading: false
+      loading: "Se încarcă..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "Adaugă",
+      removePresence: "Șterge"
     },
     donationModal: {
-      title: false,
-      description: false,
-      continue: false,
+      title: "O Favorită Rapidă...",
+      description: "Sperăm că vei iubi PreMiD! Dacă îți aduce un zâmbet în față, de ce să nu împărtășești ceva dragoste înapoi? Echipa noastră de voluntari și-au pus inimile pentru a o face minunată doar pentru tine!",
+      continue: "Continuă",
       close: "Închide",
-      patreon: false,
-      github: false,
-      holdTight: false
+      patreon: "Suport pentru {name}",
+      github: "Sponsor pe {name}",
+      holdTight: "Ține-te bine... se încarcă butonul magic..."
     }
   },
   header: {
@@ -58,10 +58,10 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: false,
+        title: "Contribuții Prezență",
         error: {
-          title: false,
-          description: false
+          title: "Eroare",
+          description: "Avem probleme cu încărcarea acestui utilizator... Vă rugăm să încercați din nou mai târziu."
         }
       }
     },
@@ -69,87 +69,87 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "Acasă"
       },
-      title: false,
-      subtitle: false,
+      title: "Îmbunătățește-ți prezența online cu PreMiD",
+      subtitle: "Arătați-le prietenilor ce anume vă place {word}.",
       words: {
         music: "Muzică",
-        videos: false,
-        streams: false,
-        media: false
+        videos: "Videoclipuri",
+        streams: "Stream-uri",
+        media: "Media"
       },
-      description: false,
+      description: "PreMiD este un instrument simplu, puternic, care vă permite să partajați activitatea dvs. media curentă pe mai multe platforme, cum ar fi YouTube, Disney+, Netflix și multe altele. Rămâi conectat și lasă-i pe prietenii tăi să vadă ce vizualizezi în timp real.",
       getStarted: "Începe",
       sections: {
         feature: {
-          title: false,
+          title: "De ce vei iubi PreMiD",
           feature1: {
-            title: false,
-            description: false
+            title: "Control confidențialitate",
+            description: "Preia controlul setărilor tale de confidențialitate și decide ce activități împărtășești cu alții. Datele tale, regulile tale."
           },
           feature2: {
-            title: false,
-            description: false
+            title: "Dezvoltat de comunitate",
+            description: "Experiență suport fără precedent pentru o multitudine de platforme, alimentată de o comunitate pasionată și dedicată."
           },
           feature3: {
-            title: false,
-            description: false
+            title: "Setări personalizate",
+            description: "Ajustați experiența PreMiD cu opțiuni detaliate de personalizare pentru a se potrivi preferințelor și nevoilor dumneavoastră."
           },
           feature4: {
-            title: false,
-            description: false
+            title: "Ușor de configurat",
+            description: "Pregătește-te și fi gata de PreMiD în cel mai scurt timp. Procesul nostru de configurare directă asigură un început fără complicații."
           },
           feature5: {
-            title: false,
-            description: false
+            title: "Conformitate cu Discord TsC",
+            description: "Conformitate deplină cu Termenii de utilizare ai Discord, prin utilizarea criteriilor oficiale furnizate de Discord."
           },
           feature6: {
-            title: false,
-            description: false
+            title: "Caracteristici viitoare",
+            description: "Rămâi conectat la noile caracteristici și îmbunătățiri captivante care îți vor îmbunătăți experiența PreMiD și mai mult."
           }
         },
         howItWorks: {
-          title: false,
+          title: "Cum funcționează",
           step1: {
-            title: false,
-            description: false
+            title: "Instalează Extensia",
+            description: "Adaugă PreMiD browser-ului tău."
           },
           step2: {
-            title: false,
-            description: false
+            title: "Autentifică-te cu Discord",
+            description: "Conectează PreMiD cu contul tău de Discord."
           },
           step3: {
-            title: false,
-            description: false
+            title: "Adaugă Servicii",
+            description: "Alegeți serviciile pe care doriți să le afișați, cum ar fi YouTube, Disney+ și multe altele."
           },
           step4: {
-            title: false,
-            description: false
+            title: "Bucură-te",
+            description: "Partajează-ți activitatea și bucură-te de preMiD."
           }
         },
         callToAction: {
-          title: false,
-          description: false,
-          button: false
+          title: "Pregătit pentru a începe?",
+          description: "Alătură-te celor {count} utilizatori care deja iubesc PreMiD.",
+          button: "Începe acum"
         }
       }
     },
     contributors: {
       title: "Contribuitori",
-      presenceDevelopers: false,
+      presenceDevelopers: "Dezvoltatorii Prezențelor",
       staff: "Personal",
       supporters: "Suporteri",
       translators: "Traducători",
       avatar: {
-        tooltip: false
+        tooltip: "Click pentru a copia avatarul lui {name}"
       }
     },
     downloads: {
       title: "Descărcări",
       steps: {
-        install: false,
-        login: false,
-        add: false,
-        showoff: false
+        install: "Instalează Extensia",
+        login: "Autentifică-te cu Discord",
+        add: "Adaugă Prezența",
+        showoff: "Arată oprit!"
       },
       section: {
         heading: {
@@ -160,78 +160,78 @@ export default defineI18nLocale(() => ({
         }
       },
       browser: {
-        your: false,
-        other: false,
-        based: false
+        your: "Browserul tău",
+        other: "Alte browsere",
+        based: "{browser} bazat"
       },
       mobile: {
-        title: false,
-        description: false
+        title: "Vești proaste!",
+        description: "PreMiD nu este disponibil pentru dispozitivele mobile, ne pare rău!"
       },
       alphaAccess: {
-        title: false,
-        description: false,
-        callToAction: false
+        title: "Deblochează accesul exclusiv Alpha!",
+        description: "Pășește în viitorul PreMiD devenind Patron sau sponsorizându-ne pe GitHub. Sprijinul dvs. nu numai că stimulează dezvoltarea, ci vă oferă acces exclusiv la cele mai inovatoare caracteristici pe care le elaborăm. Experimentează ceea ce PreMiD poate oferi și influența traiectoria sa cu feedback-ul tău. Nu e vorba doar de a fi primul, ci de a fi parte din ceva mai mare.",
+        callToAction: "Află mai multe & Alătură-te inovării"
       },
-      faq: false,
+      faq: "Întrebări frecvente",
       faqs: {
         q1: {
-          question: false,
-          answer: false
+          question: "Ce este PreMiD?",
+          answer: "PreMiD este o unealtă simplă, configurabilă care îți permite să arăți ceea ce faci pe web în starea de activitate Discord."
         },
         q2: {
-          question: false,
-          answer: false
+          question: "Cum să folosesc PreMiD?",
+          answer: "Poți folosi PreMiD instalând extensia și conectându-te cu contul tău Discord. Odată ce te-ai conectat, poți adăuga prezențe la profilul tău și să le arăți prietenilor tăi."
         },
         q3: {
-          question: false,
-          answer: false
+          question: "Încalcă PreMid Termenii și Condițiile Discord?",
+          answer: "Nu, PreMiD nu încalcă Termenii și Condițiile Discord. PreMiD folosește API-ul Discord-ului (inclusiv datele API furnizate de Discord) pentru a seta activitatea. Aceasta înseamnă că PreMiD este în deplină conformitate cu TsC Discord."
         },
         q4: {
-          question: false,
-          answer: false
+          question: "Ce servicii suportă PreMiD?",
+          answer: "PreMiD suportă numeroase servicii diferite, inclusiv YouTube, Twitter și Netflix. Lista serviciilor suportate este în continuă creștere. Puteți vedea lista completă de prezențe pe pagina noastră de magazin."
         },
         q5: {
-          question: false,
-          answer: false
+          question: "Cum pot contribui la PreMiD?",
+          answer: "Puteți contribui la PreMiD alăturându-vă comunității noastre pe GitHub. Puteți ajuta raportând probleme, sugerând funcționalități sau contribuind cu cod."
         },
         q6: {
-          question: false,
-          answer: false
+          question: "Este PreMiD gratuit?",
+          answer: "Da, PreMiD este gratis. Cu toate acestea, acceptăm donații prin Patreon și sponsorizări pe GitHub pentru a ajuta la dezvoltarea proiectului."
         },
         q7: {
-          question: false,
-          answer: false
+          question: "Ce ar trebui să fac dacă întâlnesc o problemă cu PreMiD?",
+          answer: "Dacă întâmpini orice problemă cu PreMiD, te poți alătura serverului nostru de Discord pentru suport. Avem, de asemenea, un ghid pentru probleme în documentația noastră."
         },
         q8: {
-          question: false,
-          answer: false
+          question: "PreMiD nu acceptă xyz, îl puteți adăuga?",
+          answer: "Așa numitele noastre prezențe sunt determinate de comunitate, nu avem resursele necesare pentru a adăuga fiecare platformă. Cu toate acestea, puteți adăuga propria prezență urmând instrucțiunile de pe documentația noastră."
         },
         q9: {
-          question: false,
-          answer: false
+          question: "Cât de des este actualizat PreMiD?",
+          answer: "Suntem un proiect bazat pe voluntariat. Dorim să actualizăm PreMiD cât mai des posibil, dar nu putem promite că vom fi întotdeauna pregătiți."
         }
       }
     },
     store: {
       title: "Magazin",
-      noPresence: false,
+      noPresence: "Nicio prezență nu corespunde căutării tale...",
       presence: {
         button: {
-          reportIssue: false,
-          suggestFeature: false,
-          viewCode: false
+          reportIssue: "Raportează o problemă",
+          suggestFeature: "Sugerează o funcție nouă",
+          viewCode: "Vezi codul"
         },
         title: {
           description: "Descriere",
           information: "Informații"
         },
         informationSection: {
-          contributors: false,
-          version: false,
-          users: false,
-          tags: false,
-          supportedUrls: false
+          contributors: "Contribuitori:",
+          version: "Versiune: {version}",
+          users: "Utilizatori: {users}",
+          tags: "Etichete:",
+          supportedUrls: "URL-uri suportate:"
         }
       },
       header: {
@@ -242,42 +242,42 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "Parteneri",
-    followUs: false,
+    followUs: "Urmărește-ne",
     supportUs: "Susține-ne",
     more: "Mai multe",
-    legal: false,
+    legal: "Aspecte juridice",
     supportList: {
       donate: "Donează ",
       contribute: "Contribuie",
       translate: "Tradu"
     },
     moreList: {
-      faq: false,
+      faq: "Întrebări frecvente",
       documentation: "Documentație",
       status: "Statut"
     },
     legalList: {
       privacyPolicy: "Politică de confidenţialitate",
-      termsOfService: false,
+      termsOfService: "Condiţii de utilizare",
       cookiePolicy: "Politică Cookies"
     },
-    withLoveBy: false,
-    by: false,
-    copyright: false
+    withLoveBy: "Cu",
+    by: "de",
+    copyright: "©️ {year}-{currentYear} {company} Toate drepturile rezervate."
   },
   error: {
     404: {
       title: false,
-      message: false
+      message: "Pagina pe care o cauți nu există."
     },
     500: {
       title: false,
-      message: false
+      message: "Ceva nu a mers bine."
     },
     default: {
-      title: false,
-      message: false,
-      button: false
+      title: "Eroare",
+      message: "Ceva nu a mers bine.",
+      button: "Înapoi"
     }
   }
 }));
