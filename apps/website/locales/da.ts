@@ -9,7 +9,7 @@ export default defineI18nLocale(() => ({
     searchBar: {
       search: "Søg",
       sortBy: false,
-      searchPresence: false,
+      searchPresence: "Søg efter Presence",
       sort: {
         mostUsed: false,
         alphabetical: false
@@ -51,7 +51,7 @@ export default defineI18nLocale(() => ({
     links: {
       contributors: "Bidragere",
       downloads: "Installationer",
-      features: false,
+      features: "Funktioner",
       store: "Butik"
     }
   },
@@ -235,8 +235,8 @@ export default defineI18nLocale(() => ({
         }
       },
       header: {
-        categories: false,
-        search: false
+        categories: "Kategorier",
+        search: "Søg efter Presence"
       }
     }
   },
@@ -257,9 +257,9 @@ export default defineI18nLocale(() => ({
       status: "Status"
     },
     legalList: {
-      privacyPolicy: false,
+      privacyPolicy: "Fortrolighedspolitik",
       termsOfService: false,
-      cookiePolicy: false
+      cookiePolicy: "Cookiepolitik"
     },
     withLoveBy: false,
     by: false,
