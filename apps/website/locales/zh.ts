@@ -67,7 +67,7 @@ export default defineI18nLocale(() => ({
     },
     home: {
       meta: {
-        title: false
+        title: "首页"
       },
       title: false,
       subtitle: false,
