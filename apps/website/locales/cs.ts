@@ -8,11 +8,11 @@ export default defineI18nLocale(() => ({
   component: {
     searchBar: {
       search: "Hledat",
-      sortBy: false,
+      sortBy: "Seřadit podle",
       searchPresence: "Hledat Presence",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "Nejpoužívanější",
+        alphabetical: "Abecedně"
       },
       categories: {
         all: "Vše",
@@ -25,22 +25,22 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: false,
+      wip: "WIP",
       support: {
         safari: false
       }
     },
     userChip: {
-      loading: false
+      loading: "Načítání..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "Přidat",
+      removePresence: "Odebrat"
     },
     donationModal: {
       title: false,
       description: false,
-      continue: false,
+      continue: "Pokračovat",
       close: "Zavřít",
       patreon: false,
       github: false,
@@ -60,7 +60,7 @@ export default defineI18nLocale(() => ({
       userPage: {
         title: false,
         error: {
-          title: false,
+          title: "Chyba",
           description: false
         }
       }
@@ -73,9 +73,9 @@ export default defineI18nLocale(() => ({
       subtitle: false,
       words: {
         music: "Hudba",
-        videos: false,
-        streams: false,
-        media: false
+        videos: "Videa",
+        streams: "Streamování",
+        media: "Média"
       },
       description: false,
       getStarted: "Jak Začít",
@@ -122,14 +122,14 @@ export default defineI18nLocale(() => ({
             description: false
           },
           step4: {
-            title: false,
+            title: "Užívej si",
             description: false
           }
         },
         callToAction: {
           title: false,
           description: false,
-          button: false
+          button: "Přidej Se"
         }
       }
     },
@@ -137,7 +137,7 @@ export default defineI18nLocale(() => ({
       title: "Přispěvatelé",
       presenceDevelopers: false,
       staff: "Jadro týmu",
-      supporters: false,
+      supporters: "Podporovatelé",
       translators: "Překladatelé",
       avatar: {
         tooltip: false
@@ -149,7 +149,7 @@ export default defineI18nLocale(() => ({
         install: false,
         login: false,
         add: false,
-        showoff: false
+        showoff: "Předveď se!"
       },
       section: {
         heading: {
@@ -165,7 +165,7 @@ export default defineI18nLocale(() => ({
         based: false
       },
       mobile: {
-        title: false,
+        title: "Špatné zprávy!",
         description: false
       },
       alphaAccess: {
@@ -220,7 +220,7 @@ export default defineI18nLocale(() => ({
         button: {
           reportIssue: false,
           suggestFeature: false,
-          viewCode: false
+          viewCode: "Zobrazit Kód"
         },
         title: {
           description: "Popis",
@@ -230,7 +230,7 @@ export default defineI18nLocale(() => ({
           contributors: false,
           version: false,
           users: false,
-          tags: false,
+          tags: "Štítky:",
           supportedUrls: false
         }
       },
@@ -242,17 +242,17 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "Partneři",
-    followUs: false,
+    followUs: "Sleduj nás",
     supportUs: "Podpoř nás",
     more: "Více",
     legal: false,
     supportList: {
-      donate: false,
+      donate: "Podpořit",
       contribute: "Přispět",
       translate: "Přeložit"
     },
     moreList: {
-      faq: false,
+      faq: "FAQ",
       documentation: "Dokumentace",
       status: "Stav"
     },
@@ -261,8 +261,8 @@ export default defineI18nLocale(() => ({
       termsOfService: false,
       cookiePolicy: "Zásady používání souborů cookie"
     },
-    withLoveBy: false,
-    by: false,
+    withLoveBy: "S",
+    by: "od",
     copyright: false
   },
   error: {
@@ -275,9 +275,9 @@ export default defineI18nLocale(() => ({
       message: false
     },
     default: {
-      title: false,
+      title: "Chyba",
       message: false,
-      button: false
+      button: "Zpět"
     }
   }
 }));
