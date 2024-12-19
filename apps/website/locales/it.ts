@@ -67,13 +67,13 @@ export default defineI18nLocale(() => ({
     },
     home: {
       meta: {
-        title: false
+        title: "Homepage"
       },
       title: false,
       subtitle: false,
       words: {
         music: "Musica",
-        videos: false,
+        videos: "Video",
         streams: false,
         media: false
       },
@@ -137,7 +137,7 @@ export default defineI18nLocale(() => ({
       title: "Collaboratori",
       presenceDevelopers: false,
       staff: "Staff",
-      supporters: false,
+      supporters: "Sostenitori",
       translators: "Traduttori",
       avatar: {
         tooltip: false
