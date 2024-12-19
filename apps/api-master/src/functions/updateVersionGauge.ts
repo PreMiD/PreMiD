@@ -2,7 +2,6 @@ import process from "node:process";
 import pLimit from "p-limit";
 import type { Gauge } from "prom-client";
 import { mainLog, redis } from "../index.js";
-import { insertIpData } from "./insertIpData.js";
 
 export const updateExtensionVersionGaugeLimit = pLimit(1);
 let log: debug.Debugger | undefined;
