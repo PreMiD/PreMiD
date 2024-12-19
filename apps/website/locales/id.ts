@@ -2,17 +2,17 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "Tolong support kami dengan mematikan ad blocker Anda."
     }
   },
   component: {
     searchBar: {
       search: "Cari",
-      sortBy: false,
+      sortBy: "Sortir",
       searchPresence: "Cari Presence",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "Paling sering digunakan",
+        alphabetical: "Abjad"
       },
       categories: {
         all: "Semua",
@@ -25,26 +25,26 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: false,
+      wip: "WIP",
       support: {
-        safari: false
+        safari: "Kita sedang bekerja untuk mendukung Safari, nantikan ya!"
       }
     },
     userChip: {
-      loading: false
+      loading: "Memuat..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "Tambah",
+      removePresence: "Hapus"
     },
     donationModal: {
-      title: false,
-      description: false,
-      continue: false,
+      title: "Sebuah Permintaan Cepat...",
+      description: "Kami harap Anda akan menyukai PreMiD! Jika itu membuatmu tersenyum, mengapa tidak menyebarkan kebahagiaan kembali? Tim sukarelawan kami menaruh hati mereka untuk membuatnya luar biasa hanya untukmu!",
+      continue: "Lanjut",
       close: "Tutup",
-      patreon: false,
-      github: false,
-      holdTight: false
+      patreon: "Dukung di {name}",
+      github: "Sponsor di {name}",
+      holdTight: "Tahan sebentar... memuat tombol ajaib..."
     }
   },
   header: {
@@ -58,10 +58,10 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: false,
+        title: "Kontribusi Presence",
         error: {
-          title: false,
-          description: false
+          title: "Error",
+          description: "Kami mengalami masalah dalam memuat pengguna ini... Silakan coba lagi nanti."
         }
       }
     },
@@ -69,87 +69,87 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "Beranda"
       },
-      title: false,
-      subtitle: false,
+      title: "Tingkatkan Presence Online Anda dengan PreMid",
+      subtitle: "Tunjukan kepada teman - teman Anda apa {word} yang sedang Anda nikmati.",
       words: {
         music: "Musik",
         videos: "Video",
-        streams: false,
-        media: false
+        streams: "Streams",
+        media: "Media"
       },
-      description: false,
+      description: "PreMiD adalah alat sederhana, dan kuat yang memungkinkan Anda untuk membagikan aktivitas media terkini Anda di berbagai platform seperti YouTube, Disney+, Netflix, dan banyak lagi. Tetap terhubung dan biarkan teman-teman Anda melihat apa yang sedang Anda lakukan secara real-time.",
       getStarted: "Mulai",
       sections: {
         feature: {
-          title: false,
+          title: "Mengapa Anda Akan Menyukai PreMiD",
           feature1: {
-            title: false,
-            description: false
+            title: "Kontrol Privasi",
+            description: "Ambil kendali atas pengaturan privasi Anda dan tentukan aktivitas apa yang ingin Anda bagikan dengan orang lain. Data Anda, aturan Anda."
           },
           feature2: {
-            title: false,
-            description: false
+            title: "Berbasis Komunitas",
+            description: "Rasakan dukungan luar biasa untuk berbagai platform, berbasis oleh komunitas yang penuh semangat dan berdedikasi."
           },
           feature3: {
-            title: false,
-            description: false
+            title: "Pengaturan Kustom",
+            description: "Sesuaikan pengalaman PreMiD Anda dengan berbagai opsi kustomisasi sesuai preferensi dan kebutuhan Anda."
           },
           feature4: {
-            title: false,
-            description: false
+            title: "Pemasangan Mudah",
+            description: "Mulai menggunakan PreMiD dalam sekejap. Proses pemasangan kami yang sederhana memastikan Anda dapat memulai tanpa kendala."
           },
           feature5: {
-            title: false,
-            description: false
+            title: "Mengikuti ToS Discord",
+            description: "Sepenuhnya mematuhi Ketentuan Layanan Discord dengan menggunakan titik akhir resmi yang disediakan oleh Discord."
           },
           feature6: {
-            title: false,
-            description: false
+            title: "Fitur Mendatang",
+            description: "Tunggu pembaruan fitur menarik dan perbaikan yang akan semakin meningkatkan pengalaman PreMiD Anda."
           }
         },
         howItWorks: {
-          title: false,
+          title: "Cara Bekerjanya",
           step1: {
-            title: false,
-            description: false
+            title: "Instal Ekstensi PreMiD",
+            description: "Unduhkan PreMiD untuk peramban Anda."
           },
           step2: {
-            title: false,
-            description: false
+            title: "Masuk dengan Discord",
+            description: "Hubungkan PreMiD dengan akun Discord Anda."
           },
           step3: {
-            title: false,
-            description: false
+            title: "Tambah Layanan",
+            description: "Pilih layanan yang ingin Anda tampilkan, seperti YouTube, Disney+, dan lainnya."
           },
           step4: {
-            title: false,
-            description: false
+            title: "Nikmati",
+            description: "Bagikan aktivitas Anda dan nikmati menggunakan PreMiD."
           }
         },
         callToAction: {
-          title: false,
-          description: false,
-          button: false
+          title: "Siap Memulai?",
+          description: "Bergabunglah dengan {count} pengguna yang sudah menyukai PreMiD.",
+          button: "Mulai Sekarang"
         }
       }
     },
     contributors: {
       title: "Kontributor",
-      presenceDevelopers: false,
+      presenceDevelopers: "Pengembang Presence",
       staff: "Staf",
       supporters: "Pendukung",
       translators: "Penerjemah",
       avatar: {
-        tooltip: false
+        tooltip: "Klik untuk menyalin avatar {name}"
       }
     },
     downloads: {
       title: "Unduhan",
       steps: {
-        install: false,
-        login: false,
-        add: false,
-        showoff: false
+        install: "Unduh Ekstensi",
+        login: "Masuk dengan Discord",
+        add: "Tambah Presence",
+        showoff: "Tunjukkan aktivitas anda!"
       },
       section: {
         heading: {
@@ -160,27 +160,27 @@ export default defineI18nLocale(() => ({
         }
       },
       browser: {
-        your: false,
-        other: false,
-        based: false
+        your: "Peramban Anda",
+        other: "Peramban lainnya",
+        based: "berbasis {browser}"
       },
       mobile: {
-        title: false,
-        description: false
+        title: "Berita buruk!",
+        description: "Mohon maaf, PreMiD tidak tersedia untuk perangkat mobile!"
       },
       alphaAccess: {
-        title: false,
-        description: false,
-        callToAction: false
+        title: "Buka Akses Eksklusif Alfa!",
+        description: "Masuki masa depan PreMiD dengan menjadi Patron atau mensponsori kami di GitHub. Dukungan Anda tidak hanya mendorong pengembangan kami, tetapi juga memberi Anda akses pertama ke fitur-fitur paling inovatif yang kami buat. Rasakan kemajuan terbaru dari apa yang dapat ditawarkan PreMiD dan pengaruhi arah pengembangannya dengan umpan balik Anda. Ini bukan hanya tentang menjadi yang pertama—ini tentang menjadi bagian dari sesuatu yang lebih besar.",
+        callToAction: "Pelajari Lebih Lanjut & Bergabung dengan Inovasi"
       },
-      faq: false,
+      faq: "Pertanyaan Umum",
       faqs: {
         q1: {
-          question: false,
-          answer: false
+          question: "Apa itu PreMiD?",
+          answer: "PreMiD adalah utilitas sederhana dan dapat dikonfigurasi yang memungkinkan Anda untuk menunjukkan apa yang Anda lakukan di web dalam status aktivitas Discord anda."
         },
         q2: {
-          question: false,
+          question: "Bagaimanakah cara untuk menggunakan PreMiD?",
           answer: false
         },
         q3: {
@@ -275,7 +275,7 @@ export default defineI18nLocale(() => ({
       message: false
     },
     default: {
-      title: false,
+      title: "Error",
       message: false,
       button: false
     }
