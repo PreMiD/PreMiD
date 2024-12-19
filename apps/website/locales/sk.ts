@@ -73,7 +73,7 @@ export default defineI18nLocale(() => ({
       subtitle: false,
       words: {
         music: "Hudba",
-        videos: false,
+        videos: "Videá",
         streams: false,
         media: false
       },
@@ -137,7 +137,7 @@ export default defineI18nLocale(() => ({
       title: "Prispievatelia",
       presenceDevelopers: false,
       staff: "Jadro týmu",
-      supporters: false,
+      supporters: "Podporovatelia",
       translators: "Prekladatelia",
       avatar: {
         tooltip: false
@@ -257,9 +257,9 @@ export default defineI18nLocale(() => ({
       status: "Stav"
     },
     legalList: {
-      privacyPolicy: false,
+      privacyPolicy: "Zásady ochrany osobných údajov",
       termsOfService: false,
-      cookiePolicy: false
+      cookiePolicy: "Zásady súborov cookies"
     },
     withLoveBy: false,
     by: false,
