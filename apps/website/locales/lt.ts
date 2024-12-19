@@ -135,7 +135,7 @@ export default defineI18nLocale(() => ({
     },
     contributors: {
       title: "Pagalbininkai",
-      presenceDevelopers: false,
+      presenceDevelopers: "Būsenų kūrėjai",
       staff: "Darbuotojai",
       supporters: "Rėmėjai",
       translators: "Vertėjai",
