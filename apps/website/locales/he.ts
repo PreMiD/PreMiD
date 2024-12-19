@@ -9,7 +9,7 @@ export default defineI18nLocale(() => ({
     searchBar: {
       search: "חיפוש",
       sortBy: false,
-      searchPresence: false,
+      searchPresence: "חפש Presence",
       sort: {
         mostUsed: false,
         alphabetical: false
@@ -41,7 +41,7 @@ export default defineI18nLocale(() => ({
       title: false,
       description: false,
       continue: false,
-      close: false,
+      close: "סגור",
       patreon: false,
       github: false,
       holdTight: false
@@ -51,7 +51,7 @@ export default defineI18nLocale(() => ({
     links: {
       contributors: "תורמים",
       downloads: "הורדות",
-      features: false,
+      features: "אפשרויות",
       store: "חנות"
     }
   },
@@ -236,7 +236,7 @@ export default defineI18nLocale(() => ({
       },
       header: {
         categories: "קטגוריות",
-        search: false
+        search: "חפש Presence"
       }
     }
   },
@@ -257,9 +257,9 @@ export default defineI18nLocale(() => ({
       status: "סטטוס"
     },
     legalList: {
-      privacyPolicy: false,
+      privacyPolicy: "מדיניות פרטיות",
       termsOfService: false,
-      cookiePolicy: false
+      cookiePolicy: "מדיניות עוגיות"
     },
     withLoveBy: false,
     by: false,
