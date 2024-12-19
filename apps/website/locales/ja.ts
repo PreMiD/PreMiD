@@ -41,7 +41,7 @@ export default defineI18nLocale(() => ({
       title: false,
       description: false,
       continue: false,
-      close: false,
+      close: "閉じる",
       patreon: false,
       github: false,
       holdTight: false
@@ -73,7 +73,7 @@ export default defineI18nLocale(() => ({
       subtitle: false,
       words: {
         music: "音楽",
-        videos: false,
+        videos: "動画",
         streams: false,
         media: false
       },
@@ -135,9 +135,9 @@ export default defineI18nLocale(() => ({
     },
     contributors: {
       title: "貢献者",
-      presenceDevelopers: false,
+      presenceDevelopers: "プレゼンス開発者",
       staff: "スタッフ",
-      supporters: false,
+      supporters: "サポーター",
       translators: "翻訳者",
       avatar: {
         tooltip: false
