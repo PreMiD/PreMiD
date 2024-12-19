@@ -2,17 +2,17 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "Ủng hộ chúng tôi bằng cách vô hiệu hoá trình chặn quảng cáo của bạn."
     }
   },
   component: {
     searchBar: {
       search: "Tìm kiếm",
-      sortBy: false,
+      sortBy: "Sắp xếp theo",
       searchPresence: "Tìm kiếm Presence",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "Dùng nhiều nhất",
+        alphabetical: "Theo bảng chữ cái"
       },
       categories: {
         all: "Tất cả",
@@ -25,26 +25,26 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: false,
+      wip: "Đang phát triển",
       support: {
-        safari: false
+        safari: "Chúng tôi đang phát triển trên Safari, hãy chờ đón nhé!"
       }
     },
     userChip: {
-      loading: false
+      loading: "Đang tải..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "Thêm",
+      removePresence: "Gỡ"
     },
     donationModal: {
-      title: false,
-      description: false,
-      continue: false,
+      title: "Một lời chia sẻ nhanh chóng...",
+      description: "Chúng tôi mong bạn yêu thích PreMiD! Nếu nó mang lại nụ cười trên khuôn mặt bạn, tại sao không lan tỏa tình yêu trở lại? Đội ngũ tình nguyện viên của chúng tôi đã dồn hết tâm huyết để biến điều đó trở nên tuyệt vời chỉ dành riêng cho bạn!",
+      continue: "Tiếp theo",
       close: "Đóng",
-      patreon: false,
-      github: false,
-      holdTight: false
+      patreon: "Hỗ trợ trên {name}",
+      github: "Quảng bá trên {name}",
+      holdTight: "Vui lòng chờ... đang tải nút bấm kì diệu..."
     }
   },
   header: {
@@ -58,10 +58,10 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: false,
+        title: "Đóng góp trạng thái",
         error: {
-          title: false,
-          description: false
+          title: "Lỗi",
+          description: "Có lỗi khi tải thông tin người dùng này... Vui lòng thử lại sau."
         }
       }
     },
@@ -69,87 +69,87 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "Trang chủ"
       },
-      title: false,
-      subtitle: false,
+      title: "Tăng cường sự hiện diện trạng thái của bạn với PreMiD",
+      subtitle: "Cho bạn bè của bạn biết bạn đang {word} tận hưởng cái gì.",
       words: {
         music: "Nhạc",
         videos: "Video",
-        streams: false,
-        media: false
+        streams: "Stream",
+        media: "Phương tiện"
       },
-      description: false,
+      description: "PreMiD là một công cụ đơn giản, hữu ích cho phép bạn chia sẻ hoạt động trạng thái hiện tại của mình trên nhiều nền tảng như YouTube, Disney+, Netflix, v. v. Luôn kết nối và cho bạn bè biết bạn đang làm gì trong thời gian thực.",
       getStarted: "Bắt đầu",
       sections: {
         feature: {
-          title: false,
+          title: "Liệu bạn sẽ yêu thích PreMiD",
           feature1: {
-            title: false,
-            description: false
+            title: "Kiểm soát quyền riêng tư",
+            description: "Chịu trách nhiệm về cài đặt quyền riêng tư của bạn và quyết định những hoạt động bạn chia sẻ với người khác. Dữ liệu của bạn, quy tắc của bạn."
           },
           feature2: {
-            title: false,
-            description: false
+            title: "Hướng tới cộng đồng",
+            description: "Trải nghiệm hỗ trợ tuyệt vời cho nhiều nền tảng, được hỗ trợ bởi cộng đồng đầy nhiệt huyết và tận tâm."
           },
           feature3: {
-            title: false,
-            description: false
+            title: "Cài đặt tùy chỉnh",
+            description: "Điều chỉnh trải nghiệm PreMiD của bạn với các tùy chọn tùy chỉnh mở rộng để phù hợp với sở thích và nhu cầu của bạn."
           },
           feature4: {
-            title: false,
-            description: false
+            title: "Thiết lập đơn giản",
+            description: "Thiết lập và sử dụng PreMiD ngay lập tức. Quá trình thiết lập đơn giản sẽ đảm bảo sự khởi đầu suôn sẻ."
           },
           feature5: {
-            title: false,
-            description: false
+            title: "Tuân thủ chính sách của Discord",
+            description: "Hoàn toàn tuân thủ Điều khoản dịch vụ của Discord bằng cách sử dụng các điểm cuối chính thức do Discord cung cấp."
           },
           feature6: {
-            title: false,
-            description: false
+            title: "Tính năng trong tương lai",
+            description: "Hãy theo dõi các tính năng và cải tiến mới thú vị sẽ nâng cao trải nghiệm PreMiD của bạn."
           }
         },
         howItWorks: {
-          title: false,
+          title: "Hoạt động như nào",
           step1: {
-            title: false,
-            description: false
+            title: "Cài đặt tiện tích mở rộng",
+            description: "Thêm PreMiD vào trình duyệt của bạn."
           },
           step2: {
-            title: false,
-            description: false
+            title: "Đăng nhập bằng Discord",
+            description: "Kết nối PreMiD bằng tài khoản Discord của bạn."
           },
           step3: {
-            title: false,
-            description: false
+            title: "Thêm nhiều dịch vụ",
+            description: "Chọn những dịch vụ bạn muốn hiển thị trên trạng thái, như YouTube, Disney+, và thêm nữa."
           },
           step4: {
-            title: false,
-            description: false
+            title: "Hãy tận hưởng nha",
+            description: "Chia sẻ hoạt động của bạn và tận hưởng khi sử dụng PreMiD."
           }
         },
         callToAction: {
-          title: false,
-          description: false,
-          button: false
+          title: "Sẵn sàng để bắt đầu chưa?",
+          description: "Tham gia với hơn {count} người dùng đang sử dụng và yêu thích PreMiD.",
+          button: "Bắt đầu ngay"
         }
       }
     },
     contributors: {
       title: "Đóng góp",
-      presenceDevelopers: false,
+      presenceDevelopers: "Presence Developers",
       staff: "Đội ngũ",
-      supporters: false,
+      supporters: "Người hỗ trợ",
       translators: "Phiên dịch viên",
       avatar: {
-        tooltip: false
+        tooltip: "Nhấn để sao chép ảnh đại diện {name}"
       }
     },
     downloads: {
       title: "Tải về",
       steps: {
-        install: false,
-        login: false,
-        add: false,
-        showoff: false
+        install: "Cài đặt tiện tích mở rộng",
+        login: "Đăng nhập bằng Discord",
+        add: "Thêm trạng thái",
+        showoff: "Thể hiện!"
       },
       section: {
         heading: {
@@ -160,78 +160,78 @@ export default defineI18nLocale(() => ({
         }
       },
       browser: {
-        your: false,
-        other: false,
-        based: false
+        your: "Trình duyệt của bạn",
+        other: "Các trình duyệt khác",
+        based: "Căn cứ {browser}"
       },
       mobile: {
-        title: false,
-        description: false
+        title: "Tin xấu!",
+        description: "PreMiD chưa khả dụng trên điện thoại, xin lỗi bạn!"
       },
       alphaAccess: {
-        title: false,
-        description: false,
-        callToAction: false
+        title: "Mở khóa đặc quyền truy cập đầu tiên!",
+        description: "Bước vào tương laii của PreMiD bằng cách trở thành Patron hoặc tài trợ cho chúng tôi trên GitHub. Sự hỗ trợ của bạn không chỉ thúc đẩy sự phát triển của chúng tôi mà còn cấp cho bạn quyền truy cập đầu tiên vào các tính năng sáng tạo nhất mà chúng tôi đang tạo ra. Trải nghiệm tính năng tiên tiến của những gì PreMiD có thể cung cấp và tác động đến quỹ đạo của nó với phản hồi của bạn. Đó không chỉ là việc trở thành người đầu tiên mà còn là trở thành một phần của điều gì đó lớn lao hơn.",
+        callToAction: "Tìm hiểu thêm & Tham gia vào sự đổi mới"
       },
-      faq: false,
+      faq: "Câu hỏi thường gặp",
       faqs: {
         q1: {
-          question: false,
-          answer: false
+          question: "PreMiD là gì?",
+          answer: "PreMiD là một tiện ích đơn giản, có thể thiết lập cấu hình cho phép bạn hiển thị những gì bạn đang làm trên web trong Trạng thái hoạt động Discord của mình."
         },
         q2: {
-          question: false,
-          answer: false
+          question: "Làm thế nào để tôi sử dụng PreMiD?",
+          answer: "Bạn có thể sử dụng PreMiD bằng cách cài đặt tiện ích mở rộng và đăng nhập bằng tài khoản Discord của mình. Sau khi đăng nhập, bạn có thể thêm trạng thái vào hồ sơ của mình và khoe với bạn bè."
         },
         q3: {
-          question: false,
-          answer: false
+          question: "Liệu PreMiD có phá vỡ Điều khoản dịch vụ của Discord?",
+          answer: "Không, PreMiD không phá vỡ các quy tắc Điều khoản dịch vụ của Discord. PreMiD sử dụng API của Discord (bao gồm các điểm cuối API được kiểm soát do Discord cung cấp) để thiết lập hoạt động của bạn. Điều này có nghĩa là PreMiD hoàn toàn tuân thủ Điều khoản dịch vụ của Discord."
         },
         q4: {
-          question: false,
-          answer: false
+          question: "Những dịch vụ nào mà PreMiD đang hỗ trợ?",
+          answer: "PreMiD hỗ trợ nhiều dịch vụ khác nhau bao gồm YouTube, Twitch và Netflix. Danh sách các dịch vụ được hỗ trợ không ngừng tăng lên. Bạn có thể xem danh sách đầy đủ các trạng thái trên trang cửa hàng của chúng tôi."
         },
         q5: {
-          question: false,
-          answer: false
+          question: "Làm thế nào để tôi đóng góp cho PreMiD?",
+          answer: "Bạn có thể đóng góp cho PreMiD bằng cách tham gia cộng đồng của chúng tôi trên GitHub. Bạn có thể trợ giúp bằng cách báo cáo sự cố, đề xuất tính năng hoặc đóng góp code."
         },
         q6: {
-          question: false,
-          answer: false
+          question: "Liệu PreMiD có miễn phí?",
+          answer: "Có, PreMiD được sử dụng miễn phí. Dù sao thì, chúng tôi chấp nhận đóng góp thông qua Patreon và GitHub để giúp hỗ trợ phát triển dự án."
         },
         q7: {
-          question: false,
-          answer: false
+          question: "Tôi nên làm gì nếu gặp sự cố với PreMiD?",
+          answer: "Nếu gặp bất kỳ sự cố nào với PreMiD, bạn có thể tham gia server Discord của chúng tôi để được hỗ trợ. Chúng tôi cũng có hướng dẫn khắc phục sự cố trong tài liệu."
         },
         q8: {
-          question: false,
-          answer: false
+          question: "PreMiD không hỗ trợ xyz, các bạn thêm được không?",
+          answer: "Cái gọi là Trạng thái của chúng tôi hướng đến cộng đồng, chúng tôi không có đủ tài nguyên để thêm mọi nền tảng. Tuy nhiên, bạn có thể thêm Trạng thái của riêng mình bằng cách làm theo hướng dẫn trên tài liệu của chúng tôi."
         },
         q9: {
-          question: false,
-          answer: false
+          question: "PreMiD được cập nhật bao lâu một lần?",
+          answer: "Chúng tôi là một dự án nhỏ do các tình nguyện viên đang điều hành, chúng tôi mong muốn cập nhật PreMiD thường xuyên nhất có thể nhưng chúng tôi không thể hứa rằng chúng tôi sẽ luôn dẫn đầu về mọi thứ."
         }
       }
     },
     store: {
       title: "Cửa hàng",
-      noPresence: false,
+      noPresence: "Không có trạng thái nào khớp với mục bạn tìm kiếm...",
       presence: {
         button: {
-          reportIssue: false,
-          suggestFeature: false,
-          viewCode: false
+          reportIssue: "Báo cáo một lỗi",
+          suggestFeature: "Gợi ý tính năng",
+          viewCode: "Xem Code"
         },
         title: {
           description: "Mô tả",
           information: "Thông tin"
         },
         informationSection: {
-          contributors: false,
-          version: false,
-          users: false,
-          tags: false,
-          supportedUrls: false
+          contributors: "Những người đóng góp:",
+          version: "Phiên bản: {version}",
+          users: "Số người dùng: {users}",
+          tags: "Thẻ:",
+          supportedUrls: "Hỗ trợ liên kết:"
         }
       },
       header: {
@@ -242,42 +242,42 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "Đối tác",
-    followUs: false,
+    followUs: "Theo dõi chúng tôi",
     supportUs: "Hỗ trợ chúng tôi",
     more: "Thêm",
-    legal: false,
+    legal: "Pháp lý",
     supportList: {
       donate: "Ủng hộ",
       contribute: "Đóng góp",
       translate: "Dịch thuật"
     },
     moreList: {
-      faq: false,
+      faq: "Câu hỏi thường gặp",
       documentation: "Tài liệu",
       status: "Trạng thái"
     },
     legalList: {
       privacyPolicy: "Chính sách bảo mật",
-      termsOfService: false,
+      termsOfService: "Điều khoản dịch vụ",
       cookiePolicy: "Chính sách về Cookie"
     },
-    withLoveBy: false,
-    by: false,
-    copyright: false
+    withLoveBy: "Với",
+    by: "bởi",
+    copyright: "© {year}-{currentYear} {company} Mọi quyền đều được bảo lưu."
   },
   error: {
     404: {
       title: false,
-      message: false
+      message: "Trang bạn tìm kiếm không tồn tại."
     },
     500: {
       title: false,
-      message: false
+      message: "Có lỗi gì đó ở phía chúng tôi."
     },
     default: {
-      title: false,
-      message: false,
-      button: false
+      title: "Lỗi",
+      message: "Có lỗi gì đó ở phía chúng tôi.",
+      button: "Quay lại"
     }
   }
 }));
