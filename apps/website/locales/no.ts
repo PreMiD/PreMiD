@@ -67,13 +67,13 @@ export default defineI18nLocale(() => ({
     },
     home: {
       meta: {
-        title: false
+        title: "Hjem"
       },
       title: false,
       subtitle: false,
       words: {
         music: "Musikk",
-        videos: false,
+        videos: "Videoer",
         streams: false,
         media: false
       },
