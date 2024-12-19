@@ -2,17 +2,17 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "Por favor, ayúdanos deshabilitando tu bloqueador de anuncios."
     }
   },
   component: {
     searchBar: {
       search: "Búsqueda",
-      sortBy: false,
+      sortBy: "Ordenar por",
       searchPresence: "Buscar presence",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "Más Usado",
+        alphabetical: "Alfabético"
       },
       categories: {
         all: "Todas",
@@ -25,26 +25,26 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: false,
+      wip: "Trabajo en curso",
       support: {
-        safari: false
+        safari: "Estamos trabajando en la compatibilidad con Safari, ¡estate atento!"
       }
     },
     userChip: {
-      loading: false
+      loading: "Cargando..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "Añadir",
+      removePresence: "Eliminar"
     },
     donationModal: {
-      title: false,
-      description: false,
-      continue: false,
+      title: "Un Favor rápido...",
+      description: "Esperamos que te encante PreMiD. Si te hace sonreír, ¿por qué no le devuelves un poco de amor? Nuestro equipo de voluntarios se esfuerza al máximo para que sea increíble, ¡sólo para ti!",
+      continue: "Continuar",
       close: "Cerrar",
-      patreon: false,
-      github: false,
-      holdTight: false
+      patreon: "Apóyanos en {name}",
+      github: "Patrocinador en {name}",
+      holdTight: "Agárrate fuerte... cargando el botón mágico..."
     }
   },
   header: {
@@ -58,10 +58,10 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: false,
+        title: "Contribuciones de Presencia",
         error: {
-          title: false,
-          description: false
+          title: "Error",
+          description: "Tenemos problemas para cargar este usuario... Por favor, inténtalo más tarde."
         }
       }
     },
@@ -69,66 +69,66 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "Inicio"
       },
-      title: false,
-      subtitle: false,
+      title: "Mejora tu presencia en línea con PreMiD",
+      subtitle: "Enséñale a tus amigos qué {word} estás disfrutando.",
       words: {
         music: "Música",
         videos: "Vídeos",
-        streams: false,
-        media: false
+        streams: "Reproducciones",
+        media: "Multimedia"
       },
-      description: false,
+      description: "PreMiD es una herramienta sencilla y potente que te permite compartir tu actividad multimedia actual en múltiples plataformas como YouTube, Disney+, Netflix y muchas más. Mantente conectado y deja que tus amigos vean lo que estás haciendo en tiempo real.",
       getStarted: "Empecemos",
       sections: {
         feature: {
-          title: false,
+          title: "Por qué te gustará PreMiD",
           feature1: {
-            title: false,
-            description: false
+            title: "Control de privacidad",
+            description: "Controla tu privacidad y decide qué actividades compartes con los demás. Tus datos, tus reglas."
           },
           feature2: {
-            title: false,
-            description: false
+            title: "Impulsado por la comunidad",
+            description: "Disfruta de una asistencia inigualable para multitud de plataformas, impulsada por una comunidad apasionada y entregada."
           },
           feature3: {
-            title: false,
-            description: false
+            title: "Ajustes personalizables",
+            description: "Adapta tu experiencia PreMiD con amplias opciones de personalización para satisfacer tus preferencias y necesidades."
           },
           feature4: {
-            title: false,
-            description: false
+            title: "Configuración sencilla",
+            description: "Pon en marcha PreMiD en un abrir y cerrar de ojos. Nuestro sencillo proceso de configuración garantiza un inicio sin complicaciones."
           },
           feature5: {
-            title: false,
-            description: false
+            title: "Cumplimiento de las normas de uso de Discord",
+            description: "Cumple plenamente las Condiciones de servicio de Discord utilizando los puntos finales oficiales proporcionados por Discord."
           },
           feature6: {
-            title: false,
-            description: false
+            title: "Funciones futuras",
+            description: "Permanece atento a las nuevas funciones y mejoras que mejorarán aún más tu experiencia con PreMiD."
           }
         },
         howItWorks: {
-          title: false,
+          title: "¿Cómo funciona?",
           step1: {
-            title: false,
-            description: false
+            title: "Instalar la extensión",
+            description: "Añadir PreMiD a tu navegador."
           },
           step2: {
-            title: false,
-            description: false
+            title: "Iniciar sesión con Discord",
+            description: "Conecta PreMiD con tu cuenta de Discord."
           },
           step3: {
-            title: false,
-            description: false
+            title: "Añadir Servicios",
+            description: "Elige los servicios que quieres mostrar, como YouTube, Disney+, etc."
           },
           step4: {
-            title: false,
-            description: false
+            title: "Disfruta",
+            description: "Comparte tu actividad y disfruta utilizando PreMiD."
           }
         },
         callToAction: {
-          title: false,
-          description: false,
+          title: "¿Todo listo para empezar?",
+          description: "Únete a los {count} de usuarios que ya adoran PreMiD.",
           button: false
         }
       }
@@ -147,7 +147,7 @@ export default defineI18nLocale(() => ({
       title: "Descargas",
       steps: {
         install: false,
-        login: false,
+        login: "Iniciar sesión con Discord",
         add: false,
         showoff: false
       },
@@ -275,7 +275,7 @@ export default defineI18nLocale(() => ({
       message: false
     },
     default: {
-      title: false,
+      title: "Error",
       message: false,
       button: false
     }
