@@ -9,7 +9,7 @@ export default defineI18nLocale(() => ({
     searchBar: {
       search: "Pretraži",
       sortBy: false,
-      searchPresence: false,
+      searchPresence: "Pretraži Statuse",
       sort: {
         mostUsed: false,
         alphabetical: false
@@ -41,7 +41,7 @@ export default defineI18nLocale(() => ({
       title: false,
       description: false,
       continue: false,
-      close: false,
+      close: "Zatvori",
       patreon: false,
       github: false,
       holdTight: false
@@ -50,9 +50,9 @@ export default defineI18nLocale(() => ({
   header: {
     links: {
       contributors: "Prinosnici",
-      downloads: false,
+      downloads: "Preuzimanja",
       features: "Značajke",
-      store: false
+      store: "Trgovina"
     }
   },
   page: {
@@ -135,16 +135,16 @@ export default defineI18nLocale(() => ({
     },
     contributors: {
       title: "Prinosnici",
-      presenceDevelopers: false,
+      presenceDevelopers: "Razvojni programeri prisutnosti",
       staff: "Osoblje",
-      supporters: false,
+      supporters: "Pristaše",
       translators: "Prevoditelji",
       avatar: {
         tooltip: false
       }
     },
     downloads: {
-      title: false,
+      title: "Preuzimanja",
       steps: {
         install: false,
         login: false,
@@ -214,7 +214,7 @@ export default defineI18nLocale(() => ({
       }
     },
     store: {
-      title: false,
+      title: "Trgovina",
       noPresence: false,
       presence: {
         button: {
@@ -236,30 +236,30 @@ export default defineI18nLocale(() => ({
       },
       header: {
         categories: "Kategorije",
-        search: false
+        search: "Pretraži Statuse"
       }
     }
   },
   footer: {
-    partners: false,
+    partners: "Partneri",
     followUs: false,
-    supportUs: false,
-    more: false,
+    supportUs: "Podržite nas",
+    more: "Više",
     legal: false,
     supportList: {
       donate: "Donirajte",
-      contribute: false,
-      translate: false
+      contribute: "Pridonesite",
+      translate: "Prevedi"
     },
     moreList: {
       faq: false,
-      documentation: false,
-      status: false
+      documentation: "Dokumentacija",
+      status: "Stanje"
     },
     legalList: {
-      privacyPolicy: false,
+      privacyPolicy: "Privatnosti",
       termsOfService: false,
-      cookiePolicy: false
+      cookiePolicy: "Pravila o kolačićima"
     },
     withLoveBy: false,
     by: false,
