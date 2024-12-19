@@ -73,7 +73,7 @@ export default defineI18nLocale(() => ({
       subtitle: false,
       words: {
         music: "موسیقی",
-        videos: false,
+        videos: "ویدیوها",
         streams: false,
         media: false
       },
@@ -137,7 +137,7 @@ export default defineI18nLocale(() => ({
       title: "مشارکت‌کنندگان",
       presenceDevelopers: "توسعه دهندگان Presence",
       staff: "کارکنان",
-      supporters: false,
+      supporters: "پشتیبانان",
       translators: "مترجمان",
       avatar: {
         tooltip: false
