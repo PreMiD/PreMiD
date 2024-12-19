@@ -2,26 +2,26 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "Palaikykite mus išjungdami reklamų blokatorių."
     }
   },
   component: {
     searchBar: {
       search: "Paieška",
-      sortBy: false,
-      searchPresence: false,
+      sortBy: "Rikiuoti pagal",
+      searchPresence: "Ieškoti „Presence“",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "Dažniausiai naudojami",
+        alphabetical: "Abėcėlės tvarka"
       },
       categories: {
-        all: "Visi",
-        anime: "Anime",
+        all: "Viskas",
+        anime: "Animė",
         games: "Žaidimai",
         music: "Muzika",
         other: "Kita",
         socials: "Socialiniai",
-        videos: "Vaizdo įrašai ir tiesioginiai eteriai"
+        videos: "Vaizdo įrašai ir tiesioginiai transliacijos"
       }
     },
     browserCard: {
@@ -34,14 +34,14 @@ export default defineI18nLocale(() => ({
       loading: false
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "Pridėti",
+      removePresence: "Pašalinti"
     },
     donationModal: {
       title: false,
       description: false,
       continue: false,
-      close: false,
+      close: "Uždaryti",
       patreon: false,
       github: false,
       holdTight: false
@@ -67,7 +67,7 @@ export default defineI18nLocale(() => ({
     },
     home: {
       meta: {
-        title: false
+        title: "Pagrindinis"
       },
       title: false,
       subtitle: false,
@@ -137,16 +137,16 @@ export default defineI18nLocale(() => ({
       title: "Pagalbininkai",
       presenceDevelopers: false,
       staff: "Darbuotojai",
-      supporters: false,
+      supporters: "Rėmėjai",
       translators: "Vertėjai",
       avatar: {
         tooltip: false
       }
     },
     downloads: {
-      title: "Siuntiniai",
+      title: "Atsisiuntimai",
       steps: {
-        install: false,
+        install: "Diegti plėtinį",
         login: false,
         add: false,
         showoff: false
@@ -196,7 +196,7 @@ export default defineI18nLocale(() => ({
           answer: false
         },
         q6: {
-          question: false,
+          question: "Ar „PreMiD“ galima naudoti nemokamai?",
           answer: false
         },
         q7: {
@@ -220,64 +220,64 @@ export default defineI18nLocale(() => ({
         button: {
           reportIssue: false,
           suggestFeature: false,
-          viewCode: false
+          viewCode: "Peržiūrėti kodą"
         },
         title: {
           description: "Aprašymas",
           information: "Informacija"
         },
         informationSection: {
-          contributors: false,
-          version: false,
-          users: false,
-          tags: false,
-          supportedUrls: false
+          contributors: "Bendradarbiai:",
+          version: "Versija: {version}",
+          users: "Naudotojai: {users}",
+          tags: "Žymės:",
+          supportedUrls: "Palaikomi URL:"
         }
       },
       header: {
         categories: "Kategorijos",
-        search: false
+        search: "Ieškoti „Presence“"
       }
     }
   },
   footer: {
     partners: "Partneriai",
-    followUs: false,
+    followUs: "Sekite mus",
     supportUs: "Paremkite mus",
     more: "Daugiau",
-    legal: false,
+    legal: "Teisinės",
     supportList: {
-      donate: "Paaukoti",
+      donate: "Aukoti",
       contribute: "Prisidėkite",
-      translate: "Išversti"
+      translate: "Versti"
     },
     moreList: {
-      faq: false,
+      faq: "DUK",
       documentation: "Dokumentacija",
       status: "Statusas"
     },
     legalList: {
       privacyPolicy: "Privatumo politika",
-      termsOfService: false,
-      cookiePolicy: "Slapukų Naudojimo Politika"
+      termsOfService: "Sąlygos",
+      cookiePolicy: "Slapukų politika"
     },
     withLoveBy: false,
-    by: false,
-    copyright: false
+    by: "sukūrė",
+    copyright: "© {year}-{currentYear} „{company}“ Visos teisės saugomos."
   },
   error: {
     404: {
       title: false,
-      message: false
+      message: "Puslapis, kurio ieškote, neegzistuoja."
     },
     500: {
       title: false,
       message: false
     },
     default: {
-      title: false,
-      message: false,
-      button: false
+      title: "Klaida",
+      message: "Kažkas ne taip nutiko mūsų pusėje.",
+      button: "Eiti atgal"
     }
   }
 }));
