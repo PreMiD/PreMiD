@@ -73,7 +73,7 @@ export default defineI18nLocale(() => ({
       subtitle: false,
       words: {
         music: "Mūzika",
-        videos: false,
+        videos: "Video",
         streams: false,
         media: false
       },
@@ -137,7 +137,7 @@ export default defineI18nLocale(() => ({
       title: "Ieguldītāji",
       presenceDevelopers: false,
       staff: "Personāls",
-      supporters: false,
+      supporters: "Atbalstītāji",
       translators: "Tulki",
       avatar: {
         tooltip: false
@@ -247,7 +247,7 @@ export default defineI18nLocale(() => ({
     more: "Vairāk",
     legal: false,
     supportList: {
-      donate: false,
+      donate: "Ziedot",
       contribute: "Dod savu ieguldījumu",
       translate: "Tulko"
     },
