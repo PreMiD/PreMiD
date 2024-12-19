@@ -15,7 +15,7 @@ client.on(Events.GuildMemberAdd, async (member) => {
 					created: member.user.createdTimestamp,
 					discriminator: member.user.discriminator,
 					userId: member.id,
-					username: member.user.username,
+					username: member.user.displayName ?? member.user.username,
 				},
 			},
 			{ upsert: true },

@@ -108,7 +108,7 @@ client.once(Events.ClientReady, async () => {
 					update: {
 						$set: {
 							userId: member.id,
-							name: member.user.username,
+							name: member.user.displayName ?? member.user.username,
 							tag: member.user.discriminator,
 							avatar: member.user.displayAvatarURL({
 								extension: "png",
