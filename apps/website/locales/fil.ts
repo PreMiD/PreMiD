@@ -7,9 +7,9 @@ export default defineI18nLocale(() => ({
   },
   component: {
     searchBar: {
-      search: false,
+      search: "Mag-search",
       sortBy: false,
-      searchPresence: false,
+      searchPresence: "Mag-search sa Presence",
       sort: {
         mostUsed: false,
         alphabetical: false
@@ -41,7 +41,7 @@ export default defineI18nLocale(() => ({
       title: false,
       description: false,
       continue: false,
-      close: false,
+      close: "Isara",
       patreon: false,
       github: false,
       holdTight: false
@@ -49,10 +49,10 @@ export default defineI18nLocale(() => ({
   },
   header: {
     links: {
-      contributors: false,
-      downloads: false,
-      features: false,
-      store: false
+      contributors: "Mga contributor",
+      downloads: "Mga download",
+      features: "Mga feature",
+      store: "Tindahan"
     }
   },
   page: {
@@ -73,12 +73,12 @@ export default defineI18nLocale(() => ({
       subtitle: false,
       words: {
         music: false,
-        videos: false,
+        videos: "Mga video",
         streams: false,
         media: false
       },
       description: false,
-      getStarted: false,
+      getStarted: "Magsimula",
       sections: {
         feature: {
           title: false,
@@ -134,17 +134,17 @@ export default defineI18nLocale(() => ({
       }
     },
     contributors: {
-      title: false,
+      title: "Mga contributor",
       presenceDevelopers: false,
-      staff: false,
+      staff: "Ang Staff",
       supporters: false,
-      translators: false,
+      translators: "Mga Translator",
       avatar: {
         tooltip: false
       }
     },
     downloads: {
-      title: false,
+      title: "Mga download",
       steps: {
         install: false,
         login: false,
@@ -153,10 +153,10 @@ export default defineI18nLocale(() => ({
       },
       section: {
         heading: {
-          title: false,
-          description: false,
-          getStarted: false,
-          extension: false
+          title: "Oras na para ipagmayabang.",
+          description: "Gamitin na ngayon ang PreMiD at ipagmayabang sa mga kaibigan mo ano ang ginagawa mo, malay mo may mahanap ka na parehas ang interest.",
+          getStarted: "Magsimula",
+          extension: "Extension"
         }
       },
       browser: {
@@ -214,7 +214,7 @@ export default defineI18nLocale(() => ({
       }
     },
     store: {
-      title: false,
+      title: "Tindahan",
       noPresence: false,
       presence: {
         button: {
@@ -223,8 +223,8 @@ export default defineI18nLocale(() => ({
           viewCode: false
         },
         title: {
-          description: false,
-          information: false
+          description: "Description",
+          information: "Impormasyon"
         },
         informationSection: {
           contributors: false,
@@ -235,31 +235,31 @@ export default defineI18nLocale(() => ({
         }
       },
       header: {
-        categories: false,
-        search: false
+        categories: "Mga Category",
+        search: "Mag-search sa Presence"
       }
     }
   },
   footer: {
-    partners: false,
+    partners: "Mga partner",
     followUs: false,
-    supportUs: false,
-    more: false,
+    supportUs: "Suportahan kami",
+    more: "Marami pa",
     legal: false,
     supportList: {
       donate: false,
-      contribute: false,
-      translate: false
+      contribute: "Mag-contribute",
+      translate: "I-translate"
     },
     moreList: {
       faq: false,
-      documentation: false,
-      status: false
+      documentation: "Ang documentation",
+      status: "Status"
     },
     legalList: {
-      privacyPolicy: false,
+      privacyPolicy: "Privacy Policy",
       termsOfService: false,
-      cookiePolicy: false
+      cookiePolicy: "Cookie Policy"
     },
     withLoveBy: false,
     by: false,
