@@ -67,13 +67,13 @@ export default defineI18nLocale(() => ({
     },
     home: {
       meta: {
-        title: false
+        title: "Hem"
       },
       title: false,
       subtitle: false,
       words: {
         music: "Musik",
-        videos: false,
+        videos: "Videor",
         streams: false,
         media: false
       },
@@ -135,9 +135,9 @@ export default defineI18nLocale(() => ({
     },
     contributors: {
       title: "Medverkande",
-      presenceDevelopers: false,
+      presenceDevelopers: "Presence Utvecklare",
       staff: "Personal",
-      supporters: false,
+      supporters: "Supportrar",
       translators: "Översättare",
       avatar: {
         tooltip: false
@@ -257,9 +257,9 @@ export default defineI18nLocale(() => ({
       status: "Status"
     },
     legalList: {
-      privacyPolicy: false,
+      privacyPolicy: "Sekretesspolicy",
       termsOfService: false,
-      cookiePolicy: false
+      cookiePolicy: "Cookie Policy"
     },
     withLoveBy: false,
     by: false,
