@@ -135,7 +135,7 @@ export default defineI18nLocale(() => ({
     },
     contributors: {
       title: "Prispievatelia",
-      presenceDevelopers: false,
+      presenceDevelopers: "Presence Developers",
       staff: "Jadro týmu",
       supporters: "Podporovatelia",
       translators: "Prekladatelia",
