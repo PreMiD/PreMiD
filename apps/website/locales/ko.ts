@@ -2,7 +2,7 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: "광고 차단기를 비활성화하여 저희를 도와주세요."
+      error: "광고 차단기를 꺼서 저희를 지원해 주세요."
     }
   },
   component: {
@@ -42,8 +42,8 @@ export default defineI18nLocale(() => ({
       description: "PreMiD가 마음에 드셨으면 좋겠습니다! 여러분의 얼굴에 미소를 가져다준다면, 그 사랑을 다시 나눠보는 건 어떨까요? 저희 자원봉사자 팀이 여러분을 위해 멋진 PreMid를 만들기 위해 정성을 다했습니다!",
       continue: "계속",
       close: "닫기",
-      patreon: "{name} 에 대한 지원",
-      github: "{name} 에 대한 스폰서",
+      patreon: "{name}에서 지원하기",
+      github: "{name}에서 스폰서되기",
       holdTight: "잠시만요... 마법의 버튼 불러오는 중..."
     }
   },
@@ -215,10 +215,10 @@ export default defineI18nLocale(() => ({
     },
     store: {
       title: "스토어",
-      noPresence: "검색과 일치하는 Presence가 없습니다...",
+      noPresence: "검색어와 일치하는 Presence가 없어요...",
       presence: {
         button: {
-          reportIssue: "오류 신고",
+          reportIssue: "문제 제보",
           suggestFeature: "기능 제안",
           viewCode: "코드 보기"
         },
@@ -263,20 +263,20 @@ export default defineI18nLocale(() => ({
     },
     withLoveBy: "와",
     by: "에 의해",
-    copyright: "© {year}-{currentYear} {company} 모든 판권 소유."
+    copyright: "© {year}-{currentYear} {company} All rights reserved."
   },
   error: {
     404: {
       title: false,
-      message: "찾으시는 페이지가 존재하지 않네요."
+      message: "찾으시는 페이지가 존재하지 않아요."
     },
     500: {
       title: false,
-      message: "저희 쪽에서 문제가 발생하였습니다."
+      message: "저희 쪽에서 문제가 발생했어요."
     },
     default: {
       title: "오류",
-      message: "저희 쪽에서 문제가 발생하였습니다.",
+      message: "저희 쪽에서 문제가 발생했어요.",
       button: "뒤로 가기"
     }
   }
