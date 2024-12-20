@@ -2,7 +2,7 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: "Tolong support kami dengan mematikan ad blocker Anda."
+      error: "Silakan dukung kami dengan menonaktifkan pemblokir iklan Anda."
     }
   },
   component: {
@@ -11,8 +11,8 @@ export default defineI18nLocale(() => ({
       sortBy: "Sortir",
       searchPresence: "Cari Presence",
       sort: {
-        mostUsed: "Paling sering digunakan",
-        alphabetical: "Abjad"
+        mostUsed: "Paling Sering Digunakan",
+        alphabetical: "Urutan Abjad"
       },
       categories: {
         all: "Semua",
@@ -25,7 +25,7 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: "WIP",
+      wip: "Sedang Dikerjakan",
       support: {
         safari: "Kita sedang bekerja untuk mendukung Safari, nantikan ya!"
       }
@@ -60,7 +60,7 @@ export default defineI18nLocale(() => ({
       userPage: {
         title: "Kontribusi Presence",
         error: {
-          title: "Error",
+          title: "Galat",
           description: "Kami mengalami masalah dalam memuat pengguna ini... Silakan coba lagi nanti."
         }
       }
@@ -70,11 +70,11 @@ export default defineI18nLocale(() => ({
         title: "Beranda"
       },
       title: "Tingkatkan Presence Online Anda dengan PreMid",
-      subtitle: "Tunjukan kepada teman - teman Anda apa {word} yang sedang Anda nikmati.",
+      subtitle: "Tunjukan kepada teman-teman Anda apa {word} yang sedang Anda nikmati.",
       words: {
         music: "Musik",
         videos: "Video",
-        streams: "Streams",
+        streams: "Strim",
         media: "Media"
       },
       description: "PreMiD adalah alat sederhana, dan kuat yang memungkinkan Anda untuk membagikan aktivitas media terkini Anda di berbagai platform seperti YouTube, Disney+, Netflix, dan banyak lagi. Tetap terhubung dan biarkan teman-teman Anda melihat apa yang sedang Anda lakukan secara real-time.",
@@ -181,57 +181,57 @@ export default defineI18nLocale(() => ({
         },
         q2: {
           question: "Bagaimanakah cara untuk menggunakan PreMiD?",
-          answer: false
+          answer: "Anda dapat menggunakan PreMiD dengan memasang ekstensi dan masuk menggunakan akun Discord Anda. Setelah Anda login, Anda bisa menambahkan Presence ke profil Anda dan menampilkannya kepada teman-teman Anda."
         },
         q3: {
-          question: false,
-          answer: false
+          question: "Apakah PreMiD melanggar ToS Discord?",
+          answer: "Tidak, PreMiD tidak melanggar ToS Discord. PreMiD menggunakan API Discord (termasuk titik akhir API terbatas yang disediakan oleh Discord) untuk mengatur aktivitas Anda. Ini berarti PreMiD sepenuhnya mematuhi ToS Discord."
         },
         q4: {
-          question: false,
-          answer: false
+          question: "Layanan apa saja yang didukung oleh PreMiD?",
+          answer: "PreMiD mendukung berbagai layanan termasuk YouTube, Twitch, dan Netflix. Daftar layanan yang didukung terus berkembang. Anda dapat melihat daftar lengkap Presence di halaman toko kami."
         },
         q5: {
-          question: false,
-          answer: false
+          question: "Bagaimana cara untuk menyumbang ke PreMiD?",
+          answer: "Anda dapat menyumbang ke PreMiD dengan bergabung dalam komunitas kami di GitHub. Anda dapat membantu dengan melaporkan masalah, menyarankan fitur, atau menyumbang kode."
         },
         q6: {
-          question: false,
-          answer: false
+          question: "Apakah PreMiD gratis untuk digunakan?",
+          answer: "Ya, PreMiD gratis untuk digunakan. Namun, kami menerima donasi melalui Patreon dan GitHub Sponsors untuk membantu mendukung pengembangan proyek ini."
         },
         q7: {
-          question: false,
-          answer: false
+          question: "Apa yang harus saya lakukan jika saya menghadapi masalah dengan PreMiD?",
+          answer: "Jika Anda menghadapi masalah dengan PreMiD, Anda bisa bergabung dengan server Discord kami untuk dukungan. Kami juga memiliki panduan pemecahan masalah di dokumentasi kami."
         },
         q8: {
-          question: false,
-          answer: false
+          question: "PreMiD tidak mendukung xyz, bisakah Anda menambahkannya?",
+          answer: "Apa yang kami sebut sebagai Presence ini didorong oleh komunitas, kami tidak memiliki sumber daya untuk menambahkan setiap platform. Namun, Anda dapat menambahkan Presence Anda sendiri dengan mengikuti petunjuk di dokumentasi kami."
         },
         q9: {
-          question: false,
-          answer: false
+          question: "Seberapa sering PreMiD diperbarui?",
+          answer: "Kami adalah proyek kecil yang digerakkan oleh sukarelawan, kami berusaha untuk memperbarui PreMiD sesering mungkin, tetapi kami tidak bisa menjanjikan bahwa kami akan selalu mengutamakan segala hal."
         }
       }
     },
     store: {
       title: "Toko",
-      noPresence: false,
+      noPresence: "Tidak ada Presence yang sesuai dengan pencarian Anda...",
       presence: {
         button: {
-          reportIssue: false,
-          suggestFeature: false,
-          viewCode: false
+          reportIssue: "Laporkan Masalah",
+          suggestFeature: "Sarankan Fitur",
+          viewCode: "Lihat Kode"
         },
         title: {
           description: "Deskripsi",
           information: "Informasi"
         },
         informationSection: {
-          contributors: false,
-          version: false,
-          users: false,
-          tags: false,
-          supportedUrls: false
+          contributors: "Kontributor:",
+          version: "Versi: {version}",
+          users: "Pengguna: {users}",
+          tags: "Tag:",
+          supportedUrls: "URL Didukung:"
         }
       },
       header: {
@@ -242,42 +242,42 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "Mitra",
-    followUs: false,
+    followUs: "Ikuti kami",
     supportUs: "Dukung Kami",
     more: "Lainnya",
-    legal: false,
+    legal: "Legalitas",
     supportList: {
       donate: "Donasi",
       contribute: "Kontribusi",
       translate: "Terjemahkan"
     },
     moreList: {
-      faq: false,
+      faq: "Pertanyaan Umum",
       documentation: "Dokumentasi",
       status: "Status"
     },
     legalList: {
       privacyPolicy: "Kebijakan pribadi",
-      termsOfService: false,
+      termsOfService: "Ketentuan Layanan",
       cookiePolicy: "Kebijakan Cookie"
     },
-    withLoveBy: false,
-    by: false,
-    copyright: false
+    withLoveBy: "Dengan",
+    by: "oleh",
+    copyright: "© {year}-{currentYear} {company} Hak cipta dilindungi undang-undang."
   },
   error: {
     404: {
       title: false,
-      message: false
+      message: "Halaman yang Anda cari tidak ada."
     },
     500: {
       title: false,
-      message: false
+      message: "Terjadi kesalahan di pihak kami."
     },
     default: {
-      title: "Error",
-      message: false,
-      button: false
+      title: "Galat",
+      message: "Terjadi kesalahan di pihak kami.",
+      button: "Kembali"
     }
   }
 }));
