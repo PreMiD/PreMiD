@@ -27,7 +27,7 @@ export default defineI18nLocale(() => ({
     browserCard: {
       wip: false,
       support: {
-        safari: false
+        safari: "Dirbame prie „Safari“ palaikymo, sekite naujienas!"
       }
     },
     userChip: {
@@ -39,7 +39,7 @@ export default defineI18nLocale(() => ({
     },
     donationModal: {
       title: false,
-      description: false,
+      description: "Tikimės, kad jums patiks PreMiD! Jei tai sukelia šypseną jūsų veide, kodėl neatsidėkoti tuo pačiu? Mūsų savanorių komanda įdėjo visą širdį, kad padarytų jį nuostabų būtent jums!",
       continue: false,
       close: "Uždaryti",
       patreon: false,
@@ -60,7 +60,7 @@ export default defineI18nLocale(() => ({
       userPage: {
         title: false,
         error: {
-          title: false,
+          title: "Klaida",
           description: false
         }
       }
