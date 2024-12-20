@@ -129,7 +129,7 @@ export default defineI18nLocale(() => ({
         callToAction: {
           title: "¿Todo listo para empezar?",
           description: "Únete a los {count} de usuarios que ya adoran PreMiD.",
-          button: false
+          button: "Empezar ahora"
         }
       }
     },
@@ -140,16 +140,16 @@ export default defineI18nLocale(() => ({
       supporters: "Colaboradores",
       translators: "Traductores",
       avatar: {
-        tooltip: false
+        tooltip: "Haz clic para copiar el avatar de {name}"
       }
     },
     downloads: {
       title: "Descargas",
       steps: {
-        install: false,
+        install: "Instalar la extensión",
         login: "Iniciar sesión con Discord",
-        add: false,
-        showoff: false
+        add: "Añadir Presencias",
+        showoff: "¡Presume!"
       },
       section: {
         heading: {
@@ -160,78 +160,78 @@ export default defineI18nLocale(() => ({
         }
       },
       browser: {
-        your: false,
-        other: false,
-        based: false
+        your: "Tu navegador",
+        other: "Otros navegadores",
+        based: "Basado en {browser}"
       },
       mobile: {
-        title: false,
-        description: false
+        title: "¡Malas noticias!",
+        description: "PreMiD no está disponible para dispositivos móviles, ¡lo sentimos!"
       },
       alphaAccess: {
-        title: false,
-        description: false,
-        callToAction: false
+        title: "¡Desbloquea el acceso Alfa exclusivo!",
+        description: "Entra en el futuro de PreMiD convirtiéndote en mecenas o patrocinándonos en GitHub. Tu apoyo no sólo impulsa nuestro desarrollo, sino que también le otorga el primer acceso a las características más innovadoras que estamos creando. Experimenta la vanguardia de lo que PreMiD puede ofrecer e influye en su trayectoria con tus comentarios. No se trata sólo de ser el primero, sino de formar parte de algo más grande.",
+        callToAction: "Aprende más y únete a la innovación"
       },
-      faq: false,
+      faq: "Preguntas frecuentes",
       faqs: {
         q1: {
-          question: false,
-          answer: false
+          question: "¿Qué es PreMiD?",
+          answer: "PreMiD es una utilidad sencilla y configurable que te permite mostrar lo que estás haciendo en la web en tu estado de actividad de Discord."
         },
         q2: {
-          question: false,
-          answer: false
+          question: "¿Cómo uso PreMiD?",
+          answer: "Puedes utilizar PreMiD instalando la extensión e iniciando sesión con tu cuenta de Discord. Una vez que hayas iniciado sesión, podrás añadir presencias a tu perfil y presumir ante tus amigos."
         },
         q3: {
-          question: false,
-          answer: false
+          question: "¿PreMiD va en contra de las condiciones de uso de Discord?",
+          answer: "No, PreMiD no va en contra de los términos de servicio de Discord. PreMiD utiliza la API de Discord (incluidos los puntos finales de la API de acceso restringido proporcionados por Discord) para configurar su actividad. Esto significa que PreMiD cumple totalmente con los términos de servicio de Discord."
         },
         q4: {
-          question: false,
-          answer: false
+          question: "¿Con qué servicios es compatible PreMiD?",
+          answer: "PreMiD es compatible con muchos servicios diferentes, como YouTube, Twitch y Netflix. La lista de servicios soportados está en constante crecimiento. Puedes ver la lista completa de Presencias en nuestra página de la tienda."
         },
         q5: {
-          question: false,
-          answer: false
+          question: "¿Cómo puedo contribuir a PreMiD?",
+          answer: "Puedes contribuir a PreMiD uniéndote a nuestra comunidad en GitHub. Puedes ayudar informando de problemas, sugiriendo funciones o aportando código."
         },
         q6: {
-          question: false,
-          answer: false
+          question: "¿Es gratuito el uso de PreMiD?",
+          answer: "Sí, PreMiD es de uso gratuito. Sin embargo, aceptamos donaciones a través de Patreon y Patrocinios de GitHub para ayudar a apoyar el desarrollo del proyecto."
         },
         q7: {
-          question: false,
-          answer: false
+          question: "¿Qué debo hacer si tengo un problema con PreMiD?",
+          answer: "Si tienes algún problema con PreMiD, puedes unirte a nuestro servidor Discord para obtener ayuda. También tenemos una guía de solución de problemas en nuestra documentación."
         },
         q8: {
-          question: false,
-          answer: false
+          question: "PreMiD no admite xyz, ¿podéis añadirlo?",
+          answer: "Nuestras denominadas Presencias están impulsadas por la comunidad, no disponemos de los recursos necesarios para añadir todas y cada una de las plataformas. Sin embargo, puedes añadir tu propia Presencia siguiendo las instrucciones de nuestra documentación."
         },
         q9: {
-          question: false,
-          answer: false
+          question: "¿Con qué frecuencia se actualiza PreMiD?",
+          answer: "Somos un pequeño proyecto impulsado por voluntarios, nuestro objetivo es actualizar PreMiD con la mayor frecuencia posible, pero no podemos prometer que siempre estemos al día."
         }
       }
     },
     store: {
       title: "Tienda",
-      noPresence: false,
+      noPresence: "Ninguna presencia coincide con tu búsqueda...",
       presence: {
         button: {
-          reportIssue: false,
-          suggestFeature: false,
-          viewCode: false
+          reportIssue: "Informar de un problema",
+          suggestFeature: "Sugerir una función",
+          viewCode: "Mostrar Código"
         },
         title: {
           description: "Descripción",
           information: "Información"
         },
         informationSection: {
-          contributors: false,
-          version: false,
-          users: false,
-          tags: false,
-          supportedUrls: false
+          contributors: "Contribuidores:",
+          version: "Versión: {version}",
+          users: "Usuarios: {users}",
+          tags: "Etiquetas:",
+          supportedUrls: "URLs soportadas:"
         }
       },
       header: {
@@ -242,42 +242,42 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "Socios",
-    followUs: false,
+    followUs: "Síguenos",
     supportUs: "Apóyanos",
     more: "Más",
-    legal: false,
+    legal: "Legal",
     supportList: {
       donate: "Donar",
       contribute: "Contribuir",
       translate: "Traducir"
     },
     moreList: {
-      faq: false,
+      faq: "Preguntas Frecuentes",
       documentation: "Documentación",
       status: "Estado"
     },
     legalList: {
       privacyPolicy: "Política de Privacidad",
-      termsOfService: false,
+      termsOfService: "Términos del Servicio",
       cookiePolicy: "Política de cookies"
     },
-    withLoveBy: false,
-    by: false,
-    copyright: false
+    withLoveBy: "Con",
+    by: "por",
+    copyright: "©️ {year}-{currentYear} {company} Todos los derechos reservados."
   },
   error: {
     404: {
       title: false,
-      message: false
+      message: "La página que estás buscando no existe."
     },
     500: {
       title: false,
-      message: false
+      message: "Se ha producido un error por nuestra parte."
     },
     default: {
       title: "Error",
-      message: false,
-      button: false
+      message: "Se ha producido un error por nuestra parte.",
+      button: "Volver"
     }
   }
 }));
