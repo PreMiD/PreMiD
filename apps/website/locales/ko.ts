@@ -58,7 +58,7 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: "Presence 기여",
+        title: "Presence 기여자",
         error: {
           title: "오류",
           description: "이 사용자를 불러오는 데 문제가 있습니다... 나중에 다시 시도해 주세요."
@@ -73,8 +73,8 @@ export default defineI18nLocale(() => ({
       subtitle: "친구에게 당신이 {word} 을(를) 즐기고 있는지 보여 주세요.",
       words: {
         music: "음악",
-        videos: "영상",
-        streams: "생방송",
+        videos: "동영상",
+        streams: "방송",
         media: "미디어"
       },
       description: "PreMiD는 간단하고 강력한 도구로, 현재 미디어 활동을 YouTube, Disney+, Netflix 등 여러 플랫폼에서 공유할 수 있습니다. 연결 상태를 유지하고 친구들이 실시간으로 내 활동을 볼 수 있도록 하세요.",
@@ -83,7 +83,7 @@ export default defineI18nLocale(() => ({
         feature: {
           title: "PreMiD를 좋아하게 될 이유",
           feature1: {
-            title: "개인정보 관리",
+            title: "개인정보 제어",
             description: "개인정보 설정을 직접 관리하고 다른 사람들과 공유할 활동을 결정하세요. 내 데이터나 규칙 말이죠."
           },
           feature2: {
@@ -95,7 +95,7 @@ export default defineI18nLocale(() => ({
             description: "다양한 사용자 지정 옵션을 통해 선호도와 필요에 맞게 PreMiD 환경을 맞춤 설정하실 수 있습니다."
           },
           feature4: {
-            title: "간편한 설치",
+            title: "간단 설정",
             description: "PreMiD로 바로 시작하고 실행하세요. 간단한 설정 프로세스를 통해 번거롭고 귀찮음 없이 바로 시작하실 수 있습니다."
           },
           feature5: {
@@ -261,8 +261,8 @@ export default defineI18nLocale(() => ({
       termsOfService: "서비스 이용 약관",
       cookiePolicy: "쿠키 정책"
     },
-    withLoveBy: "와",
-    by: "에 의해",
+    withLoveBy: "님이 제작함",
+    by: "사랑이 담긴",
     copyright: "© {year}-{currentYear} {company} All rights reserved."
   },
   error: {
