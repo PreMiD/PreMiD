@@ -135,9 +135,9 @@ export default defineI18nLocale(() => ({
     },
     contributors: {
       title: "贡献者",
-      presenceDevelopers: false,
+      presenceDevelopers: "状态开发者",
       staff: "工作人员",
-      supporters: false,
+      supporters: "支持者",
       translators: "翻译人员",
       avatar: {
         tooltip: false
