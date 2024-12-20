@@ -2,17 +2,17 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "支援のために広告ブロッカーを無効化してください。"
     }
   },
   component: {
     searchBar: {
       search: "検索",
-      sortBy: false,
+      sortBy: "並び順",
       searchPresence: "プレゼンスを探す",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "使用数",
+        alphabetical: "ABC順"
       },
       categories: {
         all: "すべて",
@@ -27,7 +27,7 @@ export default defineI18nLocale(() => ({
     browserCard: {
       wip: false,
       support: {
-        safari: false
+        safari: "Safariのサポートに向け取り組んでいます。お待ちください！"
       }
     },
     userChip: {
