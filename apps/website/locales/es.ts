@@ -43,7 +43,7 @@ export default defineI18nLocale(() => ({
       continue: "Continuar",
       close: "Cerrar",
       patreon: "Apóyanos en {name}",
-      github: "Patrocinador en {name}",
+      github: "Apóyanos en {name}",
       holdTight: "Agárrate fuerte... cargando el botón mágico..."
     }
   },
