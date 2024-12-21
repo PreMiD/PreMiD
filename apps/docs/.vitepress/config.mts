@@ -1,4 +1,3 @@
-import { text } from "node:stream/consumers";
 import type { DefaultTheme } from "vitepress";
 import { defineConfig } from "vitepress";
 
