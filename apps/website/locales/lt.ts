@@ -73,7 +73,7 @@ export default defineI18nLocale(() => ({
       subtitle: false,
       words: {
         music: "Muzika",
-        videos: false,
+        videos: "Video įrašai",
         streams: false,
         media: false
       },
