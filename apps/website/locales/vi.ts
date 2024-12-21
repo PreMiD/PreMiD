@@ -43,7 +43,7 @@ export default defineI18nLocale(() => ({
       continue: "Tiếp theo",
       close: "Đóng",
       patreon: "Hỗ trợ trên {name}",
-      github: "Hỗ trợ trên {name}",
+      github: "Tài trợ trên {name}",
       holdTight: "Vui lòng chờ... đang tải nút bấm kì diệu..."
     }
   },
@@ -122,7 +122,7 @@ export default defineI18nLocale(() => ({
             description: "Chọn những dịch vụ bạn muốn hiển thị trên trạng thái, như YouTube, Disney+, và thêm nữa."
           },
           step4: {
-            title: "Hãy tận hưởng nha",
+            title: "Hãy tận hưởng",
             description: "Chia sẻ hoạt động của bạn và tận hưởng khi sử dụng PreMiD."
           }
         },
@@ -140,13 +140,13 @@ export default defineI18nLocale(() => ({
       supporters: "Người hỗ trợ",
       translators: "Phiên dịch viên",
       avatar: {
-        tooltip: "Nhấn để sao chép ảnh đại diện {name}"
+        tooltip: "Nhấn để sao chép ảnh đại diện của {name}"
       }
     },
     downloads: {
       title: "Tải về",
       steps: {
-        install: "Cài đặt tiện tích mở rộng",
+        install: "Cài đặt tiện ích mở rộng",
         login: "Đăng nhập bằng Discord",
         add: "Thêm trạng thái",
         showoff: "Thể hiện!"
@@ -162,54 +162,54 @@ export default defineI18nLocale(() => ({
       browser: {
         your: "Trình duyệt của bạn",
         other: "Các trình duyệt khác",
-        based: "Căn cứ {browser}"
+        based: "Trình duyệt dựa trên {browser}"
       },
       mobile: {
         title: "Tin xấu!",
-        description: "PreMiD chưa khả dụng trên điện thoại, xin lỗi bạn!"
+        description: "PreMiD không khả dụng trên điện thoại, chân thành xin lỗi!"
       },
       alphaAccess: {
         title: "Mở khóa đặc quyền truy cập đầu tiên!",
-        description: "Bước vào tương laii của PreMiD bằng cách trở thành Patron hoặc tài trợ cho chúng tôi trên GitHub. Sự hỗ trợ của bạn không chỉ thúc đẩy sự phát triển của chúng tôi mà còn cấp cho bạn quyền truy cập đầu tiên vào các tính năng sáng tạo nhất mà chúng tôi đang tạo ra. Trải nghiệm tính năng tiên tiến của những gì PreMiD có thể cung cấp và tác động đến quỹ đạo của nó với phản hồi của bạn. Đó không chỉ là việc trở thành người đầu tiên mà còn là trở thành một phần của điều gì đó lớn lao hơn.",
+        description: "Đóng góp vào tương lai của PreMiD bằng cách trở thành Patron hoặc tài trợ cho chúng tôi trên GitHub. Sự hỗ trợ của bạn không chỉ thúc đẩy sự phát triển của chúng tôi mà còn cấp cho bạn quyền truy cập đầu tiên vào các tính năng sáng tạo nhất mà chúng tôi đang tạo ra. Trải nghiệm tính năng tiên tiến của những gì PreMiD có thể cung cấp và giúp ứng dụng phát triển với phản hồi của bạn. Đó không chỉ là việc trở thành người trải nghiệm đầu tiên, việc đó còn giúp bạn đóng góp một phần lớn lao hơn.",
         callToAction: "Tìm hiểu thêm & Tham gia vào sự đổi mới"
       },
       faq: "Câu hỏi thường gặp",
       faqs: {
         q1: {
           question: "PreMiD là gì?",
-          answer: "PreMiD là một tiện ích đơn giản, có thể thiết lập cấu hình cho phép bạn hiển thị những gì bạn đang làm trên web trong Trạng thái hoạt động Discord của mình."
+          answer: "PreMiD là một tiện ích đơn giản và có thể cấu hình, cho phép bạn hiển thị những gì bạn đang làm trên mạng thông qua Trạng thái hoạt động Discord của mình."
         },
         q2: {
           question: "Làm thế nào để tôi sử dụng PreMiD?",
-          answer: "Bạn có thể sử dụng PreMiD bằng cách cài đặt tiện ích mở rộng và đăng nhập bằng tài khoản Discord của mình. Sau khi đăng nhập, bạn có thể thêm trạng thái vào hồ sơ của mình và khoe với bạn bè."
+          answer: "Bạn có thể sử dụng PreMiD bằng cách cài đặt tiện ích mở rộng và đăng nhập bằng tài khoản Discord của mình. Sau khi đăng nhập, bạn có thể thêm trạng thái vào hồ sơ của mình và thể hiện với bạn bè."
         },
         q3: {
-          question: "Liệu PreMiD có phá vỡ Điều khoản dịch vụ của Discord?",
-          answer: "Không, PreMiD không phá vỡ các quy tắc Điều khoản dịch vụ của Discord. PreMiD sử dụng API của Discord (bao gồm các điểm cuối API được kiểm soát do Discord cung cấp) để thiết lập hoạt động của bạn. Điều này có nghĩa là PreMiD hoàn toàn tuân thủ Điều khoản dịch vụ của Discord."
+          question: "Liệu PreMiD có phá vỡ Điều khoản Dịch vụ của Discord?",
+          answer: "Không, PreMiD không phá vỡ các Điều khoản Dịch vụ của Discord. PreMiD sử dụng API của Discord (bao gồm các điểm cuối đóng do Discord cung cấp) để thiết lập hoạt động của bạn. Điều này có nghĩa là PreMiD hoàn toàn tuân thủ Điều khoản Dịch vụ của Discord."
         },
         q4: {
-          question: "Những dịch vụ nào mà PreMiD đang hỗ trợ?",
-          answer: "PreMiD hỗ trợ nhiều dịch vụ khác nhau bao gồm YouTube, Twitch và Netflix. Danh sách các dịch vụ được hỗ trợ không ngừng tăng lên. Bạn có thể xem danh sách đầy đủ các trạng thái trên trang cửa hàng của chúng tôi."
+          question: "Những dịch vụ nào đang được PreMiD hỗ trợ?",
+          answer: "PreMiD hỗ trợ nhiều dịch vụ khác nhau bao gồm YouTube, Twitch và Netflix, và đang không ngừng tăng thêm. Bạn có thể xem danh sách đầy đủ các trạng thái trên trang cửa hàng của chúng tôi."
         },
         q5: {
           question: "Làm thế nào để tôi đóng góp cho PreMiD?",
-          answer: "Bạn có thể đóng góp cho PreMiD bằng cách tham gia cộng đồng của chúng tôi trên GitHub. Bạn có thể trợ giúp bằng cách báo cáo sự cố, đề xuất tính năng hoặc đóng góp code."
+          answer: "Bạn có thể đóng góp cho PreMiD bằng cách tham gia cộng đồng của chúng tôi trên GitHub. Bạn có thể trợ giúp bằng cách báo cáo sự cố, đề xuất tính năng hoặc đóng góp mã nguồn."
         },
         q6: {
           question: "Liệu PreMiD có miễn phí?",
-          answer: "Có, PreMiD được sử dụng miễn phí. Dù sao thì, chúng tôi chấp nhận đóng góp thông qua Patreon và GitHub để giúp hỗ trợ phát triển dự án."
+          answer: "Có, PreMiD được sử dụng miễn phí. Mặc dù vậy, chúng tôi có chấp nhận đóng góp thông qua Patreon và GitHub để hỗ trợ phát triển dự án."
         },
         q7: {
           question: "Tôi nên làm gì nếu gặp sự cố với PreMiD?",
           answer: "Nếu gặp bất kỳ sự cố nào với PreMiD, bạn có thể tham gia server Discord của chúng tôi để được hỗ trợ. Chúng tôi cũng có hướng dẫn khắc phục sự cố trong tài liệu."
         },
         q8: {
-          question: "PreMiD không hỗ trợ xyz, các bạn thêm được không?",
-          answer: "Cái gọi là Trạng thái của chúng tôi hướng đến cộng đồng, chúng tôi không có đủ tài nguyên để thêm mọi nền tảng. Tuy nhiên, bạn có thể thêm Trạng thái của riêng mình bằng cách làm theo hướng dẫn trên tài liệu của chúng tôi."
+          question: "PreMiD không hỗ trợ dịch vụ xyz, các bạn thêm được không?",
+          answer: "Thư viện Trạng thái của chúng tôi được phát triển bởi cộng đồng người dùng, vì chúng tôi không có đủ tài nguyên để thêm mọi nền tảng. Tuy nhiên, bạn có thể thêm Trạng thái của riêng mình bằng cách làm theo hướng dẫn trên tài liệu của chúng tôi."
         },
         q9: {
           question: "PreMiD được cập nhật bao lâu một lần?",
-          answer: "Chúng tôi là một dự án nhỏ do các tình nguyện viên đang điều hành, chúng tôi mong muốn cập nhật PreMiD thường xuyên nhất có thể nhưng chúng tôi không thể hứa rằng chúng tôi sẽ luôn dẫn đầu về mọi thứ."
+          answer: "Chúng tôi là một dự án nhỏ do các tình nguyện viên điều hành, với mong muốn cập nhật PreMiD thường xuyên nhất có thể. Tuy vậy chúng tôi không thể đảm bảo rằng mọi thứ sẽ luôn được cập nhật kịp thời."
         }
       }
     },
@@ -218,9 +218,9 @@ export default defineI18nLocale(() => ({
       noPresence: "Không có trạng thái nào khớp với mục bạn tìm kiếm...",
       presence: {
         button: {
-          reportIssue: "Báo cáo một lỗi",
+          reportIssue: "Báo cáo lỗi",
           suggestFeature: "Gợi ý tính năng",
-          viewCode: "Xem Code"
+          viewCode: "Xem mã nguồn"
         },
         title: {
           description: "Mô tả",
@@ -257,8 +257,8 @@ export default defineI18nLocale(() => ({
       status: "Trạng thái"
     },
     legalList: {
-      privacyPolicy: "Chính sách bảo mật",
-      termsOfService: "Điều khoản dịch vụ",
+      privacyPolicy: "Chính sách Bảo mật",
+      termsOfService: "Điều khoản Dịch vụ",
       cookiePolicy: "Chính sách về Cookie"
     },
     withLoveBy: "Với",
