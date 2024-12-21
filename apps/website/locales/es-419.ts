@@ -2,17 +2,17 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "Por favor, apóyanos deshabilitando tu bloqueador de anuncios."
     }
   },
   component: {
     searchBar: {
       search: "Buscar",
-      sortBy: false,
+      sortBy: "Ordenar por",
       searchPresence: "Buscar presence",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "Más Usado",
+        alphabetical: "Alfabético"
       },
       categories: {
         all: "Todo",
@@ -27,24 +27,24 @@ export default defineI18nLocale(() => ({
     browserCard: {
       wip: false,
       support: {
-        safari: false
+        safari: "Estamos trabajando en la compatibilidad con Safari, ¡mantente atento!"
       }
     },
     userChip: {
-      loading: false
+      loading: "Cargando..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "Añadir",
+      removePresence: "Eliminar"
     },
     donationModal: {
-      title: false,
-      description: false,
-      continue: false,
+      title: "Un favor rápido...",
+      description: "Esperamos que te encante PreMiD! Si te hace sonreír, ¿por qué no le devuelves un poco de amor? Nuestro equipo de voluntarios se esfuerzan al máximo para que sea increíble sólo para ti!",
+      continue: "Continuar",
       close: "Cerrar",
-      patreon: false,
-      github: false,
-      holdTight: false
+      patreon: "Soporte en {name}",
+      github: "Sponsor en {name}",
+      holdTight: "Agárrate fuerte... cargando el botón mágico..."
     }
   },
   header: {
@@ -60,8 +60,8 @@ export default defineI18nLocale(() => ({
       userPage: {
         title: false,
         error: {
-          title: false,
-          description: false
+          title: "Error",
+          description: "Tenemos problemas para cargar este usuario... Por favor, inténtalo más tarde."
         }
       }
     },
@@ -69,13 +69,13 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "Inicio"
       },
-      title: false,
+      title: "Mejora tu presencia en línea con PreMiD",
       subtitle: false,
       words: {
         music: "Música",
         videos: "Videos",
-        streams: false,
-        media: false
+        streams: "Streams",
+        media: "Multimedia"
       },
       description: false,
       getStarted: "Empecemos",
@@ -83,7 +83,7 @@ export default defineI18nLocale(() => ({
         feature: {
           title: false,
           feature1: {
-            title: false,
+            title: "Control de privacidad",
             description: false
           },
           feature2: {
@@ -275,7 +275,7 @@ export default defineI18nLocale(() => ({
       message: false
     },
     default: {
-      title: false,
+      title: "Error",
       message: false,
       button: false
     }
