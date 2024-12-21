@@ -25,13 +25,13 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: false,
+      wip: "WIP",
       support: {
         safari: "Dirbame prie „Safari“ palaikymo, sekite naujienas!"
       }
     },
     userChip: {
-      loading: false
+      loading: "Kraunama..."
     },
     storeCard: {
       addPresence: "Pridėti",
@@ -40,7 +40,7 @@ export default defineI18nLocale(() => ({
     donationModal: {
       title: false,
       description: "Tikimės, kad jums patiks PreMiD! Jei tai sukelia šypseną jūsų veide, kodėl neatsidėkoti tuo pačiu? Mūsų savanorių komanda įdėjo visą širdį, kad padarytų jį nuostabų būtent jums!",
-      continue: false,
+      continue: "Tęsti",
       close: "Uždaryti",
       patreon: false,
       github: false,
@@ -58,7 +58,7 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: false,
+        title: "Būsenos konfigūracijos",
         error: {
           title: "Klaida",
           description: false
@@ -108,21 +108,21 @@ export default defineI18nLocale(() => ({
           }
         },
         howItWorks: {
-          title: false,
+          title: "Kaip tai veikia",
           step1: {
-            title: false,
-            description: false
+            title: "Diegti plėtinį",
+            description: "Pridėkite PreMiD į savo naršyklę."
           },
           step2: {
-            title: false,
+            title: "Prisijungti su Discord",
             description: false
           },
           step3: {
-            title: false,
+            title: "Pridėti paslaugas",
             description: false
           },
           step4: {
-            title: false,
+            title: "Mėgaukitės",
             description: false
           }
         },
@@ -147,8 +147,8 @@ export default defineI18nLocale(() => ({
       title: "Atsisiuntimai",
       steps: {
         install: "Diegti plėtinį",
-        login: false,
-        add: false,
+        login: "Prisijungti su Discord",
+        add: "Pridėti Buvimą",
         showoff: false
       },
       section: {
