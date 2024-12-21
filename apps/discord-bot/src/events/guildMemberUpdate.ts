@@ -17,7 +17,7 @@ client.on(Events.GuildMemberUpdate, async (oldMember, newMember) => {
 					created: newMember.user.createdTimestamp,
 					discriminator: newMember.user.discriminator,
 					userId: newMember.id,
-					username: newMember.user.username,
+					username: newMember.user.displayName ?? newMember.user.username,
 				},
 			},
 			{ upsert: true },
@@ -28,7 +28,7 @@ client.on(Events.GuildMemberUpdate, async (oldMember, newMember) => {
 				{
 					$set: {
 						userId: newMember.id,
-						name: newMember.user.username,
+						name: newMember.user.displayName ?? newMember.user.username,
 						tag: newMember.user.discriminator,
 						avatar: newMember.user.displayAvatarURL({
 							extension: "png",

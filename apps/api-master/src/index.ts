@@ -4,7 +4,6 @@ import debug from "debug";
 import { clearOldSessions } from "./functions/clearOldSessions.js";
 import createRedis from "./functions/createRedis.js";
 import "./tracing.js";
-import { reloadIpLocationApi } from "./functions/lookupIp.js";
 import { cleanupOldUserData } from "./functions/cleanupOldUserData.js";
 import { setupServer } from "./functions/setupServer.js";
 
@@ -15,8 +14,6 @@ export const server = setupServer();
 export const mainLog = debug("api-master");
 
 debug("Starting cron jobs");
-
-void reloadIpLocationApi();
 
 void new CronJob(
 	// Every 5 seconds

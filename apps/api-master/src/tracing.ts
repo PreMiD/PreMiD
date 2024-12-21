@@ -1,6 +1,7 @@
 import process from "node:process";
 import { Counter, Gauge, Registry, collectDefaultMetrics } from "prom-client";
 import { updateActivePresenceGauge, updateActivePresenceGaugeLimit } from "./functions/updateActivePresenceGauge.js";
+import { updateExtensionVersionGauge, updateExtensionVersionGaugeLimit } from "./functions/updateVersionGauge.js";
 import { redis } from "./index.js";
 
 const scanCount = Number.parseInt(process.env.SCAN_COUNT || "1000", 10);
@@ -37,5 +38,17 @@ export const activePresencesCounter = new Gauge({
 	},
 });
 
+const versionCounter = new Gauge({
+	name: "extension_version",
+	help: "The version of the extension with the amount of users using it",
+	labelNames: ["version"],
+	async collect() {
+		this.reset();
+		updateExtensionVersionGaugeLimit.clearQueue();
+		await updateExtensionVersionGauge(this);
+	},
+});
+
 register.registerMetric(activeSessionsCounter);
 register.registerMetric(activePresencesCounter);
+register.registerMetric(versionCounter);

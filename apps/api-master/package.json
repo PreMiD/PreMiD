@@ -1,7 +1,7 @@
 {
 	"name": "@premid/api-master",
 	"type": "module",
-	"version": "0.0.37",
+	"version": "0.0.39",
 	"private": true,
 	"description": "PreMiD's api master",
 	"license": "MPL-2.0",
@@ -24,7 +24,6 @@
 		"debug": "^4.3.6",
 		"drizzle-orm": "^0.33.0",
 		"ioredis": "^5.3.2",
-		"ip-location-api": "^2.0.1",
 		"ky": "^1.7.2",
 		"p-limit": "^6.1.0",
 		"postgres": "^3.4.4",
