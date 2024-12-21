@@ -48,14 +48,14 @@
 <sub>_"Discord is only showing how long I've had my profile open!" or "There's nothing here..."_</sub>
 
 - Ensure your presence is not in **Privacy Mode**. Timestamps will not reflect properly if the presence in-use is set to use this mode.
-- In some cases, ***CTRL+F5***/hard refresh your browser page may fix the problem. 
+- In some cases, **_CTRL+F5_**/hard refresh your browser page may fix the problem.
 - Older versions of PreMiD suffer from this error. If there is an update available, update!
-- There may be another activity interfering. 
-    - On the settings page of PreMiD, navigate to "Enable" or "Pause" depending on your version. 
-    - Turn it Off and back On (Enable) or Off and back On (Pause)
-    - Reresh the webpage being used, or restart the browser. Sometimes ***CTRL+F5***/hard refresh works best. 
-- Browser errors do occur. Update your browser version to the latest release. 
-- In some cases this is an issue with Discord. Sometimes it functions perfect, sometimes it does not. **There is nothing anyone can do about it** besides updating the software. 
+- There may be another activity interfering.
+  - On the settings page of PreMiD, navigate to "Enable" or "Pause" depending on your version.
+  - Turn it Off and back On (Enable) or Off and back On (Pause)
+  - Reresh the webpage being used, or restart the browser. Sometimes **_CTRL+F5_**/hard refresh works best.
+- Browser errors do occur. Update your browser version to the latest release.
+- In some cases this is an issue with Discord. Sometimes it functions perfect, sometimes it does not. **There is nothing anyone can do about it** besides updating the software.
 
 ## Advanced Troubleshooting
 

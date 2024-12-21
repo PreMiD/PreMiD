@@ -136,42 +136,44 @@ function sidebar(): DefaultTheme.SidebarItem[] {
 }
 
 function sidebarTroubleshooting(): DefaultTheme.SidebarItem[] {
-	return [{
-		items: [
-			{
-				text: "Troubleshooting",
-				link: "/",
-			},
-  {
-				text: "Function Guide",
-   				link: "/extglossary",
-			},
-  {
-				text: "Manual Install",
-   				link: "/manual-install",
-			},
-			{
-				text: "Resolving Issues",
-				link: "/resolving-issues",
-				base: "/troubleshooting/issues",
-				items: [
-					{
-						text: "Extension Based",
-						link: "/extension-based",
-					},
-					{
-						text: "Presence Based",
-						items: [{
-							text: "media",
+	return [
+		{
+			items: [
+				{
+					text: "Troubleshooting",
+					link: "/",
+				},
+				{
+					text: "Function Guide",
+					link: "/extglossary",
+				},
+				{
+					text: "Manual Install",
+					link: "/manual-install",
+				},
+				{
+					text: "Resolving Issues",
+					link: "/resolving-issues",
+					base: "/troubleshooting/issues",
+					items: [
+						{
+							text: "Extension Based",
+							link: "/extension-based",
+						},
+						{
+							text: "Presence Based",
+							items: [
+								{
+									text: "media",
+									link: "/media-presence-based",
+								},
+							],
 							link: "/media-presence-based",
 						},
-						],
-						link: "/media-presence-based",
-					},
-				],
-			},
-		],
-	},
+					],
+				},
+			],
+		},
 	];
 }
 function sidebarReference(): DefaultTheme.SidebarItem[] {
