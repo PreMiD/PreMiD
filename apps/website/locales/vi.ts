@@ -2,7 +2,7 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: "Ủng hộ chúng tôi bằng cách vô hiệu hoá trình chặn quảng cáo của bạn."
+      error: "Hỗ trợ chúng tôi bằng cách vô hiệu hoá trình chặn quảng cáo của bạn."
     }
   },
   component: {
@@ -27,7 +27,7 @@ export default defineI18nLocale(() => ({
     browserCard: {
       wip: "Đang phát triển",
       support: {
-        safari: "Chúng tôi đang phát triển trên Safari, hãy chờ đón nhé!"
+        safari: "Chúng tôi đang cố gắng để hỗ trợ Safari, hãy chờ đón nhé!"
       }
     },
     userChip: {
@@ -38,12 +38,12 @@ export default defineI18nLocale(() => ({
       removePresence: "Gỡ"
     },
     donationModal: {
-      title: "Một lời chia sẻ nhanh chóng...",
-      description: "Chúng tôi mong bạn yêu thích PreMiD! Nếu nó mang lại nụ cười trên khuôn mặt bạn, tại sao không lan tỏa tình yêu trở lại? Đội ngũ tình nguyện viên của chúng tôi đã dồn hết tâm huyết để biến điều đó trở nên tuyệt vời chỉ dành riêng cho bạn!",
+      title: "Đôi lời chia sẻ ngắn...",
+      description: "Chúng tôi mong bạn sẽ yêu thích PreMiD! Nếu nó mang lại nụ cười cho bạn, tại sao không lan tỏa tình yêu trở lại? Đội ngũ tình nguyện viên của chúng tôi đã dồn hết tâm huyết của họ để biến ứng dụng này trở nên tuyệt vời chỉ dành riêng cho bạn!",
       continue: "Tiếp theo",
       close: "Đóng",
       patreon: "Hỗ trợ trên {name}",
-      github: "Quảng bá trên {name}",
+      github: "Hỗ trợ trên {name}",
       holdTight: "Vui lòng chờ... đang tải nút bấm kì diệu..."
     }
   },
@@ -58,7 +58,7 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: "Đóng góp trạng thái",
+        title: "Đóng góp Trạng thái",
         error: {
           title: "Lỗi",
           description: "Có lỗi khi tải thông tin người dùng này... Vui lòng thử lại sau."
@@ -69,22 +69,22 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "Trang chủ"
       },
-      title: "Tăng cường sự hiện diện trạng thái của bạn với PreMiD",
-      subtitle: "Cho bạn bè của bạn biết bạn đang {word} tận hưởng cái gì.",
+      title: "Nâng cao trải nghiệm trực tuyến của bạn với PreMiD",
+      subtitle: "Hãy cho bạn bè của bạn biết bạn đang {word} tận hưởng cái gì.",
       words: {
         music: "Nhạc",
         videos: "Video",
         streams: "Stream",
         media: "Phương tiện"
       },
-      description: "PreMiD là một công cụ đơn giản, hữu ích cho phép bạn chia sẻ hoạt động trạng thái hiện tại của mình trên nhiều nền tảng như YouTube, Disney+, Netflix, v. v. Luôn kết nối và cho bạn bè biết bạn đang làm gì trong thời gian thực.",
+      description: "PreMiD là một công cụ đơn giản và mạnh mẽ, cho phép bạn chia sẻ trạng thái hoạt động hiện tại của mình trên nhiều nền tảng như YouTube, Disney+, Netflix, v.v. Luôn kết nối và để bạn bè biết bạn đang làm gì trong thời gian thực.",
       getStarted: "Bắt đầu",
       sections: {
         feature: {
-          title: "Liệu bạn sẽ yêu thích PreMiD",
+          title: "Lý do bạn sẽ yêu thích PreMiD",
           feature1: {
             title: "Kiểm soát quyền riêng tư",
-            description: "Chịu trách nhiệm về cài đặt quyền riêng tư của bạn và quyết định những hoạt động bạn chia sẻ với người khác. Dữ liệu của bạn, quy tắc của bạn."
+            description: "Kiểm soát cài đặt quyền riêng tư của bạn và quyết định những hoạt động bạn chia sẻ với người khác. Dữ liệu của bạn, quy tắc của bạn."
           },
           feature2: {
             title: "Hướng tới cộng đồng",
@@ -92,33 +92,33 @@ export default defineI18nLocale(() => ({
           },
           feature3: {
             title: "Cài đặt tùy chỉnh",
-            description: "Điều chỉnh trải nghiệm PreMiD của bạn với các tùy chọn tùy chỉnh mở rộng để phù hợp với sở thích và nhu cầu của bạn."
+            description: "Điều chỉnh trải nghiệm PreMiD của bạn với các tùy chọn tùy chỉnh mở rộng, phù hợp với sở thích và nhu cầu của bạn."
           },
           feature4: {
             title: "Thiết lập đơn giản",
             description: "Thiết lập và sử dụng PreMiD ngay lập tức. Quá trình thiết lập đơn giản sẽ đảm bảo sự khởi đầu suôn sẻ."
           },
           feature5: {
-            title: "Tuân thủ chính sách của Discord",
-            description: "Hoàn toàn tuân thủ Điều khoản dịch vụ của Discord bằng cách sử dụng các điểm cuối chính thức do Discord cung cấp."
+            title: "Tuân thủ Điều khoản Dịch vụ của Discord",
+            description: "Hoàn toàn tuân thủ Điều khoản Dịch vụ của Discord bằng cách sử dụng các điểm cuối chính thức do Discord cung cấp."
           },
           feature6: {
             title: "Tính năng trong tương lai",
-            description: "Hãy theo dõi các tính năng và cải tiến mới thú vị sẽ nâng cao trải nghiệm PreMiD của bạn."
+            description: "Hãy theo dõi để biết về các tính năng và cải tiến mới thú vị, nâng cao trải nghiệm PreMiD của bạn hơn nữa."
           }
         },
         howItWorks: {
-          title: "Hoạt động như nào",
+          title: "Cách thức hoạt động",
           step1: {
             title: "Cài đặt tiện tích mở rộng",
             description: "Thêm PreMiD vào trình duyệt của bạn."
           },
           step2: {
             title: "Đăng nhập bằng Discord",
-            description: "Kết nối PreMiD bằng tài khoản Discord của bạn."
+            description: "Kết nối PreMiD với tài khoản Discord của bạn."
           },
           step3: {
-            title: "Thêm nhiều dịch vụ",
+            title: "Thêm dịch vụ",
             description: "Chọn những dịch vụ bạn muốn hiển thị trên trạng thái, như YouTube, Disney+, và thêm nữa."
           },
           step4: {
@@ -135,7 +135,7 @@ export default defineI18nLocale(() => ({
     },
     contributors: {
       title: "Đóng góp",
-      presenceDevelopers: "Presence Developers",
+      presenceDevelopers: "Nhà phát triển Presence",
       staff: "Đội ngũ",
       supporters: "Người hỗ trợ",
       translators: "Phiên dịch viên",
