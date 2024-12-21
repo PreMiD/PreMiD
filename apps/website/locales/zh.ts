@@ -245,39 +245,39 @@ export default defineI18nLocale(() => ({
     followUs: "关注我们",
     supportUs: "支持我们",
     more: "更多",
-    legal: false,
+    legal: "法律",
     supportList: {
       donate: "捐赠",
       contribute: "贡献",
       translate: "翻译"
     },
     moreList: {
-      faq: false,
+      faq: "常见问题",
       documentation: "帮助文档",
       status: "服务器状态"
     },
     legalList: {
       privacyPolicy: "隐私条款",
-      termsOfService: false,
+      termsOfService: "服务条款",
       cookiePolicy: "Cookie 政策"
     },
-    withLoveBy: false,
-    by: false,
-    copyright: false
+    withLoveBy: "由爱驱动",
+    by: "由",
+    copyright: "© {year}-{currentYear} {company} 版权所有。"
   },
   error: {
     404: {
       title: false,
-      message: false
+      message: "您正在寻找的页面不存在。"
     },
     500: {
       title: false,
-      message: false
+      message: "我们这边出了点问题。"
     },
     default: {
       title: "错误",
-      message: false,
-      button: false
+      message: "我们这边出了点问题。",
+      button: "返回"
     }
   }
 }));
