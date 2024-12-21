@@ -1,3 +1,4 @@
+import process from "node:process";
 import { type } from "arktype";
 import { GraphQLError } from "graphql";
 import type { MutationResolvers } from "../../../../generated/graphql-v5.js";
@@ -32,18 +33,20 @@ const mutation: MutationResolvers["heartbeat"] = async (_parent, input, context)
 
 	// * Use Redis Hash with 'service' in the key to store heartbeat data
 	const redisKey = `pmd-api.heartbeatUpdates.${out.identifier}`;
-	await redis.hset(redisKey, {
-		service: out.presence?.service,
-		version: out.presence?.version,
-		language: out.presence?.language,
-		since: out.presence?.since.toString(),
-		extension_version: out.extension.version,
-		extension_language: out.extension.language,
-		extension_connected_app: out.extension.connected?.app?.toString(),
-		extension_connected_discord: out.extension.connected?.discord?.toString(),
-		ip_address: userIp,
-	});
-	await redis.expire(redisKey, 300);
+	if (process.env.HEARTBEATS !== "false") {
+		await redis.hset(redisKey, {
+			service: out.presence?.service,
+			version: out.presence?.version,
+			language: out.presence?.language,
+			since: out.presence?.since.toString(),
+			extension_version: out.extension.version,
+			extension_language: out.extension.language,
+			extension_connected_app: out.extension.connected?.app?.toString(),
+			extension_connected_discord: out.extension.connected?.discord?.toString(),
+			ip_address: userIp,
+		});
+		await redis.expire(redisKey, 300);
+	}
 
 	return {
 		__typename: "HeartbeatResult",
