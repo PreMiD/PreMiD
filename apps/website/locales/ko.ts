@@ -38,8 +38,8 @@ export default defineI18nLocale(() => ({
       removePresence: "제거"
     },
     donationModal: {
-      title: "빠른 부탁...",
-      description: "PreMiD가 마음에 드셨으면 좋겠습니다! 여러분의 얼굴에 미소를 가져다준다면, 그 사랑을 다시 나눠보는 건 어떨까요? 저희 자원봉사자 팀이 여러분을 위해 멋진 PreMid를 만들기 위해 정성을 다했습니다!",
+      title: "하나만 부탁드릴게요...",
+      description: "PreMiD가 마음에 드셨으면 좋겠어요! 조금이라도 만족스러우셨다면, 다른 사람에게도 공유하시는 건 어떠신가요? 저희 자원봉사팀이 멋진 PreMiD를 만들기 위해 정성을 쏟았어요!",
       continue: "계속",
       close: "닫기",
       patreon: "{name}에서 지원하기",
