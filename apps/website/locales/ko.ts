@@ -61,7 +61,7 @@ export default defineI18nLocale(() => ({
         title: "Presence 기여자",
         error: {
           title: "오류",
-          description: "이 사용자를 불러오는 데 문제가 있습니다... 나중에 다시 시도해 주세요."
+          description: "해당 사용자를 불러오는 데 문제가 발생했어요. 나중에 다시 시도해 주세요."
         }
       }
     },
@@ -69,15 +69,15 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "홈"
       },
-      title: "PreMiD로 당신의 온라인 Presence를 강화하세요",
-      subtitle: "친구에게 당신이 {word} 을(를) 즐기고 있는지 보여 주세요.",
+      title: "PreMiD와 함께 온라인상 존재감을 높여봐요",
+      subtitle: "친구와 함께 {word}을 해 보아요.",
       words: {
-        music: "음악",
-        videos: "동영상",
-        streams: "방송",
-        media: "미디어"
+        music: "음악 감상",
+        videos: "동영상 시청",
+        streams: "방송 시청",
+        media: "미디어 시청"
       },
-      description: "PreMiD는 간단하고 강력한 도구로, 현재 미디어 활동을 YouTube, Disney+, Netflix 등 여러 플랫폼에서 공유할 수 있습니다. 연결 상태를 유지하고 친구들이 실시간으로 내 활동을 볼 수 있도록 하세요.",
+      description: "PreMiD는 YouTube, Disney+, Netflix 등의 미디어 활동을 공유할 수 있는 간명한 도구예요. 연결하고 나서 내가 무엇을 하는지 친구가 실시간으로 보도록 해 보세요.",
       getStarted: "시작하기",
       sections: {
         feature: {
