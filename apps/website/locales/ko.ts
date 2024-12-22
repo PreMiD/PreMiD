@@ -70,7 +70,7 @@ export default defineI18nLocale(() => ({
         title: "홈"
       },
       title: "PreMiD와 함께 온라인상 존재감을 높여봐요",
-      subtitle: "친구와 함께 {word}을 해 보세요.",
+      subtitle: "친구에게 {word}을 보여주세요.",
       words: {
         music: "음악 감상",
         videos: "동영상 시청",
@@ -104,7 +104,7 @@ export default defineI18nLocale(() => ({
           },
           feature6: {
             title: "향후 기능",
-            description: "PreMiD 경험을 더욱 향상시킬 새로운 기능과 개선 사항을 기대해 주세요."
+            description: "PreMiD 경험을 훨씬 높일 흥미로운 새로운 기능과 개선점을 기대해 주세요."
           }
         },
         howItWorks: {
@@ -147,14 +147,14 @@ export default defineI18nLocale(() => ({
       title: "다운로드",
       steps: {
         install: "확장 프로그램 설치",
-        login: "Discord로 로그인하기",
+        login: "Discord로 로그인",
         add: "Presence 추가",
-        showoff: "뽐내 보세요!"
+        showoff: "뽐내기!"
       },
       section: {
         heading: {
-          title: "이제 뽐내볼 시간이에요.",
-          description: "PreMiD를 지금 사용해서 내가 뭘 하는지 내 친구에게 뽐내보세요. 아마 같은 관심사를 가진 누군가를 찾을지도 몰라요.",
+          title: "이제 뽐내 볼 시간이에요.",
+          description: "PreMiD를 지금 사용해서 친구들에게 무엇을 하는지 뽐내보세요. 아마 같은 관심사를 가진 누군가를 찾을지도 몰라요.",
           getStarted: "시작하기",
           extension: "확장 프로그램"
         }
@@ -242,7 +242,7 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "파트너",
-    followUs: "팔로우",
+    followUs: "팔로우하기",
     supportUs: "지원",
     more: "더 보기",
     legal: "법적 고지",
