@@ -70,7 +70,7 @@ export default defineI18nLocale(() => ({
         title: "홈"
       },
       title: "PreMiD와 함께 온라인상 존재감을 높여봐요",
-      subtitle: "친구와 함께 {word}을 해 보아요.",
+      subtitle: "친구와 함께 {word}을 해 보세요.",
       words: {
         music: "음악 감상",
         videos: "동영상 시청",
