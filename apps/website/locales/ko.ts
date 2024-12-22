@@ -77,18 +77,18 @@ export default defineI18nLocale(() => ({
         streams: "방송 시청",
         media: "미디어 시청"
       },
-      description: "PreMiD는 YouTube, Disney+, Netflix 등의 미디어 활동을 공유할 수 있는 간명한 도구예요. 연결하고 나서 내가 무엇을 하는지 친구가 실시간으로 보도록 해 보세요.",
+      description: "PreMiD는 YouTube, Disney+, Netflix 등의 여러 플랫폼에서 미디어 활동을 공유할 수 있는 간명한 도구예요. 연결하고 나서 내가 무엇을 하는지 친구가 실시간으로 보도록 해 보세요.",
       getStarted: "시작하기",
       sections: {
         feature: {
           title: "PreMiD를 좋아하게 될 이유",
           feature1: {
             title: "개인정보 제어",
-            description: "개인정보 설정을 직접 관리하고 다른 사람들과 공유할 활동을 결정하세요. 내 데이터나 규칙 말이죠."
+            description: "개인정보 설정을 도맡고 다른 사람과 공유할 활동을 결정하세요. 내가 정하는 나의 데이터."
           },
           feature2: {
-            title: "커뮤니티 중심",
-            description: "열정적이고 헌신적인 커뮤니티가 제공하는 다양한 플랫폼에 대한 탁월한 지원을 경험해 보세요."
+            title: "커뮤니티 주도",
+            description: "열정과 헌신이 가득한 커뮤니티에서 수많은 플랫폼의 전무후무한 지원을 경험하세요."
           },
           feature3: {
             title: "사용자 조정 가능한 설정",
@@ -96,30 +96,30 @@ export default defineI18nLocale(() => ({
           },
           feature4: {
             title: "간단 설정",
-            description: "PreMiD로 바로 시작하고 실행하세요. 간단한 설정 프로세스를 통해 번거롭고 귀찮음 없이 바로 시작하실 수 있습니다."
+            description: "일어나서도 PreMiD를 실행해 보아요. 수월한 설정 과정으로 번거롭지 않게 해 드릴게요."
           },
           feature5: {
             title: "Discord ToS 준수",
-            description: "Discord에서 제공하는 공식 엔드포인트를 사용하여 Discord의 서비스 약관을 완전히 준수합니다."
+            description: "Discord의 공식 엔드포인트를 활용해 Discord 서비스 이용 약관을 완전히 준수한답니다."
           },
           feature6: {
-            title: "미래의 기능",
+            title: "향후 기능",
             description: "PreMiD 경험을 더욱 향상시킬 새로운 기능과 개선 사항을 기대해 주세요."
           }
         },
         howItWorks: {
           title: "작동 원리",
           step1: {
-            title: "확장 프로그램 설치",
-            description: "내 브라우저에 PreMiD를 추가하세요."
+            title: "확장 프로그램 설치하기",
+            description: "브라우저에 PreMiD를 추가하세요."
           },
           step2: {
             title: "Discord로 로그인하기",
             description: "PreMiD를 Discord 계정과 연결하세요."
           },
           step3: {
-            title: "서비스 추가",
-            description: "YouTube, Disney+ 등과 같이 표시할 서비스를 선택하세요."
+            title: "서비스 추가하기",
+            description: "YouTube, Disney+ 등과 같이 표시하고 싶은 서비스를 고르세요."
           },
           step4: {
             title: "즐기세요",
@@ -137,10 +137,10 @@ export default defineI18nLocale(() => ({
       title: "기여자",
       presenceDevelopers: "Presence 개발자",
       staff: "관리자",
-      supporters: "후원자",
+      supporters: "지원자",
       translators: "번역가",
       avatar: {
-        tooltip: "클릭해서 {name}의 프로필 사진을 복사해요"
+        tooltip: "눌러서 {name}님의 아바타를 복사해요"
       }
     },
     downloads: {
@@ -165,8 +165,8 @@ export default defineI18nLocale(() => ({
         based: "{browser} 기반"
       },
       mobile: {
-        title: "나쁜 소식!",
-        description: "PreMiD는 모바일 기기에 사용하실 수 없습니다. 죄송해요!"
+        title: "유감스러운 소식",
+        description: "PreMiD는 모바일 기기에서 사용하실 수 없습니다."
       },
       alphaAccess: {
         title: "독점 알파 액세스를 잠금 해제하세요!",
@@ -188,7 +188,7 @@ export default defineI18nLocale(() => ({
           answer: "아니요, PreMiD는 Discord의 ToS에 위배되지 않습니다. PreMiD는 Discord의 API(Discord에서 제공하는 게이트 API 엔드포인트 포함) 를 사용하여 사용자의 활동을 설정합니다. 이는 PreMiD가 Discord의 ToS를 완전히 준수한다는 것을 의미합니다."
         },
         q4: {
-          question: "PreMiD는 무슨 서비스를 제공하나요?",
+          question: "PreMiD는 무슨 서비스를 지원하나요?",
           answer: "PreMiD는 YouTube, Twitch 및 Netflix 등 다양한 서비스를 지원합니다. 지원되는 서비스 목록은 지속적으로 늘어나고 있습니다. 전체 Presences 목록은 스토어 페이지에서 확인할 수 있습니다."
         },
         q5: {
@@ -208,7 +208,7 @@ export default defineI18nLocale(() => ({
           answer: "이른바 Presences는 커뮤니티 중심으로 작성되어 저희는 모든 플랫폼 하나 하나 다 추가할 수 있는 리소스가 없습니다. 허나, 안내에 따라 직접 Presences를 추가할 수 있습니다."
         },
         q9: {
-          question: "얼마나 자주 PreMiD가 업데이트 되나요?",
+          question: "얼마나 자주 PreMiD가 업데이트되나요?",
           answer: "저희는 자원봉사자 중심의 소규모 프로젝트로서 가능한 한 자주 PreMiD를 업데이트하는 것을 목표로 하지만, 항상 최신 정보를 제공한다고 약속할 수는 없습니다."
         }
       }
@@ -235,7 +235,7 @@ export default defineI18nLocale(() => ({
         }
       },
       header: {
-        categories: "카테고리",
+        categories: "분류",
         search: "Presence 검색"
       }
     }
