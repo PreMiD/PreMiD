@@ -38,13 +38,13 @@ export default defineI18nLocale(() => ({
       removePresence: "Pašalinti"
     },
     donationModal: {
-      title: false,
+      title: "Greita paslauga...",
       description: "Tikimės, kad jums patiks PreMiD! Jei tai sukelia šypseną jūsų veide, kodėl neatsidėkoti tuo pačiu? Mūsų savanorių komanda įdėjo visą širdį, kad padarytų jį nuostabų būtent jums!",
       continue: "Tęsti",
       close: "Uždaryti",
-      patreon: false,
-      github: false,
-      holdTight: false
+      patreon: "Palaikykite per {name}",
+      github: "Remkite per {name}",
+      holdTight: "Palaukite... kraunamas magiškas mygtukas..."
     }
   },
   header: {
@@ -61,7 +61,7 @@ export default defineI18nLocale(() => ({
         title: "Būsenos konfigūracijos",
         error: {
           title: "Klaida",
-          description: false
+          description: "Nepavyksta įkelti šio vartotojo... Bandykite dar kartą vėliau."
         }
       }
     },
@@ -69,15 +69,15 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "Pagrindinis"
       },
-      title: false,
+      title: "Sustiprinkite savo internetinį profilį su PreMiD",
       subtitle: false,
       words: {
         music: "Muzika",
         videos: "Video įrašai",
         streams: false,
-        media: false
+        media: "Medija"
       },
-      description: false,
+      description: "PreMiD yra paprastas bet galingas įrankis, leidžiantis dalintis jūsų dabartine medijos veikla per įvairias platformas, tokias kaip YouTube, Disney+, Netflix ir kitas. Išlikite prisijungę ir leiskite draugams realiu laiku matyti, ką veikiate.",
       getStarted: "Pradėkite",
       sections: {
         feature: {
