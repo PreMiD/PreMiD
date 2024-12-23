@@ -58,7 +58,7 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: "Būsenos konfigūracijos",
+        title: "Veiklos konfigūracijos",
         error: {
           title: "Klaida",
           description: "Nepavyksta įkelti šio vartotojo... Bandykite dar kartą vėliau."
@@ -165,7 +165,7 @@ export default defineI18nLocale(() => ({
         based: false
       },
       mobile: {
-        title: false,
+        title: "Blogos žinios!",
         description: false
       },
       alphaAccess: {
@@ -176,11 +176,11 @@ export default defineI18nLocale(() => ({
       faq: false,
       faqs: {
         q1: {
-          question: false,
+          question: "Kas yra PreMiD?",
           answer: false
         },
         q2: {
-          question: false,
+          question: "Kaip man naudoti PreMiD?",
           answer: false
         },
         q3: {
