@@ -2,17 +2,17 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "Ti preghiamo si sostenerci disabilitando il tuo ad blocker."
     }
   },
   component: {
     searchBar: {
       search: "Cerca",
-      sortBy: false,
+      sortBy: "Ordina per",
       searchPresence: "Cerca Presence",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "Più utilizzati",
+        alphabetical: "Alfabetico"
       },
       categories: {
         all: "Tutto",
@@ -25,20 +25,20 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: false,
+      wip: "Lavori in corso",
       support: {
-        safari: false
+        safari: "Stiamo lavorando per supportare Safari, restate sintonizzati!"
       }
     },
     userChip: {
-      loading: false
+      loading: "Caricamento in corso..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "Aggiungi",
+      removePresence: "Rimuovi"
     },
     donationModal: {
-      title: false,
+      title: "Un piccolo favore...",
       description: false,
       continue: false,
       close: "Chiudi",
