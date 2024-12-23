@@ -72,10 +72,10 @@ export default defineI18nLocale(() => ({
       title: "PreMiD와 함께 온라인상 존재감을 높여봐요",
       subtitle: "친구에게 {word}을 보여주세요.",
       words: {
-        music: "음악 감상",
-        videos: "동영상 시청",
-        streams: "방송 시청",
-        media: "미디어 시청"
+        music: "내가 듣는 음악",
+        videos: "내가 보는 동영상",
+        streams: "내가 좋아하는 방송",
+        media: "내가 시청하는 미디어"
       },
       description: "PreMiD는 YouTube, Disney+, Netflix 등의 여러 플랫폼에서 미디어 활동을 공유할 수 있는 간명한 도구예요. 연결하고 나서 내가 무엇을 하는지 친구가 실시간으로 보도록 해 보세요.",
       getStarted: "시작하기",
