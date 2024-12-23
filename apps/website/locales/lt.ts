@@ -81,7 +81,7 @@ export default defineI18nLocale(() => ({
       getStarted: "Pradėkite",
       sections: {
         feature: {
-          title: false,
+          title: "Kodėl pamėgsite PreMiD",
           feature1: {
             title: false,
             description: false
