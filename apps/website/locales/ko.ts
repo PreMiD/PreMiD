@@ -91,15 +91,15 @@ export default defineI18nLocale(() => ({
             description: "열정과 헌신이 가득한 커뮤니티에서 수많은 플랫폼의 전무후무한 지원을 경험하세요."
           },
           feature3: {
-            title: "사용자 조정 가능한 설정",
-            description: "다양한 사용자 지정 옵션을 통해 선호도와 필요에 맞게 PreMiD 환경을 맞춤 설정하실 수 있습니다."
+            title: "맞춤 가능한 설정",
+            description: "폭넓은 맞춤형 선택지로 PreMiD 경험을 선호와 필요에 맞게 조정하세요."
           },
           feature4: {
             title: "간단 설정",
             description: "일어나서도 PreMiD를 실행해 보아요. 수월한 설정 과정으로 번거롭지 않게 해 드릴게요."
           },
           feature5: {
-            title: "Discord ToS 준수",
+            title: "Discord 서비스 이용 약관 준수",
             description: "Discord의 공식 엔드포인트를 활용해 Discord 서비스 이용 약관을 완전히 준수한답니다."
           },
           feature6: {
@@ -122,8 +122,8 @@ export default defineI18nLocale(() => ({
             description: "YouTube, Disney+ 등과 같이 표시하고 싶은 서비스를 고르세요."
           },
           step4: {
-            title: "즐기세요",
-            description: "활동을 공유하고 PreMiD를 즐겨 보세요."
+            title: "즐기기",
+            description: "활동을 공유하고 PreMiD 사용을 마음껏해 보세요."
           }
         },
         callToAction: {
@@ -160,7 +160,7 @@ export default defineI18nLocale(() => ({
         }
       },
       browser: {
-        your: "당신의 브라우저",
+        your: "내 브라우저",
         other: "다른 브라우저",
         based: "{browser} 기반"
       },
@@ -177,34 +177,34 @@ export default defineI18nLocale(() => ({
       faqs: {
         q1: {
           question: "PreMiD가 무엇인가요?",
-          answer: "PreMiD는 간단하게 설정할 수 있는 유틸리티로, 웹에서 하고 있는 일을 Discord 활동 상태에 표시해 주는 간단한 서비스 입니다."
+          answer: "PreMiD는 간단하고, 구성 가능한 유용한 프로그램이에요. 웹에서 무엇을 하는지 Discord 활동 상태에 보여줄 수 있답니다."
         },
         q2: {
           question: "어떻게 PreMiD를 사용하나요?",
-          answer: "확장 프로그램을 설치한 후 Discord 계정으로 로그인하여 PreMiD를 사용할 수 있습니다. 로그인한 후에는 프로필에 Presence를 추가하고 친구들에게 자랑하실 수도 있죠!"
+          answer: "확장 프로그램을 설치하고 Discord 계정에 로그인해 PreMiD를 사용할 수 있어요. 로그인한 후, 프로필에 Presence를 추가해서 친구들에게 뽐내실 수 있죠."
         },
         q3: {
-          question: "PreMiD는 Discord의 ToS에 위배되나요?",
-          answer: "아니요, PreMiD는 Discord의 ToS에 위배되지 않습니다. PreMiD는 Discord의 API(Discord에서 제공하는 게이트 API 엔드포인트 포함) 를 사용하여 사용자의 활동을 설정합니다. 이는 PreMiD가 Discord의 ToS를 완전히 준수한다는 것을 의미합니다."
+          question: "PreMiD는 Discord의 서비스 이용 약관에 위배되나요?",
+          answer: "아니요, PreMiD는 Discord의 서비스 이용 약관에 위배되지 않아요. PreMiD는 Discord의 API(Discord에서 제공하는 게이트된 API 엔드포인트 포함)를 사용해서 활동을 설정해요. PreMiD가 Discord의 서비스 이용 약관을 완전히 준수한다는 것을 의미하죠."
         },
         q4: {
           question: "PreMiD는 무슨 서비스를 지원하나요?",
-          answer: "PreMiD는 YouTube, Twitch 및 Netflix 등 다양한 서비스를 지원합니다. 지원되는 서비스 목록은 지속적으로 늘어나고 있습니다. 전체 Presences 목록은 스토어 페이지에서 확인할 수 있습니다."
+          answer: "PreMiD는 YouTube, Twitch, Netflix 등의 다양한 서비스를 지원해요. 지원하는 서비스 목록은 계속 늘어나고 있어요. 모든 Presence 목록은 스토어 페이지에서 볼 수 있어요."
         },
         q5: {
           question: "어떻게 PreMiD에 기여할 수 있나요?",
-          answer: "GitHub의 커뮤니티에 가입하여 PreMiD에 기여할 수 있습니다. 문제를 보고하거나 기능을 제안하거나 코드를 기여하여 도움을 줄 수 있습니다."
+          answer: "GitHub의 커뮤니티에 가입해서 PreMiD에 기여할 수 있어요. 문제를 제보하거나, 기능을 제안하거나, 코드에 기여해서 도움을 주실 수 있어요."
         },
         q6: {
           question: "PreMiD는 무료인가요?",
-          answer: "네, PreMiD는 무료로 사용할 수 있습니다. 그러나 프로젝트 개발을 지원하기 위해 Patreon 및 GitHub 스폰서를 통해 기부를 받고 있습니다."
+          answer: "네, PreMiD는 무료로 사용할 수 있어요. 그렇지만, 프로젝트 개발을 지원하기 위한 Patreon 및 GitHub 스폰서로 후원을 받고 있어요."
         },
         q7: {
           question: "PreMiD에 문제가 발생하면 어떻게 해야 하나요?",
-          answer: "PreMiD에 문제가 발생하면 Discord 서버에 가입하여 지원을 받을 수 있습니다. 또한 문서에 문제 해결 가이드가 있습니다."
+          answer: "PreMiD에 문제가 발생하면, 지원용 Discord 서버에 참가할 수 있어요. 그리고 문서에 문제 해결 지침이 있어요."
         },
         q8: {
-          question: "PreMiD는 xyz를 지원하지 않는데 추가해 주실 수 있나요?",
+          question: "PreMiD가 지원하지 않는 것이 있는데, 추가해 주실 수 있나요?",
           answer: "이른바 Presences는 커뮤니티 중심으로 작성되어 저희는 모든 플랫폼 하나 하나 다 추가할 수 있는 리소스가 없습니다. 허나, 안내에 따라 직접 Presences를 추가할 수 있습니다."
         },
         q9: {
