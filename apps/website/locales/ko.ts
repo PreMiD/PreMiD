@@ -128,7 +128,7 @@ export default defineI18nLocale(() => ({
         },
         callToAction: {
           title: "시작할 준비가 되셨나요?",
-          description: "이미 PreMiD를 사랑하고 있으신 {count} 명의 사람들과 함께하세요.",
+          description: "PreMiD에 푹 빠진 {count}명과 함께하세요.",
           button: "지금 시작하기"
         }
       }
@@ -205,7 +205,7 @@ export default defineI18nLocale(() => ({
         },
         q8: {
           question: "PreMiD가 지원하지 않는 것이 있는데, 추가해 주실 수 있나요?",
-          answer: "이른바 Presences는 커뮤니티 중심으로 작성되어 저희는 모든 플랫폼 하나 하나 다 추가할 수 있는 리소스가 없습니다. 허나, 안내에 따라 직접 Presences를 추가할 수 있습니다."
+          answer: "Presence는 커뮤니티 중심이라, 모든 플랫폼을 추가할 여력이 없어요. 그렇지만, 문서의 지침을 따라서 직접 Presence를 추가하실 수는 있어요."
         },
         q9: {
           question: "얼마나 자주 PreMiD가 업데이트되나요?",
