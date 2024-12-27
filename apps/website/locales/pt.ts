@@ -2,17 +2,17 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "Por favor, apoie-nos desativando o seu bloqueador de anúncios."
     }
   },
   component: {
     searchBar: {
       search: "Pesquisar",
-      sortBy: false,
+      sortBy: "Ordenar por",
       searchPresence: "Pesquisar presence",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "Mais Utilizado",
+        alphabetical: "Alfabético"
       },
       categories: {
         all: "Todos",
@@ -27,24 +27,24 @@ export default defineI18nLocale(() => ({
     browserCard: {
       wip: false,
       support: {
-        safari: false
+        safari: "Estamos a trabalhar no suporte para o Safari, fique atento!"
       }
     },
     userChip: {
-      loading: false
+      loading: "A carregar..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "Adicionar",
+      removePresence: "Remover"
     },
     donationModal: {
-      title: false,
-      description: false,
-      continue: false,
+      title: "Um Favor Rápido...",
+      description: "Esperamos que adores o PreMiD! Se ele te trouxer um sorriso, por que não retribuir um pouco de amor? A nossa equipa de voluntários deu o melhor de si para torná-lo incrível só para ti!",
+      continue: "Continuar",
       close: "Fechar",
-      patreon: false,
-      github: false,
-      holdTight: false
+      patreon: "Suporte em {name}",
+      github: "Patrocinar em {name}",
+      holdTight: "Agarra-te firme... a carregar o botão mágico..."
     }
   },
   header: {
@@ -58,10 +58,10 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: false,
+        title: "Contribuições de Presença",
         error: {
-          title: false,
-          description: false
+          title: "Erro",
+          description: "Estamos a ter dificuldades em carregar este utilizador... Por favor, tente novamente mais tarde."
         }
       }
     },
@@ -69,87 +69,87 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "Início"
       },
-      title: false,
-      subtitle: false,
+      title: "Melhore a sua presença online com o PreMiD",
+      subtitle: "Mostra aos teus amigos o que {word} estás a desfrutar.",
       words: {
         music: "Música",
         videos: "Vídeos",
-        streams: false,
-        media: false
+        streams: "Transmissões",
+        media: "Mídia"
       },
-      description: false,
+      description: "O PreMiD é uma ferramenta simples e poderosa que permite partilhar a tua atividade atual em várias plataformas, como YouTube, Disney+, Netflix e outras. Mantém-te conectado e deixa os teus amigos verem o que estás a fazer em tempo real.",
       getStarted: "Começa já",
       sections: {
         feature: {
-          title: false,
+          title: "Porque vais adorar o PreMiD",
           feature1: {
-            title: false,
-            description: false
+            title: "Controlo de Privacidade",
+            description: "Toma o controlo das tuas configurações de privacidade e decide quais as atividades que queres partilhar com os outros. Os teus dados, as tuas regras."
           },
           feature2: {
-            title: false,
-            description: false
+            title: "Orientado pela Comunidade",
+            description: "Desfruta de um suporte incomparável para uma infinidade de plataformas, impulsionado por uma comunidade apaixonada e dedicada."
           },
           feature3: {
-            title: false,
-            description: false
+            title: "Configurações Personalizáveis",
+            description: "Personaliza a tua experiência no PreMiD com opções de personalização extensas para se adequar às tuas preferências e necessidades."
           },
           feature4: {
-            title: false,
-            description: false
+            title: "Configuração Fácil",
+            description: "Começa a usar o PreMiD em pouco tempo. O nosso processo de configuração simples garante um início sem complicações."
           },
           feature5: {
-            title: false,
-            description: false
+            title: "Conforme com os Termos de Serviço do Discord",
+            description: "Totalmente conforme com os Termos de Serviço do Discord, utilizando os pontos finais oficiais fornecidos pelo Discord."
           },
           feature6: {
-            title: false,
-            description: false
+            title: "Funcionalidades Futuras",
+            description: "Fica atento a novas funcionalidades e melhorias emocionantes que irão tornar a tua experiência com o PreMiD ainda melhor."
           }
         },
         howItWorks: {
-          title: false,
+          title: "Como Funciona",
           step1: {
-            title: false,
-            description: false
+            title: "Instala a Extensão",
+            description: "Obtenha o PreMiD ao teu navegador."
           },
           step2: {
-            title: false,
-            description: false
+            title: "Entre com o Discord",
+            description: "Conecta o PreMiD à tua conta do Discord."
           },
           step3: {
-            title: false,
-            description: false
+            title: "Adicionar Serviços",
+            description: "Escolhe os serviços que queres exibir, como YouTube, Disney+ e outros."
           },
           step4: {
-            title: false,
-            description: false
+            title: "Aproveite",
+            description: "Compartilhe a tua atividade e desfruta de usar o PreMiD."
           }
         },
         callToAction: {
-          title: false,
-          description: false,
-          button: false
+          title: "Pronto para começar?",
+          description: "Junte-se aos {count} utilizadores que já adoram o PreMiD.",
+          button: "Iniciar Agora"
         }
       }
     },
     contributors: {
       title: "Contribuidores",
-      presenceDevelopers: false,
+      presenceDevelopers: "Desenvolvedores de Presença",
       staff: "Staff",
       supporters: "Contribuidores",
       translators: "Tradutores",
       avatar: {
-        tooltip: false
+        tooltip: "Clique para copiar o avatar de {name}"
       }
     },
     downloads: {
       title: "Downloads",
       steps: {
-        install: false,
-        login: false,
-        add: false,
-        showoff: false
+        install: "Instalar extensão",
+        login: "Entre com o Discord",
+        add: "Adicionar Presenças",
+        showoff: "Exibido!"
       },
       section: {
         heading: {
@@ -160,78 +160,78 @@ export default defineI18nLocale(() => ({
         }
       },
       browser: {
-        your: false,
-        other: false,
-        based: false
+        your: "Seu navegador",
+        other: "Outros navegadores",
+        based: "Baseado em {browser}"
       },
       mobile: {
-        title: false,
-        description: false
+        title: "Más notícias!",
+        description: "O PreMiD não está disponível para dispositivos móveis, desculpa!"
       },
       alphaAccess: {
-        title: false,
-        description: false,
-        callToAction: false
+        title: "Desbloqueia o Acesso Exclusivo Alpha!",
+        description: "Dá um passo no futuro do PreMiD ao tornares-te um Patron ou ao patrocinares-nos no GitHub. O teu apoio não só impulsiona o nosso desenvolvimento, mas também te garante acesso antecipado às funcionalidades mais inovadoras que estamos a criar. Experimenta o que há de mais avançado no PreMiD e influencia a sua trajetória com o teu feedback. Não se trata apenas de ser o primeiro — é fazer parte de algo maior.",
+        callToAction: "Saiba mais e Junta-te à Inovação"
       },
-      faq: false,
+      faq: "Perguntas Frequentes",
       faqs: {
         q1: {
-          question: false,
-          answer: false
+          question: "O que é PreMid?",
+          answer: "O PreMiD é uma ferramenta simples e configurável que te permite mostrar o que estás a fazer na web no teu status de atividade no Discord."
         },
         q2: {
-          question: false,
-          answer: false
+          question: "Como posso usar o PreMiD?",
+          answer: "Podes usar o PreMiD instalando a extensão e iniciando sessão com a tua conta do Discord. Depois de entrares, podes adicionar presenças ao teu perfil e mostrar aos teus amigos."
         },
         q3: {
-          question: false,
-          answer: false
+          question: "O PreMiD vai contra os Termos de Serviço do Discord?",
+          answer: "Não, o PreMiD não vai contra os Termos de Serviço do Discord. O PreMiD utiliza a API do Discord (incluindo endpoints restritos fornecidos pelo próprio Discord) para definir a tua atividade. Isso significa que o PreMiD está totalmente em conformidade com os Termos de Serviço do Discord."
         },
         q4: {
-          question: false,
-          answer: false
+          question: "Que serviços o PreMiD suporta?",
+          answer: "O PreMiD suporta muitos serviços diferentes, incluindo YouTube, Twitch e Netflix. A lista de serviços suportados está em constante crescimento. Podes ver a lista completa de Presenças na nossa página da loja."
         },
         q5: {
-          question: false,
-          answer: false
+          question: "Como posso contribuir para o PreMiD?",
+          answer: "Podes contribuir para o PreMiD juntando-te à nossa comunidade no GitHub. Podes ajudar reportando problemas, sugerindo funcionalidades ou contribuindo com código."
         },
         q6: {
-          question: false,
-          answer: false
+          question: "O PreMiD é gratuito para usar?",
+          answer: "Sim, o PreMiD é gratuito para usar. No entanto, aceitamos doações através do Patreon e GitHub Sponsors para ajudar a apoiar o desenvolvimento do projeto."
         },
         q7: {
-          question: false,
-          answer: false
+          question: "O que devo fazer se encontrar um problema com o PreMiD?",
+          answer: "Se encontrares algum problema com o PreMiD, podes juntar-te ao nosso servidor no Discord para obter suporte. Também temos um guia de resolução de problemas na nossa documentação."
         },
         q8: {
-          question: false,
-          answer: false
+          question: "O PreMiD não suporta xyz, podem adicionar isso?",
+          answer: "As nossas chamadas Presenças são orientadas pela comunidade, não temos recursos para adicionar todas as plataformas. No entanto, podes adicionar a tua própria Presença seguindo as instruções na nossa documentação."
         },
         q9: {
-          question: false,
-          answer: false
+          question: "Com que frequência o PreMiD é atualizado?",
+          answer: "Somos um pequeno projeto orientado por voluntários, e o nosso objetivo é atualizar o PreMiD o mais frequentemente possível, mas não podemos prometer que estaremos sempre a par de tudo."
         }
       }
     },
     store: {
       title: "Loja",
-      noPresence: false,
+      noPresence: "Nenhuma presença corresponde à sua pesquisa...",
       presence: {
         button: {
-          reportIssue: false,
-          suggestFeature: false,
-          viewCode: false
+          reportIssue: "Reportar um Problema",
+          suggestFeature: "Sugerir uma Funcionalidade",
+          viewCode: "Ver código"
         },
         title: {
           description: "Descrição",
           information: "Informação"
         },
         informationSection: {
-          contributors: false,
-          version: false,
-          users: false,
-          tags: false,
-          supportedUrls: false
+          contributors: "Contribuidores:",
+          version: "Versão: {version}",
+          users: "Utilizadores: {users}",
+          tags: "Etiquetas:",
+          supportedUrls: "URLs Suportados:"
         }
       },
       header: {
@@ -242,42 +242,42 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "Parceiros",
-    followUs: false,
+    followUs: "Siga-nos",
     supportUs: "Apoia-nos",
     more: "Mais",
-    legal: false,
+    legal: "Legal",
     supportList: {
       donate: "Doar",
       contribute: "Contribuir",
       translate: "Traduzir"
     },
     moreList: {
-      faq: false,
+      faq: "FAQ",
       documentation: "Documentação",
       status: "Estado"
     },
     legalList: {
       privacyPolicy: "Política de privacidade",
-      termsOfService: false,
+      termsOfService: "Termos de Serviço",
       cookiePolicy: "Política de cookies"
     },
-    withLoveBy: false,
-    by: false,
-    copyright: false
+    withLoveBy: "Com",
+    by: "por",
+    copyright: "© {year}-{currentYear} {company} Todos os direitos reservados."
   },
   error: {
     404: {
       title: false,
-      message: false
+      message: "A página que procuras não existe."
     },
     500: {
       title: false,
-      message: false
+      message: "Ocorreu um erro do nosso lado."
     },
     default: {
-      title: false,
-      message: false,
-      button: false
+      title: "Erro",
+      message: "Ocorreu um erro do nosso lado.",
+      button: "Voltar atrás"
     }
   }
 }));
