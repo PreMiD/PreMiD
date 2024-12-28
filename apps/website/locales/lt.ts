@@ -129,7 +129,7 @@ export default defineI18nLocale(() => ({
         callToAction: {
           title: false,
           description: false,
-          button: false
+          button: "Pradėti dabar"
         }
       }
     },
@@ -173,7 +173,7 @@ export default defineI18nLocale(() => ({
         description: false,
         callToAction: false
       },
-      faq: false,
+      faq: "Dažniausiai Užduodami Klausimai",
       faqs: {
         q1: {
           question: "Kas yra PreMiD?",
@@ -218,8 +218,8 @@ export default defineI18nLocale(() => ({
       noPresence: false,
       presence: {
         button: {
-          reportIssue: false,
-          suggestFeature: false,
+          reportIssue: "Pranešti apie problemą",
+          suggestFeature: "Pasiūlyti funkciją",
           viewCode: "Peržiūrėti kodą"
         },
         title: {
@@ -261,7 +261,7 @@ export default defineI18nLocale(() => ({
       termsOfService: "Sąlygos",
       cookiePolicy: "Slapukų politika"
     },
-    withLoveBy: false,
+    withLoveBy: "Su",
     by: "sukūrė",
     copyright: "© {year}-{currentYear} „{company}“ Visos teisės saugomos."
   },
@@ -272,7 +272,7 @@ export default defineI18nLocale(() => ({
     },
     500: {
       title: false,
-      message: false
+      message: "Kažkas ne taip nutiko mūsų pusėje."
     },
     default: {
       title: "Klaida",
