@@ -25,7 +25,7 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: false,
+      wip: "Trabalho em Progresso",
       support: {
         safari: "Estamos a trabalhar no suporte para o Safari, fique atento!"
       }
