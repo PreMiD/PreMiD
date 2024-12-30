@@ -2,7 +2,7 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: "Por favor, apoia-nos desativando o teu bloqueador de anúncios."
+      error: "Por favor, apoie-nos desativando o seu bloqueador de anúncios."
     }
   },
   component: {
