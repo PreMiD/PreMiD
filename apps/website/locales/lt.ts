@@ -9,7 +9,7 @@ export default defineI18nLocale(() => ({
     searchBar: {
       search: "Paieška",
       sortBy: "Rikiuoti pagal",
-      searchPresence: "Ieškoti „Presence“",
+      searchPresence: "Ieškoti veiklų",
       sort: {
         mostUsed: "Dažniausiai naudojami",
         alphabetical: "Abėcėlės tvarka"
@@ -70,11 +70,11 @@ export default defineI18nLocale(() => ({
         title: "Pagrindinis"
       },
       title: "Sustiprinkite savo internetinį profilį su PreMiD",
-      subtitle: false,
+      subtitle: "Parodykite savo draugams, kokį {word} mėgaujatės.",
       words: {
         music: "Muzika",
         videos: "Video įrašai",
-        streams: false,
+        streams: "Transliacijos",
         media: "Medija"
       },
       description: "PreMiD yra paprastas bet galingas įrankis, leidžiantis dalintis jūsų dabartine medijos veikla per įvairias platformas, tokias kaip YouTube, Disney+, Netflix ir kitas. Išlikite prisijungę ir leiskite draugams realiu laiku matyti, ką veikiate.",
@@ -83,27 +83,27 @@ export default defineI18nLocale(() => ({
         feature: {
           title: "Kodėl pamėgsite PreMiD",
           feature1: {
-            title: false,
-            description: false
+            title: "Privatumo kontrolė",
+            description: "Valdykite savo privatumo nustatymus ir nuspręskite, kokiomis veiklomis jūs dalinatės su kitais. Jūsų duomenys – jūsų taisyklės."
           },
           feature2: {
-            title: false,
-            description: false
+            title: "Bendruomenės varomas",
+            description: "Patirkite neprilygstamą palaikymą daugybei platformų, kurį teikia aistringa ir atsidavusi bendruomenė."
           },
           feature3: {
-            title: false,
-            description: false
+            title: "Pritaikomi parametrai",
+            description: "Pritaikykite savo PreMiD patirtį su plačiomis pritaikymo galimybėmis pagal savo poreikius ir pageidavimus."
           },
           feature4: {
-            title: false,
+            title: "Lengva sąranka",
             description: false
           },
           feature5: {
-            title: false,
-            description: false
+            title: "Atitinka Discord paslaugų teikimo sąlygomis",
+            description: "Pilnai atitinka Discord paslaugų teikimo sąlygas, naudojant oficialius Discord'o sąsajas."
           },
           feature6: {
-            title: false,
+            title: "Ateities funkcijos",
             description: false
           }
         },
@@ -115,20 +115,20 @@ export default defineI18nLocale(() => ({
           },
           step2: {
             title: "Prisijungti su Discord",
-            description: false
+            description: "Susiekite PreMiD su savo Discord paskyrą."
           },
           step3: {
             title: "Pridėti paslaugas",
-            description: false
+            description: "Pasirinkite paslaugas, kurias norite rodyti, pavyzdžiui, Youtube, Disney+, ir kitas."
           },
           step4: {
             title: "Mėgaukitės",
-            description: false
+            description: "Dalinkitės savo veikla ir mėgaukitės PreMiD naudojimu."
           }
         },
         callToAction: {
-          title: false,
-          description: false,
+          title: "Pasiruošę pradėti?",
+          description: "Prisijunkite prie {count} vartotojų, kurie jau mėgsta PreMiD.",
           button: "Pradėti dabar"
         }
       }
@@ -140,7 +140,7 @@ export default defineI18nLocale(() => ({
       supporters: "Rėmėjai",
       translators: "Vertėjai",
       avatar: {
-        tooltip: false
+        tooltip: "Spustelėkite norėdami kopijuoti {name} avatarą"
       }
     },
     downloads: {
@@ -148,8 +148,8 @@ export default defineI18nLocale(() => ({
       steps: {
         install: "Diegti plėtinį",
         login: "Prisijungti su Discord",
-        add: "Pridėti Buvimą",
-        showoff: false
+        add: "Pridėti veiklą",
+        showoff: "Pasigirkite!"
       },
       section: {
         heading: {
@@ -160,18 +160,18 @@ export default defineI18nLocale(() => ({
         }
       },
       browser: {
-        your: false,
-        other: false,
-        based: false
+        your: "Jūsų naršyklė",
+        other: "Kitos naršyklės",
+        based: "{browser} pagrįsta"
       },
       mobile: {
         title: "Blogos žinios!",
-        description: false
+        description: "Deja, PreMiD nėra pasiekiama mobiliems įrenginiams!"
       },
       alphaAccess: {
-        title: false,
+        title: "Atrakinkite išskirtinę Alfa prieigą!",
         description: false,
-        callToAction: false
+        callToAction: "Sužinokite daugiau ir prisijunkite prie inovacijų"
       },
       faq: "Dažniausiai Užduodami Klausimai",
       faqs: {
@@ -184,15 +184,15 @@ export default defineI18nLocale(() => ({
           answer: false
         },
         q3: {
-          question: false,
+          question: "Ar PreMiD pažeidžia Discord'o paslaugų teikimo sąlygas?",
           answer: false
         },
         q4: {
-          question: false,
+          question: "Kokias paslaugas palaiko PreMiD?",
           answer: false
         },
         q5: {
-          question: false,
+          question: "Kaip aš galiu prisidėti prie PreMiD?",
           answer: false
         },
         q6: {
@@ -200,15 +200,15 @@ export default defineI18nLocale(() => ({
           answer: false
         },
         q7: {
-          question: false,
+          question: "Ką daryti, jei aš susiduriu su problema su PreMiD?",
           answer: false
         },
         q8: {
-          question: false,
+          question: "PreMiD nepalaiko xyz, ar galite tai pridėti?",
           answer: false
         },
         q9: {
-          question: false,
+          question: "Kaip dažnai yra atnaujinamas PreMiD?",
           answer: false
         }
       }
