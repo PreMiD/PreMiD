@@ -114,22 +114,22 @@ export default defineI18nLocale(() => ({
             description: false
           },
           step2: {
-            title: false,
-            description: false
+            title: "使用 Discord 登入",
+            description: "將您的 Discord 帳戶與 PreMiD 連接。"
           },
           step3: {
-            title: false,
-            description: false
+            title: "添加服務",
+            description: "選擇您想要顯示的服務，如 YouTube、Disney+ 等。"
           },
           step4: {
-            title: false,
-            description: false
+            title: "享受",
+            description: "分享您的活動並盡情享受使用 PreMiD。"
           }
         },
         callToAction: {
-          title: false,
-          description: false,
-          button: false
+          title: "準備好開始使用了嗎？",
+          description: "加入已經喜愛 PreMiD 的 {count} 名用戶。",
+          button: "立即開始"
         }
       }
     },
@@ -140,7 +140,7 @@ export default defineI18nLocale(() => ({
       supporters: "贊助者",
       translators: "翻譯人員",
       avatar: {
-        tooltip: false
+        tooltip: "點擊複製 {name} 的頭像圖片"
       }
     },
     downloads: {
@@ -149,7 +149,7 @@ export default defineI18nLocale(() => ({
         install: "安裝擴充功能",
         login: "使用 Discord 登入",
         add: "新增狀態",
-        showoff: false
+        showoff: "展示一下！"
       },
       section: {
         heading: {
@@ -162,76 +162,76 @@ export default defineI18nLocale(() => ({
       browser: {
         your: "您的瀏覽器",
         other: "其他瀏覽器",
-        based: false
+        based: "基於 {browser}"
       },
       mobile: {
         title: "壞消息!",
         description: "PreMiD 不支援行動裝置, 非常抱歉!"
       },
       alphaAccess: {
-        title: false,
-        description: false,
-        callToAction: false
+        title: "解鎖專屬 Alpha 訪問權限！",
+        description: "通過成為 PreMiD 的贊助人或在 GitHub 上贊助我們，邁向未來！您的支持不僅推動了我們的開發，還能讓您率先體驗我們正在打造的最具創新性的功能。體驗 PreMiD 的前沿技術，並通過您的反饋影響它的發展軌跡。這不僅僅是關於成為第一，更是成為更大事業的一部分。",
+        callToAction: "了解更多並加入創新行列"
       },
-      faq: false,
+      faq: "常見問題",
       faqs: {
         q1: {
-          question: false,
-          answer: false
+          question: "什麼是 PreMiD？",
+          answer: "PreMiD 是一個簡單且可配置的工具，允許你在 Discord 活動狀態中顯示你在網頁上的活動。"
         },
         q2: {
-          question: false,
-          answer: false
+          question: "我該如何使用 PreMiD？",
+          answer: "你可以透過安裝擴展並使用你的 Discord 帳戶登入來使用 PreMiD。登入後你可以將活動狀態添加到你的個人資料中，並向朋友們炫耀。"
         },
         q3: {
-          question: false,
-          answer: false
+          question: "PreMiD 是否違反了 Discord 的服務條款？",
+          answer: "不，PreMiD 並不違反 Discord 的服務條款。PreMiD 使用 Discord 的 API（包括 Discord 提供的受限 API 端點）來設置你的活動狀態。這意味著 PreMiD 完全遵守 Discord 的服務條款。"
         },
         q4: {
-          question: false,
-          answer: false
+          question: "PreMiD 支援哪些服務？",
+          answer: "PreMiD 支援許多不同的服務，包括 YouTube、Twitch 和 Netflix。支援的服務列表不斷增長。你可以在我們的商店頁面查看完整的活動狀態列表。"
         },
         q5: {
-          question: false,
-          answer: false
+          question: "我如何為 PreMiD 做出貢獻？",
+          answer: "你可以通過加入我們在 GitHub 上的社區來為 PreMiD 做出貢獻。你可以通過報告問題、建議功能或貢獻代碼來幫助我們。"
         },
         q6: {
-          question: false,
-          answer: false
+          question: "PreMiD 是免費使用的嗎？",
+          answer: "是的，PreMiD 是免費使用的。然而，我們通過 Patreon 和 GitHub Sponsors 接受捐贈，以支持項目的開發。"
         },
         q7: {
-          question: false,
-          answer: false
+          question: "如果我遇到 PreMiD 的問題，我該怎麼辦？",
+          answer: "如果你遇到 PreMiD 的問題，可以加入我們的 Discord 伺服器尋求幫助。我們也在文檔中提供了故障排除指南。"
         },
         q8: {
-          question: false,
-          answer: false
+          question: "PreMiD 不支援某個服務，您能添加嗎？",
+          answer: "我們所謂的 Presence 是由社群驅動的，我們沒有資源加入每個平台。不過，您可以依照我們文件上的指示，新增您自己的 Presence。"
         },
         q9: {
-          question: false,
-          answer: false
+          question: "PreMiD 多久會更新一次？",
+          answer: "我們是由志工推動的小型計畫，我們的目標是儘可能頻繁地更新 PreMiD，但我們無法保證我們永遠都在最前線。"
         }
       }
     },
     store: {
       title: "商店",
-      noPresence: false,
+      noPresence: "沒有符合您搜尋的 Presence...",
       presence: {
         button: {
-          reportIssue: false,
-          suggestFeature: false,
-          viewCode: false
+          reportIssue: "報告問題",
+          suggestFeature: "建議功能",
+          viewCode: "查看代碼"
         },
         title: {
           description: "說明",
           information: "資訊"
         },
         informationSection: {
-          contributors: false,
-          version: false,
-          users: false,
-          tags: false,
-          supportedUrls: false
+          contributors: "貢獻者：",
+          version: "版本：{version}",
+          users: "用戶：{users}",
+          tags: "標籤：",
+          supportedUrls: "支援 URL："
         }
       },
       header: {
@@ -242,17 +242,17 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "合作夥伴",
-    followUs: false,
+    followUs: "關注我們",
     supportUs: "支持我們",
     more: "更多",
-    legal: false,
+    legal: "法律條款",
     supportList: {
       donate: "捐贈",
       contribute: "貢獻",
       translate: "翻譯"
     },
     moreList: {
-      faq: false,
+      faq: "常見問題",
       documentation: "相關文章",
       status: "狀態"
     },
@@ -261,14 +261,14 @@ export default defineI18nLocale(() => ({
       termsOfService: "服務條款",
       cookiePolicy: "Cookie 政策"
     },
-    withLoveBy: false,
-    by: false,
-    copyright: false
+    withLoveBy: "與",
+    by: "由",
+    copyright: "© {year}-{currentYear} {company} 版權所有。"
   },
   error: {
     404: {
       title: false,
-      message: false
+      message: "您要找的頁面不存在。"
     },
     500: {
       title: false,
