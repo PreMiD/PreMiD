@@ -7,7 +7,7 @@ import { getActivity } from "./util/getActivity.js";
 import loadCommands, { commands } from "./util/loadCommands.js";
 import loadEvents from "./util/loadEvents.js";
 import { logger } from "./util/logger.js";
-import { updatePresenceList } from "./util/presenceList.js";
+import { updateActivityList } from "./util/activityList.js";
 
 Sentry.init({
 	integrations: [
@@ -39,7 +39,7 @@ catch (error) {
 try {
 	await connect(processEnv.DATABASE_URL, { appName: "PreMiD Discord Bot" });
 	logger.info("Successfully connected to database");
-	await updatePresenceList();
+	await updateActivityList();
 	logger.info("Successfully updated presence list");
 }
 catch (error) {
@@ -85,5 +85,5 @@ setInterval(async () => {
 }, 60000);
 
 setInterval(() => {
-	updatePresenceList();
+	updateActivityList();
 }, 1000 * 60 * 5);

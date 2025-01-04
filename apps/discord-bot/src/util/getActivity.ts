@@ -1,12 +1,12 @@
 import type { ActivitiesOptions } from "discord.js";
 import { ActivityType } from "discord.js";
-import { getPresenceList } from "./presenceList.js";
+import { getActivityList } from "./activityList.js";
 
 export function getActivity({ previous }: {
 	previous?: string;
 }): ActivitiesOptions {
-	const presenceList = getPresenceList();
-	const statuses = presenceList.filter(status => status.service !== previous);
+	const activityList = getActivityList();
+	const statuses = activityList.filter(status => status.service !== previous);
 	const selectedStatus = statuses[Math.floor(Math.random() * statuses.length)]!;
 
 	return {

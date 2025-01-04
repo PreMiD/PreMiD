@@ -4,7 +4,7 @@ import { logger } from "./logger.js";
 
 let presenceList: { service: string; category: PresenceMetadataCategory }[] = [];
 
-export async function updatePresenceList() {
+export async function updateActivityList() {
 	presenceList = (await Presence.find({}, { metadata: { category: true, service: true } })).map(presence => ({
 		service: presence.metadata.service,
 		category: presence.metadata.category,
@@ -12,6 +12,6 @@ export async function updatePresenceList() {
 	logger.debug(`Updated presence list with ${presenceList.length} presences`);
 }
 
-export function getPresenceList() {
+export function getActivityList() {
 	return presenceList;
 }
