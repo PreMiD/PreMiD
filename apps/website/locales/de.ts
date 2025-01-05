@@ -201,10 +201,10 @@ export default defineI18nLocale(() => ({
         },
         q7: {
           question: false,
-          answer: false
+          answer: "."
         },
         q8: {
-          question: false,
+          question: "",
           answer: false
         },
         q9: {
