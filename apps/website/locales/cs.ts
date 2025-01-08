@@ -144,7 +144,7 @@ export default defineI18nLocale(() => ({
       }
     },
     downloads: {
-      title: "Ke Stažení",
+      title: "Ke stažení",
       steps: {
         install: "Instalovat rozšíření",
         login: "Přihlašte se Discordem",
@@ -170,18 +170,18 @@ export default defineI18nLocale(() => ({
       },
       alphaAccess: {
         title: "Odemkni exkluzivní přístup do alfa testování!",
-        description: "Krok do budoucnosti PreMiD tím, že se stane Patronem nebo sponzorem nás na GitHubu. Vaše podpora nejen podporuje náš vývoj, ale také vám poskytuje první přístup k nejinovativnějším funkcím, které vyrábíme. Zažijte špičku toho, co PreMiD může nabídnout a ovlivnit jeho trajektorii s vaší zpětnou vazbou. Nejde jen o to, abychom byli první. Je to o to, abychom byli součástí něčeho většího.",
+        description: "Krok do budoucnosti PreMiD tím, že se stane Patronem nebo sponzorem nás na GitHubu. Vaše podpora nejen podporuje náš vývoj, ale také vám poskytuje první přístup k nejinovativnějším funkcím, které tvoříme. Zažijte špičku toho, co PreMiD může nabídnout a ovlivnit jeho směr s vaší zpětnou vazbou. Nejde jen o to, abychom byli první. Je to o to, abychom byli součástí něčeho většího.",
         callToAction: "Zjistěte více a zapojte se do inovací"
       },
       faq: "Často kladené dotazy",
       faqs: {
         q1: {
           question: "Co je PreMiD?",
-          answer: "PreMiD je jednoduchá nakonfigurovatelná aplikace, která dokáže v statusu na Discordu zobrazit, co zrovna děláš."
+          answer: "PreMiD je jednoduchá nakonfigurovatelná aplikace, která dokáže v Discord statusu, zobrazit co zrovna děláš."
         },
         q2: {
           question: "Jak mohu použít PreMiD?",
-          answer: "PreMiD můžeš použít instalací rozšíření a přihlášením pomocí tvého Discord účtu. Jakmile budeš přihlášen, můžeš přidat aktivitu do svého profilu a ukázat svým přátelům co právě děláš."
+          answer: "PreMiD můžeš použít instalací rozšíření a přihlášením pomocí tvého Discord účtu. Jakmile budeš přihlášen, můžeš přidat aktivity do svého profilu a ukázat svým přátelům co právě děláš."
         },
         q3: {
           question: "Je PreMiD proti Podmínkám Discordu?",
@@ -220,7 +220,7 @@ export default defineI18nLocale(() => ({
         button: {
           reportIssue: "Náhlasit chybu",
           suggestFeature: "Navrhnout vylepšení",
-          viewCode: "Zobrazit Kód"
+          viewCode: "Zobrazit kód"
         },
         title: {
           description: "Popis",
@@ -252,7 +252,7 @@ export default defineI18nLocale(() => ({
       translate: "Přeložit"
     },
     moreList: {
-      faq: "FAQ",
+      faq: "Často kladené dotazy (FAQ)",
       documentation: "Dokumentace",
       status: "Stav"
     },
