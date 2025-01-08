@@ -2,14 +2,14 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: "Podpořte násvypnutím vašeho blokovače reklam."
+      error: "Podpořte nás vypnutím vašeho blokovače reklam."
     }
   },
   component: {
     searchBar: {
       search: "Hledat",
       sortBy: "Seřadit podle",
-      searchPresence: "Hledat Aktivity",
+      searchPresence: "Hledat aktivity",
       sort: {
         mostUsed: "Nejpoužívanější",
         alphabetical: "Abecedně"
@@ -39,7 +39,7 @@ export default defineI18nLocale(() => ({
     },
     donationModal: {
       title: "Menší příspěvek...",
-      description: "Doufáme, že máš rád PreMiD! Pokud to vnáší úsměv k tváři, proč nešířit nějakou lásku zpět? Náš tým dobrovolníků dal své srdce aby toto vytvořil právě pro vás!",
+      description: "Doufáme, že máš rád/a PreMiD! Pokud to vnáší úsměv k tváři, proč nešířit nějakou lásku zpět? Náš tým dobrovolníků dal své srdce aby toto vytvořil právě pro vás!",
       continue: "Pokračovat",
       close: "Zavřít",
       patreon: "Podpoř na {name}",
