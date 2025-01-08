@@ -50,7 +50,7 @@ export default defineI18nLocale(() => ({
   header: {
     links: {
       contributors: "Přispěvatelé",
-      downloads: "Ke Stažení",
+      downloads: "Ke stažení",
       features: "Funkce",
       store: "Obchod"
     }
@@ -74,17 +74,17 @@ export default defineI18nLocale(() => ({
       words: {
         music: "Hudba",
         videos: "Videa",
-        streams: "Streamování",
+        streams: "Streamy",
         media: "Média"
       },
       description: "PreMiD je jednoduchý, výkonný nástroj, který vám umožňuje sdílet vaši aktuální aktivitu médií na více platformách jako YouTube, Disney+, Netflix a další. Zůstaňte ve spojení a nechte své přátele vidět, co děláte v reálném čase.",
-      getStarted: "Jak Začít",
+      getStarted: "Začínáme",
       sections: {
         feature: {
-          title: "Proč se zamilujete PreMiD",
+          title: "Proč si zamilujete PreMiD",
           feature1: {
             title: "Nastavení soukromí",
-            description: "Převeďte si nastavení ochrany osobních údajů a rozhodněte se, jaké aktivity sdílíte s ostatními. Vaše data, vaše pravidla."
+            description: "Upravte si nastavení ochrany osobních údajů a rozhodněte se, jaké aktivity sdílíte s ostatními. Vaše data, vaše pravidla."
           },
           feature2: {
             title: "Řízeno komunitou",
@@ -95,12 +95,12 @@ export default defineI18nLocale(() => ({
             description: "Užívej zážitek z PreMiD s rozsáhlými možnostmi přizpůsobení tak, aby vyhovoval vašim preferencím a potřebám."
           },
           feature4: {
-            title: "Snadné Nastavení",
+            title: "Snadné nastavení",
             description: "Zprovozněte PreMiD během chvilky. Náš jednoduchý proces nastavení zajišťuje bezproblémový start."
           },
           feature5: {
             title: "Vyhovující Discord ToS",
-            description: "Plně v souladu s podmínkami služby Discordu využíváním oficiálních koncových bodů poskytnutý Discordem."
+            description: "Plně v souladu s podmínkami služby Discordu a využívá oficiální koncové body poskytnuté Discordem."
           },
           feature6: {
             title: "Budoucí funkce",
@@ -115,7 +115,7 @@ export default defineI18nLocale(() => ({
           },
           step2: {
             title: "Přihlašte se Discordem",
-            description: "Připojte PreMiD ke svému Discord účtu."
+            description: "Propojte si PreMiD se svým Discord účtem."
           },
           step3: {
             title: "Přidání aktivit",
@@ -129,14 +129,14 @@ export default defineI18nLocale(() => ({
         callToAction: {
           title: "Připraveni začít?",
           description: "Připojte se k {count} uživatelům, kteří již milují PreMiD.",
-          button: "Přidej Se"
+          button: "Přidej se"
         }
       }
     },
     contributors: {
       title: "Přispěvatelé",
       presenceDevelopers: "Vývojáři aktivit",
-      staff: "Jadro týmu",
+      staff: "Tým",
       supporters: "Podporovatelé",
       translators: "Překladatelé",
       avatar: {
