@@ -140,7 +140,7 @@ export default defineI18nLocale(() => ({
       supporters: "Supporters",
       translators: "Vertalers",
       avatar: {
-        tooltip: false
+        tooltip: "Klik om de avatar van {name} te kopiëren"
       }
     },
     downloads: {
@@ -252,7 +252,7 @@ export default defineI18nLocale(() => ({
       translate: "Vertalen"
     },
     moreList: {
-      faq: false,
+      faq: "Veelgestelde vragen",
       documentation: "Documentatie",
       status: "Status"
     },
