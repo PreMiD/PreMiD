@@ -1,26 +1,26 @@
 import type { AutocompleteInteraction, ChatInputCommandInteraction } from "discord.js";
 import { ActionRowBuilder, ButtonBuilder, ButtonStyle, SlashCommandBuilder } from "discord.js";
-import { Presence } from "@premid/db";
+import { Presence as Activity } from "@premid/db";
 import { createStandardEmbed } from "../util/createStandardEmbed.js";
 import type { Command } from "../util/loadCommands.js";
-import { getPresenceList } from "../util/presenceList.js";
+import { getActivityList } from "../util/activityList.js";
 import { client } from "../constants.js";
 
 export default {
 	data: new SlashCommandBuilder()
-		.setName("presence")
-		.setDescription("Search for a presence")
+		.setName("activity")
+		.setDescription("Search for an activity")
 		.addStringOption(option =>
 			option
 				.setName("query")
-				.setDescription("The presence to search for")
+				.setDescription("The activity to search for")
 				.setAutocomplete(true)
 				.setRequired(true),
 		),
 	autocomplete: async (interaction: AutocompleteInteraction) => {
 		const focusedValue = interaction.options.getFocused();
-		const presenceList = getPresenceList();
-		const filtered = presenceList.filter(({ service }) => service.toLowerCase().includes(focusedValue.toLowerCase()));
+		const activityList = getActivityList();
+		const filtered = activityList.filter(({ service }) => service.toLowerCase().includes(focusedValue.toLowerCase()));
 
 		return interaction.respond(filtered.slice(0, 25).map(({ service }) => ({ name: service, value: service })));
 	},
@@ -30,7 +30,7 @@ export default {
 		if (!query)
 			return interaction.reply({ content: "Please provide a query to search for", ephemeral: true });
 
-		const presence = await Presence.findOne({ name: query }, {
+		const activity = await Activity.findOne({ name: query }, {
 			_id: false,
 			metadata: {
 				service: true,
@@ -45,25 +45,25 @@ export default {
 			},
 		});
 
-		if (!presence)
-			return interaction.reply({ content: "Presence not found", ephemeral: true });
+		if (!activity)
+			return interaction.reply({ content: "Activity not found", ephemeral: true });
 
 		const embed = createStandardEmbed({
-			title: presence.metadata.service,
-			description: presence.metadata.description.en,
-			color: presence.metadata.color,
-			fields: presence.metadata.contributors?.length
+			title: activity.metadata.service,
+			description: activity.metadata.description.en,
+			color: activity.metadata.color,
+			fields: activity.metadata.contributors?.length
 				? [{
 						name: "Contributors",
-						value: presence.metadata.contributors.map(contributor => `<@${contributor.id}>`).join(", "),
+						value: activity.metadata.contributors.map(contributor => `<@${contributor.id}>`).join(", "),
 					}]
 				: undefined,
 		});
 
-		embed.setURL(`https://${Array.isArray(presence.metadata.url) ? presence.metadata.url[0] : presence.metadata.url}`);
-		embed.setThumbnail(presence.metadata.logo);
+		embed.setURL(`https://${Array.isArray(activity.metadata.url) ? activity.metadata.url[0] : activity.metadata.url}`);
+		embed.setThumbnail(activity.metadata.logo);
 
-		const author = await client.users.fetch(presence.metadata.author.id).catch(() => null);
+		const author = await client.users.fetch(activity.metadata.author.id).catch(() => null);
 		if (author) {
 			embed.setAuthor({
 				name: author.username,
@@ -76,22 +76,22 @@ export default {
 				.addComponents(
 					new ButtonBuilder()
 						.setLabel("Open in Store")
-						.setURL(`https://premid.app/store/presences/${encodeURI(presence.metadata.service)}`)
+						.setURL(`https://premid.app/store/presences/${encodeURI(activity.metadata.service)}`)
 						.setStyle(ButtonStyle.Link),
 				),
 		] });
 	},
 	help: {
-		name: "presence",
-		value: "presence",
-		command: "/presence <query>",
-		commandDescription: "Search for a presence",
+		name: "activity",
+		value: "activity",
+		command: "/activity <query>",
+		commandDescription: "Search for an activity",
 		embed: createStandardEmbed({
-			title: "Command: /presence",
-			description: "Search for a presence",
+			title: "Command: /activity",
+			description: "Search for an activity",
 			fields: [
-				{ name: "Usage", value: "`/presence <query>`", inline: true },
-				{ name: "Example", value: "`/presence YouTube`", inline: true },
+				{ name: "Usage", value: "`/activity <query>`", inline: true },
+				{ name: "Example", value: "`/activity YouTube`", inline: true },
 			],
 		}),
 	},
