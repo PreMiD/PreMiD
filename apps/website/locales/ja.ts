@@ -25,26 +25,26 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: false,
+      wip: "作業中",
       support: {
         safari: "Safariのサポートに向け取り組んでいます。お待ちください！"
       }
     },
     userChip: {
-      loading: false
+      loading: "読み込み中..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "追加",
+      removePresence: "削除"
     },
     donationModal: {
-      title: false,
-      description: false,
-      continue: false,
+      title: "ちょっとしたお願いがあります...",
+      description: "PreMiDを気に入っていただけると嬉しいです！もし少しでも笑顔になれたなら、ぜひその愛を広めてください。ボランティアのチームが、あなたのために全力で素晴らしいものを作り上げました！",
+      continue: "続ける",
       close: "閉じる",
-      patreon: false,
-      github: false,
-      holdTight: false
+      patreon: "{name}でサポートする",
+      github: "{name}でスポンサーになる",
+      holdTight: "そのままお待ちください... 魔法のボタンを読み込んでいます..."
     }
   },
   header: {
@@ -58,10 +58,10 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: false,
+        title: "アクティビティの貢献者",
         error: {
-          title: false,
-          description: false
+          title: "エラー",
+          description: "このユーザーの読み込みに問題が発生しています… 後でもう一度お試しください。"
         }
       }
     },
@@ -69,67 +69,67 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "ホーム"
       },
-      title: false,
-      subtitle: false,
+      title: "PreMiDでオンラインプレゼンスを強化しましょう",
+      subtitle: "{word}を楽しんでいることを友達に見せましょう。",
       words: {
         music: "音楽",
         videos: "動画",
-        streams: false,
-        media: false
+        streams: "配信",
+        media: "メディア"
       },
-      description: false,
+      description: "PreMiDは、YouTube、Disney+、Netflixなど、複数のプラットフォームで現在のメディアアクティビティを共有できるシンプルで強力なツールです。リアルタイムでつながり、友達にあなたの活動を見てもらいましょう。",
       getStarted: "はじめよう",
       sections: {
         feature: {
-          title: false,
+          title: "PreMiDを愛する理由",
           feature1: {
-            title: false,
-            description: false
+            title: "プライバシー管理",
+            description: "プライバシー設定を管理し、どのアクティビティを他人と共有するかを決めましょう。あなたのデータはあなたのルールで守られます。"
           },
           feature2: {
-            title: false,
-            description: false
+            title: "コミュニティ主導",
+            description: "情熱的で献身的なコミュニティによって支えられた、多数のプラットフォームに対応する比類なきサポートを体験してください。"
           },
           feature3: {
-            title: false,
-            description: false
+            title: "カスタマイズ可能な設定",
+            description: "豊富なカスタマイズオプションで、あなたの好みやニーズに合わせたPreMiD体験を作りましょう。"
           },
           feature4: {
-            title: false,
-            description: false
+            title: "簡単なセットアップ",
+            description: "PreMiDはあっという間に始められます。シンプルなセットアッププロセスで、ストレスのないスタートをお約束します。"
           },
           feature5: {
-            title: false,
-            description: false
+            title: "Discordの利用規約に準拠",
+            description: "Discordが提供する公式エンドポイントを使用し、Discordの利用規約に完全に準拠しています。"
           },
           feature6: {
-            title: false,
-            description: false
+            title: "今後の機能",
+            description: "今後のPreMiD体験をさらに向上させるエキサイティングな新機能や改良をお楽しみに！"
           }
         },
         howItWorks: {
-          title: false,
+          title: "使い方",
           step1: {
-            title: false,
-            description: false
+            title: "拡張機能をインストールする",
+            description: "PreMiDをブラウザに追加しましょう。"
           },
           step2: {
-            title: false,
-            description: false
+            title: "Discordでログインする",
+            description: "PreMiDをDiscordアカウントと接続しましょう。"
           },
           step3: {
-            title: false,
-            description: false
+            title: "サービスを追加する",
+            description: "YouTubeやDisney+など、表示したいサービスを選択しましょう。"
           },
           step4: {
-            title: false,
-            description: false
+            title: "楽しむ",
+            description: "アクティビティを共有し、PreMiDを楽しみましょう。"
           }
         },
         callToAction: {
-          title: false,
-          description: false,
-          button: false
+          title: "準備はできましたか？",
+          description: "すでに{count}人のユーザーがPreMiDを愛用しています。あなたも仲間入りしませんか？",
+          button: "今すぐ始める"
         }
       }
     },
@@ -140,16 +140,16 @@ export default defineI18nLocale(() => ({
       supporters: "サポーター",
       translators: "翻訳者",
       avatar: {
-        tooltip: false
+        tooltip: "クリックして{name}のアバターをコピー"
       }
     },
     downloads: {
       title: "ダウンロード",
       steps: {
-        install: false,
-        login: false,
-        add: false,
-        showoff: false
+        install: "拡張機能をインストールする",
+        login: "Discordでログインする",
+        add: "プレゼンスを追加する",
+        showoff: "自慢しよう！"
       },
       section: {
         heading: {
@@ -160,78 +160,78 @@ export default defineI18nLocale(() => ({
         }
       },
       browser: {
-        your: false,
-        other: false,
-        based: false
+        your: "お使いのブラウザ",
+        other: "その他のブラウザ",
+        based: "{browser}ベース"
       },
       mobile: {
-        title: false,
-        description: false
+        title: "残念なお知らせです！",
+        description: "申し訳ありませんが、PreMiDはモバイルデバイスでは利用できません！"
       },
       alphaAccess: {
-        title: false,
-        description: false,
-        callToAction: false
+        title: "限定アルファ版アクセスをアンロック！",
+        description: "PreMiDの未来を一足先に体験しませんか？Patronになるか、GitHubでスポンサーシップを通じてサポートしてください。あなたの支援は開発を加速させるだけでなく、私たちが作り上げている最先端の機能への最速アクセスを提供します。PreMiDの革新を体験し、フィードバックを通じてその進化に影響を与えることができます。それは単に最初に体験することだけでなく、より大きな何かの一部になることなのです。",
+        callToAction: "詳細を確認して、革新に参加しましょう"
       },
-      faq: false,
+      faq: "よくある質問",
       faqs: {
         q1: {
-          question: false,
-          answer: false
+          question: "PreMiDとは何ですか？",
+          answer: "PreMiDは、ウェブ上での活動をDiscordのアクティビティステータスに表示できる、シンプルでカスタマイズ可能なユーティリティです。"
         },
         q2: {
-          question: false,
-          answer: false
+          question: "PreMiDはどのように使いますか？",
+          answer: "PreMiDを使用するには、拡張機能をインストールし、Discordアカウントでログインします。ログイン後、プレゼンスをプロフィールに追加して、友達にアクティビティを共有できます。"
         },
         q3: {
-          question: false,
-          answer: false
+          question: "PreMiDはDiscordの利用規約に違反しますか？",
+          answer: "いいえ、PreMiDはDiscordの利用規約に違反しません。PreMiDはDiscordのAPI(Discordが提供するゲート付きAPIエンドポイントを含む)を使用してアクティビティを設定しています。これにより、PreMiDはDiscordの利用規約を完全に遵守しています。"
         },
         q4: {
-          question: false,
-          answer: false
+          question: "PreMiDはどのサービスをサポートしていますか？",
+          answer: "PreMiDは、YouTube、Twitch、Netflixなど、多くのさまざまなサービスをサポートしています。サポートされているサービスのリストは常に拡大中です。対応しているすべてのプレゼンスのリストは、ストアページでご確認いただけます。"
         },
         q5: {
-          question: false,
-          answer: false
+          question: "PreMiDに貢献するにはどうすればよいですか？",
+          answer: "PreMiDに貢献するには、GitHub上のコミュニティに参加してください。問題の報告、機能の提案、コードの提供などで協力することができます。"
         },
         q6: {
-          question: false,
-          answer: false
+          question: "PreMiDは無料で使用できますか？",
+          answer: "はい、PreMiDは無料で使用できます。ただし、プロジェクトの開発を支援するために、PatreonやGitHub Sponsorsを通じた寄付を受け付けています。"
         },
         q7: {
-          question: false,
-          answer: false
+          question: "PreMiDで問題が発生した場合はどうすればいいですか？",
+          answer: "PreMiDで問題が発生した場合は、サポートを受けるためにDiscordサーバーに参加してください。また、ドキュメントにはトラブルシューティングガイドも用意されていますので、そちらもご確認ください。"
         },
         q8: {
-          question: false,
-          answer: false
+          question: "PreMiDがxyzをサポートしていません。追加してもらえますか？",
+          answer: "私たちの「プレゼンス」はコミュニティ主導で作られています。そのため、すべてのプラットフォームを追加するリソースはありません。しかし、ドキュメントの手順に従えば、独自のプレゼンスを追加することができます。"
         },
         q9: {
-          question: false,
-          answer: false
+          question: "PreMiDはどのくらいの頻度で更新されますか？",
+          answer: "私たちは小さなボランティア主導のプロジェクトですので、できるだけ頻繁にPreMiDを更新することを目指していますが、常にすべてに対応できるわけではないことをご理解ください。"
         }
       }
     },
     store: {
       title: "ストア",
-      noPresence: false,
+      noPresence: "検索に一致するプレゼンスはありません...",
       presence: {
         button: {
-          reportIssue: false,
-          suggestFeature: false,
-          viewCode: false
+          reportIssue: "問題を報告する",
+          suggestFeature: "機能を提案する",
+          viewCode: "コードを見る"
         },
         title: {
           description: "概要",
           information: "インフォメーション"
         },
         informationSection: {
-          contributors: false,
-          version: false,
-          users: false,
-          tags: false,
-          supportedUrls: false
+          contributors: "貢献者:",
+          version: "バージョン: {version}",
+          users: "ユーザー数: {users}",
+          tags: "タグ:",
+          supportedUrls: "サポートされているURL:"
         }
       },
       header: {
@@ -242,42 +242,42 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "パートナー",
-    followUs: false,
+    followUs: "フォローする",
     supportUs: "PreMiDを支援",
     more: "もっと",
-    legal: false,
+    legal: "法的事項",
     supportList: {
       donate: "寄付",
       contribute: "コントリビュート",
       translate: "翻訳"
     },
     moreList: {
-      faq: false,
+      faq: "よくある質問",
       documentation: "ドキュメント",
       status: "ステータス"
     },
     legalList: {
       privacyPolicy: "プライバシーポリシー",
-      termsOfService: false,
+      termsOfService: "利用規約",
       cookiePolicy: "Cookie のポリシー"
     },
-    withLoveBy: false,
-    by: false,
-    copyright: false
+    withLoveBy: "一緒",
+    by: "によって",
+    copyright: "© {year}-{currentYear} {company} All rights reserved."
   },
   error: {
     404: {
       title: false,
-      message: false
+      message: "お探しのページは存在しません。"
     },
     500: {
       title: false,
-      message: false
+      message: "こちら側で何か問題が発生しました。"
     },
     default: {
-      title: false,
-      message: false,
-      button: false
+      title: "エラー",
+      message: "こちら側で何か問題が発生しました。",
+      button: "戻る"
     }
   }
 }));
