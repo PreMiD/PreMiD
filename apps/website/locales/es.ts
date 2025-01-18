@@ -58,7 +58,7 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: "Contribuciones de Presencia",
+        title: "Contribuciones de Presece",
         error: {
           title: "Error",
           description: "Tenemos problemas para cargar este usuario... Por favor, inténtalo más tarde."
@@ -69,7 +69,7 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "Inicio"
       },
-      title: "Mejora tu presencia en línea con PreMiD",
+      title: "Mejora tu Presence en línea con PreMiD",
       subtitle: "Enséñale a tus amigos qué {word} estás disfrutando.",
       words: {
         music: "Música",
@@ -104,17 +104,17 @@ export default defineI18nLocale(() => ({
           },
           feature6: {
             title: "Funciones futuras",
-            description: "Permanece atento a las nuevas funciones y mejoras que mejorarán aún más tu experiencia con PreMiD."
+            description: "Permanece atento a las nuevas funciones y mejoras que enriquecerán aún más tu experiencia con PreMiD."
           }
         },
         howItWorks: {
           title: "¿Cómo funciona?",
           step1: {
-            title: "Instalar la extensión",
-            description: "Añadir PreMiD a tu navegador."
+            title: "Instala la extensión",
+            description: "Añade PreMiD a tu navegador."
           },
           step2: {
-            title: "Iniciar sesión con Discord",
+            title: "Inicia sesión con Discord",
             description: "Conecta PreMiD con tu cuenta de Discord."
           },
           step3: {
@@ -147,8 +147,8 @@ export default defineI18nLocale(() => ({
       title: "Descargas",
       steps: {
         install: "Instalar la extensión",
-        login: "Iniciar sesión con Discord",
-        add: "Añadir Presencias",
+        login: "Inicia sesión con Discord",
+        add: "Añadir Presences",
         showoff: "¡Presume!"
       },
       section: {
@@ -170,7 +170,7 @@ export default defineI18nLocale(() => ({
       },
       alphaAccess: {
         title: "¡Desbloquea el acceso Alfa exclusivo!",
-        description: "Entra en el futuro de PreMiD convirtiéndote en mecenas o patrocinándonos en GitHub. Tu apoyo no sólo impulsa nuestro desarrollo, sino que también le otorga el primer acceso a las características más innovadoras que estamos creando. Experimenta la vanguardia de lo que PreMiD puede ofrecer e influye en su trayectoria con tus comentarios. No se trata sólo de ser el primero, sino de formar parte de algo más grande.",
+        description: "Entra en el futuro de PreMiD convirtiéndote en mecenas o patrocinándonos en GitHub. Tu apoyo no sólo impulsa nuestro desarrollo, sino que también te otorga el primer acceso a las características más innovadoras que estamos creando. Experimenta la vanguardia de lo que PreMiD puede ofrecer e influye en su trayectoria con tus comentarios. No se trata sólo de ser el primero, sino de formar parte de algo más grande.",
         callToAction: "Aprende más y únete a la innovación"
       },
       faq: "Preguntas frecuentes",
@@ -181,7 +181,7 @@ export default defineI18nLocale(() => ({
         },
         q2: {
           question: "¿Cómo uso PreMiD?",
-          answer: "Puedes utilizar PreMiD instalando la extensión e iniciando sesión con tu cuenta de Discord. Una vez que hayas iniciado sesión, podrás añadir presencias a tu perfil y presumir ante tus amigos."
+          answer: "Puedes utilizar PreMiD instalando la extensión e iniciando sesión con tu cuenta de Discord. Una vez hayas iniciado sesión, podrás añadir presences a tu perfil y presumir ante tus amigos."
         },
         q3: {
           question: "¿PreMiD va en contra de las condiciones de uso de Discord?",
@@ -189,7 +189,7 @@ export default defineI18nLocale(() => ({
         },
         q4: {
           question: "¿Con qué servicios es compatible PreMiD?",
-          answer: "PreMiD es compatible con muchos servicios diferentes, como YouTube, Twitch y Netflix. La lista de servicios soportados está en constante crecimiento. Puedes ver la lista completa de Presencias en nuestra página de la tienda."
+          answer: "PreMiD es compatible con muchos servicios diferentes, como YouTube, Twitch y Netflix. La lista de servicios soportados está en constante crecimiento. Puedes ver la lista completa de Presences en nuestra página de la tienda."
         },
         q5: {
           question: "¿Cómo puedo contribuir a PreMiD?",
@@ -205,7 +205,7 @@ export default defineI18nLocale(() => ({
         },
         q8: {
           question: "PreMiD no admite xyz, ¿podéis añadirlo?",
-          answer: "Nuestras denominadas Presencias están impulsadas por la comunidad, no disponemos de los recursos necesarios para añadir todas y cada una de las plataformas. Sin embargo, puedes añadir tu propia Presencia siguiendo las instrucciones de nuestra documentación."
+          answer: "Nuestras denominadas Presences están impulsadas por la comunidad, no disponemos de los recursos necesarios para añadir todas y cada una de las plataformas. Sin embargo, puedes añadir tu propia Presence siguiendo las instrucciones de nuestra documentación."
         },
         q9: {
           question: "¿Con qué frecuencia se actualiza PreMiD?",
@@ -215,7 +215,7 @@ export default defineI18nLocale(() => ({
     },
     store: {
       title: "Tienda",
-      noPresence: "Ninguna presencia coincide con tu búsqueda...",
+      noPresence: "Ninguna presence coincide con tu búsqueda...",
       presence: {
         button: {
           reportIssue: "Informar de un problema",
