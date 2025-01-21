@@ -8,14 +8,14 @@ export default defineI18nLocale(() => ({
   component: {
     searchBar: {
       search: "Поиск",
-      sortBy: "Сортировать по",
-      searchPresence: "Поиск Presence",
+      sortBy: "Сортировка",
+      searchPresence: "Поиск презенса",
       sort: {
         mostUsed: "Часто используемые",
         alphabetical: "По алфавиту"
       },
       categories: {
-        all: "Всё",
+        all: false,
         anime: "Аниме",
         games: "Игры",
         music: "Музыка",
@@ -236,7 +236,7 @@ export default defineI18nLocale(() => ({
       },
       header: {
         categories: "Категории",
-        search: "Поиск Presence"
+        search: "Поиск презенса"
       }
     }
   },
