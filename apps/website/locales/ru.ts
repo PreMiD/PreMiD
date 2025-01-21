@@ -15,7 +15,7 @@ export default defineI18nLocale(() => ({
         alphabetical: "По алфавиту"
       },
       categories: {
-        all: false,
+        all: "Все",
         anime: "Аниме",
         games: "Игры",
         music: "Музыка",
