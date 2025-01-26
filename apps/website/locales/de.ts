@@ -43,7 +43,7 @@ export default defineI18nLocale(() => ({
       continue: "Weiter",
       close: "Schließen",
       patreon: "Unterstützt uns auf {name}",
-      github: false,
+      github: "Sponsor auf {name}",
       holdTight: "Warte... lade den magischen Button..."
     }
   },
@@ -58,7 +58,7 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: false,
+        title: "Presence Beiträge",
         error: {
           title: "Fehler",
           description: "Wir haben Probleme beim Laden dieses Benutzers... Bitte versuchen Sie es später erneut."
@@ -70,7 +70,7 @@ export default defineI18nLocale(() => ({
         title: "Startseite"
       },
       title: "Verbessern Sie Ihre Online-Darstellung mit PreMiD",
-      subtitle: false,
+      subtitle: "Zeige deinen Freunden, was dir {word} gefällt.",
       words: {
         music: "Musik",
         videos: "Videos",
@@ -148,7 +148,7 @@ export default defineI18nLocale(() => ({
       steps: {
         install: "Erweiterung installieren",
         login: "Mit Discord anmelden",
-        add: false,
+        add: "Presence hinzufügen",
         showoff: false
       },
       section: {
@@ -160,27 +160,27 @@ export default defineI18nLocale(() => ({
         }
       },
       browser: {
-        your: false,
-        other: false,
-        based: false
+        your: "Dein Browser",
+        other: "Andere Browser",
+        based: "{browser} Basiert"
       },
       mobile: {
-        title: false,
-        description: false
+        title: "Schlechte Nachrichten!",
+        description: "PreMiD ist nicht verfügbar für mobile Geräte, sorry!"
       },
       alphaAccess: {
-        title: false,
+        title: "Schalte exklusiven Alpha Zugriff frei!",
         description: false,
         callToAction: false
       },
       faq: false,
       faqs: {
         q1: {
-          question: false,
+          question: "Was ist PreMiD?",
           answer: false
         },
         q2: {
-          question: false,
+          question: "Wie benutze ich PreMiD?",
           answer: false
         },
         q3: {
