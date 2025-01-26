@@ -170,22 +170,22 @@ export default defineI18nLocale(() => ({
       },
       alphaAccess: {
         title: "Schalte exklusiven Alpha Zugriff frei!",
-        description: false,
-        callToAction: false
+        description: "Tauche in die Zukunft von PreMiD ein, indem du uns auf Patreon oder GitHub unterstützt. Deine Unterstützung treibt nicht nur unsere Entwicklung voran, sondern gibt dir auch exklusiven Zugang zu den innovativsten Funktionen, die wir entwickeln. Erlebe die neuesten Highlights, die PreMiD zu bieten hat, und gestalte mit deinem Feedback die Zukunft aktiv mit. Es geht nicht nur darum, der Erste zu sein – es geht darum, Teil von etwas Größerem zu sein.",
+        callToAction: "Erfahre mehr & werde Teil der Innovation"
       },
-      faq: false,
+      faq: "Häufig gestellte Fragen",
       faqs: {
         q1: {
           question: "Was ist PreMiD?",
-          answer: false
+          answer: "PreMiD ist ein einfaches, konfigurierbares Tool, mit dem du in deinem Discord-Status zeigen kannst, was du gerade im Browser machst."
         },
         q2: {
           question: "Wie benutze ich PreMiD?",
-          answer: false
+          answer: "Du kannst PreMiD benutzen, indem du die Erweiterung installiert und dich mit deinem Discord Account anmeldest. Sobald du eingeloggt bist, kannst du die Aktivitäten zu deinem Profil hinzufügen und deinen Freunden zeigen."
         },
         q3: {
           question: false,
-          answer: false
+          answer: "Nein, PreMiD verstößt nicht gegen Discord's Nutzungsbedingungen. PreMiD verwendet Discord's API (inklusive Gated API Endpoints von Discord), um deine Aktivität festzulegen. Das bedeutet, dass PreMiD in voller Übereinstimmung mit Discord's Nutzungsbedingungen steht."
         },
         q4: {
           question: false,
