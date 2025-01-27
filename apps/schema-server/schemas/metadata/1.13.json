@@ -3,7 +3,7 @@
 	"$id": "https://schemas.premid.app/metadata/1.13",
 	"title": "Metadata",
 	"type": "object",
-	"description": "Metadata that describes a presence.",
+	"description": "Metadata that describes a activity.",
 	"definitions": {
 		"user": {
 			"type": "object",
@@ -34,18 +34,18 @@
 		},
 		"author": {
 			"$ref": "#/definitions/user",
-			"description": "The author of this presence."
+			"description": "The author of this activity."
 		},
 		"contributors": {
 			"type": "array",
-			"description": "Any extra contributors to this presence.",
+			"description": "Any extra contributors to this activity.",
 			"items": {
 				"$ref": "#/definitions/user"
 			}
 		},
 		"service": {
 			"type": "string",
-			"description": "The service this presence is for."
+			"description": "The service this activity is for."
 		},
 		"altnames": {
 			"type": "array",
@@ -58,7 +58,7 @@
 		},
 		"description": {
 			"type": "object",
-			"description": "A description of the presence in multiple languages.",
+			"description": "A description of the activity in multiple languages.",
 			"propertyNames": {
 				"type": "string",
 				"description": "The language key. The key must be languagecode(-regioncode).",
@@ -67,7 +67,7 @@
 			"patternProperties": {
 				"^[a-z]{2,3}(?:-(?:[a-z]{2}|[0-9]{1,3}))?$": {
 					"type": "string",
-					"description": "The description of the presence in the key's language."
+					"description": "The description of the activity in the key's language."
 				}
 			},
 			"additionalProperties": false,
@@ -91,35 +91,35 @@
 		},
 		"version": {
 			"type": "string",
-			"description": "The SemVer version of the presence. Must just be major.minor.patch.",
+			"description": "The SemVer version of the activity. Must just be major.minor.patch.",
 			"pattern": "^\\d+\\.\\d+\\.\\d+$"
 		},
 		"apiVersion": {
 			"type": "integer",
-			"description": "The Presence System version this Presence supports.",
+			"description": "The Activity System version this activity supports.",
 			"minimum": 1,
 			"maximum": 2
 		},
 		"logo": {
 			"type": "string",
-			"description": "The logo of the service this presence is for.",
+			"description": "The logo of the service this activity is for.",
 			"pattern": "^https?://.+\\.(png|jpe?g|gif|webp)$"
 		},
 		"thumbnail": {
 			"type": "string",
-			"description": "A thumbnail of the service this presence is for.",
+			"description": "A thumbnail of the service this activity is for.",
 			"pattern": "^https?://.+\\.(png|jpe?g|gif|webp)$"
 		},
 		"color": {
 			"type": "string",
-			"description": "The theme color of the service this presence is for. Must be either a 6 digit or a 3 digit hex code.",
+			"description": "The theme color of the service this activity is for. Must be either a 6 digit or a 3 digit hex code.",
 			"pattern": "^#([A-Fa-f0-9]{3}){1,2}$"
 		},
 		"tags": {
 			"type": [
 				"array"
 			],
-			"description": "The tags for the presence.",
+			"description": "The tags for the activity.",
 			"items": {
 				"type": "string",
 				"description": "A tag.",
@@ -129,7 +129,7 @@
 		},
 		"category": {
 			"type": "string",
-			"description": "The category the presence falls under.",
+			"description": "The category the activity falls under.",
 			"enum": [
 				"anime",
 				"games",
@@ -141,7 +141,7 @@
 		},
 		"iframe": {
 			"type": "boolean",
-			"description": "Whether or not the presence should run in IFrames."
+			"description": "Whether or not the activity should run in IFrames."
 		},
 		"readLogs": {
 			"type": "boolean",
@@ -149,15 +149,15 @@
 		},
 		"regExp": {
 			"type": "string",
-			"description": "A regular expression used to match URLs for the presence to inject into."
+			"description": "A regular expression used to match URLs for the activity to inject into."
 		},
 		"iFrameRegExp": {
 			"type": "string",
-			"description": "A regular expression used to match IFrames for the presence to inject into."
+			"description": "A regular expression used to match IFrames for the activity to inject into."
 		},
 		"settings": {
 			"type": "array",
-			"description": "An array of settings the user can change in the presence.",
+			"description": "An array of settings the user can change in the activity.",
 			"items": {
 				"type": "object",
 				"description": "A setting.",
@@ -225,6 +225,10 @@
 				},
 				"additionalProperties": false
 			}
+		},
+		"mobile": {
+			"type": "boolean",
+			"description": "Whether or not the activity has support for mobile devices."
 		}
 	},
 	"additionalProperties": false,
