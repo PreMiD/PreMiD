@@ -99,7 +99,7 @@ slideshow.addSlide("viewsCounter", viewsPresence, 5000);
 presence.setActivity(slideshow);
 ```
 
-### PresenceData {#presence-data}
+### PresenceData
 
 ```ts
 interface PresenceData {
