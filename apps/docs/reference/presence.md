@@ -58,7 +58,7 @@ presence.on("UpdateData", () => {
 });
 ```
 
-## setActivity(data: [`PresenceData`](#presence-data) | [`Slideshow`](#slideshow))
+## setActivity(data: [`PresenceData`](/reference/presence.md#presence-data) | [`Slideshow`](#slideshow))
 
 Updates the user's activity.
 
@@ -99,7 +99,7 @@ slideshow.addSlide("viewsCounter", viewsPresence, 5000);
 presence.setActivity(slideshow);
 ```
 
-### PresenceData
+### PresenceData {#presence-data}
 
 ```ts
 interface PresenceData {
