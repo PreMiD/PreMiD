@@ -81,7 +81,7 @@ const presenceData: PresenceData = {
 presence.setActivity(presenceData);
 ```
 
-::: details Example with Slideshows, read more at [`createSlideshow`](#createSlideshow)
+It can also be used with Slideshows, read more at [`createSlideshow`](#createSlideshow)
 
 ```ts
 // Creates a new slideshow
@@ -230,14 +230,13 @@ interface ButtonData {
 
 Used to fetch translations from the extension.
 
-a list of translations can be found in the [Translations Repository](#TODO)
-
-to add your own custom translations check [Custom Translations](#TODO)
-
 ```ts
-// type definition
 function getStrings<T extends Record<string, string>>(strings: T): Promise<T>;
 ```
+
+::: info Translations
+Check [Translations](#TODO) to add your own translations.
+:::
 
 Example
 
@@ -274,17 +273,3 @@ presence.on("UpdateData", () => {
 });
 
 ```
-
-## [`Presence Options`](#presence-options)
-
-Options that change the behavior of the presence
-
-### [`clientId`](#clientId)
-
-- **Type:** `string`
-- **Required**
-
-You can get the `clientId` by making a new application in the [Discord Developer Portal](https://discordapp.com/developers/applications)
-
-> [!NOTE]
-> Make sure to use the name of the service, as it's displayed for legacy users.
