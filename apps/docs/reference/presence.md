@@ -81,7 +81,7 @@ const presenceData: PresenceData = {
 presence.setActivity(presenceData);
 ```
 
-::: details Example with Slideshow
+::: details Example with Slideshows, read more at [`createSlideshow`](#createSlideshow)
 
 ```ts
 // Creates a new slideshow
@@ -99,10 +99,134 @@ slideshow.addSlide("viewsCounter", viewsPresence, 5000);
 presence.setActivity(slideshow);
 ```
 
-For more details check [Slideshow](#TODO)
-:::
+### PresenceData {#presence-data}
 
-## getStrings(strings: Record\<string,string\>)
+```ts
+interface PresenceData {
+  /**
+   * Name to show in activity
+   * @example "YouTube"
+   * @since 2.6
+   */
+  name?: string;
+  /**
+   * Type of activity.
+   *
+   * @example
+   * - ActivityType.Playing: "Playing [name]"
+   * - ActivityType.Listening: "Listening to [name]"
+   * - ActivityType.Watching: "Watching [name]"
+   * - ActivityType.Competing: "Competing in [name]"
+   *
+   * @since 2.6
+   */
+  type?: ActivityType;
+  /**
+   * Top row of the status
+   *
+   * Supports:
+   *
+   * `String`: A string
+   *
+   * `Node`: An element to use (it will use `.textContent`)
+   */
+  details?: string | Node;
+  /**
+   * Bottom row of the status
+   *
+   * Supports:
+   *
+   * `String`: A string
+   *
+   * `Node`: An element to use (it will use `.textContent`)
+   */
+  state?: string | Node;
+  /**
+   * Timestamp in seconds or milliseconds for the start of the activity.
+   * Including this will show time as "elapsed"
+   */
+  startTimestamp?: number | Date;
+  /**
+   * Timestamp in seconds or milliseconds until the end of the activity.
+   * Including this will show time as "remaining" and it takes priority over startTimestamp
+   */
+  endTimestamp?: number | Date;
+  /**
+   * Will display as the large profile artwork
+   *
+   * Supports:
+   *
+   * `String`: An URL to the image or a base64 encoded image
+   *
+   * `Blob`: A blob of the image
+   *
+   * `HTMLImageElement`: An image element to use (it will be converted to a blob)
+   */
+  largeImageKey?: string | Blob | HTMLImageElement;
+  /**
+   * Will display as the small profile artwork
+   *
+   * Supports:
+   *
+   * `String`: An URL to the image or a base64 encoded image
+   *
+   * `Blob`: A blob of the image
+   *
+   * `HTMLImageElement`: An image element to use (it will be converted to a blob)
+   */
+  smallImageKey?: string | Blob | HTMLImageElement;
+  /**
+   * Tooltip for the largeImageKey
+   *
+   * Supports:
+   *
+   * `String`: A string
+   *
+   * `Node`: An element to use (it will use `.textContent`)
+   * @since 2.6
+   */
+  largeImageText?: string | Node;
+  /**
+   * Tooltip for the smallImageKey
+   *
+   * Supports:
+   *
+   * `String`: A string
+   *
+   * `Node`: An element to use (it will use `.textContent`)
+   */
+  smallImageText?: string | Node;
+  /**
+   * Array of buttons, max 2, label is the button text, and url is the link
+   */
+  buttons?: [ButtonData, ButtonData?];
+}
+
+interface ButtonData {
+  /**
+   * Text for the button
+   *
+   * Supports:
+   *
+   * `String`: A string
+   *
+   * `Node`: An element to use (it will use `.textContent`)
+   */
+  label: string | Node;
+  /**
+   * URL of button link
+   *
+   * Supports:
+   *
+   * `String`: A string
+   *
+   * `HTMLAnchorElement`: An anchor element to use (it will use `.href`)
+   */
+  url: string | HTMLAnchorElement;
+}
+```
+
+## getStrings\<T>(strings: T): [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<T>
 
 Used to fetch translations from the extension.
 
