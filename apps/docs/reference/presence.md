@@ -2,18 +2,45 @@
 outline: "deep"
 ---
 
-# Presence
+# <div style="color:#7289da; display:inline;">class</div> Presence {#presence}
 
-The [`Presence`](#presence) class represents a client, which can be used to interact with the PreMiD extension.
+The [`Presence`](#presence) class provides an interface to interact with PreMiD's activity service, allowing you to update the user's activity. It handles connection management, activity updates, lifecycle events and translations.
 
-It also provides lifecycle events via [`UpdateData`](#update_data) and [`iFrameData`](#iframe_data).
+```ts
+class Presence {
+  constructor(options: PresenceOptions);
+}
+```
 
-### Creating a client
+```ts
+interface PresenceOptions {
+  /**
+   * The unique client ID for your Discord application.
+   * - 18-digit number (e.g., "909433121550790655")
+   *
+   * @link https://discordapp.com/developers/applications
+   */
+  clientId: string;
+
+  /**
+   * The `UpdateData` event will only fire when the page fully loads.
+   *
+   * @default false
+   */
+  injectOnComplete?: boolean;
+}
+```
+
+::: info Legacy
+The `clientId` option determines the activity's name for legacy users (pre 2.6), to be deprecated in the future.
+:::
+
+### Example
 
 ```ts
 // Create a new Presence instance
 const presence = new Presence({
-  clientId: "514271496134389561", // [!code warning] determines the activity's name (pre 2.6)
+  clientId: "514271496134389561",
 });
 
 // Listen for the UpdateData lifecycle event
@@ -26,12 +53,10 @@ presence.on("UpdateData", () => {
     state: videoElement.paused ? "Playback paused" : "Playing",
   };
 
-  // use setActivity to update the user's activity
+  // Update the user's activity
   presence.setActivity(presenceData);
 });
 ```
-
-## constructor(options: [`PresenceOptions`](#presence-options)) {#constructor}
 
 ## setActivity(data: [`PresenceData`](#presence-data) | [`Slideshow`](#slideshow))
 
@@ -136,8 +161,6 @@ Options that change the behavior of the presence
 
 - **Type:** `string`
 - **Required**
-
-This property is used for legacy users running the PreMiD application ([`Prefer App`](#prefer-app))
 
 You can get the `clientId` by making a new application in the [Discord Developer Portal](https://discordapp.com/developers/applications)
 
