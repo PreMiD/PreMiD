@@ -60,9 +60,7 @@ presence.on("UpdateData", () => {
 
 ## setActivity(data: [`PresenceData`](#presence-data) | [`Slideshow`](#slideshow))
 
-The main way to update the user's activity.
-
-It can also be used with Slideshows, read more at [`createSlideshow`](#createSlideshow)
+Updates the user's activity.
 
 ```ts{16}
 const presenceData: PresenceData = {
