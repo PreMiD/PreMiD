@@ -12,7 +12,7 @@ export default defineI18nLocale(() => ({
       searchPresence: "Pesquisar presence",
       sort: {
         mostUsed: "Mais Usados",
-        alphabetical: "Alfabética"
+        alphabetical: "Ordem Alfabética"
       },
       categories: {
         all: "Todas",
@@ -25,9 +25,9 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: "Em Progresso",
+      wip: "Em Andamento",
       support: {
-        safari: "Estamos trabalhando para suportar o Safari, fique atento!"
+        safari: "Estamos trabalhando para dar suporte ao Safari, fique atento!"
       }
     },
     userChip: {
@@ -38,7 +38,7 @@ export default defineI18nLocale(() => ({
       removePresence: "Remover"
     },
     donationModal: {
-      title: "Um favor rápido...",
+      title: "Um Favor Rápido...",
       description: "Esperamos que você ame o PreMiD! Se ele traz um sorriso para o seu rosto, por que não espalhar um pouco de amor de volta? Nossa equipe de voluntários colocou seus corações para torná-lo incrível só para você!",
       continue: "Continuar",
       close: "Fechar",
@@ -58,7 +58,7 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: "Contribuições do Presence",
+        title: "Contribuições da Presence",
         error: {
           title: "Erro",
           description: "Estamos tendo problemas para carregar este usuário... Por favor, tente novamente mais tarde."
@@ -69,7 +69,7 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "Página Inicial"
       },
-      title: "Melhore Seu Presence Online com PreMiD",
+      title: "Melhore Sua Presence Online com PreMiD",
       subtitle: "Mostre aos seus amigos o que {word} você está gostando.",
       words: {
         music: "Música",
@@ -99,7 +99,7 @@ export default defineI18nLocale(() => ({
             description: "Levante-se e corra com o PreMiD em breve. Nosso processo de configuração simples garante um começo sem complicações."
           },
           feature5: {
-            title: "Cumpridor das ToS do Discord",
+            title: "Cumpridor dos TdS do Discord",
             description: "Em total conformidade com os Termos de Serviço do Discord, utilizando os pontos finais oficiais fornecidos pelo Discord."
           },
           feature6: {
@@ -114,16 +114,16 @@ export default defineI18nLocale(() => ({
             description: "Adicione o PreMiD ao seu navegador."
           },
           step2: {
-            title: "Conecte com sua conta do Discord",
+            title: "Iniciar Sessão com o Discord",
             description: "Conecte-se com o PreMiD usando sua conta do Discord."
           },
           step3: {
             title: "Adicionar Serviços",
-            description: "Olha qual dos serviços você quer exibir, como YouTube, Disney+ e muito mais."
+            description: "Escolha os serviços você quer exibir, como YouTube, Disney+, e muito mais."
           },
           step4: {
             title: "Aproveite",
-            description: "Compartilhe suas atividades e curta usando o PreMiD."
+            description: "Compartilhe suas atividades e aproveite usando o PreMiD."
           }
         },
         callToAction: {
@@ -147,7 +147,7 @@ export default defineI18nLocale(() => ({
       title: "Downloads",
       steps: {
         install: "Instalar Extensão",
-        login: "Conecte com sua conta do Discord",
+        login: "Iniciar Sessão com o Discord",
         add: "Adicionar Presences",
         showoff: "Esconder!"
       },
@@ -169,7 +169,7 @@ export default defineI18nLocale(() => ({
         description: "O PreMiD não está disponível para dispositivos móveis, desculpe!"
       },
       alphaAccess: {
-        title: "Desbloqueie Acesso Alfa Exclusivo!",
+        title: "Desbloqueie o Acesso Alfa Exclusivo!",
         description: "Entre no futuro do PreMiD tornando-se um membro do Patreon ou nos patrocinando no GitHub. O seu apoio não apenas impulsiona o nosso desenvolvimento, mas também lhe garante acesso primeiro às funcionalidades mais inovadoras que estamos criando. Experimente os limites do que PreMiD pode oferecer e influencie sua trajetória com seu feedback. Não é só por ser a primeira vez — é quase parte de algo maior.",
         callToAction: "Saiba Mais e Junte-se à Inovação"
       },
@@ -177,15 +177,15 @@ export default defineI18nLocale(() => ({
       faqs: {
         q1: {
           question: "O que é PreMiD?",
-          answer: "PreMiD é uma ferramenta simples e configurável que permite mostrar o que você está fazendo no seu navegador no seu status do Discord."
+          answer: "PreMiD é uma ferramenta simples e configurável que permite mostrar o que você está fazendo no seu navegador no seu status de atividade do Discord."
         },
         q2: {
           question: "Como eu uso o PreMiD?",
           answer: "Você pode usar o PreMiD instalando a extensão e logando com sua conta do Discord. Quando você estiver logado, você pode adicionar presences ao seu perfil e exibir aos seus amigos."
         },
         q3: {
-          question: "O PreMiD é contra os Termos do Discord?",
-          answer: "Não, o PreMiD não é contra os Termos do Discord. O PreMiD usa a API do Discord (incluindo endpoints de API agregados fornecidos pelo Discord) para definir sua atividade. Isto significa que o PreMiD está em total conformidade com o Discord."
+          question: "O PreMiD é contra os TdS do Discord?",
+          answer: "Não, o PreMiD não é contra os TdS do Discord. O PreMiD usa a API do Discord (incluindo endpoints de API agregados fornecidos pelo Discord) para definir sua atividade. Isto significa que o PreMiD está em total conformidade com os TdS do Discord."
         },
         q4: {
           question: "Que serviços o PreMiD suporta?",
@@ -197,7 +197,7 @@ export default defineI18nLocale(() => ({
         },
         q6: {
           question: "O PreMiD é gratuito?",
-          answer: "Sim, o PreMiD é gratuito para usar. No entanto, aceitamos doações através de Patreon e Patrocinadores GitHub para ajudar a apoiar o desenvolvimento do projeto."
+          answer: "Sim, o PreMiD é gratuito para usar. No entanto, aceitamos doações através de Patreon e GitHub Sponsors para ajudar a apoiar o desenvolvimento do projeto."
         },
         q7: {
           question: "O que eu devo fazer se encontrar um problema com o PreMiD?",
@@ -230,7 +230,7 @@ export default defineI18nLocale(() => ({
           contributors: "Contribuidores:",
           version: "Versão: {version}",
           users: "Usuários: {users}",
-          tags: "Tags:",
+          tags: "Marcadores:",
           supportedUrls: "URLs Suportadas:"
         }
       },
@@ -242,7 +242,7 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "Parceiros",
-    followUs: "Siga-nós",
+    followUs: "Siga-nos",
     supportUs: "Apoia-nos",
     more: "Mais",
     legal: "Informações Legais",
@@ -272,11 +272,11 @@ export default defineI18nLocale(() => ({
     },
     500: {
       title: false,
-      message: "Algo deu errado."
+      message: "Algo deu errado do nosso lado."
     },
     default: {
       title: "Erro",
-      message: "Algo deu errado.",
+      message: "Algo deu errado do nosso lado.",
       button: "Voltar"
     }
   }
