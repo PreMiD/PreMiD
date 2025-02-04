@@ -2,7 +2,7 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: "Bitte unterstützen Sie uns, indem Sie Ihren Werbeblocker deaktivieren."
+      error: "Bitte unterstütze uns, indem du deinen Werbeblocker deaktivierst."
     }
   },
   component: {
@@ -27,7 +27,7 @@ export default defineI18nLocale(() => ({
     browserCard: {
       wip: "Noch in Arbeit",
       support: {
-        safari: "Wir arbeiten an der Unterstützung von Safari, bleiben Sie dran!"
+        safari: "Wir arbeiten daran, Safari zu unterstützen, bleib dran!"
       }
     },
     userChip: {
@@ -42,7 +42,7 @@ export default defineI18nLocale(() => ({
       description: "Wir hoffen, dass du PreMiD liebst! Wenn es ein Lächeln ins Gesicht bringt, warum nicht etwas Liebe wieder verbreiten? Unser Team von Freiwilligen gibt ihr Bestes nur für dich!",
       continue: "Weiter",
       close: "Schließen",
-      patreon: "Unterstützt uns auf {name}",
+      patreon: "Unterstütze uns auf {name}",
       github: "Sponsor auf {name}",
       holdTight: "Warte... lade den magischen Button..."
     }
@@ -61,7 +61,7 @@ export default defineI18nLocale(() => ({
         title: "Presence Beiträge",
         error: {
           title: "Fehler",
-          description: "Wir haben Probleme beim Laden dieses Benutzers... Bitte versuchen Sie es später erneut."
+          description: "Wir haben Probleme beim Laden dieses Benutzers... Bitte versuche es später erneut."
         }
       }
     },
