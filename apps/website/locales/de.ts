@@ -196,7 +196,7 @@ export default defineI18nLocale(() => ({
           answer: false
         },
         q6: {
-          question: false,
+          question: "Ist PreMiD kostenlos?",
           answer: false
         },
         q7: {
@@ -208,30 +208,30 @@ export default defineI18nLocale(() => ({
           answer: false
         },
         q9: {
-          question: false,
+          question: "Wie oft wird PreMiD aktualisiert?",
           answer: false
         }
       }
     },
     store: {
       title: "Store",
-      noPresence: false,
+      noPresence: "Keine presence enstspricht deiner Suche...",
       presence: {
         button: {
-          reportIssue: false,
+          reportIssue: "Problem melden",
           suggestFeature: "Schlage eine Funktion vor",
-          viewCode: false
+          viewCode: "Code anzeigen"
         },
         title: {
           description: "Beschreibung",
           information: "Informationen"
         },
         informationSection: {
-          contributors: false,
-          version: false,
-          users: false,
-          tags: false,
-          supportedUrls: false
+          contributors: "Mitwirkende:",
+          version: "Version: {version}",
+          users: "Benutzer: {users}",
+          tags: "Schlagwörter:",
+          supportedUrls: "Unterstützte URLs:"
         }
       },
       header: {
@@ -242,33 +242,33 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "Partner",
-    followUs: false,
+    followUs: "Folge uns",
     supportUs: "Unterstütze uns",
     more: "Mehr",
-    legal: false,
+    legal: "Impressum",
     supportList: {
       donate: "Spenden",
       contribute: "Mitwirken",
       translate: "Übersetzen"
     },
     moreList: {
-      faq: false,
+      faq: "Häufig gestellte Fragen",
       documentation: "Dokumentation",
       status: "Status"
     },
     legalList: {
       privacyPolicy: "Datenschutzerklärung",
-      termsOfService: false,
+      termsOfService: "Nutzungsbedingungen",
       cookiePolicy: "Datenschutzerklärung"
     },
-    withLoveBy: false,
-    by: false,
-    copyright: false
+    withLoveBy: "Mit",
+    by: "von",
+    copyright: "© {year}-{currentYear} {company} Alle Rechte vorbehalten."
   },
   error: {
     404: {
       title: false,
-      message: false
+      message: "Die gesuchte Seite existiert nicht."
     },
     500: {
       title: false,
