@@ -31,7 +31,7 @@ export default defineI18nLocale(() => ({
       }
     },
     userChip: {
-      loading: false
+      loading: "يتم التحميل..."
     },
     storeCard: {
       addPresence: false,
@@ -83,16 +83,16 @@ export default defineI18nLocale(() => ({
         feature: {
           title: false,
           feature1: {
-            title: false,
-            description: false
+            title: "التحكم في الخصوصية",
+            description: "تحمل المسؤولية عن إعدادات الخصوصية الخاصة بك وتحديد الأنشطة التي تشاركها مع الآخرين. بياناتك، قواعدك."
           },
           feature2: {
-            title: false,
+            title: "تحريك المجتمع",
             description: false
           },
           feature3: {
             title: false,
-            description: false
+            description: "."
           },
           feature4: {
             title: false,
