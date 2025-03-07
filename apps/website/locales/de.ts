@@ -8,7 +8,7 @@ export default defineI18nLocale(() => ({
   component: {
     searchBar: {
       search: "Suchen",
-      sortBy: "Sortierung",
+      sortBy: "Sortiere nach",
       searchPresence: "Presence suchen",
       sort: {
         mostUsed: "Am häufigsten verwendet",
@@ -184,32 +184,32 @@ export default defineI18nLocale(() => ({
           answer: "Du kannst PreMiD benutzen, indem du die Erweiterung installiert und dich mit deinem Discord Account anmeldest. Sobald du eingeloggt bist, kannst du die Aktivitäten zu deinem Profil hinzufügen und deinen Freunden zeigen."
         },
         q3: {
-          question: false,
+          question: "Verstößt PreMiD gegen Discords ToS?",
           answer: "Nein, PreMiD verstößt nicht gegen Discord's Nutzungsbedingungen. PreMiD verwendet Discord's API (inklusive Gated API Endpoints von Discord), um deine Aktivität festzulegen. Das bedeutet, dass PreMiD in voller Übereinstimmung mit Discord's Nutzungsbedingungen steht."
         },
         q4: {
-          question: false,
-          answer: false
+          question: "Welche Dienste unterstützt PreMiD?",
+          answer: "PreMiD unterstützt viele verschiedene Dienste, darunter YouTube, Twitch und Netflix. Die Liste der unterstützten Dienste wächst ständig. Sie können die komplette Liste aller Presences auf unserer Shop-Seite ansehen."
         },
         q5: {
-          question: false,
-          answer: false
+          question: "Wie kann ich zu PreMiD beitragen?",
+          answer: "Du kannst zu PreMiD beitragen, indem du unserer Community auf GitHub beitrittst. Du kannst helfen, indem du Probleme meldest, Funktionen vorschlägst oder Code beisteuert."
         },
         q6: {
           question: "Ist PreMiD kostenlos?",
-          answer: false
+          answer: "Ja, die nutzung von PreMiD ist kostenlos, aber wir akzeptieren Spenden über Patreon und GitHub Sponsors, um die Entwicklung des Projekts zu unterstützen."
         },
         q7: {
-          question: false,
+          question: "Was soll ich tun, wenn ich ein Problem mit PreMiD habe?",
           answer: "."
         },
         q8: {
           question: "",
-          answer: false
+          answer: "Unsere so genannten Presences sind Community-gesteuert, wir haben nicht die Ressourcen, um jede einzelne Plattform hinzuzufügen. Sie können jedoch Ihre eigene Präsenz hinzufügen, indem Sie den Anweisungen in unserer Dokumentation folgen."
         },
         q9: {
           question: "Wie oft wird PreMiD aktualisiert?",
-          answer: false
+          answer: "Wir sind ein kleines, von Freiwilligen getragenes Projekt und versuchen, PreMiD so oft wie möglich zu aktualisieren. Allerdings können wir nicht garantieren, dass wir uns immer sofort um alles kümmern können."
         }
       }
     },
