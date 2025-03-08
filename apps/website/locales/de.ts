@@ -189,7 +189,7 @@ export default defineI18nLocale(() => ({
         },
         q4: {
           question: "Welche Dienste unterstützt PreMiD?",
-          answer: "PreMiD unterstützt viele verschiedene Dienste, darunter YouTube, Twitch und Netflix. Die Liste der unterstützten Dienste wächst ständig. Sie können die komplette Liste aller Presences auf unserer Shop-Seite ansehen."
+          answer: "PreMiD unterstützt viele verschiedene Dienste, darunter YouTube, Twitch und Netflix. Die Liste der unterstützten Dienste wächst ständig. Du kannst die komplette Liste aller Presences in unserem Store ansehen."
         },
         q5: {
           question: "Wie kann ich zu PreMiD beitragen?",
@@ -197,7 +197,7 @@ export default defineI18nLocale(() => ({
         },
         q6: {
           question: "Ist PreMiD kostenlos?",
-          answer: "Ja, die nutzung von PreMiD ist kostenlos, aber wir akzeptieren Spenden über Patreon und GitHub Sponsors, um die Entwicklung des Projekts zu unterstützen."
+          answer: "Ja, die Nutzung von PreMiD ist kostenlos, aber wir akzeptieren Spenden über Patreon und GitHub Sponsors, um die Entwicklung des Projekts zu unterstützen."
         },
         q7: {
           question: "Was soll ich tun, wenn ich ein Problem mit PreMiD habe?",
@@ -205,7 +205,7 @@ export default defineI18nLocale(() => ({
         },
         q8: {
           question: "",
-          answer: "Unsere so genannten Presences sind Community-gesteuert, wir haben nicht die Ressourcen, um jede einzelne Plattform hinzuzufügen. Sie können jedoch Ihre eigene Präsenz hinzufügen, indem Sie den Anweisungen in unserer Dokumentation folgen."
+          answer: "Unsere sogenannten Presences sind Community-gesteuert, wir haben nicht die Ressourcen, um jede einzelne Plattform hinzuzufügen. Du kannst jedoch deine eigene Aktivität hinzufügen, indem du den Anweisungen in unserer Dokumentation folgst."
         },
         q9: {
           question: "Wie oft wird PreMiD aktualisiert?",
