@@ -25,7 +25,7 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: false,
+      wip: "Yapım Aşamasında",
       support: {
         safari: false
       }
@@ -40,7 +40,7 @@ export default defineI18nLocale(() => ({
     donationModal: {
       title: false,
       description: false,
-      continue: false,
+      continue: "Devam Et",
       close: "İptal",
       patreon: false,
       github: false,
@@ -119,11 +119,11 @@ export default defineI18nLocale(() => ({
           },
           step3: {
             title: "Servisleri ekleyin.",
-            description: false
+            description: "Görüntülemek istediğiniz servisleri seçin! YouTube, Disney+ ve daha fazlası gibi..."
           },
           step4: {
             title: "Keyfini çıkarın!",
-            description: false
+            description: "Etkinliğini paylaş ve PreMiD'i kullanmanın keyfini çıkar!"
           }
         },
         callToAction: {
