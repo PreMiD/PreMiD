@@ -2,17 +2,17 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "Lütfen reklam engelleyicinizi devre dışı bırakarak bizi destekleyiniz."
     }
   },
   component: {
     searchBar: {
       search: "Ara",
-      sortBy: false,
+      sortBy: "Sırala",
       searchPresence: "Servis ara",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "En Çok Kullanılan",
+        alphabetical: "Alfabetik"
       },
       categories: {
         all: "Tümü",
@@ -31,7 +31,7 @@ export default defineI18nLocale(() => ({
       }
     },
     userChip: {
-      loading: false
+      loading: "Yükleniyor..."
     },
     storeCard: {
       addPresence: false,
@@ -60,7 +60,7 @@ export default defineI18nLocale(() => ({
       userPage: {
         title: false,
         error: {
-          title: false,
+          title: "Hata",
           description: false
         }
       }
@@ -75,7 +75,7 @@ export default defineI18nLocale(() => ({
         music: "Müzik",
         videos: "Videolar",
         streams: false,
-        media: false
+        media: "Medya"
       },
       description: false,
       getStarted: "Başlayın",
@@ -91,15 +91,15 @@ export default defineI18nLocale(() => ({
             description: false
           },
           feature3: {
-            title: false,
+            title: "Kişiselleştirilebilir Ayarlar",
             description: false
           },
           feature4: {
-            title: false,
+            title: "Kolay Kurulum",
             description: false
           },
           feature5: {
-            title: false,
+            title: "Discord'un Hizmet Koşulları ile uyumlu.",
             description: false
           },
           feature6: {
@@ -108,28 +108,28 @@ export default defineI18nLocale(() => ({
           }
         },
         howItWorks: {
-          title: false,
+          title: "Nasıl Çalışıyor?",
           step1: {
-            title: false,
-            description: false
+            title: "Uzantıyı yükleyin.",
+            description: "Tarayıcınıza PreMiD uzantısını kurun."
           },
           step2: {
-            title: false,
-            description: false
+            title: "Discord ile oturum açın.",
+            description: "PreMiD'i Discord hesabınız ile bağlayın."
           },
           step3: {
-            title: false,
+            title: "Servisleri ekleyin.",
             description: false
           },
           step4: {
-            title: false,
+            title: "Keyfini çıkarın!",
             description: false
           }
         },
         callToAction: {
-          title: false,
-          description: false,
-          button: false
+          title: "Başlamaya hazır mısınız?",
+          description: "Hâlihazırda PreMiD'i sevmiş {count} kullanıcının arasına katıl!",
+          button: "Şimdi başlayın!"
         }
       }
     },
@@ -147,7 +147,7 @@ export default defineI18nLocale(() => ({
       title: "İndir",
       steps: {
         install: false,
-        login: false,
+        login: "Discord ile oturum açın.",
         add: false,
         showoff: false
       },
@@ -160,20 +160,20 @@ export default defineI18nLocale(() => ({
         }
       },
       browser: {
-        your: false,
-        other: false,
-        based: false
+        your: "Tarayıcın",
+        other: "Diğer tarayıcılar",
+        based: "{browser} tabanlı"
       },
       mobile: {
-        title: false,
-        description: false
+        title: "Kötü haber!",
+        description: "PreMiD mobil cihazlarda mevcut değildir, özür dileriz!"
       },
       alphaAccess: {
         title: false,
         description: false,
         callToAction: false
       },
-      faq: false,
+      faq: "Sıkça Sorulan Sorular",
       faqs: {
         q1: {
           question: false,
@@ -218,20 +218,20 @@ export default defineI18nLocale(() => ({
       noPresence: false,
       presence: {
         button: {
-          reportIssue: false,
-          suggestFeature: false,
-          viewCode: false
+          reportIssue: "Bir sorun bildir.",
+          suggestFeature: "Bir özellik öner.",
+          viewCode: "Kaynak Kodunu Görüntüle"
         },
         title: {
           description: "Açıklama",
           information: "Bilgi"
         },
         informationSection: {
-          contributors: false,
-          version: false,
-          users: false,
-          tags: false,
-          supportedUrls: false
+          contributors: "Katkıda Bulunanlar:",
+          version: "Sürüm: {version}",
+          users: "Kullanıcılar: {users}",
+          tags: "Etiketler:",
+          supportedUrls: "Desteklenen URL'ler:"
         }
       },
       header: {
@@ -242,10 +242,10 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "Partnerler",
-    followUs: false,
+    followUs: "Bizi takip et!",
     supportUs: "Destek ol",
     more: "Dahası",
-    legal: false,
+    legal: "Yasal",
     supportList: {
       donate: "Bağış Yap",
       contribute: "Katkıda Bulun",
@@ -258,7 +258,7 @@ export default defineI18nLocale(() => ({
     },
     legalList: {
       privacyPolicy: "Gizlilik Politikası",
-      termsOfService: false,
+      termsOfService: "Hizmet Koşulları",
       cookiePolicy: "Çerez Politikası"
     },
     withLoveBy: false,
@@ -268,16 +268,16 @@ export default defineI18nLocale(() => ({
   error: {
     404: {
       title: false,
-      message: false
+      message: "Aradığınız sayfa mevcut değil."
     },
     500: {
       title: false,
       message: false
     },
     default: {
-      title: false,
+      title: "Hata",
       message: false,
-      button: false
+      button: "Geri dön."
     }
   }
 }));
