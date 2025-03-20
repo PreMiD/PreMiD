@@ -10,7 +10,13 @@
 			"path": "./apps/schema-server/tsconfig.app.json"
 		},
 		{
-			"path": "./apps/api/tsconfig.app.json"
+			"path": "./apps/api-master/tsconfig.app.json"
+		},
+		{
+			"path": "./apps/api-worker/tsconfig.app.json"
+		},
+		{
+			"path": "./apps/discord-bot/tsconfig.app.json"
 		}
 	],
 	"files": []

@@ -1,8 +1,8 @@
+import { Buffer } from "node:buffer";
 import { readFile } from "node:fs/promises";
+
 import type { RequestOptions } from "node:http";
 import type { AddressInfo } from "node:net";
-
-import { Buffer } from "node:buffer";
 import { afterAll, beforeAll, describe, it } from "vitest";
 
 import { createServer } from "../functions/createServer.js";

@@ -9,8 +9,9 @@ COPY . /app
 
 RUN pnpm i --frozen-lockfile
 
-RUN if ["$SERVICE" == "api" ]; then pnpm run -r codegen; fi
-RUN pnpm --filter @premid/${SERVICE} run build
+RUN if [ "$SERVICE" != "website" ]; then pnpm run -r codegen; fi
+RUN if [ "$SERVICE" != "website" ]; then pnpm run build; fi
+RUN if [ "$SERVICE" == "website" ]; then pnpm --filter @premid/website run build; fi
 RUN if [ "$SERVICE" != "website" ]; then pnpm --filter @premid/${SERVICE} deploy --prod /prod/${SERVICE}; fi
 
 FROM node:20-alpine AS prod

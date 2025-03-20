@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { LocationQuery } from "vue-router";
-import { useExtensionStore } from "~/stores/useExtension";
 import breakpoints from "~/breakpoints";
+import { useExtensionStore } from "~/stores/useExtension";
 
 const extension = useExtensionStore();
 
@@ -19,17 +19,23 @@ const selectedCategory = ref("");
 
 const sortBy = ref<string>("");
 const pageSize = ref(9);
-const totalPages = computed(() => Math.ceil(data.value.presences.length / pageSize.value));
+const totalPages = computed(() =>
+	Math.ceil(data.value.presences.length / pageSize.value),
+);
 
 const presences = computed(() => {
 	const startIndex = (currentPage.value - 1) * pageSize.value;
 	const endIndex = startIndex + pageSize.value;
 	const sortedPresences = (
 		selectedCategory.value
-			? data.value.presences.filter(p => p.metadata.category === selectedCategory.value)
+			? data.value.presences.filter(
+				p => p.metadata.category === selectedCategory.value,
+			)
 			: data.value.presences
 	)
-		.filter(p => p.metadata.service.toLowerCase().includes(searchTerm.value.toLowerCase()))
+		.filter(p =>
+			p.metadata.service.toLowerCase().includes(searchTerm.value.toLowerCase()),
+		)
 		.sort((a, b) => {
 			if (sortBy.value === t("component.searchBar.sort.mostUsed"))
 				return b.users - a.users;
@@ -37,7 +43,7 @@ const presences = computed(() => {
 				return a.metadata.service.localeCompare(b.metadata.service);
 			return 0;
 		})
-		.sort(a => extension.presences.includes(a.metadata.service) ? -1 : 1);
+		.sort(a => (extension.presences.includes(a.metadata.service) ? -1 : 1));
 
 	return {
 		data: sortedPresences.slice(startIndex, endIndex),
@@ -48,7 +54,9 @@ const presences = computed(() => {
 
 async function handleQuery(query: LocationQuery) {
 	const pageQuery = query.page?.toString() || "1";
-	const parsedPage = Number.parseInt(Number.isNaN(Number(pageQuery)) ? "1" : pageQuery);
+	const parsedPage = Number.parseInt(
+		Number.isNaN(Number(pageQuery)) ? "1" : pageQuery,
+	);
 	currentPage.value = Math.max(1, Math.min(parsedPage, totalPages.value));
 	searchTerm.value = query.search?.toString() || "";
 	selectedCategory.value = query.category?.toString() || "";
@@ -71,10 +79,16 @@ onUnmounted(() => {
 	window.removeEventListener("resize", resizePageSize);
 });
 
-function getLinkProperties({ page = currentPage.value, search = searchTerm.value, category = selectedCategory.value }) {
+function getLinkProperties({
+	page = currentPage.value,
+	search = searchTerm.value,
+	category = selectedCategory.value,
+}) {
 	const query = { category, page, search };
 	return {
-		query: Object.fromEntries(Object.entries(query).filter(([, value]) => value !== "")),
+		query: Object.fromEntries(
+			Object.entries(query).filter(([, value]) => value !== ""),
+		),
 	};
 }
 
@@ -101,18 +115,35 @@ onMounted(() => {
 	<div>
 		<StoreSearchBar v-model:sort-order="sortBy" />
 		<!-- Presences Grid or Empty State -->
-		<div v-if="presences.data.length === 0" class="flex justify-center items-center rounded-lg h-50">
-			<div class="flex flex-col items-center justify-center p-5 text-lg text-primary-highlight">
+		<div
+			v-if="presences.data.length === 0"
+			class="flex justify-center items-center rounded-lg h-50"
+		>
+			<div
+				class="flex flex-col items-center justify-center p-5 text-lg text-primary-highlight"
+			>
 				<FAIcon :icon="['fa', 'frown']" class="mb-2 text-3xl" />
 				<p>{{ $t("page.store.noPresence") }}</p>
 			</div>
 		</div>
-		<div v-if="presences.data.length > 0" class="items-center mt-5 flex-col flex sm:mt-10 min-h-688px">
-			<div class="gap-4 grid grid-cols-[fit-content(0%)] sm-md:grid-cols-[repeat(2,fit-content(0%))] lg:grid-cols-[repeat(3,fit-content(0%))] overflow-unset">
-				<StoreCard v-for="presence in presences.data" :key="presence.metadata.service" :presence="presence" />
+		<div
+			v-if="presences.data.length > 0"
+			class="items-center mt-5 flex-col flex sm:mt-10 min-h-688px"
+		>
+			<div
+				class="gap-4 grid grid-cols-[fit-content(0%)] sm-md:grid-cols-[repeat(2,fit-content(0%))] lg:grid-cols-[repeat(3,fit-content(0%))] overflow-unset"
+			>
+				<StoreCard
+					v-for="presence in presences.data"
+					:key="presence.metadata.service"
+					:presence="presence"
+				/>
 			</div>
 			<!-- Pagination -->
-			<div v-if="presences.data.length > 0" class="flex mt-5 mb-10 flex-wrap justify-center sticky z-40">
+			<div
+				v-if="presences.data.length > 0"
+				class="flex mt-5 mb-10 flex-wrap justify-center sticky z-40"
+			>
 				<NuxtLink
 					:to="getLinkProperties({ page: 1 })"
 					:replace="true"
@@ -148,7 +179,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-#filters {
+	#filters {
 	&::-webkit-scrollbar {
 		width: 0.4rem;
 		height: 100%;

@@ -99,10 +99,10 @@ export default defineNuxtConfig({
 		"@nuxtjs/seo",
 		"floating-vue/nuxt",
 		"@nuxtjs/device",
-		/* "@nuxt/scripts", */
 		"nuxt-typed-router",
 		"nuxt-security",
 		"@pinia/nuxt",
+		"@nuxt/scripts",
 	],
 	runtimeConfig: {
 		// Use NUXT_ prefixed env vars for nuxt config

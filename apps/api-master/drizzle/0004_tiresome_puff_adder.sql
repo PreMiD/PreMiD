@@ -1,0 +1,1 @@
+ALTER TABLE "online_users_ip_data" ADD COLUMN "sessions" integer DEFAULT 0 NOT NULL;

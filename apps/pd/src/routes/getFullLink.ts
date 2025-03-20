@@ -1,6 +1,6 @@
-import crypto from "node:crypto";
-
 import { Buffer } from "node:buffer";
+
+import crypto from "node:crypto";
 import type { RouteHandlerMethod } from "fastify";
 
 import isInCIDRRange from "../functions/isInCidRange.js";

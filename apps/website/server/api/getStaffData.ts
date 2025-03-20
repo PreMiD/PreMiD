@@ -1,8 +1,8 @@
+import { ActivityType, PresenceUpdateStatus, flagsToBadges } from "@discord-user-card/vue";
 import { REST } from "@discordjs/rest";
-import type { RESTGetAPIGuildMemberResult, RESTGetAPIGuildRolesResult } from "discord-api-types/v10";
 import { Routes } from "discord-api-types/v10";
 import type { DiscordUserCardActivity, DiscordUserCardUser } from "@discord-user-card/vue";
-import { ActivityType, PresenceUpdateStatus, flagsToBadges } from "@discord-user-card/vue";
+import type { RESTGetAPIGuildMemberResult, RESTGetAPIGuildRolesResult } from "discord-api-types/v10";
 
 const { discord_bot_token } = useRuntimeConfig();
 const rest = new REST({ version: "10" }).setToken(discord_bot_token);
@@ -61,7 +61,8 @@ const activities: Map<string, DiscordUserCardActivity[]> = new Map()
 				},
 			],
 		} satisfies DiscordUserCardActivity,
-	]).set("193714715631812608", [
+	])
+	.set("193714715631812608", [
 		{
 			type: ActivityType.Playing,
 			name: "Kotobade Asobou",
@@ -73,7 +74,8 @@ const activities: Map<string, DiscordUserCardActivity[]> = new Map()
 			],
 			startTimestamp: Date.now(),
 		} satisfies DiscordUserCardActivity,
-	]).set("205984221859151873", [
+	])
+	.set("205984221859151873", [
 		{
 			type: ActivityType.Playing,
 			name: "BeatLeader",
@@ -90,7 +92,8 @@ const activities: Map<string, DiscordUserCardActivity[]> = new Map()
 				},
 			],
 		} satisfies DiscordUserCardActivity,
-	]).set("152155870917033985", [
+	])
+	.set("152155870917033985", [
 		{
 			type: ActivityType.Watching,
 			name: "YouTube",

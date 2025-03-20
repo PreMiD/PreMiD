@@ -36,7 +36,7 @@
 		"eslint-plugin-format": "^0.1.2",
 		"husky": "^9.0.10",
 		"prettier": "^3.2.5",
-		"typescript": "^5.3.3",
+		"typescript": "^5.5.4",
 		"vitest": "^2.0.2"
 	}
 }

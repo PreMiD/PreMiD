@@ -1,0 +1,1 @@
+ALTER TABLE "online_users_ip_data" ALTER COLUMN "timestamp" SET DATA TYPE timestamp with time zone;

@@ -42,7 +42,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [pd, schema-server, api, website]
+        target:
+          - pd
+          - schema-server
+          - api-worker
+          - api-master
+          - website
+          - discord-bot
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4

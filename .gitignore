@@ -3,6 +3,7 @@ out
 dist
 tmp
 lib
+data
 
 .vscode
 .env
@@ -19,7 +20,9 @@ src/update.ini
 *.app
 *.xml.backup
 *.js
-!eslint.config.js
+!*.config.js
 
 coverage
 *.tsbuildinfo
+.DS_Store
+*.log
