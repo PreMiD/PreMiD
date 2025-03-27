@@ -52,7 +52,7 @@ export default defineI18nLocale(() => ({
       contributors: "贡献者",
       downloads: "下载",
       features: "功能",
-      store: "Presence 市场"
+      store: "市场"
     }
   },
   page: {
@@ -214,7 +214,7 @@ export default defineI18nLocale(() => ({
       }
     },
     store: {
-      title: "Presence 市场",
+      title: "市场",
       noPresence: "没有符合您搜索的 Presence...",
       presence: {
         button: {
