@@ -149,7 +149,7 @@ export default defineI18nLocale(() => ({
         install: "Erweiterung installieren",
         login: "Mit Discord anmelden",
         add: "Presence hinzufügen",
-        showoff: false
+        showoff: "Zeige es!"
       },
       section: {
         heading: {
