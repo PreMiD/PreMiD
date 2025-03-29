@@ -1,4 +1,4 @@
-import { defineI18nLocale } from false;
+import { defineI18nLocale } from "#i18n";
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
@@ -267,11 +267,11 @@ export default defineI18nLocale(() => ({
   },
   error: {
     404: {
-      title: false,
+      title: "404",
       message: "찾으시는 페이지가 존재하지 않아요."
     },
     500: {
-      title: false,
+      title: "500",
       message: "저희 쪽에서 문제가 발생했어요."
     },
     default: {
