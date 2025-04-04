@@ -96,7 +96,7 @@ export default defineI18nLocale(() => ({
           },
           feature4: {
             title: "Lengva sąranka",
-            description: false
+            description: "Greitai pradėkite naudotis PreMiD. Mūsų aiškus diegimo procesas užtikrina lengvą ir sklandų pradžią."
           },
           feature5: {
             title: "Atitinka Discord paslaugų teikimo sąlygomis",
@@ -104,7 +104,7 @@ export default defineI18nLocale(() => ({
           },
           feature6: {
             title: "Ateities funkcijos",
-            description: false
+            description: "Sekite naujienas – jūsų laukia įdomios naujos funkcijos ir patobulinimai, kurie dar labiau pagerins jūsų patirtį su PreMiD."
           }
         },
         howItWorks: {
@@ -170,46 +170,46 @@ export default defineI18nLocale(() => ({
       },
       alphaAccess: {
         title: "Atrakinkite išskirtinę Alfa prieigą!",
-        description: false,
+        description: "Ženkite į PreMiD ateitį tapdami Patron rėmėju arba remdami mus GitHub'e. Jūsų palaikymas ne tik padeda mums toliau kurti projektą, bet ir suteikia pirmąją prieigą prie pažangiausių funkcijų. Patirkite, ką naujausio gali pasiūlyti PreMiD, ir prisidėkite prie jo tobulėjimo dalindamiesi savo atsiliepimais. Tai ne tik galimybė būti pirmiems – tai galimybė būti didesnės bendruomenės dalimi.",
         callToAction: "Sužinokite daugiau ir prisijunkite prie inovacijų"
       },
       faq: "Dažniausiai Užduodami Klausimai",
       faqs: {
         q1: {
           question: "Kas yra PreMiD?",
-          answer: false
+          answer: "PreMiD yra paprastas ir pritaikomas įrankis, leidžiantis rodyti, ką veiki internete, tavo Discord veiklos lange."
         },
         q2: {
           question: "Kaip man naudoti PreMiD?",
-          answer: false
+          answer: "Norėdami naudotis PreMiD, įdiekite naršyklės plėtinį ir prisijunkite naudodami savo Discord paskyrą. Prisijungę galėsite pridėti veiklas prie savo profilio ir parodyti draugams, ką veikiate."
         },
         q3: {
           question: "Ar PreMiD pažeidžia Discord'o paslaugų teikimo sąlygas?",
-          answer: false
+          answer: "Ne, PreMiD nepažeidžia Discord paslaugų teikimo sąlygų. PreMiD naudoja oficialų Discord API (įskaitant ribotą prieigą turinčius galinius taškus), todėl visiškai atitinka Discord taisykles."
         },
         q4: {
           question: "Kokias paslaugas palaiko PreMiD?",
-          answer: false
+          answer: "PreMiD palaiko daugybę skirtingų paslaugų, tokių kaip YouTube, Twitch ir Netflix. Palaikomų paslaugų sąrašas yra nuolat plečiamas. Visą veiklų sąrašą rasite mūsų parduotuvės puslapyje."
         },
         q5: {
           question: "Kaip aš galiu prisidėti prie PreMiD?",
-          answer: false
+          answer: "Prie PreMiD projekto galite prisidėti GitHub'e. Galite padėti pranešdami apie klaidas, siūlydami funkcijas arba prisidėdami kodu."
         },
         q6: {
           question: "Ar „PreMiD“ galima naudoti nemokamai?",
-          answer: false
+          answer: "Taip, PreMiD yra visiškai nemokamas. Tačiau priimame aukojimus per Patreon ir GitHub Sponsors, kad galėtume toliau vystyti projektą."
         },
         q7: {
           question: "Ką daryti, jei aš susiduriu su problema su PreMiD?",
-          answer: false
+          answer: "Jei kyla problemų su PreMiD, prisijunkite prie mūsų Discord serverio pagalbai. Taip pat turime trikčių šalinimo vadovą mūsų dokumentacijoje."
         },
         q8: {
           question: "PreMiD nepalaiko xyz, ar galite tai pridėti?",
-          answer: false
+          answer: "Mūsų vadinamos „Veiklos“ yra kuriamos bendruomenės. Neturime resursų pridėti kiekvienos platformos, tačiau galite susikurti savo veiklas, vadovaudamiesi mūsų dokumentacijos instrukcijomis."
         },
         q9: {
           question: "Kaip dažnai yra atnaujinamas PreMiD?",
-          answer: false
+          answer: "Mes esame mažas, savanorių vykdomas projektas. Stengiamės atnaujinti PreMiD kuo dažniau, tačiau negalime pažadėti, kad visada būsime greiti."
         }
       }
     },
