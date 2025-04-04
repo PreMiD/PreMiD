@@ -215,7 +215,7 @@ export default defineI18nLocale(() => ({
     },
     store: {
       title: "Parduotuvė",
-      noPresence: false,
+      noPresence: "Jokia veikla atitinka jūsų paieškos...",
       presence: {
         button: {
           reportIssue: "Pranešti apie problemą",
