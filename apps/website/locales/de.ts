@@ -103,7 +103,7 @@ export default defineI18nLocale(() => ({
             description: "Konform mit Discord Nutzungsbedingungen, indem die offiziellen Endpunkte von Discord genutzt werden."
           },
           feature6: {
-            title: "Zukünftige Features",
+            title: "Zukünftige Funktionen",
             description: "Bleibe dran für aufregende neue Funktionen und Verbesserungen, die Ihr Erlebnis mit PreMiD noch weiter verbessern werden."
           }
         },
