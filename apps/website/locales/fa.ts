@@ -2,7 +2,7 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "لطفا با غیرفعال کردن مسدود کننده تبلیغات از ما حمایت کنید."
     }
   },
   component: {
@@ -11,8 +11,8 @@ export default defineI18nLocale(() => ({
       sortBy: false,
       searchPresence: "جستجوی Presence",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "بیشترین استفاده شده",
+        alphabetical: "الفبايی"
       },
       categories: {
         all: "همه",
@@ -31,18 +31,18 @@ export default defineI18nLocale(() => ({
       }
     },
     userChip: {
-      loading: false
+      loading: "بارگیری..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "افزودن",
+      removePresence: "حذف کردن"
     },
     donationModal: {
       title: false,
       description: false,
-      continue: false,
+      continue: "ادامه",
       close: "بستن",
-      patreon: false,
+      patreon: "حمایت در {name}",
       github: false,
       holdTight: false
     }
@@ -60,7 +60,7 @@ export default defineI18nLocale(() => ({
       userPage: {
         title: false,
         error: {
-          title: false,
+          title: "خطا",
           description: false
         }
       }
@@ -75,7 +75,7 @@ export default defineI18nLocale(() => ({
         music: "موسیقی",
         videos: "ویدیوها",
         streams: false,
-        media: false
+        media: "رسانه"
       },
       description: false,
       getStarted: "شروع کنید",
@@ -108,13 +108,13 @@ export default defineI18nLocale(() => ({
           }
         },
         howItWorks: {
-          title: false,
+          title: "چگونه کار میکند",
           step1: {
             title: false,
             description: false
           },
           step2: {
-            title: false,
+            title: "ورود با Discord",
             description: false
           },
           step3: {
@@ -137,7 +137,7 @@ export default defineI18nLocale(() => ({
       title: "مشارکت‌کنندگان",
       presenceDevelopers: "توسعه دهندگان Presence",
       staff: "کارکنان",
-      supporters: "پشتیبانان",
+      supporters: "حامیان",
       translators: "مترجمان",
       avatar: {
         tooltip: false
@@ -147,7 +147,7 @@ export default defineI18nLocale(() => ({
       title: "دانلود ها",
       steps: {
         install: false,
-        login: false,
+        login: "ورود با Discord",
         add: false,
         showoff: false
       },
@@ -275,7 +275,7 @@ export default defineI18nLocale(() => ({
       message: false
     },
     default: {
-      title: false,
+      title: "خطا",
       message: false,
       button: false
     }
