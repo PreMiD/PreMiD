@@ -49,7 +49,7 @@ export default defineI18nLocale(() => ({
   },
   header: {
     links: {
-      contributors: "Bidragere",
+      contributors: "Bidragydere",
       downloads: "Installationer",
       features: "Funktioner",
       store: "Butik"
@@ -134,7 +134,7 @@ export default defineI18nLocale(() => ({
       }
     },
     contributors: {
-      title: "Bidragere",
+      title: "Bidragydere",
       presenceDevelopers: false,
       staff: "Personale",
       supporters: false,
