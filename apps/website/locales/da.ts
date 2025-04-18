@@ -41,7 +41,7 @@ export default defineI18nLocale(() => ({
       title: false,
       description: false,
       continue: false,
-      close: false,
+      close: "Luk",
       patreon: false,
       github: false,
       holdTight: false
