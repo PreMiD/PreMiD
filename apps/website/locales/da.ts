@@ -2,17 +2,17 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "Støt os venligst ved at deaktivere din annonce-blocker."
     }
   },
   component: {
     searchBar: {
       search: "Søg",
-      sortBy: false,
+      sortBy: "Sorter efter",
       searchPresence: "Søg efter Presence",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "Mest Brugt",
+        alphabetical: "Alfabetisk"
       },
       categories: {
         all: "Alle",
@@ -25,26 +25,26 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: false,
+      wip: "WIP",
       support: {
-        safari: false
+        safari: "Vi arbejder på at understøtte Safari, holde op!"
       }
     },
     userChip: {
-      loading: false
+      loading: "Indlæser..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "Tilføj",
+      removePresence: "Fjern"
     },
     donationModal: {
-      title: false,
-      description: false,
-      continue: false,
+      title: "En hurtig tjeneste...",
+      description: "Vi håber, at du vil elske PreMiD! Hvis det bringer et smil til dit ansigt, hvorfor så ikke sprede nogle kærlighed tilbage? Vores team af frivillige sætter deres hjerter til at gøre det awesome bare for dig!",
+      continue: "Fortsæt",
       close: "Luk",
-      patreon: false,
-      github: false,
-      holdTight: false
+      patreon: "Støtte på {name}",
+      github: "Sponsor på {name}",
+      holdTight: "Hold stram... indlæser den magiske knap..."
     }
   },
   header: {
@@ -58,19 +58,19 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: false,
+        title: "Presence Bidrag",
         error: {
-          title: false,
-          description: false
+          title: "Fejl",
+          description: "Vi har problemer med at indlæse denne bruger... Prøv igen senere."
         }
       }
     },
     home: {
       meta: {
-        title: false
+        title: "Hjem"
       },
-      title: false,
-      subtitle: false,
+      title: "Forbedre Din Online Tilstedeværelse Med PreMiD",
+      subtitle: "Vis dine venner hvad {word} du nyder.",
       words: {
         music: "Musik",
         videos: false,
@@ -275,7 +275,7 @@ export default defineI18nLocale(() => ({
       message: false
     },
     default: {
-      title: false,
+      title: "Fejl",
       message: false,
       button: false
     }
