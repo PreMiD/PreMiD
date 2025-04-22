@@ -15,6 +15,8 @@ const staff = computed(() => {
 					"514546359865442304",
 					//* Support
 					"566417964820070421",
+					//* Social Media Manager
+					"1027665964684300358",
 				].includes(item?.user?.roleId || ""),
 			)
 			.sort(sortContributors) || []
