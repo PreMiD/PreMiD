@@ -8,7 +8,7 @@ export default defineI18nLocale(() => ({
   component: {
     searchBar: {
       search: "Hľadať",
-      sortBy: false,
+      sortBy: "Zoradiť podľa",
       searchPresence: "Vyhľadať výzor",
       sort: {
         mostUsed: false,
