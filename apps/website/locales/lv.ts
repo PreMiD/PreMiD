@@ -2,16 +2,16 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "Lūdzu, atbalstiet mūs, atspējojot reklāmu bloķētāju."
     }
   },
   component: {
     searchBar: {
       search: "Meklēt",
-      sortBy: false,
+      sortBy: "Kārtot pēc",
       searchPresence: "Meklēt Presence",
       sort: {
-        mostUsed: false,
+        mostUsed: "Visbiežāk izmantotais",
         alphabetical: false
       },
       categories: {
@@ -31,16 +31,16 @@ export default defineI18nLocale(() => ({
       }
     },
     userChip: {
-      loading: false
+      loading: "Ielādē..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "Pievienot",
+      removePresence: "Noņemt"
     },
     donationModal: {
       title: false,
       description: false,
-      continue: false,
+      continue: "Turpināt",
       close: "Aizvērt",
       patreon: false,
       github: false,
