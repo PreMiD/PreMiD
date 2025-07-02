@@ -12,7 +12,7 @@ export default defineI18nLocale(() => ({
       searchPresence: "Meklēt Presence",
       sort: {
         mostUsed: "Visbiežāk izmantotais",
-        alphabetical: false
+        alphabetical: "Alfabētiski"
       },
       categories: {
         all: "Viss",
@@ -25,9 +25,9 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: false,
+      wip: "WIP",
       support: {
-        safari: false
+        safari: "Mēs strādājam pie Safari atbalsta, sekojiet līdzi jaunumiem!"
       }
     },
     userChip: {
@@ -39,12 +39,12 @@ export default defineI18nLocale(() => ({
     },
     donationModal: {
       title: false,
-      description: false,
+      description: "Mēs ceram, ka jums patiks PreMiD! Ja tas liek jums smaidīt, kāpēc gan neatbildēt ar mīlestību? Mūsu brīvprātīgo komanda iegulda visu savu sirdi, lai padarītu to lielisku tieši jums!",
       continue: "Turpināt",
       close: "Aizvērt",
       patreon: false,
       github: false,
-      holdTight: false
+      holdTight: "Turiet cieši... ielādējas burvju poga..."
     }
   },
   header: {
@@ -60,7 +60,7 @@ export default defineI18nLocale(() => ({
       userPage: {
         title: false,
         error: {
-          title: false,
+          title: "Kļūda",
           description: false
         }
       }
@@ -275,7 +275,7 @@ export default defineI18nLocale(() => ({
       message: false
     },
     default: {
-      title: false,
+      title: "Kļūda",
       message: false,
       button: false
     }
