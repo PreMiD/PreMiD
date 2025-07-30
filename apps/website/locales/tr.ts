@@ -103,8 +103,8 @@ export default defineI18nLocale(() => ({
             description: false
           },
           feature6: {
-            title: false,
-            description: false
+            title: "Gelecek Özellikler",
+            description: "PreMiD deneyiminizi ileriye taşıyacak heyecan verici özellikler ve geliştirmeler için beklemede kalın."
           }
         },
         howItWorks: {
@@ -140,13 +140,13 @@ export default defineI18nLocale(() => ({
       supporters: "Destekçiler",
       translators: "Çevirmenler",
       avatar: {
-        tooltip: false
+        tooltip: "{name}'in avatarını kopyalamak için tıklayın"
       }
     },
     downloads: {
       title: "İndir",
       steps: {
-        install: false,
+        install: "Eklentiyi kur",
         login: "Discord ile oturum açın.",
         add: false,
         showoff: false
@@ -169,19 +169,19 @@ export default defineI18nLocale(() => ({
         description: "PreMiD mobil cihazlarda mevcut değildir, özür dileriz!"
       },
       alphaAccess: {
-        title: false,
-        description: false,
-        callToAction: false
+        title: "Özel Alpha sürümüne erişim sağla!",
+        description: "Bize Patreon'dan veya Github üzerinden sponsor olarak PreMiD'in geleceğine adım atın. Desteğiniz sadece uygulamanın gelişimini desteklemekle kalmaz, ayrıca size üzerinde çalıştığımız en yenilikçi özelliklere erken erişim sunar. PreMiD'in en gelişmiş halini deneyimleyin ve geribildirimlerinizle geleceğine etki edin. Bu sadece ilk olmak demek değil, daha büyük bir şeyin parçası olmak demek.",
+        callToAction: "Daha Fazla Öğren & Yeniliğe Katıl"
       },
       faq: "Sıkça Sorulan Sorular",
       faqs: {
         q1: {
-          question: false,
-          answer: false
+          question: "PreMiD nedir?",
+          answer: "PreMiD, tarayıcınız üzerinden yaptıklarınızı Discord aktiviteniz üzerinden göstermenizi sağlayan kullanımı kolay ve ayarlanabilir bir araçtır."
         },
         q2: {
-          question: false,
-          answer: false
+          question: "PreMiD'i nasıl kullanırım?",
+          answer: "PreMiD'i eklentiyi kurarak ve Discord hesabınız ile giriş yaparak kullanabilirsiniz. Giriş yaptıktan sonra servisleri profilinize ekleyerek arkadaşlarınıza gösterebilirsiniz."
         },
         q3: {
           question: false,
