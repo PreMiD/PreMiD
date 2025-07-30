@@ -27,18 +27,18 @@ export default defineI18nLocale(() => ({
     browserCard: {
       wip: "Yapım Aşamasında",
       support: {
-        safari: false
+        safari: "Safari desteği için çalışıyoruz, beklemede kalın!"
       }
     },
     userChip: {
       loading: "Yükleniyor..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "Ekle",
+      removePresence: "Kaldır"
     },
     donationModal: {
-      title: false,
+      title: "Küçük bir iyilik...",
       description: false,
       continue: "Devam Et",
       close: "İptal",
@@ -81,13 +81,13 @@ export default defineI18nLocale(() => ({
       getStarted: "Başlayın",
       sections: {
         feature: {
-          title: false,
+          title: "PreMiD'i neden seveceksiniz",
           feature1: {
-            title: false,
-            description: false
+            title: "Gizlilik Ayarları",
+            description: "Gizlilik ayarlarınızı kontrol edin ve diğerleriyle hangi aktivitelerinizi paylaşacağınızı seçin. Sizin veriniz, sizin kurallarınız."
           },
           feature2: {
-            title: false,
+            title: "Topluluk Odaklı",
             description: false
           },
           feature3: {
