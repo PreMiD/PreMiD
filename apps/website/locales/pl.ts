@@ -58,7 +58,7 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: "Wkład w Presence",
+        title: "Wkład w Aktywność",
         error: {
           title: "Błąd",
           description: "Mamy problem z wczytywaniem tego użytkownika... Spróbuj ponownie później."
@@ -74,7 +74,7 @@ export default defineI18nLocale(() => ({
       words: {
         music: "Muzykę",
         videos: "Wideo",
-        streams: "Streamy",
+        streams: "Transmisje",
         media: "Media"
       },
       description: "PreMiD jest prostym, potężnym narzędziem, które pozwala Ci dzielić się aktualną aktywnością z mediów na wielu platformach, takich jak YouTube, Disney+, Netflix i nie tylko. Pozostań w kontakcie i pozwól swoim znajomym zobaczyć, co porabiasz w czasie rzeczywistym.",
@@ -92,15 +92,15 @@ export default defineI18nLocale(() => ({
           },
           feature3: {
             title: "Konfigurowalne ustawienia",
-            description: "Dostosuj swoje doświadczenia z PreMiD z szeroką gamą opcji aby wpasować się do Twoich preferencji i potrzeb."
+            description: "Dostosuj swoje doświadczenia z PreMiD z szeroką gamą opcji, aby wpasować się do Twoich preferencji i potrzeb."
           },
           feature4: {
             title: "Łatwa Konfiguracja",
             description: "Skonfiguruj PreMiD w mgnieniu oka. Nasz prosty proces konfiguracji zapewnia bezproblemowy start."
           },
           feature5: {
-            title: "Zgodność z warunkami korzystania z usługi Discorda",
-            description: "Pełna zgodność z Regulaminem Discorda poprzez wykorzystanie oficjalnych punktów końcowych dostarczanych przez Discorda."
+            title: "Zgodność z warunkami korzystania z usługi Discord",
+            description: "W pełni zgodne z Regulaminem Discord poprzez wykorzystanie oficjalnych endpointów dostarczanych przez Discord."
           },
           feature6: {
             title: "Przyszłe funkcje",
@@ -114,7 +114,7 @@ export default defineI18nLocale(() => ({
             description: "Dodaj PreMiD do swojej przeglądarki."
           },
           step2: {
-            title: "Zaloguj się za pomocą Discorda",
+            title: "Zaloguj się za pomocą Discord",
             description: "Połącz PreMiD z kontem Discord."
           },
           step3: {
@@ -147,7 +147,7 @@ export default defineI18nLocale(() => ({
       title: "Pliki do pobrania",
       steps: {
         install: "Zainstaluj rozszerzenie",
-        login: "Zaloguj się za pomocą Discorda",
+        login: "Zaloguj się za pomocą Discord",
         add: "Dodaj Presence",
         showoff: "Pokaż się!"
       },
