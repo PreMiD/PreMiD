@@ -13,7 +13,7 @@ Additional:
 - [ElectronJS](https://electronjs.org/)
 - [NPMjs](https://www.npmjs.com/)
 
-A source code editor is also requiered. We recommend [Visual Studio Code](https://code.visualstudio.com/).
+A source code editor is also required. We recommend [Visual Studio Code](https://code.visualstudio.com/).
 
 ### Installing the components
 
