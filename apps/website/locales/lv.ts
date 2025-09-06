@@ -42,8 +42,8 @@ export default defineI18nLocale(() => ({
       description: "Mēs ceram, ka jums patiks PreMiD! Ja tas liek jums smaidīt, kāpēc gan neatbildēt ar mīlestību? Mūsu brīvprātīgo komanda iegulda visu savu sirdi, lai padarītu to lielisku tieši jums!",
       continue: "Turpināt",
       close: "Aizvērt",
-      patreon: false,
-      github: false,
+      patreon: "Atbalstīt {name}",
+      github: "Sponsorēt {name}",
       holdTight: "Turiet cieši... ielādējas burvju poga..."
     }
   },
@@ -61,7 +61,7 @@ export default defineI18nLocale(() => ({
         title: false,
         error: {
           title: "Kļūda",
-          description: false
+          description: "Mums rodas problēmas, ielādējot šo lietotāju... Lūdzu, mēģiniet vēlreiz vēlāk."
         }
       }
     },
@@ -69,7 +69,7 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "Māja"
       },
-      title: false,
+      title: "Uzlabojiet savu klātbūtni tiešsaistē ar PreMiD",
       subtitle: false,
       words: {
         music: "Mūzika",
@@ -81,9 +81,9 @@ export default defineI18nLocale(() => ({
       getStarted: "Sāc",
       sections: {
         feature: {
-          title: false,
+          title: "Kāpēc Jums Patiks PreMiD",
           feature1: {
-            title: false,
+            title: "Privātuma Kontrole",
             description: false
           },
           feature2: {
@@ -99,43 +99,43 @@ export default defineI18nLocale(() => ({
             description: false
           },
           feature5: {
-            title: false,
-            description: false
+            title: "Atbilst Discord lietošanas noteikumiem",
+            description: "Pilnībā atbilst Discord pakalpojumu sniegšanas noteikumiem, izmantojot oficiālos Discord nodrošinātos galapunktus."
           },
           feature6: {
-            title: false,
+            title: "Nākotnes Funkcijas",
             description: false
           }
         },
         howItWorks: {
-          title: false,
+          title: "Kā Tas Darbojas",
           step1: {
-            title: false,
-            description: false
+            title: "Instalējiet paplašinājumu",
+            description: "Pievienojiet PreMiD savam pārlūkam."
           },
           step2: {
-            title: false,
-            description: false
+            title: "Pieslēgties ar Discord",
+            description: "Savienojiet PreMiD ar savu Discord kontu."
           },
           step3: {
             title: false,
             description: false
           },
           step4: {
-            title: false,
-            description: false
+            title: "Izbaudiet",
+            description: "Dalieties savās aktivitātēs un izbaudiet PreMiD lietošanu."
           }
         },
         callToAction: {
-          title: false,
-          description: false,
-          button: false
+          title: "Vai esat gatavs sākt?",
+          description: "Pievienojies {count} lietotājiem, kuri jau ir iecienījuši PreMiD.",
+          button: "Sākt Tagad"
         }
       }
     },
     contributors: {
       title: "Ieguldītāji",
-      presenceDevelopers: false,
+      presenceDevelopers: "Presence Izstrādātāji",
       staff: "Personāls",
       supporters: "Atbalstītāji",
       translators: "Tulki",
@@ -147,8 +147,8 @@ export default defineI18nLocale(() => ({
       title: "Lejupielādes",
       steps: {
         install: false,
-        login: false,
-        add: false,
+        login: "Pieslēgties ar Discord",
+        add: "Pievienot Presence",
         showoff: false
       },
       section: {
@@ -160,27 +160,27 @@ export default defineI18nLocale(() => ({
         }
       },
       browser: {
-        your: false,
-        other: false,
+        your: "Jūsu pārlūks",
+        other: "Citi pārlūki",
         based: false
       },
       mobile: {
-        title: false,
-        description: false
+        title: "Sliktas ziņas!",
+        description: "Atvainojiet, PreMiD nav pieejams mobilajām ierīcēm!"
       },
       alphaAccess: {
-        title: false,
+        title: "Atbloķējiet ekskluzīvu piekļuvi alfa versijai!",
         description: false,
         callToAction: false
       },
-      faq: false,
+      faq: "Bieži uzdotie jautājumi",
       faqs: {
         q1: {
-          question: false,
+          question: "Kas ir PreMiD?",
           answer: false
         },
         q2: {
-          question: false,
+          question: "Kā lietot PreMiD?",
           answer: false
         },
         q3: {
@@ -188,19 +188,19 @@ export default defineI18nLocale(() => ({
           answer: false
         },
         q4: {
-          question: false,
+          question: "Kādus pakalpojumus atbalsta PreMiD?",
           answer: false
         },
         q5: {
-          question: false,
+          question: "Kā es varu palīdzēt PreMiD procesā?",
           answer: false
         },
         q6: {
-          question: false,
-          answer: false
+          question: "Vai PreMiD lietošana ir bez maksas?",
+          answer: "Jā, PreMiD lietošana ir bez maksas. Tomēr mēs pieņemam ziedojumus, izmantojot Patreon un GitHub sponsorus, lai atbalstītu projekta attīstību."
         },
         q7: {
-          question: false,
+          question: "Kas man jādara, ja rodas problēmas ar PreMiD?",
           answer: false
         },
         q8: {
@@ -208,30 +208,30 @@ export default defineI18nLocale(() => ({
           answer: false
         },
         q9: {
-          question: false,
+          question: "Cik bieži tiek atjaunināts PreMiD?",
           answer: false
         }
       }
     },
     store: {
       title: "Veikals",
-      noPresence: false,
+      noPresence: "Nav atrasts neviens presence, kas atbilst jūsu meklēšanai...",
       presence: {
         button: {
-          reportIssue: false,
-          suggestFeature: false,
-          viewCode: false
+          reportIssue: "Ziņot par problēmu",
+          suggestFeature: "Ieteikt funkciju",
+          viewCode: "Skatīt Kodu"
         },
         title: {
           description: "Apraksts",
           information: "Informācija"
         },
         informationSection: {
-          contributors: false,
-          version: false,
+          contributors: "Dalībnieki:",
+          version: "Versija: {version}",
           users: false,
           tags: false,
-          supportedUrls: false
+          supportedUrls: "Atbalstītie URL:"
         }
       },
       header: {
@@ -242,42 +242,42 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "Partneri",
-    followUs: false,
+    followUs: "Sekojiet mums",
     supportUs: "Atbalsti mūs",
     more: "Vairāk",
-    legal: false,
+    legal: "Juridiskā informācija",
     supportList: {
       donate: "Ziedot",
       contribute: "Dod savu ieguldījumu",
       translate: "Tulko"
     },
     moreList: {
-      faq: false,
+      faq: "BUJ",
       documentation: "Dokumentācija",
       status: "Statuss"
     },
     legalList: {
       privacyPolicy: "Privātuma politika",
-      termsOfService: false,
+      termsOfService: "Pakalpojumu sniegšanas noteikumi",
       cookiePolicy: "Sīkdatņu Politika"
     },
-    withLoveBy: false,
-    by: false,
-    copyright: false
+    withLoveBy: "Ar",
+    by: "no",
+    copyright: "© {year}-{currentYear} {company} Visas tiesības aizsargātas."
   },
   error: {
     404: {
       title: false,
-      message: false
+      message: "Lapa, kuru meklējat, neeksistē."
     },
     500: {
       title: false,
-      message: false
+      message: "Mūsu pusē kaut kas nogāja greizi."
     },
     default: {
       title: "Kļūda",
-      message: false,
-      button: false
+      message: "Mūsu pusē kaut kas nogāja greizi.",
+      button: "Iet Atpakaļ"
     }
   }
 }));
