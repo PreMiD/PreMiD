@@ -27,7 +27,7 @@ export default defineI18nLocale(() => ({
     browserCard: {
       wip: false,
       support: {
-        safari: false
+        safari: "Kami ay nagtatrabaho upang masuportahan ang Safari, mangyaring maghintay!"
       }
     },
     userChip: {
