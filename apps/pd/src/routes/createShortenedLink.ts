@@ -19,6 +19,15 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 	if (!["http:", "https:"].includes(urlObject.protocol))
 		return reply.status(400).send("Invalid URL");
 
+	//* Extract file extension from URL pathname
+	const pathname = urlObject.pathname;
+	const extensionMatch = pathname.match(/\.([^./]+)$/);
+	const extension = extensionMatch?.[1]?.toLowerCase() ?? null;
+
+	//* Check if extension is in allowed list
+	const allowedExtensions = ["png", "jpeg", "jpg", "gif", "webp"];
+	const hasValidExtension = extension && allowedExtensions.includes(extension);
+
 	const hash = crypto.createHash("sha256").update(url).digest("hex");
 	const existingShortenedUrl = await keyv.get(hash);
 
@@ -29,7 +38,8 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 		return reply.send(process.env.BASE_URL! + existingShortenedUrl);
 	}
 
-	const uniqueId = nanoid(10);
+	//* Create unique ID with extension if valid, otherwise without extension
+	const uniqueId = hasValidExtension ? `${nanoid(10)}.${extension}` : nanoid(10);
 
 	await Promise.all([keyv.set(hash, uniqueId, 1800), keyv.set(uniqueId, url, 1800)]);
 

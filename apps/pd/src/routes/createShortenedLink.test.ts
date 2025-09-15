@@ -61,4 +61,92 @@ describe.concurrent("/create", async () => {
 		expect(result2.statusCode).toBe(200);
 		expect(result2.body).toStrictEqual(body);
 	});
+
+	it("should preserve file extension when URL has a valid image extension", async () => {
+		const result = await server.inject({
+			method: "GET",
+			url: `/create/https://www.exampl${"e".repeat(256)}.com/image.png`,
+		});
+
+		expect(result.statusCode).toBe(200);
+		expect(result.body).toStrictEqual(expect.any(String));
+		expect(result.body).toMatch(/\.png$/);
+	});
+
+	it("should preserve file extension when URL has .jpg extension", async () => {
+		const result = await server.inject({
+			method: "GET",
+			url: `/create/https://www.exampl${"e".repeat(256)}.com/photo.jpg`,
+		});
+
+		expect(result.statusCode).toBe(200);
+		expect(result.body).toStrictEqual(expect.any(String));
+		expect(result.body).toMatch(/\.jpg$/);
+	});
+
+	it("should preserve file extension when URL has .webp extension", async () => {
+		const result = await server.inject({
+			method: "GET",
+			url: `/create/https://www.exampl${"e".repeat(256)}.com/image.webp`,
+		});
+
+		expect(result.statusCode).toBe(200);
+		expect(result.body).toStrictEqual(expect.any(String));
+		expect(result.body).toMatch(/\.webp$/);
+	});
+
+	it("should preserve file extension when URL has .png with query parameters", async () => {
+		const result = await server.inject({
+			method: "GET",
+			url: `/create/https://www.exampl${"e".repeat(256)}.com/image.png?ref=example`,
+		});
+
+		expect(result.statusCode).toBe(200);
+		expect(result.body).toStrictEqual(expect.any(String));
+		expect(result.body).toMatch(/\.png$/);
+	});
+
+	it("should preserve file extension when URL has .gif with complex query parameters", async () => {
+		const result = await server.inject({
+			method: "GET",
+			url: `/create/https://www.exampl${"e".repeat(256)}.com/animated.gif?size=large&quality=high`,
+		});
+
+		expect(result.statusCode).toBe(200);
+		expect(result.body).toStrictEqual(expect.any(String));
+		expect(result.body).toMatch(/\.gif$/);
+	});
+
+	it("should not preserve file extension when URL has invalid extension", async () => {
+		const result = await server.inject({
+			method: "GET",
+			url: `/create/https://www.exampl${"e".repeat(256)}.com/document.pdf`,
+		});
+
+		expect(result.statusCode).toBe(200);
+		expect(result.body).toStrictEqual(expect.any(String));
+		expect(result.body).not.toMatch(/\.pdf$/);
+	});
+
+	it("should work normally when URL has no file extension", async () => {
+		const result = await server.inject({
+			method: "GET",
+			url: `/create/https://www.exampl${"e".repeat(256)}.com/page`,
+		});
+
+		expect(result.statusCode).toBe(200);
+		expect(result.body).toStrictEqual(expect.any(String));
+		expect(result.body).not.toMatch(/\.\w+$/);
+	});
+
+	it("should handle case-insensitive extensions", async () => {
+		const result = await server.inject({
+			method: "GET",
+			url: `/create/https://www.exampl${"e".repeat(256)}.com/image.PNG`,
+		});
+
+		expect(result.statusCode).toBe(200);
+		expect(result.body).toStrictEqual(expect.any(String));
+		expect(result.body).toMatch(/\.png$/); //* Should be lowercase in result
+	});
 });
