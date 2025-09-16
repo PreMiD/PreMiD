@@ -98,4 +98,31 @@ describe("getFullLink", async () => {
 		expect(result.headers.get("content-type")).toBe("image/png");
 		expect(Buffer.from(await result.arrayBuffer())).toStrictEqual(imageBuffer);
 	});
+
+	it("should fetch and return PNG image instead of redirecting for URLs with .png extension", async () => {
+		const testUrl = `https://cdn.rcd.gg/PreMiD/resources/reading.png?v=${"a".repeat(250)}`;
+
+		const { body } = await server.inject({
+			url: `/create/${testUrl}`,
+		});
+
+		expect(body).toStrictEqual(expect.any(String));
+
+		vi.spyOn(isInCIDRRange, "default").mockReturnValueOnce(true);
+
+		const result = await fetch(`${url}${body}`, {
+			headers: {
+				"cf-connecting-ip": "",
+			},
+		});
+
+		expect(result.status).toBe(200);
+		expect(result.headers.get("content-type")).toMatch(/^image\//);
+		//* Should return image data, not redirect
+		expect(result.headers.get("location")).toBeNull();
+
+		//* Verify we got actual image data
+		const imageBuffer = await result.arrayBuffer();
+		expect(imageBuffer.byteLength).toBeGreaterThan(0);
+	});
 });

@@ -34,18 +34,49 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 	await Promise.all([keyv.set(hash, id, 30 * 60 * 1000), keyv.set(id, url, 30 * 60 * 1000)]);
 	void reply.header("Cache-control", "public, max-age=1800");
 
-	//* If it is not a base64 string, redirect to it
-	if (!url.startsWith("data:image"))
-		return reply.redirect(url);
+	//* If it is a base64 string, decode and return the image
+	if (url.startsWith("data:image")) {
+		const image = Buffer.from(
+			url.replace(/^data:image\/\w+;base64,/, ""),
+			"base64",
+		);
 
-	const image = Buffer.from(
-		url.replace(/^data:image\/\w+;base64,/, ""),
-		"base64",
-	);
+		const mime = url.split(";")[0]!.split(":")[1]!;
 
-	const mime = url.split(";")[0]!.split(":")[1]!;
+		return reply.type(mime).send(image);
+	}
 
-	return reply.type(mime).send(image);
+	//* Check if URL has a valid image extension
+	const urlObject = new URL(url);
+	const pathname = urlObject.pathname;
+	const extensionMatch = pathname.match(/\.([^./]+)$/);
+	const extension = extensionMatch?.[1]?.toLowerCase() ?? null;
+
+	const allowedExtensions = ["png", "jpeg", "jpg", "gif", "webp"];
+	const hasValidImageExtension = extension && allowedExtensions.includes(extension);
+
+	//* If URL has valid image extension, fetch and return the image
+	if (hasValidImageExtension) {
+		try {
+			const response = await fetch(url);
+
+			if (!response.ok) {
+				return reply.code(404).send("Image not found");
+			}
+
+			const contentType = response.headers.get("content-type") || `image/${extension}`;
+			const imageBuffer = Buffer.from(await response.arrayBuffer());
+
+			return reply.type(contentType).send(imageBuffer);
+		}
+		catch {
+			//* If fetch fails, fall back to redirect
+			return reply.redirect(url);
+		}
+	}
+
+	//* For all other URLs, redirect to them
+	return reply.redirect(url);
 };
 
 export default handler;
