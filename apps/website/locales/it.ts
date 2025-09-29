@@ -39,12 +39,12 @@ export default defineI18nLocale(() => ({
     },
     donationModal: {
       title: "Un piccolo favore...",
-      description: false,
-      continue: false,
+      description: "Speriamo che amerai PreMiD! Se ti porta un sorriso, perché non portare un po di amore? Il nostro team di volontari mettono il loro cuore per farli grandiosi per te!",
+      continue: "Continua",
       close: "Chiudi",
-      patreon: false,
-      github: false,
-      holdTight: false
+      patreon: "Supporta su patreon {name}",
+      github: "Supporta su GitHub {name}",
+      holdTight: "Tieniti... Sto caricando il pulsante magico..."
     }
   },
   header: {
@@ -60,8 +60,8 @@ export default defineI18nLocale(() => ({
       userPage: {
         title: false,
         error: {
-          title: false,
-          description: false
+          title: "Errore",
+          description: "Stiamo riscontrando problemi nel caricamento di questo utente... Riprova più tardi."
         }
       }
     },
@@ -69,7 +69,7 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "Homepage"
       },
-      title: false,
+      title: "Migliora il tuo Chi Sono di discord con PreMiD",
       subtitle: false,
       words: {
         music: "Musica",
@@ -77,14 +77,14 @@ export default defineI18nLocale(() => ({
         streams: false,
         media: false
       },
-      description: false,
+      description: "PreMiD è uno strumento semplice, e potente che ti permette di condividere la tua attività multimediale attuale su più piattaforme come YouTube, Disney+, Netflix e altro ancora. Resta connesso e lascia che i tuoi amici vedano cosa stai facendo in tempo reale.",
       getStarted: "Inizia Ora",
       sections: {
         feature: {
-          title: false,
+          title: "Perchè amerai PreMiD",
           feature1: {
-            title: false,
-            description: false
+            title: "Controllo della Privacy",
+            description: "Prendi il controllo delle tue impostazioni sulla privacy e decidi quali attività condividi con gli altri. I tuoi dati, Le tue regole."
           },
           feature2: {
             title: false,
@@ -95,41 +95,41 @@ export default defineI18nLocale(() => ({
             description: false
           },
           feature4: {
-            title: false,
+            title: "Configurazione semplice",
             description: false
           },
           feature5: {
             title: false,
-            description: false
+            description: "Completamente conforme ai Termini di Servizio di Discord utilizzando gli endpoint ufficiali forniti da Discord."
           },
           feature6: {
-            title: false,
+            title: "Feature in futuro",
             description: false
           }
         },
         howItWorks: {
-          title: false,
+          title: "Come Funziona",
           step1: {
-            title: false,
-            description: false
+            title: "Installa l'estensione",
+            description: "Aggiungi PreMiD al tuo browser."
           },
           step2: {
-            title: false,
-            description: false
+            title: "Accedi con Discord",
+            description: "Connetti PreMiD con il tuo account Discord."
           },
           step3: {
-            title: false,
-            description: false
+            title: "Aggiungi i servizi",
+            description: "Scegli i servizi che vuoi che appaiono, tipo YouTube, Disney+, e molto altro."
           },
           step4: {
-            title: false,
-            description: false
+            title: "Buon divertimento",
+            description: "Condividi le tue attività e divertiti a usare PreMiD."
           }
         },
         callToAction: {
-          title: false,
-          description: false,
-          button: false
+          title: "Pronto a iniziare?",
+          description: "Unisciti ai {count} utenti che già amano PreMiD.",
+          button: "Inizia Ora"
         }
       }
     },
@@ -140,15 +140,15 @@ export default defineI18nLocale(() => ({
       supporters: "Sostenitori",
       translators: "Traduttori",
       avatar: {
-        tooltip: false
+        tooltip: "Clicca per copiare l'avatar di {name}"
       }
     },
     downloads: {
       title: "Download",
       steps: {
-        install: false,
-        login: false,
-        add: false,
+        install: "Installa estensione",
+        login: "Accedi con Discord",
+        add: "Aggiungi le presenze",
         showoff: false
       },
       section: {
@@ -160,16 +160,16 @@ export default defineI18nLocale(() => ({
         }
       },
       browser: {
-        your: false,
-        other: false,
-        based: false
+        your: "Il tuo browser",
+        other: "Gli altri browser",
+        based: "Basato su {browser}"
       },
       mobile: {
-        title: false,
-        description: false
+        title: "Brutte notizie!",
+        description: "PreMiD non è disponibile per i dispositivi mobili, scusa!"
       },
       alphaAccess: {
-        title: false,
+        title: "Sblocca L'accesso esclusivo Alpha!",
         description: false,
         callToAction: false
       },
@@ -218,8 +218,8 @@ export default defineI18nLocale(() => ({
       noPresence: false,
       presence: {
         button: {
-          reportIssue: false,
-          suggestFeature: false,
+          reportIssue: "Segnala un problema",
+          suggestFeature: "Suggerisci una funzione",
           viewCode: false
         },
         title: {
@@ -268,16 +268,16 @@ export default defineI18nLocale(() => ({
   error: {
     404: {
       title: false,
-      message: false
+      message: "La pagina che stai cercando non esiste."
     },
     500: {
       title: false,
-      message: false
+      message: "Qualcosa è andato storto a causa nostra."
     },
     default: {
-      title: false,
-      message: false,
-      button: false
+      title: "Errore",
+      message: "Qualcosa è andato storto a causa nostra.",
+      button: "Indietro"
     }
   }
 }));
