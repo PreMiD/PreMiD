@@ -189,7 +189,7 @@ export default defineI18nLocale(() => ({
         },
         q4: {
           question: "¿Con qué servicios es compatible PreMiD?",
-          answer: false
+          answer: "PreMid es compatible con muchos servicios diferentes como YouTube, Twitch, y Netflitx. La lista de servicios con soporte crece constantemente. Puedes ver la lista completa de Presencias en nuestra página de la tienda."
         },
         q5: {
           question: false,
@@ -197,7 +197,7 @@ export default defineI18nLocale(() => ({
         },
         q6: {
           question: false,
-          answer: false
+          answer: "Sí, PreMid es de uso gratuito. Sin embargo, aceptamos donaciones a través de Patreon y Sponsors de GitHub para ayudar a apoyar el desarrollo del proyecto."
         },
         q7: {
           question: false,
