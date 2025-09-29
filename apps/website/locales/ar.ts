@@ -81,7 +81,7 @@ export default defineI18nLocale(() => ({
       getStarted: "إبدء الان",
       sections: {
         feature: {
-          title: false,
+          title: "لماذا ستحب PreMiD",
           feature1: {
             title: "التحكم في الخصوصية",
             description: "تحمل المسؤولية عن إعدادات الخصوصية الخاصة بك وتحديد الأنشطة التي تشاركها مع الآخرين. بياناتك، قواعدك."
