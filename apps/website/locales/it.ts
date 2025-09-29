@@ -220,18 +220,18 @@ export default defineI18nLocale(() => ({
         button: {
           reportIssue: "Segnala un problema",
           suggestFeature: "Suggerisci una funzione",
-          viewCode: false
+          viewCode: "Vedi codice"
         },
         title: {
           description: "Descrizione",
           information: "Informazione"
         },
         informationSection: {
-          contributors: false,
-          version: false,
-          users: false,
-          tags: false,
-          supportedUrls: false
+          contributors: "Contributori:",
+          version: "Versione: {version}",
+          users: "Utenti: {users}",
+          tags: "Tags:",
+          supportedUrls: "URL supportati:"
         }
       },
       header: {
@@ -242,28 +242,28 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "Partner",
-    followUs: false,
+    followUs: "Seguici",
     supportUs: "Supportaci",
     more: "Di più",
-    legal: false,
+    legal: "Legale",
     supportList: {
       donate: "Dona",
       contribute: "Contribuisci",
       translate: "Traduci"
     },
     moreList: {
-      faq: false,
+      faq: "Domande frequenti",
       documentation: "Documentazione",
       status: "Stato"
     },
     legalList: {
       privacyPolicy: "Politica sulla privacy",
-      termsOfService: false,
+      termsOfService: "Termini di Servizio",
       cookiePolicy: "Informativa sui Cookie"
     },
-    withLoveBy: false,
-    by: false,
-    copyright: false
+    withLoveBy: "Con",
+    by: "da",
+    copyright: "© {year}-{currentYear} {company} Tutti i diritti riservati."
   },
   error: {
     404: {
