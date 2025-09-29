@@ -58,10 +58,10 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: false,
+        title: "Presence Katkıları",
         error: {
           title: "Hata",
-          description: false
+          description: "Bu kullanıcıyı yüklerken sorun yaşıyoruz... Lütfen daha sonra tekrar dene."
         }
       }
     },
@@ -69,12 +69,12 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "Ana Sayfa"
       },
-      title: false,
+      title: "",
       subtitle: false,
       words: {
         music: "Müzik",
         videos: "Videolar",
-        streams: false,
+        streams: "Akışlar",
         media: "Medya"
       },
       description: false,
