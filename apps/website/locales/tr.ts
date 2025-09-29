@@ -43,8 +43,8 @@ export default defineI18nLocale(() => ({
       continue: "Devam Et",
       close: "İptal",
       patreon: "",
-      github: false,
-      holdTight: false
+      github: "Bağışçılar",
+      holdTight: "Tutunun sihir yükleniyor..."
     }
   },
   header: {
@@ -70,7 +70,7 @@ export default defineI18nLocale(() => ({
         title: "Ana Sayfa"
       },
       title: "",
-      subtitle: false,
+      subtitle: "Arkadaşlarına ne yaptığını göster.",
       words: {
         music: "Müzik",
         videos: "Videolar",
@@ -149,7 +149,7 @@ export default defineI18nLocale(() => ({
         install: "Eklentiyi kur",
         login: "Discord ile oturum açın.",
         add: false,
-        showoff: false
+        showoff: "Gösterme!"
       },
       section: {
         heading: {
@@ -208,7 +208,7 @@ export default defineI18nLocale(() => ({
           answer: false
         },
         q9: {
-          question: false,
+          question: "Premid nasıl güncellenir?",
           answer: false
         }
       }
