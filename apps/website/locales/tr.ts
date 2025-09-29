@@ -42,7 +42,7 @@ export default defineI18nLocale(() => ({
       description: "PreMiD'i seveceğini umuyorum! Eğer yüzüne bir gülümseme getirirse, neden biraz sevginizi göstermeyesiniz? Gönüllü ekibimiz, sadece sizlere harika bir şey yaratmak için tüm kalbini ortaya koydu!",
       continue: "Devam Et",
       close: "İptal",
-      patreon: false,
+      patreon: "",
       github: false,
       holdTight: false
     }
