@@ -2,17 +2,17 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "Kérjük, támogass minket azzal, hogy kikapcsolod a hirdetésblokkolódat."
     }
   },
   component: {
     searchBar: {
       search: "Keresés",
-      sortBy: false,
+      sortBy: "Rendezés szerint",
       searchPresence: "Presence keresése",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "Leggyakrabban használt",
+        alphabetical: "Betűrend szerint"
       },
       categories: {
         all: "Minden",
@@ -25,26 +25,26 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: false,
+      wip: "Folyamatban",
       support: {
-        safari: false
+        safari: "Dolgozunk a Safari támogatásán, maradj velünk!"
       }
     },
     userChip: {
-      loading: false
+      loading: "Betöltés..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "Hozzáadás",
+      removePresence: "Eltávolítás"
     },
     donationModal: {
-      title: false,
-      description: false,
-      continue: false,
+      title: "Egy gyors szívesség...",
+      description: "Reméljük, imádni fogod a PreMiD-et! Ha mosolyt csal az arcodra, miért ne adnál vissza egy kis szeretetet? Önkéntes csapatunk szívét-lelkét beletette, hogy neked szuper legyen!",
+      continue: "Folytatás",
       close: "Bezárás",
-      patreon: false,
-      github: false,
-      holdTight: false
+      patreon: "Támogatás a(z) {name}-on/-en",
+      github: "Szponzorálás a(z) {name}-on",
+      holdTight: "Tarts ki... töltődik a varázsgomb..."
     }
   },
   header: {
@@ -58,10 +58,10 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: false,
+        title: "Presence hozzájárulások",
         error: {
-          title: false,
-          description: false
+          title: "Hiba",
+          description: "Problémánk akadt a felhasználó betöltésével... Kérlek, próbáld meg később újra."
         }
       }
     },
@@ -69,87 +69,87 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "Kezdőlap"
       },
-      title: false,
-      subtitle: false,
+      title: "Emeld új szintre az online Presence-ed a PreMiD segítségével",
+      subtitle: "Mutasd meg a barátaidnak, milyen {word}-et élvezel éppen.",
       words: {
         music: "Zene",
         videos: "Videók",
-        streams: false,
-        media: false
+        streams: "Közvetítések",
+        media: "Média"
       },
-      description: false,
+      description: "A PreMiD egy egyszerű, mégis erőteljes eszköz, amellyel megoszthatod aktuális médiaaktivitásodat több platformon, például a YouTube-on, a Disney+-on, a Netflixen és sok más helyen. Maradj kapcsolatban, és engedd, hogy barátaid valós időben lássák, mivel foglalkozol.",
       getStarted: "Kezdő lépések",
       sections: {
         feature: {
-          title: false,
+          title: "Miért fogod szeretni a PreMiD-et",
           feature1: {
-            title: false,
-            description: false
+            title: "Adatvédelem kezelése",
+            description: "Vedd kézbe az adatvédelmi beállításaidat, és te döntsd el, milyen tevékenységeket osztasz meg másokkal. Adataid, a te szabályaid."
           },
           feature2: {
-            title: false,
-            description: false
+            title: "Közösség által vezérelt",
+            description: "Tapasztald meg a páratlan támogatást számtalan platformhoz, amelyet egy lelkes és elkötelezett közösség hajt."
           },
           feature3: {
-            title: false,
-            description: false
+            title: "Testreszabható beállítások",
+            description: "Formáld a PreMiD élményt a saját ízlésed és igényeid szerint a széleskörű testreszabási lehetőségekkel."
           },
           feature4: {
-            title: false,
-            description: false
+            title: "Egyszerű beállítás",
+            description: "Indítsd be a PreMiD-et pillanatok alatt. Az egyszerű beállítási folyamatunk garantálja a gondtalan kezdést."
           },
           feature5: {
-            title: false,
-            description: false
+            title: "Összhangban a Discord felhasználási feltételeivel",
+            description: "Teljes mértékben megfelel a Discord felhasználási feltételeinek, mivel a Discord által biztosított hivatalos végpontokat használja."
           },
           feature6: {
-            title: false,
-            description: false
+            title: "Jövőbeli funkciók",
+            description: "Maradj velünk, mert izgalmas új funkciók és fejlesztések érkeznek, amelyek még tovább fokozzák a PreMiD élményt."
           }
         },
         howItWorks: {
-          title: false,
+          title: "Hogyan működik",
           step1: {
-            title: false,
-            description: false
+            title: "Telepítsd a bővítményt",
+            description: "Add hozzá a PreMiD-et a böngésződhöz."
           },
           step2: {
-            title: false,
-            description: false
+            title: "Jelentkezz be Discorddal",
+            description: "Kapcsold össze a PreMiD-et a Discord fiókoddal."
           },
           step3: {
-            title: false,
-            description: false
+            title: "Szolgáltatások hozzáadása",
+            description: "Válaszd ki azokat a szolgáltatásokat, amelyeket meg szeretnél jeleníteni, például a YouTube-ot, a Disney+-t és még sok mást."
           },
           step4: {
-            title: false,
-            description: false
+            title: "Élvezd",
+            description: "Oszd meg tevékenységeidet, és élvezd a PreMiD használatát."
           }
         },
         callToAction: {
-          title: false,
-          description: false,
-          button: false
+          title: "Készen állsz, hogy elkezdd?",
+          description: "Csatlakozz ahhoz a(z) {count} felhasználóhoz, akik már imádják a PreMiD-et.",
+          button: "Kezdd el most"
         }
       }
     },
     contributors: {
       title: "Közreműködők",
-      presenceDevelopers: false,
+      presenceDevelopers: "Presence fejlesztők",
       staff: "Csapat",
       supporters: "Támogatók",
       translators: "Fordítók",
       avatar: {
-        tooltip: false
+        tooltip: "Kattints ide {name} avatarjának másolásához"
       }
     },
     downloads: {
       title: "Letöltések",
       steps: {
-        install: false,
-        login: false,
-        add: false,
-        showoff: false
+        install: "Bővítmény telepítése",
+        login: "Jelentkezz be Discorddal",
+        add: "Presence-ek hozzáadása",
+        showoff: "Mutasd meg magad!"
       },
       section: {
         heading: {
@@ -160,78 +160,78 @@ export default defineI18nLocale(() => ({
         }
       },
       browser: {
-        your: false,
-        other: false,
-        based: false
+        your: "A böngésződ",
+        other: "Más böngészők",
+        based: "{browser} alapú"
       },
       mobile: {
-        title: false,
-        description: false
+        title: "Rossz hír!",
+        description: "A PreMiD nem érhető el mobil eszközökre, sajnáljuk!"
       },
       alphaAccess: {
-        title: false,
-        description: false,
-        callToAction: false
+        title: "Nyisd meg az exkluzív Alfa hozzáférést!",
+        description: "Lépj be a PreMiD jövőjébe azzal, hogy Patronná válsz, vagy szponzorálsz minket GitHubon. A támogatásod nemcsak a fejlesztésünket gyorsítja fel, hanem elsőként ad hozzáférést a leginnovatívabb funkciókhoz, amelyeken dolgozunk. Tapasztald meg mindazt, amit a PreMiD legmodernebb megoldásai nyújthatnak, és formáld a jövőjét a visszajelzéseddel. Ez nem csak arról szól, hogy te vagy az első – hanem arról, hogy részese vagy valami nagyobbnak.",
+        callToAction: "Tudj meg többet és csatlakozz az innovációhoz"
       },
-      faq: false,
+      faq: "Gyakran ismételt kérdések",
       faqs: {
         q1: {
-          question: false,
-          answer: false
+          question: "Mi az a PreMiD?",
+          answer: "A PreMiD egy egyszerűen konfigurálható segédprogram, amellyel megjelenítheted, hogy mit csinálsz a weben a Discord aktivitási státuszodban."
         },
         q2: {
-          question: false,
-          answer: false
+          question: "Hogyan használjam a PreMiD-et?",
+          answer: "A PreMiD-et úgy használhatod, hogy telepíted a bővítményt, majd bejelentkezel a Discord fiókoddal. Miután bejelentkeztél, hozzáadhatsz Presences-t a profilodhoz, és megmutathatod barátaidnak, mivel foglalkozol."
         },
         q3: {
-          question: false,
-          answer: false
+          question: "Ellentétes a PreMiD a Discord felhasználási feltételeivel?",
+          answer: "Nem, a PreMiD nem ellentétes a Discord felhasználási feltételeivel. A PreMiD a Discord API-ját használja (beleértve a Discord által biztosított védett API végpontokat is) az aktivitásod beállításához. Ez azt jelenti, hogy a PreMiD teljes mértékben összhangban van a Discord felhasználási feltételeivel."
         },
         q4: {
-          question: false,
-          answer: false
+          question: "Milyen szolgáltatásokat támogat a PreMiD?",
+          answer: "A PreMiD számos különböző szolgáltatást támogat, többek között a YouTube-ot, a Twitchet és a Netflixet. A támogatott szolgáltatások listája folyamatosan bővül. A teljes Presences listát megtekintheted a store oldalunkon."
         },
         q5: {
-          question: false,
-          answer: false
+          question: "Hogyan tudok hozzájárulni a PreMiD-hez?",
+          answer: "A PreMiD-hez úgy tudsz hozzájárulni, hogy csatlakozol a közösségünkhöz a GitHubon. Segíthetsz hibák jelentésével, funkciók javaslásával vagy kód hozzájárulással."
         },
         q6: {
-          question: false,
-          answer: false
+          question: "Ingyenes a PreMiD használata?",
+          answer: "Igen, a PreMiD használata ingyenes. Ugyanakkor elfogadunk adományokat Patreonon és GitHub Sponsorson keresztül, hogy támogasd a projekt fejlesztését."
         },
         q7: {
-          question: false,
-          answer: false
+          question: "Mit kell tennem, ha problémába ütközöm a PreMiD-del?",
+          answer: "Ha bármilyen problémába ütközöl a PreMiD használata közben, csatlakozhatsz a Discord szerverünkhöz segítségért. Emellett van egy hibaelhárítási útmutatónk is a dokumentációnkban."
         },
         q8: {
-          question: false,
-          answer: false
+          question: "A PreMiD nem támogatja az xyz-t, hozzá tudjátok adni?",
+          answer: "Az úgynevezett Presences közösségi alapon készülnek, így nincs erőforrásunk minden egyes platform hozzáadására. Ugyanakkor te is létrehozhatsz saját Presence-t, ha követed a dokumentációnkban található útmutatót."
         },
         q9: {
-          question: false,
-          answer: false
+          question: "Milyen gyakran frissül a PreMiD?",
+          answer: "Egy kis, önkéntesek által működtetett projekt vagyunk, igyekszünk a lehető leggyakrabban frissíteni a PreMiD-et, de nem tudjuk megígérni, hogy mindig minden azonnal naprakész lesz."
         }
       }
     },
     store: {
       title: "Áruház",
-      noPresence: false,
+      noPresence: "Nincs a keresésednek megfelelő Presence...",
       presence: {
         button: {
-          reportIssue: false,
-          suggestFeature: false,
-          viewCode: false
+          reportIssue: "Hiba jelentése",
+          suggestFeature: "Funkció javaslata",
+          viewCode: "Kód megtekintése"
         },
         title: {
           description: "Leírás",
           information: "Információ"
         },
         informationSection: {
-          contributors: false,
-          version: false,
-          users: false,
-          tags: false,
-          supportedUrls: false
+          contributors: "Közreműködők:",
+          version: "Verzió: {version}",
+          users: "Felhasználók: {users}",
+          tags: "Címkék:",
+          supportedUrls: "Támogatott URL-ek:"
         }
       },
       header: {
@@ -242,42 +242,42 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "Partnerek",
-    followUs: false,
+    followUs: "Kövess minket",
     supportUs: "Támogass minket",
     more: "Továbbiak",
-    legal: false,
+    legal: "Jogi információk",
     supportList: {
       donate: "Támogatás",
       contribute: "Hozzájárulás",
       translate: "Fordítás"
     },
     moreList: {
-      faq: false,
+      faq: "GYIK",
       documentation: "Dokumentáció",
       status: "Állapot"
     },
     legalList: {
       privacyPolicy: "Adatvédelmi irányelvek",
-      termsOfService: false,
-      cookiePolicy: "Cookie irányelvek"
+      termsOfService: "Szolgáltatási feltételek",
+      cookiePolicy: "Sütiszabályzat"
     },
-    withLoveBy: false,
-    by: false,
-    copyright: false
+    withLoveBy: "Szeretettel",
+    by: "által",
+    copyright: "© {year}-{currentYear} {company} Minden jog fenntartva."
   },
   error: {
     404: {
       title: false,
-      message: false
+      message: "Az oldal, amit keresel, nem létezik."
     },
     500: {
       title: false,
-      message: false
+      message: "Valami hiba történt a mi oldalunkon."
     },
     default: {
-      title: false,
-      message: false,
-      button: false
+      title: "Hiba",
+      message: "Valami hiba történt a mi oldalunkon.",
+      button: "Vissza"
     }
   }
 }));
