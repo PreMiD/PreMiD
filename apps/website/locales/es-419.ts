@@ -192,46 +192,46 @@ export default defineI18nLocale(() => ({
           answer: "PreMid es compatible con muchos servicios diferentes como YouTube, Twitch, y Netflitx. La lista de servicios con soporte crece constantemente. Puedes ver la lista completa de Presencias en nuestra página de la tienda."
         },
         q5: {
-          question: false,
-          answer: false
+          question: "¿Cómo puedo contribuir a PreMid?",
+          answer: "Puedes contribuir a PreMid uniéndote a nuestra comunidad en GitHub. Puedes ayudar reportando problemas, sugiriendo funciones, o aportando código."
         },
         q6: {
-          question: false,
+          question: "¿PreMid es de uso gratuito?",
           answer: "Sí, PreMid es de uso gratuito. Sin embargo, aceptamos donaciones a través de Patreon y Sponsors de GitHub para ayudar a apoyar el desarrollo del proyecto."
         },
         q7: {
-          question: false,
-          answer: false
+          question: "¿Qué debo hacer si tengo un problema con PreMid?",
+          answer: "Si encuentras algún problema con PreMid, puedes unirte a nuestro servidor de Discord para obtener ayuda. También tenemos una guía de solución de problemas en nuestra documentación."
         },
         q8: {
-          question: false,
-          answer: false
+          question: "PreMid no admite xyz, ¿pueden añadirlo?",
+          answer: "Nuestras llamadas Presencias son impulsadas por la comunidad, no tenemos los recursos para añadirlas a todas las plataformas. Sin embargo, puedes añadir tu propia Presencia siguiendo las instrucciones en nuestra documentación."
         },
         q9: {
-          question: false,
-          answer: false
+          question: "¿Cada cuánto se actualiza PreMid?",
+          answer: "Somos un pequeño proyecto impulsado por voluntarios, nuestro objetivo es actualizar PreMid con la mayor frecuencia posible, pero no podemos prometer estar siempre al día."
         }
       }
     },
     store: {
       title: "Tienda",
-      noPresence: false,
+      noPresence: "Ninguna Presencia coincide con tu búsqueda...",
       presence: {
         button: {
-          reportIssue: false,
-          suggestFeature: false,
-          viewCode: false
+          reportIssue: "Informar de un problema",
+          suggestFeature: "Sugerir una función",
+          viewCode: "Ver código"
         },
         title: {
           description: "Descripción",
           information: "Información"
         },
         informationSection: {
-          contributors: false,
-          version: false,
-          users: false,
-          tags: false,
-          supportedUrls: false
+          contributors: "Colaboradores:",
+          version: "Version: {version}",
+          users: "Users: {users}",
+          tags: "Etiquetas:",
+          supportedUrls: "URLs compatibles:"
         }
       },
       header: {
@@ -242,42 +242,42 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "Socios",
-    followUs: false,
+    followUs: "Síguenos",
     supportUs: "Apóyanos",
     more: "Más",
-    legal: false,
+    legal: "Legal",
     supportList: {
       donate: "Donar",
       contribute: "Contribuir",
       translate: "Traducir"
     },
     moreList: {
-      faq: false,
+      faq: "Preguntas Frecuentes",
       documentation: "Documentación",
       status: "Estado"
     },
     legalList: {
       privacyPolicy: "Política de Privacidad",
-      termsOfService: false,
+      termsOfService: "Términos de Servicio",
       cookiePolicy: "Política de cookies"
     },
-    withLoveBy: false,
-    by: false,
-    copyright: false
+    withLoveBy: "Con",
+    by: "de",
+    copyright: "© {year}-{currentYear} {company} Todos los derechos reservados."
   },
   error: {
     404: {
       title: false,
-      message: false
+      message: "La página que estás buscando no existe."
     },
     500: {
       title: false,
-      message: false
+      message: "Algo salió mal por nuestra parte."
     },
     default: {
       title: "Error",
-      message: false,
-      button: false
+      message: "Algo salió mal por nuestra parte.",
+      button: "Volver"
     }
   }
 }));
