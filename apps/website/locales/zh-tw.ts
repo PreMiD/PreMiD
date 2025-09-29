@@ -38,13 +38,13 @@ export default defineI18nLocale(() => ({
       removePresence: "移除"
     },
     donationModal: {
-      title: false,
-      description: false,
+      title: "小小請求……",
+      description: "我們真心希望你會喜歡 PreMiD！ 如果它讓你露出微笑，不妨也回饋一些愛吧？ 我們的志工團隊傾注了滿滿心力，只為打造出這份專屬於你的精彩體驗！",
       continue: "下一步",
       close: "關閉",
-      patreon: false,
-      github: false,
-      holdTight: false
+      patreon: "{name}",
+      github: "在 {name} 上贊助我們",
+      holdTight: "請稍候…正在載入神奇按鈕……"
     }
   },
   header: {
@@ -58,7 +58,7 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: false,
+        title: "獻出貢獻",
         error: {
           title: "錯誤",
           description: "我們在載入這個用戶時遇到問題... 請稍後再試。"
@@ -69,49 +69,49 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "首頁"
       },
-      title: false,
-      subtitle: false,
+      title: "用 PreMiD 提升你的線上存在感",
+      subtitle: "向朋友分享你正在享受的 {word}。",
       words: {
         music: "音樂",
         videos: "影片",
         streams: "直播",
         media: "媒體"
       },
-      description: false,
+      description: "PreMiD 是一款簡單強大的工具，能讓你在 YouTube、Disney+、Netflix 等多個平台上分享你目前的媒體活動。保持連線，讓朋友即時看到你的動態。",
       getStarted: "開始使用",
       sections: {
         feature: {
-          title: false,
+          title: "為什麼你將會喜歡 PreMiD",
           feature1: {
-            title: false,
-            description: false
+            title: "隱私控制",
+            description: "掌控你的隱私設定，自由決定要分享哪些活動。你的資料，你做主。"
           },
           feature2: {
-            title: false,
-            description: false
+            title: "社群驅動",
+            description: "由熱情且投入的社群驅動，支援眾多平台，帶來無與倫比的體驗。"
           },
           feature3: {
-            title: false,
-            description: false
+            title: "可自訂設定",
+            description: "透過豐富的自訂選項，打造符合你偏好與需求的 PreMiD 使用體驗。"
           },
           feature4: {
-            title: false,
-            description: false
+            title: "快速設定",
+            description: "快速開始使用 PreMiD，簡單的設定流程讓你輕鬆上手。"
           },
           feature5: {
-            title: false,
-            description: false
+            title: "符合 Discord 使用條款",
+            description: "完全遵守 Discord 的使用條款，並使用其官方提供的端點。"
           },
           feature6: {
-            title: false,
-            description: false
+            title: "未來功能",
+            description: "敬請期待更多令人興奮的新功能與改進，讓你的 PreMiD 體驗更上一層樓。"
           }
         },
         howItWorks: {
-          title: false,
+          title: "使用方法",
           step1: {
-            title: false,
-            description: false
+            title: "安裝擴充功能",
+            description: "將PreMiD加入致你的瀏覽器。"
           },
           step2: {
             title: "使用 Discord 登入",
@@ -272,11 +272,11 @@ export default defineI18nLocale(() => ({
     },
     500: {
       title: false,
-      message: false
+      message: "我們這邊發生了一些錯誤。"
     },
     default: {
       title: "錯誤",
-      message: false,
+      message: "我們這邊發生了一些錯誤。",
       button: "返回"
     }
   }
