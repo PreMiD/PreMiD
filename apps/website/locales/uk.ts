@@ -96,7 +96,7 @@ export default defineI18nLocale(() => ({
           },
           feature4: {
             title: false,
-            description: false
+            description: "Почніть працювати з PreMiD в найкоротші терміни. Наш простий процес налаштування гарантує безпроблемний старт."
           },
           feature5: {
             title: false,
