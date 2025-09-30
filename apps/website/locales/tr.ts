@@ -77,7 +77,7 @@ export default defineI18nLocale(() => ({
         streams: "Akışlar",
         media: "Medya"
       },
-      description: false,
+      description: ".",
       getStarted: "Başlayın",
       sections: {
         feature: {
