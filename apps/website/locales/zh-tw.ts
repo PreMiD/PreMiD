@@ -25,7 +25,7 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: "正在製作中(WIP)",
+      wip: "施工中",
       support: {
         safari: "我們正在努力支援Safari瀏覽器中，敬請關注！"
       }
