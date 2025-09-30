@@ -2,17 +2,17 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "Будь ласка, підтримайте нас, вимкнувши блокувальник реклами."
     }
   },
   component: {
     searchBar: {
       search: "Пошук",
-      sortBy: false,
+      sortBy: "Упорядкувати за",
       searchPresence: "Шукати Presence",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "Найбільш використовувані",
+        alphabetical: "В алфавітному порядку"
       },
       categories: {
         all: "Усе",
@@ -25,26 +25,26 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: false,
+      wip: "Триває виконання",
       support: {
-        safari: false
+        safari: "Ми працюємо над тим, щоб підтримувати Safari, слідкуйте за оновленнями!"
       }
     },
     userChip: {
-      loading: false
+      loading: "Завантаження..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "Додати",
+      removePresence: "Видалити"
     },
     donationModal: {
-      title: false,
-      description: false,
-      continue: false,
+      title: "Швидка послуга...",
+      description: "Сподіваємося, вам сподобається PreMiD! Якщо він викликає посмішку на вашому обличчі, чому б не поділитися з нами любов'ю у відповідь? Наша команда волонтерів докладає всіх зусиль, щоб зробити його чудовим саме для вас!",
+      continue: "Продовжити",
       close: "Закрити",
-      patreon: false,
-      github: false,
-      holdTight: false
+      patreon: "Підтримати на {name}",
+      github: "Стати спонсором на {name}",
+      holdTight: "Тримайтесь... завантаження чарівної кнопки..."
     }
   },
   header: {
@@ -58,10 +58,10 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: false,
+        title: "Внески присутності",
         error: {
-          title: false,
-          description: false
+          title: "Помилка",
+          description: "Не вдається завантажити користувача... Будь ласка, спробуйте ще раз пізніше."
         }
       }
     },
@@ -69,33 +69,33 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "Домашній екран"
       },
-      title: false,
-      subtitle: false,
+      title: "Розширте вашу онлайн присутність у PreMiD",
+      subtitle: "Покажіть своїм друзям, який {word} вам подобається.",
       words: {
         music: "Музика",
         videos: "Відео",
-        streams: false,
-        media: false
+        streams: "Трансляції",
+        media: "Медіа"
       },
-      description: false,
+      description: "PreMiD — це простий, але потужний інструмент, який дозволяє вам ділитися своєю поточною медіаактивністю на кількох платформах, таких як YouTube, Disney+, Netflix тощо. Залишайтеся на зв’язку та дозвольте своїм друзям бачити, чим ви займаєтесь, у режимі реального часу.",
       getStarted: "Розпочати",
       sections: {
         feature: {
-          title: false,
+          title: "Чому тобі сподобається PreMID",
           feature1: {
-            title: false,
-            description: false
+            title: "Управління конфіденційністю",
+            description: "Керуйте налаштуваннями конфіденційності та вирішуйте, якими діями ділитися з іншими. Ваші дані, ваші правила."
           },
           feature2: {
-            title: false,
-            description: false
+            title: "Керується спільнотою",
+            description: "Отримайте безпрецедентну підтримку для безлічі платформ від захопленої та відданої спільноти."
           },
           feature3: {
-            title: false,
-            description: false
+            title: "Настроювані налаштування",
+            description: "Налаштуйте PreMiD відповідно до своїх уподобань та потреб за допомогою широких можливостей персоналізації."
           },
           feature4: {
-            title: false,
+            title: "Просте Налаштування",
             description: "Почніть працювати з PreMiD в найкоротші терміни. Наш простий процес налаштування гарантує безпроблемний старт."
           },
           feature5: {
@@ -275,7 +275,7 @@ export default defineI18nLocale(() => ({
       message: false
     },
     default: {
-      title: false,
+      title: "Помилка",
       message: false,
       button: false
     }
