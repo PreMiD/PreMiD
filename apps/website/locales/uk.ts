@@ -129,7 +129,7 @@ export default defineI18nLocale(() => ({
         callToAction: {
           title: false,
           description: false,
-          button: false
+          button: "Почати зараз"
         }
       }
     },
@@ -140,13 +140,13 @@ export default defineI18nLocale(() => ({
       supporters: "Прихильники",
       translators: "Перекладачі",
       avatar: {
-        tooltip: false
+        tooltip: "Натисніть, щоб скопіювати аватар користувача {name}"
       }
     },
     downloads: {
       title: "Завантаження",
       steps: {
-        install: false,
+        install: "Встановити розширення",
         login: false,
         add: false,
         showoff: false
