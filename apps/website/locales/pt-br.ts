@@ -2,7 +2,7 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: "Por favor, apoie-nos desativando seu bloqueador de anúncios. 😢"
+      error: "Por favor, apoie-nos desativando seu bloqueador de anúncios 😢."
     }
   },
   component: {
@@ -99,7 +99,7 @@ export default defineI18nLocale(() => ({
             description: "Levante-se e corra com o PreMiD em breve. Nosso processo de configuração simples garante um começo sem complicações."
           },
           feature5: {
-            title: "Cumpridor dos TdS do Discord",
+            title: "Respeita os Termos de Serviço do Discord",
             description: "Em total conformidade com os Termos de Serviço do Discord, utilizando os pontos finais oficiais fornecidos pelo Discord."
           },
           feature6: {
@@ -243,7 +243,7 @@ export default defineI18nLocale(() => ({
   footer: {
     partners: "Parceiros",
     followUs: "Siga-nos",
-    supportUs: "Apoia-nos",
+    supportUs: "Apoie-nos",
     more: "Mais",
     legal: "Informações Legais",
     supportList: {
