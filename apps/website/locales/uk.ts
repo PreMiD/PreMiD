@@ -100,11 +100,11 @@ export default defineI18nLocale(() => ({
           },
           feature5: {
             title: " ",
-            description: false
+            description: "te\n"
           },
           feature6: {
             title: "Заплановані функції",
-            description: false
+            description: " "
           }
         },
         howItWorks: {
