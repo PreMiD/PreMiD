@@ -2,17 +2,17 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "الرجاء دعمنا عن طريق تعطيل مانع الإعلانات الخاص بك."
     }
   },
   component: {
     searchBar: {
       search: "إبحث",
-      sortBy: false,
+      sortBy: "الفرز حسب",
       searchPresence: "البحث على presence",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "الأكثر إستخدامًا",
+        alphabetical: "مرتب حسب الحروف الأبجدية"
       },
       categories: {
         all: "الكل",
@@ -25,26 +25,26 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: false,
+      wip: "قيد التنفيذ",
       support: {
-        safari: false
+        safari: "نحن نعمل حاليًا على دعم سفاري، ترقبوا!"
       }
     },
     userChip: {
       loading: "يتم التحميل..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "إضافة",
+      removePresence: "إزالة"
     },
     donationModal: {
-      title: false,
-      description: false,
-      continue: false,
+      title: "خدمة سريعة...",
+      description: "نأمل أن تحب بريميد! إذا كانت سببًا برسم البسمة على وجهك، فلماذا لا نتبادل بعض الحب؟ يبذل فريق المتطوعين لدينا قلوبهم ليجعلوه رائعًا لك فقط!",
+      continue: "متابعة",
       close: "غلق",
-      patreon: false,
-      github: false,
-      holdTight: false
+      patreon: "الدعم على {name}",
+      github: "الراعي على {name}",
+      holdTight: "إنتظر قليلًا... جاري تحميل الزر السحري..."
     }
   },
   header: {
@@ -58,10 +58,10 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: false,
+        title: "مساهمات الحضور",
         error: {
-          title: false,
-          description: false
+          title: "خطأ",
+          description: "نحن نواجه مشكلة في تحميل هذا المستخدم... الرجاء المحاولة مرة أخرى لاحقًا."
         }
       }
     },
@@ -69,15 +69,15 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "الصفحة الرئيسية"
       },
-      title: false,
-      subtitle: false,
+      title: "عزز حضورك على الإنترنت مع بريميد",
+      subtitle: "أظهر لأصدقائك ما تستمتع به {word}.",
       words: {
         music: "موسيقى",
         videos: "فيديوهات",
-        streams: false,
-        media: false
+        streams: "البث",
+        media: "الوسائط"
       },
-      description: false,
+      description: "بريميد هي أداة بسيطة وقوية تسمح لك بمشاركة نشاطك الإعلامي الحالي عبر منصات متعددة مثل يوتيوب، وديزني+، ونيتفليكس، وغيرها. ابقى على اتصال واسمح لأصدقائك بمعرفة ما أنت عليه في الوقت الحقيقي.",
       getStarted: "إبدء الان",
       sections: {
         feature: {
@@ -88,68 +88,68 @@ export default defineI18nLocale(() => ({
           },
           feature2: {
             title: "تحريك المجتمع",
-            description: false
+            description: "تجرِبة دعم لا مثيل لها لعدد كبير من المنصات المدعومة بمجتمع عاطفي ومتفاني."
           },
           feature3: {
-            title: false,
+            title: "الإعدادات القابلة للتخصيص",
             description: "."
           },
           feature4: {
-            title: false,
-            description: false
+            title: "الإعداد السهل",
+            description: "إبدأ بتشغيل بريميد في وقت قصير, تضمن عملية الإعداد البسيطة لدينا بداية خالية من المتاعب."
           },
           feature5: {
-            title: false,
-            description: false
+            title: "متوافق مع شروط خدمة ديسكورد",
+            description: "الامتثال التام لشروط خدمة ديسكورد باستخدام نِقَاط النهاية الرسمية التي يوفرها ديسكورد."
           },
           feature6: {
-            title: false,
-            description: false
+            title: "الميزات المستقبلية",
+            description: "ترقب الميزات والتحسينات الجديدة والمثيرة التي ستعزز من تجربة بريميد الخاصة بك بشكل أكبر."
           }
         },
         howItWorks: {
-          title: false,
+          title: "كيف تعمل",
           step1: {
-            title: false,
-            description: false
+            title: "تثبيت الملحق",
+            description: "أضف بريميد إلى المتصفح الخاص بك."
           },
           step2: {
-            title: false,
-            description: false
+            title: "تسجيل الدخول باستخدام ديسكورد",
+            description: "اربط بريميد بحساب ديسكورد الخاص بك."
           },
           step3: {
-            title: false,
-            description: false
+            title: "إضافة خدمة",
+            description: "اختر الخِدمَات التي تريد عرضها، مثل يوتيوب، وديزني+، والمزيد."
           },
           step4: {
-            title: false,
-            description: false
+            title: "إستمتع",
+            description: "شارك نشاطك واستمتع باستخدام بريميد."
           }
         },
         callToAction: {
-          title: false,
-          description: false,
-          button: false
+          title: "هل أنت مستعد للبدء ؟",
+          description: "انضم إلى المستخدمين {count} الذين يحبون بريميد.",
+          button: "ابدأ الآن"
         }
       }
     },
     contributors: {
       title: "المساهمون",
-      presenceDevelopers: false,
+      presenceDevelopers: "المطورين الحاضرين",
       staff: "الطاقم",
       supporters: "الداعمين",
       translators: "المترجمين",
       avatar: {
-        tooltip: false
+        tooltip: "انقر لنسخ الصورة الرمزية {name}"
       }
     },
     downloads: {
       title: "تحميل",
       steps: {
-        install: false,
+        install: "تثبيت الملحق",
         login: "تسجيل الدخول باستخدام ديسكورد",
-        add: false,
-        showoff: false
+        add: "اضافة تفضيلات",
+        showoff: "العرض متوقف!"
       },
       section: {
         heading: {
@@ -160,13 +160,13 @@ export default defineI18nLocale(() => ({
         }
       },
       browser: {
-        your: false,
-        other: false,
-        based: false
+        your: "المتصفح الخاص بك",
+        other: "متصفحات أخرى",
+        based: "قائم على {browser}"
       },
       mobile: {
-        title: false,
-        description: false
+        title: "أخبار سيئة!",
+        description: "عذراً! بريميد غير متوفر للأجهزة المحمولة!"
       },
       alphaAccess: {
         title: false,
@@ -275,7 +275,7 @@ export default defineI18nLocale(() => ({
       message: false
     },
     default: {
-      title: false,
+      title: "خطأ",
       message: false,
       button: false
     }
