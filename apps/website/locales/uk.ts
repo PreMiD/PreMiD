@@ -103,7 +103,7 @@ export default defineI18nLocale(() => ({
             description: false
           },
           feature6: {
-            title: false,
+            title: "Заплановані функції",
             description: false
           }
         },
@@ -128,14 +128,14 @@ export default defineI18nLocale(() => ({
         },
         callToAction: {
           title: "Готовий розпочати?",
-          description: false,
+          description: "Приєднуйся до більше ніж {count} користувачів, які вже полюбили PreMiD",
           button: "Почати зараз"
         }
       }
     },
     contributors: {
       title: "Учасники проєкту",
-      presenceDevelopers: false,
+      presenceDevelopers: "Розробники Presences",
       staff: "Штат",
       supporters: "Прихильники",
       translators: "Перекладачі",
@@ -148,7 +148,7 @@ export default defineI18nLocale(() => ({
       steps: {
         install: "Встановити розширення",
         login: "Увійди через Discord",
-        add: false,
+        add: "Додай Presences",
         showoff: false
       },
       section: {
@@ -169,56 +169,56 @@ export default defineI18nLocale(() => ({
         description: "Ой-ой, PreMiD не працює на мобільних!"
       },
       alphaAccess: {
-        title: false,
-        description: false,
-        callToAction: false
+        title: "Розблокуй унікальний доступ до Альфа-версії!",
+        description: "Зробіть крок у майбутнє PreMiD, ставши нашим Патроном або підтримавши нас на GitHub. Ваша підтримка не лише прискорює розвиток проєкту, але й дає вам першочерговий доступ до найновіших інноваційних функцій. Випробуйте найсучасніше, що може запропонувати PreMiD, та впливайте на його розвиток своїм зворотним зв’язком. Це не просто про те, щоб бути першим — це про те, щоб стати частиною чогось більшого.",
+        callToAction: "Дізнайся більше та приєднуйся до інновацій"
       },
-      faq: false,
+      faq: "ЧаПи",
       faqs: {
         q1: {
           question: "Що таке PreMiD?",
           answer: "PreMiD — це простий і гнучкий інструмент, який дозволяє показувати, що ви робите в інтернеті, у статусі Discord."
         },
         q2: {
-          question: "Для чого використовувати PreMiD?",
-          answer: false
+          question: "Як використовувати PreMiD?",
+          answer: "Ви можете користуватися PreMiD, встановивши розширення та увійшовши через свій обліковий запис Discord. Після входу ви зможете додавати статуси до свого профілю та демонструвати їх друзям."
         },
         q3: {
-          question: false,
-          answer: false
+          question: "Чи суперечить PreMiD правилам користування Discord?",
+          answer: "Ні, PreMiD не порушує правила використання Discord. PreMiD користується API Discord (включно з обмеженими ендпоінтами, наданими Discord) для відображення вашої активності. Тобто PreMiD повністю відповідає правилам Discord."
         },
         q4: {
-          question: false,
-          answer: false
+          question: "Які сервіси підтримує PreMiD?",
+          answer: "PreMiD підтримує багато різних сервісів, включно з YouTube, Twitch та Netflix. Список підтримуваних сервісів постійно зростає. Повний перелік статусів можна переглянути на нашій сторінці магазину."
         },
         q5: {
-          question: false,
-          answer: false
+          question: "Як я можу допомогти PreMiD?",
+          answer: "Ви можете допомогти розвитку PreMiD, приєднавшись до нашої спільноти на GitHub. Ви можете сприяти проєкту, повідомляючи про проблеми, пропонуючи нові функції або додаючи код."
         },
         q6: {
-          question: false,
-          answer: false
+          question: "PreMiD безкоштовний для використання?",
+          answer: "Так, PreMiD безкоштовний у використанні. Проте ми приймаємо донати через Patreon та GitHub Sponsors, щоб підтримати розвиток проєкту."
         },
         q7: {
-          question: false,
-          answer: false
+          question: "Що робити, якщо ви зіткнулися з проблемою у PreMiD?",
+          answer: "Якщо ви зіткнулися з проблемами у PreMiD, ви можете приєднатися до нашого Discord-серверу для отримання підтримки. Також у нашій документації є посібник із усунення неполадок."
         },
         q8: {
-          question: false,
-          answer: false
+          question: "PreMiD не підтримує xyz. Чи можна це додати?",
+          answer: "Наші «Presences» створюються спільнотою, і ми не маємо ресурсів для підтримки всіх платформ. Проте ви можете додати власний статус, дотримуючись інструкцій у нашій документації."
         },
         q9: {
-          question: false,
-          answer: false
+          question: "Як часто PreMiD оновлюється?",
+          answer: "Ми — невеликий волонтерський проєкт. Ми намагаємося оновлювати PreMiD якнайчастіше, але не завжди можемо бути на 100% у курсі всього."
         }
       }
     },
     store: {
       title: "Магазин",
-      noPresence: false,
+      noPresence: "Немає жодного збігу з вашим запитом…",
       presence: {
         button: {
-          reportIssue: false,
+          reportIssue: "Повідомити про проблему",
           suggestFeature: "Запропонувати ідею",
           viewCode: "Побачити код"
         },
@@ -227,11 +227,11 @@ export default defineI18nLocale(() => ({
           information: "Інформація"
         },
         informationSection: {
-          contributors: false,
-          version: false,
-          users: false,
-          tags: false,
-          supportedUrls: false
+          contributors: "За підтримки:",
+          version: "Версія: {version}",
+          users: "Користувачі: {users}",
+          tags: "Теги:",
+          supportedUrls: "Підтримувані URL-адреси:"
         }
       },
       header: {
@@ -242,7 +242,7 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "Партнери",
-    followUs: false,
+    followUs: "Слідкуйте за нами",
     supportUs: "Підтримайте нас",
     more: "Більше",
     legal: false,
@@ -252,32 +252,32 @@ export default defineI18nLocale(() => ({
       translate: "Перекласти"
     },
     moreList: {
-      faq: false,
+      faq: "ЧаПи",
       documentation: "Документація",
       status: "Статус"
     },
     legalList: {
       privacyPolicy: "Політика конфіденційності",
-      termsOfService: false,
+      termsOfService: "Правила користування",
       cookiePolicy: "Політика використання Cookie"
     },
     withLoveBy: false,
     by: false,
-    copyright: false
+    copyright: "© {year}-{currentYear} {company} Всі права захищені."
   },
   error: {
     404: {
       title: false,
-      message: false
+      message: "Хм, здається, ви забрели не туди."
     },
     500: {
       title: false,
-      message: false
+      message: "Ой-ой, у нас щось зламалося!"
     },
     default: {
       title: "Помилка",
-      message: false,
-      button: false
+      message: "Ой-ой, у нас щось зламалося!",
+      button: "Повернутися"
     }
   }
 }));
