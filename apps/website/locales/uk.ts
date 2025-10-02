@@ -99,7 +99,7 @@ export default defineI18nLocale(() => ({
             description: "Почніть працювати з PreMiD в найкоротші терміни. Наш простий процес налаштування гарантує безпроблемний старт."
           },
           feature5: {
-            title: false,
+            title: " ",
             description: false
           },
           feature6: {
@@ -108,26 +108,26 @@ export default defineI18nLocale(() => ({
           }
         },
         howItWorks: {
-          title: false,
+          title: "Як це працює?",
           step1: {
-            title: false,
-            description: false
+            title: "Встанови розширення",
+            description: "Додай PreMiD до свого браузера"
           },
           step2: {
-            title: false,
-            description: false
+            title: "Увійди через Discord",
+            description: "Під'єднайте PreMiD до свого облікового запису Discord."
           },
           step3: {
-            title: false,
-            description: false
+            title: "Додайте сервіси",
+            description: "Оберіть сервіси, які ви хочете показувати в статусі, наприклад: Youtube, Disney+ тощо."
           },
           step4: {
-            title: false,
-            description: false
+            title: "Насолоджуйся",
+            description: "Діліться активністю і насолоджуйтесь PreMiD."
           }
         },
         callToAction: {
-          title: false,
+          title: "Готовий розпочати?",
           description: false,
           button: "Почати зараз"
         }
@@ -147,7 +147,7 @@ export default defineI18nLocale(() => ({
       title: "Завантаження",
       steps: {
         install: "Встановити розширення",
-        login: false,
+        login: "Увійди через Discord",
         add: false,
         showoff: false
       },
@@ -160,13 +160,13 @@ export default defineI18nLocale(() => ({
         }
       },
       browser: {
-        your: false,
-        other: false,
+        your: "Ваш браузер",
+        other: "Браузер інших",
         based: false
       },
       mobile: {
-        title: false,
-        description: false
+        title: "Хм, здається, щось пішло не так!",
+        description: "Ой-ой, PreMiD не працює на мобільних!"
       },
       alphaAccess: {
         title: false,
@@ -176,11 +176,11 @@ export default defineI18nLocale(() => ({
       faq: false,
       faqs: {
         q1: {
-          question: false,
-          answer: false
+          question: "Що таке PreMiD?",
+          answer: "PreMiD — це простий і гнучкий інструмент, який дозволяє показувати, що ви робите в інтернеті, у статусі Discord."
         },
         q2: {
-          question: false,
+          question: "Для чого використовувати PreMiD?",
           answer: false
         },
         q3: {
@@ -219,8 +219,8 @@ export default defineI18nLocale(() => ({
       presence: {
         button: {
           reportIssue: false,
-          suggestFeature: false,
-          viewCode: false
+          suggestFeature: "Запропонувати ідею",
+          viewCode: "Побачити код"
         },
         title: {
           description: "Опис",
