@@ -58,7 +58,7 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: "Внески присутності",
+        title: "Внески до Presence",
         error: {
           title: "Помилка",
           description: "Не вдається завантажити користувача... Будь ласка, спробуйте ще раз пізніше."
