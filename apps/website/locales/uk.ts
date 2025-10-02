@@ -149,7 +149,7 @@ export default defineI18nLocale(() => ({
         install: "Встановити розширення",
         login: "Увійди через Discord",
         add: "Додай Presences",
-        showoff: false
+        showoff: "Вразь усіх!"
       },
       section: {
         heading: {
@@ -261,8 +261,8 @@ export default defineI18nLocale(() => ({
       termsOfService: "Правила користування",
       cookiePolicy: "Політика використання Cookie"
     },
-    withLoveBy: false,
-    by: false,
+    withLoveBy: "З",
+    by: "від",
     copyright: "© {year}-{currentYear} {company} Всі права захищені."
   },
   error: {
