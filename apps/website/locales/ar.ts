@@ -147,7 +147,7 @@ export default defineI18nLocale(() => ({
       title: "تحميل",
       steps: {
         install: false,
-        login: false,
+        login: "تسجيل الدخول باستخدام ديسكورد",
         add: false,
         showoff: false
       },
