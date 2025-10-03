@@ -169,69 +169,69 @@ export default defineI18nLocale(() => ({
         description: "عذراً! بريميد غير متوفر للأجهزة المحمولة!"
       },
       alphaAccess: {
-        title: false,
-        description: false,
-        callToAction: false
+        title: "فتح وصول ألفا الحصري!",
+        description: "ادخل إلى مستقبل بريميد من خلال أن تصبح راعيًا لنا أو ترعانا على جيتهوب. دعمك لا يدفع تطويرنا فحسب، بل يمنحك أيضًا حق الوصول الأول إلى أكثر الميزات إبتكارًا التي نصنعها. جرب أحدث ما يمكن أن يقدمه بريميد وأثّر على مساره بملاحظاتك. الأمر لا يتعلق فقط بأن تكون الأول، بل يتعلق بأن تكون جزءًا من شيء أكبر.",
+        callToAction: "تعرف على المزيد وانضم إلى الابتكار"
       },
-      faq: false,
+      faq: "الأسئلة الشائعة",
       faqs: {
         q1: {
-          question: false,
-          answer: false
+          question: "ما هو بريميد؟",
+          answer: "بريميد هي أداة بسيطة وقابلة للتكوين تتيح لك عرض ما تفعله على الويب في حالة نشاطك على ديسكورد."
         },
         q2: {
-          question: false,
-          answer: false
+          question: "كيف يمكنني استخدام بريميد؟",
+          answer: "يمكنك استخدام بريميد عن طريق تثبيت الملحق وتسجيل الدخول باستخدام حساب الديسكورد الخاص بك. بمجرد تسجيل الدخول، يمكنك إضافة وجود إلى ملفك الشخصي والتفاخر بها أمام أصدقائك."
         },
         q3: {
-          question: false,
-          answer: false
+          question: "هل بريميد مخالف لشروط خدمة ديسكورد؟",
+          answer: "لا بريميد لا يتعارض مع شروط خدمة ديسكورد. يستخدم بريميد واجهة برمجة تطبيقات ديسكورد (API) (بما في ذلك نِقَاط نهاية واجهة برمجة التطبيقات (API) المُدارة التي يوفرها ديسكورد) لتعيين نشاطك. هذا يعني أن بريميد متوافق تمامًا مع شروط خدمة ديسكورد."
         },
         q4: {
-          question: false,
-          answer: false
+          question: "ما هي الخدمات التي تدعمها بريميد؟",
+          answer: "بريميد يدعم العديد من الخدمات المختلفة بما في ذلك يوتيوب، وتويتش، ونيتفليكس. قائمة الخدمات المدعومة آخذة في التزايد باستمرار. يمكنك مشاهدة القائمة الكاملة للوجود على صفحة متجرنا."
         },
         q5: {
-          question: false,
-          answer: false
+          question: "كيف يمكنني المساهمة في بريميد؟",
+          answer: "يمكنك المساهمة في بريميد بالانضمام إلى مجتمعنا على GitHub. يمكنك المساعدة من خلال الإبلاغ عن المشكلات، أو اقتراح الميزات، أو المساهمة في التعليمات البرمجية."
         },
         q6: {
-          question: false,
-          answer: false
+          question: "هل بريميد مجاني للإستخدام؟",
+          answer: "نعم، بريميد مجاني للاستخدام. ومع ذلك، نحن نقبل التبرعات من خلال باتريون ورعاة GitHub للمساعدة في تطوير المشروع."
         },
         q7: {
-          question: false,
-          answer: false
+          question: "ماذا يجب أن أفعل إذا واجهت مشكلة مع بريميد؟",
+          answer: "إذا واجهت أي مشاكل مع بريميد، يمكنك الانضمام إلى خادم ديسكورد الخاص بنا للحصول على الدعم. لدينا أيضًا دليل استكشاف الأخطاء في وثائقنا."
         },
         q8: {
-          question: false,
-          answer: false
+          question: "بريميد لا يدعم xyz، هل يمكنكم إضافته؟",
+          answer: "إن ما يسمى بحضورنا هو قائم من قِبَل المجتمع، وليس لدينا الموارد اللازمة لإضافة كل منصة على حدة، مع ذلك، يمكنك إضافة حضورك الخاص باتباع التعليمات الواردة في وثائقنا."
         },
         q9: {
-          question: false,
-          answer: false
+          question: "كم مرة يتم تحديث بريميد؟",
+          answer: "نحن مشروع صغير يقوده المتطوعون، ونهدف إلى تحديث بريميد بقدر الإمكان، ولكن لا يمكننا أن نعد بأننا سنكون دائما على اطلاع دائم بالأمور."
         }
       }
     },
     store: {
       title: "المتجر",
-      noPresence: false,
+      noPresence: "لا يوجد حضور يطابق بحثك...",
       presence: {
         button: {
-          reportIssue: false,
-          suggestFeature: false,
-          viewCode: false
+          reportIssue: "الإبلاغ عن مشكلة",
+          suggestFeature: "اقتراح ميزة",
+          viewCode: "اعرض الرمز"
         },
         title: {
           description: "الوصف",
           information: "معلومات"
         },
         informationSection: {
-          contributors: false,
-          version: false,
-          users: false,
-          tags: false,
-          supportedUrls: false
+          contributors: "المساهمون:",
+          version: "الإصدار {version}",
+          users: "المستخدمون: {users}",
+          tags: "الوسوم:",
+          supportedUrls: "عناوين URL المدعومة:"
         }
       },
       header: {
@@ -242,42 +242,42 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "الشركاء",
-    followUs: false,
+    followUs: "تابعنا",
     supportUs: "ادعمنا",
     more: "المزيد",
-    legal: false,
+    legal: "الحقوق",
     supportList: {
       donate: "التبرع",
       contribute: "ساهم",
       translate: "الترجمة"
     },
     moreList: {
-      faq: false,
+      faq: "الأسئلة الأكثر شيوعًا",
       documentation: "الوثائق",
       status: "الحالة"
     },
     legalList: {
       privacyPolicy: "سياسة الخصوصية",
-      termsOfService: false,
+      termsOfService: "شروط الخدمة",
       cookiePolicy: "سياسة ملفات تعريف الإرتباط"
     },
-    withLoveBy: false,
-    by: false,
-    copyright: false
+    withLoveBy: "مع",
+    by: "بواسطة",
+    copyright: "©️ {year}-{currentYear} {company} جميع الحقوق محفوظة."
   },
   error: {
     404: {
       title: false,
-      message: false
+      message: "الصفحة التي تبحث عنها غير موجودة."
     },
     500: {
       title: false,
-      message: false
+      message: "حدث خطأ ما في نهايتنا."
     },
     default: {
       title: "خطأ",
-      message: false,
-      button: false
+      message: "حدث خطأ ما في نهايتنا.",
+      button: "العودة"
     }
   }
 }));
