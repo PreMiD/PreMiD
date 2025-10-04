@@ -88,19 +88,19 @@ export default defineI18nLocale(() => ({
           },
           feature2: {
             title: "Topluluk Odaklı",
-            description: false
+            description: "."
           },
           feature3: {
             title: "Kişiselleştirilebilir Ayarlar",
-            description: false
+            description: "."
           },
           feature4: {
             title: "Kolay Kurulum",
-            description: false
+            description: "."
           },
           feature5: {
             title: "Discord'un Hizmet Koşulları ile uyumlu.",
-            description: false
+            description: "."
           },
           feature6: {
             title: "Gelecek Özellikler",
@@ -148,7 +148,7 @@ export default defineI18nLocale(() => ({
       steps: {
         install: "Eklentiyi kur",
         login: "Discord ile oturum açın.",
-        add: false,
+        add: "",
         showoff: "Gösterme!"
       },
       section: {
@@ -184,11 +184,11 @@ export default defineI18nLocale(() => ({
           answer: "PreMiD'i eklentiyi kurarak ve Discord hesabınız ile giriş yaparak kullanabilirsiniz. Giriş yaptıktan sonra servisleri profilinize ekleyerek arkadaşlarınıza gösterebilirsiniz."
         },
         q3: {
-          question: false,
-          answer: false
+          question: "?",
+          answer: "."
         },
         q4: {
-          question: false,
+          question: "",
           answer: false
         },
         q5: {
