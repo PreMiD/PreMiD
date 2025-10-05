@@ -2,7 +2,7 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: "Ti preghiamo si sostenerci disabilitando il tuo ad blocker."
+      error: "Ti preghiamo di sostenerci disabilitando il tuo ad blocker."
     }
   },
   component: {
@@ -58,7 +58,7 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: false,
+        title: "Contribuiti alle Presence",
         error: {
           title: "Errore",
           description: "Stiamo riscontrando problemi nel caricamento di questo utente... Riprova più tardi."
@@ -70,12 +70,12 @@ export default defineI18nLocale(() => ({
         title: "Homepage"
       },
       title: "Migliora il tuo Chi Sono di discord con PreMiD",
-      subtitle: false,
+      subtitle: "Mostra ai tuoi amici che {word} ti piace.",
       words: {
         music: "Musica",
         videos: "Video",
-        streams: false,
-        media: false
+        streams: "Stream",
+        media: "Media"
       },
       description: "PreMiD è uno strumento semplice, e potente che ti permette di condividere la tua attività multimediale attuale su più piattaforme come YouTube, Disney+, Netflix e altro ancora. Resta connesso e lascia che i tuoi amici vedano cosa stai facendo in tempo reale.",
       getStarted: "Inizia Ora",
@@ -87,24 +87,24 @@ export default defineI18nLocale(() => ({
             description: "Prendi il controllo delle tue impostazioni sulla privacy e decidi quali attività condividi con gli altri. I tuoi dati, Le tue regole."
           },
           feature2: {
-            title: false,
-            description: false
+            title: "Gestito dalla Community",
+            description: "Sperimenta un supporto senza precedenti per moltissime piattaforme, mantenuto da una community unica e appassionata."
           },
           feature3: {
-            title: false,
-            description: false
+            title: "Impostazioni personalizzabili",
+            description: "Personalizza la tua esperienza PreMiD con ampie opzioni di personalizzazione per soddisfare le tue preferenze ed esigenze."
           },
           feature4: {
             title: "Configurazione semplice",
-            description: false
+            description: "Preparati e utilizza PreMiD in pochissimo tempo. Il nostro semplice processo d'installazione garantisce un inizio senza problemi."
           },
           feature5: {
-            title: false,
+            title: "Conforme ai termini di servizio di Discord",
             description: "Completamente conforme ai Termini di Servizio di Discord utilizzando gli endpoint ufficiali forniti da Discord."
           },
           feature6: {
             title: "Feature in futuro",
-            description: false
+            description: "Rimani sintonizzato per nuove eccitanti funzionalità e miglioramenti che affineranno ulteriormente la tua esperienza PreMiD."
           }
         },
         howItWorks: {
@@ -148,8 +148,8 @@ export default defineI18nLocale(() => ({
       steps: {
         install: "Installa estensione",
         login: "Accedi con Discord",
-        add: "Aggiungi le presenze",
-        showoff: false
+        add: "Aggiungi le presence",
+        showoff: "Mettiti in mostra!"
       },
       section: {
         heading: {
@@ -170,52 +170,52 @@ export default defineI18nLocale(() => ({
       },
       alphaAccess: {
         title: "Sblocca L'accesso esclusivo Alpha!",
-        description: false,
-        callToAction: false
+        description: "Entra nel futuro di PreMiD supportandoci su Patreon o sponsorizzandoci su GitHub. Il tuo supporto non solo velocizza il nostro sviluppo, ma ti garantisce anche accesso anticipato alle funzionalità più innovative che stiamo realizzando. Prova l'avanguardia di ciò che PreMiD può offrire e influenza lo sviluppo con il tuo feedback. Non si tratta solo di arrivare per primo, si tratta di far parte di qualcosa di più grande.",
+        callToAction: "Scopri di più e unisciti all'innovazione"
       },
-      faq: false,
+      faq: "Domande Frequenti",
       faqs: {
         q1: {
-          question: false,
-          answer: false
+          question: "Cos'è PreMiD?",
+          answer: "PreMiD è uno strumento semplice e configurabile che ti permette di mostrare ciò che stai facendo sul web nel tuo stato di Discord."
         },
         q2: {
-          question: false,
-          answer: false
+          question: "Come posso usare PreMiD?",
+          answer: "È possibile utilizzare PreMiD installando l'estensione e facendo il login con il tuo account Discord. Una volta effettuato l'accesso, è possibile aggiungere presence al tuo profilo e mostrarle ai tuoi amici."
         },
         q3: {
-          question: false,
-          answer: false
+          question: "PreMiD è contro i Termini di Servizio di Discord?",
+          answer: "No, PreMiD non è contro i ToS di Discord. PreMiD utilizza le API di Discord (inclusi gli endpoint controllati forniti da Discord) per impostare la tua attività. Ciò significa che PreMiD è in piena conformità con il ToS di Discord."
         },
         q4: {
-          question: false,
-          answer: false
+          question: "Quali servizi supporta PreMiD?",
+          answer: "PreMiD supporta molti servizi diversi tra cui YouTube, Twitch e Netflix. L'elenco dei servizi supportati è in costante crescita. È possibile visualizzare l'elenco completo delle Presence nella nostra pagina negozio."
         },
         q5: {
-          question: false,
-          answer: false
+          question: "Come posso contribuire a PreMiD?",
+          answer: "Puoi contribuire a PreMiD unendoti alla nostra community su GitHub. Puoi aiutarti segnalando problemi, suggerendo funzionalità o contribuendo al codice."
         },
         q6: {
-          question: false,
-          answer: false
+          question: "PreMiD è gratuito da usare?",
+          answer: "Sì, PreMiD è gratuito da usare. Tuttavia, accettiamo donazioni tramite Patreon e GitHub Sponsors per aiutare a sostenere lo sviluppo del progetto."
         },
         q7: {
-          question: false,
-          answer: false
+          question: "Cosa devo fare se incontro un problema con PreMiD?",
+          answer: "Se si verificano problemi con PreMiD, è possibile unirsi al nostro server Discord per il supporto. Abbiamo anche una guida per la risoluzione dei problemi sulla nostra documentazione."
         },
         q8: {
-          question: false,
-          answer: false
+          question: "PreMiD non supporta xyz, potete aggiungerlo?",
+          answer: "Le nostre cosiddette Presence sono guidate dalla comunità, non abbiamo le risorse per aggiungere ogni singola piattaforma. Tuttavia, puoi aggiungere la tua Presence seguendo le istruzioni sulla nostra documentazione."
         },
         q9: {
-          question: false,
-          answer: false
+          question: "Quanto spesso viene aggiornato PreMiD?",
+          answer: "Siamo un piccolo progetto guidato da volontari, miriamo ad aggiornare PreMiD il più spesso possibile, ma non possiamo promettere che saremo sempre al passo."
         }
       }
     },
     store: {
       title: "Store",
-      noPresence: false,
+      noPresence: "Nessuna presence corrisponde alla tua ricerca...",
       presence: {
         button: {
           reportIssue: "Segnala un problema",
