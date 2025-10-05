@@ -189,23 +189,23 @@ export default defineI18nLocale(() => ({
         },
         q4: {
           question: "",
-          answer: false
+          answer: "PreMiD, YouTube, Twitch ve Netflix'in de içinde yer aldığı çok çeşitli servisleri destekler. Desteklenen servislerin listesi durmaksızın büyümektedir. Mağaza sayfamızdan Varlıkların tam listesini görebilirsin."
         },
         q5: {
-          question: false,
-          answer: false
+          question: "PreMiD’e nasıl katkıda bulunabilirim?",
+          answer: "GitHub topluluğumuza katılarak PreMiD için katkıda bulunabilirsin. Sorunları geri bildirerek, özellikler önererek ya da katkıda bulunma kodu ile yardımcı olabilirsin."
         },
         q6: {
-          question: false,
-          answer: false
+          question: "PreMiD kullanması ücretsiz midir?",
+          answer: "Evet, PreMiD kullanması ücretsizdir. Ancak, projemizi desteklemek adına Patreon ve GitHub sponsorlarının bağışlarını kabul ediyoruz."
         },
         q7: {
-          question: false,
-          answer: false
+          question: "PreMiD ile ilgili bir sorunla karşılaşırsam ne yapmalıyım?",
+          answer: "Eğer PreMiD ile ilgili bir sorunla karşılaşırsan, destek için Discord sunucumuza katılabilirsin. Ayrıca belgelerimizde sorun giderme kılavuzumuz mevcuttur."
         },
         q8: {
-          question: false,
-          answer: false
+          question: "PreMiD xyz desteklememekte, ekleyebilir misin?",
+          answer: "Bizim sözde Varlıklar topluluk yürütmelidir, her bir platformu ekleyebilecek kaynaklara sahip değiliz. Ancak, sen kendi Varlığını talimat ve belgelerimize uyarak ekleyebilirsin."
         },
         q9: {
           question: "Premid nasıl güncellenir?",
