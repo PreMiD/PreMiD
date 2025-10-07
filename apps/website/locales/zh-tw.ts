@@ -185,7 +185,7 @@ export default defineI18nLocale(() => ({
         },
         q3: {
           question: "PreMiD 是否違反了 Discord 的服務條款？",
-          answer: "不，PreMiD 並不違反 Discord 的服務條款。PreMiD 使用 Discord 的 API（包括 Discord 提供的受限 API 端點）來設置你的活動狀態。這意味著 PreMiD 完全遵守 Discord 的服務條款。"
+          answer: "不，PreMiD 並未違反 Discord 的使用條款。PreMiD 使用 Discord 的 API（包含 Discord 提供的受限制 API 端點）來設定你的活動，這表示 PreMiD 完全符合 Discord 的使用條款。"
         },
         q4: {
           question: "PreMiD 支援哪些服務？",
