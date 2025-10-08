@@ -39,11 +39,11 @@ export default defineI18nLocale(() => ({
     },
     donationModal: {
       title: false,
-      description: false,
+      description: "Надяваме се да харесате PreMiD! Ако е довело усмивка, защо не споделите малко обич обратно? Нашите работници си вложиха сърцата за да го направят страхотно само за вас!",
       continue: false,
       close: "Затвори",
       patreon: false,
-      github: false,
+      github: "Спонсорирай {name}",
       holdTight: false
     }
   },
