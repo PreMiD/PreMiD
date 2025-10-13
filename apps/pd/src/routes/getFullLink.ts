@@ -32,7 +32,6 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 	const hash = crypto.createHash("sha256").update(url).digest("hex");
 
 	await Promise.all([keyv.set(hash, id, 30 * 60 * 1000), keyv.set(id, url, 30 * 60 * 1000)]);
-	void reply.header("Cache-control", "public, max-age=1800");
 
 	//* If it is a base64 string, decode and return the image
 	if (url.startsWith("data:image")) {

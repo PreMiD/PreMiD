@@ -37,7 +37,6 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 	const existingUrl = await keyv.get(hash);
 
 	if (existingUrl) {
-		void reply.header("Cache-control", `public, max-age=${(30 * 60).toString()}`);
 		return reply.send(process.env.BASE_URL! + existingUrl);
 	}
 
@@ -48,7 +47,6 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 		keyv.set(uniqueId, body, 30 * 60 * 1000),
 	]);
 
-	void reply.header("Cache-control", `public, max-age=${(30 * 60).toString()}`);
 	return reply.send(process.env.BASE_URL! + uniqueId);
 };
 

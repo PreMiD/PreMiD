@@ -31,8 +31,6 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 	const hash = crypto.createHash("sha256").update(url).digest("hex");
 	const existingShortenedUrl = await keyv.get(hash);
 
-	void reply.header("Cache-control", "public, max-age=1800");
-
 	if (existingShortenedUrl) {
 		await Promise.all([keyv.set(hash, existingShortenedUrl, 1800), keyv.set(existingShortenedUrl, url, 1800)]);
 		return reply.send(process.env.BASE_URL! + existingShortenedUrl);
