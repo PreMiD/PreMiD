@@ -69,7 +69,7 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "Página Inicial"
       },
-      title: "Melhore Sua Presence Online com PreMiD",
+      title: "Melhore sua presença on-line com PreMiD",
       subtitle: "Mostre aos seus amigos o que {word} você está gostando.",
       words: {
         music: "Música",
