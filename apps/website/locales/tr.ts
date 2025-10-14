@@ -209,13 +209,13 @@ export default defineI18nLocale(() => ({
         },
         q9: {
           question: "Premid nasıl güncellenir?",
-          answer: false
+          answer: "Biz küçük gönüllüler tarafından yürütülen bir proje ekibiyiz. PreMiD’i mümkün olduğunca sık güncellemeyi hedefliyoruz, ancak her zaman her şeyin en güncel hâlinde olacağını garanti edemeyiz."
         }
       }
     },
     store: {
       title: "Mağaza",
-      noPresence: false,
+      noPresence: "Aramanızla eşleşen bir şey yok...",
       presence: {
         button: {
           reportIssue: "Bir sorun bildir.",
@@ -252,7 +252,7 @@ export default defineI18nLocale(() => ({
       translate: "Çeviri"
     },
     moreList: {
-      faq: false,
+      faq: "SSS",
       documentation: "Dokümantasyon",
       status: "PreMiD Durumu"
     },
@@ -261,9 +261,9 @@ export default defineI18nLocale(() => ({
       termsOfService: "Hizmet Koşulları",
       cookiePolicy: "Çerez Politikası"
     },
-    withLoveBy: false,
-    by: false,
-    copyright: false
+    withLoveBy: "Beraber",
+    by: "Tarafından",
+    copyright: "© {year}-{currentYear} {company} Tüm hakları saklıdır."
   },
   error: {
     404: {
@@ -272,11 +272,11 @@ export default defineI18nLocale(() => ({
     },
     500: {
       title: false,
-      message: false
+      message: "Bir şeyler ters gitti."
     },
     default: {
       title: "Hata",
-      message: false,
+      message: "Bir şeyler ters gitti.",
       button: "Geri dön."
     }
   }
