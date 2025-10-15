@@ -2,7 +2,7 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: "Silakan dukung kami dengan menonaktifkan pemblokir iklan Anda."
+      error: "Tolong support kami dengan mematikan ad blocker Anda."
     }
   },
   component: {
@@ -38,8 +38,8 @@ export default defineI18nLocale(() => ({
       removePresence: "Hapus"
     },
     donationModal: {
-      title: "Sebuah Permintaan Cepat...",
-      description: "Kami harap Anda akan menyukai PreMiD! Jika itu membuatmu tersenyum, mengapa tidak menyebarkan kebahagiaan kembali? Tim sukarelawan kami menaruh hati mereka untuk membuatnya luar biasa hanya untukmu!",
+      title: "Tolong bantuan...",
+      description: "Kami harap kamu akan suka dengan PreMiD! Jika itu membuatmu senang, kenapa tidak kasih kembali? Tim sukarelawan kami membuatnya luar biasa dengan cinta cuma untukmu!",
       continue: "Lanjut",
       close: "Tutup",
       patreon: "Dukung di {name}",
@@ -58,7 +58,7 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: "Kontribusi Presence",
+        title: "Kontributor Aktifitas",
         error: {
           title: "Galat",
           description: "Kami mengalami masalah dalam memuat pengguna ini... Silakan coba lagi nanti."
