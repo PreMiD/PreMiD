@@ -1,3 +1,5 @@
 import createKeyv from "./functions/createKeyv.js";
 
-export default createKeyv();
+export const keyv = createKeyv();
+
+export const ttl = 30 * 60 * 1000;

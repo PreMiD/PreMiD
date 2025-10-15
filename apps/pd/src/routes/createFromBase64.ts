@@ -5,7 +5,7 @@ import mime from "mime-types";
 import { nanoid } from "nanoid";
 import type { RouteHandlerMethod } from "fastify";
 
-import keyv from "../keyv.js";
+import { keyv, ttl } from "../keyv.js";
 
 const	handler: RouteHandlerMethod = async (request, reply) => {
 	const { body } = request;
@@ -38,8 +38,8 @@ const	handler: RouteHandlerMethod = async (request, reply) => {
 
 	const uniqueId = `${nanoid(10)}.${type}`;
 
-	await keyv.set(hash, uniqueId, 30 * 60 * 1000);
-	await keyv.set(uniqueId, body, 30 * 60 * 1000);
+	await keyv.set(hash, uniqueId, ttl);
+	await keyv.set(uniqueId, body, ttl);
 
 	return reply.send(process.env.BASE_URL! + uniqueId);
 };

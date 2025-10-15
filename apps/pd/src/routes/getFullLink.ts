@@ -5,7 +5,7 @@ import type { RouteHandlerMethod } from "fastify";
 
 import isInCIDRRange from "../functions/isInCidRange.js";
 import googleCIDRs from "../googleCIDRs.js";
-import keyv from "../keyv.js";
+import { keyv, ttl } from "../keyv.js";
 
 const handler: RouteHandlerMethod = async (request, reply) => {
 	/* c8 ignore next 2 */
@@ -31,7 +31,7 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 
 	const hash = crypto.createHash("sha256").update(url).digest("hex");
 
-	await Promise.all([keyv.set(hash, id, 30 * 60 * 1000), keyv.set(id, url, 30 * 60 * 1000)]);
+	await Promise.all([keyv.set(hash, id, ttl), keyv.set(id, url, ttl)]);
 
 	//* If it is a base64 string, decode and return the image
 	if (url.startsWith("data:image")) {

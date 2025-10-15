@@ -4,7 +4,7 @@ import process from "node:process";
 import { nanoid } from "nanoid";
 import type { RouteHandlerMethod } from "fastify";
 
-import keyv from "../keyv.js";
+import { keyv, ttl } from "../keyv.js";
 
 const handler: RouteHandlerMethod = async (request, reply) => {
 	const url = request.url.replace("/create/", "").trim();
@@ -32,14 +32,14 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 	const existingShortenedUrl = await keyv.get(hash);
 
 	if (existingShortenedUrl) {
-		await Promise.all([keyv.set(hash, existingShortenedUrl, 1800), keyv.set(existingShortenedUrl, url, 1800)]);
+		await Promise.all([keyv.set(hash, existingShortenedUrl, ttl), keyv.set(existingShortenedUrl, url, ttl)]);
 		return reply.send(process.env.BASE_URL! + existingShortenedUrl);
 	}
 
 	//* Create unique ID with extension if valid, otherwise without extension
 	const uniqueId = hasValidExtension ? `${nanoid(10)}.${extension}` : nanoid(10);
 
-	await Promise.all([keyv.set(hash, uniqueId, 1800), keyv.set(uniqueId, url, 1800)]);
+	await Promise.all([keyv.set(hash, uniqueId, ttl), keyv.set(uniqueId, url, ttl)]);
 
 	return reply.send(process.env.BASE_URL! + uniqueId);
 };

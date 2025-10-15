@@ -5,7 +5,7 @@ import { fileTypeFromBuffer } from "file-type";
 import { nanoid } from "nanoid";
 import type { RouteHandlerMethod } from "fastify";
 
-import keyv from "../keyv.js";
+import { keyv, ttl } from "../keyv.js";
 
 const handler: RouteHandlerMethod = async (request, reply) => {
 	if (!request.isMultipart())
@@ -43,8 +43,8 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 	const uniqueId = `${nanoid(10)}.${type.ext}`;
 
 	await Promise.all([
-		keyv.set(hash, uniqueId, 30 * 60 * 1000),
-		keyv.set(uniqueId, body, 30 * 60 * 1000),
+		keyv.set(hash, uniqueId, ttl),
+		keyv.set(uniqueId, body, ttl),
 	]);
 
 	return reply.send(process.env.BASE_URL! + uniqueId);
