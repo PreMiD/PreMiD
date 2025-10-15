@@ -57,7 +57,19 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 	//* If URL has valid image extension, fetch and return the image
 	if (hasValidImageExtension) {
 		try {
-			const response = await fetch(url);
+			const response = await fetch(url, {
+				headers: {
+					"Accept": "image/*",
+					"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+					"Accept-Encoding": "gzip, deflate, br",
+					"Cache-Control": "no-cache",
+					"Pragma": "no-cache",
+					"Referer": urlObject.origin, //* Set referer to the origin domain to bypass hotlink protection
+					"Sec-Fetch-Dest": "image",
+					"Sec-Fetch-Mode": "no-cors",
+					"Sec-Fetch-Site": "cross-site",
+				},
+			});
 
 			if (!response.ok) {
 				return reply.code(404).send("Image not found");
