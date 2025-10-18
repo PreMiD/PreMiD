@@ -137,7 +137,7 @@ export default defineI18nLocale(() => ({
       title: "Συνεισφέροντες",
       presenceDevelopers: false,
       staff: "Προσωπικό",
-      supporters: false,
+      supporters: "",
       translators: "Μεταφραστές",
       avatar: {
         tooltip: false
