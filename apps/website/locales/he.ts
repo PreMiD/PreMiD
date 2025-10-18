@@ -104,13 +104,13 @@ export default defineI18nLocale(() => ({
           },
           feature6: {
             title: "פיצ'רים עתידיים",
-            description: false
+            description: "הישאר מעודכן לגבי תכונות ושיפורים חדשים ומרגשים שישפרו עוד יותר את חוויית PreMiD שלכם."
           }
         },
         howItWorks: {
-          title: false,
+          title: "איך זה עובד",
           step1: {
-            title: false,
+            title: "התקן את התוסף",
             description: "הוסף את PreMiD לדפדפן שלך."
           },
           step2: {
@@ -129,27 +129,27 @@ export default defineI18nLocale(() => ({
         callToAction: {
           title: "מוכן להתחיל?",
           description: "הצטרף ל-{count} משתמשים שכבר אוהבים את PreMid.",
-          button: false
+          button: "התחל עכשיו"
         }
       }
     },
     contributors: {
       title: "תורמים",
-      presenceDevelopers: false,
+      presenceDevelopers: "מפתחי נוכחות",
       staff: "צוות",
       supporters: "תומכים",
       translators: "מתרגמים",
       avatar: {
-        tooltip: false
+        tooltip: "לחץ כדי להעתיק את האווטאר של {name}"
       }
     },
     downloads: {
       title: "הורדות",
       steps: {
-        install: false,
+        install: "התקן תוסף",
         login: "התחבר עם Discord",
-        add: false,
-        showoff: false
+        add: "הוסף נוכחות",
+        showoff: "התפאר!"
       },
       section: {
         heading: {
@@ -160,39 +160,39 @@ export default defineI18nLocale(() => ({
         }
       },
       browser: {
-        your: false,
-        other: false,
-        based: false
+        your: "הדפדפן שלך",
+        other: "דפדפנים אחרים",
+        based: "מבוסס על {browser}"
       },
       mobile: {
-        title: false,
-        description: false
+        title: "חדשות רעות!",
+        description: "PreMiD לא זמין למכשירים ניידים, סליחה!"
       },
       alphaAccess: {
-        title: false,
-        description: false,
-        callToAction: false
+        title: "בטל את הנעילה לגישת אלפא בלעדית!",
+        description: "היכנסו לעתיד של PreMiD על ידי כך שתהפכו ל-Patron או תתנו לנו חסות לנו ב-GitHub. התמיכה שלכם לא רק מקדמת את הפיתוח שלנו, אלא גם מעניקה לכם גישה ראשונה לתכונות החדשניות ביותר שאנו יוצרים. חוו את הטכנולוגיה המתקדמת ביותר ש-PreMiD יכולה להציע והשפיעו על מסלולה בעזרת המשוב שלכם. זה לא רק להיות ראשונים - זה להיות חלק ממשהו גדול יותר.",
+        callToAction: "למד עוד והצטרף לחדשנות"
       },
-      faq: false,
+      faq: "שאלות נפוצות",
       faqs: {
         q1: {
-          question: false,
-          answer: false
+          question: "מה זה PreMiD?",
+          answer: "PreMiD הוא כלי פשוט וניתן להגדרה המאפשר לך להציג את מה שאתה עושה באינטרנט בסטטוס הפעילות שלך ב-Discord."
         },
         q2: {
-          question: false,
-          answer: false
+          question: "איך משתמשים ב-PreMiD?",
+          answer: "ניתן להשתמש ב-PreMiD על ידי התקנת התוסף וכניסה לחשבון Discord שלכם. לאחר הכניסה, תוכלו להוסיף נוכחות לפרופיל שלכם ולהשוויץ בפני חבריכם."
         },
         q3: {
-          question: false,
-          answer: false
+          question: "האם PreMiD נוגד את תנאי השימוש של דיסקורד?",
+          answer: "לא, PreMiD אינו נוגד את תנאי השימוש של Discord. למעשה, PreMiD משתמש ב-API של Discord (כולל נקודות קצה של API מגודרות המסופקות על ידי Discord) כדי להגדיר את הפעילות שלך. משמעות הדבר היא ש-PreMiD תואם לחלוטין את תנאי השימוש של Discord."
         },
         q4: {
-          question: false,
-          answer: false
+          question: "באילו שירותים PreMiD תומך?",
+          answer: "PreMiD תומך בשירותים רבים ושונים, כולל YouTube, Twitch ו-Netflix. רשימת השירותים הנתמכים גדלה כל הזמן. ניתן לצפות ברשימה המלאה של השירותים הנתמכים בדף החנות שלנו."
         },
         q5: {
-          question: false,
+          question: "איך אני יכול לתרום ל-PreMiD?",
           answer: false
         },
         q6: {
