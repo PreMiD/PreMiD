@@ -2,17 +2,17 @@ import { defineI18nLocale } from false;
 export default defineI18nLocale(() => ({
   layout: {
     ads: {
-      error: false
+      error: "בבקשה תמוך בנו על ידי השבתת חוסם הפרסומות שלך."
     }
   },
   component: {
     searchBar: {
       search: "חיפוש",
-      sortBy: false,
+      sortBy: "מיין לפי",
       searchPresence: "חפש Presence",
       sort: {
-        mostUsed: false,
-        alphabetical: false
+        mostUsed: "הכי בשימוש",
+        alphabetical: "אלפביתי"
       },
       categories: {
         all: "הכל",
@@ -25,26 +25,26 @@ export default defineI18nLocale(() => ({
       }
     },
     browserCard: {
-      wip: false,
+      wip: "WIP",
       support: {
-        safari: false
+        safari: "אנחנו עובדים על תמיכה בדפדפן Safari, הישאר מעודכן!"
       }
     },
     userChip: {
-      loading: false
+      loading: "טוען..."
     },
     storeCard: {
-      addPresence: false,
-      removePresence: false
+      addPresence: "הוסף",
+      removePresence: "הסר"
     },
     donationModal: {
-      title: false,
-      description: false,
-      continue: false,
+      title: "חסד קטן ומהיר...",
+      description: "אנחנו מקווים שתאהבו את PreMiD! אם זה גורם לכם לחייך, למה לא להפיץ קצת אהבה בחזרה? הצוות שלנו הוא מתנדבים ששמים את לבם כדי להפוך את זה למדהים במיוחד עבורכם!",
+      continue: "המשך",
       close: "סגור",
-      patreon: false,
-      github: false,
-      holdTight: false
+      patreon: "תמוך ב-{name}",
+      github: "חסות ב-{name}",
+      holdTight: "החזק חזק... טוען את כפתור הקסם..."
     }
   },
   header: {
@@ -58,10 +58,10 @@ export default defineI18nLocale(() => ({
   page: {
     users: {
       userPage: {
-        title: false,
+        title: "תרומות נוכחות",
         error: {
-          title: false,
-          description: false
+          title: "שגיאה",
+          description: "יש לנו שגיאה עם טעינת המשתמש הזה... אנא נסה שוב מאוחר יותר."
         }
       }
     },
@@ -69,41 +69,41 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "מסך הבית"
       },
-      title: false,
-      subtitle: false,
+      title: "שפר את הנוכחות המקוונת שלך עם PreMiD",
+      subtitle: "הצג לחבריך את ה-{word} שמהם אתה נהנה.",
       words: {
         music: "מוזיקה",
-        videos: false,
-        streams: false,
-        media: false
+        videos: "סרטונים",
+        streams: "שידורים",
+        media: "מדיה"
       },
-      description: false,
+      description: "PreMiD הוא כלי פשוט ועוצמתי שמאפשר לך לשתף את פעילות המדיה הנוכחית שלך במספר פלטפורמות כמו YouTube, Disney+, Netflix ועוד. הישאר מחובר ותן לחברים שלך לראות במה אתה עוסק בזמן אמת.",
       getStarted: "התחל",
       sections: {
         feature: {
-          title: false,
+          title: "למה אתה אוהב את PreMid?",
           feature1: {
-            title: false,
-            description: false
+            title: "שליטת פרטיות",
+            description: "קח שליטה על הגדרות הפרטיות שלך והחליט אילו פעילויות אתה משתף עם אחרים. הנתונים שלך, הכללים שלך."
           },
           feature2: {
-            title: false,
-            description: false
+            title: "מונע על ידי הקהילה",
+            description: "חוות תמיכה שאין כמוה עבור מגוון רחב של פלטפורמות, פועל בזכות קהילה נלהבת ומסורה."
           },
           feature3: {
-            title: false,
-            description: false
+            title: "הגדרות התאמה אישית",
+            description: "התאימו את חוויית ה-PreMiD שלכם עם אפשרויות התאמה אישית נרחבות שיתאימו להעדפות ולצרכים שלכם."
           },
           feature4: {
-            title: false,
-            description: false
+            title: "הגדרה קלה",
+            description: "התחל לעבוד עם PreMiD תוך זמן קצר. תהליך ההתקנה הפשוט שלנו מבטיח התחלה חלקה ללא מאמץ."
           },
           feature5: {
-            title: false,
-            description: false
+            title: "עומד בתנאי השימוש של Discord",
+            description: "אנחנו עומדים באופן מלא בתנאי השירות של Discord על ידי שימוש בנקודות קצה רשמיות המסופקות על ידי Discord."
           },
           feature6: {
-            title: false,
+            title: "פיצ'רים עתידיים",
             description: false
           }
         },
@@ -111,24 +111,24 @@ export default defineI18nLocale(() => ({
           title: false,
           step1: {
             title: false,
-            description: false
+            description: "הוסף את PreMiD לדפדפן שלך."
           },
           step2: {
-            title: false,
-            description: false
+            title: "התחבר עם Discord",
+            description: "חבר את PreMiD עם חשבון ה-Discord שלך."
           },
           step3: {
-            title: false,
-            description: false
+            title: "הוסף שירותים",
+            description: "בחר את השירותים שאתה רוצה להציג, כמו YouTube, Disney+ ועוד."
           },
           step4: {
-            title: false,
-            description: false
+            title: "תהנה",
+            description: "שתף את הפעילות שלך ותהנה עם PreMiD."
           }
         },
         callToAction: {
-          title: false,
-          description: false,
+          title: "מוכן להתחיל?",
+          description: "הצטרף ל-{count} משתמשים שכבר אוהבים את PreMid.",
           button: false
         }
       }
@@ -147,7 +147,7 @@ export default defineI18nLocale(() => ({
       title: "הורדות",
       steps: {
         install: false,
-        login: false,
+        login: "התחבר עם Discord",
         add: false,
         showoff: false
       },
@@ -275,7 +275,7 @@ export default defineI18nLocale(() => ({
       message: false
     },
     default: {
-      title: false,
+      title: "שגיאה",
       message: false,
       button: false
     }
