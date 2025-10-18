@@ -27,7 +27,7 @@ export default defineI18nLocale(() => ({
     browserCard: {
       wip: "Em Andamento",
       support: {
-        safari: "Estamos trabalhando para dar suporte ao Safari, fique atento!"
+        safari: "Estamos trabalhando para dar suporte ao Safári!"
       }
     },
     userChip: {
@@ -69,7 +69,7 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "Página Inicial"
       },
-      title: "Melhore sua presença on-line com PreMiD",
+      title: "Melhore sua presença “ligado” com PreMiD",
       subtitle: "Mostre aos seus amigos o que {word} você está gostando.",
       words: {
         music: "Música",
