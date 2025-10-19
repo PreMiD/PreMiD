@@ -193,18 +193,18 @@ export default defineI18nLocale(() => ({
         },
         q5: {
           question: "איך אני יכול לתרום ל-PreMiD?",
-          answer: false
+          answer: "אתם יכולים לתרום ל-PreMiD על ידי הצטרפות לקהילה שלנו ב-GitHub. אתם יכולים לעזור על ידי דיווח על בעיות, הצעת תכונות או תרומת קוד."
         },
         q6: {
-          question: false,
-          answer: false
+          question: "האם PreMiD הוא חינמי לשימוש?",
+          answer: "כן, PreMiD הוא חינמי לשימוש. על זאת, אנו מקבלים תרומות דרך ספונסרים של Patreon ו-GitHub כדי לסייע בפיתוח הפרויקט."
         },
         q7: {
-          question: false,
-          answer: false
+          question: "מה עליי לעשות אם אני נתקל בבעיה עם PreMiD?",
+          answer: "אם אתם נתקלים בבעיות כלשהן עם PreMiD, אתם מוזמנים להצטרף לשרת ה-Discord שלנו לקבלת תמיכה. יש לנו גם מדריך לפתרון בעיות במסמכים שלנו."
         },
         q8: {
-          question: false,
+          question: "PreMiD לא תומך ב-xyz, האם תוכלו להוסיף אותו?",
           answer: false
         },
         q9: {
