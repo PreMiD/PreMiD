@@ -205,33 +205,33 @@ export default defineI18nLocale(() => ({
         },
         q8: {
           question: "PreMiD לא תומך ב-xyz, האם תוכלו להוסיף אותו?",
-          answer: false
+          answer: "הנוכחות שלנו מונעת על ידי הקהילה, כך שאין לנו את המשאבים להוסיף כל פלטפורמה בנפרד. עם זאת, ניתן להוסיף נוכחות משלכם על ידי ביצוע ההוראות במסמכים שלנו."
         },
         q9: {
-          question: false,
-          answer: false
+          question: "באיזו תדירות PreMiD מתעדכן?",
+          answer: "אנחנו פרויקט קטן המונע על ידי מתנדבים, אנו שואפים לעדכן את PreMiD לעתים קרובות ככל האפשר, אך איננו יכולים להבטיח שתמיד נהיה מעודכנים."
         }
       }
     },
     store: {
       title: "חנות",
-      noPresence: false,
+      noPresence: "שום נוכחות לא תואמת את החיפוש שלך...",
       presence: {
         button: {
-          reportIssue: false,
-          suggestFeature: false,
-          viewCode: false
+          reportIssue: "דווח על בעיה",
+          suggestFeature: "הצע תכונה",
+          viewCode: "ראה קוד"
         },
         title: {
           description: "תיאור",
           information: "מידע"
         },
         informationSection: {
-          contributors: false,
-          version: false,
-          users: false,
-          tags: false,
-          supportedUrls: false
+          contributors: "תורמים:",
+          version: "גרסה: {version}",
+          users: "משתמשים: {users}",
+          tags: "תגים:",
+          supportedUrls: "קישורי URL תומכים:"
         }
       },
       header: {
@@ -242,42 +242,42 @@ export default defineI18nLocale(() => ({
   },
   footer: {
     partners: "שותפים",
-    followUs: false,
+    followUs: "עקוב אחרינו",
     supportUs: "תמוך בנו",
     more: "עוד",
-    legal: false,
+    legal: "חוקי",
     supportList: {
       donate: "תרום",
       contribute: "תרום",
       translate: "תרגם"
     },
     moreList: {
-      faq: false,
+      faq: "שאלות נפוצות",
       documentation: "תיעוד",
       status: "סטטוס"
     },
     legalList: {
       privacyPolicy: "מדיניות פרטיות",
-      termsOfService: false,
+      termsOfService: "תנאים והגבלות",
       cookiePolicy: "מדיניות עוגיות"
     },
-    withLoveBy: false,
-    by: false,
-    copyright: false
+    withLoveBy: "עם",
+    by: "על ידי",
+    copyright: "© {year}-{currentYear} {company} כל הזכויות שמורות."
   },
   error: {
     404: {
       title: false,
-      message: false
+      message: "הדף שחיפשת אינו קיים."
     },
     500: {
       title: false,
-      message: false
+      message: "משהו השתבש בצד שלנו."
     },
     default: {
       title: "שגיאה",
-      message: false,
-      button: false
+      message: "משהו השתבש בצד שלנו.",
+      button: "חזור אחורה"
     }
   }
 }));
