@@ -39,7 +39,7 @@ export default defineI18nLocale(() => ({
     },
     donationModal: {
       title: "Ein kleiner Gefallen...",
-      description: "Wir hoffen, dass du PreMiD liebst! Wenn es ein Lächeln ins Gesicht bringt, warum nicht etwas Liebe wieder verbreiten? Unser Team von Freiwilligen gibt ihr Bestes nur für dich!",
+      description: "Wir hoffen, dass dir PreMiD gefällt! Wenn es dir ein Lächeln ins Gesicht zaubert, warum dann nicht ein bisschen Liebe zurückgeben?\nUnser Team aus freiwilligen Helfern steckt viel Herzblut hinein, um es für euch großartig zu machen!",
       continue: "Weiter",
       close: "Schließen",
       patreon: "Unterstütze uns auf {name}",
@@ -69,7 +69,7 @@ export default defineI18nLocale(() => ({
       meta: {
         title: "Startseite"
       },
-      title: "Verbessern Sie Ihre Online-Darstellung mit PreMiD",
+      title: "Verbessere deine Online-Darstellung mit PreMiD",
       subtitle: "Zeige deinen Freunden, was dir {word} gefällt.",
       words: {
         music: "Musik",
@@ -77,14 +77,14 @@ export default defineI18nLocale(() => ({
         streams: "Streams",
         media: "Medien"
       },
-      description: "PreMiD ist ein einfaches, leistungsstarkes Tool, mit dem Sie Ihre aktuelle Medienaktivität auf verschiedenen Plattformen wie YouTube, Disney+, Netflix und Anderen teilen können. Bleiben Sie verbunden und lassen Sie Ihre Freunde in Echtzeit sehen, was Sie tun.",
+      description: "PreMiD ist ein einfaches, leistungsstarkes Tool, mit dem du deine aktuelle Medienaktivität auf verschiedenen Plattformen wie YouTube, Disney+, Netflix und Anderen teilen kannst. Bleib verbunden und lass deine Freunde in Echtzeit sehen, was du tust.",
       getStarted: "Erste Schritte",
       sections: {
         feature: {
           title: "Warum du PreMiD lieben wirst",
           feature1: {
             title: "Datenschutz",
-            description: "Ändern Sie Ihre Datenschutzeinstellungen und entscheiden Sie, welche Aktivitäten Sie mit anderen teilen. Ihre Daten, Ihre Regeln."
+            description: "Ändere deine Datenschutzeinstellungen und entscheide, welche Aktivitäten du mit anderen teilen möchtest. Deine Daten, deine Regeln."
           },
           feature2: {
             title: "Community-basiert",
