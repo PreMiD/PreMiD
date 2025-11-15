@@ -1,0 +1,11 @@
+{
+	"references": [
+		{
+			"path": "./apps/pd/tsconfig.app.json"
+		},
+		{
+			"path": "./apps/schema-server/tsconfig.app.json"
+		}
+	],
+	"files": []
+}

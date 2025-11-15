@@ -27,6 +27,7 @@ PreMiD is built by the community, for the community. Join us and help make PreMi
 - **Presences Repository**: [github.com/PreMiD/Presences](https://github.com/PreMiD/Presences)
 - **Documentation**: [docs.premid.app](https://docs.premid.app)
 - **Discord Server**: Chat with us and get support
+- **Feedback & Bug Reports**: [feedback.premid.app](https://feedback.premid.app)
 - **Contribute**: We welcome contributions of all kinds!
 
 ## License

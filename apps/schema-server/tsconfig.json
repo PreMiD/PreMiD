@@ -4,5 +4,6 @@
 		"types": ["@types/node"],
 		"noEmit": true
 	},
-	"include": ["environment.d.ts", "src"]
+	"include": ["environment.d.ts", "src"],
+	"exclude": ["**/*.test.ts"]
 }
