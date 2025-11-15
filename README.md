@@ -1,7 +1,6 @@
 <img width="1280" height="800" alt="Chrome Global Screenshots" src="https://github.com/user-attachments/assets/1ea21f91-7499-43de-8b9a-3344d1c0fe48" />
-<img src="https://cdn.rcd.gg/PreMiD.png" width="150px" />
 
-# PreMiD
+# <img src="https://cdn.rcd.gg/PreMiD.png" height="40px" /> PreMiD
 
 [![Crowdin](https://badges.crowdin.net/premid/localized.svg)](https://crowdin.com/project/premid)
 
