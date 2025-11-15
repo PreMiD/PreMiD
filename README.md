@@ -8,7 +8,7 @@ PreMiD is a simple, configurable utility that lets you show what you're doing on
 
 ## Getting Started
 
-**Looking to install PreMiD?** Head over to our [official website](https://premid.app) to download the application and browser extension!
+**Looking to use PreMiD?** Head over to our [official website](https://premid.app) to add the browser extension!
 
 **Want to create your own Activity?** All of our community-created activities are open source and available at [github.com/PreMiD/Activities](https://github.com/PreMiD/Activities). We'd love to see what you create!
 
@@ -28,7 +28,16 @@ PreMiD is built by the community, for the community. Join us and help make PreMi
 - **Documentation**: [docs.premid.app](https://docs.premid.app)
 - **Discord Server**: Chat with us and get support
 - **Feedback & Bug Reports**: [feedback.premid.app](https://feedback.premid.app)
-- **Contribute**: We welcome contributions of all kinds!
+
+## Contributing
+
+We love community contributions! While **PreMiD's Activities are fully open source** (the code that makes websites show up on your profile), the PreMiD application and extension are not currently open source. This decision helps our small team manage the maintenance burden and focus on delivering the best experience possible.
+
+You can contribute by:
+- Creating new Activities at [github.com/PreMiD/Activities](https://github.com/PreMiD/Activities)
+- Helping translate PreMiD on [Crowdin](https://crowdin.com/project/premid)
+- Reporting bugs and suggesting features at [feedback.premid.app](https://feedback.premid.app)
+- Supporting the project and spreading the word!
 
 ## License
 
