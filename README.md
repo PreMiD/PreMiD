@@ -31,7 +31,7 @@ PreMiD is built by the community, for the community. Join us and help make PreMi
 
 ## Contributing
 
-We love community contributions! While **PreMiD's Activities are fully open source** (the code that makes websites show up on your profile), the PreMiD application and extension are not currently open source. This decision helps our small team manage the maintenance burden and focus on delivering the best experience possible.
+We love community contributions! While **PreMiD's Activities are fully open source** (the code that makes websites show up on your profile), the PreMiD extension is not currently open source. This decision allows our small team to move fast and iterate quickly to deliver the best experience possible.
 
 You can contribute by:
 - Creating new Activities at [github.com/PreMiD/Activities](https://github.com/PreMiD/Activities)
