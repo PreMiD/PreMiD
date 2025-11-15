@@ -2,52 +2,32 @@
 
 # PreMiD
 
-[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/PreMiD/PreMiD)
 [![Crowdin](https://badges.crowdin.net/premid/localized.svg)](https://crowdin.com/project/premid)
 
-This is the monorepo for PreMiD. PreMiD is a simple, configurable utility that allows you to show what you're watching/listening to on your Discord profile.
+PreMiD is a simple, configurable utility that lets you show what you're doing on the web in your Discord profile. Whether you're watching videos, listening to music, browsing your favorite sites, or playing browser games, PreMiD helps you share your online activities with your friends through Discord's Rich Presence feature.
 
 ## Getting Started
 
-**If you are a user looking to install PreMiD, please visit the [official website](https://premid.app).**
+**Looking to install PreMiD?** Head over to our [official website](https://premid.app) to download the application and browser extension!
 
-If you are a developer looking to contribute to PreMiD, read along.
+**Want to create your own Presence?** All of our community-created activities (called "Presences") are open source and available at [github.com/PreMiD/Presences](https://github.com/PreMiD/Presences). We'd love to see what you create!
 
-## Table of Contents
+## Features
 
-- [Packages](#packages)
-- [License](#license)
+- 🎵 Show what you're listening to on YouTube, Spotify, SoundCloud, and more
+- 📺 Display what you're watching on Netflix, Twitch, Crunchyroll, and hundreds of other sites
+- 🎮 Share your browser game activity with friends
+- ✨ Fully customizable with thousands of user-created Presences
+- 🌍 Available in multiple languages thanks to our amazing community translators
 
-## Packages
+## Community
 
-This monorepo is split into multiple packages / projects. Here's a list of them:
+PreMiD is built by the community, for the community. Join us and help make PreMiD even better!
 
-- [apps/api](apps/api) - The API for PreMiD.
-- [apps/website](apps/website) - The website for PreMiD.
-- [apps/docs](apps/docs) - The official documentation for PreMiD.
-- [apps/pd](apps/pd/README.md) - A simple url shortener service to shorten urls longer than 256 characters.
-- [apps/schema-server](apps/schema-server) - Simple Schema server for the Presence manifest.
-- [packages/db](packages/db) - Database schema for PreMiD.
-
-## Development
-
-### Release
-
-To release a new version of a package, run the following command:
-
-```bash
-cd apps/<app>
-pnpm bumpp -y -t <app>-v
-```
-
-Replace `<app>` with the name of the package you want to release. For example, to release a new version of the `schema-server` package, you would run:
-
-```bash
-cd apps/schema-server
-pnpm bumpp -y -t schema-server-v
-```
-
-This will use bumpp to bump the version of the package in the `package.json` file, create a tag for the new version, and push the changes to the remote repository.
+- **Presences Repository**: [github.com/PreMiD/Presences](https://github.com/PreMiD/Presences)
+- **Documentation**: [docs.premid.app](https://docs.premid.app)
+- **Discord Server**: Chat with us and get support
+- **Contribute**: We welcome contributions of all kinds!
 
 ## License
 
