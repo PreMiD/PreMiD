@@ -1,5 +1,0 @@
-{
-	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["github>Recodive/Recodive:renovate-config"],
-	"automerge": false
-}
