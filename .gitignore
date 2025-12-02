@@ -2,6 +2,8 @@ node_modules
 out
 dist
 tmp
+lib
+data
 
 .vscode
 .env
@@ -18,3 +20,9 @@ src/update.ini
 *.app
 *.xml.backup
 *.js
+!*.config.js
+
+coverage
+*.tsbuildinfo
+.DS_Store
+*.log

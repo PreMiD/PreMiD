@@ -1,0 +1,9 @@
+{
+	"extends": "./tsconfig.app.json",
+	"compilerOptions": {
+		"types": ["@types/node"],
+		"noEmit": true
+	},
+	"include": ["environment.d.ts", "src"],
+	"exclude": ["**/*.test.ts"]
+}

@@ -1,46 +1,44 @@
-<div align="center">
+<img width="1280" height="800" alt="Chrome Global Screenshots" src="https://github.com/user-attachments/assets/1ea21f91-7499-43de-8b9a-3344d1c0fe48" />
 
-<img src=".github/Logo.png" width="150px" draggable="false"><br>
+# <img src="https://cdn.rcd.gg/PreMiD.png" height="40px" /> PreMiD
 
-# PreMiD
+[![Crowdin](https://badges.crowdin.net/premid/localized.svg)](https://crowdin.com/project/premid)
 
-## Your Rich Presence for web services!
+PreMiD is a simple, configurable utility that lets you show what you're doing on the web in your Discord profile. Whether you're watching videos, listening to music, browsing your favorite sites, or playing browser games, PreMiD helps you share your online activities with your friends through Discord's Rich Presence feature.
 
-![GitHub](https://img.shields.io/github/license/PreMiD/PreMiD?style=for-the-badge)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/premid/premid?label=Application&style=for-the-badge)
-![Chrome Web Store](https://img.shields.io/chrome-web-store/v/agjnjboanicjcpenljmaaigopkgdnihi?label=Extension&style=for-the-badge)
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/d/agjnjboanicjcpenljmaaigopkgdnihi.svg?label=Chrome&logo=google%20chrome&logoColor=white&colorA=4285F4&style=for-the-badge)](https://chrome.google.com/webstore/detail/premid/agjnjboanicjcpenljmaaigopkgdnihi)
-![Website](https://img.shields.io/website?down_message=offline&label=PreMiD.app&style=for-the-badge&up_message=online&url=https%3A%2F%2Fpremid.app)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FPreMiD%2FPreMiD.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FPreMiD%2FPreMiD?ref=badge_shield)
+## Getting Started
 
-<img src=".github/example.png" draggable="false"><br>
+**Looking to use PreMiD?** Head over to our [official website](https://premid.app) to add the browser extension!
 
-# About
+**Want to create your own Activity?** All of our community-created activities are open source and available at [github.com/PreMiD/Activities](https://github.com/PreMiD/Activities). We'd love to see what you create!
 
-**PreMiD** is a simple, configurable utility that allows you to show what you're doing on the web in your Discord **now playing status**. It supports many different websites, and will support multiple users watching the same content simultaneously in an upcoming update.
+## Features
 
-# Features
+- 🎵 Show what you're listening to on YouTube and more (Spotify has native Discord support)
+- 📺 Display what you're watching on Netflix, Disney+, Twitch, and hundreds of other sites
+- 🎮 Share your browser game activity with friends
+- ✨ Fully customizable with thousands of user-created Activities
+- 🌍 Available in multiple languages thanks to our amazing community translators
 
-· Displays your current web service in Discord as your status.<br>
-· Grants full control over Presences.<br>
-· Supports over 1,000 web services, still rising!<br>
-· _Watch parties and more are coming soon!_
+## Community
 
-# Installation/Troubleshooting
+PreMiD is built by the community, for the community. Join us and help make PreMiD even better!
 
-### Installation instructions, Troubleshooting guides etc. can be located at our [**docs**](https://docs.premid.app).
+- **Activities Repository**: [github.com/PreMiD/Activities](https://github.com/PreMiD/Activities)
+- **Documentation**: [docs.premid.app](https://docs.premid.app)
+- **Discord Server**: [discord.premid.app](https://discord.premid.app)
+- **Feedback & Bug Reports**: [feedback.premid.app](https://feedback.premid.app)
 
-# Support us
+## Contributing
 
-  <div>
-    <a target="_blank" href="https://www.patreon.com/bePatron?u=4610890" data-patreon-widget-type="become-patron-button" title="Support me on Patreon!">
-      <img height="75px" draggable="false" src=".github/Patreon.png">
-    </a>
-    <a target="_blank" href="https://discord.premid.app/" title="Join our Discord!">
-		<img  src="https://discordapp.com/api/guilds/493130730549805057/widget.png?style=banner2" height="76px" draggable="false" alt="Join our Discord!">
-    </a>
-  </div>
+We love community contributions! While **PreMiD's Activities are fully open source** (the code that makes websites show up on your profile), the PreMiD extension is not currently open source. This decision allows our small team to move fast and iterate quickly to deliver the best experience possible.
+
+You can contribute by:
+- Creating new Activities at [github.com/PreMiD/Activities](https://github.com/PreMiD/Activities)
+- Helping translate PreMiD on [Crowdin](https://crowdin.com/project/premid)
+- Reporting bugs and suggesting features at [feedback.premid.app](https://feedback.premid.app)
+- Supporting the project and spreading the word!
 
 ## License
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FPreMiD%2FPreMiD.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FPreMiD%2FPreMiD?ref=badge_large)
+This project is licensed under the [MPL-2.0 License](LICENSE).
