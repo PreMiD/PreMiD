@@ -34,10 +34,29 @@ PreMiD is built by the community, for the community. Join us and help make PreMi
 We love community contributions! While **PreMiD's Activities are fully open source** (the code that makes websites show up on your profile), the PreMiD extension is not currently open source. This decision allows our small team to move fast and iterate quickly to deliver the best experience possible.
 
 You can contribute by:
+
 - Creating new Activities at [github.com/PreMiD/Activities](https://github.com/PreMiD/Activities)
 - Helping translate PreMiD on [Crowdin](https://crowdin.com/project/premid)
 - Reporting bugs and suggesting features at [feedback.premid.app](https://feedback.premid.app)
 - Supporting the project and spreading the word!
+
+### Release
+
+To release a new version of a package, run the following command:
+
+```bash
+cd apps/<app>
+pnpm bumpp -y -t <app>-v
+```
+
+Replace `<app>` with the name of the package you want to release. For example, to release a new version of the `schema-server` package, you would run:
+
+```bash
+cd apps/schema-server
+pnpm bumpp -y -t schema-server-v
+```
+
+This will use bumpp to bump the version of the package in the `package.json` file, create a tag for the new version, and push the changes to the remote repository.
 
 ## License
 

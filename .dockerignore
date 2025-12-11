@@ -1,0 +1,11 @@
+.vscode
+.DS_Store
+.Trashes
+.nuxt
+.output
+dist
+node_modules
+.env
+Dockerfile
+.dockerignore
+generated
