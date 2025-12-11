@@ -1,0 +1,41 @@
+{
+	"name": "premid",
+	"type": "module",
+	"version": "1.0.0",
+	"packageManager": "pnpm@9.5.0",
+	"description": "Monorepo containing most of PreMiD's codebase",
+	"author": {
+		"name": "Recodive oHG",
+		"email": "contact@recodive.com",
+		"url": "https://recodive.com"
+	},
+	"license": "MPL-2.0",
+	"engines": {
+		"node": "^20.0.0"
+	},
+	"scripts": {
+		"prepare": "husky",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"build": "pnpm clean && tsc -b tsconfig.app.json",
+		"build:watch": "pnpm clean && tsc -b tsconfig.app.json -w",
+		"clean": "tsc -b tsconfig.app.json --clean",
+		"test": "vitest --run",
+		"test:ui": "vitest --ui"
+	},
+	"devDependencies": {
+		"@antfu/eslint-config": "^2.23.0",
+		"@commitlint/cli": "^19.3.0",
+		"@commitlint/config-conventional": "^19.2.2",
+		"@types/node": "^20.11.17",
+		"@vitest/coverage-v8": "^2.0.2",
+		"@vitest/ui": "^2.0.2",
+		"bumpp": "^9.3.0",
+		"eslint": "9.7.0",
+		"eslint-plugin-format": "^0.1.2",
+		"husky": "^9.0.10",
+		"prettier": "^3.2.5",
+		"typescript": "^5.5.4",
+		"vitest": "^2.0.2"
+	}
+}

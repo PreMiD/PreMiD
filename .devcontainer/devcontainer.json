@@ -1,0 +1,24 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-docker-compose
+{
+	"name": "PreMiD",
+	"dockerComposeFile": ["docker-compose.yml"],
+	"service": "app",
+	"workspaceFolder": "/workspaces",
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "lts",
+			"nvmVersion": "latest"
+		},
+		"ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store:1": {},
+		"ghcr.io/dhoeric/features/act:1": {}
+	},
+	"overrideFeatureInstallOrder": ["ghcr.io/devcontainers/features/node:1", "ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store:1"],
+	"postCreateCommand": "pnpm i --frozen-lockfile",
+	"customizations": {
+		"vscode": {
+			"extensions": ["Gruntfuggly.todo-tree", "YoavBls.pretty-ts-errors", "EditorConfig.EditorConfig", "DeepScan.vscode-deepscan", "esbenp.prettier-vscode"]
+		}
+	},
+	"shutdownAction": "stopCompose"
+}
