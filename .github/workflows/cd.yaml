@@ -2,7 +2,7 @@ name: CD
 on:
   push:
     branches:
-      - monorepo
+      - main
     tags:
       - "*"
 permissions:

@@ -2,7 +2,7 @@ name: Build, Lint and Test
 on:
   push:
     branches:
-      - monorepo
+      - main
   pull_request:
 jobs:
   build:
