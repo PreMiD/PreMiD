@@ -17,10 +17,6 @@ jobs:
         target:
           - pd
           - schema-server
-          - website
-          - api-worker
-          - api-master
-          - discord-bot
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
