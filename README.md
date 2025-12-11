@@ -1,35 +1,44 @@
-<img src="https://cdn.rcd.gg/PreMiD.png" width="150px" />
+<img width="1280" height="800" alt="Chrome Global Screenshots" src="https://github.com/user-attachments/assets/1ea21f91-7499-43de-8b9a-3344d1c0fe48" />
 
-# PreMiD
+# <img src="https://cdn.rcd.gg/PreMiD.png" height="40px" /> PreMiD
 
-[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/PreMiD/PreMiD)
 [![Crowdin](https://badges.crowdin.net/premid/localized.svg)](https://crowdin.com/project/premid)
 
-This is the monorepo for PreMiD. PreMiD is a simple, configurable utility that allows you to show what you're watching/listening to on your Discord profile.
+PreMiD is a simple, configurable utility that lets you show what you're doing on the web in your Discord profile. Whether you're watching videos, listening to music, browsing your favorite sites, or playing browser games, PreMiD helps you share your online activities with your friends through Discord's Rich Presence feature.
 
 ## Getting Started
 
-**If you are a user looking to install PreMiD, please visit the [official website](https://premid.app).**
+**Looking to use PreMiD?** Head over to our [official website](https://premid.app) to add the browser extension!
 
-If you are a developer looking to contribute to PreMiD, read along.
+**Want to create your own Activity?** All of our community-created activities are open source and available at [github.com/PreMiD/Activities](https://github.com/PreMiD/Activities). We'd love to see what you create!
 
-## Table of Contents
+## Features
 
-- [Packages](#packages)
-- [License](#license)
+- 🎵 Show what you're listening to on YouTube and more (Spotify has native Discord support)
+- 📺 Display what you're watching on Netflix, Disney+, Twitch, and hundreds of other sites
+- 🎮 Share your browser game activity with friends
+- ✨ Fully customizable with thousands of user-created Activities
+- 🌍 Available in multiple languages thanks to our amazing community translators
 
-## Packages
+## Community
 
-This monorepo is split into multiple packages / projects. Here's a list of them:
+PreMiD is built by the community, for the community. Join us and help make PreMiD even better!
 
-- [apps/api](apps/api) - The API for PreMiD.
-- [apps/website](apps/website) - The website for PreMiD.
-- [apps/docs](apps/docs) - The official documentation for PreMiD.
-- [apps/pd](apps/pd/README.md) - A simple url shortener service to shorten urls longer than 256 characters.
-- [apps/schema-server](apps/schema-server) - Simple Schema server for the Presence manifest.
-- [packages/db](packages/db) - Database schema for PreMiD.
+- **Activities Repository**: [github.com/PreMiD/Activities](https://github.com/PreMiD/Activities)
+- **Documentation**: [docs.premid.app](https://docs.premid.app)
+- **Discord Server**: [discord.premid.app](https://discord.premid.app)
+- **Feedback & Bug Reports**: [feedback.premid.app](https://feedback.premid.app)
 
-## Development
+## Contributing
+
+We love community contributions! While **PreMiD's Activities are fully open source** (the code that makes websites show up on your profile), the PreMiD extension is not currently open source. This decision allows our small team to move fast and iterate quickly to deliver the best experience possible.
+
+You can contribute by:
+
+- Creating new Activities at [github.com/PreMiD/Activities](https://github.com/PreMiD/Activities)
+- Helping translate PreMiD on [Crowdin](https://crowdin.com/project/premid)
+- Reporting bugs and suggesting features at [feedback.premid.app](https://feedback.premid.app)
+- Supporting the project and spreading the word!
 
 ### Release
 
