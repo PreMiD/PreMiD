@@ -16,7 +16,7 @@
 	},
 	"dependencies": {
 		"@fastify/helmet": "^11.1.1",
-		"fastify": "^4.26.0",
+		"fastify": "^5.7.3",
 		"globby": "^14.0.1"
 	}
 }
