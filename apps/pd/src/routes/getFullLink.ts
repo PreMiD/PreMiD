@@ -1,11 +1,60 @@
 import { Buffer } from "node:buffer";
 
 import crypto from "node:crypto";
+import dns from "node:dns/promises";
 import type { RouteHandlerMethod } from "fastify";
+import ipaddr from "ipaddr.js";
 
 import isInCIDRRange from "../functions/isInCidRange.js";
 import googleCIDRs from "../googleCIDRs.js";
 import { keyv, ttl } from "../keyv.js";
+
+// RFC1918 + loopback + link-local + other private ranges to block for SSRF prevention
+const BLOCKED_CIDRS = [
+	"0.0.0.0/8",
+	"10.0.0.0/8",
+	"100.64.0.0/10",
+	"127.0.0.0/8",
+	"169.254.0.0/16",
+	"172.16.0.0/12",
+	"192.0.0.0/24",
+	"192.168.0.0/16",
+	"198.18.0.0/15",
+	"198.51.100.0/24",
+	"203.0.113.0/24",
+	"240.0.0.0/4",
+	"::1/128",
+	"fc00::/7",
+	"fe80::/10",
+].map(cidr => ipaddr.parseCIDR(cidr));
+
+async function isPrivateHost(hostname: string): Promise<boolean> {
+	try {
+		const addresses = await dns.lookup(hostname, { all: true });
+		for (const { address } of addresses) {
+			const parsed = ipaddr.parse(address);
+			for (const cidr of BLOCKED_CIDRS) {
+				if (parsed.match(cidr))
+					return true;
+			}
+		}
+		return false;
+	}
+	catch {
+		// If DNS resolution fails, block the request to be safe
+		return true;
+	}
+}
+
+// Only allow image/* content-types from remote servers
+const ALLOWED_CONTENT_TYPE_PREFIX = "image/";
+const ALLOWED_IMAGE_CONTENT_TYPES = [
+	"image/png",
+	"image/jpeg",
+	"image/gif",
+	"image/webp",
+	"image/jpg",
+];
 
 const handler: RouteHandlerMethod = async (request, reply) => {
 	/* c8 ignore next 2 */
@@ -42,6 +91,10 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 
 		const mime = url.split(";")[0]!.split(":")[1]!;
 
+		// Ensure the MIME type from the stored data URI is a known image type
+		if (!ALLOWED_IMAGE_CONTENT_TYPES.includes(mime))
+			return reply.code(400).send("Invalid image type");
+
 		return reply.type(mime).send(image);
 	}
 
@@ -56,6 +109,10 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 
 	//* If URL has valid image extension, fetch and return the image
 	if (hasValidImageExtension) {
+		// SSRF prevention: resolve the hostname and reject private/internal IPs
+		if (await isPrivateHost(urlObject.hostname))
+			return reply.code(400).send("Invalid image URL");
+
 		try {
 			const response = await fetch(url, {
 				headers: {
@@ -75,10 +132,16 @@ const handler: RouteHandlerMethod = async (request, reply) => {
 				return reply.code(404).send("Image not found");
 			}
 
-			const contentType = response.headers.get("content-type") || `image/${extension}`;
+			const remoteContentType = response.headers.get("content-type") ?? "";
+
+			// Whitelist the content-type to image/* only — never reflect arbitrary
+			// content-types from remote servers, which could lead to XSS.
+			const safeContentType = ALLOWED_IMAGE_CONTENT_TYPES.find(t => remoteContentType.startsWith(t))
+				?? `image/${extension}`;
+
 			const imageBuffer = Buffer.from(await response.arrayBuffer());
 
-			return reply.type(contentType).send(imageBuffer);
+			return reply.type(safeContentType).send(imageBuffer);
 		}
 		catch {
 			//* If fetch fails, fall back to redirect
