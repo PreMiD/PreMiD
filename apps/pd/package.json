@@ -19,7 +19,7 @@
 		"@fastify/rate-limit": "^9.1.0",
 		"@keyv/redis": "^2.8.4",
 		"fastify": "^4.26.0",
-		"file-type": "^19.0.0",
+		"file-type": "^21.3.1",
 		"got": "^14.2.0",
 		"ioredis": "^5.3.2",
 		"ipaddr.js": "^2.1.0",
