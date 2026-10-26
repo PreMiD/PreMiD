@@ -1,4 +1,4 @@
-FROM gplane/pnpm:node20-alpine AS base
+FROM gplane/pnpm:node24-alpine AS base
 RUN corepack enable
 ARG SERVICE
 
@@ -14,7 +14,7 @@ RUN if [ "$SERVICE" != "website" ]; then pnpm run build; fi
 RUN if [ "$SERVICE" == "website" ]; then pnpm --filter @premid/website run build; fi
 RUN if [ "$SERVICE" != "website" ]; then pnpm --filter @premid/${SERVICE} deploy --prod /prod/${SERVICE}; fi
 
-FROM node:20-alpine AS prod
+FROM node:24-alpine AS prod
 ARG SERVICE
 
 WORKDIR /app
@@ -25,7 +25,7 @@ EXPOSE 80
 
 CMD ["npm", "start"]
 
-FROM node:20-alpine AS website
+FROM node:24-alpine AS website
 WORKDIR /app
 ENV PORT=80
 
